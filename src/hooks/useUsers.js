@@ -28,10 +28,11 @@ const useUsers = () => {
   };
 
   const createUser = async user => {
+    
     const params = {
       user: {
-        first_name: user.first_name,
-        last_name: user.last_name,
+        // first_name: user.first_name,
+        // last_name: user.last_name,
         email: user.email,
         // company_name: user.company_name,
         // company_number: user.company_number,
@@ -44,13 +45,13 @@ const useUsers = () => {
       }
     }
     const response = await axios.post(
-      `${API_KEY}/users/manage_users`,
+      `${API_KEY}/users`,
       {
         ...params
       },
       getHeaders()
     ).then((res) => {
-      if (res.data.status > 300) {
+      if (res?.status > 300) {
         handleErrors(res);
       }
       return res.data
@@ -60,7 +61,7 @@ const useUsers = () => {
 
   const getAllUsers = async () => {
     const response = await axios.get(
-      `${API_KEY}/users/manage_users`,
+      `${API_KEY}/users`,
       getHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -73,7 +74,7 @@ const useUsers = () => {
 
   const deleteUser = async id => {
     const response = await axios.delete(
-      `${API_KEY}/users/manage_users/${id}`,
+      `${API_KEY}/users/${id}`,
       getHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -102,7 +103,7 @@ const useUsers = () => {
       }
     }
     const response = await axios.put(
-      `${API_KEY}/users/manage_users/${params.user.id}`,
+      `${API_KEY}/users/${params.user.id}`,
       {
         ...params
       },
@@ -118,7 +119,7 @@ const useUsers = () => {
 
   const getUserById = async (id) => {
     const response = await axios.get(
-      `${API_KEY}/users/manage_users/${id}`,
+      `${API_KEY}/users/${id}`,
       getHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -133,21 +134,22 @@ const useUsers = () => {
   const createAdminUser = async user => {
     const params = {
       user: {
-        first_name: user.first_name,
-        last_name: user.last_name,
+        // first_name: user.first_name,
+        // last_name: user.last_name,
         email: user.email,
         password: user.password,
+        role: 0,
         password_confirmation: user.password_confirmation,
       }
     }
     const response = await axios.post(
-      `${API_KEY}/admins/users`,
+      `${API_KEY}/users`,
       {
         ...params
       },
       getAdminHeaders()
     ).then((res) => {
-      if (res.data.status > 300) {
+      if (res.status > 300) {
         handleErrors(res);
       }
       return res.data
@@ -157,7 +159,7 @@ const useUsers = () => {
 
   const getAllAdminUsers = async () => {
     const response = await axios.get(
-      `${API_KEY}/admins/users`,
+      `${API_KEY}/users`,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -170,7 +172,7 @@ const useUsers = () => {
 
   const deleteAdminUser = async id => {
     const response = await axios.delete(
-      `${API_KEY}/admins/users/${id}`,
+      `${API_KEY}/users/${id}`,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -193,7 +195,7 @@ const useUsers = () => {
       }
     }
     const response = await axios.put(
-      `${API_KEY}/admins/users/${params.user.id}`,
+      `${API_KEY}/users/${params.user.id}`,
       {
         ...params
       },
@@ -209,7 +211,7 @@ const useUsers = () => {
 
   const getAdminUserById = async (id) => {
     const response = await axios.get(
-      `${API_KEY}/admins/users/${id}`,
+      `${API_KEY}/users/${id}`,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -220,48 +222,48 @@ const useUsers = () => {
     return response;
   };
 
-  const subscribeDistributionList = async (userIds, id) => {
-    const params = {
-      users_ids: userIds
-    }
-    const response = await axios.post(
-      `${API_KEY}/users/manage_users/${id}/subscribe_to_list`,
-      {
-        ...params
-      },
-      getHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
+  // const subscribeDistributionList = async (userIds, id) => {
+  //   const params = {
+  //     users_ids: userIds
+  //   }
+  //   const response = await axios.post(
+  //     `${API_KEY}/users/manage_users/${id}/subscribe_to_list`,
+  //     {
+  //       ...params
+  //     },
+  //     getHeaders()
+  //   ).then((res) => {
+  //     if (res.data.status > 300) {
+  //       handleErrors(res);
+  //     }
+  //     return res.data
+  //   })
+  //   return response;
+  // };
 
 
-  const unSubscribeDistributionList = async (userIds, id) => {
-    const params = {
-      users_ids: userIds
-    }
-    const response = await axios.post(
-      `${API_KEY}/users/manage_users/${id}/unsubscribe_from_list`,
-      {
-        ...params
-      },
-      getHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
+  // const unSubscribeDistributionList = async (userIds, id) => {
+  //   const params = {
+  //     users_ids: userIds
+  //   }
+  //   const response = await axios.post(
+  //     `${API_KEY}/users/manage_users/${id}/unsubscribe_from_list`,
+  //     {
+  //       ...params
+  //     },
+  //     getHeaders()
+  //   ).then((res) => {
+  //     if (res.data.status > 300) {
+  //       handleErrors(res);
+  //     }
+  //     return res.data
+  //   })
+  //   return response;
+  // };
 
 
   return {
-    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById, subscribeDistributionList, unSubscribeDistributionList,
+    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById,
   };
 };
 export default useUsers;

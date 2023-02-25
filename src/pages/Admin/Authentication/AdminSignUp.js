@@ -22,13 +22,13 @@ const AdminSignUp = () => {
   };
 
   const submitHandler = async e => {
-    debugger
     e.preventDefault();
     for (let prop in user) {
       if (!user[prop]) return alert('Please fill the form correctly')
     }
     const response = await createAdminUser(user);
-    if (response?.data?.status?.code < 300) {
+    debugger
+    if (response?.status?.code < 300) {
       navigate("/admin/signin");
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);

@@ -36,7 +36,7 @@ const AdminSignIn = () => {
     }
     const response = await adminLogin(admin);
     if (response?.data?.status?.code < 300) {
-      navigate("admin/dashboard");
+      navigate("/admin/dashboard");
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {

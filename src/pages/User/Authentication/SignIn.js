@@ -16,7 +16,7 @@ const SignIn = () => {
   });
 
   const handleShowPassword = () => {
-    if (viewPassword === false) {
+    if (viewPassword === false) {   
       setViewPassword(true);
     } else {
       setViewPassword(false);

@@ -70,12 +70,12 @@ const useAuthenticate = () => {
   const adminLogin = async user => {
     try {
       const params = {
-        admin: {
+        user: {
           email: user.email,
           password: user.password,
         }
       }
-      const response = await axios.post(`${API_KEY}/admins/sign_in`, {
+      const response = await axios.post(`${API_KEY}/users/sign_in`, {
         ...params,
       });
       sessionStorage.setItem(ADMIN_STORAGE_KEY, JSON.stringify({ ...response.data, token: response.headers.get("Authorization") }));
@@ -87,7 +87,7 @@ const useAuthenticate = () => {
 
   const adminLogout = async user => {
     try {
-      const response = await axios.delete(`${API_KEY}/admins/sign_out`,
+      const response = await axios.delete(`${API_KEY}/users/sign_out`,
         getAdminHeaders()
       );
       return response.data;

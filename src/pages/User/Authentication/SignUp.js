@@ -34,7 +34,8 @@ const SignUp = () => {
       if (!user[prop]) return alert('Please fill the form correctly')
     }
     const response = await createUser(user);
-    if (response?.data?.status?.code < 300) {
+    debugger
+    if (response?.status?.code < 300) {
       navigate("/signin");
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
