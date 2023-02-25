@@ -1,0 +1,181 @@
+.authentication {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    width: 100%;
+
+    &__imageBox {
+      width: 30%;
+      min-width: 280px;
+
+      @media (max-width: 750px) {
+        display: none;
+      }
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        min-height: 100vh;
+      }
+    }
+
+    &__formContainer {
+      width: 70%;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      transition: width 0.5s;
+
+      @media (max-width: 750px) {
+        margin-top: 10%;
+        width: 100%;
+      }
+
+      &__heading {
+        font-size: 1.2rem;
+      }
+
+      &__login {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      &__form {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+
+        input {
+          border-radius: 2rem;
+          padding: .5rem .7rem;
+          outline: none;
+          border: none;
+          width: 220px;
+          background-color: $INPUT_BG;
+        }
+
+        &__passwordBox {
+          margin-top: 1rem;
+
+          &__password {
+            padding-right: 3rem !important;
+          }
+
+          &__passwordIcon {
+            position: absolute;
+            margin-left: -2.5rem;
+            margin-top: .3rem;
+          }
+        }
+
+        &__loginButton {
+          background-color: $BUTTON_RED !important;
+          color: white !important;
+          width: 120px !important;
+          border-radius: .7rem !important;
+          margin: 2rem 0 !important;
+          padding: 5px 0 !important;
+          font-weight: 400 !important;
+          font-family: "poppins" !important;
+        }
+      }
+
+      &__forgotPassword {
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: unset;
+        color: black;
+      }
+
+      &__registerNow {
+        margin-top: 3rem;
+        border-top: 1px solid lightgray;
+        display: flex;
+        align-items: center;
+        padding-top: .7rem;
+
+        p {
+          margin-right: 1rem;
+        }
+
+        Button {
+          text-transform: capitalize;
+          color: white;
+          background-color: $BUTTON_GREEN !important;
+          border-radius: .7rem !important;
+          font-weight: 400 !important;
+          font-size: 12px;
+          font-family: "poppins";
+          padding: 5px 15px !important;
+        }
+      }
+
+      &__registerHeading {
+        font-size: 14px;
+      }
+
+      &__registerForm {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-top: 2rem;
+          max-width: 500px;
+          width: 100%;
+
+          @media (max-width: 475px) {
+            justify-content: center;
+            margin-top: 0rem;
+
+          }
+
+          input {
+            border-radius: 2rem;
+            padding: .5rem .7rem;
+            outline: none;
+            border: none;
+            width: 220px;
+            background-color: $INPUT_BG;
+            margin: .5rem;
+            transition: width .5s;
+
+            @media (max-width: 475px) {
+              width: 100%;
+            }
+          }
+        }
+
+        &__registerButton {
+          background-color: $BUTTON_RED !important;
+          color: white !important;
+          width: 120px !important;
+          border-radius: .7rem !important;
+          margin: 3rem 0 0 0 !important;
+          padding: 5px 0 !important;
+          font-weight: 400 !important;
+          font-family: "poppins" !important;
+
+          @media (max-width: 475px) {
+            margin-top: 1rem !important;
+            width: 95% !important;
+          }
+        }
+      }
+    }
+  }
+}

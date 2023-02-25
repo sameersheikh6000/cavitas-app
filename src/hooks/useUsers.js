@@ -1,0 +1,267 @@
+import axios from 'axios';
+import { API_KEY, USER_STORAGE_KEY, ADMIN_STORAGE_KEY } from '../config//helpers/variables';
+import useHandleErrors from './useHandleErrors';
+
+const useUsers = () => {
+  const { handleErrors } = useHandleErrors();
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
+
+  const getHeaders = () => {
+    if (user) {
+      return {
+        headers: {
+          Authorization: user.token,
+        },
+      };
+    }
+  };
+
+  const getAdminHeaders = () => {
+    if (admin) {
+      return {
+        headers: {
+          Authorization: admin.token,
+        },
+      };
+    }
+  };
+
+  const createUser = async user => {
+    const params = {
+      user: {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        // company_name: user.company_name,
+        // company_number: user.company_number,
+        // company_address: user.company_address,
+        // company_city: user.company_city,
+        // company_postal_code: user.company_postal_code,
+        // company_country: user.company_country,
+        password: user.password,
+        password_confirmation: user.password_confirmation,
+      }
+    }
+    const response = await axios.post(
+      `${API_KEY}/users/manage_users`,
+      {
+        ...params
+      },
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const getAllUsers = async () => {
+    const response = await axios.get(
+      `${API_KEY}/users/manage_users`,
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const deleteUser = async id => {
+    const response = await axios.delete(
+      `${API_KEY}/users/manage_users/${id}`,
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const updateUser = async user => {
+    const params = {
+      user: {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        // company_name: user.company_name,
+        // company_number: user.company_number,
+        // company_address: user.company_address,
+        // company_city: user.company_city,
+        // company_postal_code: user.company_postal_code,
+        // company_country: user.company_country,
+        password: user.password,
+        password_confirmation: user.password_confirmation,
+      }
+    }
+    const response = await axios.put(
+      `${API_KEY}/users/manage_users/${params.user.id}`,
+      {
+        ...params
+      },
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const getUserById = async (id) => {
+    const response = await axios.get(
+      `${API_KEY}/users/manage_users/${id}`,
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+
+  const createAdminUser = async user => {
+    const params = {
+      user: {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        password: user.password,
+        password_confirmation: user.password_confirmation,
+      }
+    }
+    const response = await axios.post(
+      `${API_KEY}/admins/users`,
+      {
+        ...params
+      },
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const getAllAdminUsers = async () => {
+    const response = await axios.get(
+      `${API_KEY}/admins/users`,
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const deleteAdminUser = async id => {
+    const response = await axios.delete(
+      `${API_KEY}/admins/users/${id}`,
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const updateAdminUser = async user => {
+    const params = {
+      user: {
+        id: user.id,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        password: user.password,
+        password_confirmation: user.password_confirmation,
+      }
+    }
+    const response = await axios.put(
+      `${API_KEY}/admins/users/${params.user.id}`,
+      {
+        ...params
+      },
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const getAdminUserById = async (id) => {
+    const response = await axios.get(
+      `${API_KEY}/admins/users/${id}`,
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+  const subscribeDistributionList = async (userIds, id) => {
+    const params = {
+      users_ids: userIds
+    }
+    const response = await axios.post(
+      `${API_KEY}/users/manage_users/${id}/subscribe_to_list`,
+      {
+        ...params
+      },
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+
+  const unSubscribeDistributionList = async (userIds, id) => {
+    const params = {
+      users_ids: userIds
+    }
+    const response = await axios.post(
+      `${API_KEY}/users/manage_users/${id}/unsubscribe_from_list`,
+      {
+        ...params
+      },
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
+
+  return {
+    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById, subscribeDistributionList, unSubscribeDistributionList,
+  };
+};
+export default useUsers;
