@@ -1,0 +1,78 @@
+.sidebar {
+  background-color: $BUTTON_GREEN;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  padding: 1rem;
+
+  &__header {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+    }
+
+    &__flag {
+      width: 30px;
+      height: 20px;
+      object-fit: cover;
+    }
+
+    &__icon {
+      color: white !important;
+      font-size: 2rem !important;
+    }
+  }
+
+  &__linkButtons {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: unset;
+      margin: .5rem 0;
+      margin-left: 3rem;
+
+      p {
+        margin-left: 1rem;
+        color: white;
+        font-size: .8rem;
+      }
+
+      &__icon {
+        color: white;
+        font-size: 2rem !important;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      width: 100%;
+
+      Button {
+        background-color: $BUTTON_RED !important;
+        color: white;
+        border-radius: .5rem;
+        margin: .5rem;
+        width: 100%;
+        padding: .5rem 0;
+      }
+    }
+  }
+}

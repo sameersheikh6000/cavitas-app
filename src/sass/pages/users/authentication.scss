@@ -102,6 +102,10 @@
         align-items: center;
         padding-top: .7rem;
 
+        a {
+          text-decoration: unset;
+        }
+
         p {
           margin-right: 1rem;
         }

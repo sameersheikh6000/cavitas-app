@@ -15,6 +15,64 @@ html {
 body {
   box-sizing: border-box; }
 
+.sidebar {
+  background-color: #5C8894;
+  width: 100%;
+  height: 100vh;
+  min-height: 100%;
+  padding: 1rem; }
+  .sidebar__header {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .sidebar__header__logo {
+      width: 80px;
+      height: 80px;
+      object-fit: cover; }
+    .sidebar__header__flag {
+      width: 30px;
+      height: 20px;
+      object-fit: cover; }
+    .sidebar__header__icon {
+      color: white !important;
+      font-size: 2rem !important; }
+  .sidebar__linkButtons {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; }
+    .sidebar__linkButtons__link {
+      display: flex;
+      align-items: center;
+      color: white;
+      text-decoration: unset;
+      margin: .5rem 0;
+      margin-left: 3rem; }
+      .sidebar__linkButtons__link p {
+        margin-left: 1rem;
+        color: white;
+        font-size: .8rem; }
+      .sidebar__linkButtons__link__icon {
+        color: white;
+        font-size: 2rem !important; }
+    .sidebar__linkButtons__buttons {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+      width: 100%; }
+      .sidebar__linkButtons__buttons Button {
+        background-color: #DD3333 !important;
+        color: white;
+        border-radius: .5rem;
+        margin: .5rem;
+        width: 100%;
+        padding: .5rem 0; }
+
 .authentication {
   display: flex;
   justify-content: center;
@@ -91,6 +149,8 @@ body {
         display: flex;
         align-items: center;
         padding-top: .7rem; }
+        .authentication__container__formContainer__registerNow a {
+          text-decoration: unset; }
         .authentication__container__formContainer__registerNow p {
           margin-right: 1rem; }
         .authentication__container__formContainer__registerNow Button {
@@ -147,3 +207,271 @@ body {
             .authentication__container__formContainer__registerForm__registerButton {
               margin-top: 1rem !important;
               width: 95% !important; } }
+
+.dashboard__container {
+  display: flex;
+  width: 100%; }
+  .dashboard__container__sidebar__open {
+    width: 350px; }
+    @media (max-width: 1000px) {
+      .dashboard__container__sidebar__open {
+        display: none; } }
+  @media (min-width: 1000px) {
+    .dashboard__container__sidebar__drawer {
+      display: none; } }
+  .dashboard__container__content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start; }
+    .dashboard__container__content .welcomePage {
+      overflow: auto;
+      background-color: #DD3333;
+      margin: 1rem;
+      width: 45%;
+      border-radius: 1rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      color: white;
+      height: 220px; }
+      @media (max-width: 900px) {
+        .dashboard__container__content .welcomePage {
+          width: 100%; } }
+      .dashboard__container__content .welcomePage__heading {
+        font-size: 2rem; }
+      .dashboard__container__content .welcomePage__description {
+        margin-top: 1rem;
+        font-size: 1.2rem; }
+      .dashboard__container__content .welcomePage__support {
+        margin-top: 2rem; }
+    .dashboard__container__content .userProfile {
+      background-color: #EDF4F4;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      width: 45%;
+      padding-bottom: 0;
+      height: 220px;
+      overflow: auto; }
+      @media (max-width: 900px) {
+        .dashboard__container__content .userProfile {
+          width: 100%; } }
+      .dashboard__container__content .userProfile__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: .3rem; }
+        .dashboard__container__content .userProfile__header__iconBox {
+          display: flex;
+          align-items: center; }
+          .dashboard__container__content .userProfile__header__iconBox p {
+            margin-left: .3rem;
+            text-transform: uppercase;
+            font-size: .8rem; }
+        .dashboard__container__content .userProfile__header Button {
+          color: #DD3333;
+          font-weight: 700 !important;
+          font-size: .8rem !important;
+          font-family: "poppins"; }
+      .dashboard__container__content .userProfile__details {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        font-size: .8rem; }
+        .dashboard__container__content .userProfile__details__detailsBox {
+          margin-bottom: 1rem;
+          display: flex; }
+          .dashboard__container__content .userProfile__details__detailsBox p {
+            width: 50%; }
+    .dashboard__container__content .insuredClient {
+      background-color: #EDF4F4;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      width: 45%;
+      padding-bottom: 0;
+      height: 225px; }
+      @media (max-width: 900px) {
+        .dashboard__container__content .insuredClient {
+          width: 100%; } }
+      .dashboard__container__content .insuredClient__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: .3rem; }
+        .dashboard__container__content .insuredClient__header__iconBox {
+          display: flex;
+          align-items: center; }
+          .dashboard__container__content .insuredClient__header__iconBox p {
+            margin-left: .3rem;
+            text-transform: uppercase;
+            font-size: .8rem; }
+        .dashboard__container__content .insuredClient__header Button {
+          color: #DD3333;
+          font-weight: 700 !important;
+          font-size: .8rem !important;
+          font-family: "poppins"; }
+      .dashboard__container__content .insuredClient__details {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        font-size: .8rem;
+        overflow: auto; }
+        .dashboard__container__content .insuredClient__details__table {
+          min-width: 40rem; }
+          .dashboard__container__content .insuredClient__details__table thead tr th {
+            font-weight: normal;
+            text-align: left; }
+          .dashboard__container__content .insuredClient__details__table tbody tr td:nth-last-child(1) {
+            text-align: right; }
+            .dashboard__container__content .insuredClient__details__table tbody tr td:nth-last-child(1) Button {
+              color: black;
+              font-size: .8rem;
+              font-family: "poppins"; }
+    .dashboard__container__content .support {
+      background-color: #EDF4F4;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      width: 45%;
+      padding-bottom: 0; }
+      @media (max-width: 900px) {
+        .dashboard__container__content .support {
+          width: 100%; } }
+      .dashboard__container__content .support__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: .3rem; }
+        .dashboard__container__content .support__header__iconBox {
+          display: flex;
+          align-items: center; }
+          .dashboard__container__content .support__header__iconBox p {
+            margin-left: .3rem;
+            text-transform: uppercase;
+            font-size: .8rem; }
+        .dashboard__container__content .support__header Button {
+          color: #DD3333;
+          font-weight: 700 !important;
+          font-size: .8rem !important;
+          font-family: "poppins"; }
+      .dashboard__container__content .support__details {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        font-size: .8rem;
+        overflow: auto; }
+        .dashboard__container__content .support__details__table {
+          min-width: 40rem; }
+          .dashboard__container__content .support__details__table thead tr th {
+            font-weight: normal;
+            text-align: left; }
+          .dashboard__container__content .support__details__table tbody tr td:nth-child(1) input {
+            border: 2px solid black;
+            outline: none !important; }
+          .dashboard__container__content .support__details__table tbody tr td:nth-last-child(1) {
+            text-align: right; }
+            .dashboard__container__content .support__details__table tbody tr td:nth-last-child(1) Button {
+              color: black;
+              font-size: .8rem;
+              font-family: "poppins"; }
+    .dashboard__container__content .cavitasDocs {
+      background-color: #EDF4F4;
+      margin: 1rem;
+      padding: 1rem;
+      border-radius: 1rem;
+      width: 45%;
+      padding-bottom: 0; }
+      @media (max-width: 900px) {
+        .dashboard__container__content .cavitasDocs {
+          width: 100%; } }
+      .dashboard__container__content .cavitasDocs__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid lightgray;
+        padding-bottom: .3rem; }
+        .dashboard__container__content .cavitasDocs__header__iconBox {
+          display: flex;
+          align-items: center; }
+          .dashboard__container__content .cavitasDocs__header__iconBox p {
+            margin-left: .3rem;
+            text-transform: uppercase;
+            font-size: .8rem; }
+        .dashboard__container__content .cavitasDocs__header Button {
+          color: #DD3333;
+          font-weight: 700 !important;
+          font-size: .8rem !important;
+          font-family: "poppins"; }
+      .dashboard__container__content .cavitasDocs__details {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        font-size: .8rem;
+        overflow: auto; }
+        .dashboard__container__content .cavitasDocs__details__table {
+          min-width: 40rem; }
+          .dashboard__container__content .cavitasDocs__details__table thead tr th {
+            font-weight: normal;
+            text-align: left; }
+          .dashboard__container__content .cavitasDocs__details__table tbody tr td:nth-child(1) {
+            width: 250px; }
+
+.uploadForm__container {
+  display: flex;
+  width: 100%; }
+  .uploadForm__container__sidebar__open {
+    width: 350px; }
+    @media (max-width: 1000px) {
+      .uploadForm__container__sidebar__open {
+        display: none; } }
+  @media (min-width: 1000px) {
+    .uploadForm__container__sidebar__drawer {
+      display: none; } }
+  .uploadForm__container__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    @media (max-width: 1000px) {
+      .uploadForm__container__content {
+        margin-top: 10%; } }
+    .uploadForm__container__content p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem; }
+    .uploadForm__container__content__form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .uploadForm__container__content__form input {
+        border-radius: 2rem;
+        padding: .5rem .7rem;
+        outline: none;
+        border: none;
+        width: 300px;
+        background-color: #EDF4F4;
+        margin: .5rem 0; }
+        @media (max-width: 475px) {
+          .uploadForm__container__content__form input {
+            width: 100%; } }
+    .uploadForm__container__content Button {
+      background-color: #DD3333 !important;
+      color: white !important;
+      width: 120px !important;
+      border-radius: .7rem !important;
+      margin: 1rem 0 0 0 !important;
+      padding: 5px 0 !important;
+      font-weight: 400 !important;
+      font-family: "poppins" !important; }
+      @media (max-width: 475px) {
+        .uploadForm__container__content Button {
+          margin-top: 1rem !important;
+          width: 95% !important; } }

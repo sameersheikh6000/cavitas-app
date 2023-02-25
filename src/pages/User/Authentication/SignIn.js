@@ -16,7 +16,7 @@ const SignIn = () => {
   });
 
   const handleShowPassword = () => {
-    if (viewPassword === false) {   
+    if (viewPassword === false) {
       setViewPassword(true);
     } else {
       setViewPassword(false);
@@ -97,10 +97,11 @@ const SignIn = () => {
           <Link to="/" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
           <div className='authentication__container__formContainer__registerNow'>
             <p>Don't have account yet?</p>
-            <Button>Register now!</Button>
+            <Link to="/signup">
+              <Button>Register now!</Button>
+            </Link>
           </div>
         </div>
-
       </div>
     </section>
   )

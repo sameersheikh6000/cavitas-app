@@ -6,8 +6,11 @@
 @import './abstract/mixins';
 
 // Components
+@import './components//sidebar';
 
 // Admin
 
 // Users
-@import './pages//users//authentication.scss';
+@import './pages//users/authentication.scss';
+@import './pages//users/dashboard.scss';
+@import './pages//users/uploadForm.scss';
