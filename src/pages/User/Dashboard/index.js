@@ -1,55 +1,47 @@
 import React, { useState, useEffect } from 'react'
-import Sidebar from '../../../components/Sidebar'
-import SidebarDrawer from '../../../components/SidebarDrawer'
 import CavitasDocs from './Components/CavitasDocuments'
 import InsuredClient from './Components/InsuredClient'
 import Support from './Components/Support'
 import UserProfile from './Components/UserProfile'
 import Welcome from './Components/Welcome'
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage'
-import useTemplate from '../../../hooks/useTemplate'
-
+import Page from '../../../components/Page/Page';
+import useClientInsurance from '../../../hooks/useClientInsurance'
 const Dashboard = () => {
-  const { getAllTemplate } = useTemplate();
-  const [templatesList, setTemplatesList] = useState([]);
+
+  const { getAllClientInsurance } = useClientInsurance();
+  const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
 
 
-  const getTemplates = async () => {
+  const getClientInsurance = async () => {
     debugger
-    const response = await getAllTemplate();
+    const response = await getAllClientInsurance();
     if (response.status < 300) {
-      setTemplatesList(response.insured_clients);
+      setInsuranceList(response.insured_clients);
     } else {
       setErrorMessage('Something went wrong!')
     }
   }
   useEffect(() => {
-    getTemplates();
+    getClientInsurance();
   }, []);
 
-
   return (
-    <section className='dashboard'>
+    <Page>
       <AlertMessage errorMessage={errorMessage} />
-      <div className='dashboard__container'>
-        <div className='dashboard__container__sidebar'>
-          <div className='dashboard__container__sidebar__open'>
-            <Sidebar />
-          </div>
-          <div className='dashboard__container__sidebar__drawer'>
-            <SidebarDrawer />
+      <section className='dashboard'>
+        <div className='dashboard__container'>
+          <div className='dashboard__container__content'>
+            <Welcome />
+            <UserProfile />
+            <InsuredClient insuranceList={insuranceList} />
+            <Support />
+            <CavitasDocs />
           </div>
         </div>
-        <div className='dashboard__container__content'>
-          <Welcome />
-          <UserProfile />
-          <InsuredClient templatesList={templatesList} />
-          <Support />
-          <CavitasDocs />
-        </div>
-      </div>
-    </section>
+      </section>
+    </Page>
   )
 }
 

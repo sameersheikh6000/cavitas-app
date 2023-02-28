@@ -13,8 +13,8 @@ const Sidebar = () => {
   return (
     <section className='sidebar'>
       <header className='sidebar__header'>
-        <img className='sidebar__header__logo' src={require('../assets/CavitasLogo-img.png')} alt="" />
-        <img className='sidebar__header__flag' src={require('../assets/EnglandFLag-img.jpg')} alt="" />
+        <img className='sidebar__header__logo' src={require('../../assets/CavitasLogo-img.png')} alt="" />
+        <img className='sidebar__header__flag' src={require('../../assets/EnglandFLag-img.jpg')} alt="" />
         <Link to="/signin">
           <LogoutOutlinedIcon className='sidebar__header__icon' />
         </Link>

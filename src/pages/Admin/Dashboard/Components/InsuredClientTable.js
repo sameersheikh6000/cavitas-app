@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from '@mui/material'
 import moment from 'moment';
 
-const InsuredClientTable = ({ templatesList }) => {
+const InsuredClientTable = ({ insuranceList }) => {
   return (
     <table className='insuredClient__details__table'>
       <thead>
@@ -15,7 +15,7 @@ const InsuredClientTable = ({ templatesList }) => {
         </tr>
       </thead>
       <tbody>
-        {templatesList.map((template, index) => (
+        {insuranceList.map((template, index) => (
           <tr>
             <td>{template.name}</td>
             <td>{template.email}</td>

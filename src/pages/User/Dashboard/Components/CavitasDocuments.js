@@ -3,16 +3,16 @@ import React from 'react'
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 const CavitasDocs = () => {
   return (
-    <section className='cavitasDocs'>
-      <header className='cavitasDocs__header'>
-        <div className='cavitasDocs__header__iconBox'>
-          < TextSnippetOutlinedIcon lassName='cavitasDocs__header__iconBox__icon' />
+    <section className='dashboard__container__content__cavitasDocs'>
+      <header className='dashboard__container__content__cavitasDocs__header'>
+        <div className='dashboard__container__content__cavitasDocs__header__iconBox'>
+          < TextSnippetOutlinedIcon className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
           <p>Cavitas Documents</p>
         </div>
         <Button size='small'>All Documents</Button>
       </header>
-      <div className='cavitasDocs__details'>
-        <table className='cavitasDocs__details__table'>
+      <div className='dashboard__container__content__cavitasDocs__details'>
+        <table className='dashboard__container__content__cavitasDocs__details__table'>
           <thead>
             <tr>
               <th>Document type</th>

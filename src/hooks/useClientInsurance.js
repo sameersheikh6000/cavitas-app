@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { API_KEY, USER_STORAGE_KEY, ADMIN_STORAGE_KEY } from '../config//helpers/variables';
+import { API_KEY, USER_STORAGE_KEY, ADMIN_STORAGE_KEY } from '../config/helpers/variables';
 import useHandleErrors from './useHandleErrors';
 
-const useTemplate = () => {
+const useClientInsurance = () => {
   const { handleErrors } = useHandleErrors();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
@@ -28,11 +28,11 @@ const useTemplate = () => {
   };
 
 
-  const createTemplate = async template => {
+  const createClientInsurance = async insurance => {
     const formData = new FormData()
-    for (const property in template) {
+    for (const property in insurance) {
       formData.append(
-        property, template[property]
+        property, insurance[property]
       )
     }
     const response = await axios.post(
@@ -46,16 +46,15 @@ const useTemplate = () => {
     })
     return response;
   };
-
-  const createTemplateAdmin = async template => {
+  const createClientInsuranceAdmin = async insurance => {
     const formData = new FormData()
-    for (const property in template) {
+    for (const property in insurance) {
       formData.append(
-        property, template[property]
+        property, insurance[property]
       )
     }
     const response = await axios.post(
-      `${API_KEY}/admins/templates`, formData,
+      `${API_KEY}/api/v1/client_infos`, formData,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -66,7 +65,8 @@ const useTemplate = () => {
     return response;
   };
 
-  const getAllTemplate = async () => {
+
+  const getAllClientInsurance = async () => {
     const response = await axios.get(
       `${API_KEY}/api/v1/insured_clients`,
       getHeaders()
@@ -79,9 +79,9 @@ const useTemplate = () => {
     return response;
   };
 
-  const getAllTemplateAdmin = async () => {
+  const getAllClientInsuranceAdmin = async () => {
     const response = await axios.get(
-      `${API_KEY}/admins/templates`,
+      `${API_KEY}/api/v1/insured_clients`,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -92,7 +92,7 @@ const useTemplate = () => {
     return response;
   };
 
-  const deleteTemplate = async id => {
+  const deleteClientInsurance = async id => {
     const response = await axios.delete(
       `${API_KEY}/users/templates/${id}`,
       getHeaders()
@@ -105,7 +105,7 @@ const useTemplate = () => {
     return response;
   };
 
-  const deleteTemplateAdmin = async id => {
+  const deleteClientInsuranceAdmin = async id => {
     const response = await axios.delete(
       `${API_KEY}/admins/templates/${id}`,
       getAdminHeaders()
@@ -118,20 +118,20 @@ const useTemplate = () => {
     return response;
   };
 
-  const updateTemplate = async template => {
+  const updateClientInsurance = async insurance => {
     const formData = new FormData()
-    for (const property in template) {
+    for (const property in insurance) {
       formData.append(
-        property, template[property]
+        property, insurance[property]
       )
     }
     const params = {
-      template: {
-        id: template.id
+      insurance: {
+        id: insurance.id
       }
     }
     const response = await axios.put(
-      `${API_KEY}/users/templates/${params.template.id}`, formData,
+      `${API_KEY}/users/templates/${params.insurance.id}`, formData,
       getHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -142,20 +142,20 @@ const useTemplate = () => {
     return response;
   };
 
-  const updateTemplateAdmin = async template => {
+  const updateClientInsuranceAdmin = async insurance => {
     const formData = new FormData()
-    for (const property in template) {
+    for (const property in insurance) {
       formData.append(
-        property, template[property]
+        property, insurance[property]
       )
     }
     const params = {
-      template: {
-        id: template.id,
+      insurance: {
+        id: insurance.id
       }
     }
     const response = await axios.put(
-      `${API_KEY}/admins/templates/${params.template.id}`, formData,
+      `${API_KEY}/users/templates/${params.insurance.id}`, formData,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -166,7 +166,8 @@ const useTemplate = () => {
     return response;
   };
 
-  const getTemplateById = async (id) => {
+
+  const getClientInsuranceById = async (id) => {
     const response = await axios.get(
       `${API_KEY}/users/templates/${id}`,
       getHeaders()
@@ -179,9 +180,9 @@ const useTemplate = () => {
     return response;
   };
 
-  const getTemplateByIdAdmin = async (id) => {
+  const getClientInsuranceByIdAdmin = async (id) => {
     const response = await axios.get(
-      `${API_KEY}/admins/templates/${id}`,
+      `${API_KEY}/users/templates/${id}`,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -191,9 +192,10 @@ const useTemplate = () => {
     })
     return response;
   };
+
 
   return {
-    createTemplate, getAllTemplate, deleteTemplate, updateTemplate, getTemplateById, createTemplateAdmin, getAllTemplateAdmin, deleteTemplateAdmin, updateTemplateAdmin, getTemplateByIdAdmin,
+    createClientInsurance, getAllClientInsurance, deleteClientInsurance, updateClientInsurance, getClientInsuranceById, createClientInsuranceAdmin, getAllClientInsuranceAdmin, deleteClientInsuranceAdmin, updateClientInsuranceAdmin, getClientInsuranceByIdAdmin,
   };
 };
-export default useTemplate;
+export default useClientInsurance;

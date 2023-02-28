@@ -1,38 +1,34 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-import Sidebar from '../../../components/Sidebar'
-import SidebarDrawer from '../../../components/SidebarDrawer'
+import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
-import useTemplate from '../../../hooks/useTemplate';
-
+import useClientInsurance from '../../../hooks/useClientInsurance';
 
 const UploadForm = () => {
 
   const navigate = useNavigate();
-  const { createTemplate } = useTemplate();
+  const { createClientInsurance } = useClientInsurance();
   const [errorMessage, setErrorMessage] = useState(null);
-  const [template, setTemplate] = useState({
+  const [insurance, setInsurance] = useState({
     subject: "",
     description: "",
     file: "",
   });
 
   const handleChange = e => {
-    debugger
     const { name, value } = e.target;
-    setTemplate({
-      ...template, [name]: name !== "file" ? value : e.target.files[0]
+    setInsurance({
+      ...insurance, [name]: name !== "file" ? value : e.target.files[0]
     });
   };
 
   const handleSubmit = async e => {
-    debugger
     e.preventDefault();
     let data = {
-      ...template,
+      ...insurance,
     };
-    const response = await createTemplate(data);
+    const response = await createClientInsurance(data);
     if (response.status < 300) {
       navigate("/dashboard");
     } else if (response.status > 300) {
@@ -41,49 +37,42 @@ const UploadForm = () => {
   }
 
   return (
-    <section className='uploadForm'>
+    <Page>
       <AlertMessage errorMessage={errorMessage} />
-      <div className='uploadForm__container'>
-        <div className='uploadForm__container__sidebar'>
-          <div className='uploadForm__container__sidebar__open'>
-            <Sidebar />
-          </div>
-          <div className='uploadForm__container__sidebar__drawer'>
-            <SidebarDrawer />
-          </div>
-        </div>
-        <div className='uploadForm__container__content'>
-          <p>Upload Clients</p>
-          <form className='uploadForm__container__content__form' onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder='Subject'
-              name='subject'
-              onChange={handleChange}
-              value={template.subject}
-              required={true}
-            />
-            <input
-              type="text"
-              placeholder='Description'
-              name='description'
-              onChange={handleChange}
-              value={template.description}
-              required={true}
-            />
-            <input
-              type="file"
-              name='file'
-              onChange={handleChange}
-              // value={template.subject}
-              required={true}
 
-            />
-            <Button type='submit'>Submit</Button>
-          </form>
+      <section className='uploadForm'>
+        <div className='uploadForm__container'>
+          <div className='uploadForm__container__content'>
+            <p>Upload Clients</p>
+            <form className='uploadForm__container__content__form' onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder='Subject'
+                name='subject'
+                onChange={handleChange}
+                value={insurance.subject}
+                required={true}
+              />
+              <input
+                type="text"
+                placeholder='Description'
+                name='description'
+                onChange={handleChange}
+                value={insurance.description}
+                required={true}
+              />
+              <input
+                type="file"
+                name='file'
+                onChange={handleChange}
+                required={true}
+              />
+              <Button type='submit'>Submit</Button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Page>
   )
 }
 

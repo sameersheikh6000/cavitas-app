@@ -1,36 +1,26 @@
 .dashboard {
+  margin-left: 300px;
+  transition: margin-left 0.5s;
+
+  @media (max-width: 1000px) {
+    margin-left: 0;
+  }
+
   &__container {
     display: flex;
+    flex-direction: row;
     width: 100%;
-
-    &__sidebar {
-      &__open {
-        width: 350px;
-
-        @media (max-width: 1000px) {
-          display: none;
-        }
-      }
-
-      &__drawer {
-        @media (min-width: 1000px) {
-          display: none;
-        }
-      }
-    }
 
     &__content {
       width: 100%;
       display: flex;
       flex-wrap: wrap;
-      justify-content: center;
-      align-items: flex-start;
 
-      .welcomePage {
+      &__welcomePage {
         overflow: auto;
         background-color: $BUTTON_RED;
         margin: 1rem;
-        width: 45%;
+        width: 47%;
         border-radius: 1rem;
         padding: 1rem;
         display: flex;
@@ -38,8 +28,17 @@
         align-items: flex-start;
         color: white;
         height: 220px;
+        transition: width 0.5s;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1450px) {
+          width: 46%;
+        }
+
+        @media (max-width: 1170px) {
+          width: 45%;
+        }
+
+        @media (max-width: 1150px) {
           width: 100%;
         }
 
@@ -57,17 +56,26 @@
         }
       }
 
-      .userProfile {
+      &__userProfile {
         background-color: $INPUT_BG;
         margin: 1rem;
         padding: 1rem;
         border-radius: 1rem;
-        width: 45%;
+        width: 47%;
         padding-bottom: 0;
         height: 220px;
         overflow: auto;
+        transition: width 0.5s;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1450px) {
+          width: 46%;
+        }
+
+        @media (max-width: 1170px) {
+          width: 45%;
+        }
+
+        @media (max-width: 1150px) {
           width: 100%;
         }
 
@@ -114,16 +122,26 @@
         }
       }
 
-      .insuredClient {
+      &__insuredClient {
         background-color: $INPUT_BG;
         margin: 1rem;
         padding: 1rem;
         border-radius: 1rem;
-        width: 45%;
+        width: 47%;
         padding-bottom: 0;
-        height: 225px;
+        height: 220px;
+        overflow: auto;
+        transition: width 0.5s;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1450px) {
+          width: 46%;
+        }
+
+        @media (max-width: 1170px) {
+          width: 45%;
+        }
+
+        @media (max-width: 1150px) {
           width: 100%;
         }
 
@@ -191,15 +209,26 @@
         }
       }
 
-      .support {
+      &__support {
         background-color: $INPUT_BG;
         margin: 1rem;
         padding: 1rem;
         border-radius: 1rem;
-        width: 45%;
+        width: 47%;
         padding-bottom: 0;
+        height: 220px;
+        overflow: auto;
+        transition: width 0.5s;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1450px) {
+          width: 46%;
+        }
+
+        @media (max-width: 1170px) {
+          width: 45%;
+        }
+
+        @media (max-width: 1150px) {
           width: 100%;
         }
 
@@ -274,15 +303,26 @@
         }
       }
 
-      .cavitasDocs {
+      &__cavitasDocs {
         background-color: $INPUT_BG;
         margin: 1rem;
         padding: 1rem;
         border-radius: 1rem;
-        width: 45%;
+        width: 47%;
         padding-bottom: 0;
+        height: 220px;
+        overflow: auto;
+        transition: width 0.5s;
 
-        @media (max-width: 900px) {
+        @media (max-width: 1450px) {
+          width: 46%;
+        }
+
+        @media (max-width: 1170px) {
+          width: 45%;
+        }
+
+        @media (max-width: 1150px) {
           width: 100%;
         }
 

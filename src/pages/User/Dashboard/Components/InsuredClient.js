@@ -4,19 +4,19 @@ import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlin
 import InsuredClientTable from './InsuredClientTable';
 import { useNavigate } from 'react-router-dom';
 
-const InsuredClient = ({ templatesList }) => {
+const InsuredClient = ({ insuranceList }) => {
   const navigate = useNavigate();
   return (
-    <section className='insuredClient'>
-      <header className='insuredClient__header'>
-        <div className='insuredClient__header__iconBox'>
-          < BusinessCenterOutlinedIcon lassName='insuredClient__header__iconBox__icon' />
+    <section className='dashboard__container__content__insuredClient'>
+      <header className='dashboard__container__content__insuredClient__header'>
+        <div className='dashboard__container__content__insuredClient__header__iconBox'>
+          < BusinessCenterOutlinedIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
           <p>INSURED CLIENTS (10)</p>
         </div>
         <Button size='small' onClick={() => navigate("/insuredclient/view")}>View all</Button>
       </header>
-      <div className='insuredClient__details'>
-        <InsuredClientTable templatesList={templatesList} />
+      <div className='dashboard__container__content__insuredClient__details'>
+        <InsuredClientTable insuranceList={insuranceList} />
       </div>
     </section>
   )

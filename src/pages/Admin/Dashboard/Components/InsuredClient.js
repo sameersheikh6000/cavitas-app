@@ -4,7 +4,7 @@ import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlin
 import InsuredClientTable from './InsuredClientTable';
 import { useNavigate } from 'react-router-dom';
 
-const InsuredClient = ({ templatesList }) => {
+const InsuredClient = ({ insuranceList }) => {
   const navigate = useNavigate();
   return (
     <section className='insuredClient'>
@@ -16,7 +16,7 @@ const InsuredClient = ({ templatesList }) => {
         <Button size='small' onClick={() => navigate("/admin/insuredclient/view")}>View all</Button>
       </header>
       <div className='insuredClient__details'>
-        <InsuredClientTable templatesList={templatesList} />
+        <InsuredClientTable insuranceList={insuranceList} />
       </div>
     </section>
   )

@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import InsuredClientTable from '../Dashboard/Components/InsuredClientTable'
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
-import useTemplate from '../../../hooks/useTemplate';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,25 +8,26 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { useNavigate } from 'react-router-dom';
+import useClientInsurance from '../../../hooks/useClientInsurance';
 
 const AdminInsuredClientView = () => {
   const navigate = useNavigate();
-  const { getAllTemplate } = useTemplate();
-  const [templatesList, setTemplatesList] = useState([]);
+  const { getAllClientInsuranceAdmin } = useClientInsurance();
+  const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
 
 
-  const getTemplates = async () => {
+  const getClientInsurance = async () => {
     debugger
-    const response = await getAllTemplate();
+    const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
-      setTemplatesList(response.insured_clients);
+      setInsuranceList(response.insured_clients);
     } else {
       setErrorMessage('Something went wrong!')
     }
   }
   useEffect(() => {
-    getTemplates();
+    getClientInsurance();
   }, []);
 
   return (
@@ -47,7 +46,7 @@ const AdminInsuredClientView = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {templatesList.map((row) => (
+            {insuranceList.map((row) => (
               <TableRow
                 key={row.name}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}

@@ -1,0 +1,27 @@
+.navbar {
+
+  &__sidebarLarge {
+    overflow-y: scroll !important;
+
+    @media (max-width: 1000px) {
+      display: none !important;
+      border: 3px solid red;
+    }
+  }
+
+  &__sidebarDrawers {
+    display: none !important;
+
+    @media (max-width: 1000px) {
+      display: block !important;
+    }
+
+    &__box {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      background-color: $BUTTON_RED;
+      padding: .5rem 0;
+    }
+  }
+}
