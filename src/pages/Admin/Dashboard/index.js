@@ -16,7 +16,6 @@ const AdminDashboard = () => {
 
 
   const getClientInsurance = async () => {
-    debugger
     const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
       setInsuranceList(response.insured_clients);

@@ -29,7 +29,7 @@ const SignIn = () => {
   };
 
   const submitHandler = async e => {
-    debugger
+
     e.preventDefault();
     for (let prop in user) {
       if (!user[prop]) return alert('Please fill the form correctly')

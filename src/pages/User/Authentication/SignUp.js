@@ -28,13 +28,13 @@ const SignUp = () => {
   };
 
   const submitHandler = async e => {
-    debugger
+
     e.preventDefault();
     for (let prop in user) {
       if (!user[prop]) return alert('Please fill the form correctly')
     }
     const response = await createUser(user);
-    debugger
+
     if (response?.status?.code < 300) {
       navigate("/signin");
     } else if (response?.data?.message !== undefined) {

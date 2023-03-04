@@ -1,0 +1,276 @@
+.aboutUs {
+  padding: 0 10%;
+
+  @media (max-width: 1250px) {
+    padding: 0;
+  }
+
+  &__cavitasMeaning {
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__detailsBox {
+      width: 60%;
+
+      @media (max-width: 1000px) {
+        width: 100%;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: $BUTTON_RED;
+      }
+    }
+
+    &__pictureBox {
+      width: 35%;
+
+      @media (max-width: 1000px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+
+        img {
+          width: 300px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__ourStory {
+    padding: 4rem 1rem;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__profilesBox {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        width: 45%;
+
+        @media (max-width: 1000px) {
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+
+        &__left {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          &__profileImage {
+            width: 200px;
+          }
+
+          &__name {
+            color: $BUTTON_RED;
+            font-weight: 600;
+            margin-top: .5rem;
+            text-align: center;
+          }
+
+          &__designation {
+            margin-top: .5em;
+            color: gray;
+            font-size: .8rem;
+          }
+
+          &__linkedInIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $BUTTON_RED;
+            margin-top: .5rem;
+            padding: .4rem;
+            border-radius: 50%;
+
+            img {
+              object-fit: cover;
+              width: 15px;
+            }
+          }
+        }
+
+        &__right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          &__profileImage {
+            width: 100px;
+          }
+
+          &__name {
+            color: $BUTTON_RED;
+            font-weight: 600;
+            margin-top: .5rem;
+            text-align: center;
+          }
+
+          &__designation {
+            margin-top: .5em;
+            color: gray;
+            font-size: .8rem;
+          }
+
+          &__linkedInIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $BUTTON_RED;
+            margin-top: .5rem;
+            padding: .4rem;
+            border-radius: 50%;
+
+            img {
+              object-fit: cover;
+              width: 15px;
+            }
+          }
+        }
+      }
+
+      &__detailsBox {
+        width: 45%;
+
+        @media (max-width: 1000px) {
+          width: 100%;
+        }
+
+        h1 {
+          font-size: 2rem;
+          font-weight: 600;
+        }
+
+        &__desc {
+          color: $BUTTON_RED;
+          font-weight: 500;
+          margin-top: .5rem;
+        }
+
+        &__desc1 {
+          margin-top: .5rem;
+          font-size: .8rem;
+        }
+
+        &__desc2 {
+          margin-top: .5rem;
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+
+  &__privacyPolicy {
+    padding: 4rem 1rem;
+
+    header {
+      text-align: center;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+      }
+    }
+
+    &__container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+
+      &__card {
+        margin-bottom: 2rem;
+        margin-right: 1rem;
+
+        img {
+          width: 200px;
+        }
+
+        p {
+          position: absolute;
+          font-weight: 600;
+          font-size: .9rem;
+          color: $BUTTON_RED;
+          margin-top: -7rem;
+          margin-left: 2.5rem;
+        }
+      }
+    }
+  }
+
+  &__smarterDentalInsurance {
+    padding: 2rem;
+    margin: 4rem 1rem;
+    box-shadow: 0 0.5rem 1.5rem #d3d3d3;
+    border-radius: 1.5rem;
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h1 {
+        font-size: 2rem;
+        color: $BUTTON_RED;
+        font-weight: 600;
+      }
+
+      p {
+        margin-top: .5rem;
+        width: 60%;
+        font-size: .9rem;
+        transition: width 0.5s;
+
+        @media (max-width: 750px) {
+          width: 100%;
+        }
+      }
+    }
+
+    &__cornerImage {
+      margin-left: -2rem;
+      margin-top: -6.5rem;
+      width: 150px;
+      position: absolute;
+      z-index: -1;
+    }
+
+    &__imageContainer {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+
+      img {
+        margin-right: .5rem;
+        width: 300px;
+        object-fit: cover;
+      }
+    }
+  }
+}

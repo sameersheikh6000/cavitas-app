@@ -8,12 +8,20 @@ import AdminInsuredClientView from "../pages/Admin/InsuredClientView";
 import InsuredClientView from "../pages/User/InsuredClientView";
 import AdminUploadForm from "../pages/Admin/UploadForm";
 import UploadForm from "../pages/User/UploadForm";
+import LandingPage from "../pages/User/LandingPage";
+import AboutUs from "../pages/User/AboutUs";
+import FAQ from "../pages/User/FAQ";
+import Claims from "../pages/User/Claims";
 
 export const routes = [
 
-
   // user routes
 
+  {
+    path: "/",
+    component: LandingPage,
+    isPrivate: false,
+  },
   {
     path: "/signin",
     component: SignIn,
@@ -37,6 +45,21 @@ export const routes = [
   {
     path: "/insuredclient/view",
     component: InsuredClientView,
+    isPrivate: false,
+  },
+  {
+    path: "/about",
+    component: AboutUs,
+    isPrivate: false,
+  },
+  {
+    path: "/faq",
+    component: FAQ,
+    isPrivate: false,
+  },
+  {
+    path: "/claims",
+    component: Claims,
     isPrivate: false,
   },
 

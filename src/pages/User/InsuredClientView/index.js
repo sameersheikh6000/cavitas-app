@@ -18,7 +18,7 @@ const InsuredClientView = () => {
 
 
   const getClientInsurance = async () => {
-    debugger
+
     const response = await getAllClientInsurance();
     if (response.status < 300) {
       setInsuranceList(response.insured_clients);

@@ -1,0 +1,110 @@
+.claims {
+  // background-color: $BG_PINK;
+  // height: 250px;
+  // width: 100%;
+  padding: 0 10%;
+
+  @media (max-width: 1250px) {
+    padding: 0;
+  }
+
+  &__container {
+    margin: 5rem 0;
+
+    &__claimsPortal {
+      margin: 0 1rem;
+      padding: 2rem;
+      box-shadow: $BOX_SHADOW;
+      border-radius: 1.5rem;
+      background-color: white;
+
+      header {
+        padding-top: 1rem;
+        text-align: center;
+
+        h1 {
+          font-size: 2rem;
+          font-weight: bolder;
+          color: $BUTTON_RED
+        }
+
+        p {
+          margin-top: 1rem;
+          font-size: .9rem;
+        }
+      }
+
+      &__loginBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+
+        &__details {
+          display: flex;
+          flex-direction: column;
+          width: 500px;
+
+          @media (max-width: 750px) {
+            width: 100%;
+          }
+
+          p {
+            color: $BUTTON_RED;
+            font-weight: 600;
+            text-transform: capitalize;
+            font-size: .9rem;
+          }
+
+          input {
+            margin-top: .7rem;
+            border-radius: 1.5rem;
+            outline: none;
+            background-color: $BG_PINK;
+            border: 1px solid lightgray;
+            padding: .7rem 1rem;
+          }
+
+          div {
+            display: flex;
+            justify-content: flex-end;
+
+            Button {
+              margin-top: .7rem;
+              color: white;
+              background-color: $BUTTON_RED !important;
+              border-radius: 1.5rem;
+              font-family: "poppins";
+              padding: .5rem 2rem;
+            }
+          }
+
+          &__links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: start;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+
+            p {
+              font-weight: 500;
+              color: black;
+              font-size: .8rem;
+
+              a {
+                text-decoration: unset;
+                font-weight: 600;
+                text-transform: none;
+                color: $BUTTON_GREEN;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

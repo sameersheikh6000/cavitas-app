@@ -9,6 +9,7 @@
 @import './components/sidebar';
 @import './components/page';
 @import './components/navbar';
+@import './components/footer';
 
 // Admin
 
@@ -16,3 +17,7 @@
 @import './pages/users/authentication.scss';
 @import './pages/users/dashboard.scss';
 @import './pages/users/uploadForm.scss';
+@import './pages/users/landingPage.scss';
+@import './pages/users/aboutUs.scss';
+@import './pages/users/faq.scss';
+@import './pages/users/claims.scss';

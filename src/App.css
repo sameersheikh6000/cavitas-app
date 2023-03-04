@@ -27,15 +27,17 @@ body {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    align-items: center; }
+    align-items: center;
+    margin-top: 1rem; }
     .sidebar__header__logo {
-      width: 80px;
-      height: 80px;
-      object-fit: cover; }
+      width: 70px;
+      height: 70px;
+      object-fit: contain; }
     .sidebar__header__flag {
       width: 30px;
       height: 20px;
-      object-fit: cover; }
+      object-fit: cover;
+      margin-left: 2rem; }
     .sidebar__header__icon {
       color: white !important;
       font-size: 2rem !important; }
@@ -48,7 +50,6 @@ body {
     .sidebar__linkButtons__link {
       display: flex;
       align-items: center;
-      color: white;
       text-decoration: unset;
       margin: .5rem 0;
       margin-left: 3rem; }
@@ -59,6 +60,10 @@ body {
       .sidebar__linkButtons__link__icon {
         color: white;
         font-size: 2rem !important; }
+    .sidebar__linkButtons a:focus p {
+      color: #DD3333 !important; }
+    .sidebar__linkButtons a:focus__icon {
+      color: #DD3333 !important; }
     .sidebar__linkButtons__buttons {
       display: flex;
       flex-direction: column;
@@ -92,6 +97,111 @@ body {
     width: 100%;
     background-color: #DD3333;
     padding: .5rem 0; }
+    .navbar__sidebarDrawers__box__heading {
+      color: white;
+      font-weight: 600; }
+
+.appbar {
+  background-color: #F8EFEF !important;
+  box-shadow: unset !important;
+  border-bottom: 1px solid lightgray !important;
+  color: black !important;
+  padding: 0 10%;
+  transition: padding .5s; }
+  @media (max-width: 1250px) {
+    .appbar {
+      padding: 0; } }
+  .appbar__imageBox__image {
+    width: 150px;
+    object-fit: cover;
+    transition: width 0.5s; }
+    @media (max-width: 1250px) {
+      .appbar__imageBox__image {
+        width: 100px; } }
+    @media (max-width: 1000px) {
+      .appbar__imageBox__image {
+        width: 50px; } }
+  @media (max-width: 1000px) {
+    .appbar__imageBox {
+      flex: 1; } }
+  .appbar__linksBox {
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    flex: 1; }
+    @media (max-width: 1000px) {
+      .appbar__linksBox {
+        display: none; } }
+    .appbar__linksBox__links {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      overflow: hidden;
+      margin-left: 1rem; }
+      .appbar__linksBox__links__link {
+        color: black;
+        text-decoration: unset;
+        font-weight: 500;
+        white-space: nowrap;
+        margin-right: 1rem; }
+      @media (max-width: 1050px) {
+        .appbar__linksBox__links {
+          margin-right: .5rem;
+          font-size: 14px; } }
+    .appbar__linksBox__translate {
+      margin-right: 1rem;
+      margin-left: 1rem; }
+  .appbar__sidebar1 {
+    display: none; }
+    @media (max-width: 1000px) {
+      .appbar__sidebar1 {
+        display: flex !important;
+        align-items: center; } }
+  .appbar__menuLink {
+    color: black;
+    text-decoration: none; }
+
+.css-19r6kue-MuiContainer-root {
+  padding: 0 1rem !important; }
+
+.footer {
+  padding-top: 4rem;
+  background-color: #DD3333; }
+  .footer__container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+    transition: margin-left .5s; }
+    @media (max-width: 500px) {
+      .footer__container {
+        margin-left: 2rem; } }
+    .footer__container__logo {
+      width: 80px; }
+    .footer__container__top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-top: 3rem;
+      justify-content: space-between;
+      transition: flex-wrap 0.5s; }
+      .footer__container__top__box {
+        width: 300px;
+        font-size: .9rem;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem; }
+        .footer__container__top__box p {
+          color: white; }
+        .footer__container__top__box a {
+          color: white;
+          text-decoration: unset; }
+          .footer__container__top__box a:hover {
+            text-decoration: underline; }
+    .footer__container__copyRight {
+      font-size: .8rem;
+      color: white;
+      margin-top: 3rem; }
 
 .authentication {
   display: flex;
@@ -528,3 +638,633 @@ body {
           .uploadForm__container__content Button {
             margin-top: 1rem !important;
             width: 95% !important; } }
+
+.landingPage__smartInsurance {
+  padding: 4rem 1rem;
+  margin: 0 10%; }
+  @media (max-width: 1250px) {
+    .landingPage__smartInsurance {
+      margin: 0%; } }
+  .landingPage__smartInsurance__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 1000px) {
+      .landingPage__smartInsurance__container {
+        display: flex;
+        flex-direction: column; } }
+    .landingPage__smartInsurance__container__details {
+      display: flex;
+      flex-direction: column;
+      width: 45%; }
+      @media (max-width: 1000px) {
+        .landingPage__smartInsurance__container__details {
+          width: 100%; } }
+      .landingPage__smartInsurance__container__details__heading {
+        font-size: 2.5rem;
+        font-weight: 600; }
+      .landingPage__smartInsurance__container__details__heading2 {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: #DD3333; }
+      .landingPage__smartInsurance__container__details__desc {
+        margin-top: .5rem;
+        font-weight: 500; }
+      .landingPage__smartInsurance__container__details__buttons {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap; }
+        .landingPage__smartInsurance__container__details__buttons Button {
+          margin-right: .5rem;
+          color: black;
+          border-radius: 1.5rem !important;
+          border: 1px solid black !important;
+          margin-bottom: .5rem; }
+    .landingPage__smartInsurance__container__picture {
+      width: 45%; }
+      @media (max-width: 1000px) {
+        .landingPage__smartInsurance__container__picture {
+          width: 100%;
+          margin-top: 2rem; } }
+      .landingPage__smartInsurance__container__picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+
+.landingPage__ourOffer {
+  padding: 4rem 1rem;
+  margin: 0 10%; }
+  @media (max-width: 1250px) {
+    .landingPage__ourOffer {
+      margin: 0%; } }
+  .landingPage__ourOffer__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    .landingPage__ourOffer__header h1 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-transform: capitalize; }
+    .landingPage__ourOffer__header p {
+      font-size: .9rem; }
+  .landingPage__ourOffer__container {
+    margin-top: 3rem; }
+    .landingPage__ourOffer__container__boxes {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      text-align: center; }
+      @media (max-width: 750px) {
+        .landingPage__ourOffer__container__boxes {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; } }
+      .landingPage__ourOffer__container__boxes__detailsContainer {
+        border: 1px solid lightgray;
+        border-radius: 1rem;
+        width: 300px;
+        padding-bottom: 1rem; }
+        @media (max-width: 750px) {
+          .landingPage__ourOffer__container__boxes__detailsContainer {
+            margin-bottom: 2rem; } }
+        .landingPage__ourOffer__container__boxes__detailsContainer__heading {
+          background-color: #5C8894;
+          border-radius: 1rem 1rem 0 0;
+          color: white;
+          text-transform: uppercase;
+          font-weight: 600;
+          padding: .3rem;
+          margin-bottom: 1rem; }
+        .landingPage__ourOffer__container__boxes__detailsContainer__tickBox {
+          margin-top: .2rem;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: .3rem;
+          width: 160px;
+          margin-left: 4.5rem;
+          margin-bottom: .3rem; }
+          .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage {
+            margin-right: .2rem;
+            width: 15px; }
+          .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc {
+            font-size: .8rem; }
+        .landingPage__ourOffer__container__boxes__detailsContainer BUtton {
+          text-transform: none;
+          color: white !important;
+          background-color: #DD3333 !important;
+          border-radius: 1.5rem;
+          margin-top: .5rem; }
+
+.landingPage__valuableReadings {
+  padding: 4rem 1rem;
+  margin: 0 10%; }
+  @media (max-width: 1250px) {
+    .landingPage__valuableReadings {
+      margin: 0%; } }
+  .landingPage__valuableReadings__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; }
+    .landingPage__valuableReadings__header h1 {
+      font-weight: 600;
+      font-size: 1.5rem;
+      text-transform: capitalize; }
+    .landingPage__valuableReadings__header p {
+      font-size: .9rem;
+      color: #DD3333; }
+  .landingPage__valuableReadings__container {
+    margin-top: 3rem; }
+    .landingPage__valuableReadings__container__cardsBox {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap; }
+      .landingPage__valuableReadings__container__cardsBox__card {
+        width: 300px;
+        margin: 0 1rem; }
+        @media (max-width: 1050px) {
+          .landingPage__valuableReadings__container__cardsBox__card {
+            margin-bottom: 2rem; } }
+        .landingPage__valuableReadings__container__cardsBox__card img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border: 1px solid lightgray;
+          border-radius: 1rem 1rem 0 0; }
+        .landingPage__valuableReadings__container__cardsBox__card__name {
+          margin-top: 1rem;
+          margin-left: 1rem;
+          font-weight: 600;
+          color: #DD3333;
+          font-size: .9rem;
+          margin-bottom: .5rem; }
+        .landingPage__valuableReadings__container__cardsBox__card__date {
+          margin-left: 1rem;
+          font-weight: 600;
+          color: gray;
+          font-size: .8rem; }
+        .landingPage__valuableReadings__container__cardsBox__card__desc {
+          margin-top: .5rem;
+          margin-left: 1rem;
+          font-weight: 600;
+          font-size: .8rem; }
+
+.landingPage__howItwork {
+  padding: 4rem 1rem;
+  margin: 0 10%; }
+  @media (max-width: 1250px) {
+    .landingPage__howItwork {
+      margin: 0%; } }
+  .landingPage__howItwork__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 1000px) {
+      .landingPage__howItwork__container {
+        display: flex;
+        flex-direction: column; } }
+    .landingPage__howItwork__container__details {
+      display: flex;
+      flex-direction: column;
+      width: 45%; }
+      @media (max-width: 1000px) {
+        .landingPage__howItwork__container__details {
+          width: 100%; } }
+      .landingPage__howItwork__container__details__heading {
+        font-size: 2.5rem;
+        font-weight: 600; }
+      .landingPage__howItwork__container__details__desc {
+        margin-top: .5rem;
+        font-weight: 500;
+        color: #DD3333;
+        font-weight: bolder; }
+      .landingPage__howItwork__container__details__detailsContainer {
+        margin: .5rem; }
+        .landingPage__howItwork__container__details__detailsContainer__box {
+          display: flex;
+          align-items: center; }
+          .landingPage__howItwork__container__details__detailsContainer__box__icon {
+            color: #DD3333;
+            font-size: 1.2rem !important; }
+          .landingPage__howItwork__container__details__detailsContainer__box__text {
+            margin-left: .3rem;
+            font-weight: 500;
+            font-size: .8rem;
+            color: gray; }
+    .landingPage__howItwork__container__picture {
+      width: 45%; }
+      @media (max-width: 1000px) {
+        .landingPage__howItwork__container__picture {
+          width: 100%;
+          margin-bottom: 2rem; } }
+      .landingPage__howItwork__container__picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+
+.landingPage__allCare {
+  background-color: #5C8894;
+  padding: 4rem 10%; }
+  @media (max-width: 1250px) {
+    .landingPage__allCare {
+      padding: 4rem 1rem; } }
+  .landingPage__allCare__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; }
+    @media (max-width: 1000px) {
+      .landingPage__allCare__container {
+        display: flex;
+        flex-direction: column; } }
+    .landingPage__allCare__container__details {
+      display: flex;
+      flex-direction: column;
+      width: 45%; }
+      @media (max-width: 1000px) {
+        .landingPage__allCare__container__details {
+          width: 100%; } }
+      .landingPage__allCare__container__details__heading {
+        font-size: 2.5rem;
+        font-weight: 600;
+        color: white; }
+      .landingPage__allCare__container__details__desc {
+        margin-top: .5rem;
+        font-weight: 500;
+        color: white;
+        font-weight: 500; }
+      .landingPage__allCare__container__details__detailsContainer {
+        margin: 1rem 0 0 .5rem; }
+        .landingPage__allCare__container__details__detailsContainer__box {
+          display: flex;
+          align-items: center; }
+          .landingPage__allCare__container__details__detailsContainer__box__icon {
+            color: white;
+            font-size: 1rem !important; }
+          .landingPage__allCare__container__details__detailsContainer__box__text {
+            margin-left: .3rem;
+            font-size: .8rem;
+            color: white; }
+      .landingPage__allCare__container__details__imageContainer {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column; }
+        .landingPage__allCare__container__details__imageContainer img {
+          object-fit: cover;
+          width: 220px;
+          margin-bottom: 1rem; }
+    .landingPage__allCare__container__picture {
+      width: 45%; }
+      @media (max-width: 1000px) {
+        .landingPage__allCare__container__picture {
+          width: 100%;
+          margin-top: 2rem; } }
+      .landingPage__allCare__container__picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; }
+
+.aboutUs {
+  padding: 0 10%; }
+  @media (max-width: 1250px) {
+    .aboutUs {
+      padding: 0; } }
+  .aboutUs__cavitasMeaning {
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 1000px) {
+      .aboutUs__cavitasMeaning {
+        display: flex;
+        flex-direction: column;
+        align-items: center; } }
+    .aboutUs__cavitasMeaning__detailsBox {
+      width: 60%; }
+      @media (max-width: 1000px) {
+        .aboutUs__cavitasMeaning__detailsBox {
+          width: 100%; } }
+      .aboutUs__cavitasMeaning__detailsBox h1 {
+        font-size: 2.5rem;
+        font-weight: bolder;
+        color: #DD3333; }
+    .aboutUs__cavitasMeaning__pictureBox {
+      width: 35%; }
+      @media (max-width: 1000px) {
+        .aboutUs__cavitasMeaning__pictureBox {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-top: 2rem; }
+          .aboutUs__cavitasMeaning__pictureBox img {
+            width: 300px;
+            object-fit: cover; } }
+  .aboutUs__ourStory {
+    padding: 4rem 1rem; }
+    .aboutUs__ourStory__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      @media (max-width: 1000px) {
+        .aboutUs__ourStory__container {
+          display: flex;
+          flex-direction: column; } }
+      .aboutUs__ourStory__container__profilesBox {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .aboutUs__ourStory__container__profilesBox {
+            width: 100%;
+            margin-bottom: 2rem; } }
+        .aboutUs__ourStory__container__profilesBox__left {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .aboutUs__ourStory__container__profilesBox__left__profileImage {
+            width: 200px; }
+          .aboutUs__ourStory__container__profilesBox__left__name {
+            color: #DD3333;
+            font-weight: 600;
+            margin-top: .5rem;
+            text-align: center; }
+          .aboutUs__ourStory__container__profilesBox__left__designation {
+            margin-top: .5em;
+            color: gray;
+            font-size: .8rem; }
+          .aboutUs__ourStory__container__profilesBox__left__linkedInIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #DD3333;
+            margin-top: .5rem;
+            padding: .4rem;
+            border-radius: 50%; }
+            .aboutUs__ourStory__container__profilesBox__left__linkedInIcon img {
+              object-fit: cover;
+              width: 15px; }
+        .aboutUs__ourStory__container__profilesBox__right {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .aboutUs__ourStory__container__profilesBox__right__profileImage {
+            width: 100px; }
+          .aboutUs__ourStory__container__profilesBox__right__name {
+            color: #DD3333;
+            font-weight: 600;
+            margin-top: .5rem;
+            text-align: center; }
+          .aboutUs__ourStory__container__profilesBox__right__designation {
+            margin-top: .5em;
+            color: gray;
+            font-size: .8rem; }
+          .aboutUs__ourStory__container__profilesBox__right__linkedInIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #DD3333;
+            margin-top: .5rem;
+            padding: .4rem;
+            border-radius: 50%; }
+            .aboutUs__ourStory__container__profilesBox__right__linkedInIcon img {
+              object-fit: cover;
+              width: 15px; }
+      .aboutUs__ourStory__container__detailsBox {
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .aboutUs__ourStory__container__detailsBox {
+            width: 100%; } }
+        .aboutUs__ourStory__container__detailsBox h1 {
+          font-size: 2rem;
+          font-weight: 600; }
+        .aboutUs__ourStory__container__detailsBox__desc {
+          color: #DD3333;
+          font-weight: 500;
+          margin-top: .5rem; }
+        .aboutUs__ourStory__container__detailsBox__desc1 {
+          margin-top: .5rem;
+          font-size: .8rem; }
+        .aboutUs__ourStory__container__detailsBox__desc2 {
+          margin-top: .5rem;
+          font-size: .8rem; }
+  .aboutUs__privacyPolicy {
+    padding: 4rem 1rem; }
+    .aboutUs__privacyPolicy header {
+      text-align: center; }
+      .aboutUs__privacyPolicy header h1 {
+        font-size: 2rem;
+        font-weight: 600; }
+    .aboutUs__privacyPolicy__container {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap; }
+      .aboutUs__privacyPolicy__container__card {
+        margin-bottom: 2rem;
+        margin-right: 1rem; }
+        .aboutUs__privacyPolicy__container__card img {
+          width: 200px; }
+        .aboutUs__privacyPolicy__container__card p {
+          position: absolute;
+          font-weight: 600;
+          font-size: .9rem;
+          color: #DD3333;
+          margin-top: -7rem;
+          margin-left: 2.5rem; }
+  .aboutUs__smarterDentalInsurance {
+    padding: 2rem;
+    margin: 4rem 1rem;
+    box-shadow: 0 0.5rem 1.5rem #d3d3d3;
+    border-radius: 1.5rem; }
+    .aboutUs__smarterDentalInsurance header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .aboutUs__smarterDentalInsurance header h1 {
+        font-size: 2rem;
+        color: #DD3333;
+        font-weight: 600; }
+      .aboutUs__smarterDentalInsurance header p {
+        margin-top: .5rem;
+        width: 60%;
+        font-size: .9rem;
+        transition: width 0.5s; }
+        @media (max-width: 750px) {
+          .aboutUs__smarterDentalInsurance header p {
+            width: 100%; } }
+    .aboutUs__smarterDentalInsurance__cornerImage {
+      margin-left: -2rem;
+      margin-top: -6.5rem;
+      width: 150px;
+      position: absolute;
+      z-index: -1; }
+    .aboutUs__smarterDentalInsurance__imageContainer {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap; }
+      .aboutUs__smarterDentalInsurance__imageContainer img {
+        margin-right: .5rem;
+        width: 300px;
+        object-fit: cover; }
+
+.faq {
+  padding: 0 10%;
+  background-image: url("./assets//FAQBG-image.png");
+  background-repeat: no-repeat;
+  background-size: 100% 250px; }
+  @media (max-width: 1250px) {
+    .faq {
+      padding: 0; } }
+  .faq header {
+    text-align: center;
+    padding-top: 3rem; }
+    .faq header h1 {
+      font-size: 3rem;
+      font-weight: bolder;
+      color: #DD3333;
+      text-transform: capitalize; }
+  .faq__tabs {
+    padding: 4rem 1rem;
+    margin-top: 5rem;
+    overflow-x: auto; }
+    .faq__tabs__tabsLabel {
+      font-weight: bold !important;
+      font-family: "poppins" !important;
+      text-transform: capitalize !important;
+      color: gray !important; }
+
+.css-heg063-MuiTabs-flexContainer {
+  background-color: #F1F1F0 !important;
+  border-top: 1px solid lightgray; }
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: #796d6d9c !important; }
+
+.css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
+  background-color: #DD3333 !important; }
+
+.faqTab {
+  width: 100%;
+  display: flex;
+  flex-direction: column; }
+  .faqTab__container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .2rem; }
+    .faqTab__container__box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .7rem 1rem;
+      border: 1px solid lightgray;
+      transition: background-color 1s;
+      border-radius: 3px; }
+      .faqTab__container__box:hover {
+        background-color: #F8EFEF;
+        color: #DD3333; }
+      .faqTab__container__box p {
+        font-size: .9rem; }
+      .faqTab__container__box__arrowDown {
+        color: #DD3333 !important;
+        font-size: 1.2rem !important; }
+    .faqTab__container__box2 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .7rem 1rem; }
+      .faqTab__container__box2 p {
+        font-size: .9rem;
+        margin-top: -.2rem; }
+
+.claims {
+  padding: 0 10%; }
+  @media (max-width: 1250px) {
+    .claims {
+      padding: 0; } }
+  .claims__container {
+    margin: 5rem 0; }
+    .claims__container__claimsPortal {
+      margin: 0 1rem;
+      padding: 2rem;
+      box-shadow: 0 0.5rem 1.5rem #d3d3d3;
+      border-radius: 1.5rem;
+      background-color: white; }
+      .claims__container__claimsPortal header {
+        padding-top: 1rem;
+        text-align: center; }
+        .claims__container__claimsPortal header h1 {
+          font-size: 2rem;
+          font-weight: bolder;
+          color: #DD3333; }
+        .claims__container__claimsPortal header p {
+          margin-top: 1rem;
+          font-size: .9rem; }
+      .claims__container__claimsPortal__loginBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem; }
+        .claims__container__claimsPortal__loginBox__details {
+          display: flex;
+          flex-direction: column;
+          width: 500px; }
+          @media (max-width: 750px) {
+            .claims__container__claimsPortal__loginBox__details {
+              width: 100%; } }
+          .claims__container__claimsPortal__loginBox__details p {
+            color: #DD3333;
+            font-weight: 600;
+            text-transform: capitalize;
+            font-size: .9rem; }
+          .claims__container__claimsPortal__loginBox__details input {
+            margin-top: .7rem;
+            border-radius: 1.5rem;
+            outline: none;
+            background-color: #F8EFEF;
+            border: 1px solid lightgray;
+            padding: .7rem 1rem; }
+          .claims__container__claimsPortal__loginBox__details div {
+            display: flex;
+            justify-content: flex-end; }
+            .claims__container__claimsPortal__loginBox__details div Button {
+              margin-top: .7rem;
+              color: white;
+              background-color: #DD3333 !important;
+              border-radius: 1.5rem;
+              font-family: "poppins";
+              padding: .5rem 2rem; }
+          .claims__container__claimsPortal__loginBox__details__links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: start;
+            margin-top: 2rem;
+            margin-bottom: 1rem; }
+            .claims__container__claimsPortal__loginBox__details__links p {
+              font-weight: 500;
+              color: black;
+              font-size: .8rem; }
+              .claims__container__claimsPortal__loginBox__details__links p a {
+                text-decoration: unset;
+                font-weight: 600;
+                text-transform: none;
+                color: #5C8894; }

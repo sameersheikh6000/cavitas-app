@@ -7,17 +7,28 @@ import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { Button } from '@mui/material';
+import useAuthenticate from '../../hooks/useAuthenticate';
+import { USER_STORAGE_KEY } from '../../config/helpers/variables';
 
 const Sidebar = () => {
   const navigate = useNavigate();
+  const { userLogout } = useAuthenticate();
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+
+  const handleLogout = async () => {
+    const response = await userLogout(user);
+    if (response.status == 200) {
+      sessionStorage.removeItem(USER_STORAGE_KEY);
+    }
+    navigate("/")
+  }
+
   return (
     <section className='sidebar'>
       <header className='sidebar__header'>
         <img className='sidebar__header__logo' src={require('../../assets/CavitasLogo-img.png')} alt="" />
         <img className='sidebar__header__flag' src={require('../../assets/EnglandFLag-img.jpg')} alt="" />
-        <Link to="/signin">
-          <LogoutOutlinedIcon className='sidebar__header__icon' />
-        </Link>
+        <LogoutOutlinedIcon className='sidebar__header__icon' onClick={handleLogout} />
       </header>
       <div className='sidebar__linkButtons'>
         <Link to="/dashboard" className='sidebar__linkButtons__link'>
@@ -42,7 +53,7 @@ const Sidebar = () => {
         </Link>
         <div className='sidebar__linkButtons__buttons'>
           <Button onClick={() => navigate("/uploadform")}>Upload new clients</Button>
-          <Button>Get a Quote</Button>
+          {/* <Button>Get a Quote</Button> */}
         </div>
       </div>
     </section>

@@ -22,6 +22,99 @@
       width: 100%;
       background-color: $BUTTON_RED;
       padding: .5rem 0;
+
+      &__heading {
+        color: white;
+        font-weight: 600;
+      }
     }
   }
+}
+
+.appbar {
+  background-color: $BG_PINK !important;
+  box-shadow: unset !important;
+  border-bottom: 1px solid lightgray !important;
+  color: black !important;
+  padding: 0 10%;
+  transition: padding .5s;
+
+  @media (max-width: 1250px) {
+    padding: 0;
+  }
+
+  &__imageBox {
+    &__image {
+      width: 150px;
+      object-fit: cover;
+      transition: width 0.5s;
+
+      @media (max-width: 1250px) {
+        width: 100px;
+      }
+
+      @media (max-width: 1000px) {
+        width: 50px;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      flex: 1;
+    }
+  }
+
+  &__linksBox {
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    flex: 1;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
+    &__links {
+      display: flex;
+      justify-content: space-between;
+      flex: 1;
+      overflow: hidden;
+      margin-left: 1rem;
+
+      &__link {
+        color: black;
+        text-decoration: unset;
+        font-weight: 500;
+        white-space: nowrap;
+        margin-right: 1rem;
+      }
+
+      @media (max-width: 1050px) {
+        margin-right: .5rem;
+        font-size: 14px;
+      }
+    }
+
+    &__translate {
+      margin-right: 1rem;
+      margin-left: 1rem;
+    }
+  }
+
+  &__sidebar1 {
+    display: none;
+
+    @media (max-width: 1000px) {
+      display: flex !important;
+      align-items: center;
+    }
+  }
+
+  &__menuLink {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.css-19r6kue-MuiContainer-root {
+  padding: 0 1rem !important;
 }

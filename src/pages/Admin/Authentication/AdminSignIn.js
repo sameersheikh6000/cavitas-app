@@ -29,7 +29,6 @@ const AdminSignIn = () => {
   };
 
   const submitHandler = async e => {
-    debugger
     e.preventDefault();
     for (let prop in admin) {
       if (!admin[prop]) return alert('Please fill the form correctly')
