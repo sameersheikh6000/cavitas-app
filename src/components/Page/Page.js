@@ -10,7 +10,7 @@ const Page = ({ children }) => {
     <section className='page'>
       <Navbar />
       {children}
-      {user?.data?.role !== "user" &&
+      {user?.data?.role !== "broker" &&
         <Footer />
       }
     </section >

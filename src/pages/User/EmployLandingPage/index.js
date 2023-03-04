@@ -5,7 +5,7 @@ import HowItWork from './Components/HowItWork';
 import OurOffer from './Components/OurOffer';
 import SmartInsurance from './Components/SmartInsurance';
 import ValuableReadings from './Components/ValuableReadings';
-const LandingPage = () => {
+const EmployLandingPage = () => {
   return (
     <Page>
       <section className='landingPage'>
@@ -19,4 +19,4 @@ const LandingPage = () => {
   )
 }
 
-export default LandingPage
+export default EmployLandingPage

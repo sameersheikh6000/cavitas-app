@@ -4,7 +4,7 @@ import useUsers from '../../../hooks/useUsers';
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
+const EmploySignUp = () => {
   const { createUser } = useUsers();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -15,9 +15,7 @@ const SignUp = () => {
     company_name: "",
     company_number: "",
     company_address: "",
-    company_city: "",
-    company_postal_code: "",
-    company_country: "",
+    role: "Employ",
     password: "",
     password_confirmation: "",
   });
@@ -33,10 +31,10 @@ const SignUp = () => {
     for (let prop in user) {
       if (!user[prop]) return alert('Please fill the form correctly')
     }
-    const response = await createUser(user, "broker");
+    const response = await createUser(user, "employ");
 
     if (response?.status?.code < 300) {
-      navigate("/signin");
+      navigate("/employ-signin");
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {
@@ -112,23 +110,16 @@ const SignUp = () => {
                 type="text"
                 placeholder='Broker company city'
                 name='company_city'
-                value={user.company_city}
+                value={user.role}
                 onChange={changeHandler}
                 required={true}
+                disabled={true}
               />
               <input
                 type="text"
                 placeholder='Broker company postal code'
                 name='company_postal_code'
                 value={user.company_postal_code}
-                onChange={changeHandler}
-                required={true}
-              />
-              <input
-                type="text"
-                placeholder='Broker company country'
-                name='company_country'
-                value={user.company_country}
                 onChange={changeHandler}
                 required={true}
               />
@@ -160,4 +151,4 @@ const SignUp = () => {
   )
 }
 
-export default SignUp
+export default EmploySignUp

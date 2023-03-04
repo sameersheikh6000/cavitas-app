@@ -16,7 +16,7 @@ function Navbar() {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   return (
     <>
-      {user?.data?.role == "user" ?
+      {user?.data?.role == "broker" ?
         <section className='navbar'>
           <div className='navbar__sidebarLarge' >
             <Sidebar />
@@ -40,9 +40,9 @@ function Navbar() {
                   <Link className='appbar__linksBox__links__link' to="/about">About us</Link>
                   <Link className='appbar__linksBox__links__link' to="/faq">FAQ</Link>
                   <Link className='appbar__linksBox__links__link' to="/claims">Claims</Link>
-                  <Link className='appbar__linksBox__links__link' to="/signin">Member login</Link>
-                  <Link className='appbar__linksBox__links__link' to="/signin">Employer login</Link>
-                  <Link className='appbar__linksBox__links__link' to="/signin">Broker login</Link>
+                  <Link className='appbar__linksBox__links__link' to="/member">Member login</Link>
+                  <Link className='appbar__linksBox__links__link' to="/employ">Employer login</Link>
+                  <Link className='appbar__linksBox__links__link' to="/">Broker login</Link>
                 </div>
                 <img className='appbar__linksBox__translate' src={require("../../assets/Navbar-translate.png")} alt="" />
                 <IconButton>
