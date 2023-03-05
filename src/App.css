@@ -1268,3 +1268,318 @@ body {
                 font-weight: 600;
                 text-transform: none;
                 color: #5C8894; }
+
+.userProfileView {
+  margin: 2rem 5rem 0 380px; }
+  @media (max-width: 1150px) {
+    .userProfileView {
+      margin: 2rem 1rem 0 316px; } }
+  @media (max-width: 1000px) {
+    .userProfileView {
+      margin: 1rem; } }
+  .userProfileView__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 700px) {
+      .userProfileView__top {
+        display: flex;
+        flex-direction: column; } }
+    .userProfileView__top__left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #DD3333; }
+      .userProfileView__top__left p {
+        margin-left: .3rem;
+        text-transform: uppercase;
+        font-size: 1.5rem; }
+      .userProfileView__top__left__icon {
+        font-size: 2rem !important; }
+    .userProfileView__top__right {
+      display: flex;
+      flex-direction: row;
+      align-items: center; }
+      @media (max-width: 700px) {
+        .userProfileView__top__right {
+          margin-top: 2rem;
+          width: 100%;
+          display: flex;
+          justify-content: flex-end; } }
+      .userProfileView__top__right p {
+        margin-left: .3rem;
+        text-transform: uppercase;
+        font-size: 1rem; }
+      .userProfileView__top__right__icon {
+        font-size: 2rem !important;
+        margin-right: 1.5rem; }
+        @media (max-width: 700px) {
+          .userProfileView__top__right__icon {
+            margin-right: .5rem;
+            font-size: 1.2rem !important; } }
+      .userProfileView__top__right Button {
+        background-color: #CADEDD !important;
+        color: black !important;
+        font-size: .7rem !important;
+        border-radius: unset;
+        padding: .5rem 1rem; }
+        @media (max-width: 700px) {
+          .userProfileView__top__right Button {
+            padding: .3rem; } }
+  .userProfileView__container {
+    background-color: #EDF4F4;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-top: 2rem; }
+    .userProfileView__container__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid lightgray;
+      padding-bottom: .3rem; }
+      .userProfileView__container__header__iconBox {
+        display: flex;
+        align-items: center; }
+        .userProfileView__container__header__iconBox p {
+          margin-left: .3rem;
+          text-transform: uppercase;
+          font-size: .8rem; }
+      .userProfileView__container__header Button {
+        color: #DD3333;
+        font-weight: 700 !important;
+        font-size: .8rem !important;
+        font-family: "poppins"; }
+    .userProfileView__container__details {
+      margin-top: .5rem;
+      display: flex;
+      flex-direction: column;
+      font-size: .8rem;
+      margin-top: 1rem; }
+      .userProfileView__container__details__detailsBox {
+        margin-bottom: 1rem;
+        display: flex;
+        flex-wrap: wrap; }
+        @media (max-width: 700px) {
+          .userProfileView__container__details__detailsBox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; } }
+        .userProfileView__container__details__detailsBox input {
+          width: 300px;
+          border-radius: 1.5rem;
+          outline: none;
+          border: 1px solid lightgray;
+          padding: .7rem 1rem; }
+          @media (max-width: 700px) {
+            .userProfileView__container__details__detailsBox input {
+              width: 100%; } }
+        .userProfileView__container__details__detailsBox input::placeholder {
+          font-weight: 500; }
+        @media (max-width: 700px) {
+          .userProfileView__container__details__detailsBox div {
+            width: 100%; } }
+        .userProfileView__container__details__detailsBox div:nth-child(1) {
+          width: 50%;
+          margin-right: 1rem;
+          margin-bottom: .5rem; }
+          @media (max-width: 700px) {
+            .userProfileView__container__details__detailsBox div:nth-child(1) {
+              width: 100%;
+              margin-right: 0; } }
+
+.insuredClientView {
+  margin: 2rem 5rem 0 380px; }
+  @media (max-width: 1150px) {
+    .insuredClientView {
+      margin: 2rem 1rem 0 316px; } }
+  @media (max-width: 1000px) {
+    .insuredClientView {
+      margin: 1rem; } }
+  .insuredClientView__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 700px) {
+      .insuredClientView__header {
+        display: flex;
+        flex-direction: column; } }
+    .insuredClientView__header__left {
+      display: flex;
+      align-items: center; }
+      .insuredClientView__header__left__icon {
+        font-size: 2rem !important;
+        color: #DD3333; }
+      .insuredClientView__header__left p {
+        font-size: 1.5rem;
+        color: #DD3333;
+        margin-left: .5rem; }
+    @media (max-width: 700px) {
+      .insuredClientView__header__right {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; } }
+    .insuredClientView__header__right input {
+      border-radius: 1.5rem;
+      outline: none;
+      border: 2px solid black;
+      padding: .3rem .5rem;
+      width: 200px; }
+      @media (max-width: 700px) {
+        .insuredClientView__header__right input {
+          width: 100%; } }
+    .insuredClientView__header__right input::placeholder {
+      font-weight: 500; }
+    .insuredClientView__header__right__icon {
+      position: absolute;
+      margin-left: -2rem;
+      margin-top: .3rem; }
+  .insuredClientView__container {
+    margin-top: 2rem;
+    overflow: auto; }
+    .insuredClientView__container table {
+      width: 100%;
+      min-width: 40rem; }
+      .insuredClientView__container table thead tr th {
+        font-weight: 500;
+        text-align: start; }
+      .insuredClientView__container table tbody tr:nth-child(1) {
+        padding-top: 2rem; }
+      .insuredClientView__container table tbody tr td:nth-last-child(1) {
+        text-align: right; }
+        .insuredClientView__container table tbody tr td:nth-last-child(1) Button {
+          color: black !important;
+          font-weight: 600 !important; }
+
+.insuredClientGroup {
+  margin: 1rem 5rem 0 380px; }
+  @media (max-width: 1150px) {
+    .insuredClientGroup {
+      margin: 1rem 1rem 0 316px; } }
+  @media (max-width: 1000px) {
+    .insuredClientGroup {
+      margin: 1rem; } }
+  .insuredClientGroup__back {
+    display: flex;
+    align-items: center;
+    color: #DD3333;
+    font-size: .9rem; }
+    .insuredClientGroup__back__icon {
+      font-size: 1rem !important; }
+  .insuredClientGroup__header {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    color: #DD3333;
+    font-size: 1.5rem;
+    text-transform: uppercase; }
+    .insuredClientGroup__header__icon {
+      font-size: 2rem !important;
+      color: #DD3333;
+      margin-right: .5rem; }
+  .insuredClientGroup__container {
+    margin-top: 1rem; }
+    .insuredClientGroup__container__cardsBox {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+      .insuredClientGroup__container__cardsBox__card {
+        background-color: #EDF4F4;
+        border-radius: 1.5rem; }
+
+.supportView {
+  margin: 2rem 5rem 0 380px; }
+  @media (max-width: 1150px) {
+    .supportView {
+      margin: 2rem 1rem 0 316px; } }
+  @media (max-width: 1000px) {
+    .supportView {
+      margin: 1rem; } }
+  .supportView__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    .supportView__header__iconBox {
+      display: flex;
+      align-items: center; }
+      .supportView__header__iconBox__icon {
+        color: #DD3333 !important;
+        font-size: 2rem !important; }
+      .supportView__header__iconBox p {
+        margin-left: .3rem;
+        text-transform: uppercase;
+        font-size: .8rem;
+        color: #DD3333;
+        font-size: 1.5rem; }
+  .supportView__details {
+    margin-top: 2rem;
+    overflow: auto; }
+    .supportView__details__table {
+      width: 100%;
+      min-width: 40rem; }
+      .supportView__details__table thead tr th {
+        font-weight: 500;
+        text-align: left; }
+      .supportView__details__table tbody tr td:nth-child(1) input {
+        border: 2px solid black;
+        outline: none !important; }
+      .supportView__details__table tbody tr td:nth-last-child(1) {
+        text-align: right; }
+        .supportView__details__table tbody tr td:nth-last-child(1) Button {
+          color: black !important;
+          font-weight: 600 !important; }
+
+.cavitasDocsView {
+  margin: 2rem 5rem 0 380px; }
+  @media (max-width: 1150px) {
+    .cavitasDocsView {
+      margin: 2rem 1rem 0 316px; } }
+  @media (max-width: 1000px) {
+    .cavitasDocsView {
+      margin: 1rem; } }
+  .cavitasDocsView__header {
+    display: flex;
+    align-items: center; }
+    .cavitasDocsView__header p {
+      font-size: 1.5rem;
+      color: #DD3333;
+      margin-left: .5rem; }
+    .cavitasDocsView__header__icon {
+      color: #DD3333;
+      font-size: 2rem !important; }
+  .cavitasDocsView__container {
+    margin-top: 2rem; }
+    .cavitasDocsView__container__cards {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap; }
+      .cavitasDocsView__container__cards__card {
+        width: 45%;
+        min-width: 300px;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 1.5rem;
+        background-color: #EDF4F4;
+        margin-bottom: 2rem;
+        margin-right: 1rem; }
+        @media (max-width: 700px) {
+          .cavitasDocsView__container__cards__card {
+            width: 100%;
+            margin-right: 0; } }
+        .cavitasDocsView__container__cards__card p {
+          font-weight: bolder;
+          font-size: .9rem; }
+        .cavitasDocsView__container__cards__card span {
+          font-size: .7rem;
+          margin-top: .5rem; }
+        .cavitasDocsView__container__cards__card__icons {
+          border-top: 1px solid lightgray;
+          margin-top: .5rem;
+          padding-top: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .cavitasDocsView__container__cards__card__icons__icon {
+            margin-right: 1rem; }

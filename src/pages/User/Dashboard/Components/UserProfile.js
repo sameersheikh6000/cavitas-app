@@ -1,8 +1,12 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import { USER_STORAGE_KEY } from '../../../../config/helpers/variables';
+import { useNavigate } from 'react-router-dom';
 
 const UserProfile = () => {
+  const navigate = useNavigate();
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   return (
     <section className='dashboard__container__content__userProfile'>
       <header className='dashboard__container__content__userProfile__header'>
@@ -10,7 +14,7 @@ const UserProfile = () => {
           < PersonOutlineOutlinedIcon lassName='dashboard__container__content__userProfile__header__iconBox__icon' />
           <p>User Profile</p>
         </div>
-        <Button size='small'>Update</Button>
+        <Button size='small' onClick={() => navigate("/profile/user/view")} >Update</Button>
       </header>
       <div className='dashboard__container__content__userProfile__details'>
         <div className='dashboard__container__content__userProfile__details__detailsBox'>
@@ -22,7 +26,7 @@ const UserProfile = () => {
           <p>Last Name: XXXX</p>
         </div>
         <div className='dashboard__container__content__userProfile__details__detailsBox'>
-          <p>Email Address: XXXX</p>
+          <p>Email Address: {user?.data?.email}</p>
           <p>Phone Number: XXXX</p>
         </div>
         <div className='dashboard__container__content__userProfile__details__detailsBox'>

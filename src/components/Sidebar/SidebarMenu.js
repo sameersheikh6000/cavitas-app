@@ -13,7 +13,7 @@ export default function SidebarMenu() {
       {(popupState) => (
         <React.Fragment>
           <IconButton {...bindTrigger(popupState)}>
-            <MenuIcon />
+            <MenuIcon style={{ color: "#DD3333" }} />
           </IconButton>
           <Menu {...bindMenu(popupState)}>
             <MenuItem onClick={popupState.close}>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import CavitasDocs from './Components/CavitasDocuments'
+import CavitasDocs from './Components/CavitasDocs'
 import InsuredClient from './Components/InsuredClient'
-import Support from './Components/Support'
-import UserProfile from './Components/UserProfile'
+import Support from './Components/Support';
 import Welcome from './Components/Welcome'
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage'
 import Page from '../../../components/Page/Page';
 import useClientInsurance from '../../../hooks/useClientInsurance'
+import UserProfile from './Components/UserProfile';
 const Dashboard = () => {
 
   const { getAllClientInsurance } = useClientInsurance();

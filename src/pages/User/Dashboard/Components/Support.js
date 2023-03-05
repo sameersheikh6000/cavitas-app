@@ -1,15 +1,17 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { useNavigate } from 'react-router-dom';
 const Support = () => {
+  const navigate = useNavigate();
   return (
     <section className='dashboard__container__content__support'>
       <header className='dashboard__container__content__support__header'>
         <div className='dashboard__container__content__support__header__iconBox'>
-          < EmailOutlinedIcon lassName='dashboard__container__content__support__header__iconBox__icon' />
+          < EmailOutlinedIcon className='dashboard__container__content__support__header__iconBox__icon' />
           <p>SUPPORT</p>
         </div>
-        <Button size='small'>View all</Button>
+        <Button size='small' onClick={() => navigate("/support/view")}>View all</Button>
       </header>
       <div className='dashboard__container__content__support__details'>
         <table className='dashboard__container__content__support__details__table'>

@@ -35,19 +35,19 @@ const Sidebar = () => {
           <HomeOutlinedIcon className='sidebar__linkButtons__link__icon' />
           <p>Dashboard</p>
         </Link>
-        <Link to="/dashboard" className='sidebar__linkButtons__link'>
+        <Link to="/insuredclient/view" className='sidebar__linkButtons__link'>
           <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
           <p>Insured clients</p>
         </Link>
-        <Link to="/dashboard" className='sidebar__linkButtons__link'>
+        <Link to="/cavitasdocs/view" className='sidebar__linkButtons__link'>
           <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
           <p>Cavitas Documents</p>
         </Link>
-        <Link to="/dashboard" className='sidebar__linkButtons__link'>
+        <Link to="/support/view" className='sidebar__linkButtons__link'>
           <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
           <p>Support</p>
         </Link>
-        <Link to="/dashboard" className='sidebar__linkButtons__link'>
+        <Link to="/profile/user/view" className='sidebar__linkButtons__link'>
           <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />
           <p>User profile</p>
         </Link>

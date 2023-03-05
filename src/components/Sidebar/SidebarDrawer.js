@@ -40,7 +40,7 @@ export default function SidebarDrawer() {
     <div>
       {['left',].map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton onClick={toggleDrawer(anchor, true)} style={{ color: "" }}><MenuIcon /></IconButton>
+          <IconButton onClick={toggleDrawer(anchor, true)} style={{ color: "white" }}><MenuIcon /></IconButton>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}

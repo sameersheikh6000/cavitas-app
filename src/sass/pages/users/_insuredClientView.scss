@@ -1,0 +1,161 @@
+.insuredClientView {
+  margin: 2rem 5rem 0 380px;
+
+  @media (max-width: 1150px) {
+    margin: 2rem 1rem 0 316px;
+  }
+
+  @media (max-width: 1000px) {
+    margin: 1rem;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 700px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__left {
+      display: flex;
+      align-items: center;
+
+      &__icon {
+        font-size: 2rem !important;
+        color: $BUTTON_RED;
+      }
+
+      p {
+        font-size: 1.5rem;
+        color: $BUTTON_RED;
+        margin-left: .5rem;
+      }
+    }
+
+    &__right {
+      @media (max-width: 700px) {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      input {
+        border-radius: 1.5rem;
+        outline: none;
+        border: 2px solid black;
+        padding: .3rem .5rem;
+        width: 200px;
+
+        @media (max-width: 700px) {
+          width: 100%;
+        }
+      }
+
+      input::placeholder {
+        font-weight: 500;
+      }
+
+      &__icon {
+        position: absolute;
+        margin-left: -2rem;
+        margin-top: .3rem;
+      }
+    }
+  }
+
+  &__container {
+    margin-top: 2rem;
+    overflow: auto;
+
+    table {
+      width: 100%;
+      min-width: 40rem;
+
+      thead {
+        tr {
+          th {
+            font-weight: 500;
+            text-align: start;
+          }
+        }
+      }
+
+      tbody {
+
+        tr {
+          &:nth-child(1) {
+            padding-top: 2rem;
+          }
+
+          td {
+            &:nth-last-child(1) {
+              text-align: right;
+
+              Button {
+                color: black !important;
+                font-weight: 600 !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.insuredClientGroup {
+  margin: 1rem 5rem 0 380px;
+
+  @media (max-width: 1150px) {
+    margin: 1rem 1rem 0 316px;
+  }
+
+  @media (max-width: 1000px) {
+    margin: 1rem;
+  }
+
+  &__back {
+    display: flex;
+    align-items: center;
+    color: $BUTTON_RED;
+    font-size: .9rem;
+
+    &__icon {
+      font-size: 1rem !important;
+    }
+  }
+
+  &__header {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    color: $BUTTON_RED;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+
+    &__icon {
+      font-size: 2rem !important;
+      color: $BUTTON_RED;
+      margin-right: .5rem;
+    }
+  }
+
+  &__container {
+    margin-top: 1rem;
+
+    &__cardsBox {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      &__card {
+        background-color: $INPUT_BG;
+        border-radius: 1.5rem;
+      }
+    }
+  }
+}

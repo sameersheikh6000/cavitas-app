@@ -1,7 +1,7 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useAuthenticate from '../../../hooks/useAuthenticate';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 const AdminSignIn = () => {
@@ -69,7 +69,7 @@ const AdminSignIn = () => {
               {viewPassword === true ?
                 <input
                   className='authentication__container__formContainer__form__passwordBox__password'
-                  type='password'
+                  type='text'
                   name='password'
                   placeholder='Password'
                   value={admin.password}
@@ -80,7 +80,7 @@ const AdminSignIn = () => {
                 :
                 <input
                   className='authentication__container__formContainer__form__passwordBox__password'
-                  type='text'
+                  type='password'
                   name='password'
                   placeholder='Password'
                   value={admin.password}

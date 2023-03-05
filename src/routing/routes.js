@@ -12,6 +12,10 @@ import LandingPage from "../pages/User/LandingPage";
 import AboutUs from "../pages/User/AboutUs";
 import FAQ from "../pages/User/FAQ";
 import Claims from "../pages/User/Claims";
+import userProfileView from "../pages/User/UserProfileView";
+import SupportView from "../pages/User/SupportView";
+import CavitasDocsView from "../pages/User/CavitasDocsView";
+import InsuredClientGroup from "../pages/User/InsuredClientView/InsuredClientGroup";
 
 export const routes = [
 
@@ -48,6 +52,11 @@ export const routes = [
     isPrivate: false,
   },
   {
+    path: "/insuredclient/group",
+    component: InsuredClientGroup,
+    isPrivate: false,
+  },
+  {
     path: "/about",
     component: AboutUs,
     isPrivate: false,
@@ -60,6 +69,21 @@ export const routes = [
   {
     path: "/claims",
     component: Claims,
+    isPrivate: false,
+  },
+  {
+    path: "/profile/user/view",
+    component: userProfileView,
+    isPrivate: false,
+  },
+  {
+    path: "/support/view",
+    component: SupportView,
+    isPrivate: false,
+  },
+  {
+    path: "/cavitasdocs/view",
+    component: CavitasDocsView,
     isPrivate: false,
   },
 
