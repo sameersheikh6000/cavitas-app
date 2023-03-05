@@ -1,6 +1,8 @@
 .footer {
   padding-top: 4rem;
-  background-color: $BUTTON_RED;
+  background-image: url('./assets/FooterBG_image.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 
   &__container {
     display: flex;

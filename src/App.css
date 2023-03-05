@@ -83,8 +83,7 @@ body {
   overflow-y: scroll !important; }
   @media (max-width: 1000px) {
     .navbar__sidebarLarge {
-      display: none !important;
-      border: 3px solid red; } }
+      display: none !important; } }
 
 .navbar__sidebarDrawers {
   display: none !important; }
@@ -102,12 +101,15 @@ body {
       font-weight: 600; }
 
 .appbar {
-  background-color: #F8EFEF !important;
+  background-color: unset !important;
   box-shadow: unset !important;
-  border-bottom: 1px solid lightgray !important;
   color: black !important;
   padding: 0 10%;
-  transition: padding .5s; }
+  transition: padding .5s;
+  background-image: url("./assets/NavbarBG-image.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 300px; }
   @media (max-width: 1250px) {
     .appbar {
       padding: 0; } }
@@ -166,7 +168,9 @@ body {
 
 .footer {
   padding-top: 4rem;
-  background-color: #DD3333; }
+  background-image: url("./assets/FooterBG_image.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%; }
   .footer__container {
     display: flex;
     flex-direction: column;
@@ -1126,10 +1130,7 @@ body {
         object-fit: cover; }
 
 .faq {
-  padding: 0 10%;
-  background-image: url("./assets//FAQBG-image.png");
-  background-repeat: no-repeat;
-  background-size: 100% 250px; }
+  padding: 0 10%; }
   @media (max-width: 1250px) {
     .faq {
       padding: 0; } }
@@ -1200,33 +1201,52 @@ body {
     .claims {
       padding: 0; } }
   .claims__container {
-    margin: 5rem 0; }
+    margin: 5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+    @media (max-width: 1000px) {
+      .claims__container {
+        display: flex;
+        flex-direction: column; } }
+    .claims__container__picture {
+      width: 35%; }
+      @media (max-width: 1000px) {
+        .claims__container__picture {
+          width: 100%; } }
+      .claims__container__picture img {
+        width: 100%;
+        object-fit: cover; }
     .claims__container__claimsPortal {
-      margin: 0 1rem;
+      margin: 0 1rem 2rem 1rem;
       padding: 2rem;
       box-shadow: 0 0.5rem 1.5rem #d3d3d3;
-      border-radius: 1.5rem;
-      background-color: white; }
+      border-radius: 1rem;
+      background-color: white;
+      width: 60%; }
+      @media (max-width: 1000px) {
+        .claims__container__claimsPortal {
+          width: 100%;
+          margin: 0 1rem 2rem 1rem; } }
       .claims__container__claimsPortal header {
-        padding-top: 1rem;
         text-align: center; }
         .claims__container__claimsPortal header h1 {
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: bolder;
           color: #DD3333; }
         .claims__container__claimsPortal header p {
           margin-top: 1rem;
-          font-size: .9rem; }
+          font-size: .8rem; }
       .claims__container__claimsPortal__loginBox {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 2rem; }
+        margin-top: 1rem; }
         .claims__container__claimsPortal__loginBox__details {
           display: flex;
           flex-direction: column;
-          width: 500px; }
+          width: 400px; }
           @media (max-width: 750px) {
             .claims__container__claimsPortal__loginBox__details {
               width: 100%; } }
@@ -1236,22 +1256,22 @@ body {
             text-transform: capitalize;
             font-size: .9rem; }
           .claims__container__claimsPortal__loginBox__details input {
-            margin-top: .7rem;
+            margin-top: .5rem;
             border-radius: 1.5rem;
             outline: none;
             background-color: #F8EFEF;
             border: 1px solid lightgray;
-            padding: .7rem 1rem; }
+            padding: .5rem 1rem; }
           .claims__container__claimsPortal__loginBox__details div {
             display: flex;
             justify-content: flex-end; }
             .claims__container__claimsPortal__loginBox__details div Button {
-              margin-top: .7rem;
+              margin-top: .5rem;
               color: white;
               background-color: #DD3333 !important;
               border-radius: 1.5rem;
               font-family: "poppins";
-              padding: .5rem 2rem; }
+              padding: .4rem 2rem; }
           .claims__container__claimsPortal__loginBox__details__links {
             width: 100%;
             display: flex;
@@ -1259,12 +1279,11 @@ body {
             justify-content: flex-start;
             align-items: flex-start;
             text-align: start;
-            margin-top: 2rem;
-            margin-bottom: 1rem; }
+            margin-top: 1rem; }
             .claims__container__claimsPortal__loginBox__details__links p {
               font-weight: 500;
               color: black;
-              font-size: .8rem; }
+              font-size: .7rem; }
               .claims__container__claimsPortal__loginBox__details__links p a {
                 text-decoration: unset;
                 font-weight: 600;

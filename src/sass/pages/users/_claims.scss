@@ -9,28 +9,55 @@
   }
 
   &__container {
-    margin: 5rem 0;
+    margin: 5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 1000px) {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__picture {
+      width: 35%;
+
+      @media (max-width: 1000px) {
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
 
     &__claimsPortal {
-      margin: 0 1rem;
+      margin: 0 1rem 2rem 1rem;
       padding: 2rem;
       box-shadow: $BOX_SHADOW;
-      border-radius: 1.5rem;
+      border-radius: 1rem;
       background-color: white;
+      width: 60%;
+
+      @media (max-width: 1000px) {
+        width: 100%;
+        margin: 0 1rem 2rem 1rem;
+
+      }
 
       header {
-        padding-top: 1rem;
         text-align: center;
 
         h1 {
-          font-size: 2rem;
+          font-size: 1.5rem;
           font-weight: bolder;
-          color: $BUTTON_RED
+          color: $BUTTON_RED;
         }
 
         p {
           margin-top: 1rem;
-          font-size: .9rem;
+          font-size: .8rem;
         }
       }
 
@@ -39,12 +66,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 2rem;
+        margin-top: 1rem;
 
         &__details {
           display: flex;
           flex-direction: column;
-          width: 500px;
+          width: 400px;
 
           @media (max-width: 750px) {
             width: 100%;
@@ -58,12 +85,12 @@
           }
 
           input {
-            margin-top: .7rem;
+            margin-top: .5rem;
             border-radius: 1.5rem;
             outline: none;
             background-color: $BG_PINK;
             border: 1px solid lightgray;
-            padding: .7rem 1rem;
+            padding: .5rem 1rem;
           }
 
           div {
@@ -71,12 +98,12 @@
             justify-content: flex-end;
 
             Button {
-              margin-top: .7rem;
+              margin-top: .5rem;
               color: white;
               background-color: $BUTTON_RED !important;
               border-radius: 1.5rem;
               font-family: "poppins";
-              padding: .5rem 2rem;
+              padding: .4rem 2rem;
             }
           }
 
@@ -87,13 +114,12 @@
             justify-content: flex-start;
             align-items: flex-start;
             text-align: start;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-top: 1rem;
 
             p {
               font-weight: 500;
               color: black;
-              font-size: .8rem;
+              font-size: .7rem;
 
               a {
                 text-decoration: unset;
