@@ -594,31 +594,41 @@ body {
             .dashboard__container__content__cavitasDocs__details__table tbody tr td:nth-child(1) {
               width: 250px; }
 
-.uploadForm {
-  margin-left: 300px;
-  padding-top: 10%;
-  transition: margin-left 0.5s; }
+.uploadClient {
+  margin: 2rem 5rem 0 380px; }
+  @media (max-width: 1150px) {
+    .uploadClient {
+      margin: 2rem 1rem 0 316px; } }
   @media (max-width: 1000px) {
-    .uploadForm {
-      margin-left: 0; } }
-  .uploadForm__container {
+    .uploadClient {
+      margin: 1rem; } }
+  .uploadClient header h1 {
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: #DD3333;
+    text-transform: uppercase; }
+  .uploadClient header p {
+    margin-top: 1rem;
+    font-weight: 600; }
+  .uploadClient__container {
+    margin-top: 4rem;
     display: flex;
     width: 100%; }
-    .uploadForm__container__content {
+    .uploadClient__container__content {
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center; }
-      .uploadForm__container__content p {
+      .uploadClient__container__content p {
         margin-bottom: 2rem;
         font-size: 1.2rem; }
-      .uploadForm__container__content__form {
+      .uploadClient__container__content__form {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center; }
-        .uploadForm__container__content__form input {
+        .uploadClient__container__content__form input {
           border-radius: 2rem;
           padding: .5rem .7rem;
           outline: none;
@@ -627,9 +637,9 @@ body {
           background-color: #EDF4F4;
           margin: .5rem 0; }
           @media (max-width: 475px) {
-            .uploadForm__container__content__form input {
+            .uploadClient__container__content__form input {
               width: 100%; } }
-      .uploadForm__container__content Button {
+      .uploadClient__container__content Button {
         background-color: #DD3333 !important;
         color: white !important;
         width: 120px !important;
@@ -639,7 +649,7 @@ body {
         font-weight: 400 !important;
         font-family: "poppins" !important; }
         @media (max-width: 475px) {
-          .uploadForm__container__content Button {
+          .uploadClient__container__content Button {
             margin-top: 1rem !important;
             width: 95% !important; } }
 

@@ -1,18 +1,20 @@
 import { Button } from '@mui/material'
 import React from 'react'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-const Support = () => {
+import { useNavigate } from 'react-router-dom';
+const AdminSupport = () => {
+  const navigate = useNavigate();
   return (
-    <section className='support'>
-      <header className='support__header'>
-        <div className='support__header__iconBox'>
-          < EmailOutlinedIcon lassName='support__header__iconBox__icon' />
+    <section className='dashboard__container__content__support'>
+      <header className='dashboard__container__content__support__header'>
+        <div className='dashboard__container__content__support__header__iconBox'>
+          < EmailOutlinedIcon className='dashboard__container__content__support__header__iconBox__icon' />
           <p>SUPPORT</p>
         </div>
-        <Button size='small'>View all</Button>
+        <Button size='small' onClick={() => navigate("/admin/support/view")}>View all</Button>
       </header>
-      <div className='support__details'>
-        <table className='support__details__table'>
+      <div className='dashboard__container__content__support__details'>
+        <table className='dashboard__container__content__support__details__table'>
           <thead>
             <tr>
               <th>Support ticket number</th>
@@ -69,4 +71,4 @@ const Support = () => {
   )
 }
 
-export default Support
+export default AdminSupport

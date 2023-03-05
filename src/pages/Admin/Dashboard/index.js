@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import CavitasDocs from './Components/CavitasDocuments'
-import InsuredClient from './Components/InsuredClient'
-import Support from './Components/Support'
-import UserProfile from './Components/UserProfile'
-import Welcome from './Components/Welcome'
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage'
 import Page from '../../../components/Page/Page'
 import useClientInsurance from '../../../hooks/useClientInsurance'
+import AdminWelcome from './Components/AdminWelcome'
+import AdminrProfile from './Components/AdminProfile'
+import AdminInsuredClient from './Components/AdminInsuredClient'
+import AdminSupport from './Components/AdminSupport'
+import AdminCavitasDocs from './Components/AdminCavitasDocs'
+import AdminFIleApproval from './Components/AdminFIleApproval'
 
 const AdminDashboard = () => {
 
@@ -34,11 +35,12 @@ const AdminDashboard = () => {
       <section className='dashboard'>
         <div className='dashboard__container'>
           <div className='dashboard__container__content'>
-            <Welcome />
-            <UserProfile />
-            <InsuredClient insuranceList={insuranceList} />
-            <Support />
-            <CavitasDocs />
+            <AdminWelcome />
+            <AdminrProfile />
+            <AdminFIleApproval insuranceList={insuranceList} />
+            <AdminInsuredClient insuranceList={insuranceList} />
+            <AdminSupport />
+            <AdminCavitasDocs />
           </div>
         </div>
       </section>

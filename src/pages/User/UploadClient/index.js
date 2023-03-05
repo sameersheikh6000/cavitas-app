@@ -5,11 +5,10 @@ import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import useClientInsurance from '../../../hooks/useClientInsurance';
 
-
-const AdminUploadForm = () => {
+const UploadClient = () => {
 
   const navigate = useNavigate();
-  const { createClientInsuranceAdmin } = useClientInsurance();
+  const { createClientInsurance } = useClientInsurance();
   const [errorMessage, setErrorMessage] = useState(null);
   const [insurance, setInsurance] = useState({
     subject: "",
@@ -29,23 +28,26 @@ const AdminUploadForm = () => {
     let data = {
       ...insurance,
     };
-    const response = await createClientInsuranceAdmin(data);
+    const response = await createClientInsurance(data);
     if (response.status < 300) {
-      navigate("admin/dashboard");
+      navigate("/dashboard");
     } else if (response.status > 300) {
       setErrorMessage(response.message);
     }
   }
 
-
   return (
     <Page>
       <AlertMessage errorMessage={errorMessage} />
-      <section className='uploadForm'>
-        <div className='uploadForm__container'>
-          <div className='uploadForm__container__content'>
+      <section className='uploadClient'>
+        <header>
+          <h1>Upload new clients</h1>
+          <p>Please upload the group census ass spreadsheet (.xls or .csv) here via form below and follow our communication with you via "Support tickets" on left side menu.</p>
+        </header>
+        <div className='uploadClient__container'>
+          <div className='uploadClient__container__content'>
             <p>Upload Clients</p>
-            <form className='uploadForm__container__content__form' onSubmit={handleSubmit}>
+            <form className='uploadClient__container__content__form' onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder='Subject'
@@ -77,4 +79,4 @@ const AdminUploadForm = () => {
   )
 }
 
-export default AdminUploadForm
+export default UploadClient

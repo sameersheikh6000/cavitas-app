@@ -9,14 +9,15 @@ import Sidebar from '../Sidebar/Sidebar'
 import SidebarDrawer from '../Sidebar/SidebarDrawer'
 import SidebarMenu from '../Sidebar/SidebarMenu';
 import { IconButton } from '@mui/material';
-import { USER_STORAGE_KEY } from '../../config/helpers/variables';
+import { ADMIN_STORAGE_KEY, USER_STORAGE_KEY } from '../../config/helpers/variables';
 
 function Navbar() {
 
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
   return (
     <>
-      {user?.data?.role ?
+      {(user?.data?.role || admin?.data?.role) ?
         <section className='navbar'>
           <div className='navbar__sidebarLarge' >
             <Sidebar />

@@ -8,10 +8,9 @@ import EmploySignIn from "../pages/User/EmployAuthentication/SignIn";
 import EmploySignUp from "../pages/User/EmployAuthentication/SignUp";
 import AdminDashboard from "../pages/Admin/Dashboard";
 import Dashboard from "../pages/User/Dashboard";
-import AdminInsuredClientView from "../pages/Admin/InsuredClientView";
 import InsuredClientView from "../pages/User/InsuredClientView";
-import AdminUploadForm from "../pages/Admin/UploadForm";
-import UploadForm from "../pages/User/UploadForm";
+import AdminUploadClient from "../pages/Admin/UploadClient";
+import UploadClient from "../pages/User/UploadClient";
 import BrokerLandingPage from "../pages/User/BrokerLandingPage";
 import EmployLandingPage from "../pages/User/EmployLandingPage";
 import MemberLandingPage from "../pages/User/MemberLandingPage";
@@ -22,6 +21,7 @@ import userProfileView from "../pages/User/UserProfileView";
 import SupportView from "../pages/User/SupportView";
 import CavitasDocsView from "../pages/User/CavitasDocsView";
 import InsuredClientGroup from "../pages/User/InsuredClientView/InsuredClientGroup";
+import AdminInsuredClientView from "../pages/Admin/InsuredClientView";
 
 export const routes = [
 
@@ -72,15 +72,15 @@ export const routes = [
     component: EmploySignUp,
     isPrivate: false,
   },
-  
+
   {
     path: "/dashboard",
     component: Dashboard,
     isPrivate: false,
   },
   {
-    path: "/uploadform",
-    component: UploadForm,
+    path: "/uploadclient",
+    component: UploadClient,
     isPrivate: false,
   },
   {
@@ -143,8 +143,8 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/admin/uploadform",
-    component: AdminUploadForm,
+    path: "/admin/uploadclient",
+    component: AdminUploadClient,
     isPrivate: false,
   },
   {
