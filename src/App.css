@@ -675,6 +675,8 @@ body {
         margin-top: 2rem;
         display: flex;
         flex-wrap: wrap; }
+        .landingPage__smartInsurance__container__details__buttons a {
+          text-decoration: none !important; }
         .landingPage__smartInsurance__container__details__buttons Button {
           margin-right: .5rem;
           color: black;
@@ -1479,14 +1481,90 @@ body {
       color: #DD3333;
       margin-right: .5rem; }
   .insuredClientGroup__container {
-    margin-top: 1rem; }
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
     .insuredClientGroup__container__cardsBox {
       display: flex;
       justify-content: space-between;
+      align-items: self-start;
       flex-wrap: wrap; }
+      @media (max-width: 700px) {
+        .insuredClientGroup__container__cardsBox {
+          display: flex;
+          flex-direction: column; } }
       .insuredClientGroup__container__cardsBox__card {
         background-color: #EDF4F4;
-        border-radius: 1.5rem; }
+        border-radius: 1.5rem;
+        padding: 1rem 1.5rem;
+        width: 45%;
+        min-width: 300px;
+        margin-bottom: 2rem;
+        margin-right: 1rem; }
+        @media (max-width: 700px) {
+          .insuredClientGroup__container__cardsBox__card {
+            width: 100%;
+            margin-right: 0; } }
+        .insuredClientGroup__container__cardsBox__card__top p {
+          font-weight: bolder;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: .3rem; }
+        .insuredClientGroup__container__cardsBox__card__detailsBox {
+          display: flex;
+          flex-direction: column;
+          font-size: .8rem;
+          margin-top: 1rem; }
+          .insuredClientGroup__container__cardsBox__card__detailsBox__data {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: .7rem; }
+            .insuredClientGroup__container__cardsBox__card__detailsBox__data__name {
+              width: 50%; }
+            .insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox {
+              display: flex;
+              align-items: center; }
+              .insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon {
+                margin-right: 1rem; }
+  .insuredClientGroup__container2 {
+    margin-top: 3rem; }
+    .insuredClientGroup__container2__insuredPerson__header {
+      display: flex;
+      justify-content: space-between; }
+      @media (max-width: 500px) {
+        .insuredClientGroup__container2__insuredPerson__header {
+          display: flex;
+          flex-direction: column; } }
+      .insuredClientGroup__container2__insuredPerson__header p {
+        font-weight: bolder; }
+      @media (max-width: 500px) {
+        .insuredClientGroup__container2__insuredPerson__header div {
+          margin-top: 1rem; } }
+      .insuredClientGroup__container2__insuredPerson__header div input {
+        border-radius: 1.5rem;
+        border: 2px solid black;
+        width: 200px;
+        outline: none;
+        padding: .3rem 1rem; }
+        @media (max-width: 500px) {
+          .insuredClientGroup__container2__insuredPerson__header div input {
+            width: 100%; } }
+      .insuredClientGroup__container2__insuredPerson__header__icon {
+        position: absolute;
+        margin-left: -2rem;
+        margin-top: .3rem; }
+    .insuredClientGroup__container2__insuredPerson__tableBox {
+      margin-top: 1rem;
+      overflow: auto; }
+      .insuredClientGroup__container2__insuredPerson__tableBox table {
+        width: 100%;
+        min-width: 40rem;
+        border-collapse: collapse; }
+        .insuredClientGroup__container2__insuredPerson__tableBox table thead tr th {
+          font-size: .8rem;
+          font-weight: 500;
+          border: 1px solid black; }
+        .insuredClientGroup__container2__insuredPerson__tableBox table tbody tr td {
+          font-size: .8rem;
+          border: 1px solid black; }
 
 .supportView {
   margin: 2rem 5rem 0 380px; }

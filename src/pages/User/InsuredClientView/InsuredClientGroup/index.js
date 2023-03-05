@@ -3,6 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import Page from '../../../../components/Page/Page';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
+import PolicyInfo from '../Components/PolicyInfo';
+import Coverage from '../Components/Coverage';
+import Payment from '../Components/Payment';
+import Commission from '../Components/Commission';
+import PolicyDocuments from '../Components/PolicyDocuments';
+import InsuredPerson from '../Components/InsuredPerson';
 
 const InsuredClientGroup = () => {
   const navigate = useNavigate();
@@ -20,39 +26,14 @@ const InsuredClientGroup = () => {
         </header>
         <div className='insuredClientGroup__container'>
           <div className='insuredClientGroup__container__cardsBox'>
-            <div className='insuredClientGroup__container__cardsBox__card'>
-              <div className='insuredClientGroup__container__cardsBox__card__top'>
-                Policy info
-              </div>
-              <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
-                <div className='insuredClientGroup__container__cardsBox__card__detailsBox__left'>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                  <p>Name</p>
-                </div>
-                <div className='insuredClientGroup__container__cardsBox__card__detailsBox__right'>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                  <p>Interloop</p>
-                </div>
-              </div>
-            </div>
+            <PolicyInfo />
+            <Coverage />
+            <Payment />
+            <Commission />
+            <PolicyDocuments />
+          </div>
+          <div className='insuredClientGroup__container2'>
+            <InsuredPerson />
           </div>
         </div>
       </section>

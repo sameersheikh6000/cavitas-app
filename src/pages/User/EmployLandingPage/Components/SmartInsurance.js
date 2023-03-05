@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const SmartInsurance = () => {
   return (
@@ -12,9 +13,9 @@ const SmartInsurance = () => {
             Healthy teeth are foundation of healthy employees. We mediate dental insurance contracts as emplyee benefit provided by their employer to employees.
           </p>
           <div className='landingPage__smartInsurance__container__details__buttons'>
-            <Button variant='outlined'>I'm employer</Button>
-            <Button variant='outlined'>I'm member</Button>
-            <Button variant='outlined'>I'm broker</Button>
+            <Link to="/employ-signin" ><Button variant='outlined'>I'm employer</Button></Link>
+            {/* <Button variant='outlined'>I'm member</Button>
+            <Button variant='outlined'>I'm broker</Button> */}
           </div>
         </div>
         <div className='landingPage__smartInsurance__container__picture'>

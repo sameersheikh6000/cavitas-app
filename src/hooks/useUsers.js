@@ -27,20 +27,30 @@ const useUsers = () => {
     }
   };
 
-  const createUser = async user => {
+  const createUser = async (user, type) => {
+    if(type === "member"){
+      var role = 1
+    }
+    else if(type === "broker"){
+      var role = 2
+    }
+    else if (type === "employ"){
+      var role = 3
+    }
     
     const params = {
       user: {
-        // first_name: user.first_name,
-        // last_name: user.last_name,
+        first_name: user.first_name,
+        last_name: user.last_name,
         email: user.email,
-        // company_name: user.company_name,
-        // company_number: user.company_number,
-        // company_address: user.company_address,
-        // company_city: user.company_city,
-        // company_postal_code: user.company_postal_code,
-        // company_country: user.company_country,
+        company_name: user.company_name,
+        company_krs_number: user.company_number,
+        company_address: user.company_address,
+        company_city: user.company_city,
+        company_postal_code: user.company_postal_code,
+        company_country: user.company_country,
         password: user.password,
+        role: role,
         password_confirmation: user.password_confirmation,
       }
     }
