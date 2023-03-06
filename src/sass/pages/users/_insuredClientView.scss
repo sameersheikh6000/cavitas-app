@@ -151,25 +151,40 @@
     &__cardsBox {
       display: flex;
       justify-content: space-between;
-      align-items: self-start;
-      flex-wrap: wrap;
+      align-items: flex-start;
 
       @media (max-width: 700px) {
         display: flex;
         flex-direction: column;
       }
 
+      &__left {
+        width: 47%;
+
+        @media (max-width: 700px) {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+
+      &__right {
+        width: 47%;
+
+        @media (max-width: 700px) {
+          width: 100%;
+          margin-right: 0;
+        }
+      }
+
       &__card {
         background-color: $INPUT_BG;
         border-radius: 1.5rem;
         padding: 1rem 1.5rem;
-        width: 45%;
         min-width: 300px;
         margin-bottom: 2rem;
         margin-right: 1rem;
 
         @media (max-width: 700px) {
-          width: 100%;
           margin-right: 0;
         }
 
@@ -267,6 +282,7 @@
                 font-size: .8rem;
                 font-weight: 500;
                 border: 1px solid black;
+                padding: .1rem;
               }
             }
           }
@@ -276,6 +292,7 @@
               td {
                 font-size: .8rem;
                 border: 1px solid black;
+                padding: .1rem;
               }
             }
           }

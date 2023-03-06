@@ -26,11 +26,15 @@ const InsuredClientGroup = () => {
         </header>
         <div className='insuredClientGroup__container'>
           <div className='insuredClientGroup__container__cardsBox'>
-            <PolicyInfo />
-            <Coverage />
-            <Payment />
-            <Commission />
-            <PolicyDocuments />
+            <div className='insuredClientGroup__container__cardsBox__left'>
+              <PolicyInfo />
+              <PolicyDocuments />
+            </div>
+            <div className='insuredClientGroup__container__cardsBox__right'>
+              <Coverage />
+              <Payment />
+              <Commission />
+            </div>
           </div>
           <div className='insuredClientGroup__container2'>
             <InsuredPerson />

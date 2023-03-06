@@ -1516,23 +1516,32 @@ body {
     .insuredClientGroup__container__cardsBox {
       display: flex;
       justify-content: space-between;
-      align-items: self-start;
-      flex-wrap: wrap; }
+      align-items: flex-start; }
       @media (max-width: 700px) {
         .insuredClientGroup__container__cardsBox {
           display: flex;
           flex-direction: column; } }
+      .insuredClientGroup__container__cardsBox__left {
+        width: 47%; }
+        @media (max-width: 700px) {
+          .insuredClientGroup__container__cardsBox__left {
+            width: 100%;
+            margin-right: 0; } }
+      .insuredClientGroup__container__cardsBox__right {
+        width: 47%; }
+        @media (max-width: 700px) {
+          .insuredClientGroup__container__cardsBox__right {
+            width: 100%;
+            margin-right: 0; } }
       .insuredClientGroup__container__cardsBox__card {
         background-color: #EDF4F4;
         border-radius: 1.5rem;
         padding: 1rem 1.5rem;
-        width: 45%;
         min-width: 300px;
         margin-bottom: 2rem;
         margin-right: 1rem; }
         @media (max-width: 700px) {
           .insuredClientGroup__container__cardsBox__card {
-            width: 100%;
             margin-right: 0; } }
         .insuredClientGroup__container__cardsBox__card__top p {
           font-weight: bolder;
@@ -1591,10 +1600,12 @@ body {
         .insuredClientGroup__container2__insuredPerson__tableBox table thead tr th {
           font-size: .8rem;
           font-weight: 500;
-          border: 1px solid black; }
+          border: 1px solid black;
+          padding: .1rem; }
         .insuredClientGroup__container2__insuredPerson__tableBox table tbody tr td {
           font-size: .8rem;
-          border: 1px solid black; }
+          border: 1px solid black;
+          padding: .1rem; }
 
 .supportView {
   margin: 2rem 5rem 0 380px; }
