@@ -18,7 +18,7 @@ export default function SidebarMenu() {
           <IconButton {...bindTrigger(popupState)}>
             <MenuIcon style={{ color: "#DD3333" }} />
           </IconButton>
-          {user.data.role ?
+          {user?.data?.role ?
             <Menu {...bindMenu(popupState)}>
               <MenuItem onClick={popupState.close}>
                 <Link className='appbar__menuLink' to="/about">About us</Link>
