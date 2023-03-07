@@ -18,12 +18,16 @@
       font-weight: bolder;
       color: $BUTTON_RED;
       text-transform: capitalize;
+
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+      }
     }
   }
 
   &__tabs {
     padding: 4rem 1rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     overflow-x: auto;
 
     &__tabsLabel {

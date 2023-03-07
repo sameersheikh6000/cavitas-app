@@ -113,6 +113,11 @@ body {
   @media (max-width: 1250px) {
     .appbar {
       padding: 0; } }
+  @media (max-width: 768px) {
+    .appbar {
+      background-image: unset;
+      background-color: #F8EFEF !important;
+      height: 350px; } }
   .appbar__imageBox__image {
     width: 150px;
     object-fit: cover;
@@ -171,6 +176,10 @@ body {
   background-image: url("./assets/FooterBG_image.png");
   background-repeat: no-repeat;
   background-size: 100% 100%; }
+  @media (max-width: 1000px) {
+    .footer {
+      background-image: unset;
+      background-color: #DD3333 !important; } }
   .footer__container {
     display: flex;
     flex-direction: column;
@@ -215,16 +224,39 @@ body {
     display: flex;
     width: 100%; }
     .authentication__container__imageBox {
+      display: flex;
+      flex-direction: column;
       width: 30%;
-      min-width: 280px; }
+      min-width: 280px;
+      height: 100%;
+      min-height: 100vh;
+      background-color: #CADEDD; }
       @media (max-width: 750px) {
         .authentication__container__imageBox {
           display: none; } }
-      .authentication__container__imageBox img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        min-height: 100vh; }
+      .authentication__container__imageBox__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1rem 2rem; }
+        .authentication__container__imageBox__top__logo {
+          width: 40%;
+          object-fit: cover; }
+        .authentication__container__imageBox__top__flag {
+          object-fit: cover;
+          width: 50px;
+          height: 32px;
+          margin-top: 1rem; }
+      .authentication__container__imageBox__bottom {
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .authentication__container__imageBox__bottom img {
+          object-fit: contain;
+          width: 100%; }
     .authentication__container__formContainer {
       width: 70%;
       display: flex;
@@ -680,10 +712,16 @@ body {
         .landingPage__smartInsurance__container__details__heading {
           font-size: 2.5rem;
           font-weight: 600; }
+          @media (max-width: 768px) {
+            .landingPage__smartInsurance__container__details__heading {
+              font-size: 1.5rem; } }
         .landingPage__smartInsurance__container__details__heading2 {
           font-size: 2.5rem;
           font-weight: bolder;
           color: #DD3333; }
+          @media (max-width: 768px) {
+            .landingPage__smartInsurance__container__details__heading2 {
+              font-size: 1.5rem; } }
         .landingPage__smartInsurance__container__details__desc {
           margin-top: .5rem;
           font-weight: 500; }
@@ -858,6 +896,9 @@ body {
         .landingPage__howItwork__container__details__heading {
           font-size: 2.5rem;
           font-weight: 600; }
+          @media (max-width: 768px) {
+            .landingPage__howItwork__container__details__heading {
+              font-size: 1.5rem; } }
         .landingPage__howItwork__container__details__desc {
           margin-top: .5rem;
           font-weight: 500;
@@ -911,6 +952,9 @@ body {
           font-size: 2.5rem;
           font-weight: 600;
           color: white; }
+          @media (max-width: 768px) {
+            .landingPage__allCare__container__details__heading {
+              font-size: 1.5rem; } }
         .landingPage__allCare__container__details__desc {
           margin-top: .5rem;
           font-weight: 500;
@@ -946,6 +990,111 @@ body {
           width: 100%;
           height: 100%;
           object-fit: cover; }
+  .landingPage__clientDeserve {
+    padding: 4rem 1rem;
+    margin: 0 10%; }
+    @media (max-width: 1250px) {
+      .landingPage__clientDeserve {
+        margin: 0%; } }
+    .landingPage__clientDeserve__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .landingPage__clientDeserve__container p {
+        font-size: 3rem;
+        font-weight: 500;
+        text-transform: capitalize; }
+        @media (max-width: 768px) {
+          .landingPage__clientDeserve__container p {
+            font-size: 2rem; } }
+      .landingPage__clientDeserve__container h1 {
+        font-size: 4rem;
+        font-weight: bolder;
+        text-transform: capitalize;
+        color: #DD3333; }
+        @media (max-width: 768px) {
+          .landingPage__clientDeserve__container h1 {
+            font-size: 3rem; } }
+      .landingPage__clientDeserve__container Button {
+        background-color: #DD3333 !important;
+        border-radius: 3rem !important;
+        color: white !important;
+        padding: .9rem 3rem;
+        margin-top: 1rem;
+        font-size: 1rem; }
+        .landingPage__clientDeserve__container Button:hover {
+          background-color: unset !important;
+          border: 2px solid #DD3333 !important;
+          color: #DD3333 !important; }
+  .landingPage__conversation {
+    margin: 4rem 10%;
+    box-shadow: 0 0.5rem 1.5rem #d3d3d3;
+    padding: 2rem;
+    border-radius: 2rem; }
+    @media (max-width: 1250px) {
+      .landingPage__conversation {
+        margin: 4rem 1rem; } }
+    .landingPage__conversation__container h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-top: 0; }
+      @media (max-width: 768px) {
+        .landingPage__conversation__container h1 {
+          font-size: 1.5rem; } }
+    .landingPage__conversation__container p {
+      color: #DD3333;
+      margin-top: 1rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+      max-width: 500px;
+      width: 100%; }
+  .landingPage__benefitPlan {
+    padding: 4rem 1rem;
+    margin: 0 10%; }
+    @media (max-width: 1250px) {
+      .landingPage__benefitPlan {
+        margin: 0%; } }
+    .landingPage__benefitPlan__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      align-items: center; }
+      @media (max-width: 1000px) {
+        .landingPage__benefitPlan__container {
+          display: flex;
+          flex-direction: column; } }
+      .landingPage__benefitPlan__container__details {
+        display: flex;
+        flex-direction: column;
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .landingPage__benefitPlan__container__details {
+            width: 100%; } }
+        .landingPage__benefitPlan__container__details h1 {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-bottom: 1rem; }
+        .landingPage__benefitPlan__container__details div {
+          margin-top: 1rem;
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: .5rem; }
+          .landingPage__benefitPlan__container__details div p {
+            margin-left: .5rem;
+            margin-top: -.1rem; }
+      .landingPage__benefitPlan__container__picture {
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .landingPage__benefitPlan__container__picture {
+            width: 100%;
+            margin-bottom: 2rem; } }
+        .landingPage__benefitPlan__container__picture img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
 
 .aboutUs {
   padding: 0 10%;
@@ -972,6 +1121,9 @@ body {
         font-size: 2.5rem;
         font-weight: bolder;
         color: #DD3333; }
+        @media (max-width: 768px) {
+          .aboutUs__cavitasMeaning__detailsBox h1 {
+            font-size: 1.5rem; } }
     .aboutUs__cavitasMeaning__pictureBox {
       width: 35%; }
       @media (max-width: 1000px) {
@@ -1064,6 +1216,9 @@ body {
         .aboutUs__ourStory__container__detailsBox h1 {
           font-size: 2rem;
           font-weight: 600; }
+          @media (max-width: 768px) {
+            .aboutUs__ourStory__container__detailsBox h1 {
+              font-size: 1.5rem; } }
         .aboutUs__ourStory__container__detailsBox__desc {
           color: #DD3333;
           font-weight: 500;
@@ -1081,6 +1236,9 @@ body {
       .aboutUs__privacyPolicy header h1 {
         font-size: 2rem;
         font-weight: 600; }
+        @media (max-width: 768px) {
+          .aboutUs__privacyPolicy header h1 {
+            font-size: 1.5rem; } }
     .aboutUs__privacyPolicy__container {
       margin-top: 2rem;
       display: flex;
@@ -1114,6 +1272,9 @@ body {
         font-size: 2rem;
         color: #DD3333;
         font-weight: 600; }
+        @media (max-width: 768px) {
+          .aboutUs__smarterDentalInsurance header h1 {
+            font-size: 1.5rem; } }
       .aboutUs__smarterDentalInsurance header p {
         margin-top: .5rem;
         width: 60%;
@@ -1152,9 +1313,12 @@ body {
       font-weight: bolder;
       color: #DD3333;
       text-transform: capitalize; }
+      @media (max-width: 768px) {
+        .faq header h1 {
+          font-size: 1.5rem; } }
   .faq__tabs {
     padding: 4rem 1rem;
-    margin-top: 5rem;
+    margin-top: 2rem;
     overflow-x: auto; }
     .faq__tabs__tabsLabel {
       font-weight: bold !important;

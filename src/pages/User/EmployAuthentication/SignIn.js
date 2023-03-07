@@ -50,7 +50,14 @@ const EmploySignIn = () => {
       <div className='authentication__container'>
 
         <div className='authentication__container__imageBox'>
-          <img src={require("../../../assets/SignIn-img.png")} alt='' />
+          <div className='authentication__container__imageBox__top'>
+            <img className='authentication__container__imageBox__top__logo' src={require("../../../assets/Signin-logo.png")} alt='' />
+            <img className='authentication__container__imageBox__top__flag' src={require("../../../assets/Signin-flag.png")} alt='' />
+          </div>
+
+          <div className='authentication__container__imageBox__bottom'>
+            <img className='authentication__container__imageBox__bottom' src={require("../../../assets/EmployeeLogin-image.png")} alt='' />
+          </div>
         </div>
 
         <div className='authentication__container__formContainer'>

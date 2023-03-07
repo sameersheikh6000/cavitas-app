@@ -4,6 +4,11 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
 
+  @media (max-width: 1000px) {
+    background-image: unset;
+    background-color: $BUTTON_RED !important;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;

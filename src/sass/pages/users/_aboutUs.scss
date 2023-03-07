@@ -29,6 +29,10 @@
         font-size: 2.5rem;
         font-weight: bolder;
         color: $BUTTON_RED;
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -162,6 +166,10 @@
         h1 {
           font-size: 2rem;
           font-weight: 600;
+
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
+          }
         }
 
         &__desc {
@@ -192,6 +200,10 @@
       h1 {
         font-size: 2rem;
         font-weight: 600;
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
       }
     }
 
@@ -239,6 +251,10 @@
         font-size: 2rem;
         color: $BUTTON_RED;
         font-weight: 600;
+
+        @media (max-width: 768px) {
+          font-size: 1.5rem;
+        }
       }
 
       p {

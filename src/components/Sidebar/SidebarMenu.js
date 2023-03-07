@@ -18,7 +18,6 @@ export default function SidebarMenu() {
           <IconButton {...bindTrigger(popupState)}>
             <MenuIcon style={{ color: "#DD3333" }} />
           </IconButton>
-          {user?.data?.role ?
             <Menu {...bindMenu(popupState)}>
               <MenuItem onClick={popupState.close}>
                 <Link className='appbar__menuLink' to="/about">About us</Link>
@@ -30,31 +29,15 @@ export default function SidebarMenu() {
                 <Link className='appbar__menuLink' to="/claims">Claims</Link>
               </MenuItem>
               <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/signin">Member login</Link>
+                <Link className='appbar__menuLink' to="/member">Member login</Link>
               </MenuItem>
               <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/signin">Employer login</Link>
+                <Link className='appbar__menuLink' to="/employ">Employer login</Link>
               </MenuItem>
               <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/signin">Broker login</Link>
+                <Link className='appbar__menuLink' to="/">Broker login</Link>
               </MenuItem>
             </Menu>
-            :
-            <Menu {...bindMenu(popupState)}>
-              <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/admin/about">About us</Link>
-              </MenuItem>
-              <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/admin/faq">FAQ</Link>
-              </MenuItem>
-              <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/admin/claims">Claims</Link>
-              </MenuItem>
-              <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/admin/signin">Member login</Link>
-              </MenuItem>
-            </Menu>
-          }
         </React.Fragment>
       )}
     </PopupState>

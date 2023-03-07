@@ -8,18 +8,49 @@
     width: 100%;
 
     &__imageBox {
+      display: flex;
+      flex-direction: column;
       width: 30%;
       min-width: 280px;
+      height: 100%;
+      min-height: 100vh;
+      background-color: $BUTTON_GREEN_LIGHT;
 
       @media (max-width: 750px) {
         display: none;
       }
 
-      img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        min-height: 100vh;
+      &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 1rem 2rem;
+
+        &__logo {
+          width: 40%;
+          object-fit: cover;
+        }
+
+        &__flag {
+          object-fit: cover;
+          width: 50px;
+          height: 32px;
+          margin-top: 1rem;
+        }
+      }
+
+      &__bottom {
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          object-fit: contain;
+          width: 100%;
+        }
       }
     }
 
