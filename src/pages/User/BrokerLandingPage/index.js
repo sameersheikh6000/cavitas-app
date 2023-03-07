@@ -4,10 +4,11 @@ import AllCare from './Components/AllCare';
 import BenefitPlan from './Components/BenefitPlan';
 import ClientDeserve from './Components/ClientDeserve';
 import Conversation from './Components/Conversation';
-import HowItWork from './Components/HowItWork';
-import OurOffer from './Components/OurOffer';
+import CoverWorks from './Components/CoverWorks';
+// import HowItWork from './Components/HowItWork';
+// import OurOffer from './Components/OurOffer';
 // import SmartInsurance from './Components/SmartInsurance';
-import ValuableReadings from './Components/ValuableReadings';
+// import ValuableReadings from './Components/ValuableReadings';
 const BrokerLandingPage = () => {
   return (
     <Page>
@@ -15,6 +16,7 @@ const BrokerLandingPage = () => {
         {/* <SmartInsurance /> */}
         <ClientDeserve />
         <BenefitPlan />
+        <CoverWorks />
         {/* <OurOffer /> */}
         {/* <HowItWork /> */}
         <AllCare />

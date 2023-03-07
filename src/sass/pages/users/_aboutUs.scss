@@ -30,7 +30,7 @@
         font-weight: bolder;
         color: $BUTTON_RED;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           font-size: 1.5rem;
         }
       }
@@ -201,7 +201,7 @@
         font-size: 2rem;
         font-weight: 600;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           font-size: 1.5rem;
         }
       }
@@ -252,7 +252,7 @@
         color: $BUTTON_RED;
         font-weight: 600;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           font-size: 1.5rem;
         }
       }

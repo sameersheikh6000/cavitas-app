@@ -5,11 +5,11 @@ const BenefitPlan = () => {
     <section className='landingPage__benefitPlan'>
       <div className='landingPage__benefitPlan__container'>
         <div className='landingPage__benefitPlan__container__picture'>
-          <img src={require("../../../../assets/BenefitPlan-image.png")} alt="" />
+          <img src={require("../../../../assets/EmployeeBenefit-image.png")} alt="" />
         </div>
 
         <div className='landingPage__benefitPlan__container__details'>
-          <p className='landingPage__benefitPlan__container__details__head'>Give teeth care related employee benefit plan for your client groups what they have been waiting for</p>
+          <p className='landingPage__benefitPlan__container__details__head'>Give teeth care related employee benefit plan for your employees what they have been waiting for</p >
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>Additional value-added offers for employees andrew recruiters.</p>

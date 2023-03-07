@@ -14,6 +14,11 @@ html {
 
 body {
   box-sizing: border-box; }
+  body Button {
+    font-family: "poppins" !important; }
+  @media (max-width: 768px) {
+    body h1 {
+      font-size: 1.8rem !important; } }
 
 .sidebar {
   background-color: #5C8894;
@@ -830,10 +835,11 @@ body {
       text-align: center; }
       .landingPage__valuableReadings__header h1 {
         font-weight: 600;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         text-transform: capitalize; }
       .landingPage__valuableReadings__header p {
-        font-size: .9rem;
+        font-size: 1.2rem;
+        font-weight: 500;
         color: #DD3333; }
     .landingPage__valuableReadings__container {
       margin-top: 3rem; }
@@ -859,18 +865,18 @@ body {
             margin-left: 1rem;
             font-weight: 600;
             color: #DD3333;
-            font-size: .9rem;
+            font-size: 1rem;
             margin-bottom: .5rem; }
           .landingPage__valuableReadings__container__cardsBox__card__date {
             margin-left: 1rem;
             font-weight: 600;
             color: gray;
-            font-size: .8rem; }
+            font-size: .9rem; }
           .landingPage__valuableReadings__container__cardsBox__card__desc {
             margin-top: .5rem;
             margin-left: 1rem;
             font-weight: 600;
-            font-size: .8rem; }
+            font-size: .9rem; }
   .landingPage__howItwork {
     padding: 4rem 1rem;
     margin: 0 10%; }
@@ -964,22 +970,24 @@ body {
           margin: 1rem 0 0 .5rem; }
           .landingPage__allCare__container__details__detailsContainer__box {
             display: flex;
-            align-items: center; }
+            align-items: center;
+            margin-bottom: 1rem; }
             .landingPage__allCare__container__details__detailsContainer__box__icon {
               color: white;
               font-size: 1rem !important; }
             .landingPage__allCare__container__details__detailsContainer__box__text {
               margin-left: .3rem;
-              font-size: .8rem;
+              font-size: .9rem;
               color: white; }
         .landingPage__allCare__container__details__imageContainer {
           margin-top: 2rem;
           display: flex;
-          flex-direction: column; }
+          flex-wrap: wrap; }
           .landingPage__allCare__container__details__imageContainer img {
             object-fit: cover;
             width: 220px;
-            margin-bottom: 1rem; }
+            margin-bottom: 1rem;
+            margin-right: .5rem; }
       .landingPage__allCare__container__picture {
         width: 45%; }
         @media (max-width: 1000px) {
@@ -1003,20 +1011,20 @@ body {
       align-items: center;
       text-align: center; }
       .landingPage__clientDeserve__container p {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 500;
         text-transform: capitalize; }
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           .landingPage__clientDeserve__container p {
             font-size: 2rem; } }
       .landingPage__clientDeserve__container h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: bolder;
         text-transform: capitalize;
         color: #DD3333; }
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           .landingPage__clientDeserve__container h1 {
-            font-size: 3rem; } }
+            font-size: 2.5rem; } }
       .landingPage__clientDeserve__container Button {
         background-color: #DD3333 !important;
         border-radius: 3rem !important;
@@ -1040,7 +1048,7 @@ body {
       font-size: 2rem;
       font-weight: 600;
       margin-top: 0; }
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         .landingPage__conversation__container h1 {
           font-size: 1.5rem; } }
     .landingPage__conversation__container p {
@@ -1073,7 +1081,7 @@ body {
         @media (max-width: 1000px) {
           .landingPage__benefitPlan__container__details {
             width: 100%; } }
-        .landingPage__benefitPlan__container__details h1 {
+        .landingPage__benefitPlan__container__details__head {
           font-size: 1.2rem;
           font-weight: 600;
           margin-bottom: 1rem; }
@@ -1095,6 +1103,266 @@ body {
           width: 100%;
           height: 100%;
           object-fit: cover; }
+  .landingPage__coverWorks {
+    padding: 4rem 1rem;
+    margin: 0 10%; }
+    @media (max-width: 1250px) {
+      .landingPage__coverWorks {
+        margin: 0%; } }
+    .landingPage__coverWorks header {
+      text-align: center; }
+      .landingPage__coverWorks header h1 {
+        font-size: 2rem;
+        font-weight: 600; }
+        @media (max-width: 1000px) {
+          .landingPage__coverWorks header h1 {
+            font-size: 1.5rem; } }
+      .landingPage__coverWorks header p {
+        margin-top: 1rem;
+        color: #DD3333;
+        font-weight: 600;
+        font-size: 1.2rem; }
+    .landingPage__coverWorks__container {
+      margin-top: 1rem; }
+      .landingPage__coverWorks__container__cards {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-wrap: wrap; }
+        .landingPage__coverWorks__container__cards__card {
+          margin-bottom: 2rem;
+          margin-right: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: 350px;
+          min-width: 300px;
+          border: 1px solid lightgray;
+          border-radius: 1.5rem; }
+          @media (max-width: 768px) {
+            .landingPage__coverWorks__container__cards__card {
+              margin-right: 0; } }
+          .landingPage__coverWorks__container__cards__card__top {
+            background-color: #5C8894;
+            color: white;
+            width: 100%;
+            border-radius: 1.5rem 1.5rem 0 0;
+            margin-bottom: 1rem; }
+            .landingPage__coverWorks__container__cards__card__top h1 {
+              font-size: 2rem;
+              font-weight: 600;
+              padding: 1rem 0; }
+              @media (max-width: 1000px) {
+                .landingPage__coverWorks__container__cards__card__top h1 {
+                  font-size: 1.5rem; } }
+          .landingPage__coverWorks__container__cards__card p {
+            padding: 1rem;
+            border-bottom: 1px solid lightgray;
+            width: 320px;
+            font-weight: 500; }
+            @media (max-width: 768px) {
+              .landingPage__coverWorks__container__cards__card p {
+                width: 100%; } }
+          .landingPage__coverWorks__container__cards__card p:nth-last-of-type(1) {
+            border-bottom: unset; }
+          .landingPage__coverWorks__container__cards__card__bottom {
+            background-color: #F8EFEF;
+            color: white;
+            width: 100%;
+            border-radius: 0 0 1.5rem 1.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            margin-bottom: 0rem; }
+            .landingPage__coverWorks__container__cards__card__bottom span {
+              color: gray;
+              font-weight: 500; }
+  .landingPage__dentaltInsurance {
+    padding: 4rem 1rem;
+    margin: 0 10%; }
+    @media (max-width: 1250px) {
+      .landingPage__dentaltInsurance {
+        margin: 0%; } }
+    .landingPage__dentaltInsurance__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center; }
+      @media (max-width: 1000px) {
+        .landingPage__dentaltInsurance__container {
+          display: flex;
+          flex-direction: column; } }
+      .landingPage__dentaltInsurance__container__details {
+        display: flex;
+        flex-direction: column;
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .landingPage__dentaltInsurance__container__details {
+            width: 100%; } }
+        .landingPage__dentaltInsurance__container__details__heading {
+          font-size: 3rem;
+          font-weight: bolder;
+          color: #DD3333; }
+          @media (max-width: 768px) {
+            .landingPage__dentaltInsurance__container__details__heading {
+              font-size: 1.5rem; } }
+        .landingPage__dentaltInsurance__container__details__desc {
+          margin-top: .5rem;
+          font-weight: 500;
+          font-size: 1.2rem; }
+        .landingPage__dentaltInsurance__container__details__buttons {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap; }
+          .landingPage__dentaltInsurance__container__details__buttons a {
+            text-decoration: none !important; }
+          .landingPage__dentaltInsurance__container__details__buttons Button {
+            margin-right: .5rem;
+            color: white;
+            border-radius: 2rem !important;
+            margin-bottom: 1rem;
+            background-color: #DD3333 !important;
+            border: none !important;
+            padding: .9rem 2.5rem; }
+            .landingPage__dentaltInsurance__container__details__buttons Button:hover {
+              background: white !important;
+              border: 2px solid #DD3333 !important;
+              color: #DD3333 !important; }
+      .landingPage__dentaltInsurance__container__picture {
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .landingPage__dentaltInsurance__container__picture {
+            width: 100%;
+            margin-top: 2rem; } }
+        .landingPage__dentaltInsurance__container__picture img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+  .landingPage__coverageQuestions {
+    margin: 4rem 10%;
+    box-shadow: 0 0.5rem 1.5rem #d3d3d3;
+    padding: 4rem 2rem;
+    border-radius: 2rem; }
+    @media (max-width: 1250px) {
+      .landingPage__coverageQuestions {
+        margin: 4rem 1rem; } }
+    .landingPage__coverageQuestions__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; }
+      .landingPage__coverageQuestions__container h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-top: 0;
+        text-align: center; }
+        @media (max-width: 1000px) {
+          .landingPage__coverageQuestions__container h1 {
+            font-size: 1.5rem; } }
+      .landingPage__coverageQuestions__container Button {
+        margin-top: 1rem;
+        margin-right: .5rem;
+        color: white;
+        border-radius: 2rem !important;
+        margin-bottom: 1rem;
+        background-color: #DD3333 !important;
+        border: none !important;
+        padding: .9rem 2.5rem;
+        font-family: "poppins";
+        text-transform: capitalize !important; }
+        .landingPage__coverageQuestions__container Button:hover {
+          background: white !important;
+          border: 2px solid #DD3333 !important;
+          color: #DD3333 !important; }
+  .landingPage__becomeMember {
+    padding: 4rem 1rem;
+    margin: 0 10%; }
+    @media (max-width: 1250px) {
+      .landingPage__becomeMember {
+        margin: 0%; } }
+    .landingPage__becomeMember__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center; }
+      @media (max-width: 1000px) {
+        .landingPage__becomeMember__container {
+          display: flex;
+          flex-direction: column; } }
+      .landingPage__becomeMember__container__details {
+        display: flex;
+        flex-direction: column;
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .landingPage__becomeMember__container__details {
+            width: 100%; } }
+        .landingPage__becomeMember__container__details__heading {
+          font-size: 3rem;
+          font-weight: 600; }
+          @media (max-width: 768px) {
+            .landingPage__becomeMember__container__details__heading {
+              font-size: 1.5rem; } }
+        .landingPage__becomeMember__container__details__desc {
+          margin-top: 2rem;
+          font-weight: 500;
+          font-size: 1.2rem; }
+        .landingPage__becomeMember__container__details Button {
+          margin-top: 2rem;
+          margin-right: .5rem;
+          color: white;
+          border-radius: 2rem !important;
+          margin-bottom: 1rem;
+          background-color: #DD3333 !important;
+          border: none !important;
+          padding: .9rem 2.5rem;
+          width: unset !important;
+          text-transform: capitalize !important; }
+          .landingPage__becomeMember__container__details Button:hover {
+            background: white !important;
+            border: 2px solid #DD3333 !important;
+            color: #DD3333 !important; }
+      .landingPage__becomeMember__container__picture {
+        width: 45%; }
+        @media (max-width: 1000px) {
+          .landingPage__becomeMember__container__picture {
+            width: 100%;
+            margin-bottom: 2rem; } }
+        .landingPage__becomeMember__container__picture img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; }
+  .landingPage__healthyTeeth {
+    padding: 4rem 1rem;
+    margin: 0 10%; }
+    @media (max-width: 1250px) {
+      .landingPage__healthyTeeth {
+        margin: 0%; } }
+    .landingPage__healthyTeeth__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center; }
+      .landingPage__healthyTeeth__container h1 {
+        font-size: 3rem;
+        font-weight: bolder;
+        text-transform: capitalize;
+        font-weight: 600; }
+        @media (max-width: 1000px) {
+          .landingPage__healthyTeeth__container h1 {
+            font-size: 2.5rem; } }
+      .landingPage__healthyTeeth__container Button {
+        background-color: #DD3333 !important;
+        border-radius: 3rem !important;
+        color: white !important;
+        padding: .9rem 3rem;
+        margin-top: 2rem;
+        font-size: 1rem; }
+        .landingPage__healthyTeeth__container Button:hover {
+          background-color: unset !important;
+          border: 2px solid #DD3333 !important;
+          color: #DD3333 !important; }
 
 .aboutUs {
   padding: 0 10%;
@@ -1121,7 +1389,7 @@ body {
         font-size: 2.5rem;
         font-weight: bolder;
         color: #DD3333; }
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           .aboutUs__cavitasMeaning__detailsBox h1 {
             font-size: 1.5rem; } }
     .aboutUs__cavitasMeaning__pictureBox {
@@ -1236,7 +1504,7 @@ body {
       .aboutUs__privacyPolicy header h1 {
         font-size: 2rem;
         font-weight: 600; }
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           .aboutUs__privacyPolicy header h1 {
             font-size: 1.5rem; } }
     .aboutUs__privacyPolicy__container {
@@ -1272,7 +1540,7 @@ body {
         font-size: 2rem;
         color: #DD3333;
         font-weight: 600; }
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           .aboutUs__smarterDentalInsurance header h1 {
             font-size: 1.5rem; } }
       .aboutUs__smarterDentalInsurance header p {
@@ -1313,7 +1581,7 @@ body {
       font-weight: bolder;
       color: #DD3333;
       text-transform: capitalize; }
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
         .faq header h1 {
           font-size: 1.5rem; } }
   .faq__tabs {
@@ -1406,18 +1674,18 @@ body {
       .claims__container__claimsPortal header {
         text-align: center; }
         .claims__container__claimsPortal header h1 {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
           font-weight: bolder;
           color: #DD3333; }
         .claims__container__claimsPortal header p {
           margin-top: 1rem;
-          font-size: .8rem; }
+          font-size: .9rem; }
       .claims__container__claimsPortal__loginBox {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem; }
+        margin-top: 2rem; }
         .claims__container__claimsPortal__loginBox__details {
           display: flex;
           flex-direction: column;
@@ -1431,7 +1699,7 @@ body {
             text-transform: capitalize;
             font-size: .9rem; }
           .claims__container__claimsPortal__loginBox__details input {
-            margin-top: .5rem;
+            margin-top: .7rem;
             border-radius: 1.5rem;
             outline: none;
             background-color: #F8EFEF;
@@ -1441,7 +1709,7 @@ body {
             display: flex;
             justify-content: flex-end; }
             .claims__container__claimsPortal__loginBox__details div Button {
-              margin-top: .5rem;
+              margin-top: 1rem;
               color: white;
               background-color: #DD3333 !important;
               border-radius: 1.5rem;
@@ -1458,7 +1726,7 @@ body {
             .claims__container__claimsPortal__loginBox__details__links p {
               font-weight: 500;
               color: black;
-              font-size: .7rem; }
+              font-size: .9rem; }
               .claims__container__claimsPortal__loginBox__details__links p a {
                 text-decoration: unset;
                 font-weight: 600;

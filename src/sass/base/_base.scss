@@ -8,6 +8,7 @@ html {
   padding: 0;
   margin: 0;
   box-sizing: inherit;
+
   &:not(i) {
     font-family: "Poppins", sans-serif;
   }
@@ -15,4 +16,14 @@ html {
 
 body {
   box-sizing: border-box;
+
+  Button {
+    font-family: "poppins" !important;
+  }
+
+  h1 {
+    @media (max-width: 768px) {
+      font-size: 1.8rem !important;
+    }
+  }
 }

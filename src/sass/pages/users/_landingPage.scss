@@ -202,12 +202,13 @@
 
       h1 {
         font-weight: 600;
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         text-transform: capitalize;
       }
 
       p {
-        font-size: .9rem;
+        font-size: 1.2rem;
+        font-weight: 500;
         color: $BUTTON_RED;
       }
     }
@@ -243,7 +244,7 @@
             margin-left: 1rem;
             font-weight: 600;
             color: $BUTTON_RED;
-            font-size: .9rem;
+            font-size: 1rem;
             margin-bottom: .5rem;
           }
 
@@ -251,14 +252,14 @@
             margin-left: 1rem;
             font-weight: 600;
             color: gray;
-            font-size: .8rem;
+            font-size: .9rem;
           }
 
           &__desc {
             margin-top: .5rem;
             margin-left: 1rem;
             font-weight: 600;
-            font-size: .8rem;
+            font-size: .9rem;
           }
         }
       }
@@ -398,6 +399,7 @@
           &__box {
             display: flex;
             align-items: center;
+            margin-bottom: 1rem;
 
             &__icon {
               color: white;
@@ -406,7 +408,7 @@
 
             &__text {
               margin-left: .3rem;
-              font-size: .8rem;
+              font-size: .9rem;
               color: white;
             }
           }
@@ -415,12 +417,14 @@
         &__imageContainer {
           margin-top: 2rem;
           display: flex;
-          flex-direction: column;
+          flex-wrap: wrap;
+          // flex-direction: column;
 
           img {
             object-fit: cover;
             width: 220px;
             margin-bottom: 1rem;
+            margin-right: .5rem;
           }
         }
       }
@@ -458,23 +462,23 @@
       text-align: center;
 
       p {
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 500;
         text-transform: capitalize;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           font-size: 2rem;
         }
       }
 
       h1 {
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: bolder;
         text-transform: capitalize;
         color: $BUTTON_RED;
 
-        @media (max-width: 768px) {
-          font-size: 3rem;
+        @media (max-width: 1000px) {
+          font-size: 2.5rem;
         }
       }
 
@@ -511,7 +515,7 @@
         font-weight: 600;
         margin-top: 0;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1000px) {
           font-size: 1.5rem;
         }
       }
@@ -556,7 +560,7 @@
           width: 100%;
         }
 
-        h1 {
+        &__head {
           font-size: 1.2rem;
           font-weight: 600;
           margin-bottom: 1rem;
@@ -588,6 +592,378 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__coverWorks {
+    padding: 4rem 1rem;
+    margin: 0 10%;
+
+    @media (max-width: 1250px) {
+      margin: 0%;
+    }
+
+    header {
+      text-align: center;
+
+      h1 {
+        font-size: 2rem;
+        font-weight: 600;
+
+        @media (max-width: 1000px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      p {
+        margin-top: 1rem;
+        color: $BUTTON_RED;
+        font-weight: 600;
+        font-size: 1.2rem;
+      }
+    }
+
+    &__container {
+      margin-top: 1rem;
+
+      &__cards {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        &__card {
+          margin-bottom: 2rem;
+          margin-right: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          width: 350px;
+          min-width: 300px;
+          border: 1px solid lightgray;
+          border-radius: 1.5rem;
+
+          @media (max-width: 768px) {
+            margin-right: 0;
+          }
+
+          &__top {
+            background-color: $BUTTON_GREEN;
+            color: white;
+            width: 100%;
+            border-radius: 1.5rem 1.5rem 0 0;
+            margin-bottom: 1rem;
+
+            h1 {
+              font-size: 2rem;
+              font-weight: 600;
+              padding: 1rem 0;
+
+              @media (max-width: 1000px) {
+                font-size: 1.5rem;
+              }
+            }
+          }
+
+          p {
+            padding: 1rem;
+            border-bottom: 1px solid lightgray;
+            width: 320px;
+            font-weight: 500;
+
+            @media (max-width: 768px) {
+              width: 100%;
+            }
+          }
+
+          p:nth-last-of-type(1) {
+            border-bottom: unset;
+          }
+
+
+          &__bottom {
+            background-color: $BG_PINK;
+            color: white;
+            width: 100%;
+            border-radius: 0 0 1.5rem 1.5rem;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            margin-bottom: 0rem;
+
+            span {
+              color: gray;
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__dentaltInsurance {
+    padding: 4rem 1rem;
+    margin: 0 10%;
+
+    @media (max-width: 1250px) {
+      margin: 0%;
+    }
+
+    &__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__details {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+
+        @media (max-width: 1000px) {
+          width: 100%;
+        }
+
+
+        &__heading {
+          font-size: 3rem;
+          font-weight: bolder;
+          color: $BUTTON_RED;
+
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        &__desc {
+          margin-top: .5rem;
+          font-weight: 500;
+          font-size: 1.2rem;
+        }
+
+        &__buttons {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+
+          a {
+            text-decoration: none !important;
+          }
+
+          Button {
+            margin-right: .5rem;
+            color: white;
+            border-radius: 2rem !important;
+            margin-bottom: 1rem;
+            background-color: $BUTTON_RED !important;
+            border: none !important;
+            padding: .9rem 2.5rem;
+
+            &:hover {
+              background: white !important;
+              border: 2px solid $BUTTON_RED !important;
+              color: $BUTTON_RED !important;
+            }
+          }
+        }
+      }
+
+      &__picture {
+        width: 45%;
+
+        @media (max-width: 1000px) {
+          width: 100%;
+          margin-top: 2rem;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__coverageQuestions {
+    margin: 4rem 10%;
+    box-shadow: $BOX_SHADOW;
+    padding: 4rem 2rem;
+    border-radius: 2rem;
+
+    @media (max-width: 1250px) {
+      margin: 4rem 1rem;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-top: 0;
+        text-align: center;
+
+        @media (max-width: 1000px) {
+          font-size: 1.5rem;
+        }
+      }
+
+      Button {
+        margin-top: 1rem;
+        margin-right: .5rem;
+        color: white;
+        border-radius: 2rem !important;
+        margin-bottom: 1rem;
+        background-color: $BUTTON_RED !important;
+        border: none !important;
+        padding: .9rem 2.5rem;
+        font-family: "poppins";
+        text-transform: capitalize !important;
+
+        &:hover {
+          background: white !important;
+          border: 2px solid $BUTTON_RED !important;
+          color: $BUTTON_RED !important;
+        }
+      }
+    }
+  }
+
+  &__becomeMember {
+    padding: 4rem 1rem;
+    margin: 0 10%;
+
+    @media (max-width: 1250px) {
+      margin: 0%;
+    }
+
+    &__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      align-items: center;
+
+      @media (max-width: 1000px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &__details {
+        display: flex;
+        flex-direction: column;
+        width: 45%;
+
+        @media (max-width: 1000px) {
+          width: 100%;
+        }
+
+
+        &__heading {
+          font-size: 3rem;
+          font-weight: 600;
+
+          @media (max-width: 768px) {
+            font-size: 1.5rem;
+          }
+        }
+
+        &__desc {
+          margin-top: 2rem;
+          font-weight: 500;
+          font-size: 1.2rem;
+        }
+
+
+        Button {
+          margin-top: 2rem;
+          margin-right: .5rem;
+          color: white;
+          border-radius: 2rem !important;
+          margin-bottom: 1rem;
+          background-color: $BUTTON_RED !important;
+          border: none !important;
+          padding: .9rem 2.5rem;
+          width: unset !important;
+          text-transform: capitalize !important;
+
+          &:hover {
+            background: white !important;
+            border: 2px solid $BUTTON_RED !important;
+            color: $BUTTON_RED !important;
+          }
+        }
+      }
+
+      &__picture {
+        width: 45%;
+
+        @media (max-width: 1000px) {
+          width: 100%;
+          // margin-top: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+
+  &__healthyTeeth {
+    padding: 4rem 1rem;
+    margin: 0 10%;
+
+    @media (max-width: 1250px) {
+      margin: 0%;
+    }
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+
+      h1 {
+        font-size: 3rem;
+        font-weight: bolder;
+        text-transform: capitalize;
+        // color: $BUTTON_RED;
+        font-weight: 600;
+
+        @media (max-width: 1000px) {
+          font-size: 2.5rem;
+        }
+      }
+
+      Button {
+        background-color: $BUTTON_RED !important;
+        border-radius: 3rem !important;
+        color: white !important;
+        padding: .9rem 3rem;
+        margin-top: 2rem;
+        font-size: 1rem;
+
+        &:hover {
+          background-color: unset !important;
+          border: 2px solid $BUTTON_RED !important;
+          color: $BUTTON_RED !important;
         }
       }
     }

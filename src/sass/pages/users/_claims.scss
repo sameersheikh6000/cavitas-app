@@ -51,14 +51,14 @@
         text-align: center;
 
         h1 {
-          font-size: 1.5rem;
+          font-size: 1.8rem;
           font-weight: bolder;
           color: $BUTTON_RED;
         }
 
         p {
           margin-top: 1rem;
-          font-size: .8rem;
+          font-size: .9rem;
         }
       }
 
@@ -67,7 +67,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem;
+        margin-top: 2rem;
 
         &__details {
           display: flex;
@@ -86,7 +86,7 @@
           }
 
           input {
-            margin-top: .5rem;
+            margin-top: .7rem;
             border-radius: 1.5rem;
             outline: none;
             background-color: $BG_PINK;
@@ -99,7 +99,7 @@
             justify-content: flex-end;
 
             Button {
-              margin-top: .5rem;
+              margin-top: 1rem;
               color: white;
               background-color: $BUTTON_RED !important;
               border-radius: 1.5rem;
@@ -120,7 +120,7 @@
             p {
               font-weight: 500;
               color: black;
-              font-size: .7rem;
+              font-size: .9rem;
 
               a {
                 text-decoration: unset;
