@@ -715,13 +715,13 @@ body {
           .landingPage__smartInsurance__container__details {
             width: 100%; } }
         .landingPage__smartInsurance__container__details__heading {
-          font-size: 2.5rem;
+          font-size: 3rem;
           font-weight: 600; }
           @media (max-width: 768px) {
             .landingPage__smartInsurance__container__details__heading {
               font-size: 1.5rem; } }
         .landingPage__smartInsurance__container__details__heading2 {
-          font-size: 2.5rem;
+          font-size: 3rem;
           font-weight: bolder;
           color: #DD3333; }
           @media (max-width: 768px) {
@@ -1123,7 +1123,7 @@ body {
         font-weight: 600;
         font-size: 1.2rem; }
     .landingPage__coverWorks__container {
-      margin-top: 1rem; }
+      margin-top: 2rem; }
       .landingPage__coverWorks__container__cards {
         display: flex;
         align-items: flex-start;
@@ -1136,7 +1136,7 @@ body {
           flex-direction: column;
           align-items: center;
           text-align: center;
-          width: 350px;
+          width: 320px;
           min-width: 300px;
           border: 1px solid lightgray;
           border-radius: 1.5rem; }
@@ -1159,7 +1159,7 @@ body {
           .landingPage__coverWorks__container__cards__card p {
             padding: 1rem;
             border-bottom: 1px solid lightgray;
-            width: 320px;
+            width: 300px;
             font-weight: 500; }
             @media (max-width: 768px) {
               .landingPage__coverWorks__container__cards__card p {

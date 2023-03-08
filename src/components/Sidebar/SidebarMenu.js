@@ -35,7 +35,7 @@ export default function SidebarMenu() {
                 <Link className='appbar__menuLink' to="/employ">Employer login</Link>
               </MenuItem>
               <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/">Broker login</Link>
+                <Link className='appbar__menuLink' to="/broker">Broker login</Link>
               </MenuItem>
             </Menu>
         </React.Fragment>

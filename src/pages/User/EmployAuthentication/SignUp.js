@@ -12,10 +12,12 @@ const EmploySignUp = () => {
     first_name: "",
     last_name: "",
     email: "",
+    phone: "",
     company_name: "",
-    company_number: "",
-    company_address: "",
+    krs_number: "",
+    url_address: "",
     role: "Employ",
+    broker_mandate: "Employ",
     password: "",
     password_confirmation: "",
   });
@@ -87,11 +89,19 @@ const EmploySignUp = () => {
                 onChange={changeHandler}
                 required={true}
               />
+              <input
+                type="text"
+                placeholder='Phone number *'
+                name='phone'
+                value={user.phone}
+                onChange={changeHandler}
+                required={true}
+              />
             </div>
             <div>
               <input
                 type="text"
-                placeholder='Broker company name'
+                placeholder='Company name'
                 name='company_name'
                 value={user.company_name}
                 onChange={changeHandler}
@@ -99,36 +109,36 @@ const EmploySignUp = () => {
               />
               <input
                 type="text"
-                placeholder='Broker company number'
-                name='company_number'
-                value={user.company_number}
+                placeholder='Company KRS number'
+                name='krs_number'
+                value={user.krs_number}
                 onChange={changeHandler}
                 required={true}
               />
               <input
                 type="text"
-                placeholder='Broker company address'
-                name='company_address'
-                value={user.company_address}
-                onChange={changeHandler}
-                required={true}
-              />
-              <input
-                type="text"
-                placeholder='Broker company city'
-                name='company_city'
-                value={user.role}
+                placeholder='Company URL address'
+                name='url_address'
+                value={user.url_address}
                 onChange={changeHandler}
                 required={true}
                 disabled={true}
               />
               <input
                 type="text"
-                placeholder='Broker company postal code'
-                name='company_postal_code'
-                value={user.company_postal_code}
+                placeholder='Role in company'
+                name='role'
+                value={user.role}
                 onChange={changeHandler}
                 required={true}
+              />
+              <input
+                type="text"
+                placeholder='Mandated Broker (if exist)'
+                name='broker_mandate'
+                value={user.broker_mandate}
+                onChange={changeHandler}
+              // required={true}
               />
             </div>
             <div>

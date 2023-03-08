@@ -22,6 +22,7 @@ import SupportView from "../pages/User/SupportView";
 import CavitasDocsView from "../pages/User/CavitasDocsView";
 import InsuredClientGroup from "../pages/User/InsuredClientView/InsuredClientGroup";
 import AdminInsuredClientView from "../pages/Admin/InsuredClientView";
+import LandingPage from "../pages/User/LandingPage";
 
 export const routes = [
 
@@ -29,6 +30,11 @@ export const routes = [
 
   {
     path: "/",
+    component: LandingPage,
+    isPrivate: false,
+  },
+  {
+    path: "/broker",
     component: BrokerLandingPage,
     isPrivate: false,
   },
