@@ -77,7 +77,7 @@ const MemberSignIn = () => {
               {viewPassword === true ?
                 <input
                   className='authentication__container__formContainer__form__passwordBox__password'
-                  type='password'
+                  type='text'
                   name='password'
                   placeholder='Password'
                   value={user.password}
@@ -88,7 +88,7 @@ const MemberSignIn = () => {
                 :
                 <input
                   className='authentication__container__formContainer__form__passwordBox__password'
-                  type='text'
+                  type='password'
                   name='password'
                   placeholder='Password'
                   value={user.password}

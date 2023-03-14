@@ -7,8 +7,10 @@ import AlertMessage from '../../../components/SnackbarMessages/AlertMessage'
 import Page from '../../../components/Page/Page';
 import useClientInsurance from '../../../hooks/useClientInsurance'
 import UserProfile from './Components/UserProfile';
+import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
+import GroupPolicyInfo from './Components/GroupPolicyInfo';
 const Dashboard = () => {
-
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY))
   const { getAllClientInsurance } = useClientInsurance();
   const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -35,9 +37,18 @@ const Dashboard = () => {
           <div className='dashboard__container__content'>
             <Welcome />
             <UserProfile />
-            <InsuredClient insuranceList={insuranceList} />
+            {user?.data?.role === "broker" &&
+              <InsuredClient insuranceList={insuranceList} />
+            }
+            {user?.data?.role === "broker" ?
+              <></>
+              :
+              <GroupPolicyInfo user={user} />
+            }
             <Support />
-            <CavitasDocs />
+            {user?.data?.role === "broker" &&
+              <CavitasDocs />
+            }
           </div>
         </div>
       </section>

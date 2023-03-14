@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Commission = () => {
+const Commission = ({ user }) => {
   return (
     <div className='insuredClientGroup__container__cardsBox__card'>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
@@ -11,10 +11,12 @@ const Commission = () => {
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Treatmnent type:</p>
           <p>Annual sum insured</p>
         </div>
-        <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Commission:</p>
-          <p>38,690 EUR</p>
-        </div>
+        {user?.data?.role === "broker" &&
+          <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
+            <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Commission:</p>
+            <p>38,690 EUR</p>
+          </div>
+        }
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
         <p style={{ border: "none" }}>REGULAR DENTAL TREATMENT 4500 PLN</p>

@@ -61,10 +61,10 @@ body {
       .sidebar__linkButtons__link p {
         margin-left: 1rem;
         color: white;
-        font-size: .9rem; }
+        font-size: .8rem; }
       .sidebar__linkButtons__link__icon {
         color: white;
-        font-size: 2rem !important; }
+        font-size: 1.8rem !important; }
     .sidebar__linkButtons a:hover p,
     .sidebar__linkButtons a:focus p,
     .sidebar__linkButtons :active p {
@@ -126,7 +126,7 @@ body {
     .appbar {
       background-image: unset;
       background-color: #F8EFEF !important;
-      height: 350px; } }
+      height: 250px; } }
   .appbar__imageBox__image {
     width: 150px;
     object-fit: cover;
@@ -531,6 +531,56 @@ body {
                 color: black;
                 font-size: .8rem;
                 font-family: "poppins"; }
+      .dashboard__container__content__groupPolicyInfo {
+        background-color: #EDF4F4;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        width: 47%;
+        padding-bottom: 0;
+        height: 220px;
+        overflow: auto;
+        transition: width 0.5s; }
+        @media (max-width: 1450px) {
+          .dashboard__container__content__groupPolicyInfo {
+            width: 46%; } }
+        @media (max-width: 1170px) {
+          .dashboard__container__content__groupPolicyInfo {
+            width: 45%; } }
+        @media (max-width: 1150px) {
+          .dashboard__container__content__groupPolicyInfo {
+            width: 100%; } }
+        .dashboard__container__content__groupPolicyInfo__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: .3rem; }
+          .dashboard__container__content__groupPolicyInfo__header__iconBox {
+            display: flex;
+            align-items: center; }
+            .dashboard__container__content__groupPolicyInfo__header__iconBox p {
+              margin-left: .3rem;
+              text-transform: uppercase;
+              font-size: .8rem; }
+          .dashboard__container__content__groupPolicyInfo__header Button {
+            color: #DD3333;
+            font-weight: 700 !important;
+            font-size: .8rem !important;
+            font-family: "poppins"; }
+        .dashboard__container__content__groupPolicyInfo__details {
+          margin-top: .5rem;
+          display: flex;
+          flex-direction: column;
+          font-size: .8rem;
+          overflow: auto; }
+          .dashboard__container__content__groupPolicyInfo__details__table {
+            min-width: 30rem; }
+            .dashboard__container__content__groupPolicyInfo__details__table thead tr th {
+              font-weight: normal;
+              text-align: left; }
+            .dashboard__container__content__groupPolicyInfo__details__table tbody tr td {
+              padding-top: .5rem; }
       .dashboard__container__content__support {
         background-color: #EDF4F4;
         margin: 1rem;

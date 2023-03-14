@@ -209,6 +209,85 @@
         }
       }
 
+      &__groupPolicyInfo {
+        background-color: $INPUT_BG;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        width: 47%;
+        padding-bottom: 0;
+        height: 220px;
+        overflow: auto;
+        transition: width 0.5s;
+
+        @media (max-width: 1450px) {
+          width: 46%;
+        }
+
+        @media (max-width: 1170px) {
+          width: 45%;
+        }
+
+        @media (max-width: 1150px) {
+          width: 100%;
+        }
+
+        &__header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid lightgray;
+          padding-bottom: .3rem;
+
+          &__iconBox {
+            display: flex;
+            align-items: center;
+
+            p {
+              margin-left: .3rem;
+              text-transform: uppercase;
+              font-size: .8rem;
+            }
+          }
+
+          Button {
+            color: $BUTTON_RED;
+            font-weight: 700 !important;
+            font-size: .8rem !important;
+            font-family: "poppins";
+          }
+        }
+
+        &__details {
+          margin-top: .5rem;
+          display: flex;
+          flex-direction: column;
+          font-size: .8rem;
+          overflow: auto;
+
+          &__table {
+            min-width: 30rem;
+
+            thead {
+              tr {
+                th {
+                  font-weight: normal;
+                  text-align: left;
+                }
+              }
+            }
+
+            tbody {
+              tr {
+                td {
+                  padding-top: .5rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
       &__support {
         background-color: $INPUT_BG;
         margin: 1rem;

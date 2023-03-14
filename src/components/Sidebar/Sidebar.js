@@ -9,6 +9,7 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import { Button } from '@mui/material';
 import useAuthenticate from '../../hooks/useAuthenticate';
 import { USER_STORAGE_KEY } from '../../config/helpers/variables';
+import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 
 const Sidebar = () => {
   const navigate = useNavigate();
@@ -36,24 +37,44 @@ const Sidebar = () => {
             <HomeOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>Dashboard</p>
           </Link>
-          <Link to="/insuredclient/view" className='sidebar__linkButtons__link'>
-            <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Insured clients</p>
-          </Link>
-          <Link to="/cavitasdocs/view" className='sidebar__linkButtons__link'>
-            <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Cavitas Documents</p>
-          </Link>
+          {user?.data?.role === "broker" ?
+            <></>
+            :
+            <Link to="/insuredclient/group" className='sidebar__linkButtons__link'>
+              <GppGoodOutlinedIcon className='sidebar__linkButtons__link__icon' />
+              <p>Policy information</p>
+            </Link>
+          }
+          {user?.data?.role === "broker" &&
+            <>
+              <Link to="/insuredclient/view" className='sidebar__linkButtons__link'>
+                <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
+                <p>Insured clients</p>
+              </Link>
+              <Link to="/cavitasdocs/view" className='sidebar__linkButtons__link'>
+                <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
+                <p>Cavitas Documents</p>
+              </Link>
+            </>
+          }
           <Link to="/support/view" className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Support Tickets</p>
+            <p>Support tickets</p>
           </Link>
           <Link to="/profile/user/view" className='sidebar__linkButtons__link'>
             <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>User profile</p>
           </Link>
           <div className='sidebar__linkButtons__buttons'>
-            <Button onClick={() => navigate("/uploadclient")}>Upload new clients</Button>
+            {user?.data?.role === "broker" &&
+              <Button onClick={() => navigate("/uploadclient")}>Upload new clients</Button>
+            }
+            {user?.data?.role === "employ" &&
+              <Button onClick={() => navigate("/uploadclient")}>Upload new insured persons</Button>
+            }
+            {user?.data?.role === "member" &&
+              <Button onClick={() => navigate("/dashboard")}>Submit a claim</Button>
+            }
             {/* <Button>Get a Quote</Button> */}
           </div>
         </div>

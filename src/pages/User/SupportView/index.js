@@ -12,7 +12,7 @@ const SupportView = () => {
         <header className='supportView__header'>
           <div className='supportView__header__iconBox'>
             < EmailOutlinedIcon className='supportView__header__iconBox__icon' />
-            <p>SUPPORT</p>
+            <p>SUPPORT TICKETS</p>
           </div>
         </header>
         <div className='supportView__details'>

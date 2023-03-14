@@ -1,94 +1,11 @@
-// import { Button } from '@mui/material'
-// import React, { useState } from 'react'
-// import { useNavigate } from 'react-router-dom';
-// import Page from '../../../components/Page/Page';
-// import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
-// import useClientInsurance from '../../../hooks/useClientInsurance';
-
-// const UploadClient = () => {
-
-//   const navigate = useNavigate();
-//   const { createClientInsurance } = useClientInsurance();
-//   const [errorMessage, setErrorMessage] = useState(null);
-//   const [insurance, setInsurance] = useState({
-//     subject: "",
-//     description: "",
-//     file: "",
-//   });
-
-//   const handleChange = e => {
-//     const { name, value } = e.target;
-//     setInsurance({
-//       ...insurance, [name]: name !== "file" ? value : e.target.files[0]
-//     });
-//   };
-
-//   const handleSubmit = async e => {
-//     e.preventDefault();
-//     let data = {
-//       ...insurance,
-//     };
-//     const response = await createClientInsurance(data);
-//     if (response.status < 300) {
-//       navigate("/dashboard");
-//     } else if (response.status > 300) {
-//       setErrorMessage(response.message);
-//     }
-//   }
-
-//   return (
-//     <Page>
-//       <AlertMessage errorMessage={errorMessage} />
-//       <section className='uploadClient'>
-//         <header>
-//           <h1>Upload new clients</h1>
-//           <p>Please upload the group census ass spreadsheet (.xls or .csv) here via form below and follow our communication with you via "Support tickets" on left side menu.</p>
-//         </header>
-//         <div className='uploadClient__container'>
-//           <div className='uploadClient__container__content'>
-//             <p>Upload Clients</p>
-//             <form className='uploadClient__container__content__form' onSubmit={handleSubmit}>
-//               <input
-//                 type="text"
-//                 placeholder='Subject'
-//                 name='subject'
-//                 onChange={handleChange}
-//                 value={insurance.subject}
-//                 required={true}
-//               />
-//               <input
-//                 type="text"
-//                 placeholder='Description'
-//                 name='description'
-//                 onChange={handleChange}
-//                 value={insurance.description}
-//                 required={true}
-//               />
-//               <input
-//                 type="file"
-//                 name='file'
-//                 onChange={handleChange}
-//                 required={true}
-//               />
-//               <Button type='submit'>Submit</Button>
-//             </form>
-//           </div>
-//         </div>
-//       </section>
-//     </Page>
-//   )
-// }
-
-// export default UploadClient
-
-
 import React, { useState } from 'react'
 import Page from '../../../components/Page/Page';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import { Button } from '@mui/material';
+import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
 
 const UploadClient = () => {
-
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
 
@@ -111,16 +28,28 @@ const UploadClient = () => {
       <section className='uploadClient'>
         <header>
           <h1>Upload new members for the group cover</h1>
-          <p>Please describe the group of your corporate client and upload the group census as spreadsheet (.xls or .csv) here via the form below and follow our communication with via "Support tickets" on the left side menu.</p>
+          {user?.data?.role === "broker" ?
+            <p>Please describe the group of your corporate client and upload the group census as spreadsheet (.xls or .csv) here via the form below and follow our communication with via "Support tickets" on the left side menu.</p>
+            :
+            <p>Please describe your group and upload the group census as spreadsheet (.xls or .csv) here via the form below
+              and follow our communication with you via "Support tickets" on the left side menu.</p>
+          }
         </header>
         <div className='uploadClient__container'>
           <div className='uploadClient__container__body'>
             <div className='uploadClient__container__body__generalInfo'>
               <p>General info</p>
-              <input
-                className='uploadClient__container__body__generalInfo__input1'
-                type='text'
-                placeholder='Name of your corporate client*' />
+              {user?.data?.role === "broker" ?
+                <input
+                  className='uploadClient__container__body__generalInfo__input1'
+                  type='text'
+                  placeholder='Name of your corporate client*' />
+                :
+                <input
+                  className='uploadClient__container__body__generalInfo__input1'
+                  type='text'
+                  placeholder='Name of the company' />
+              }
               <input
                 className='uploadClient__container__body__generalInfo__input2'
                 type='number'

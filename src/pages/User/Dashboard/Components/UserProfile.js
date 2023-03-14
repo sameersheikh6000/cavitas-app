@@ -21,17 +21,32 @@ const UserProfile = () => {
           <p>First Name: {user?.data?.first_name ? user?.data?.first_name : "NiL"}</p>
           <p>Last Name: {user?.data?.last_name ? user?.data?.last_name : "NiL"}</p>
         </div>
-        <div className='dashboard__container__content__userProfile__details__detailsBox'>
-          <p>Role in Company: </p>
-          <p>Company Name: </p>
-        </div>
-        <div className='dashboard__container__content__userProfile__details__detailsBox'>
-          <p>Company KRS Number</p>
-          <p>Email Address: {user?.data?.email ? user?.data?.email : "NiL"}</p>
-        </div>
-        <div className='dashboard__container__content__userProfile__details__detailsBox'>
-          <p>Phone Number: {user?.data?.phone_number ? user?.data?.phone_number : "NiL"}</p>
-        </div>
+        {user?.data?.role === "member" ?
+          <>
+            <div className='dashboard__container__content__userProfile__details__detailsBox'>
+              <p>PESEL number: </p>
+              <p>Address: </p>
+            </div>
+            <div className='dashboard__container__content__userProfile__details__detailsBox'>
+              <p>Email address: </p>
+              <p>Phone number: </p>
+            </div>
+          </>
+          :
+          <>
+            <div className='dashboard__container__content__userProfile__details__detailsBox'>
+              <p>Role in Company: </p>
+              <p>Company Name: </p>
+            </div>
+            <div className='dashboard__container__content__userProfile__details__detailsBox'>
+              <p>Company KRS Number</p>
+              <p>Email Address: {user?.data?.email ? user?.data?.email : "NiL"}</p>
+            </div>
+            <div className='dashboard__container__content__userProfile__details__detailsBox'>
+              <p>Phone Number: {user?.data?.phone_number ? user?.data?.phone_number : "NiL"}</p>
+            </div>
+          </>
+        }
       </div>
     </section>
   )

@@ -13,7 +13,7 @@ const Payment = () => {
           <p>181.32EUR</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Payment frequency::</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Payment frequency:</p>
           <p>Monthly</p>
         </div>
       </div>

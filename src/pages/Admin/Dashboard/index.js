@@ -8,9 +8,10 @@ import AdminInsuredClient from './Components/AdminInsuredClient'
 import AdminSupport from './Components/AdminSupport'
 import AdminCavitasDocs from './Components/AdminCavitasDocs'
 import AdminFIleApproval from './Components/AdminFIleApproval'
+import { USER_STORAGE_KEY } from '../../../config/helpers/variables'
 
 const AdminDashboard = () => {
-
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)

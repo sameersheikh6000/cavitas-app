@@ -16,8 +16,8 @@ const EmploySignUp = () => {
     company_name: "",
     krs_number: "",
     url_address: "",
-    role: "Employ",
-    broker_mandate: "Employ",
+    role: "",
+    broker_mandate: "",
     password: "",
     password_confirmation: "",
   });
@@ -122,7 +122,6 @@ const EmploySignUp = () => {
                 value={user.url_address}
                 onChange={changeHandler}
                 required={true}
-                disabled={true}
               />
               <input
                 type="text"
