@@ -24,8 +24,8 @@ const CavitasDocs = () => {
           </thead>
           <tbody>
             <tr>
-              <td>......................</td>
-              <td>......................</td>
+              <td>Cavitas dental insurance terms and conditions</td>
+              <td>01.03.2023</td>
               <td></td>
             </tr>
             <tr>

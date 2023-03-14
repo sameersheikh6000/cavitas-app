@@ -46,7 +46,7 @@ const Sidebar = () => {
           </Link>
           <Link to="/support/view" className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Support</p>
+            <p>Support Tickets</p>
           </Link>
           <Link to="/profile/user/view" className='sidebar__linkButtons__link'>
             <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />

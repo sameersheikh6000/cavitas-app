@@ -11,11 +11,27 @@ const PolicyDocuments = () => {
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Documnents:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Documnent type:</p>
           <p></p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Masterpolicy:</p>
+          <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox'>
+            <VisibilityOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />
+            <ShareOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />
+            <FileDownloadOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />
+          </div>
+        </div>
+        <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Policy terms and conditions:</p>
+          <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox'>
+            <VisibilityOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />
+            <ShareOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />
+            <FileDownloadOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />
+          </div>
+        </div>
+        <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>IPID:</p>
           <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox'>
             <VisibilityOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />
             <ShareOutlinedIcon className='insuredClientGroup__container__cardsBox__card__detailsBox__data__iconsBox__icon' />

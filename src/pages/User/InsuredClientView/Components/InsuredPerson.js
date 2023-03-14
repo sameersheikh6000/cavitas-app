@@ -15,62 +15,60 @@ const InsuredPerson = () => {
         <table>
           <thead>
             <tr>
-              <th>Member title</th>
-              <th>Member first name</th>
-              <th>Member last name</th>
-              <th>Member ID code</th>
-              <th>Member DOB</th>
-              <th>Member phone number</th>
-              <th>Member E-mail</th>
-              <th>Member address line 1</th>
-              <th>Member address line 2</th>
-              <th>Member post code</th>
-              <th>Member country</th>
-              <th>Policy schedule issued</th>
+              <th>Insured person first name</th>
+              <th>Insured person last name</th>
+              <th>Insured person PESEL (ID)</th>
+              <th>Relationship</th>
+              <th>Insured person phone number</th>
+              <th>Insured person E-mail address</th>
+              <th>Insured person address</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
+              <td>Pawel</td>
+              <td>Nowak</td>
+              <td>45678987654</td>
+              <td>P-34567654</td>
+              <td>888 999 000</td>
+              <td>pawel@</td>
+              <td>Warsaw</td>
             </tr>
             <tr>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
+              <td>Pawel</td>
+              <td>Nowak</td>
+              <td>45678987654</td>
+              <td>P-34567654</td>
+              <td>888 999 000</td>
+              <td>pawel@</td>
+              <td>Warsaw</td>
             </tr>
             <tr>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
-              <td>.</td>
+              <td>Pawel</td>
+              <td>Nowak</td>
+              <td>45678987654</td>
+              <td>P-34567654</td>
+              <td>888 999 000</td>
+              <td>pawel@</td>
+              <td>Warsaw</td>
+            </tr>
+            <tr>
+              <td>Pawel</td>
+              <td>Nowak</td>
+              <td>45678987654</td>
+              <td>P-34567654</td>
+              <td>888 999 000</td>
+              <td>pawel@</td>
+              <td>Warsaw</td>
+            </tr>
+            <tr>
+              <td>Pawel</td>
+              <td>Nowak</td>
+              <td>45678987654</td>
+              <td>P-34567654</td>
+              <td>888 999 000</td>
+              <td>pawel@</td>
+              <td>Warsaw</td>
             </tr>
           </tbody>
         </table>

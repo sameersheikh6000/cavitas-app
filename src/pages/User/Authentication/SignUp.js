@@ -12,12 +12,11 @@ const SignUp = () => {
     first_name: "",
     last_name: "",
     email: "",
+    phone_number: "",
     company_name: "",
-    company_number: "",
-    company_address: "",
-    company_city: "",
-    company_postal_code: "",
-    company_country: "",
+    company_krs_number: "",
+    company_url_address: "",
+    role: "",
     password: "",
     password_confirmation: "",
   });
@@ -89,6 +88,14 @@ const SignUp = () => {
                 onChange={changeHandler}
                 required={true}
               />
+              <input
+                type="text"
+                placeholder='Phone number *'
+                name='phone_number'
+                value={user.phone_number}
+                onChange={changeHandler}
+                required={true}
+              />
             </div>
             <div>
               <input
@@ -101,41 +108,25 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder='Broker company number'
-                name='company_number'
-                value={user.company_number}
+                placeholder='Broker company KRS number'
+                name='company_krs_number'
+                value={user.company_krs_number}
                 onChange={changeHandler}
                 required={true}
               />
               <input
                 type="text"
-                placeholder='Broker company address'
-                name='company_address'
-                value={user.company_address}
+                placeholder='Broker company URL address'
+                name='company_url_address'
+                value={user.company_url_address}
                 onChange={changeHandler}
                 required={true}
               />
               <input
                 type="text"
-                placeholder='Broker company city'
-                name='company_city'
-                value={user.company_city}
-                onChange={changeHandler}
-                required={true}
-              />
-              <input
-                type="text"
-                placeholder='Broker company postal code'
-                name='company_postal_code'
-                value={user.company_postal_code}
-                onChange={changeHandler}
-                required={true}
-              />
-              <input
-                type="text"
-                placeholder='Broker company country'
-                name='company_country'
-                value={user.company_country}
+                placeholder='Role in company'
+                name='role'
+                value={user.role}
                 onChange={changeHandler}
                 required={true}
               />

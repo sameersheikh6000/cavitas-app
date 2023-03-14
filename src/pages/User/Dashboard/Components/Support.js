@@ -9,7 +9,7 @@ const Support = () => {
       <header className='dashboard__container__content__support__header'>
         <div className='dashboard__container__content__support__header__iconBox'>
           < EmailOutlinedIcon className='dashboard__container__content__support__header__iconBox__icon' />
-          <p>SUPPORT</p>
+          <p>SUPPORT TICKETS</p>
         </div>
         <Button size='small' onClick={() => navigate("/support/view")}>View all</Button>
       </header>
@@ -18,7 +18,7 @@ const Support = () => {
           <thead>
             <tr>
               <th>Support ticket number</th>
-              <th>Last status</th>
+              <th>Status</th>
               <th>Last update</th>
               <th></th>
             </tr>

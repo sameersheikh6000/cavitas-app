@@ -35,15 +35,15 @@ const userProfileView = () => {
               <div><input type="text" placeholder='Last name' /></div>
             </div>
             <div className='userProfileView__container__details__detailsBox'>
-              <div><input type="text" placeholder='ID code' /></div>
-              <div><input type="text" placeholder='Address' /></div>
+              <div><input type="text" placeholder='Role in company' /></div>
+              <div><input type="text" placeholder='Company name' /></div>
             </div>
             <div className='userProfileView__container__details__detailsBox'>
+              <div><input type="text" placeholder='Company NIP number' /></div>
               <div><input type="email" placeholder='Email address' /></div>
-              <div><input type="text" placeholder='Phone number' /></div>
             </div>
             <div className='userProfileView__container__details__detailsBox'>
-              <div><input type="password" placeholder='Password' /></div>
+              <div><input type="text" placeholder='Phone number' /></div>
             </div>
           </div>
         </div>

@@ -12,21 +12,21 @@ const PolicyInfo = () => {
           <p>Rabbit LTD.</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Reg.No:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Company KRS number:</p>
           <p>12345</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Address:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Company URL address:</p>
           <p>10 Rabbit Hole, Forest</p>
         </div>
-        <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
+        {/* <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Masterpolicy number:</p>
           <p>XXX-12345</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Master issuing date:</p>
           <p>02,01,2023</p>
-        </div>
+        </div> */}
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Risk inception date:</p>
           <p>02,01,2023</p>
@@ -40,15 +40,11 @@ const PolicyInfo = () => {
           <p>02,01,2023</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Risk cancelation date:</p>
-          <p>02,01,2023</p>
-        </div>
-        <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Number of insured persons:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>No of insured persons:</p>
           <p>220</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Broker:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Mandated broker:</p>
           <p>The best LTD.</p>
         </div>
       </div>

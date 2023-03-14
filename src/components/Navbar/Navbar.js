@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Container from '@mui/material/Container';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Sidebar from '../Sidebar/Sidebar'
 import SidebarDrawer from '../Sidebar/SidebarDrawer'
 import SidebarMenu from '../Sidebar/SidebarMenu';
@@ -12,9 +12,10 @@ import { IconButton } from '@mui/material';
 import { ADMIN_STORAGE_KEY, USER_STORAGE_KEY } from '../../config/helpers/variables';
 
 function Navbar() {
-
+  const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
+
   return (
     <>
       {(user?.data?.role || admin?.data?.role) ?
@@ -33,12 +34,16 @@ function Navbar() {
         <AppBar position="static" className='appbar' >
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <Box className='appbar__imageBox'>
+              <Box className='appbar__imageBox' onClick={() => navigate("/")}>
                 <img className='appbar__imageBox__image' src={require("../../assets/Navbar-logo.png")} alt="" />
               </Box>
               <Box className='appbar__linksBox'>
                 <div className='appbar__linksBox__links'>
-                  <Link className='appbar__linksBox__links__link' to="/about">About us</Link>
+                  <Link
+                    to="/about"
+                    className='appbar__linksBox__links__link'>
+                    About us
+                  </Link>
                   <Link className='appbar__linksBox__links__link' to="/faq">FAQ</Link>
                   <Link className='appbar__linksBox__links__link' to="/claims">Claims</Link>
                   <Link className='appbar__linksBox__links__link' to="/member">Member login</Link>

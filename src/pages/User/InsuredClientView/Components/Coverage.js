@@ -8,7 +8,7 @@ const Coverage = () => {
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Insurance type:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Type of insurance:</p>
           <p>Cavitas dental insurance</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
