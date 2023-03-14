@@ -51,7 +51,7 @@
       p {
         margin-left: 1rem;
         color: white;
-        font-size: .8rem;
+        font-size: .9rem;
       }
 
       &__icon {
@@ -60,7 +60,9 @@
       }
     }
 
-    a:focus {
+    a:hover,
+    a:focus,
+    :active {
       p {
         color: $BUTTON_RED !important;
       }

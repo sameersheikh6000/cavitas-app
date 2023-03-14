@@ -96,6 +96,12 @@
         margin-right: 1rem;
       }
 
+      a:hover,
+      a:focus,
+      a:active {
+        color: $BUTTON_RED !important;
+      }
+
       @media (max-width: 1050px) {
         margin-right: .5rem;
         font-size: 14px;

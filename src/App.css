@@ -61,13 +61,17 @@ body {
       .sidebar__linkButtons__link p {
         margin-left: 1rem;
         color: white;
-        font-size: .8rem; }
+        font-size: .9rem; }
       .sidebar__linkButtons__link__icon {
         color: white;
         font-size: 2rem !important; }
-    .sidebar__linkButtons a:focus p {
+    .sidebar__linkButtons a:hover p,
+    .sidebar__linkButtons a:focus p,
+    .sidebar__linkButtons :active p {
       color: #DD3333 !important; }
-    .sidebar__linkButtons a:focus__icon {
+    .sidebar__linkButtons a:hover__icon,
+    .sidebar__linkButtons a:focus__icon,
+    .sidebar__linkButtons :active__icon {
       color: #DD3333 !important; }
     .sidebar__linkButtons__buttons {
       display: flex;
@@ -156,6 +160,10 @@ body {
         font-weight: 500;
         white-space: nowrap;
         margin-right: 1rem; }
+      .appbar__linksBox__links a:hover,
+      .appbar__linksBox__links a:focus,
+      .appbar__linksBox__links a:active {
+        color: #DD3333 !important; }
       @media (max-width: 1050px) {
         .appbar__linksBox__links {
           margin-right: .5rem;
