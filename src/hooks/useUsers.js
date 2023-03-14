@@ -96,24 +96,26 @@ const useUsers = () => {
   };
 
   const updateUser = async user => {
+    debugger
     const params = {
       user: {
-        id: user.id,
+        // id: user.id,
         first_name: user.first_name,
         last_name: user.last_name,
-        email: user.email,
+        // email: user.email,
         // company_name: user.company_name,
         // company_number: user.company_number,
         // company_address: user.company_address,
         // company_city: user.company_city,
         // company_postal_code: user.company_postal_code,
         // company_country: user.company_country,
+        phone_number: user.phone_number,
         password: user.password,
-        password_confirmation: user.password_confirmation,
+        password_confirmation: user.confirm_password,
       }
     }
     const response = await axios.put(
-      `${API_KEY}/users/${params.user.id}`,
+      `${API_KEY}/users`,
       {
         ...params
       },
@@ -231,45 +233,6 @@ const useUsers = () => {
     })
     return response;
   };
-
-  // const subscribeDistributionList = async (userIds, id) => {
-  //   const params = {
-  //     users_ids: userIds
-  //   }
-  //   const response = await axios.post(
-  //     `${API_KEY}/users/manage_users/${id}/subscribe_to_list`,
-  //     {
-  //       ...params
-  //     },
-  //     getHeaders()
-  //   ).then((res) => {
-  //     if (res.data.status > 300) {
-  //       handleErrors(res);
-  //     }
-  //     return res.data
-  //   })
-  //   return response;
-  // };
-
-
-  // const unSubscribeDistributionList = async (userIds, id) => {
-  //   const params = {
-  //     users_ids: userIds
-  //   }
-  //   const response = await axios.post(
-  //     `${API_KEY}/users/manage_users/${id}/unsubscribe_from_list`,
-  //     {
-  //       ...params
-  //     },
-  //     getHeaders()
-  //   ).then((res) => {
-  //     if (res.data.status > 300) {
-  //       handleErrors(res);
-  //     }
-  //     return res.data
-  //   })
-  //   return response;
-  // };
 
 
   return {

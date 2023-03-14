@@ -17,7 +17,7 @@ import MemberLandingPage from "../pages/User/MemberLandingPage";
 import AboutUs from "../pages/User/AboutUs";
 import FAQ from "../pages/User/FAQ";
 import Claims from "../pages/User/Claims";
-import userProfileView from "../pages/User/UserProfileView";
+import UserProfileView from "../pages/User/UserProfileView";
 import SupportView from "../pages/User/SupportView";
 import CavitasDocsView from "../pages/User/CavitasDocsView";
 import InsuredClientGroup from "../pages/User/InsuredClientView/InsuredClientGroup";
@@ -28,7 +28,7 @@ export const routes = [
 
   // user routes
 
-  {
+  { 
     path: "/",
     component: LandingPage,
     isPrivate: false,
@@ -116,7 +116,7 @@ export const routes = [
   },
   {
     path: "/profile/user/view",
-    component: userProfileView,
+    component: UserProfileView,
     isPrivate: false,
   },
   {
