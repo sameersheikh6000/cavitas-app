@@ -226,6 +226,7 @@
         &__card {
           width: 300px;
           margin: 0 1rem;
+          cursor: pointer;
 
           @media (max-width: 1050px) {
             margin-bottom: 2rem;

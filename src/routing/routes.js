@@ -23,12 +23,14 @@ import CavitasDocsView from "../pages/User/CavitasDocsView";
 import InsuredClientGroup from "../pages/User/InsuredClientView/InsuredClientGroup";
 import AdminInsuredClientView from "../pages/Admin/InsuredClientView";
 import LandingPage from "../pages/User/LandingPage";
+import Cart from "../pages/User/Cart";
+import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading";
 
 export const routes = [
 
   // user routes
 
-  { 
+  {
     path: "/",
     component: LandingPage,
     isPrivate: false,
@@ -127,6 +129,16 @@ export const routes = [
   {
     path: "/cavitasdocs/view",
     component: CavitasDocsView,
+    isPrivate: false,
+  },
+  {
+    path: "/cart",
+    component: Cart,
+    isPrivate: false,
+  },
+  {
+    path: "/valuablereading/view/:id",
+    component: ValuableReadingView,
     isPrivate: false,
   },
 

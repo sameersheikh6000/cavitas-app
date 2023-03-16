@@ -36,16 +36,25 @@
   &__details {
     margin-top: 2rem;
     overflow: auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgray;
 
     &__table {
       width: 100%;
       min-width: 40rem;
+      border-collapse: collapse;
+      font-size: .9rem;
 
       thead {
         tr {
           th {
-            font-weight: 500;
+            border-bottom: 1px solid lightgray;
+            font-weight: 600;
             text-align: left;
+            padding: .8rem .5rem;
+            background-color: $BUTTON_RED;
+            color: white;
           }
         }
       }
@@ -53,21 +62,8 @@
       tbody {
         tr {
           td {
-            &:nth-child(1) {
-              input {
-                border: 2px solid black;
-                outline: none !important;
-              }
-            }
-
-            &:nth-last-child(1) {
-              text-align: right;
-
-              Button {
-                color: black !important;
-                font-weight: 600 !important;
-              }
-            }
+            border-bottom: 1px solid lightgray;
+            padding: .5rem;
           }
         }
       }

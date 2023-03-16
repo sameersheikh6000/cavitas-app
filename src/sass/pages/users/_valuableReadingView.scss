@@ -1,0 +1,47 @@
+.valuableReadingView {
+  margin-top: -220px;
+  padding: 0 10%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @media (max-width: 1250px) {
+    padding: 0;
+  }
+
+  header {
+    padding-top: 3rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      // color: $BUTTON_RED;
+
+      @media (max-width: 1000px) {
+        font-size: 1.5rem;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  &__container {
+    margin: 6rem 0;
+
+    &__imageBox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 4rem 0;
+    }
+  }
+}

@@ -51,7 +51,7 @@ const EmploySignUp = () => {
       <div className='authentication__container'>
 
         <div className='authentication__container__imageBox'>
-          <div className='authentication__container__imageBox__top'>
+          <div className='authentication__container__imageBox__top' onClick={() => navigate("/")}>
             <img className='authentication__container__imageBox__top__logo' src={require("../../../assets/Signin-logo.png")} alt='' />
             <img className='authentication__container__imageBox__top__flag' src={require("../../../assets/Signin-flag.png")} alt='' />
           </div>

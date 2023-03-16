@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from "../../../components/Page/Page";
-import { Button } from '@mui/material';
+import { Button, Card } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 
@@ -19,52 +19,48 @@ const SupportView = () => {
           <table className='supportView__details__table'>
             <thead>
               <tr>
-                <th>Support ticket number</th>
-                <th>Last status</th>
-                <th>Last update</th>
-                <th></th>
+                <th>Ticket#</th>
+                <th>Subject</th>
+                <th>Description</th>
+                <th>File</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>
-                  <input type="number" />
-                </td>
-                <td>......................</td>
-                <td>......................</td>
-                <td>
-                  <Button size='small'>Open Message</Button>
-                </td>
+                <td>1</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
               </tr>
               <tr>
-                <td>
-                  <input type="number" />
-                </td>
-                <td>......................</td>
-                <td>......................</td>
-                <td>
-                  <Button size='small'>Open Message</Button>
-                </td>
+                <td>2</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
               </tr>
               <tr>
-                <td>
-                  <input type="number" />
-                </td>
-                <td>......................</td>
-                <td>......................</td>
-                <td>
-                  <Button size='small'>Open Message</Button>
-                </td>
+                <td>3</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
               </tr>
               <tr>
-                <td>
-                  <input type="number" />
-                </td>
-                <td>......................</td>
-                <td>......................</td>
-                <td>
-                  <Button size='small'>Open Message</Button>
-                </td>
+                <td>4</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
               </tr>
             </tbody>
           </table>

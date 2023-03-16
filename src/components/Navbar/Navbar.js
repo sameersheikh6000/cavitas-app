@@ -52,13 +52,13 @@ function Navbar() {
                 </div>
                 <img className='appbar__linksBox__translate' src={require("../../assets/Navbar-translate.png")} alt="" />
                 <IconButton>
-                  <ShoppingCartOutlinedIcon className='appbar__linksBox__icon' />
+                  <ShoppingCartOutlinedIcon className='appbar__linksBox__icon' onClick={() => navigate("/cart")} />
                 </IconButton>
               </Box>
               <Box className='appbar__sidebar1'>
                 <IconButton>
                   <ShoppingCartOutlinedIcon
-                    className='appbar__sidebar1__icon' />
+                    className='appbar__sidebar1__icon' onClick={() => navigate("/cart")} />
                 </IconButton>
                 <div>
                   <SidebarMenu />

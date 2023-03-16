@@ -954,7 +954,8 @@ body {
         flex-wrap: wrap; }
         .landingPage__valuableReadings__container__cardsBox__card {
           width: 300px;
-          margin: 0 1rem; }
+          margin: 0 1rem;
+          cursor: pointer; }
           @media (max-width: 1050px) {
             .landingPage__valuableReadings__container__cardsBox__card {
               margin-bottom: 2rem; } }
@@ -2177,21 +2178,25 @@ body {
         font-size: 1.5rem; }
   .supportView__details {
     margin-top: 2rem;
-    overflow: auto; }
+    overflow: auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px lightgray; }
     .supportView__details__table {
       width: 100%;
-      min-width: 40rem; }
+      min-width: 40rem;
+      border-collapse: collapse;
+      font-size: .9rem; }
       .supportView__details__table thead tr th {
-        font-weight: 500;
-        text-align: left; }
-      .supportView__details__table tbody tr td:nth-child(1) input {
-        border: 2px solid black;
-        outline: none !important; }
-      .supportView__details__table tbody tr td:nth-last-child(1) {
-        text-align: right; }
-        .supportView__details__table tbody tr td:nth-last-child(1) Button {
-          color: black !important;
-          font-weight: 600 !important; }
+        border-bottom: 1px solid lightgray;
+        font-weight: 600;
+        text-align: left;
+        padding: .8rem .5rem;
+        background-color: #DD3333;
+        color: white; }
+      .supportView__details__table tbody tr td {
+        border-bottom: 1px solid lightgray;
+        padding: .5rem; }
 
 .cavitasDocsView {
   margin: 2rem 5rem 0 380px; }
@@ -2246,3 +2251,76 @@ body {
           align-items: center; }
           .cavitasDocsView__container__cards__card__icons__icon {
             margin-right: 1rem; }
+
+.cart {
+  margin-top: -220px;
+  padding: 0 10%;
+  margin-left: 1rem;
+  margin-right: 1rem; }
+  @media (max-width: 1250px) {
+    .cart {
+      padding: 0; } }
+  .cart header {
+    padding-top: 3rem; }
+    .cart header h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      text-transform: capitalize; }
+      @media (max-width: 1000px) {
+        .cart header h1 {
+          font-size: 1.5rem; } }
+  .cart__container {
+    margin: 2rem 0; }
+    .cart__container__status {
+      background-color: #2EA3F2;
+      padding: 1rem; }
+      .cart__container__status p {
+        color: white;
+        font-weight: 500;
+        font-size: 1rem; }
+    .cart__container Button {
+      margin-top: 3rem;
+      border: 2px solid #2EA3F2 !important;
+      color: #2EA3F2;
+      padding: .8rem 1.5rem;
+      font-family: "poppins" !important;
+      font-weight: 600; }
+      .cart__container Button:hover {
+        border: none !important; }
+        .cart__container Button:hover ::after {
+          content: ">";
+          position: absolute;
+          margin-top: .3rem;
+          margin-left: 4.2rem;
+          font-size: 1.5rem;
+          font-weight: normal; }
+
+.valuableReadingView {
+  margin-top: -220px;
+  padding: 0 10%;
+  margin-left: 1rem;
+  margin-right: 1rem; }
+  @media (max-width: 1250px) {
+    .valuableReadingView {
+      padding: 0; } }
+  .valuableReadingView header {
+    padding-top: 3rem; }
+    .valuableReadingView header h1 {
+      font-size: 2rem;
+      font-weight: 500; }
+      @media (max-width: 1000px) {
+        .valuableReadingView header h1 {
+          font-size: 1.5rem; } }
+    .valuableReadingView header p {
+      font-size: 1rem; }
+  .valuableReadingView__container {
+    margin: 6rem 0; }
+    .valuableReadingView__container__imageBox {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .valuableReadingView__container__imageBox img {
+        width: 100%; }
+    .valuableReadingView__container p {
+      font-size: 1rem;
+      margin: 4rem 0; }

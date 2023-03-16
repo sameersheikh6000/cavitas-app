@@ -1,0 +1,63 @@
+.cart {
+  margin-top: -220px;
+  padding: 0 10%;
+  margin-left: 1rem;
+  margin-right: 1rem;
+
+  @media (max-width: 1250px) {
+    padding: 0;
+  }
+
+  header {
+    padding-top: 3rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      // color: $BUTTON_RED;
+      text-transform: capitalize;
+
+      @media (max-width: 1000px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &__container {
+    margin: 2rem 0;
+
+    &__status {
+      background-color: $BUTTON_BLUE;
+      padding: 1rem;
+
+      p {
+        color: white;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+    }
+
+    Button {
+      margin-top: 3rem;
+      border: 2px solid $BUTTON_BLUE !important;
+      color: $BUTTON_BLUE;
+      padding: .8rem 1.5rem;
+      font-family: "poppins" !important;
+      font-weight: 600;
+
+      &:hover {
+        border: none !important;
+
+        ::after {
+          content: ">";
+          position: absolute;
+          margin-top: .3rem;
+          margin-left: 4.2rem;
+          font-size: 1.5rem;
+          font-weight: normal;
+
+        }
+      }
+    }
+  }
+}
