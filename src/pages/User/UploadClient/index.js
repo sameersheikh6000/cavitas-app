@@ -2,9 +2,13 @@ import React, { useState } from 'react'
 import Page from '../../../components/Page/Page';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
+import useClientInsurance from '../../../hooks/useClientInsurance';
 
 const UploadClient = () => {
+  const {createClientInsurance} = useClientInsurance();
+  const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
@@ -16,34 +20,14 @@ const UploadClient = () => {
     details: "",
     status: "",
     referenced_broker_name: "",
-    // participation_mode: {
+    participation_mode: "",
     mandatory: "",
     voluntary: "",
-    // },
-    // mandatory_number_of_employees: {
-    mandatory_employee_1: "",
-    mandatory_employee_2: "",
-    mandatory_employee_3: "",
-    mandatory_employee_4: "",
-    // },
-    // voluntary_number_of_employees: {
-    voluntary_employee_1: "",
-    voluntary_employee_2: "",
-    voluntary_employee_3: "",
-    // },
-    // employees_family_info: {
-    family_info_1: "",
-    family_info_2: "",
-    family_info_3: "",
-    // },
-    // insurance_payment_type: {
-    payment_type_1: "",
-    payment_type_2: "",
-    // },
-    // broker_reference: {
-    broker_reference_1: "",
-    broker_reference_2: "",
-    // },
+    mandatory_number_of_employees: "",
+    voluntary_number_of_employees: "",
+    employees_family_info: "",
+    insurance_payment_type: "",
+    broker_reference: "",
   });
 
 
@@ -57,6 +41,7 @@ const UploadClient = () => {
     if (mandatoryEmployees === false) {
       setMandatoryEmployees(true)
     } else {
+      setClient({...client, mandatory: "", mandatory_number_of_employees: "" })
       setMandatoryEmployees(false)
     }
   }
@@ -64,7 +49,21 @@ const UploadClient = () => {
     if (voluntaryEmployees === false) {
       setVoluntaryEmployees(true)
     } else {
+      setClient({...client, voluntary: "", voluntary_number_of_employees: "" })
       setVoluntaryEmployees(false)
+    }
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let data = {
+      ...client,
+    };
+    const response = await createClientInsurance(data);
+    if (response.status < 300) {
+      navigate("/dashboard");
+    } else if (response.status > 300) {
+      // setErrorMessage(response.message);
     }
   }
   return (
@@ -131,7 +130,7 @@ const UploadClient = () => {
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
-                      name='mandatory_employee_1'
+                      name='mandatory_number_of_employees'
                       value={1}
                       // required={true}
                       onChange={handleChange}
@@ -141,7 +140,7 @@ const UploadClient = () => {
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
-                      name='mandatory_employee_2'
+                      name='mandatory_number_of_employees'
                       value={2}
                       // required={true}
                       onChange={handleChange}
@@ -151,7 +150,7 @@ const UploadClient = () => {
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
-                      name='mandatory_employee_3'
+                      name='mandatory_number_of_employees'
                       value={3}
                       // required={true}
                       onChange={handleChange}
@@ -161,7 +160,7 @@ const UploadClient = () => {
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
-                      name='mandatory_employee_4'
+                      name='mandatory_number_of_employees'
                       value={4}
                       // required={true}
                       onChange={handleChange}
@@ -190,7 +189,7 @@ const UploadClient = () => {
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
-                      name='voluntary_employee_1'
+                      name='voluntary_number_of_employees'
                       value={1}
                       // required={true}
                       onChange={handleChange}
@@ -200,7 +199,7 @@ const UploadClient = () => {
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
-                      name='voluntary_employee_2'
+                      name='voluntary_number_of_employees'
                       value={2}
                       // required={true}
                       onChange={handleChange}
@@ -210,7 +209,7 @@ const UploadClient = () => {
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
-                      name='voluntary_employee_3'
+                      name='voluntary_number_of_employees'
                       value={3}
                       // required={true}
                       onChange={handleChange}
@@ -224,7 +223,7 @@ const UploadClient = () => {
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
-                    name='family_info_1'
+                    name='employees_family_info'
                     value={1}
                     // required={true}
                     onChange={handleChange}
@@ -234,7 +233,7 @@ const UploadClient = () => {
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
-                    name='family_info_2'
+                    name='employees_family_info'
                     value={2}
                     // required={true}
                     onChange={handleChange}
@@ -244,7 +243,7 @@ const UploadClient = () => {
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
-                    name='family_info_3'
+                    name='employees_family_info'
                     value={3}
                     // required={true}
                     onChange={handleChange}
@@ -258,7 +257,7 @@ const UploadClient = () => {
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
-                    name='payment_type_1'
+                    name='insurance_payment_type'
                     value={1}
                     // required={true}
                     onChange={handleChange}
@@ -268,7 +267,7 @@ const UploadClient = () => {
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
-                    name='payment_type_2'
+                    name='insurance_payment_type'
                     value={2}
                     // required={true}
                     onChange={handleChange}
@@ -282,7 +281,7 @@ const UploadClient = () => {
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
-                    name='broker_reference_1'
+                    name='broker_reference'
                     value={1}
                     // required={true}
                     onChange={handleChange}
@@ -292,15 +291,16 @@ const UploadClient = () => {
                 <input
                   className='uploadClient__container__body__participation__headInput'
                   type='text'
+                  name="referenced_broker_name"
+                  onChange={handleChange}
                   placeholder='Name of insurance broker company'
-                  value={user?.data?.company_name}
-                  disabled
+                  value={client?.referenced_broker_name}
                 />
 
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
-                    name='broker_reference_2'
+                    name='broker_reference'
                     value={2}
                     // required={true}
                     onChange={handleChange}
@@ -347,7 +347,7 @@ const UploadClient = () => {
                 />
               </div>
             </div>
-            <Button>Submit</Button>
+            <Button onClick={(e) => handleSubmit(e)}>Submit</Button>
           </div>
         </div>
       </section>

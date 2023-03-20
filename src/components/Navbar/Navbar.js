@@ -15,7 +15,6 @@ function Navbar() {
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
-  console.log(user);
   return (
     <>
       {(user?.data?.role || admin?.data?.role) ?

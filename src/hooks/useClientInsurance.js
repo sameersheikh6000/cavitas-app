@@ -29,8 +29,30 @@ const useClientInsurance = () => {
 
 
   const createClientInsurance = async insurance => {
+    debugger
+    // let participation_mode ;
+    if (insurance.mandatory !== ""){
+       insurance.participation_mode = 1
+    } else if (insurance.voluntary !== ""){
+      insurance.participation_mode = 2
+    }
+
+    const params = {
+    corporate_client_name: insurance.corporate_client_name,
+    number_of_employees_in_company: parseInt(insurance.number_of_employees_in_company),
+    inception_date: insurance.inception_date,
+    file: insurance.file,
+    details: insurance.details,
+    referenced_broker_name: insurance.referenced_broker_name,
+    participation_mode: parseInt(insurance.participation_mode),
+    mandatory_number_of_employees: parseInt(insurance.mandatory_number_of_employees),
+    voluntary_number_of_employees: parseInt(insurance.voluntary_number_of_employees),
+    employees_family_info: parseInt(insurance.employees_family_info),
+    insurance_payment_type: parseInt(insurance.insurance_payment_type),
+    broker_reference: parseInt(insurance.broker_reference),
+    }
     const formData = new FormData()
-    for (const property in insurance) {
+    for (const property in params) {
       formData.append(
         property, insurance[property]
       )
