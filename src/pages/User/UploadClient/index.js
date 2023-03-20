@@ -8,6 +8,50 @@ const UploadClient = () => {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
+  const [client, setClient] = useState({
+    corporate_client_name: "",
+    number_of_employees_in_company: "",
+    inception_date: "",
+    file: '',
+    details: "",
+    status: "",
+    referenced_broker_name: "",
+    // participation_mode: {
+    mandatory: "",
+    voluntary: "",
+    // },
+    // mandatory_number_of_employees: {
+    mandatory_employee_1: "",
+    mandatory_employee_2: "",
+    mandatory_employee_3: "",
+    mandatory_employee_4: "",
+    // },
+    // voluntary_number_of_employees: {
+    voluntary_employee_1: "",
+    voluntary_employee_2: "",
+    voluntary_employee_3: "",
+    // },
+    // employees_family_info: {
+    family_info_1: "",
+    family_info_2: "",
+    family_info_3: "",
+    // },
+    // insurance_payment_type: {
+    payment_type_1: "",
+    payment_type_2: "",
+    // },
+    // broker_reference: {
+    broker_reference_1: "",
+    broker_reference_2: "",
+    // },
+  });
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setClient({ ...client, [name]: name !== "file" ? value : e.target.files[0] });
+  }
+  console.log({ ...client });
 
   const handleMandatoryEmployees = () => {
     if (mandatoryEmployees === false) {
@@ -43,7 +87,12 @@ const UploadClient = () => {
                 <input
                   className='uploadClient__container__body__generalInfo__input1'
                   type='text'
-                  placeholder='Name of your corporate client*' />
+                  placeholder='Name of your corporate client*'
+                  name="corporate_client_name"
+                  value={client.corporate_client_name}
+                  required={true}
+                  onChange={handleChange}
+                />
                 :
                 <input
                   className='uploadClient__container__body__generalInfo__input1'
@@ -54,14 +103,26 @@ const UploadClient = () => {
                 className='uploadClient__container__body__generalInfo__input2'
                 type='number'
                 minlength="50"
-                placeholder='Total number of employees in the company*' />
+                placeholder='Total number of employees in the company*'
+                name="number_of_employees_in_company"
+                value={client.number_of_employees_in_company}
+                onChange={handleChange}
+                required={true}
+              />
             </div>
 
             <div className='uploadClient__container__body__participation'>
               <p>Mode of participation in Cavitas dental insurance cover</p>
               <div className='uploadClient__container__body__participation__head'>
                 <input
-                  type='radio' onClick={handleMandatoryEmployees} checked={mandatoryEmployees === false ? false : true} />
+                  type='radio'
+                  onClick={handleMandatoryEmployees}
+                  checked={mandatoryEmployees === false ? false : true}
+                  name="mandatory"
+                  onChange={handleChange}
+                  value={1}
+                  required={true}
+                />
                 <label>Mandatory group of employees</label>
               </div>
               {mandatoryEmployees === true &&
@@ -69,22 +130,42 @@ const UploadClient = () => {
                   <span>How many employees?</span>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
-                      type='radio' />
+                      type='radio'
+                      name='mandatory_employee_1'
+                      value={1}
+                      // required={true}
+                      onChange={handleChange}
+                    />
                     <label>50 - 100</label>
                   </div>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
-                      type='radio' />
+                      type='radio'
+                      name='mandatory_employee_2'
+                      value={2}
+                      // required={true}
+                      onChange={handleChange}
+                    />
                     <label>101 - 200</label>
                   </div>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
-                      type='radio' />
+                      type='radio'
+                      name='mandatory_employee_3'
+                      value={3}
+                      // required={true}
+                      onChange={handleChange}
+                    />
                     <label>202 - 500</label>
                   </div>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
-                      type='radio' />
+                      type='radio'
+                      name='mandatory_employee_4'
+                      value={4}
+                      // required={true}
+                      onChange={handleChange}
+                    />
                     <label>501 - 1000</label>
                   </div>
                 </div>
@@ -95,7 +176,12 @@ const UploadClient = () => {
                 <input
                   onClick={handleVoluntaryEmployees}
                   checked={voluntaryEmployees === false ? false : true}
-                  type='radio' />
+                  type='radio'
+                  name='voluntary'
+                  value={2}
+                  required={true}
+                  onChange={handleChange}
+                />
                 <label>Voluntry group of employees</label>
               </div>
               {voluntaryEmployees === true &&
@@ -103,17 +189,32 @@ const UploadClient = () => {
                   <span>How many employees?</span>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
-                      type='radio' />
+                      type='radio'
+                      name='voluntary_employee_1'
+                      value={1}
+                      // required={true}
+                      onChange={handleChange}
+                    />
                     <label>100 - 200 (min 70% participation)</label>
                   </div>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
-                      type='radio' />
+                      type='radio'
+                      name='voluntary_employee_2'
+                      value={2}
+                      // required={true}
+                      onChange={handleChange}
+                    />
                     <label>201 - 500 (min 60% participation)</label>
                   </div>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
-                      type='radio' />
+                      type='radio'
+                      name='voluntary_employee_3'
+                      value={3}
+                      // required={true}
+                      onChange={handleChange}
+                    />
                     <label>501 - 1000 (min 50% participation)</label>
                   </div>
                 </div>
@@ -122,17 +223,32 @@ const UploadClient = () => {
                 <p>Do you want to add employees' family members to the group cover?</p>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
-                    type='radio' />
+                    type='radio'
+                    name='family_info_1'
+                    value={1}
+                    // required={true}
+                    onChange={handleChange}
+                  />
                   <label>NO</label>
                 </div>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
-                    type='radio' />
+                    type='radio'
+                    name='family_info_2'
+                    value={2}
+                    // required={true}
+                    onChange={handleChange}
+                  />
                   <label>YES - Family members are included in the list</label>
                 </div>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
-                    type='radio' />
+                    type='radio'
+                    name='family_info_3'
+                    value={3}
+                    // required={true}
+                    onChange={handleChange}
+                  />
                   <label>YES - Please collect family members data from our employees included in the list
                   </label>
                 </div>
@@ -141,12 +257,22 @@ const UploadClient = () => {
                 <p>How insurance premium of family members is paid?</p>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
-                    type='radio' />
+                    type='radio'
+                    name='payment_type_1'
+                    value={1}
+                    // required={true}
+                    onChange={handleChange}
+                  />
                   <label>By employer via employee's monthly salary</label>
                 </div>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
-                    type='radio' />
+                    type='radio'
+                    name='payment_type_2'
+                    value={2}
+                    // required={true}
+                    onChange={handleChange}
+                  />
                   <label>By the family members themselves
                   </label>
                 </div>
@@ -155,17 +281,30 @@ const UploadClient = () => {
                 <p>Do you have a mandated insurance broker through whom you found out about Cavitas dental insurance?</p>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
-                    type='radio' />
+                    type='radio'
+                    name='broker_reference_1'
+                    value={1}
+                    // required={true}
+                    onChange={handleChange}
+                  />
                   <label>YES</label>
                 </div>
                 <input
                   className='uploadClient__container__body__participation__headInput'
                   type='text'
-                  placeholder='Name of insurance broker company' />
+                  placeholder='Name of insurance broker company'
+                  value={user?.data?.company_name}
+                  disabled
+                />
 
                 <div className='uploadClient__container__body__participation__head'>
                   <input
-                    type='radio' />
+                    type='radio'
+                    name='broker_reference_2'
+                    value={2}
+                    // required={true}
+                    onChange={handleChange}
+                  />
                   <label>NO</label>
                 </div>
               </div>
@@ -174,7 +313,12 @@ const UploadClient = () => {
                 <input
                   className='uploadClient__container__body__participation__headInput'
                   type='date'
-                  placeholder='Name of insurance broker company' />
+                  placeholder='Name of insurance broker company'
+                  value={client.inception_date}
+                  onChange={handleChange}
+                  name="inception_date"
+                  required={true}
+                />
               </div>
               <div className='uploadClient__container__body__participation'>
                 <p>Please upload the group census as spreadsheet (.xls or .csv)</p>
@@ -183,7 +327,11 @@ const UploadClient = () => {
                     <FileUploadOutlinedIcon className='uploadClient__container__body__participation__fileUpload__icon' />
                     Upload file
                   </label>
-                  <input id="file-input" type="file" />
+                  <input id="file-input" type="file"
+                    onChange={handleChange}
+                    name="file"
+                    required={true}
+                  />
                 </div>
               </div>
               <div className='uploadClient__container__body__participation'>
@@ -191,7 +339,12 @@ const UploadClient = () => {
                 <textarea
                   rows="6"
                   className='uploadClient__container__body__participation__headInput'
-                  placeholder='Start here...' />
+                  placeholder='Start here...'
+                  value={client.details}
+                  required={true}
+                  onChange={handleChange}
+                  name="details"
+                />
               </div>
             </div>
             <Button>Submit</Button>
