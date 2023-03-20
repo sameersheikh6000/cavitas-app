@@ -90,12 +90,13 @@ const useClientInsurance = () => {
 
   const getAllClientInsurance = async () => {
     const response = await axios.get(
-      `${API_KEY}/api/v1/insured_clients`,
+      `${API_KEY}/api/v1/client_infos`,
       getHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
         handleErrors(res);
       }
+      debugger
       return res.data
     })
     return response;
