@@ -4,7 +4,7 @@ import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlin
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
 
-const InsuredClient = ({ insuranceList }) => {
+const InsuredClient = () => {
   const navigate = useNavigate();
   return (
     <section className='dashboard__container__content__insuredClient'>
@@ -26,16 +26,14 @@ const InsuredClient = ({ insuranceList }) => {
             </tr>
           </thead>
           <tbody>
-            {insuranceList.map((insurance, index) => (
-              <tr>
-                <td></td>
-                <td></td>
-                <td>{moment(insurance.created_at).format("MMM Do YY")}</td>
-                <td>
-                  <Button size='small' onClick={() => navigate("/insuredclient/group")}>Open Group</Button>
-                </td>
-              </tr>
-            ))}
+            <tr>
+              <td></td>
+              <td></td>
+              <td>{moment().format("MMM Do YY")}</td>
+              <td>
+                <Button size='small' onClick={() => navigate("/insuredclient/group")}>Open Group</Button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>

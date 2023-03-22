@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react'
 import Page from "../../../components/Page/Page";
 import { Button, Card } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
@@ -22,12 +22,12 @@ const SupportView = () => {
       setErrorMessage(response.message);
     }
   }
-useEffect(() => {
-  getAllClientInfos()
-}, [])
+  useEffect(() => {
+    getAllClientInfos()
+  }, [])
   return (
     <Page>
-       <AlertMessage errorMessage={errorMessage} />
+      <AlertMessage errorMessage={errorMessage} />
       <section className='supportView'>
         <header className='supportView__header'>
           <div className='supportView__header__iconBox'>
@@ -40,48 +40,27 @@ useEffect(() => {
             <thead>
               <tr>
                 <th>Ticket#</th>
-                <th>Subject</th>
+                <th>Name</th>
                 <th>Description</th>
                 <th>File</th>
                 <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-              </tr>
+
+              {clientInfos.length > 0 ? clientInfos.map((row, index) => (
+                <tr>
+                  <td>{row?.id}</td>
+                  <td>{row?.corporate_client_name}</td>
+                  <td>{row?.details}</td>
+                  <td>{row?.file?.filename}</td>
+                  <td>{row?.status}</td>
+                </tr>
+              ))
+                :
+                <div>
+                  <p>No records.</p>
+                </div>}
             </tbody>
           </table>
         </div>

@@ -786,7 +786,7 @@ body {
             .uploadClient__container__body__participation__buttonBox__button label {
               margin-left: .5rem; }
       .uploadClient__container__body Button {
-        background-color: #DD3333;
+        background-color: #DD3333 !important;
         border-radius: 1.5rem;
         margin: 2rem 0;
         width: 180px;
@@ -2197,6 +2197,9 @@ body {
       .supportView__details__table tbody tr td {
         border-bottom: 1px solid lightgray;
         padding: .5rem; }
+      .supportView__details__table tbody div p {
+        padding: .5rem;
+        font-weight: 500; }
 
 .cavitasDocsView {
   margin: 2rem 5rem 0 380px; }

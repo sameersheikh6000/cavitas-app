@@ -53,16 +53,14 @@ const InsuredClientView = () => {
               </tr>
             </thead>
             <tbody>
-              {insuranceList.map((insurance, index) => (
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td>{moment(insurance.created_at).format("MMM Do YY")}</td>
-                  <td>
-                    <Button size='small' onClick={() => navigate("/insuredclient/group")}>Open Group</Button>
-                  </td>
-                </tr>
-              ))}
+              <tr>
+                <td></td>
+                <td></td>
+                <td>{moment().format("MMM Do YY")}</td>
+                <td>
+                  <Button size='small' onClick={() => navigate("/insuredclient/group")}>Open Group</Button>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
