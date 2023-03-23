@@ -9,16 +9,18 @@ import useClientInsurance from '../../../../hooks/useClientInsurance';
 
 const AdminFileApproval = () => {
   const navigate = useNavigate();
-  const { getAllClientInsurance } = useClientInsurance();
-  const [insuranceList, setInsuranceList] = useState([]);
+  const { getAllClientInsuranceAdmin } = useClientInsurance();
+  const [clientInfoList, setClientInfoList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
 
 
   const getClientInsurance = async () => {
     debugger
-    const response = await getAllClientInsurance();
+    const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
-      setInsuranceList(response.insured_clients);
+      console.log(response)
+      setClientInfoList(response.client_infos);
+      console.log(clientInfoList)
     } else {
       setErrorMessage('Something went wrong!')
     }
@@ -41,24 +43,48 @@ const AdminFileApproval = () => {
         <div className='dashboard__container__content__insuredClient__details'>
           <table className='dashboard__container__content__insuredClient__details__table'>
             <thead>
-              <tr>
-                <th>Company Name</th>
-                <th>Reg. No</th>
-                <th>Address</th>
-                <th>Poliy Period</th>
-                <th></th>
+            <tr>
+                <th>Ticket#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Total Employees in Company</th>
+                <th>Participation</th>
+                <th>Mandatory Employees</th>
+                <th>Voluntary Employees</th>
+                <th>Employee Family Info</th>
+                <th>Payment Type</th>
+                <th>Broker Reference</th>
+                <th>Broker Name</th>
+                <th>File</th>
+                <th>Status</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Interloop</td>
-                <td>12345</td>
-                <td>923456789</td>
-                <td>Jan, 2022 - Jan, 2023</td>
-                <td>
+
+            {clientInfoList.length > 0 ? clientInfoList.map((row, index) => (
+                <tr>
+                  <td>{row?.id}</td>
+                  <td>{row?.corporate_client_name}</td>
+                  <td>{row?.details}</td>
+                  <td>{row?.number_of_employees_in_company}</td>
+                  <td>{row?.participation_mode}</td>
+                  <td>{row?.mandatory_number_of_employees}</td>
+                  <td>{row?.voluntary_number_of_employees}</td>
+                  <td>{row?.employees_family_info}</td>
+                  <td>{row?.insurance_payment_type}</td>
+                  <td>{row?.broker_reference}</td>
+                  <td>{row?.referenced_broker_name}</td>
+                  <td>{row?.file?.filename}</td>
+                  <td>{row?.status}</td>
+                  <td>
                   <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
                 </td>
-              </tr>
+                </tr>
+              ))
+                :
+                <div>
+                  <p>No records.</p>
+                </div>}
             </tbody>
           </table>
         </div>

@@ -27,7 +27,7 @@ const AdminInsuredClient = ({ insuranceList }) => {
             </tr>
           </thead>
           <tbody>
-            {insuranceList.map((insurance, index) => (
+            {/* {insuranceList.map((insurance, index) => (
               <tr>
                 <td>{insurance.name}</td>
                 <td>{insurance.email}</td>
@@ -37,7 +37,7 @@ const AdminInsuredClient = ({ insuranceList }) => {
                   <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
                 </td>
               </tr>
-            ))}
+            ))} */}
           </tbody>
         </table>
       </div>

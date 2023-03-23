@@ -523,7 +523,7 @@ body {
           .dashboard__container__content__insuredClient__details__table {
             min-width: 30rem; }
             .dashboard__container__content__insuredClient__details__table thead tr th {
-              font-weight: normal;
+              font-weight: bold;
               text-align: left; }
             .dashboard__container__content__insuredClient__details__table tbody tr td:nth-last-child(1) {
               text-align: right; }
@@ -763,36 +763,45 @@ body {
           .uploadClient__container__body__participation__headInput::placeholder {
             font-weight: 500;
             color: black; }
+          .uploadClient__container__body__participation_submit_button{
+              width: 100%;
+              text-align: center;
+              margin-top: 1rem;
+              }
+          .uploadClient__container__body__participation_submit_button button{
+              width: 80%;
+              }
           @media (max-width: 750px) {
             .uploadClient__container__body__participation__headInput {
               width: 100% !important; } }
         .uploadClient__container__body__participation__head {
           display: flex;
           margin-top: .5rem; }
-          .uploadClient__container__body__participation__head input {
-            width: 15px; }
-          .uploadClient__container__body__participation__head label {
-            margin-left: .5rem; }
+        .uploadClient__container__body__participation__head input {
+          width: 15px; }
+        .uploadClient__container__body__participation__head label {
+          margin-left: .5rem; }
         .uploadClient__container__body__participation__buttonBox {
           margin-left: 3rem;
           margin-top: .5rem; }
-          .uploadClient__container__body__participation__buttonBox span {
-            margin-left: 1.2rem; }
-          .uploadClient__container__body__participation__buttonBox__button {
-            display: flex;
-            margin-top: .5rem; }
-            .uploadClient__container__body__participation__buttonBox__button input {
-              width: 15px; }
-            .uploadClient__container__body__participation__buttonBox__button label {
-              margin-left: .5rem; }
-      .uploadClient__container__body Button {
-        background-color: #DD3333 !important;
-        border-radius: 1.5rem;
-        margin: 2rem 0;
-        width: 180px;
-        color: white;
-        font-size: 1.1rem;
-        font-weight: 600; }
+        .uploadClient__container__body__participation__buttonBox span {
+          margin-left: 1.2rem; }
+        .uploadClient__container__body__participation__buttonBox__button {
+          display: flex;
+          margin-top: .5rem; }
+        .uploadClient__container__body__participation__buttonBox__button input {
+          width: 15px; }
+        .uploadClient__container__body__participation__buttonBox__button label {
+          margin-left: .5rem; }
+        .uploadClient__container__body Button {
+          background-color: #DD3333 !important;
+          border-radius: 1.5rem;
+          margin: 2rem 0;
+          width: 180px;
+          color: white;
+          font-size: 1.1rem;
+          font-weight: 600; 
+        }
 
 .landingPage {
   margin-top: -220px; }
@@ -2008,15 +2017,27 @@ body {
     margin-top: 2rem;
     overflow: auto; }
     .insuredClientView__container table {
-      width: 100%;
+      
+      
+      padding: 10px;
+      width: 130%;
       min-width: 40rem; }
       .insuredClientView__container table thead tr th {
-        font-weight: 500;
+        font-weight: bold;
         text-align: start; }
+        .insuredClientView__container table thead tr th{
+         
+          padding: 7px;
+        }
       .insuredClientView__container table tbody tr:nth-child(1) {
         padding-top: 2rem; }
       .insuredClientView__container table tbody tr td:nth-last-child(1) {
         text-align: right; }
+        .insuredClientView__container table tbody tr td{
+          min-width: 70px;
+          padding: 10px;
+         
+        }
         .insuredClientView__container table tbody tr td:nth-last-child(1) Button {
           color: black !important;
           font-weight: 600 !important; }

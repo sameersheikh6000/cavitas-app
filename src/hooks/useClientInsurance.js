@@ -104,7 +104,7 @@ const useClientInsurance = () => {
 
   const getAllClientInsuranceAdmin = async () => {
     const response = await axios.get(
-      `${API_KEY}/api/v1/insured_clients`,
+      `${API_KEY}/api/v1/client_infos`,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
@@ -216,9 +216,25 @@ const useClientInsurance = () => {
     return response;
   };
 
+  const downloadFileAdmin = async (id) => {
+  //   const response = await axios.get({
+  //     url: `${API_KEY}/api/v1/client_infos/${id}/download_file`,
+  //     method: 'GET',
+  //     headers: getAdminHeaders(),
+  //     responseType: 'blob'
+  //   })
+  //   debugger
+  //   const url = window.URL.createObjectURL(new Blob([response.data]));
+  //   const link = document.createElement('a');
+  //   link.href = url;
+  //   link.setAttribute('download', 'filename.csv');
+  //   document.body.appendChild(link);
+  //   link.click();
+  }
+
 
   return {
-    createClientInsurance, getAllClientInsurance, deleteClientInsurance, updateClientInsurance, getClientInsuranceById, createClientInsuranceAdmin, getAllClientInsuranceAdmin, deleteClientInsuranceAdmin, updateClientInsuranceAdmin, getClientInsuranceByIdAdmin,
+    createClientInsurance, getAllClientInsurance, deleteClientInsurance, updateClientInsurance, getClientInsuranceById, createClientInsuranceAdmin, getAllClientInsuranceAdmin, deleteClientInsuranceAdmin, updateClientInsuranceAdmin, getClientInsuranceByIdAdmin, downloadFileAdmin
   };
 };
 export default useClientInsurance;
