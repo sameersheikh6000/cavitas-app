@@ -100,7 +100,7 @@ const Sidebar = () => {
             <p>Policy information</p>
           </Link> */}
 
-          <Link to="/admin/support/" className='sidebar__linkButtons__link'>
+          <Link to="/admin/UserInformation/" className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>User Information</p>
           </Link>

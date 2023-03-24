@@ -51,8 +51,8 @@ const AdminFileApproval = () => {
                 <th>Payment Type</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
                 <th>Broker Reference</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
                 <th>Broker Name</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>File</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Status</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
+                {/* <th>File</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
+                <th>Status</th> &nbsp; &nbsp;  &nbsp; &nbsp;  */}
               </tr>
             </thead>
             <tbody>
@@ -70,8 +70,8 @@ const AdminFileApproval = () => {
                   <td>{row?.insurance_payment_type}</td>
                   <td>{row?.broker_reference}</td>
                   <td>{row?.referenced_broker_name}</td>
-                  <td>{row?.file?.filename}</td>
-                  <td>{row?.status}</td>
+                  {/* <td>{row?.file?.filename}</td>
+                  <td>{row?.status}</td> */}
                   <td>
                   <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
                 </td>

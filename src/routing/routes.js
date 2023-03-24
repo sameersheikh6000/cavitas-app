@@ -28,6 +28,7 @@ import AdminInsuredClientView from "../pages/Admin/InsuredClientView";
 import LandingPage from "../pages/User/LandingPage";
 import Cart from "../pages/User/Cart";
 import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading";
+import UserInformation from "../pages/Admin/UserInformation";
 
 export const routes = [
 
@@ -181,6 +182,11 @@ export const routes = [
   {
     path: "/admin/ApprovalFile",
     component:   ApprovalFile,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/UserInformation",
+    component:   UserInformation,
     isPrivate: false,
   },
   

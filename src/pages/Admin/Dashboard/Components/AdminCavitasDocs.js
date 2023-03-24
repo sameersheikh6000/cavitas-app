@@ -11,14 +11,14 @@ const AdminCavitasDocs = () => {
           < TextSnippetOutlinedIcon className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
           <p>User Information</p>
         </div>
-        <Button size='small' onClick={() => navigate("/admin/cavitasdocs/view")}>All Documents</Button>
+        <Button size='small' onClick={() => navigate("/admin/UserInformation")}>All Users</Button>
       </header>
       <div className='dashboard__container__content__cavitasDocs__details'>
         <table className='dashboard__container__content__cavitasDocs__details__table'>
           <thead>
             <tr>
-              <th>Document type</th>
-              <th>Valid from</th>
+              <th></th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
