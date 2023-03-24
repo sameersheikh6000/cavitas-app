@@ -1982,6 +1982,15 @@ body {
             .userProfileView__container__details__detailsBox div:nth-child(1) {
               width: 100%;
               margin-right: 0; } }
+              .userProfileView__container__details__detailsBox__feilds__container{
+                width: 100% !important  ;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+              }
+              .userProfileView__container__details__detailsBox__feilds__container input{
+                margin-top: 5px;
+              }
 
 .insuredClientView {
   margin: 2rem 5rem 0 380px; }

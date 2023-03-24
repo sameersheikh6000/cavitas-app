@@ -3,28 +3,25 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
+import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
 import useClientInsurance from '../../../hooks/useClientInsurance';
 import useUsers from '../../../hooks/useUsers';
 import DeleteUserConfirmModal from './Components/DeleteUserConfirmModal';
+import UpdateUserModal from './Components/UpdateUserModal';
 
 
 const UserInformation = () => {
 
-  const navigate = useNavigate();
   const { getAllUsers, deleteUserByAdmin } = useUsers();
   const [errorMessage, setErrorMessage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState();
   const [users, setUsers] = useState([])
-  const [insurance, setInsurance] = useState({
-    subject: "",
-    description: "",
-    file: "",
-  });
+  
 
   const getUsersList = async () => {
     const response = await getAllUsers()
     if (response?.status < 300){
       setUsers(response?.users)
-      console.log(users)
     } else if (response?.status > 300) {
       setErrorMessage(response?.message);
     }
@@ -37,6 +34,7 @@ const UserInformation = () => {
 
   return (
     <Page>
+      <SuccessMessage successMessage={successMessage}/>
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
         <header>
@@ -50,18 +48,22 @@ const UserInformation = () => {
               <th>User Email</th>
               <th>First Name</th>
               <th>Last Name</th>
+              <th>Company KRS Number</th>
               <th>User Role</th>
             </tr>
           </thead>
           <tbody>
             {users.length > 0 ? users.map((row, index) => (
-              <tr>
+              <tr key={index}>
                 <td>{row?.company_name}</td>
                 <td>{row?.email}</td>
                 <td>{row?.first_name}</td>
                 <td>{row?.last_name}</td>
+                <td>{row?.company_krs_number}</td>
+
                 <td>{row?.role}</td>
-                <td>
+                <td style={{display: "flex"}}>
+                <UpdateUserModal user_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getUsersList={getUsersList} usersList={users}/>
                 <DeleteUserConfirmModal user_id={row?.id} getUsersList={getUsersList} setErrorMessage={setErrorMessage} deleteUserByAdmin={deleteUserByAdmin}/>
                 </td>
               </tr>

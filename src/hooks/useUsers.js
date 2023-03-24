@@ -190,16 +190,19 @@ const useUsers = () => {
   const updateAdminUser = async user => {
     const params = {
       user: {
-        id: user.id,
         first_name: user.first_name,
         last_name: user.last_name,
         email: user.email,
+        company_name: user.company_name,
+        company_krs_number: user.company_krs_number,
+        company_address: user.company_address,
+        phone_number: user.phone_number,
         password: user.password,
         password_confirmation: user.password_confirmation,
       }
     }
     const response = await axios.put(
-      `${API_KEY}/users/${params.user.id}`,
+      `${API_KEY}/users`,
       {
         ...params
       },
@@ -239,8 +242,52 @@ const useUsers = () => {
     return response;
   };
 
+  const updateUserByAdmin = async (user) => {
+    debugger
+    const params = {
+      user: {
+        first_name: user.first_name,
+        last_name: user.last_name,
+        email: user.email,
+        company_name: user.company_name,
+        company_address: user.company_address,
+        company_krs_number: user.company_krs_number,
+        phone_number: user.phone_number,
+        password: user.password,
+        password_confirmation: user.password_confirmation,
+      }
+    }
+
+    const response = await axios.put(
+      `${API_KEY}/api/v1/manage_users/${user.id}`,
+      {
+        ...params
+      },
+      getAdminHeaders(),
+      ).then((res) => {
+        debugger
+        if (res.data.status > 300) {
+          handleErrors(res);
+        }
+        return res.data
+      })
+      return response;
+  }
+
+  const getUserByAdmin = async (id) => {
+    const response = await axios.get(`${API_KEY}/api/v1/manage_users/${id}`,
+    getAdminHeaders()
+  ).then((res) => {
+    if (res.data.status > 300) {
+      handleErrors(res);
+    }
+    return res.data
+  })
+  return response;
+  }
+
   return {
-    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById, deleteUserByAdmin
+    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById, deleteUserByAdmin, updateUserByAdmin, getUserByAdmin
   };
 };
 export default useUsers;

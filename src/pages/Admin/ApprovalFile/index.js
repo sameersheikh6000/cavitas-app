@@ -39,19 +39,19 @@ const ApprovalFile = () => {
           <table className='dashboard__container__content__insuredClient__details__table'>
             <thead>
             <tr>
-                <th>Ticket#</th>  &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Name</th>  &nbsp; &nbsp;  &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Description</th>  &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Total Employees in Company</th>  &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Participation</th>  &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Mandatory Employees</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Voluntary Employees</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Employee Family Info</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Payment Type</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Broker Reference</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Broker Name</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>File</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
-                <th>Status</th> &nbsp; &nbsp;  &nbsp; &nbsp; 
+                <th>Ticket#</th>  
+                <th>Name</th>   
+                <th>Description</th>     
+                <th>Total Employees in Company</th>     
+                <th>Participation</th>     
+                <th>Mandatory Employees</th>    
+                <th>Voluntary Employees</th>    
+                <th>Employee Family Info</th>    
+                <th>Payment Type</th>    
+                <th>Broker Reference</th>    
+                <th>Broker Name</th>    
+                <th>File</th>    
+                <th>Status</th>    
               </tr>
             </thead>
             <tbody>

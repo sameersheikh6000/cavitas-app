@@ -29,6 +29,7 @@ import LandingPage from "../pages/User/LandingPage";
 import Cart from "../pages/User/Cart";
 import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading";
 import UserInformation from "../pages/Admin/UserInformation";
+import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 
 export const routes = [
 
@@ -187,6 +188,11 @@ export const routes = [
   {
     path: "/admin/UserInformation",
     component:   UserInformation,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/profile/view",
+    component:   AdminProfileView,
     isPrivate: false,
   },
   
