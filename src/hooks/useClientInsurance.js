@@ -165,20 +165,12 @@ const useClientInsurance = () => {
     return response;
   };
 
-  const updateClientInsuranceAdmin = async insurance => {
+  const updateClientInsuranceAdmin = async (id, insuranceFile) => {
     const formData = new FormData()
-    for (const property in insurance) {
-      formData.append(
-        property, insurance[property]
-      )
-    }
-    const params = {
-      insurance: {
-        id: insurance.id
-      }
-    }
+
+      formData.append('file', insuranceFile)
     const response = await axios.put(
-      `${API_KEY}/users/templates/${params.insurance.id}`, formData,
+      `${API_KEY}/api/v1/client_infos/${id}`, formData,
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {

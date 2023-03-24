@@ -71,8 +71,8 @@ const useUsers = () => {
 
   const getAllUsers = async () => {
     const response = await axios.get(
-      `${API_KEY}/users`,
-      getHeaders()
+      `${API_KEY}/api/v1/manage_users`,
+      getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
         handleErrors(res);
@@ -99,16 +99,8 @@ const useUsers = () => {
     debugger
     const params = {
       user: {
-        // id: user.id,
         first_name: user.first_name,
         last_name: user.last_name,
-        // email: user.email,
-        // company_name: user.company_name,
-        // company_number: user.company_number,
-        // company_address: user.company_address,
-        // company_city: user.company_city,
-        // company_postal_code: user.company_postal_code,
-        // company_country: user.company_country,
         phone_number: user.phone_number,
         password: user.password,
         password_confirmation: user.confirm_password,
@@ -234,9 +226,21 @@ const useUsers = () => {
     return response;
   };
 
+  const deleteUserByAdmin = async id => {
+    const response = await axios.delete(
+      `${API_KEY}/api/v1/manage_users/${id}`,
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
 
   return {
-    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById,
+    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById, deleteUserByAdmin
   };
 };
 export default useUsers;

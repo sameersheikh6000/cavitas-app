@@ -9,33 +9,14 @@ import { API_KEY } from '../../../config/helpers/variables';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import InsuredClientRejectModal from './Components/InsuredClientReajectModal';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import Box from '@mui/material/Box';
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
+import ClientInfoUpdate from './Components/ClientInfoUpdate';
 
 
 const AdminInsuredClientView = () => {
   const navigate = useNavigate();
-  const { getAllClientInsuranceAdmin, updateClientInsuranceAdmin } = useClientInsurance();
+  const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [clientInfoList, setClientInfoList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
-  const [file, setFile] = useState();
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-  const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: 'background.paper',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-  };
-
 
   const getClientInsurance = async () => {
 
@@ -45,14 +26,6 @@ const AdminInsuredClientView = () => {
     } else {
       setErrorMessage('Something went wrong!')
     }
-  }
-
-  const handleChange = (e) => {
-    setFile( e.target.files[0] )
-  }
-
-  const handleUpdate = async (id) => {
-    const response = await updateClientInsuranceAdmin()
   }
 
   useEffect(() => {
@@ -111,37 +84,8 @@ const AdminInsuredClientView = () => {
                     <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download_file`}>{row?.file?.filename}</a>
                     }</td>
                   <td>{row?.status}</td>
-                  <td>
-                  <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={handleOpen}>update</Button>
-                    <Modal
-                      open={open}
-                      onClose={handleClose}
-                      aria-labelledby="modal-modal-title"
-                      aria-describedby="modal-modal-description"
-                    >
-                      <Box sx={style}>
-                        <Typography id="modal-modal-title" variant="h6" component="h2">
-                          Text in a modal
-                        </Typography>
-                        <div className='uploadClient__container__body__participation'>
-                          <p>Please upload the group census as spreadsheet (.xls or .csv)</p>
-                          <div className='uploadClient__container__body__participation__fileUpload'>
-                            <label for="file-input">
-                              <FileUploadOutlinedIcon className='uploadClient__container__body__participation__fileUpload__icon' />
-                              Upload file
-                            </label>
-                            <input id="file-input" type="file"
-                              onChange={(e) => handleChange(e)}
-                              name="file"
-                              required={true}
-                            />
-                          </div>
-                          <div className="uploadClient__container__body__participation_submit_button">
-                            <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={() => handleUpdate(row?.id)}>submit</Button>
-                          </div>
-                        </div>
-                      </Box>
-                    </Modal></td>
+                  <td><ClientInfoUpdate client_id={row?.id} getClientInsurance={getClientInsurance}/>
+                  </td>
                 {/* <td style={{ display: "flex", alignItems: 'center', justifyContent: 'space-around' }}>
                   <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={() => navigate("/admin/dashboard")}>Accept</Button>
                   <InsuredClientRejectModal />

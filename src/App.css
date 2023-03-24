@@ -687,7 +687,7 @@ body {
           .dashboard__container__content__cavitasDocs__details__table {
             min-width: 30rem; }
             .dashboard__container__content__cavitasDocs__details__table thead tr th {
-              font-weight: normal;
+              font-weight: bold;
               text-align: left; }
             .dashboard__container__content__cavitasDocs__details__table tbody tr td:nth-child(1) {
               flex: 1; }
@@ -771,6 +771,15 @@ body {
               text-align: center;
               margin-top: 1rem;
               }
+          .uploadClient__container__body__participation_delete_user_button_container{
+            display: flex;
+            width: 100%;
+            margin-top: 20px;
+            justify-content: end;
+              }
+          .uploadClient__container__body__participation_delete_user_button_container button{
+            margin-right: 5px;
+          }
           .uploadClient__container__body__participation_submit_button button{
               width: 80%;
               }

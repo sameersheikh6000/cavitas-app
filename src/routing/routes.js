@@ -160,7 +160,7 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/admin/dashboard",
+    path: "/admin",
     component: AdminDashboard,
     isPrivate: false,
   },

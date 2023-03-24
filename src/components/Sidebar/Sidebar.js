@@ -80,7 +80,7 @@ const Sidebar = () => {
         </div>
         :
         <div className='sidebar__linkButtons'>
-          <Link to="/admin/dashboard" className='sidebar__linkButtons__link'>
+          <Link to="/admin" className='sidebar__linkButtons__link'>
             <HomeOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>Dashboard</p>
           </Link>
