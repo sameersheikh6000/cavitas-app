@@ -10,24 +10,24 @@ const AdminInsuredClient = ({ insuranceList }) => {
 
 
   const navigate = useNavigate();
-  const { getAllClientInsuranceAdmin } = useClientInsurance();
-  const [clientInfoList, setClientInfoList] = useState([]);
+  const { getInsuredClients } = useClientInsurance();
+  const [insuredClientsList, setInsuredClientsList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
 
 
-  const getClientInsurance = async () => {
+  const getInsuredClientList = async () => {
     debugger
-    const response = await getAllClientInsuranceAdmin();
+    const response = await getInsuredClients();
     if (response.status < 300) {
       console.log(response)
-      setClientInfoList(response.client_infos);
-      console.log(clientInfoList)
+      setInsuredClientsList(response.insured_clients);
+      console.log(insuredClientsList)
     } else {
       setErrorMessage('Something went wrong!')
     }
   }
   useEffect(() => {
-    getClientInsurance();
+    getInsuredClientList();
   }, []);
   return (
     <section className='dashboard__container__content__insuredClient'>
@@ -42,40 +42,82 @@ const AdminInsuredClient = ({ insuranceList }) => {
         <table className='dashboard__container__content__insuredClient__details__table'>
 
         <thead>
-            <tr>
-                <th>Ticket#</th> 
-                <th>Name</th>
-                <th>Description</th>
-                <th>Total Employees in Company</th>
-                <th>Participation</th>
-                <th>Mandatory Employees</th>
-                <th>Voluntary Employees</th>
-                <th>Employee Family Info</th>
-                <th>Payment Type</th>
-                <th>Broker Reference</th>
-                <th>Broker Name</th>
-               
+        <tr>
+                <th>Risk country</th>   
+                <th>Type of insurance</th>    
+                <th>Insurance plan</th>   
+                <th>Sum Insured per insured person per policy year</th>   
+                <th>Policy number</th>   
+                <th>Risk inception date</th>  
+                <th>Risk expiry date</th>  
+                <th>Risk renewal date</th>  
+                <th>Policyholder/Company name</th>  
+                <th>Company KRS number</th>  
+                <th>Company URL address</th>  
+                <th>Member gender</th>  
+                <th>Member first name</th>  
+                <th>Member last name</th>  
+                <th>Member PESEL</th>  
+                <th>Member DOB</th>  
+                <th>Member age</th>  
+                <th>Member relation</th>  
+                <th>Member phone number</th>  
+                <th>Member e-mail</th>  
+                <th>Member address</th>  
+                <th>Group Type</th>  
+                <th>PARTICIPATION</th>  
+                <th>Currency</th>  
+                <th>Payment Frequency</th>  
+                <th>Annual GWP</th>  
+                <th>Annual BC</th>  
+                <th>Annual NP</th>  
+                <th>Monthly NP</th>  
+                <th>Monthly BC</th>  
+                <th>Insurer</th>  
+                <th>Mandated broker</th> 
+                
+                {/* <th>File</th>  
+                <th>Status</th>   */}
               </tr>
             </thead>
             <tbody>
-
-            {clientInfoList.length > 0 ? clientInfoList.map((row, index) => (
-                <tr>
-                  <td>{row?.id}</td>
-                  <td>{row?.corporate_client_name}</td>
-                  <td>{row?.details}</td>
-                  <td>{row?.number_of_employees_in_company}</td>
-                  <td>{row?.participation_mode}</td>
-                  <td>{row?.mandatory_number_of_employees}</td>
-                  <td>{row?.voluntary_number_of_employees}</td>
-                  <td>{row?.employees_family_info}</td>
-                  <td>{row?.insurance_payment_type}</td>
-                  <td>{row?.broker_reference}</td>
-                  <td>{row?.referenced_broker_name}</td>
-        
-                  <td>
-                  <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
-                </td>
+            {insuredClientsList.length > 0 ? insuredClientsList.map((row, index) => (
+                <tr key={index}>
+                  <td>{row?.risk_country}</td>
+                  <td>{row?.type_of_insurance}</td>
+                  <td>{row?.insurance_plan}</td>
+                  <td>{row?.sum_insured_per_insured_person_per_policy_year}</td>
+                  <td>{row?.policy_number}</td>
+                  <td>{row?.risk_inception_date}</td>
+                  <td>{row?.risk_expiry_date}</td>
+                  <td>{row?.risk_renewal_date}</td>
+                  <td>{row?.company_name}</td>
+                  <td>{row?.company_krs_number}</td>
+                  <td>{row?.company_url_address}</td>
+                  <td>{row?.member_gender}</td>
+                  <td>{row?.member_first_name}</td>
+                  <td>{row?.member_last_name}</td>
+                  <td>{row?.member_pesel}</td>
+                  <td>{row?.member_dob}</td>
+                  <td>{row?.member_age}</td>
+                  <td>{row?.member_relation}</td>
+                  <td>{row?.member_phone_number}</td>
+                  <td>{row?.member_email}</td>
+                  <td>{row?.member_address}</td>
+                  <td>{row?.group_type}</td>
+                  <td>{row?.participation}</td>
+                  <td>{row?.currency}</td>
+                  <td>{row?.payment_frequency}</td>
+                  <td>{row?.annual_gwp}</td>
+                  <td>{row?.annual_bc}</td>
+                  <td>{row?.annual_np}</td>
+                  <td>{row?.monthly_np}</td>
+                  <td>{row?.monthly_bc}</td>
+                  <td>{row?.insurer}</td>
+                  <td>{row?.mandated_broker}</td>
+                  {/* <td>
+                    <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
+                  </td> */}
                 </tr>
               ))
                 :

@@ -109,14 +109,14 @@ function AdminProfileView() {
             </div>
             <div className='userProfileView__container__details__detailsBox'>
               <div><input
-                type="text"
+                type="password"
                 placeholder='Password'
                 onChange={(e) => setProfile({ ...profile, password: e.target.value })}
               />
               </div>
               <div>
                 <input
-                  type="text"
+                  type="password"
                   placeholder='Confirm password'
                   onChange={(e) => setProfile({ ...profile, confirm_password: e.target.value })}
                   autoComplete='off'

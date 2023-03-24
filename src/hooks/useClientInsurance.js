@@ -115,55 +115,6 @@ const useClientInsurance = () => {
     return response;
   };
 
-  const deleteClientInsurance = async id => {
-    const response = await axios.delete(
-      `${API_KEY}/users/templates/${id}`,
-      getHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
-
-  const deleteClientInsuranceAdmin = async id => {
-    const response = await axios.delete(
-      `${API_KEY}/admins/templates/${id}`,
-      getAdminHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
-
-  const updateClientInsurance = async insurance => {
-    const formData = new FormData()
-    for (const property in insurance) {
-      formData.append(
-        property, insurance[property]
-      )
-    }
-    const params = {
-      insurance: {
-        id: insurance.id
-      }
-    }
-    const response = await axios.put(
-      `${API_KEY}/users/templates/${params.insurance.id}`, formData,
-      getHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
 
   const updateClientInsuranceAdmin = async (id, insuranceFile) => {
     const formData = new FormData()
@@ -208,25 +159,22 @@ const useClientInsurance = () => {
     return response;
   };
 
-  const downloadFileAdmin = async (id) => {
-  //   const response = await axios.get({
-  //     url: `${API_KEY}/api/v1/client_infos/${id}/download_file`,
-  //     method: 'GET',
-  //     headers: getAdminHeaders(),
-  //     responseType: 'blob'
-  //   })
-  //   debugger
-  //   const url = window.URL.createObjectURL(new Blob([response.data]));
-  //   const link = document.createElement('a');
-  //   link.href = url;
-  //   link.setAttribute('download', 'filename.csv');
-  //   document.body.appendChild(link);
-  //   link.click();
+  const getInsuredClients = async () => {
+    const response = await axios.get(
+      `${API_KEY}/api/v1/insured_clients`,
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
   }
 
 
   return {
-    createClientInsurance, getAllClientInsurance, deleteClientInsurance, updateClientInsurance, getClientInsuranceById, createClientInsuranceAdmin, getAllClientInsuranceAdmin, deleteClientInsuranceAdmin, updateClientInsuranceAdmin, getClientInsuranceByIdAdmin, downloadFileAdmin
+    createClientInsurance, getAllClientInsurance, getClientInsuranceById, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getClientInsuranceByIdAdmin, getInsuredClients
   };
 };
 export default useClientInsurance;

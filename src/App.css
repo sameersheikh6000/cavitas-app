@@ -524,6 +524,19 @@ body {
             min-width: 30rem;
   
           }
+          .dashboard__container__content__insuredClient__details__table__page__view {
+            padding: 5px;
+            border: 1px solid gray;
+            border-collapse: collapse;
+          }
+          .dashboard__container__content__insuredClient__details__table__page__view thead tr th {
+            padding: 5px;
+            border: 1px solid gray;
+          }
+          .dashboard__container__content__insuredClient__details__table__page__view tbody tr td {
+            padding: 5px;
+            border: 1px solid gray;
+          }
             .dashboard__container__content__insuredClient__details__table thead tr th {
               font-weight: bold;
           
@@ -2043,12 +2056,13 @@ body {
     margin-top: 2rem;
     overflow: auto; }
     .insuredClientView__container table {
-      
-      
+      border-collapse: collapse;
+      border: 1px solid gray;
       padding: 10px;
       width: 130%;
       min-width: 40rem; }
       .insuredClientView__container table thead tr th {
+        border: 1px solid gray;
         font-weight: bold;
         text-align: start; }
         .insuredClientView__container table thead tr th{
@@ -2060,6 +2074,7 @@ body {
       .insuredClientView__container table tbody tr td:nth-last-child(1) {
         text-align: right; }
         .insuredClientView__container table tbody tr td{
+          border: 1px solid gray;
           min-width: 70px;
           padding: 10px;
          
