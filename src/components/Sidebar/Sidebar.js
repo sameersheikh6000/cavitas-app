@@ -40,7 +40,7 @@ const Sidebar = () => {
           {user?.data?.role === "broker" ?
             <></>
             :
-            <Link to="/insuredclient/group" className='sidebar__linkButtons__link'>
+            <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
               <GppGoodOutlinedIcon className='sidebar__linkButtons__link__icon' />
               <p>Policy information</p>
             </Link>
@@ -84,26 +84,37 @@ const Sidebar = () => {
             <HomeOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>Dashboard</p>
           </Link>
-          <Link to="/admin/insuredclient/view" className='sidebar__linkButtons__link'>
+          <Link to="/admin/PannelData" className='sidebar__linkButtons__link'>
             <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Insured clients</p>
+            {/* <p>Insured clients</p> */}
+            <p>Pannel Data</p>
           </Link>
-          <Link to="/admin/cavitasdocs/view" className='sidebar__linkButtons__link'>
+          <Link to="/admin/ApprovalFile" className='sidebar__linkButtons__link'>
+            <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
+            {/* <p>Cavitas Documents</p> */}
+            <p>Approval File</p>
+          </Link>
+          {/* <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
             <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>Cavitas Documents</p>
-          </Link>
-          <Link to="/admin/support/view" className='sidebar__linkButtons__link'>
+            <p>Policy information</p>
+          </Link> */}
+
+          <Link to="/admin/support/" className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Support</p>
+            <p>User Information</p>
           </Link>
+          
           <Link to="/admin/profile/view" className='sidebar__linkButtons__link'>
             <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>User profile</p>
+            {/* <p>User profile</p> */}
+            <p>Admin Profile</p>
+            
           </Link>
-          <div className='sidebar__linkButtons__buttons'>
+          {/* <div className='sidebar__linkButtons__buttons'>
             <Button onClick={() => navigate("/admin/uploadclient")}>Upload new clients</Button>
-            {/* <Button>Get a Quote</Button> */}
-          </div>
+            <Button>Get a Quote</Button>
+          </div> */}
         </div>
       }
     </section>

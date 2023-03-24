@@ -9,7 +9,7 @@ const AdminCavitasDocs = () => {
       <header className='dashboard__container__content__cavitasDocs__header'>
         <div className='dashboard__container__content__cavitasDocs__header__iconBox'>
           < TextSnippetOutlinedIcon className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
-          <p>Cavitas Documents</p>
+          <p>User Information</p>
         </div>
         <Button size='small' onClick={() => navigate("/admin/cavitasdocs/view")}>All Documents</Button>
       </header>
@@ -24,9 +24,11 @@ const AdminCavitasDocs = () => {
           </thead>
           <tbody>
             <tr>
-              <td>......................</td>
-              <td>......................</td>
-              <td></td>
+              <td>User Email</td>
+              <td>Password</td>
+              <td>
+                <button>Delete</button>
+              </td>
             </tr>
             <tr>
               <td>......................</td>

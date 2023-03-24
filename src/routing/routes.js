@@ -10,6 +10,9 @@ import AdminDashboard from "../pages/Admin/Dashboard";
 import Dashboard from "../pages/User/Dashboard";
 import InsuredClientView from "../pages/User/InsuredClientView";
 import AdminUploadClient from "../pages/Admin/UploadClient";
+import AdminPolicyInformation from "../pages/Admin/PolicyInformation"
+import  ApprovalFile from "../pages/Admin/ApprovalFile";
+import  AdminFileApproval from "../pages/Admin/PannelData";
 import UploadClient from "../pages/User/UploadClient";
 import BrokerLandingPage from "../pages/User/BrokerLandingPage";
 import EmployLandingPage from "../pages/User/EmployLandingPage";
@@ -161,13 +164,24 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/admin/uploadclient",
-    component: AdminUploadClient,
-    isPrivate: false,
-  },
-  {
-    path: "/admin/insuredclient/view",
+    path: "/admin/InsuredClientView",
     component: AdminInsuredClientView,
     isPrivate: false,
   },
+  {
+    path: "/admin/PolicyInformation",
+    component: AdminPolicyInformation,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/PannelData",
+    component:  AdminFileApproval,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/ApprovalFile",
+    component:   ApprovalFile,
+    isPrivate: false,
+  },
+  
 ]

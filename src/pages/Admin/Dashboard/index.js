@@ -9,6 +9,7 @@ import AdminSupport from './Components/AdminSupport'
 import AdminCavitasDocs from './Components/AdminCavitasDocs'
 import AdminFIleApproval from './Components/AdminFIleApproval'
 import { USER_STORAGE_KEY } from '../../../config/helpers/variables'
+import AdminPolicyInformation from '../PolicyInformation'
 
 const AdminDashboard = () => {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
@@ -38,10 +39,12 @@ const AdminDashboard = () => {
           <div className='dashboard__container__content'>
             <AdminWelcome />
             <AdminrProfile />
-            <AdminFIleApproval insuranceList={insuranceList} />
             <AdminInsuredClient insuranceList={insuranceList} />
-            <AdminSupport />
+
+            <AdminFIleApproval insuranceList={insuranceList} />
+            {/* <AdminSupport /> */}
             <AdminCavitasDocs />
+         
           </div>
         </div>
       </section>
