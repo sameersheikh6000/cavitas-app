@@ -57,10 +57,12 @@ const useAuthenticate = () => {
 
 
   const userLogout = async user => {
+   
     try {
       const response = await axios.delete(`${API_KEY}/users/sign_out`,
         getHeaders()
       );
+      sessionStorage.removeItem(USER_STORAGE_KEY)
       return response.data;
     } catch (err) {
       handleErrors(err);
@@ -86,10 +88,12 @@ const useAuthenticate = () => {
   };
 
   const adminLogout = async user => {
+    
     try {
       const response = await axios.delete(`${API_KEY}/users/sign_out`,
         getAdminHeaders()
       );
+      sessionStorage.removeItem(ADMIN_STORAGE_KEY)
       return response.data;
     } catch (err) {
       handleErrors(err);
