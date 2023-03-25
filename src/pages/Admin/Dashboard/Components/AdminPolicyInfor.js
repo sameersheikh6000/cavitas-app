@@ -2,16 +2,16 @@ import { Button } from '@mui/material'
 import React from 'react'
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useNavigate } from 'react-router-dom';
-const AdminSupport = () => {
+const AdminPolicyInfor = () => {
   const navigate = useNavigate();
   return (
     <section className='dashboard__container__content__support'>
       <header className='dashboard__container__content__support__header'>
         <div className='dashboard__container__content__support__header__iconBox'>
           < EmailOutlinedIcon className='dashboard__container__content__support__header__iconBox__icon' />
-          <p>SUPPORT</p>
+          <p>Policy Information</p>
         </div>
-        <Button size='small' onClick={() => navigate("/admin/support/view")}>View all</Button>
+        <Button size='small' onClick={() => navigate("/admin/PolicyInformation")}>View all</Button>
       </header>
       <div className='dashboard__container__content__support__details'>
         <table className='dashboard__container__content__support__details__table'>
@@ -71,4 +71,4 @@ const AdminSupport = () => {
   )
 }
 
-export default AdminSupport
+export default AdminPolicyInfor

@@ -5,11 +5,13 @@ import useClientInsurance from '../../../hooks/useClientInsurance'
 import AdminWelcome from './Components/AdminWelcome'
 import AdminrProfile from './Components/AdminProfile'
 import AdminInsuredClient from './Components/AdminInsuredClient'
-import AdminSupport from './Components/AdminSupport'
+// import AdminSupport from './Components/AdminSupport'
 import AdminCavitasDocs from './Components/AdminCavitasDocs'
 import AdminFIleApproval from './Components/AdminFIleApproval'
 import { USER_STORAGE_KEY } from '../../../config/helpers/variables'
 import AdminPolicyInformation from '../PolicyInformation'
+import AdminPolicyInfor from './Components/AdminPolicyInfor'
+import AdminCavitasDocuments from './Components/AdminCavitasDocuments'
 
 const AdminDashboard = () => {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
@@ -43,7 +45,10 @@ const AdminDashboard = () => {
 
             <AdminFIleApproval insuranceList={insuranceList} />
             {/* <AdminSupport /> */}
+            <AdminPolicyInfor />
             <AdminCavitasDocs />
+            <AdminCavitasDocuments />
+            {/* <AdminSupport /> */}
          
           </div>
         </div>

@@ -40,7 +40,9 @@ const Sidebar = () => {
           {user?.data?.role === "broker" ?
             <></>
             :
-            <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
+            // <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
+                          <Link to="/insuredclient/group" className='sidebar__linkButtons__link'>
+
               <GppGoodOutlinedIcon className='sidebar__linkButtons__link__icon' />
               <p>Policy information</p>
             </Link>
@@ -94,11 +96,21 @@ const Sidebar = () => {
             {/* <p>Cavitas Documents</p> */}
             <p>Approval File</p>
           </Link>
-          {/* <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
+
+          
+
+          <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
+            <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
+            {/* <p>Cavitas Documents</p> */}
+            <p>Policy information</p>
+          </Link>
+
+          <Link to="/admin/CavitasDocuments/" className='sidebar__linkButtons__link'>
             <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>Cavitas Documents</p>
-            <p>Policy information</p>
-          </Link> */}
+          </Link>
+
+         
 
           <Link to="/admin/UserInformation/" className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />

@@ -45,52 +45,7 @@ const AdminPolicyInformation = () => {
         <header>
           <h1>Upload Policy Information</h1>
         </header>
-        <div className='uploadClient__container'>
-          <div className='uploadClient__container__content'>
-            <p>Upload Broker PolicyInformation</p>
-            <form className='uploadClient__container__content__form' onSubmit={handleSubmit}>
-              <input
-                type="file"
-                name='file'
-                onChange={handleChange}
-                required={true}
-              /><br></br>
-              <Button type='submit'>Submit</Button>
-            </form>
-          </div>
-        </div>
-
-        <br />
-        <div className='uploadClient__container'>
-          <div className='uploadClient__container__content'>
-            <p>Upload Employer PolicyInformation</p>
-            <form className='uploadClient__container__content__form' onSubmit={handleSubmit}>
-              <input
-                type="file"
-                name='file'
-                onChange={handleChange}
-                required={true}
-              /><br></br>
-              <Button type='submit'>Submit</Button>
-            </form>
-          </div>
-        </div>
-
-        <br />
-        <div className='uploadClient__container'>
-          <div className='uploadClient__container__content'>
-            <p>Upload Member PolicyInformation</p>
-            <form className='uploadClient__container__content__form' onSubmit={handleSubmit}>
-              <input
-                type="file"
-                name='file'
-                onChange={handleChange}
-                required={true}
-              /><br></br>
-              <Button type='submit'>Submit</Button>
-            </form>
-          </div>
-        </div>
+   {/* add */}
       </section>
     </Page>
   )

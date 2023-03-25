@@ -30,6 +30,7 @@ import Cart from "../pages/User/Cart";
 import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading";
 import UserInformation from "../pages/Admin/UserInformation";
 import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
+import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
 
 export const routes = [
 
@@ -191,8 +192,18 @@ export const routes = [
     isPrivate: false,
   },
   {
+    path: "/admin/CavitasDocuments",
+    component:   AdminUploadCavitasDocuments,
+    isPrivate: false,
+  },
+  {
     path: "/admin/profile/view",
     component:   AdminProfileView,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/AdminPolicyInformation",
+    component: AdminPolicyInformation,
     isPrivate: false,
   },
   
