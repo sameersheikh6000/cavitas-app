@@ -10,13 +10,13 @@ import useClientInsurance from '../../../hooks/useClientInsurance';
 
 const AdminFileApproval = () => {
   const navigate = useNavigate();
-  const { getInsuredClients } = useClientInsurance();
+  const { getInsuredClientsByAdmin } = useClientInsurance();
   const [insuredClientsList, setInsuredClientsList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
 
   const getInsuredClientList = async () => {
     debugger
-    const response = await getInsuredClients();
+    const response = await getInsuredClientsByAdmin();
     if (response.status < 300) {
       console.log(response)
       setInsuredClientsList(response.insured_clients);

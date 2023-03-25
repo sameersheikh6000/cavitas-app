@@ -40,6 +40,7 @@ function ClientInfoUpdate({client_id, getClientInsurance}) {
           setErrorMessage(response?.message)
         } else if (response?.status < 300){
           setSuccessMessage("File Updated Successfully")
+          setFile(null)
           setOpen(false);
           getClientInsurance();
         }
@@ -58,7 +59,7 @@ function ClientInfoUpdate({client_id, getClientInsurance}) {
         >
           <Box sx={style}>
             <Typography id="modal-modal-title" variant="h6" component="h2">
-              Text in a modal
+              Upload to Approve
             </Typography>
             <div className='uploadClient__container__body__participation'>
               <p>Please upload the group census as spreadsheet (.xls or .csv)</p>
@@ -72,6 +73,7 @@ function ClientInfoUpdate({client_id, getClientInsurance}) {
                   name="file"
                   required={true}
                 />
+                <p>{file?.name}</p>
               </div>
               <div className="uploadClient__container__body__participation_submit_button">
                 <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={() => handleUpdate(infoID)}>submit</Button>

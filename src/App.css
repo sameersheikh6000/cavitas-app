@@ -641,15 +641,22 @@ body {
           font-size: .8rem;
           overflow: auto; }
           .dashboard__container__content__support__details__table {
+            min-height: 100px;
+            border-collapse: collapse;
             min-width: 30rem; }
             .dashboard__container__content__support__details__table thead tr th {
-              font-weight: normal;
-              text-align: left; }
+              
+              font-weight: bold;
+              min-width: 150px;
+              text-align: center; }
+              .dashboard__container__content__support__details__table tbody tr td {
+                min-height: 100px !important;
+                min-width: 150px !important;
+                text-align: center; }
             .dashboard__container__content__support__details__table tbody tr td:nth-child(1) input {
               border: 2px solid black;
               outline: none !important; }
-            .dashboard__container__content__support__details__table tbody tr td:nth-last-child(1) {
-              text-align: right; }
+            
               .dashboard__container__content__support__details__table tbody tr td:nth-last-child(1) Button {
                 color: black;
                 font-size: .8rem;
@@ -2064,11 +2071,8 @@ body {
       .insuredClientView__container table thead tr th {
         border: 1px solid gray;
         font-weight: bold;
-        text-align: start; }
-        .insuredClientView__container table thead tr th{
-         
-          padding: 7px;
-        }
+        text-align: start; 
+        padding: 7px;}
       .insuredClientView__container table tbody tr:nth-child(1) {
         padding-top: 2rem; }
       .insuredClientView__container table tbody tr td:nth-last-child(1) {
@@ -2252,7 +2256,8 @@ body {
       .supportView__details__table thead tr th {
         border-bottom: 1px solid lightgray;
         font-weight: 600;
-        text-align: left;
+        min-width: 150px;
+        text-align: center;
         padding: .8rem .5rem;
         background-color: #DD3333;
         color: white; }

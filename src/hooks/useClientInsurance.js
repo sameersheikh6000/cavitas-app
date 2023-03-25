@@ -132,34 +132,7 @@ const useClientInsurance = () => {
     return response;
   };
 
-
-  const getClientInsuranceById = async (id) => {
-    const response = await axios.get(
-      `${API_KEY}/users/templates/${id}`,
-      getHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
-
-  const getClientInsuranceByIdAdmin = async (id) => {
-    const response = await axios.get(
-      `${API_KEY}/users/templates/${id}`,
-      getAdminHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
-
-  const getInsuredClients = async () => {
+  const getInsuredClientsByAdmin = async () => {
     const response = await axios.get(
       `${API_KEY}/api/v1/insured_clients`,
       getAdminHeaders()
@@ -172,9 +145,22 @@ const useClientInsurance = () => {
     return response;
   }
 
+  const getInsuredClients = async () => {
+    const response = await axios.get(
+      `${API_KEY}/api/v1/insured_clients`,
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  }
+
 
   return {
-    createClientInsurance, getAllClientInsurance, getClientInsuranceById, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getClientInsuranceByIdAdmin, getInsuredClients
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin
   };
 };
 export default useClientInsurance;

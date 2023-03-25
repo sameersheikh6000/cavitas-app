@@ -1,9 +1,9 @@
 import React from 'react'
-import { USER_STORAGE_KEY } from '../../../../config/helpers/variables'
+import { ADMIN_STORAGE_KEY } from '../../../../config/helpers/variables';
 
 const AdminWelcome = () => {
 
-  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  const user = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
   if (user?.data?.first_name && user?.data?.last_name) {
     var name = `${user?.data?.first_name}` + ' ' + `${user?.data?.last_name}`
   }

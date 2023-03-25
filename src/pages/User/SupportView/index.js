@@ -35,6 +35,7 @@ const SupportView = () => {
             <p>SUPPORT TICKETS</p>
           </div>
         </header>
+          {clientInfos.length > 0 ?
         <div className='supportView__details'>
           <table className='supportView__details__table'>
             <thead>
@@ -56,7 +57,7 @@ const SupportView = () => {
             </thead>
             <tbody>
 
-              {clientInfos.length > 0 ? clientInfos.map((row, index) => (
+              {clientInfos.map((row, index) => (
                 <tr>
                   <td>{row?.id}</td>
                   <td>{row?.corporate_client_name}</td>
@@ -73,13 +74,17 @@ const SupportView = () => {
                   <td>{row?.status}</td>
                 </tr>
               ))
-                :
-                <div>
-                  <p>No records.</p>
-                </div>}
+                
+                }
             </tbody>
           </table>
-        </div>
+          </div>
+          :
+          <div style={{textAlign: "center"}}>
+            <p style={{marginTop: "20%", fontWeight: "bold", fontSize: "1.2rem"}}>No Ticket History.</p>
+          </div>
+          }
+        
       </section>
     </Page>
   )

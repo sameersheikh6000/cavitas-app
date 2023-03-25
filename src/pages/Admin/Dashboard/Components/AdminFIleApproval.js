@@ -36,12 +36,12 @@ const AdminFileApproval = () => {
         <header className='dashboard__container__content__insuredClient__header'>
           <div className='dashboard__container__content__insuredClient__header__iconBox'>
             < TextSnippetIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
-            {/* <p>File approval</p> */}
             <p>Approval File</p>
           </div>
           <Button size='small' onClick={() => navigate("/admin/ApprovalFile")}>View all</Button>
         </header>
         <div className='dashboard__container__content__insuredClient__details'>
+        {clientInfoList.length > 0 ?
           <table className='dashboard__container__content__insuredClient__details__table'>
             <thead>
             <tr>
@@ -62,7 +62,7 @@ const AdminFileApproval = () => {
             </thead>
             <tbody>
 
-            {clientInfoList.length > 0 ? clientInfoList.map((row, index) => (
+            {clientInfoList.map((row, index) => (
                 <tr>
                   <td>{row?.id}</td>
                   <td>{row?.corporate_client_name}</td>
@@ -81,13 +81,14 @@ const AdminFileApproval = () => {
                   <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
                 </td>
                 </tr>
-              ))
-                :
-                <div>
-                  <p>No records.</p>
-                </div>}
+              ))}
+                
             </tbody>
           </table>
+          :
+                <div style={{textAlign: "center"}}>
+                  <p style={{marginTop: "10%", fontWeight: "bold", fontSize: "1.2rem"}}>No Files To Approve.</p>
+                </div>}
         </div>
       </section>
     </>

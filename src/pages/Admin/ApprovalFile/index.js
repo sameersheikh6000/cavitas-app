@@ -47,6 +47,7 @@ const AdminInsuredClientView = () => {
           </div>
         </header>
         <div className='insuredClientView__container'>
+          { clientInfoList.length > 0 ? 
           <table >
             <thead>
               <tr>
@@ -67,7 +68,7 @@ const AdminInsuredClientView = () => {
               </tr>
             </thead>
             <tbody>
-            {clientInfoList.length > 0 ? clientInfoList.map((row, index) => (
+            {clientInfoList.map((row, index) => (
                 <tr>
               <td>{row?.id}</td>
                   <td>{row?.corporate_client_name}</td>
@@ -92,12 +93,13 @@ const AdminInsuredClientView = () => {
                 </td> */}
               </tr>
               )) 
-              :
-                <div>
-                  <p>No records.</p>
-                </div>}
+              }
             </tbody>
           </table>
+          :
+          <div style={{textAlign: "center"}}>
+          <p style={{marginTop: "20%", fontWeight: "bold", fontSize: "1.2rem"}}>No Files To Approve.</p>
+        </div>}
         </div>
       </section>
     </Page>

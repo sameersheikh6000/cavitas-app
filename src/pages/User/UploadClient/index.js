@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Page from '../../../components/Page/Page';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
 import useClientInsurance from '../../../hooks/useClientInsurance';
+import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 
 const UploadClient = () => {
   const {createClientInsurance} = useClientInsurance();
@@ -12,6 +13,8 @@ const UploadClient = () => {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
+  const [successMessage, setSuccessMessage] = useState();
+  const [fileName, setFileName] = useState("");
   const [client, setClient] = useState({
     corporate_client_name: "",
     number_of_employees_in_company: "",
@@ -34,6 +37,7 @@ const UploadClient = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setClient({ ...client, [name]: name !== "file" ? value : e.target.files[0] });
+    e.target.files[0] && setFileName(e.target.files[0].name)
   }
   console.log({ ...client });
 
@@ -60,7 +64,8 @@ const UploadClient = () => {
       ...client,
     };
     const response = await createClientInsurance(data);
-    if (response.status < 300) {
+    if (response?.status < 300) {
+      setSuccessMessage("Submited Successfully!")
       navigate("/dashboard");
     } else if (response.status > 300) {
       // setErrorMessage(response.message);
@@ -68,6 +73,7 @@ const UploadClient = () => {
   }
   return (
     <Page>
+      <SuccessMessage successMessage={successMessage}/>
       <section className='uploadClient'>
         <header>
           <h1>Upload new members for the group cover</h1>
@@ -332,6 +338,7 @@ const UploadClient = () => {
                     name="file"
                     required={true}
                   />
+                <p>{fileName}</p>
                 </div>
               </div>
               <div className='uploadClient__container__body__participation'>

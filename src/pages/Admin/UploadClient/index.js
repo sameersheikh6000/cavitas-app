@@ -12,6 +12,7 @@ const UploadClient = () => {
   const user = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
+  
   const [client, setClient] = useState({
     corporate_client_name: "",
     number_of_employees_in_company: "",
