@@ -1,107 +1,82 @@
-import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, {useState, useEffect} from 'react'
+import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
+import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
+import useCavitasDocs from '../../../hooks/useCavitasDocs';
 import { useNavigate } from 'react-router-dom';
-import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
-
+import CreateCavitasDocs from './Components/CreateCavitasDocs';
 import Page from '../../../components/Page/Page';
-import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
-import useClientInsurance from '../../../hooks/useClientInsurance';
+import { API_KEY } from '../../../config/helpers/variables';
+import DeleteCavitasDocs from './Components/DeleteCavitasDocs';
+import UpdateCavitasDocs from './Components/UpdateCavitasDocs';
 
 
-const AdminUploadCavitasDocuments = () => {
-
+const CavitasDocument = () =>  {
     const navigate = useNavigate();
-    const { createClientInsuranceAdmin } = useClientInsurance();
+    const { getCavitasDocsByAdmin } = useCavitasDocs();
     const [errorMessage, setErrorMessage] = useState(null);
-    const [insurance, setInsurance] = useState({
-        subject: "",
-        description: "",
-        file: "",
-    });
-
-    const handleChange = e => {
-        const { name, value } = e.target;
-        setInsurance({
-            ...insurance, [name]: name !== "file" ? value : e.target.files[0]
-        });
-    };
-
-    const handleSubmit = async e => {
-        e.preventDefault();
-        let data = {
-            ...insurance,
-        };
-        const response = await createClientInsuranceAdmin(data);
-        if (response.status < 300) {
-            navigate("admin/dashboard");
-        } else if (response.status > 300) {
-            setErrorMessage(response.message);
-        }
+    const [cavitasDocs, setCavitasDocs] = useState([]);
+    const [successMessage, setSuccessMessage] = useState();
+  
+    const fetchCavitasDocs = async () => {
+      debugger
+      const response = await getCavitasDocsByAdmin();
+      debugger
+      if (response?.status < 300) {
+        setCavitasDocs(response?.cavitas_documents)
+      } else if (response?.status > 300) {
+        setErrorMessage(response.message);
+      }
     }
-
-
+  
+    useEffect(() => {
+        fetchCavitasDocs();
+    }, [])
+  
+  
     return (
-        <Page>
-            <AlertMessage errorMessage={errorMessage} />
-            <section className='uploadClient'>
-                <header>
-                    <h1>Upload Cavitas Documents</h1>
-                </header>
-                <div className='uploadClient__container'>
-                    <div className='uploadClient__container__content'>
-                        <p>Upload Broker PolicyInformation</p>
-                        <form className='uploadClient__container__content__form' onSubmit={handleSubmit}>
+      <Page>
+        <SuccessMessage successMessage={successMessage}/>
+        <AlertMessage errorMessage={errorMessage} />
+        <section className='uploadClient'>
+          <header style={{display: "flex", justifyContent: "space-between"}}>
+            <h1>Cavitas Documents</h1>
 
-                            <div className='uploadClient__container__body__participation'>
-                                <p>Add Title</p>
-                                <input
-                                    className='uploadClient__container__body__participation__headInput'
-                                    type='text'
-                                    placeholder=''
-                                    name="title"
-                                    required={true}
-                                />
-                            </div>
-
-                            <div className='uploadClient__container__body__participation'>
-                                <p>Add Valid Date</p>
-                                <input
-                                    className='uploadClient__container__body__participation__headInput'
-                                    type='date'
-                                    placeholder='Name of insurance broker company'
-                                    name="valid_date"
-                                    required={true}
-                                />
-
-                            </div>
-
-                            <div className='uploadClient__container__body__participation'>
-                                <p>Please upload the Cavitas Documents (.pdf)</p>
-                                <div className='uploadClient__container__body__participation__fileUpload'>
-                                    <label for="file-input">
-                                        <FileUploadOutlinedIcon className='uploadClient__container__body__participation__fileUpload__icon' />
-                                        Upload file
-                                    </label>
-                                    <input id="file-input" type="file"
-                                        name="file"
-                                        required={true}
-                                    />
-                                </div>
-                            </div>
-
-                            <br></br>
-                            <Button type='submit'>Submit</Button>
-                        </form>
-
-
-                    </div>
-                </div>
-
-
-
-            </section>
-        </Page>
+            <CreateCavitasDocs setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} fetchCavitasDocs={fetchCavitasDocs}/>
+          </header>
+          <div className='insuredClientView__container'>
+          {cavitasDocs ?
+            <table >
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Vaid Date</th>
+                  <th>PDF Docs</th>
+                  <td></td>
+                </tr>
+              </thead>
+              <tbody>
+                {cavitasDocs?.map((row, index) => (
+                    <tr>               
+                        <td>{row?.title}</td>
+                        <td>{row?.valid_date}</td>
+                        <td><a href={`${API_KEY}/${row?.document?.url}`} target="_blank">{row?.document?.filename}</a></td>
+                        <td style={{display: "flex", justifyContent: "center"}}>
+                            <UpdateCavitasDocs cavitasDocs_id={row?.id} setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} fetchCavitasDocs={fetchCavitasDocs} />
+                            <DeleteCavitasDocs cavitasDocs_id={row?.id} setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} fetchCavitasDocs={fetchCavitasDocs} />
+                        </td>
+                    </tr>
+                ))}
+              </tbody>
+            </table>
+            :
+            <div style={{textAlign: "center"}}>
+              <p>No records.</p>
+            </div>
+          }
+          </div>
+        </section>
+      </Page>
     )
-}
+  }
 
-export default AdminUploadCavitasDocuments
+export default CavitasDocument
