@@ -17,14 +17,14 @@ import PolicyInoformationDestroy from '../../../Admin/PolicyInformation/Componen
 const GroupPolicyInfo = ({ user }) => {
   const navigate = useNavigate();
 
-  const { getPolicyInformationByAdmin } = usePolicyInformation();
+  const { getPolicyInformation } = usePolicyInformation();
   const [errorMessage, setErrorMessage] = useState(null);
   const [policyInformation, setPolicyInformation] = useState();
   const [successMessage, setSuccessMessage] = useState();
 
   const getPolicyInfo = async () => {
     debugger
-    const response = await getPolicyInformationByAdmin();
+    const response = await getPolicyInformation();
     if (response?.status < 300) {
       setPolicyInformation(response?.policy_information)
     } else if (response.status > 300) {

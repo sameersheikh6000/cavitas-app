@@ -14,14 +14,14 @@ import UpdateCavitasDocs from '../../../Admin/CavitasDocuments/Components/Update
 const CavitasDocs = () => {
   const navigate = useNavigate();
     
-  const { getCavitasDocsByAdmin } = useCavitasDocs();
+  const { getCavitasDocs } = useCavitasDocs();
   const [errorMessage, setErrorMessage] = useState(null);
   const [cavitasDocs, setCavitasDocs] = useState([]);
   const [successMessage, setSuccessMessage] = useState();
 
   const fetchCavitasDocs = async () => {
     debugger
-    const response = await getCavitasDocsByAdmin();
+    const response = await getCavitasDocs();
     debugger
     if (response?.status < 300) {
       setCavitasDocs(response?.cavitas_documents)
