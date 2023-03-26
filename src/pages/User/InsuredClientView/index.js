@@ -7,12 +7,14 @@ import moment from 'moment';
 import Page from "../../../components/Page/Page";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
+import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 
 const InsuredClientView = () => {
   const navigate = useNavigate();
   const { getInsuredClients } = useClientInsurance();
   const [insuranceList, setInsuranceList] = useState([]);
-  const [errorMessage, setErrorMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [ successMessage, setSuccessMeassage] = useState();
 
 
   const getClientInsurance = async () => {
@@ -29,6 +31,7 @@ const InsuredClientView = () => {
 
   return (
     <Page>
+      <SuccessMessage successMessage={successMessage}/>
       <AlertMessage errorMessage={errorMessage} />
       <section className='insuredClientView'>
         <header className='insuredClientView__header'>
