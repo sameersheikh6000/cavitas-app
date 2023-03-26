@@ -1,9 +1,39 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import { useNavigate } from 'react-router-dom';
+import useUsers from '../../../../hooks/useUsers';
+import DeleteUserConfirmModal from '../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs';
+import SuccessMessage from '../../../../components/SnackbarMessages/SuccessMessage';
+import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
+import useCavitasDocs from '../../../../hooks/useCavitasDocs';
+import { API_KEY } from '../../../../config/helpers/variables';
+import DeleteCavitasDocs from '../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs';
+import UpdateCavitasDocs from '../../../Admin/CavitasDocuments/Components/UpdateCavitasDocs';
 const CavitasDocs = () => {
   const navigate = useNavigate();
+    
+  const { getCavitasDocsByAdmin } = useCavitasDocs();
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [cavitasDocs, setCavitasDocs] = useState([]);
+  const [successMessage, setSuccessMessage] = useState();
+
+  const fetchCavitasDocs = async () => {
+    debugger
+    const response = await getCavitasDocsByAdmin();
+    debugger
+    if (response?.status < 300) {
+      setCavitasDocs(response?.cavitas_documents)
+    } else if (response?.status > 300) {
+      setErrorMessage(response.message);
+    }
+  }
+
+  useEffect(() => {
+      fetchCavitasDocs();
+  }, [])
+
   return (
     <section className='dashboard__container__content__cavitasDocs'>
       <header className='dashboard__container__content__cavitasDocs__header'>
@@ -17,47 +47,28 @@ const CavitasDocs = () => {
         <table className='dashboard__container__content__cavitasDocs__details__table'>
           <thead>
             <tr>
-              <th>Document type</th>
-              <th>Valid from</th>
-              <th></th>
+            <th>Title</th>
+                  <th> Vaid Date</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Cavitas dental insurance terms and conditions</td>
-              <td>01.03.2023</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>......................</td>
-              <td>......................</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>......................</td>
-              <td>......................</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>......................</td>
-              <td>......................</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>......................</td>
-              <td>......................</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>......................</td>
-              <td>......................</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+ {cavitasDocs?.map((row, index) => (
+                     <tr>               
+                         <td>{row?.title}</td>
+                         <td>{row?.valid_date}</td>
+                        
+                     </tr>
+                 ))}
+              </tbody>
+             </table>
+          </div>
     </section>
   )
 }
 
 export default CavitasDocs
+
+
+
+
+

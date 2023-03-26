@@ -4,25 +4,38 @@ import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import { useNavigate } from 'react-router-dom';
 import useUsers from '../../../../hooks/useUsers';
 import DeleteUserConfirmModal from '../../UserInformation/Components/DeleteUserConfirmModal';
+import SuccessMessage from '../../../../components/SnackbarMessages/SuccessMessage';
+import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
+import useCavitasDocs from '../../../../hooks/useCavitasDocs';
+import CreateCavitasDocs from '../../CavitasDocuments/Components/CreateCavitasDocs';
+// import Page from '../../../components/Page/Page';
+import { API_KEY } from '../../../../config/helpers/variables';
+import DeleteCavitasDocs from '../../CavitasDocuments/Components/DeleteCavitasDocs';
+import UpdateCavitasDocs from '../../CavitasDocuments/Components/UpdateCavitasDocs';
 const AdminCavitasDocs = () => {
+  
+  
   const navigate = useNavigate();
-  const [users, setUsers] = useState([])
-  const [errorMessage, setErrorMessage] = useState();
-  const {getAllUsers, deleteUserByAdmin} = useUsers();
+  const { getCavitasDocsByAdmin } = useCavitasDocs();
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [cavitasDocs, setCavitasDocs] = useState([]);
+  const [successMessage, setSuccessMessage] = useState();
 
-  const getUsersList = async () => {
-    const response = await getAllUsers()
-    if (response?.status < 300){
-      setUsers(response?.users)
-      console.log(users)
+  const fetchCavitasDocs = async () => {
+    debugger
+    const response = await getCavitasDocsByAdmin();
+    debugger
+    if (response?.status < 300) {
+      setCavitasDocs(response?.cavitas_documents)
     } else if (response?.status > 300) {
-      setErrorMessage(response?.message);
+      setErrorMessage(response.message);
     }
   }
 
   useEffect(() => {
-    getUsersList();
+      fetchCavitasDocs();
   }, [])
+
   return (
     <section className='dashboard__container__content__cavitasDocs'>
       <header className='dashboard__container__content__cavitasDocs__header'>
@@ -36,16 +49,77 @@ const AdminCavitasDocs = () => {
         <table className='dashboard__container__content__cavitasDocs__details__table'>
           <thead>
             <tr>
-             
+            <th>Title</th>
+                  <th> Vaid Date</th>
             </tr>
           </thead>
           <tbody>
-         
-          </tbody>
-        </table>
-      </div>
+ {cavitasDocs?.map((row, index) => (
+                     <tr>               
+                         <td>{row?.title}</td>
+                         <td>{row?.valid_date}</td>
+                        
+                     </tr>
+                 ))}
+              </tbody>
+             </table>
+          </div>
     </section>
   )
 }
 
 export default AdminCavitasDocs
+
+
+
+
+
+
+
+
+
+
+  
+//     return (
+//       <Page>
+//         <SuccessMessage successMessage={successMessage}/>
+//         <AlertMessage errorMessage={errorMessage} />
+//         <section className='uploadClient'>
+//           <header style={{display: "flex", justifyContent: "space-between"}}>
+//             <h1>Cavitas Documents</h1>
+
+//             <CreateCavitasDocs setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} fetchCavitasDocs={fetchCavitasDocs}/>
+//           </header>
+//           <div className='insuredClientView__container'>
+//           {cavitasDocs ?
+//             <table >
+//               <thead>
+//                 <tr>
+//                   <th>Title</th>
+//                   <th> Vaid Date</th>
+                 
+//                   <td></td>
+//                 </tr>
+//               </thead>
+//               <tbody>
+//                 {cavitasDocs?.map((row, index) => (
+//                     <tr>               
+//                         <td>{row?.title}</td>
+//                         <td>{row?.valid_date}</td>
+//                        
+//                     </tr>
+//                 ))}
+//               </tbody>
+//             </table>
+//             :
+//             <div style={{textAlign: "center"}}>
+//               <p>No records.</p>
+//             </div>
+//           }
+//           </div>
+//         </section>
+//       </Page>
+//     )
+//   }
+
+// export default CavitasDocument

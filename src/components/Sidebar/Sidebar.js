@@ -89,12 +89,12 @@ const Sidebar = () => {
           <Link to="/admin/PannelData" className='sidebar__linkButtons__link'>
             <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
             {/* <p>Insured clients</p> */}
-            <p>Pannel Data</p>
+            <p>Approved Tickets</p>
           </Link>
           <Link to="/admin/ApprovalFile" className='sidebar__linkButtons__link'>
             <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
             {/* <p>Cavitas Documents</p> */}
-            <p>Approval File</p>
+            <p>Approval Tickets</p>
           </Link>
 
           

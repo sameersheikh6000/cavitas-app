@@ -39,7 +39,7 @@ const AdminInsuredClientView = () => {
         <header className='insuredClientView__header'>
           <div className='insuredClientView__header__left'>
             <BusinessCenterOutlinedIcon className='insuredClientView__header__left__icon' />
-            <p>Clients to be Insured ({clientInfoList.length})</p>
+            <p>Approval Tickets ({clientInfoList.length})</p>
           </div>
           <div className='insuredClientView__header__right'>
             <input type='text' placeholder='Search' />

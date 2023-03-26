@@ -33,7 +33,7 @@ const AdminFileApproval = () => {
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
         <header>
-          <h1>Pannel Data</h1>
+          <h1>Approved Tickets</h1>
         </header>
         <br />
         <div className='dashboard__container__content__insuredClient__details'>
