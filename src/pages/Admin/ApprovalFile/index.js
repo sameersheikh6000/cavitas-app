@@ -10,6 +10,7 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import InsuredClientRejectModal from '../InsuredClientView/Components/InsuredClientReajectModal';
 import ClientInfoUpdate from './Components/ClientInfoUpdate';
+import AcceptFile from './Components/AcceptFile';
 
 
 const AdminInsuredClientView = () => {
@@ -85,7 +86,9 @@ const AdminInsuredClientView = () => {
                     <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download_file`}>{row?.file?.filename}</a>
                     }</td>
                   <td>{row?.status}</td>
-                  <td><ClientInfoUpdate client_id={row?.id} getClientInsurance={getClientInsurance}/>
+                  <td>
+                    <AcceptFile client_id={row?.id} getClientInsurance={getClientInsurance}/>
+                    {/* <ClientInfoUpdate client_id={row?.id} getClientInsurance={getClientInsurance}/> */}
                   </td>
                 {/* <td style={{ display: "flex", alignItems: 'center', justifyContent: 'space-around' }}>
                   <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={() => navigate("/admin/dashboard")}>Accept</Button>

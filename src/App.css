@@ -539,8 +539,8 @@ body {
           }
             .dashboard__container__content__insuredClient__details__table thead tr th {
               font-weight: bold;
-          
-              text-align: left; }
+              min-width: 150px;
+              text-align: center; }
             .dashboard__container__content__insuredClient__details__table tbody tr td:nth-last-child(1) {
               text-align: right; }
               .dashboard__container__content__insuredClient__details__table tbody tr td:nth-last-child(1) Button {
@@ -791,6 +791,10 @@ body {
               text-align: center;
               margin-top: 1rem;
               }
+          .uploadClient__container__body__participation_submit_button button{
+            width: 30% !important;
+            margin-left: 10px;
+          }
           .uploadClient__container__body__participation_delete_user_button_container{
             display: flex;
             width: 100%;

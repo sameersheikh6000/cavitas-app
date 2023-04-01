@@ -38,9 +38,9 @@ const AdminInsuredClient = () => {
         </div>
         <Button size='small' onClick={() => navigate("/admin/PannelData")}>View all</Button>
       </header>
+      {insuredClientsList.length > 0 ?
       <div className='dashboard__container__content__insuredClient__details'>
         <table className='dashboard__container__content__insuredClient__details__table'>
-
         <thead>
         <tr>
                 <th>Risk country</th>   
@@ -81,7 +81,7 @@ const AdminInsuredClient = () => {
               </tr>
             </thead>
             <tbody>
-            {insuredClientsList.length > 0 ? insuredClientsList.map((row, index) => (
+            { insuredClientsList.map((row, index) => (
                 <tr key={index}>
                   <td>{row?.risk_country}</td>
                   <td>{row?.type_of_insurance}</td>
@@ -120,10 +120,7 @@ const AdminInsuredClient = () => {
                   </td> */}
                 </tr>
               ))
-                :
-                <div>
-                  <p>No records.</p>
-                </div>}
+                }
             </tbody>
 
 
@@ -152,6 +149,10 @@ const AdminInsuredClient = () => {
           </tbody> */}
         </table>
       </div>
+      :
+      <div style={{textAlign: "center", marginTop: "10%"}}>
+        <p style={{fontSize: "1.2rem", fontWeight: "bold"}}>No records.</p>
+      </div>}
     </section>
   )
 }

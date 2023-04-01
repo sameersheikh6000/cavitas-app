@@ -116,12 +116,17 @@ const useClientInsurance = () => {
   };
 
 
-  const updateClientInsuranceAdmin = async (id, insuranceFile) => {
-    const formData = new FormData()
-
-      formData.append('file', insuranceFile)
+  const updateClientInsuranceAdmin = async (id) => {
+    const params = {
+      client_info: {
+        status: 2
+      }
+    }
     const response = await axios.put(
-      `${API_KEY}/api/v1/client_infos/${id}`, formData,
+      `${API_KEY}/api/v1/client_infos/${id}`,
+      {
+        ...params
+      },
       getAdminHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
