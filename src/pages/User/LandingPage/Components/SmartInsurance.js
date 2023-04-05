@@ -10,8 +10,7 @@ const SmartInsurance = () => {
           <h1 className='landingPage__smartInsurance__container__details__heading'>Smarter</h1>
           <h1 className='landingPage__smartInsurance__container__details__heading2'>Dental Insurance</h1>
           <p className='landingPage__smartInsurance__container__details__desc'>
-            Healthy teeth are foundation of healthy employees. We mediate dental insurance contracts as emplyee benefit provided by their employer to employees.
-          </p>
+          Healthy teeth are the foundation of healthy employees. We provide employers dental insurance as highly appreciated employee benefit.           </p>
           <div className='landingPage__smartInsurance__container__details__buttons ' >
             <Link to="/employ">
               <Button variant='outlined'>I'm employer</Button>

@@ -25,8 +25,13 @@ const OurStory = () => {
         <div className='aboutUs__ourStory__container__detailsBox'>
           <h1>Our Story</h1>
           <p className='aboutUs__ourStory__container__detailsBox__desc'>We started in 2018.....</p>
-          <p className='aboutUs__ourStory__container__detailsBox__desc1'>Cavitas - smarter dental insurance providing dental insurance in smarter way in order to focus on prevention of teeth related problems which help peoples to keep their natural teeth longer (hopefully all their lives), have all teeth related help in their smartphones...</p>
-          <p className='aboutUs__ourStory__container__detailsBox__desc2'>Last but not least - we are getting even more smarter! stay tuned!</p>
+          <p className='aboutUs__ourStory__container__detailsBox__desc1'>
+          In 2018 we started mediating dental insurance contracts to people in Estonia where, like in other Estern-Europe (post-Soviet) countries such insurance product offer was not existing. During 4 years we eperience high interest towards such risk as well high risk profile of the product.             </p>
+          
+          <p className='aboutUs__ourStory__container__detailsBox__desc1'>
+          Via discussions with numerous dental insurance risk carriers, we have found a way to both satisfy the insurance interest needs of our clients and, on the other hand, satisfy insurers' demands for the fair loss ratios.</p>          
+          <p className='aboutUs__ourStory__container__detailsBox__desc2'>
+          Last but not least - we are getting even more smarter! Stay turned!             </p>
         </div>
       </div>
     </section>

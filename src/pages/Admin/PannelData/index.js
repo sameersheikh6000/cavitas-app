@@ -61,7 +61,8 @@ const AdminFileApproval = () => {
                 <th>Member phone number</th>  
                 <th>Member e-mail</th>  
                 <th>Member address</th>  
-                <th></th>  
+
+                <th></th>
                 <th>Group Type</th>  
                 <th>PARTICIPATION</th>  
                 <th>Currency</th>  

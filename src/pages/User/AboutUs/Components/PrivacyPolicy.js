@@ -17,11 +17,11 @@ const PrivacyPolicy = () => {
         </div>
         <div className='aboutUs__privacyPolicy__container__card'>
           <img src={require('../../../../assets/PrivacyPolicy-image.png')} alt="" />
-          <p>Lorem ipsum</p>
+          <p>Broker <br /> agreement</p>
         </div>
         <div className='aboutUs__privacyPolicy__container__card'>
           <img src={require('../../../../assets/PrivacyPolicy-image.png')} alt="" />
-          <p>Annual report</p>
+          <p>Company <br /> documents</p>
         </div>
       </div>
     </section>
