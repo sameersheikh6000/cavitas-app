@@ -13,6 +13,8 @@ const AdminFileApproval = () => {
   const { getInsuredClientsByAdmin } = useClientInsurance();
   const [insuredClientsList, setInsuredClientsList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
+  const [searchText, setSearchText] = useState('');
+
 
   const getInsuredClientList = async () => {
     debugger
@@ -28,6 +30,16 @@ const AdminFileApproval = () => {
   useEffect(() => {
     getInsuredClientList();
   }, []);
+
+  const handleSearch = (e) => {
+    setSearchText(e.target.value);
+  };
+
+  const filterRows = (rows) => {
+      return rows.includes(searchText.toLowerCase());
+  };
+
+  const filteredRows = filterRows(insuredClientsList);
   return (
     <Page>
       <AlertMessage errorMessage={errorMessage} />
@@ -35,6 +47,13 @@ const AdminFileApproval = () => {
         <header>
           <h1>Approved Tickets</h1>
         </header>
+        <label htmlFor='search-text'>Search:</label>
+          <input
+            id='search-text'
+            type='text'
+            value={searchText}
+            onChange={handleSearch}
+          />
         <br />
         <div className='dashboard__container__content__insuredClient__details'>
           <table className='dashboard__container__content__insuredClient__details__table__page__view'>
@@ -80,7 +99,7 @@ const AdminFileApproval = () => {
               </tr>
             </thead>
             <tbody>
-            {insuredClientsList.length > 0 ? insuredClientsList.map((row, index) => (
+            {insuredClientsList.length > 0 ? filteredRows?.map((row, index) => (
                 <tr key={index}>
                   <td>{row?.risk_country}</td>
                   <td>{row?.type_of_insurance}</td>
