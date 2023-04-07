@@ -7,10 +7,13 @@ import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { Button } from '@mui/material';
+import GroupsIcon from '@mui/icons-material/Groups';
+import PolicyIcon from '@mui/icons-material/Policy';
 import useAuthenticate from '../../hooks/useAuthenticate';
 import { USER_STORAGE_KEY } from '../../config/helpers/variables';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
-
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 const Sidebar = () => {
   const navigate = useNavigate();
   const { userLogout } = useAuthenticate();
@@ -87,12 +90,12 @@ const Sidebar = () => {
             <p>Dashboard</p>
           </Link>
           <Link to="/admin/PannelData" className='sidebar__linkButtons__link'>
-            <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
+            <VerifiedUserIcon className='sidebar__linkButtons__link__icon' />
             {/* <p>Insured clients</p> */}
             <p>Insured Persons</p>
           </Link>
           <Link to="/admin/ApprovalFile" className='sidebar__linkButtons__link'>
-            <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
+            <MailOutlineIcon className='sidebar__linkButtons__link__icon' />
             {/* <p>Cavitas Documents</p> */}
             <p>Support Tickets</p>
           </Link>
@@ -100,7 +103,7 @@ const Sidebar = () => {
           
 
           <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
-            <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
+            <PolicyIcon className='sidebar__linkButtons__link__icon' />
             {/* <p>Cavitas Documents</p> */}
             <p>Policy information</p>
           </Link>
@@ -113,7 +116,7 @@ const Sidebar = () => {
          
 
           <Link to="/admin/UserInformation/" className='sidebar__linkButtons__link'>
-            <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
+            < GroupsIcon className='sidebar__linkButtons__link__icon' />
             <p>Users</p>
           </Link>
           

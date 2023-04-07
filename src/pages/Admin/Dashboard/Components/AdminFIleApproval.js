@@ -5,7 +5,7 @@ import moment from 'moment';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 import useClientInsurance from '../../../../hooks/useClientInsurance';
-
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const AdminFileApproval = () => {
   const navigate = useNavigate();
@@ -35,8 +35,8 @@ const AdminFileApproval = () => {
       <section className='dashboard__container__content__insuredClient'>
         <header className='dashboard__container__content__insuredClient__header'>
           <div className='dashboard__container__content__insuredClient__header__iconBox'>
-            < TextSnippetIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
-            <p>Approval File</p>
+            <MailOutlineIcon ClassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
+            <p>Support Tickets</p>
           </div>
           <Button size='small' onClick={() => navigate("/admin/ApprovalFile")}>View all</Button>
         </header>

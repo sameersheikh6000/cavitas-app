@@ -3,6 +3,7 @@ import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage'
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 import useCavitasDocs from '../../../hooks/useCavitasDocs';
 import { useNavigate } from 'react-router-dom';
+import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import CreateCavitasDocs from './Components/CreateCavitasDocs';
 import Page from '../../../components/Page/Page';
 import { API_KEY } from '../../../config/helpers/variables';
@@ -39,7 +40,11 @@ const CavitasDocument = () =>  {
         <AlertMessage errorMessage={errorMessage} />
         <section className='uploadClient'>
           <header style={{display: "flex", justifyContent: "space-between"}}>
-            <h1>Cavitas Documents</h1>
+          <div className='insuredClientView__header__left'>
+            <  TextSnippetIcon   className='insuredClientView__header__left__icon' />
+            <h1>Cavitas Documents</h1>   
+                   </div>
+            
 
             <CreateCavitasDocs setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} fetchCavitasDocs={fetchCavitasDocs}/>
           </header>

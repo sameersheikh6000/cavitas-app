@@ -9,7 +9,7 @@ const InsuredPerson = () => {
   const { getInsuredClients } = useClientInsurance();
   const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
-  const [filter, setFilter] = useState();
+  const [filter, setFilter] = useState([]);
 
 
   const getClientInsurance = async () => {
@@ -25,9 +25,9 @@ const InsuredPerson = () => {
   const requestSearch = (searchedVal) => {
     const filteredRows = insuranceList.filter((row) => {
         return (
-          row?.member_first_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_last_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_email.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
+          row?.member_first_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_last_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_email?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
           )
     });
     if (searchedVal.length < 1) {
@@ -79,7 +79,7 @@ const InsuredPerson = () => {
             </tr>
           </thead>
           <tbody>
-          {filter.map((row, index) => (
+          {filter?.map((row, index) => (
                 <tr key={index}>
                   
                   <td>{row?.type_of_insurance}</td>

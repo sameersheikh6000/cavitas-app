@@ -1,6 +1,7 @@
 import { Button } from '@mui/material'
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import GroupsIcon from '@mui/icons-material/Groups';
 import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
@@ -38,7 +39,11 @@ const UserInformation = () => {
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
         <header>
-          <h1>User Information</h1>
+         
+             <div className='insuredClientView__header__left'>
+            <  GroupsIcon   className='insuredClientView__header__left__icon' />
+            &nbsp;&nbsp; <h1>Users information</h1>   
+                   </div>
         </header>
         <div className='dashboard__container__content__cavitasDocs__details'>
         <table className='dashboard__container__content__cavitasDocs__details__table'>

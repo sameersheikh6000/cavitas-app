@@ -1,4 +1,5 @@
 import { Button } from '@mui/material'
+import GroupsIcon from '@mui/icons-material/Groups';
 import React, {useState, useEffect} from 'react'
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import { useNavigate } from 'react-router-dom';
@@ -27,8 +28,8 @@ const AdminCavitasDocuments = () => {
     <section className='dashboard__container__content__cavitasDocs'>
       <header className='dashboard__container__content__cavitasDocs__header'>
         <div className='dashboard__container__content__cavitasDocs__header__iconBox'>
-          < TextSnippetOutlinedIcon className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
-          <p>User Information</p>
+          <GroupsIcon  className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
+          <p>Users</p>
         </div>
         <Button size='small' onClick={() => navigate("/admin/UserInformation")}>All Users</Button>
       </header>

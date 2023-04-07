@@ -31,9 +31,9 @@ const InsuredClientView = () => {
   const requestSearch = (searchedVal) => {
     const filteredRows = insuranceList.filter((row) => {
         return (
-          row?.member_first_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_last_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_email.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
+          row?.member_first_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_last_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_email?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
           )
     });
     if (searchedVal.length < 1) {

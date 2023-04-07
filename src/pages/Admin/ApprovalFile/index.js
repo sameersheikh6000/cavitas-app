@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import useClientInsurance from '../../../hooks/useClientInsurance';
 import { Button } from '@mui/material'
 import moment from 'moment';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import Page from "../../../components/Page/Page";
 import { API_KEY } from '../../../config/helpers/variables';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
@@ -39,8 +40,8 @@ const AdminInsuredClientView = () => {
       <section className='insuredClientView'>
         <header className='insuredClientView__header'>
           <div className='insuredClientView__header__left'>
-            <BusinessCenterOutlinedIcon className='insuredClientView__header__left__icon' />
-            <p>Approval Tickets ({clientInfoList.length})</p>
+            < MailOutlineIcon  className='insuredClientView__header__left__icon' />
+            <p>Support Tickets ({clientInfoList.length})</p>
           </div>
           <div className='insuredClientView__header__right'>
             <input type='text' placeholder='Search' />

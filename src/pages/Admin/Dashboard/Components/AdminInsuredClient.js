@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import { Button } from '@mui/material'
 import useClientInsurance from '../../../../hooks/useClientInsurance';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
@@ -33,8 +33,8 @@ const AdminInsuredClient = () => {
     <section className='dashboard__container__content__insuredClient'>
       <header className='dashboard__container__content__insuredClient__header'>
         <div className='dashboard__container__content__insuredClient__header__iconBox'>
-          < BusinessCenterOutlinedIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
-          <p>Pannel Data</p>
+          < VerifiedUserIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
+          <p>Insured Persons</p>
         </div>
         <Button size='small' onClick={() => navigate("/admin/PannelData")}>View all</Button>
       </header>

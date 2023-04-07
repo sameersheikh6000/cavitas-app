@@ -8,7 +8,7 @@ import PolicyInoformationUpdate from './Components/PolicyInoformationUpdate';
 import PolicyInoformationCreate from './Components/PolicyInformationCreate';
 import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
 import PolicyInoformationDestroy from './Components/PolicyInformationDestroy';
-
+import PolicyIcon from '@mui/icons-material/Policy';
 
 
 const AdminPolicyInformation = () => {
@@ -40,7 +40,10 @@ const AdminPolicyInformation = () => {
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
         <header style={{display: "flex", justifyContent: "space-between"}}>
-          <h1>Policy Information</h1>
+        <div className='insuredClientView__header__left'>
+            <  PolicyIcon  className='insuredClientView__header__left__icon' />
+            &nbsp;&nbsp; <h1>Policy Information</h1>   
+                   </div>
           {policyInformation ? "" : 
           <PolicyInoformationCreate setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} getPolicyInfo={getPolicyInfo}/>
           }

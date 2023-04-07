@@ -8,7 +8,7 @@ import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import useClientInsurance from '../../../hooks/useClientInsurance';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { API_KEY } from '../../../config/helpers/variables';
-
+import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 
 
 const AdminFileApproval = () => {
@@ -34,12 +34,15 @@ const AdminFileApproval = () => {
   }, []);
 
   const requestSearch = (searchedVal) => {
+    debugger
     const filteredRows = insuredClientsList.filter((row) => {
-        return (
-          row?.member_first_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_last_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_email.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
+      if(searchedVal !== null){
+        return  (
+          row?.member_first_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_last_name?.toLowerCase().includes(searchedVal.toString().toLowerCase()) || 
+          row?.member_email?.toLowerCase().includes(searchedVal.toString().toLowerCase())
           )
+        }
     });
     if (searchedVal.length < 1) {
         setFilter(insuredClientsList)
@@ -53,9 +56,11 @@ const AdminFileApproval = () => {
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
         <header className='insuredClientView__header'>
-          <div className='insuredClientView__header__left'>
-            <h1>Approved Tickets</h1>
+        <div className='insuredClientView__header__left'>
+            <VerifiedUserIcon   className='insuredClientView__header__left__icon' />
+            <p>Insured Persons</p>
           </div>
+         
           <div className='insuredClientView__header__right'>
             <input
               id='search-text'

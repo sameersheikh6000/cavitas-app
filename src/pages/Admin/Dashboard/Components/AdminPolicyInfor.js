@@ -8,7 +8,7 @@ import PolicyInoformationCreate from '../../PolicyInformation/Components/PolicyI
 import SuccessMessage from '../../../../components/SnackbarMessages/SuccessMessage';
 import PolicyInoformationUpdate from '../../PolicyInformation/Components/PolicyInoformationUpdate';
 import PolicyInoformationDestroy from '../../PolicyInformation/Components/PolicyInformationDestroy';
-
+import PolicyIcon from '@mui/icons-material/Policy';
 
 const AdminPolicyInfor = () => {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ const AdminPolicyInfor = () => {
     <section className='dashboard__container__content__support'>
        <header className='dashboard__container__content__support__header'>
          <div className='dashboard__container__content__support__header__iconBox'>
-           < EmailOutlinedIcon className='dashboard__container__content__support__header__iconBox__icon' />
+           < PolicyIcon from  className='dashboard__container__content__support__header__iconBox__icon' />
            <p>Policy Information</p>
          </div>
        <Button size='small' onClick={() => navigate("/admin/PolicyInformation")}>View all</Button>
