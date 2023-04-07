@@ -64,8 +64,8 @@ const AdminFileApproval = () => {
               onChange={(e) => requestSearch(e.target.value)}
             />
             <SearchOutlinedIcon className='insuredClientView__header__right__icon' />
-            {/* <a href={`${API_KEY}/api/v1/insured_clients/export_csv`} style={{textDecoration: "none"}} target="_blank"><Button size='small' variant='outlined' style={{marginLeft: "7px"}} color='error' >Export CSV</Button></a> */}
-            <a href={`${API_KEY}/sample/sample_template.csv`} target='_blank'> download template</a>
+            <a href={`${API_KEY}/api/v1/insured_clients/export_csv`} style={{textDecoration: "none"}} target="_blank"><Button size='small' variant='outlined' style={{marginLeft: "7px"}} color='error' >Export CSV</Button></a>
+            {/* <a href={`${API_KEY}/sample/sample_template.csv`} target='_blank'> download template</a> */}
           </div>
         </header>
         <br />
