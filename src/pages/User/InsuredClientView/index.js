@@ -3,7 +3,6 @@ import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 import { useNavigate } from 'react-router-dom';
 import useClientInsurance from '../../../hooks/useClientInsurance';
 import { Button } from '@mui/material'
-import moment from 'moment';
 import Page from "../../../components/Page/Page";
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
@@ -15,16 +14,36 @@ const InsuredClientView = () => {
   const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null);
   const [ successMessage, setSuccessMeassage] = useState();
+  const [filter, setFilter] = useState();
 
 
   const getClientInsurance = async () => {
     const response = await getInsuredClients();
     if (response?.status < 300) {
       setInsuranceList(response?.insured_clients);
+      setFilter(response?.insured_clients);
+      console.log("this is right page....")
     } else {
       setErrorMessage('Something went wrong!')
     }
   }
+
+  const requestSearch = (searchedVal) => {
+    const filteredRows = insuranceList.filter((row) => {
+        return (
+          row?.member_first_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_last_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_email.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
+          )
+    });
+    if (searchedVal.length < 1) {
+        setFilter(insuranceList)
+    }
+    else {
+        setFilter(filteredRows)
+    }
+  };
+
   useEffect(() => {
     getClientInsurance();
   }, []);
@@ -40,7 +59,7 @@ const InsuredClientView = () => {
             <p>Insured Clients ({insuranceList.length})</p>
           </div>
           <div className='insuredClientView__header__right'>
-            <input type='text' placeholder='Search' />
+            <input type='text' onChange={(e) => requestSearch(e.target.value)} placeholder='Search' />
             <SearchOutlinedIcon className='insuredClientView__header__right__icon' />
           </div>
         </header>
@@ -85,9 +104,9 @@ const InsuredClientView = () => {
               </tr>
             </thead>
             <tbody>
-            {insuranceList.map((row, index) => (
+            {filter.map((row, index) => (
                 <tr key={index}>
-                   <td>{row?.risk_country}</td>
+                  <td>{row?.risk_country}</td>
                   <td>{row?.type_of_insurance}</td>
                   <td>{row?.insurance_plan}</td>
                   <td>{row?.sum_insured_per_insured_person_per_policy_year}</td>

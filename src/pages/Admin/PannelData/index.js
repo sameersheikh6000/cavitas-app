@@ -6,6 +6,9 @@ import { Button } from '@mui/material'
 import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import useClientInsurance from '../../../hooks/useClientInsurance';
+import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import { API_KEY } from '../../../config/helpers/variables';
+
 
 
 const AdminFileApproval = () => {
@@ -13,16 +16,15 @@ const AdminFileApproval = () => {
   const { getInsuredClientsByAdmin } = useClientInsurance();
   const [insuredClientsList, setInsuredClientsList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
-  const [searchText, setSearchText] = useState('');
+  const [filter, setFilter] = useState();
 
 
   const getInsuredClientList = async () => {
-    debugger
     const response = await getInsuredClientsByAdmin();
     if (response.status < 300) {
       console.log(response)
-      setInsuredClientsList(response.insured_clients);
-      console.log(insuredClientsList)
+      setInsuredClientsList(response?.insured_clients);
+      setFilter(response?.insured_clients)
     } else {
       setErrorMessage('Something went wrong!')
     }
@@ -31,29 +33,41 @@ const AdminFileApproval = () => {
     getInsuredClientList();
   }, []);
 
-  const handleSearch = (e) => {
-    setSearchText(e.target.value);
+  const requestSearch = (searchedVal) => {
+    const filteredRows = insuredClientsList.filter((row) => {
+        return (
+          row?.member_first_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_last_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_email.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
+          )
+    });
+    if (searchedVal.length < 1) {
+        setFilter(insuredClientsList)
+    }
+    else {
+        setFilter(filteredRows)
+    }
   };
-
-  const filterRows = (rows) => {
-      return rows.includes(searchText.toLowerCase());
-  };
-
-  const filteredRows = filterRows(insuredClientsList);
   return (
     <Page>
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
-        <header>
-          <h1>Approved Tickets</h1>
+        <header className='insuredClientView__header'>
+          <div className='insuredClientView__header__left'>
+            <h1>Approved Tickets</h1>
+          </div>
+          <div className='insuredClientView__header__right'>
+            <input
+              id='search-text'
+              type='text'
+              placeholder='Search'
+              onChange={(e) => requestSearch(e.target.value)}
+            />
+            <SearchOutlinedIcon className='insuredClientView__header__right__icon' />
+            {/* <a href={`${API_KEY}/api/v1/insured_clients/export_csv`} style={{textDecoration: "none"}} target="_blank"><Button size='small' variant='outlined' style={{marginLeft: "7px"}} color='error' >Export CSV</Button></a> */}
+            <a href={`${API_KEY}/sample/sample_template.csv`} target='_blank'> download template</a>
+          </div>
         </header>
-        <label htmlFor='search-text'>Search:</label>
-          <input
-            id='search-text'
-            type='text'
-            value={searchText}
-            onChange={handleSearch}
-          />
         <br />
         <div className='dashboard__container__content__insuredClient__details'>
           <table className='dashboard__container__content__insuredClient__details__table__page__view'>
@@ -99,7 +113,7 @@ const AdminFileApproval = () => {
               </tr>
             </thead>
             <tbody>
-            {insuredClientsList.length > 0 ? filteredRows?.map((row, index) => (
+            {insuredClientsList.length > 0 ? filter?.map((row, index) => (
                 <tr key={index}>
                   <td>{row?.risk_country}</td>
                   <td>{row?.type_of_insurance}</td>

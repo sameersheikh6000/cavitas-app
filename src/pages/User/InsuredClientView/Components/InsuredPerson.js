@@ -9,16 +9,35 @@ const InsuredPerson = () => {
   const { getInsuredClients } = useClientInsurance();
   const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
+  const [filter, setFilter] = useState();
 
 
   const getClientInsurance = async () => {
     const response = await getInsuredClients();
     if (response?.status < 300) {
       setInsuranceList(response?.insured_clients);
+      setFilter(response?.insured_clients)
     } else {
       setErrorMessage('Something went wrong!')
     }
   }
+
+  const requestSearch = (searchedVal) => {
+    const filteredRows = insuranceList.filter((row) => {
+        return (
+          row?.member_first_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_last_name.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_email.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
+          )
+    });
+    if (searchedVal.length < 1) {
+        setFilter(insuranceList)
+    }
+    else {
+        setFilter(filteredRows)
+    }
+  };
+
   useEffect(() => {
     getClientInsurance();
   }, []);
@@ -28,7 +47,7 @@ const InsuredPerson = () => {
       <header className='insuredClientGroup__container2__insuredPerson__header'>
         <p>Insured Person</p>
         <div>
-          <input type="text" />
+          <input type="text" onChange={(e) => requestSearch(e.target.value)} placeholder='Search' />
           <SearchOutlinedIcon className='insuredClientGroup__container2__insuredPerson__header__icon' />
         </div>
       </header>
@@ -60,7 +79,7 @@ const InsuredPerson = () => {
             </tr>
           </thead>
           <tbody>
-          {insuranceList.map((row, index) => (
+          {filter.map((row, index) => (
                 <tr key={index}>
                   
                   <td>{row?.type_of_insurance}</td>
