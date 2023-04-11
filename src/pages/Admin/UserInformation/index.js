@@ -17,7 +17,12 @@ const UserInformation = () => {
   const [errorMessage, setErrorMessage] = useState(null);
   const [successMessage, setSuccessMessage] = useState();
   const [users, setUsers] = useState([])
-  
+
+  const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const today = `${year}-${month}-${day}`;
 
   const getUsersList = async () => {
     const response = await getAllUsers()
@@ -59,13 +64,17 @@ const UserInformation = () => {
           </thead>
           <tbody>
             {users.length > 0 ? users.map((row, index) => (
-              <tr key={index}>
-                <td>{row?.company_name}</td>
+              <tr
+                    key={index}
+                    style={{
+                      fontWeight: row?.created_at == today ? "bold" : "normal"
+                    }}
+                  >
+                <td>{row?.created_at == today && <span style={{color: "red"}}>NEW</span>}{row?.company_name}</td>
                 <td>{row?.email}</td>
                 <td>{row?.first_name}</td>
                 <td>{row?.last_name}</td>
-                <td>{row?.company_krs_number}</td>
-
+                <td>{row?.company_krs_number}</td>                
                 <td>{row?.role}</td>
                 <td style={{display: "flex"}}>
                 <UpdateUserModal user_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getUsersList={getUsersList} usersList={users}/>

@@ -33,7 +33,14 @@ const InsuredClientView = () => {
         return (
           row?.member_first_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.member_last_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_email?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase())
+          row?.member_email?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.company_name?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.company_krs_number?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.company_url_address?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_pesel?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_relation?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_phone_number?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_address?.toLowerCase().includes(searchedVal.toString().toLowerCase()) 
           )
     });
     if (searchedVal.length < 1) {

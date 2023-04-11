@@ -22,7 +22,6 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
 
 
   const fetchUser = async (user_id) => {
-    debugger
     const response = await getUserByAdmin(user_id);
     if (response?.status < 300){
         setProfile(response?.user)

@@ -5,14 +5,17 @@ import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import { Button } from '@mui/material'
 import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
+import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 import useClientInsurance from '../../../hooks/useClientInsurance';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import { API_KEY } from '../../../config/helpers/variables';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
+import ExportCsv from './Components/ExportCsv';
 
 
 const AdminFileApproval = () => {
   const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState(null);
   const { getInsuredClientsByAdmin } = useClientInsurance();
   const [insuredClientsList, setInsuredClientsList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -40,7 +43,14 @@ const AdminFileApproval = () => {
         return  (
           row?.member_first_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.member_last_name?.toLowerCase().includes(searchedVal.toString().toLowerCase()) || 
-          row?.member_email?.toLowerCase().includes(searchedVal.toString().toLowerCase())
+          row?.member_email?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.company_name?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.company_krs_number?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.company_url_address?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_pesel?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_relation?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_phone_number?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
+          row?.member_address?.toLowerCase().includes(searchedVal.toString().toLowerCase()) 
           )
         }
     });
@@ -53,6 +63,7 @@ const AdminFileApproval = () => {
   };
   return (
     <Page>
+      <SuccessMessage successMessage={successMessage} />
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
         <header className='insuredClientView__header'>
@@ -61,15 +72,16 @@ const AdminFileApproval = () => {
             <p>Insured Persons</p>
           </div>
          
-          <div className='insuredClientView__header__right'>
+          <div className='insuredClientView__header__right' style={{display: "flex"}} >
             <input
               id='search-text'
               type='text'
               placeholder='Search'
               onChange={(e) => requestSearch(e.target.value)}
             />
-            <SearchOutlinedIcon className='insuredClientView__header__right__icon' />
-            <a href={`${API_KEY}/api/v1/insured_clients/export_csv`} style={{textDecoration: "none"}} target="_blank"><Button size='small' variant='outlined' style={{marginLeft: "7px"}} color='error' >Export CSV</Button></a>
+            {/* <SearchOutlinedIcon className='insuredClientView__header__right__icon' /> */}
+            <ExportCsv setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage}/>
+            {/* <a href={`${API_KEY}/api/v1/insured_clients/export_csv`} style={{textDecoration: "none"}} target="_blank"><Button size='small' variant='outlined' style={{marginLeft: "7px"}} color='error' >Export CSV</Button></a> */}
             {/* <a href={`${API_KEY}/sample/sample_template.csv`} target='_blank'> download template</a> */}
           </div>
         </header>

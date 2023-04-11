@@ -10,21 +10,31 @@ import { Button } from '@mui/material';
 import GroupsIcon from '@mui/icons-material/Groups';
 import PolicyIcon from '@mui/icons-material/Policy';
 import useAuthenticate from '../../hooks/useAuthenticate';
-import { USER_STORAGE_KEY } from '../../config/helpers/variables';
+import { USER_STORAGE_KEY, ADMIN_STORAGE_KEY } from '../../config/helpers/variables';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 const Sidebar = () => {
   const navigate = useNavigate();
-  const { userLogout } = useAuthenticate();
+  const { userLogout, adminLogout } = useAuthenticate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
 
   const handleLogout = async () => {
-    const response = await userLogout(user);
-    if (response.status == 200) {
-      sessionStorage.removeItem(USER_STORAGE_KEY);
+    if (user !== null) {
+      const response = await userLogout(user);
+      if (response.status < 300) {
+        sessionStorage.removeItem(USER_STORAGE_KEY);
+      }
+      navigate("/")
+    }else if(admin !== null){
+      const response = await adminLogout(admin)
+      if(response?.status < 300){
+        sessionStorage.removeItem(ADMIN_STORAGE_KEY);
+      }
+      navigate('/')
     }
-    navigate("/")
+    
   }
 
   return (

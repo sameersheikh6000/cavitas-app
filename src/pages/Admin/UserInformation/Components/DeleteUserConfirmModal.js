@@ -22,7 +22,6 @@ function DeleteUserConfirmModal({user_id, getUsersList, setErrorMessage, deleteU
   const handleClose = () => setOpen(false);
 
   const handleDelete = async (id) => {
-    debugger
     const response = await deleteUserByAdmin(id)
     if(response?.status < 300){
       setErrorMessage("User Deleted Successfully!")

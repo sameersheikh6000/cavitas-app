@@ -163,9 +163,26 @@ const useClientInsurance = () => {
     return response;
   }
 
+  const exportCsv = async (duration) => {
+    const params = {
+        from: duration?.from,
+        to: duration?.to
+    }
+    const response = await axios.get(
+      `${API_KEY}/api/v1/insured_clients/export_csv`,{params},
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.status > 300) {
+        handleErrors(res);
+      }
+      return res
+    })
+      return response;
+  }
+
 
   return {
-    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, exportCsv
   };
 };
 export default useClientInsurance;
