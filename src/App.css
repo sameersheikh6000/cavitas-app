@@ -115,12 +115,14 @@ body {
   color: black !important;
   padding: 0 10%;
   transition: padding .5s;
+  /* background-color: #f8efef; */
   background-image: url("./assets/NavbarBG-image.png");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 350px; }
   @media (max-width: 1250px) {
     .appbar {
+      
       padding: 0; } }
   @media (max-width: 768px) {
     .appbar {
@@ -129,6 +131,7 @@ body {
       height: 250px; } }
   .appbar__imageBox__image {
     width: 150px;
+    margin-top: 20px;
     object-fit: cover;
     transition: width 0.5s; }
     @media (max-width: 1250px) {
@@ -840,10 +843,18 @@ body {
         }
 
 .landingPage {
-  margin-top: -220px; }
+  margin-top: -220px;
+  
+ }
   .landingPage__smartInsurance {
     padding: 4rem 1rem;
-    margin: 0 10%; }
+   background-image: url("./assets/NavbarBG-image.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+    
+
+    /* margin: 0 10%; */
+   }
     @media (max-width: 1250px) {
       .landingPage__smartInsurance {
         margin: 0%; } }
@@ -851,6 +862,7 @@ body {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
+      margin-left: 120px;
       align-items: center; }
       @media (max-width: 1000px) {
         .landingPage__smartInsurance__container {
@@ -887,14 +899,16 @@ body {
             text-decoration: none !important; }
           .landingPage__smartInsurance__container__details__buttons Button {
             margin-right: .5rem;
-            color: black;
+            color: white;
+            border: none;
+            background: #DD3333 !important;
+
             border-radius: 1.5rem !important;
-            border: 1px solid black !important;
             margin-bottom: .5rem; }
             .landingPage__smartInsurance__container__details__buttons Button:hover {
-              background: #DD3333 !important;
+              background: white !important;
               border: 2px solid #DD3333 !important;
-              color: white !important; 
+              color: red !important; 
             font-weight: bold;}
       .landingPage__smartInsurance__container__picture {
         width: 45%; }
@@ -941,7 +955,7 @@ body {
         .landingPage__ourOffer__container__boxes__detailsContainer {
           border: 1px solid lightgray;
           border-radius: 1rem;
-          width: 300px;
+          width: 385px;
           padding-bottom: 1rem; }
           @media (max-width: 750px) {
             .landingPage__ourOffer__container__boxes__detailsContainer {
@@ -961,7 +975,7 @@ body {
             justify-content: flex-start;
             border-bottom: 1px solid lightgray;
             padding-bottom: .3rem;
-            width: 160px;
+            width: 240px;
             margin-left: 4.5rem;
             margin-bottom: .3rem; }
             .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage {
@@ -1154,8 +1168,11 @@ body {
           height: 100%;
           object-fit: cover; }
   .landingPage__clientDeserve {
-    padding: 4rem 1rem;
-    margin: 0 10%; }
+    padding: 8rem 1rem;
+    /* margin: 0 10%;  */
+    background-image: url("./assets/NavbarBG-image.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;}
     @media (max-width: 1250px) {
       .landingPage__clientDeserve {
         margin: 0%; } }
@@ -1333,8 +1350,12 @@ body {
               color: gray;
               font-weight: 500; }
   .landingPage__dentaltInsurance {
-    padding: 4rem 1rem;
-    margin: 0 10%; }
+    padding: 2rem 6rem;
+    /* margin: 0 10%; */
+    background-image: url("./assets/NavbarBG-image.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   }
     @media (max-width: 1250px) {
       .landingPage__dentaltInsurance {
         margin: 0%; } }
@@ -1342,7 +1363,10 @@ body {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      align-items: center; }
+      align-items: center;
+      width: 100%;
+      
+       }
       @media (max-width: 1000px) {
         .landingPage__dentaltInsurance__container {
           display: flex;
@@ -1368,7 +1392,7 @@ body {
         .landingPage__dentaltInsurance__container__details__buttons {
           margin-top: 2rem;
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           flex-wrap: wrap; }
           .landingPage__dentaltInsurance__container__details__buttons a {
             text-decoration: none !important; }
@@ -1439,6 +1463,7 @@ body {
     .landingPage__becomeMember__container {
       display: flex;
       align-items: flex-start;
+      
       justify-content: space-between;
       align-items: center; }
       @media (max-width: 1000px) {
@@ -1488,8 +1513,11 @@ body {
           height: 100%;
           object-fit: cover; }
   .landingPage__healthyTeeth {
-    padding: 4rem 1rem;
-    margin: 0 10%; }
+    padding: 7rem 1rem;
+    /* margin: 0 10%; */
+    background-image: url("./assets/NavbarBG-image.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%; }
     @media (max-width: 1250px) {
       .landingPage__healthyTeeth {
         margin: 0%; } }
@@ -1520,14 +1548,19 @@ body {
           color: #DD3333 !important; }
 
 .aboutUs {
-  padding: 0 10%;
+  /* padding: 0 10%; */
   margin-top: -220px; }
   @media (max-width: 1250px) {
     .aboutUs {
       padding: 0; } }
   .aboutUs__cavitasMeaning {
-    padding: 4rem 1rem;
+    padding: 5rem 7rem;
     display: flex;
+    background-image: url("./assets/NavbarBG-image.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   ;
+      
     justify-content: space-between;
     align-items: center; }
     @media (max-width: 1000px) {
@@ -1610,7 +1643,7 @@ body {
           justify-content: center;
           align-items: center; }
           .aboutUs__ourStory__container__profilesBox__right__profileImage {
-            width: 100px; }
+            width: 200px; }
           .aboutUs__ourStory__container__profilesBox__right__name {
             color: #DD3333;
             font-weight: 600;
@@ -1678,7 +1711,7 @@ body {
           font-weight: 600;
           font-size: .9rem;
           color: #DD3333;
-          margin-top: -7rem;
+          margin-top: -8rem;
           margin-left: 2.5rem; }
   .aboutUs__smarterDentalInsurance {
     padding: 2rem;
@@ -1700,7 +1733,7 @@ body {
             font-size: 1.5rem; } }
       .aboutUs__smarterDentalInsurance header p {
         margin-top: .5rem;
-        width: 60%;
+        /* width: 60%; */
         font-size: .9rem;
         transition: width 0.5s; }
         @media (max-width: 750px) {
@@ -1715,7 +1748,8 @@ body {
     .aboutUs__smarterDentalInsurance__imageContainer {
       margin-top: 2rem;
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      /* justify-content: space-around; */
       flex-wrap: wrap; }
       .aboutUs__smarterDentalInsurance__imageContainer img {
         margin-right: .5rem;
@@ -1730,7 +1764,8 @@ body {
       padding: 0; } }
   .faq header {
     text-align: center;
-    padding-top: 3rem; }
+    padding-top: 4rem;
+  padding-bottom: 20px; }
     .faq header h1 {
       font-size: 3rem;
       font-weight: bolder;
@@ -1754,7 +1789,7 @@ body {
   border-top: 1px solid lightgray; }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
-  color: #796d6d9c !important; }
+  color: black !important; }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
   background-color: #DD3333 !important; }

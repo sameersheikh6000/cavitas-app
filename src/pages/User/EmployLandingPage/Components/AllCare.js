@@ -6,10 +6,9 @@ const AllCare = () => {
     <section className='landingPage__allCare'>
       <div className='landingPage__allCare__container'>
         <div className='landingPage__allCare__container__details'>
-          <h1 className='landingPage__allCare__container__details__heading'>Easy for insured employees</h1>
+          <h1 className='landingPage__allCare__container__details__heading'>Easy for members!</h1>
           <p className='landingPage__allCare__container__details__desc'>
-            Insured employees (members) can download the Cavitas app to have all information in one place.
-          </p>
+          Members can download the Cavitas app to have all information in their pocket.           </p>
           <div className='landingPage__allCare__container__details__detailsContainer'>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
@@ -26,20 +25,18 @@ const AllCare = () => {
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Easy claim reporting.
-              </p>
+              Easy claim reporting & monitoring              </p>
             </div>
-            <div className='landingPage__allCare__container__details__detailsContainer__box'>
+            {/* <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
                 Keep track of your claims refund.
               </p>
-            </div>
+            </div> */}
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Shop for teeth care products.
-              </p>
+              Shop for effective teeth care products               </p>
             </div>
           </div>
           <div className='landingPage__allCare__container__details__imageContainer'>

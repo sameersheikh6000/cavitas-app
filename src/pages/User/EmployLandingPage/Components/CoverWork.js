@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CoverWorks = () => {
+const EmployerCoverWorks = () => {
   return (
     <section className='landingPage__coverWorks'>
       <header>
@@ -73,4 +73,4 @@ const CoverWorks = () => {
   )
 }
 
-export default CoverWorks
+export default EmployerCoverWorks

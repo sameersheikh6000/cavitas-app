@@ -5,7 +5,7 @@ const Conversation = () => {
     <section className='landingPage__conversation'>
       <div className='landingPage__conversation__container'>
         <h1>Let’s cover
-          your employees</h1>
+          your employees and their family!</h1>
         <p>Send us a message or request a
           quote through your mandated
           broker.</p>

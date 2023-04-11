@@ -47,8 +47,7 @@ const HowItWork = () => {
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-                Easy claim by sending a photo or scanned copy of the dental bill via Cavitas mobile app or online.
-              </p>
+              Easy claiming and refunding process via Cavitas mobile app or online              </p>
             </div>
           </div>
         </div>

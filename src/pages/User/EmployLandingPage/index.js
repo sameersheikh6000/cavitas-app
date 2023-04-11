@@ -4,6 +4,7 @@ import AllCare from './Components/AllCare';
 import BenefitPlan from './Components/BenefitPlan';
 import Conversation from './Components/Conversation';
 import HealthyTeeth from './Components/HealthyTeeth';
+import EmployerCoverWorks from './Components/CoverWork';
 // import HowItWork from './Components/HowItWork';
 // import OurOffer from './Components/OurOffer';
 // import SmartInsurance from './Components/SmartInsurance';
@@ -15,6 +16,7 @@ const EmployLandingPage = () => {
         {/* <SmartInsurance /> */}
         <HealthyTeeth />
         <BenefitPlan />
+        <EmployerCoverWorks />
         {/* <OurOffer /> */}
         {/* <HowItWork /> */}
         <AllCare />

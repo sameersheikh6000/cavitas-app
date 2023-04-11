@@ -14,8 +14,7 @@ const AllCare = () => {
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Quick cover information at member's fingertips.
-              </p>
+              Quick policy information at your fingertips               </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
@@ -26,21 +25,20 @@ const AllCare = () => {
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Easy claim reporting.
+              Easy claim reporting & monitoring
               </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Keep track of your claims refund.
-              </p>
+              Shop for effective teeth care products               </p>
             </div>
-            <div className='landingPage__allCare__container__details__detailsContainer__box'>
+            {/* <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
                 Shop for teeth care products.
               </p>
-            </div>
+            </div> */}
           </div>
           <div className='landingPage__allCare__container__details__imageContainer'>
             <img className='landingPage__allCare__container__details__imageContainer__android' src={require("../../../../assets/allCareAndroid-image.png")} alt="" />

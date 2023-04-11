@@ -7,9 +7,10 @@ const DentalInsurance = () => {
     <section className='landingPage__dentaltInsurance'>
       <div className='landingPage__dentaltInsurance__container'>
         <div className='landingPage__dentaltInsurance__container__details'>
-          <h1 className='landingPage__dentaltInsurance__container__details__heading'>Dental Insurance</h1>
-          <p className='landingPage__dentaltInsurance__container__details__desc'>
-            Cavitas - smarter dental insurance cover exactly what you need to keep your natural teeth in good shapre for minimum 3 years.
+        <h1 className='landingPage__smartInsurance__container__details__heading'>Smarter</h1>
+          <h1 className='landingPage__smartInsurance__container__details__heading2'>Dental Insurance</h1>
+                   <p className='landingPage__dentaltInsurance__container__details__desc'>
+          Cavitas dental insurance is here to help you to keep your teeth in good health
           </p>
           <div className='landingPage__dentaltInsurance__container__details__buttons'>
             <Link to="/member-signin">

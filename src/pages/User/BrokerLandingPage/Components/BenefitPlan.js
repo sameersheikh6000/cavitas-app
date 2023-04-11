@@ -9,19 +9,34 @@ const BenefitPlan = () => {
         </div>
 
         <div className='landingPage__benefitPlan__container__details'>
-          <p className='landingPage__benefitPlan__container__details__head'>Give teeth care related employee benefit plan for your client groups what they have been waiting for</p>
+          <p className='landingPage__benefitPlan__container__details__head'>
+          Provide long-awaited dental care benefits to your clients' employees          </p>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
-            <p>Additional value-added offers for employees andrew recruiters.</p>
+            <p>
+            To attract and keep talented employees              </p>
           </div>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
-            <p>Healthier employees.</p>
+            <p>
+            To demonstrate commitment to the health of employees and their families
+            </p>
           </div>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
-            <p>Better prices for corporate employees.</p>
+            <p>
+            To helping employees to access preventive dental care, which can help detect oral health issues at early stage
+            </p>
           </div>
+          <div>
+            <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
+            <p>
+            To improve productivity and reduce absenteeism caused by toothaches or gum disease            </p>
+          </div>
+          <div>
+            <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
+            <p>
+            To relieave employees' dental costs burden</p>          </div>
         </div>
       </div>
     </section>

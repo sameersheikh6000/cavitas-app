@@ -33,6 +33,9 @@ const Footer = () => {
             <Link to="/faq">
               FAQ
             </Link>
+            <Link to="/Claim">
+              Claim
+            </Link>
             <Link to="/privacypolicy">
               Privacy policy
             </Link>
@@ -44,9 +47,20 @@ const Footer = () => {
             <Link to="/findus">
               Find us
             </Link>
+            <Link to="/findus">
+              Facebook
+            </Link>
+            <Link to="/findus">
+            Linkedin
+            </Link>
+            <Link to="/findus">
+            Tiktok
+            </Link>
           </div>
         </div>
-        <p className='footer__container__copyRight'>c 2022 Cavitas - smarter dental insurance.</p>
+        <p className='footer__container__copyRight'> 
+        &copy;
+        Copyright 2023 Cavitas - smarter dental insurance.</p>
       </div>
     </section>
   )
