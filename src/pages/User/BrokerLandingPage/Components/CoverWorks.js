@@ -1,6 +1,9 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
+import { Button } from '@mui/material'
+import GetQuoteCavitas from '../BrokerFormComponent/GetQuoteCavitas'
 const CoverWorks = () => {
+  const navigate = useNavigate();
   return (
     <section className='landingPage__coverWorks'>
       <header>
@@ -68,6 +71,11 @@ const CoverWorks = () => {
           </div>
         </div>
       </div>
+
+     <div className='landingPage__clientDeserve__container'>
+         <GetQuoteCavitas />    
+     </div>
+   
     </section >
   )
 }

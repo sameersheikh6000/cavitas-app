@@ -13,7 +13,9 @@ const Footer = () => {
             </p>
           </div>
           <div className='footer__container__top__box'>
-            <Link to="/support">
+            {/* <Link to="/support"> */}
+            <Link to="/Form/ContactCavitas">
+
               Contact for support
             </Link>
             <Link to="/complaint">

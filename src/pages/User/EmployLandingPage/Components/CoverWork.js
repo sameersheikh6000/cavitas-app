@@ -1,6 +1,10 @@
 import React from 'react'
-
+import { Button } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import GetQuoteCavitas from './EmployerFormComponent/GetQuoteCavitas';
 const EmployerCoverWorks = () => {
+  const navigate = useNavigate();
+
   return (
     <section className='landingPage__coverWorks'>
       <header>
@@ -68,6 +72,10 @@ const EmployerCoverWorks = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className='landingPage__clientDeserve__container'>
+        {/* <Button onClick={() => navigate('/')} > Get a quote 24hrs</Button> */}
+        <GetQuoteCavitas />
       </div>
     </section >
   )

@@ -750,6 +750,7 @@ body {
         border: none;
         border-radius: 1.5rem;
         padding: .7rem 1rem; }
+       
         .uploadClient__container__body__generalInfo input::placeholder {
           font-weight: 500;
           color: black; }
@@ -786,6 +787,16 @@ body {
           border: none;
           border-radius: 1.5rem;
           padding: .7rem 1rem; }
+          .uploadClient__container__body__participation__form {
+            margin: .5rem 0;
+            width: 97%;
+            height: 60px;
+            background-color: #EDF4F4;
+            outline: none;
+            border: none;
+            border: 2px solid rgb(208, 206, 206);
+            border-radius: .4rem;
+            padding: .7rem 1rem; }
           .uploadClient__container__body__participation__headInput::placeholder {
             font-weight: 500;
             color: black; }
@@ -1219,6 +1230,8 @@ body {
     .landingPage__conversation__container h1 {
       font-size: 2rem;
       font-weight: 600;
+      font-weight: bold;
+      color: black;
       margin-top: 0; }
       @media (max-width: 1000px) {
         .landingPage__conversation__container h1 {
@@ -2433,3 +2446,193 @@ body {
     .valuableReadingView__container p {
       font-size: 1rem;
       margin: 4rem 0; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+     .textField{
+      border-radius: 25px;
+     }
+
+      body.active-modal {
+        overflow-y: hidden;
+    }
+    
+    .btn-modal {
+        padding: 10px 20px;
+        display: block;
+        margin: 100px auto 0;
+    }
+    
+    .modal, .overlay {
+        width: 100vw;
+        height: 100vh;
+      
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+    
+    .overlay {
+        background: rgba(49,49,49,0.8);
+    }
+    .modal-content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.4;
+        background: #edf4f4;
+        padding: 14px 28px;
+        border-radius: 25px;
+        max-width: 600px;
+        min-width: 300px;
+    }
+    .model-content-heading h1{
+      position: relative;
+      color: red ;
+      margin-bottom: 20px;
+      margin-top: 10px;
+      justify-items: flex-start;
+      display: flex;
+      font-weight: bolder;
+      
+    }
+    .model-content-heading h2{
+      position: relative;
+      color: black ;
+      margin-bottom: 10px;
+      margin-top: 10px;
+      justify-items: flex-start;
+      display: flex;
+      font-weight: bolder;
+      
+    }
+
+    
+
+    
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 50px;
+        font-weight: bold;
+        color: red;
+        cursor: pointer;
+        /* padding: 5px 7px; */
+    }
+    /* .close-modal .hover {
+      zoom: normal;
+
+    } */
+    
+
+    .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
+      border-radius: 25px;
+    }
+
+
+
+
+
+
+
+
+
+    
+
+    .textField{
+      border-radius: 25px;
+     }
+
+      body.active-modal {
+        overflow-y: hidden;
+    }
+    
+    .btn-modal {
+        padding: 10px 20px;
+        display: block;
+        margin: 100px auto 0;
+    }
+    
+    .modal_Quote, .overlay_Quote {
+        width: 100%;
+        height: 100%;
+      
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: fixed;
+    }
+    
+.overlay_Quote {
+        background: rgba(49,49,49,0.8);
+    }
+    .modal-content-Quote {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        line-height: 1.4;
+        background: #edf4f4;
+        padding: 14px 28px;
+        border-radius: 25px;
+        max-width: 600px;
+        min-width: 300px;
+    }
+   
+    .model-content-heading-quote h1{
+      position: relative;
+      color: red ;
+      justify-items: flex-start;
+      display: flex;
+      font-size: 30px;
+      top: 0px;
+    margin-bottom: 30px;
+      font-weight: bolder;
+      
+    }
+    .model-content-heading-quote h2{
+      position: relative;
+      color: black ;
+      top: 10px;
+      font-size: 25px;
+       margin-bottom: 10px ;
+      justify-items: flex-start;
+      display: flex;
+      font-weight: bolder;
+      
+    }
+    
+
+    
+    .close-modal {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 50px;
+        font-weight: bold;
+        color: red;
+        cursor: pointer;
+        /* padding: 5px 7px; */
+    }
+    /* .close-modal .hover {
+      zoom: normal;
+
+    } */
+    
+
+    .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
+      border-radius: 25px;
+    }

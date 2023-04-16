@@ -31,7 +31,7 @@ import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading
 import UserInformation from "../pages/Admin/UserInformation";
 import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
-
+// import contactCavitas from "../pages/Form/ContactCavitas/index"
 export const routes = [
 
   // user routes
@@ -206,5 +206,14 @@ export const routes = [
     component: AdminPolicyInformation,
     isPrivate: false,
   },
+
+  // Forms
+
+  // {
+  //   path: "/Form/ContactCavitas",
+  //   component: contactCavitas,
+  //   isPrivate: false,
+  // },
+
   
 ]
