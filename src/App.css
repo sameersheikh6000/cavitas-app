@@ -2590,16 +2590,17 @@ body {
         border-radius: 25px;
         max-width: 600px;
         min-width: 300px;
+        height: 100%;
     }
-   
+    
     .model-content-heading-quote h1{
       position: relative;
       color: red ;
       justify-items: flex-start;
       display: flex;
-      font-size: 30px;
+      font-size: 24px;
       top: 0px;
-    margin-bottom: 30px;
+      margin-bottom: 30px;
       font-weight: bolder;
       
     }
@@ -2607,15 +2608,13 @@ body {
       position: relative;
       color: black ;
       top: 10px;
-      font-size: 25px;
+      font-size: 20px;
        margin-bottom: 10px ;
       justify-items: flex-start;
       display: flex;
       font-weight: bolder;
       
     }
-    
-
     
     .close-modal {
         position: absolute;

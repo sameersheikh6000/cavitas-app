@@ -1,19 +1,30 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { useTheme } from "@mui/material/styles";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
-import ListSubheader from "@mui/material/ListSubheader";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
 import CloseIcon from "@mui/icons-material/Close";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import useContactForm from "../../../../hooks/useContactForm";
 
 const ContactCavitas = () => {
   const [modal, setModal] = useState(false);
+  const { createContact } = useContactForm()
+  const navigate = useNavigate();
+  const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  // const theme = useTheme();
+  const [contactForm, setContactForm] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    description: "",
+    identity: "",
+    request: ""
+  });
 
   const toggleModal = () => {
     setModal(!modal);
@@ -24,20 +35,21 @@ const ContactCavitas = () => {
   } else {
     document.body.classList.remove("active-modal");
   }
-  const navigate = useNavigate();
 
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(
-      // On autofill we get a stringified value.
-      typeof value === "string" ? value.split(",") : value
-    );
-  };
+  const handleSubmit = async () => {
+    debugger
+    const response = await createContact(contactForm)
+    if (response.status < 300) {
+      setMessage("From Submitted Successfully! We will get back to you soon.")
+      setInterval(() => {
+        setModal(!modal);
+        setMessage('');
+        setErrorMessage('');
+      }, 3000);
+    } else if (response.status > 300) {
+      setErrorMessage(response.message);
+    }
+  }
 
   return (
     <>
@@ -51,6 +63,14 @@ const ContactCavitas = () => {
               <h1>Start conversation with us</h1>
             </div>
 
+            <div>
+            {
+                message && <span style={{color: "green"}}>{message}</span> 
+              }
+              {
+                errorMessage && <span style={{color: "red"}}>{errorMessage}</span> 
+              }
+           
             <Box
               component="form"
               sx={{
@@ -63,12 +83,14 @@ const ContactCavitas = () => {
                 <TextField
                   label="First Name"
                   id="outlined-size-normal"
-                
+                  onChange={(e) => setContactForm({...contactForm, first_name: e.target.value})}
+
                 />
                 <TextField
                   label="Last Name"
                   id="outlined-size-normal"
-             
+                  onChange={(e) => setContactForm({...contactForm, last_name: e.target.value})}
+
                 />
               </div>
             </Box>
@@ -82,12 +104,13 @@ const ContactCavitas = () => {
                   defaultValue=""
                   id="grouped-native-select"
                   label="Grouping"
+                  onChange={(e) => setContactForm({...contactForm, identity: `I am ${e.target.value}`})}
                 >
                   <option aria-label="None" value="" />
-                  <option value={1}>Broker</option>
-                  <option value={2}>Employer</option>
-                  <option value={3}>Member</option>
-                  <option value={4}>Other</option>
+                  <option value="broker">Broker</option>
+                  <option value="employer">Employer</option>
+                  <option value="member">Member</option>
+                  <option value="other">Other</option>
                 </Select>
               </FormControl>
               <FormControl sx={{ m: 1, width: "25ch" }}>
@@ -97,14 +120,15 @@ const ContactCavitas = () => {
                 <Select
                   native
                   defaultValue=""
-                  id="grouped-native-select"
+                  onChange={(e) => setContactForm({...contactForm, request: `I want to ${e.target.value}`})}
                   label="Grouping"
+
                 >
                   <option aria-label="None" value="" />
-                  <option value={1}>Contact for cooperation</option>
-                  <option value={2}>Ask a question</option>
-                  <option value={3}>Submit a complaint</option>
-                  <option value={4}>Give feedback</option>
+                  <option value="contact for cooperation">Contact for cooperation</option>
+                  <option value="ask a question">Ask a question</option>
+                  <option value="submit a complaint">Submit a complaint</option>
+                  <option value="give feedback">Give feedback</option>
                 </Select>
               </FormControl>
               <TextField
@@ -115,15 +139,18 @@ const ContactCavitas = () => {
                 rows={3}
                 maxRows={10}
                 variant="outlined"
+                onChange={(e) => setContactForm({...contactForm, description: e.target.value})}
               />
             </div>
             <Button
               className="authentication__container__formContainer__form__loginButton"
               type="submit"
+              onClick={() => handleSubmit()}
             >
               Submit
             </Button>
             <CloseIcon className="close-modal" onClick={toggleModal} />
+          </div>
           </div>
         </div>
       )}
