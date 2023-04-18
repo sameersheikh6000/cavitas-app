@@ -31,6 +31,7 @@ import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading
 import UserInformation from "../pages/Admin/UserInformation";
 import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
+import TicketDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/TicketDetail";
 // import contactCavitas from "../pages/Form/ContactCavitas/index"
 export const routes = [
 
@@ -209,11 +210,11 @@ export const routes = [
 
   // Forms
 
-  // {
-  //   path: "/Form/ContactCavitas",
-  //   component: contactCavitas,
-  //   isPrivate: false,
-  // },
+  {
+    path: "/admin/ApprovalFile/TicketDetail",
+    component: TicketDetail,
+    isPrivate: false,
+  },
 
   
 ]

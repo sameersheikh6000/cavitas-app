@@ -311,6 +311,15 @@ body {
             position: absolute;
             margin-left: -2.5rem;
             margin-top: .3rem; }
+            .authentication__container__formContainer__form__loginButton_tickets {
+              background-color: #DD3333 !important;
+              color: white !important;
+              width: 120px !important;
+              border-radius: .7rem !important;
+              margin: .5rem  !important;
+              padding: 5px 0 !important;
+              font-weight: 400 !important;
+              font-family: "poppins" !important;}
         .authentication__container__formContainer__form__loginButton {
           background-color: #DD3333 !important;
           color: white !important;
@@ -320,6 +329,14 @@ body {
           padding: 5px 0 !important;
           font-weight: 400 !important;
           font-family: "poppins" !important; }
+          .authentication__container__formContainer__form__loginButton_Form {
+            background-color: #DD3333 !important;
+            color: white !important;
+            width: 120px !important;
+            margin-left: 250px;
+            border-radius: .7rem !important;
+            font-weight: 400 !important;
+            font-family: "poppins" !important; }
       .authentication__container__formContainer__forgotPassword {
         font-size: 14px;
         font-weight: 500;
@@ -2038,6 +2055,19 @@ body {
           outline: none;
           border: 1px solid lightgray;
           padding: .7rem 1rem; }
+          .userProfileView__container__details__detailsBox .select {
+            width: 300px;
+            border-radius: 1.5rem;
+            outline: none;
+            border: 1px solid lightgray;
+            padding: .7rem 1rem; }
+            .userProfileView__container__details__detailsBox .textarea {
+              width: 650px;
+              margin-left: 15px;
+              border-radius: 2rem;
+              outline: none;
+              border: 1px solid lightgray;
+              padding: 1rem 1rem; }
           @media (max-width: 700px) {
             .userProfileView__container__details__detailsBox input {
               width: 100%; } }
@@ -2634,4 +2664,36 @@ body {
 
     .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root{
       border-radius: 25px;
+    }
+
+
+
+
+
+/* Amdin ticketing syste, */
+    .Admin___TicketDetails{
+      width: 90%;
+      display: flex;
+                }
+   .TicketMessage__left{
+      width: 100%;
+      border: 1px solid black;
+      padding: 30px;
+      justify-content: space-between;
+
+    }
+    .TicketMessage__left .ticket{
+      border-bottom: 1px solid black;
+      margin-bottom: 20px;
+    }
+
+    .TicketMessage__right{
+      width: 30%;
+      flex-direction: end;
+    }
+
+
+    .Footer___Button{
+      color: white;
+      background-color: #2EA3F2;
     }

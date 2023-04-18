@@ -12,43 +12,44 @@ import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlin
 import InsuredClientRejectModal from '../InsuredClientView/Components/InsuredClientReajectModal';
 import ClientInfoUpdate from './Components/ClientInfoUpdate';
 import AcceptFile from './Components/AcceptFile';
+import SupportTickets from './SupportComponent/SupportTickets';
 
 
 const AdminInsuredClientView = () => {
-  const navigate = useNavigate();
-  const { getAllClientInsuranceAdmin } = useClientInsurance();
-  const [clientInfoList, setClientInfoList] = useState([]);
-  const [errorMessage, setErrorMessage] = useState(null)
+  // const navigate = useNavigate();
+  // const { getAllClientInsuranceAdmin } = useClientInsurance();
+  // const [clientInfoList, setClientInfoList] = useState([]);
+  // const [errorMessage, setErrorMessage] = useState(null)
 
-  const getClientInsurance = async () => {
+  // const getClientInsurance = async () => {
 
-    const response = await getAllClientInsuranceAdmin();
-    if (response.status < 300) {
-      setClientInfoList(response.client_infos);
-    } else {
-      setErrorMessage('Something went wrong!')
-    }
-  }
+  //   const response = await getAllClientInsuranceAdmin();
+  //   if (response.status < 300) {
+  //     setClientInfoList(response.client_infos);
+  //   } else {
+  //     setErrorMessage('Something went wrong!')
+  //   }
+  // }
 
-  useEffect(() => {
-    getClientInsurance();
-  }, []);
+  // useEffect(() => {
+  //   getClientInsurance();
+  // }, []);
 
   return (
     <Page>
-      <AlertMessage errorMessage={errorMessage} />
+      {/* <AlertMessage errorMessage={errorMessage} /> */}
       <section className='insuredClientView'>
         <header className='insuredClientView__header'>
           <div className='insuredClientView__header__left'>
             < MailOutlineIcon  className='insuredClientView__header__left__icon' />
-            <p>Support Tickets ({clientInfoList.length})</p>
+            <p>Support Tickets</p>
           </div>
           <div className='insuredClientView__header__right'>
             <input type='text' placeholder='Search' />
             <SearchOutlinedIcon className='insuredClientView__header__right__icon' />
           </div>
         </header>
-        <div className='insuredClientView__container'>
+        {/* <div className='insuredClientView__container'>
           { clientInfoList.length > 0 ? 
           <table >
             <thead>
@@ -89,12 +90,8 @@ const AdminInsuredClientView = () => {
                   <td>{row?.status}</td>
                   <td>
                     <AcceptFile client_id={row?.id} getClientInsurance={getClientInsurance}/>
-                    {/* <ClientInfoUpdate client_id={row?.id} getClientInsurance={getClientInsurance}/> */}
                   </td>
-                {/* <td style={{ display: "flex", alignItems: 'center', justifyContent: 'space-around' }}>
-                  <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={() => navigate("/admin/dashboard")}>Accept</Button>
-                  <InsuredClientRejectModal />
-                </td> */}
+              
               </tr>
               )) 
               }
@@ -104,7 +101,8 @@ const AdminInsuredClientView = () => {
           <div style={{textAlign: "center"}}>
           <p style={{marginTop: "20%", fontWeight: "bold", fontSize: "1.2rem"}}>No Files To Approve.</p>
         </div>}
-        </div>
+        </div> */}
+              <SupportTickets />
       </section>
     </Page>
   )

@@ -1,5 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import ContactCavitas from './FooterFormComponent/ContactCavitas'
+import ComplaintForm from './FooterFormComponent/ComplaintForm'
+import FeedbackForm from './FooterFormComponent/Feedbackform'
 
 const Footer = () => {
   return (
@@ -14,15 +17,14 @@ const Footer = () => {
           </div>
           <div className='footer__container__top__box'>
             {/* <Link to="/support"> */}
-            <Link to="/Form/ContactCavitas">
-
-              Contact for support
+            <Link>
+            <ContactCavitas />
             </Link>
-            <Link to="/complaint">
-              Contact for complaint
+            <Link>
+              <ComplaintForm />
             </Link>
-            <Link to="/feedback">
-              Give us feedback
+            <Link>
+            <FeedbackForm />
             </Link>
           </div>
           <div className='footer__container__top__box'>

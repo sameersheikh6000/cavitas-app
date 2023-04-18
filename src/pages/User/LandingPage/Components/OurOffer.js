@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React from 'react'
+import GetQuoteCavitas from './LandingPageFormComponent/GetQuoteCavitas'
 
 const OurOffer = () => {
   return (
@@ -64,7 +65,7 @@ const OurOffer = () => {
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
               <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Lorem ipsum</span>
             </div> */}
-            <Button>Get a quote in 24hrs</Button>
+            <GetQuoteCavitas />
           </div>
         </div>
       </div>
