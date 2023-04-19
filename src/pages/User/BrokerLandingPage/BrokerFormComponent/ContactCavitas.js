@@ -92,7 +92,12 @@ function ContactCavitas() {
                     type="text" 
                     placeholder="Last name" 
                     onChange={(e) => setContactForm({...contactForm, last_name: e.target.value})}/>
+                    
                   </div>
+                    <input 
+                    type="text" 
+                    placeholder="Email" 
+                    onChange={(e) => setContactForm({...contactForm, email: e.target.value})}/>
 
                   <div style={{ marginTop: "5px" }}>
                     <select className="select">

@@ -183,7 +183,7 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/admin/ApprovalFile",
+    path: "/admin/support-tickets",
     component:   ApprovalFile,
     isPrivate: false,
   },

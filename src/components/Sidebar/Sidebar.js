@@ -104,7 +104,7 @@ const Sidebar = () => {
             {/* <p>Insured clients</p> */}
             <p>Insured Persons</p>
           </Link>
-          <Link to="/admin/ApprovalFile" className='sidebar__linkButtons__link'>
+          <Link to="/admin/support-tickets" className='sidebar__linkButtons__link'>
             <MailOutlineIcon className='sidebar__linkButtons__link__icon' />
             {/* <p>Cavitas Documents</p> */}
             <p>Support Tickets</p>
