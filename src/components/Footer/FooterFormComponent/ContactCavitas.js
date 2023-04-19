@@ -1,10 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import useContactForm from '../../../hooks/useContactForm';
 
 function ContactCavitas() {
+  const { createContact } = useContactForm()
+  const [message, setMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [open, setOpen] = useState(false);
+  const [contactForm, setContactForm] = useState({
+        first_name: "",
+        last_name: "",
+        email: "",
+        description: "",
+        identity: "",
+        request: ""
+      });
   const style = {
     position: "absolute",
     top: "50%",
@@ -20,6 +32,21 @@ function ContactCavitas() {
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
+
+  const handleSubmit = async () => {
+  const response = await createContact(contactForm)
+  if (response.status < 300) {
+    setMessage("From Submitted Successfully! We will get back to you soon.")
+    setTimeout(() => {
+      handleClose();
+      setMessage('');
+      setErrorMessage('');
+    }, 3000);
+    
+  } else if (response.status > 300) {
+    setErrorMessage(response.message);
+  }
+}
 
   return (
     <div>
@@ -44,33 +71,45 @@ function ContactCavitas() {
           <div className="uploadClient__container__body__participation">
             <h2>Contact Cavitas</h2>
             <h1 style={{ color: "red" }}>Start conversation with us</h1>
-
+            {
+              message && <span style={{color: "green"}}>{message}</span> 
+            }
+            {
+              errorMessage && <span style={{color: "red"}}>{errorMessage}</span> 
+            }
             <div className="userProfileView__container__details">
               <div className="userProfileView__container__details__detailsBox">
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
+                  
                   <div>
-                    <input type="text" placeholder="First name" />
+                    <input 
+                    type="text" 
+                    placeholder="First name" 
+                    onChange={(e) => setContactForm({...contactForm, first_name: e.target.value})}
+                    />
                   </div>
                   <div>
-                    <input type="text" placeholder="Last name" />
+                    <input 
+                    type="text" 
+                    placeholder="Last name" 
+                    onChange={(e) => setContactForm({...contactForm, last_name: e.target.value})}/>
                   </div>
-
                   <div style={{ marginTop: "5px" }}>
                     <select className="select">
                       <option>I am ....*</option>
-                      <option>Broker</option>
-                      <option>Employer</option>
-                      <option>Member</option>
-                      <option>Other</option>
+                      <option value="broker">Broker</option>
+                      <option value="employer">Employer</option>
+                      <option value="member">Member</option>
+                      <option value="other">Other</option>
                     </select>
                   </div>
                   <div style={{ marginTop: "5px" }}>
                     <select className="select">
-                      <option>I want to .... *</option>
-                      <option>Contact for cooperation</option>
-                      <option>Ask a question</option>
-                      <option>Submit a complaint</option>
-                      <option>Give feedback</option>
+                      <option >I want to ...</option>
+                      <option value="contact for cooperation">Contact for cooperation</option>
+                      <option value="ask a question">Ask a question</option>
+                      <option value="submit a complaint">Submit a complaint</option>
+                      <option value="give feedback">Give feedback</option>
                     </select>
                   </div>
                 </div>
@@ -84,6 +123,7 @@ function ContactCavitas() {
                       placeholder="Your text here                 "
                       cols={10}
                       rows={5}
+                      onChange={(e) => setContactForm({...contactForm, description: e.target.value})}
                     ></textarea>
                   </div>
                 </div>
@@ -93,6 +133,7 @@ function ContactCavitas() {
               style={{ marginLeft: "300px" }}
               className="authentication__container__formContainer__form__loginButton_Form"
               type="submit"
+              onClick={() => handleSubmit()}
             >
               Submit
             </Button>
