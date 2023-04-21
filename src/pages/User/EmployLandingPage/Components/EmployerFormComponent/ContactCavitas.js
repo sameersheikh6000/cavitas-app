@@ -119,6 +119,7 @@ function ContactCavitas() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div>
                     <textarea
+                      style={{ marginLeft: "20px" }}
                       className="textarea"
                       placeholder="Your text here                 "
                       cols={10}
@@ -130,7 +131,7 @@ function ContactCavitas() {
               </div>
             </div>
             <Button
-              style={{ marginLeft: "300px" }}
+              style={{ marginLeft: "250px" }}
               className="authentication__container__formContainer__form__loginButton_Form"
               type="submit"
               onClick={() => handleSubmit()}

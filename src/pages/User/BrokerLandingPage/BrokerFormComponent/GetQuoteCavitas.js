@@ -145,6 +145,7 @@ function GetQuoteCavitas() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div>
                     <textarea
+                      style={{ marginLeft: "20px" }}
                       className="textarea"
                       placeholder="Are there any other details you'd like to tell us about your group?"
                       cols={10}
@@ -156,7 +157,7 @@ function GetQuoteCavitas() {
               </div>
             </div>
             <Button
-              style={{ marginLeft: "300px" }}
+              style={{ marginLeft: "250px" }}
               className="authentication__container__formContainer__form__loginButton_Form"
               type="submit"
               onClick={() => submitQuoteForm()}

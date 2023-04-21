@@ -32,6 +32,9 @@ import UserInformation from "../pages/Admin/UserInformation";
 import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
 import TicketDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/TicketDetail";
+import TickekList from "../pages/User/SupportView/TicketingSystemComponent/MySupportTickets/TicketsList";
+import Tickets from "../pages/User/SupportView/TicketingSystemComponent/MySupportTickets/Tickets";
+import SubmitNewTickets from "../pages/User/SupportView/TicketingSystemComponent/SubmitNewTickets/SubmitNewTickets";
 // import contactCavitas from "../pages/Form/ContactCavitas/index"
 export const routes = [
 
@@ -216,5 +219,23 @@ export const routes = [
     isPrivate: false,
   },
 
+  {
+
+    path: "/user/Support/TicketsList",
+         component: SupportView,
+    isPrivate: false,
+  }
+  ,
+  {
+
+    path: "/SubmitNewTickets",
+         component: SubmitNewTickets,
+    isPrivate: false,
+  },
   
+  {
+    path: "/Tickets",
+    component: Tickets,
+    isPrivate: false,
+  },
 ]
