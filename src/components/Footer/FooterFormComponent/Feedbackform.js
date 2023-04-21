@@ -21,6 +21,7 @@ function FeedbackForm() {
     position: "absolute",
     top: "50%",
     left: "50%",
+    borderRadius: 10,
     transform: "translate(-50%, -50%)",
     width: 750,
     bgcolor: "#edf4f4",
@@ -84,15 +85,21 @@ function FeedbackForm() {
                   <div>
                     <input 
                     type="text" 
-                    placeholder="First name" 
+                    placeholder="First & Last name" 
                     onChange={(e) => setContactForm({...contactForm, first_name: e.target.value})}
                     />
                   </div>
                   <div>
-                    <input 
+                    {/* <input 
                     type="text" 
                     placeholder="Last name" 
                     onChange={(e) => setContactForm({...contactForm, last_name: e.target.value})}/>
+                  */}
+                 <input 
+                    type="text" 
+                    placeholder="Email" 
+                    onChange={(e) => setContactForm({...contactForm, email: e.target.value})}/>
+
                   </div>
                   <div style={{ marginTop: "5px" }}>
                     <select className="select">

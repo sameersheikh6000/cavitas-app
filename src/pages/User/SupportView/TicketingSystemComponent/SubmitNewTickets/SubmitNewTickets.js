@@ -9,10 +9,11 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 function SubmitNewTickets() {
   const style = {
     position: "absolute",
-    top: "58%",
+    top: "59%",
     left: "60%",
     transform: "translate(-50%, -50%)",
     width: 800,
+    borderRadius: 10,
     bgcolor: "#edf4f4",
     boxShadow: 1,
     p: 5,
