@@ -21,6 +21,7 @@ function ComplaintForm() {
     position: "absolute",
     top: "50%",
     left: "50%",
+    borderRadius: 10,
     transform: "translate(-50%, -50%)",
     width: 750,
     bgcolor: "#edf4f4",
