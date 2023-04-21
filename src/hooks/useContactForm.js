@@ -65,9 +65,43 @@ function useContactForm() {
       })
       return response;
     }
+
+    const getContactFormById = async (id) => {
+      const response = await axios.get(
+        `${API_KEY}/api/v1/contact_forms/${id}`,
+        getAdminHeaders()
+      ).then((res) => {
+        if (res?.status > 300) {
+          handleErrors(res);
+        }
+        return res.data
+      })
+      return response;
+    }
+
+    const updateContactFormStatus = async (id, ticket_status) => {
+      const params = {
+        contact_form: {
+          status: parseInt(ticket_status)
+        }
+      }
+      const response = await axios.put(
+        `${API_KEY}/api/v1/contact_forms/${id}`,
+        {
+          ...params
+        },
+        getAdminHeaders()
+      ).then((res) => {
+        if (res?.status > 300) {
+          handleErrors(res);
+        }
+        return res.data
+      })
+      return response;
+    }
     
   return {
-    createContact, getAllContactForms
+    createContact, getAllContactForms, getContactFormById, updateContactFormStatus
   }
 }
 

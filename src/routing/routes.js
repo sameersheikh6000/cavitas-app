@@ -211,7 +211,7 @@ export const routes = [
   // Forms
 
   {
-    path: "/admin/ApprovalFile/TicketDetail",
+    path: "/admin/support-tickets/:id/TicketDetail",
     component: TicketDetail,
     isPrivate: false,
   },

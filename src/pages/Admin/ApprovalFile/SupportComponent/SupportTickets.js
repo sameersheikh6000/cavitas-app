@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import TicketDetail from "./TicketComponent/TicketDetail";
 import { Button } from "@mui/material";
 import useContactForm from "../../../../hooks/useContactForm";
@@ -10,6 +10,7 @@ const SupportTickets = () => {
   const [submittedContact, setSubmittedContact] = useState([]);
   const {getAllContactForms} = useContactForm();
   const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState('');
   console.log(submittedContact)
 
@@ -47,9 +48,9 @@ const SupportTickets = () => {
         <tbody>
           {submittedContact.length > 0 && submittedContact.map((row, index) => (
             <tr key={index}>
-              <td>{row?.status}</td>
+              <td>{row?.status == 'fresh' ? 'NEW' : row?.status.toUpperCase()}</td>
               <td>
-                <Link to="TicketDetail">{row?.id}</Link>
+                <a href="" onClick={() => navigate(`/admin/support-tickets/${row?.id}/TicketDetail`)}>{row?.id}</a>
               </td>
               <td>{row?.request}</td>
               <td>{row?.identity}</td>

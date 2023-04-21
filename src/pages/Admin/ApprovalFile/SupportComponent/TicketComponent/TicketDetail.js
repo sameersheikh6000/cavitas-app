@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Button } from "@mui/material";
-import {Link, Route, Routes} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import Page from "../../../../../components/Page/Page";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Table from "@mui/material/Table";
@@ -18,12 +18,47 @@ import Paper from "@mui/material/Paper";
 import Stack from '@mui/material/Stack';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-
-
+import useContactForm from "../../../../../hooks/useContactForm";
+import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
+import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
+import ReplyForm from "./Component/ReplyForm";
 
 const TicketDetail = () => {
+  const [ticket, setTicket] = useState();
+  const {id} = useParams();
+  const {getContactFormById, updateContactFormStatus} = useContactForm();
+  const [ticketStatus, setTicketStatus] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  console.log(ticket?.replies)
+
+const getTicketDetail = async () => {
+  const response = await getContactFormById(id);
+  if (response?.status < 300) {
+    setTicket(response?.contact_form);
+  }else if (response.status > 300){
+    setErrorMessage(response?.message);
+  }
+}
+
+const handleTicketStatusUpdate = async () => {
+  const response = await updateContactFormStatus(id, ticketStatus);
+  if (response?.status < 300) {
+    setSuccessMessage('Status Updated Successfully!')
+    setTicketStatus('');
+  }else if (response.status > 300){
+    setErrorMessage(response?.message);
+  }
+}
+
+useEffect(() => {
+  getTicketDetail()
+}, [])
+
   return (
     <Page>
+      <SuccessMessage successMessage={successMessage}/>
+      <AlertMessage errorMessage={errorMessage}/>
       <section className="insuredClientView">
       <header className='insuredClientView__header'>
           <div className='insuredClientView__header__left'>
@@ -31,7 +66,7 @@ const TicketDetail = () => {
             <p>Support Tickets</p>
           </div>
           <div className='insuredClientView__header__right'>
-          <Link to="/admin/ApprovalFile">
+          <Link to="/admin/support-tickets">
           <Button color='error' variant='outlined' size='small' style={{ color: "white !important", marginLeft: "15px"}}>Return to ticket list</Button>
           </Link>
           </div>
@@ -44,7 +79,7 @@ const TicketDetail = () => {
               <TableHead sx={{ border: 1 }}>
                 <TableRow>
                   <TableCell sx={{ border: 1 }}>
-                    <h1>Tickets #1</h1>
+                    <h1>Tickets #{id}</h1>
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -52,17 +87,7 @@ const TicketDetail = () => {
                 <TableRow>
                   <TableCell sx={{ border: 1 }} component="th" scope="row">
                     <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
+                      {ticket?.description}
                     </p>
                   </TableCell>
                 </TableRow>
@@ -72,48 +97,38 @@ const TicketDetail = () => {
        
         <br />
        
-          <TableContainer component={Paper}>
+          <TableContainer component={Paper} style={{ width: 600 }}>
             <Table sx={{ border: 1 }} aria-label="simple table">
               <TableHead sx={{ border: 1 }}>
                 <TableRow>
                   <TableCell sx={{ border: 1 }}>
-                    <h1>Ticket #1 / Reply</h1>
+                    <h1>Ticket #{id} / Reply</h1>
                   </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                <TableRow>
-                  <TableCell sx={{ border: 1 }} component="th" scope="row">
-                    <p>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry. Lorem Ipsum has been the industry's
-                      standard dummy text ever since the 1500s, when an unknown
-                      printer took a galley of type and scrambled it to make a
-                      type specimen book. It has survived not only five
-                      centuries, but also the leap into electronic typesetting,
-                      remaining essentially unchanged. It was popularised in the
-                      1960s with the release of Letraset sheets containing Lorem
-                      Ipsum passages, and more recently with desktop publishing
-                      software like Aldus PageMaker including versions of Lorem
-                      Ipsum.
-                    </p>
-                  </TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell sx={{ border: 1 }} component="th" scope="row">
-                    <input type="file" />
-                  </TableCell>
-                </TableRow>
+                {ticket?.replies?.length > 0 && ticket?.replies?.map((row, index) => (
+                  <>
+                    <TableRow>
+                      <TableCell sx={{ border: 1 }} component="th" scope="row">
+                        <p>
+                          {row?.reply_text}
+                        </p>
+                      </TableCell>
+                    </TableRow>
+                    <TableRow>
+                      <TableCell sx={{ border: 1}} component="th" scope="row" style={{ padding: 7}}>
+                        <small><em>Attached file goes here</em></small>
+                      </TableCell>
+                    </TableRow>
+                  </>
+                ))
+                }
+                
               </TableBody>
             </Table>
           </TableContainer>
-          <Button
-            className="authentication__container__formContainer__form__loginButton_tickets"
-            type="submit"
-            
-          >
-            Reply
-          </Button>
+          <ReplyForm contactForm={ticket} getTicketDetail={getTicketDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
        </div>
         <div className="Ticket___detail____right">
           <Box
@@ -126,12 +141,12 @@ const TicketDetail = () => {
           >
             <h3>TICKET DETAILS</h3>
             <div style={{marginTop: 20}}>
-                <label>Ticket Creator:</label>
-              <TextField id="outlined-size-normal" />
+                <label><strong>Ticket Creator:</strong></label>
+              <p id="outlined-size-normal" >{ticket?.email}</p>
             </div>
             <div>
-            <label>Topic:</label>
-              <TextField  id="outlined-size-normal" />
+            <label><strong>Topic:</strong></label>
+              <p  id="outlined-size-normal" >{ticket?.request}</p>
             </div>
             <InputLabel htmlFor="grouped-native-select">Status:</InputLabel>
             <FormControl sx={{ m: 1, width: "25ch" }}>
@@ -140,18 +155,19 @@ const TicketDetail = () => {
                 defaultValue="New"
                 id="grouped-native-select"
                 label="Grouping"
+                onChange={(e) => setTicketStatus(e.target.value)}
               >
-                <option aria-label="New" label="New" value="" />
-                <option value="">IN PROCESS</option>
-                <option value="">REPLIED</option>
-                <option value="">Close</option>
-                <option value=""></option>
+                <option value={0}>{ticket?.status == 'fresh' ? 'NEW' : ticket?.status.toUpperCase()}</option>
+                <option value={1}>IN PROCESS</option>
+                <option value={2}>REPLIED</option>
+                <option value={3}>Close</option>
               </Select>
             </FormControl>
           </Box>
           <Button
             className="authentication__container__formContainer__form__loginButton_tickets"
             type="submit" 
+            onClick={() => handleTicketStatusUpdate()}
           >
             Update Ticket
           </Button>
