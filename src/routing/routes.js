@@ -35,6 +35,9 @@ import TicketDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketCom
 import TickekList from "../pages/User/SupportView/TicketingSystemComponent/MySupportTickets/TicketsList";
 import Tickets from "../pages/User/SupportView/TicketingSystemComponent/MySupportTickets/Tickets";
 import SubmitNewTickets from "../pages/User/SupportView/TicketingSystemComponent/SubmitNewTickets/SubmitNewTickets";
+import Contactus from "../pages/Admin/ApprovalFile/SupportComponent/Contactus";
+import InsuredPerson from "../pages/Admin/ApprovalFile/SupportComponent/InsuredPerson";
+import GetQuote from "../pages/Admin/ApprovalFile/SupportComponent/GetQuote";
 // import contactCavitas from "../pages/Form/ContactCavitas/index"
 export const routes = [
 
@@ -238,4 +241,21 @@ export const routes = [
     component: Tickets,
     isPrivate: false,
   },
+
+  {
+    path: "/Contactus",
+    component: Contactus,
+    isPrivate: false,
+  },
+  {
+    path: "/InsuredPerson",
+    component: InsuredPerson,
+    isPrivate: false,
+  },
+  {
+    path: "/GetQuote",
+    component: GetQuote,
+    isPrivate: false,
+  },
 ]
+

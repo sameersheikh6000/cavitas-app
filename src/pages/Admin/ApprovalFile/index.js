@@ -13,6 +13,8 @@ import InsuredClientRejectModal from '../InsuredClientView/Components/InsuredCli
 import ClientInfoUpdate from './Components/ClientInfoUpdate';
 import AcceptFile from './Components/AcceptFile';
 import SupportTickets from './SupportComponent/SupportTickets';
+import Stack from "@mui/material/Stack";
+import { Link, Route, Routes } from "react-router-dom";
 
 
 const AdminInsuredClientView = () => {
@@ -102,6 +104,7 @@ const AdminInsuredClientView = () => {
           <p style={{marginTop: "20%", fontWeight: "bold", fontSize: "1.2rem"}}>No Files To Approve.</p>
         </div>}
         </div> */}
+
               <SupportTickets />
       </section>
     </Page>
