@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
 import Stack from "@mui/material/Stack";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
+import useTickets from "../../../../../hooks/useTickets";
+import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
+import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
 
 function SubmitNewTickets() {
+  const {createTicket} = useTickets();
+  const navigate = useNavigate();
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [ticket, setTicket] = useState({
+    request: "",
+    description: "",
+    attachment: ""
+  })
+
   const style = {
     position: "absolute",
     top: "59%",
@@ -19,8 +32,25 @@ function SubmitNewTickets() {
     p: 5,
   };
 
+  const handleSubmit = async () => {
+    const response = await createTicket(ticket)
+    if(response?.status < 300){
+      setSuccessMessage("Submited Successfully!")
+      navigate('/support/view')
+      setTicket({
+        ...ticket, description: "", request: "", attachment: ""
+      })
+    }
+    else if (response?.status > 300){
+      setErrorMessage(response?.message)
+
+    }
+  }
+
   return (
     <Page>
+      <AlertMessage errorMessage={errorMessage}/>
+      <SuccessMessage successMessage={successMessage}/>
       <section className="insuredClientView">
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
@@ -62,12 +92,12 @@ function SubmitNewTickets() {
               <div className="userProfileView__container__details__detailsBox">
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div style={{ marginTop: "5px", marginLeft: "20px" }}>
-                    <select className="select">
+                    <select className="select" onChange={(e) => setTicket({...ticket, request: `I want to ${e.target.value}`})}>
                       <option>I want to... *</option>
-                      <option>Contact for cooperation</option>
-                      <option>Ask a question</option>
-                      <option>Submit a complaint</option>
-                      <option>Give Feedback</option>
+                      <option value="contact for corporation">Contact for cooperation</option>
+                      <option value="ask a question">Ask a question</option>
+                      <option value="submit a complaint">Submit a complaint</option>
+                      <option value="give feedback">Give Feedback</option>
                     </select>
                   </div>
                 </div>
@@ -78,7 +108,8 @@ function SubmitNewTickets() {
                     <textarea
                       style={{ marginLeft: "20px" }}
                       className="textarea"
-                      placeholder="Your text here                 "
+                      placeholder="Your text here"
+                      onChange={(e) => setTicket({...ticket, description: e.target.value})}
                       cols={10}
                       rows={5}
                     ></textarea>
@@ -89,7 +120,7 @@ function SubmitNewTickets() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div style={{ marginLeft: "20px" }}>
                     <label style={{ marginLeft: "20px" }}>Attachments</label>
-                    <input className="textarea" type="file"></input>
+                    <input className="textarea" type="file" onChange={(e) => setTicket({ ...ticket, attachment: e.target.files[0] })}></input>
                   </div>
                 </div>
               </div>
@@ -99,6 +130,7 @@ function SubmitNewTickets() {
               style={{ marginLeft: "250px", fontSize: "15px" }}
               className="authentication__container__formContainer__form__loginButton_Form"
               type="submit"
+              onClick={() => handleSubmit()}
             >
               SUBMIT TICKET
             </Button>

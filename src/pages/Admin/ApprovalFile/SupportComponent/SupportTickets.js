@@ -7,17 +7,20 @@ import Stack from "@mui/material/Stack";
 import useContactForm from "../../../../hooks/useContactForm";
 import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../../components/SnackbarMessages/SuccessMessage";
+import useTickets from "../../../../hooks/useTickets";
+import { API_KEY } from "../../../../config/helpers/variables";
 
 const SupportTickets = () => {
+  const {getTicketsByAdmin} = useTickets();
   const [submittedContact, setSubmittedContact] = useState([]);
   const { getAllContactForms } = useContactForm();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
+  const [ticketList, setTicketList] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
   console.log(submittedContact);
 
   const getContactFormData = async () => {
-    debugger;
     const response = await getAllContactForms();
     if (response.status < 300) {
       setSubmittedContact(response.contact_forms);
@@ -26,8 +29,20 @@ const SupportTickets = () => {
     }
   };
 
+  const getTickets = async () => {
+    debugger
+    const response = await getTicketsByAdmin();
+    if(response?.status < 300){
+      setTicketList(response?.tickets)
+    }
+    else if(response?.status > 300){
+      setErrorMessage(response?.message)
+    }
+  }
+
   useEffect(() => {
     getContactFormData();
+    getTickets();
   }, []);
 
   return (
@@ -71,40 +86,29 @@ const SupportTickets = () => {
         <table>
           <thead>
             <tr>
-              <th>Status</th>
-              <th>Ticket Number</th>
+              <th>Attachement</th>
               <th>Topic</th>
-              <th>Created by</th>
-              <th>First and last name</th>
-              <th>E-mail address</th>
-              <th>Detail</th>
-              <th>Date</th>
+              <th>Description</th>
+              <th>Creator</th>
+              <th>Created Date</th>
             </tr>
           </thead>
           <tbody>
-            {submittedContact.length > 0 &&
-              submittedContact.map((row, index) => (
+            {ticketList.length > 0 &&
+              ticketList.map((row, index) => (
                 <tr key={index}>
                   <td>
-                    {row?.status == "fresh" ? "NEW" : row?.status.toUpperCase()}
-                  </td>
-                  <td>
                     <a
-                      href=""
-                      onClick={() =>
-                        navigate(
-                          `/admin/support-tickets/${row?.id}/TicketDetail`
-                        )
-                      }
+                      href={`${API_KEY}/api/v1/tickets/${row?.id}/download`}
+                      target="_blank"
+                      
                     >
-                      {row?.id}
+                      {row?.file_name}
                     </a>
                   </td>
                   <td>{row?.request}</td>
-                  <td>{row?.identity}</td>
-                  <td>{`${row?.first_name}` + " " + `${row?.last_name}`}</td>
-                  <td>{row?.email}</td>
                   <td>{row?.description}</td>
+                  <td>{row?.creator?.email}</td>
                   <td>{row?.created_at}</td>
                 </tr>
               ))}
