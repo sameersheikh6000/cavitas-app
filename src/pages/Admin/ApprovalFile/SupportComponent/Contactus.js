@@ -50,21 +50,21 @@ const Contactus = () => {
           <br />
           <Stack direction="row" spacing={2}>
             <div className="insuredClientView__header__left">
-              <Link to="/admin/support-tickets">
+              <Link to="/admin/support-tickets" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   Support Tickets
                 </Button>
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/InsuredPerson">
+              <Link to="/InsuredPerson" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   Insured Person
                 </Button>
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/Contactus">
+              <Link to="/Contactus" style={{textDecoration: "none"}}>
                 <Button
                   style={{ background: "#5C8894" }}
                   className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
@@ -74,7 +74,7 @@ const Contactus = () => {
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/GetQuote">
+              <Link to="/GetQuote" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   get quote
                 </Button>

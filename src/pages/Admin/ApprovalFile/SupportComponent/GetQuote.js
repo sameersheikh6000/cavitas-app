@@ -8,28 +8,26 @@ import Page from "../../../../components/Page/Page";
 import Stack from "@mui/material/Stack";
 import useContactForm from "../../../../hooks/useContactForm";
 import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
-import SuccessMessage from "../../../../components/SnackbarMessages/SuccessMessage";
+import useQuoteForm from "../../../../hooks/useQuoteForm";
 
 const GetQuote = () => {
-  const [submittedContact, setSubmittedContact] = useState([]);
-  const { getAllContactForms } = useContactForm();
+  const [submittedQuote, setSubmittedQuote] = useState([]);
+  const { getAllQuoteByAdmin } = useQuoteForm();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const [successMessage, setSuccessMessage] = useState("");
-  console.log(submittedContact);
 
-  const getContactFormData = async () => {
+  const getQuoteFormData = async () => {
     debugger;
-    const response = await getAllContactForms();
+    const response = await getAllQuoteByAdmin();
     if (response.status < 300) {
-      setSubmittedContact(response.contact_forms);
+      setSubmittedQuote(response.quote_forms);
     } else if (response.status > 300) {
       setErrorMessage("Something went wrong!");
     }
   };
 
   useEffect(() => {
-    getContactFormData();
+    getQuoteFormData();
   }, []);
 
   return (
@@ -50,21 +48,21 @@ const GetQuote = () => {
           <br />
           <Stack direction="row" spacing={2}>
             <div className="insuredClientView__header__left">
-              <Link to="/admin/support-tickets">
+              <Link to="/admin/support-tickets" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   Support Tickets
                 </Button>
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/InsuredPerson">
+              <Link to="/InsuredPerson" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   Insured Person
                 </Button>
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/Contactus">
+              <Link to="/Contactus" style={{textDecoration: "none"}}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
 
                   Contact Us
@@ -72,7 +70,7 @@ const GetQuote = () => {
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/GetQuote">
+              <Link to="/GetQuote" style={{textDecoration: "none"}}>
                 <Button
                   style={{ background: "#5C8894" }}
                   className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
@@ -89,18 +87,20 @@ const GetQuote = () => {
               <thead>
                 <tr>
                   <th>Status</th>
-                  <th>Ticket Number</th>
-                  <th>Topic</th>
+                  <th>#id</th>
+                  <th>Group Name</th>
+                  <th>No. of Employ</th>
+                  <th>Company Name</th>
                   <th>Created by</th>
-                  <th>First and last name</th>
+                  <th>Name</th>
                   <th>E-mail address</th>
                   <th>Detail</th>
                   <th>Date</th>
                 </tr>
               </thead>
               <tbody>
-                {submittedContact.length > 0 &&
-                  submittedContact.map((row, index) => (
+                {submittedQuote.length > 0 &&
+                  submittedQuote.map((row, index) => (
                     <tr key={index}>
                       <td>
                         {row?.status == "fresh"
@@ -108,21 +108,23 @@ const GetQuote = () => {
                           : row?.status.toUpperCase()}
                       </td>
                       <td>
-                        <a
+                        {/* <a
                           href=""
                           onClick={() =>
                             navigate(
                               `/admin/support-tickets/${row?.id}/TicketDetail`
                             )
                           }
-                        >
-                          {row?.id}
-                        </a>
+                        > */}
+                          #{row?.id}
+                        {/* </a> */}
                       </td>
-                      <td>{row?.request}</td>
+                      <td>{row?.group_name}</td>
+                      <td>{row?.number_of_employ}</td>
+                      <td>{row?.company_name}</td>
                       <td>{row?.identity}</td>
                       <td>
-                        {`${row?.first_name}` + " " + `${row?.last_name}`}
+                        {row?.name}
                       </td>
                       <td>{row?.email}</td>
                       <td>{row?.description}</td>

@@ -6,36 +6,34 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Page from "../../../../components/Page/Page";
 import Stack from "@mui/material/Stack";
-import useContactForm from "../../../../hooks/useContactForm";
 import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
-import SuccessMessage from "../../../../components/SnackbarMessages/SuccessMessage";
+import AcceptFile from "../Components/AcceptFile";
+import useClientInsurance from "../../../../hooks/useClientInsurance";
+import { API_KEY } from "../../../../config/helpers/variables";
 
 const InsuredPerson = () => {
-  const [submittedContact, setSubmittedContact] = useState([]);
-  const { getAllContactForms } = useContactForm();
-  const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
-  const [successMessage, setSuccessMessage] = useState("");
-  console.log(submittedContact);
+  const { getAllClientInsuranceAdmin } = useClientInsurance();
+  const [clientInfoList, setClientInfoList] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null)
 
-  const getContactFormData = async () => {
-    debugger;
-    const response = await getAllContactForms();
+  const getClientInsurance = async () => {
+    const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
-      setSubmittedContact(response.contact_forms);
-    } else if (response.status > 300) {
-      setErrorMessage("Something went wrong!");
+      setClientInfoList(response.client_infos);
+    } else {
+      setErrorMessage('Something went wrong!')
     }
-  };
+  }
 
   useEffect(() => {
-    getContactFormData();
+    getClientInsurance();
   }, []);
 
   return (
     <>
       <Page>
-        {/* <AlertMessage errorMessage={errorMessage} /> */}
+        <AlertMessage errorMessage={errorMessage} />
         <section className="insuredClientView">
           <header className="insuredClientView__header">
             <div className="insuredClientView__header__left">
@@ -50,14 +48,14 @@ const InsuredPerson = () => {
           <br />
           <Stack direction="row" spacing={2}>
             <div className="insuredClientView__header__left">
-              <Link to="/admin/support-tickets">
+              <Link to="/admin/support-tickets" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   Support Tickets
                 </Button>
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/InsuredPerson">
+              <Link to="/InsuredPerson" style={{textDecoration: "none"}}>
                 <Button
                   style={{ background: "#5C8894" }}
                   className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
@@ -67,14 +65,14 @@ const InsuredPerson = () => {
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/Contactus">
+              <Link to="/Contactus" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   Contact Us
                 </Button>
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/GetQuote">
+              <Link to="/GetQuote"style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   get quote
                 </Button>
@@ -82,54 +80,59 @@ const InsuredPerson = () => {
             </div>
           </Stack>
           <AlertMessage errorMessage={errorMessage} />
-          <div className="insuredClientView__container">
-            <table>
-              <thead>
+          <div className='insuredClientView__container'>
+          { clientInfoList.length > 0 ? 
+          <table >
+            <thead>
+              <tr>
+                <th>id#</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Total Employees in Company</th>
+                <th>Participation</th>
+                <th>Mandatory Employees</th>
+                <th>Voluntary Employees</th>
+                <th>Employee Family Info</th>
+                <th>Payment Type</th>
+                <th>Broker Reference</th>
+                <th>Broker Name</th>
+                <th>File</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+            {clientInfoList.map((row, index) => (
                 <tr>
-                  <th>Status</th>
-                  <th>Ticket Number</th>
-                  <th>Topic</th>
-                  <th>Created by</th>
-                  <th>First and last name</th>
-                  <th>E-mail address</th>
-                  <th>Detail</th>
-                  <th>Date</th>
-                </tr>
-              </thead>
-              <tbody>
-                {submittedContact.length > 0 &&
-                  submittedContact.map((row, index) => (
-                    <tr key={index}>
-                      <td>
-                        {row?.status == "fresh"
-                          ? "NEW"
-                          : row?.status.toUpperCase()}
-                      </td>
-                      <td>
-                        <a
-                          href=""
-                          onClick={() =>
-                            navigate(
-                              `/admin/support-tickets/${row?.id}/TicketDetail`
-                            )
-                          }
-                        >
-                          {row?.id}
-                        </a>
-                      </td>
-                      <td>{row?.request}</td>
-                      <td>{row?.identity}</td>
-                      <td>
-                        {`${row?.first_name}` + " " + `${row?.last_name}`}
-                      </td>
-                      <td>{row?.email}</td>
-                      <td>{row?.description}</td>
-                      <td>{row?.created_at}</td>
-                    </tr>
-                  ))}
-              </tbody>
-            </table>
-          </div>
+              <td>{row?.id}</td>
+                  <td>{row?.corporate_client_name}</td>
+                  <td>{row?.details}</td>
+                  <td>{row?.number_of_employees_in_company}</td>
+                  <td>{row?.participation_mode}</td>
+                  <td>{row?.mandatory_number_of_employees}</td>
+                  <td>{row?.voluntary_number_of_employees}</td>
+                  <td>{row?.employees_family_info}</td>
+                  <td>{row?.insurance_payment_type}</td>
+                  <td>{row?.broker_reference}</td>
+                  <td>{row?.referenced_broker_name}</td>
+                  <td>{
+                    <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download_file`}>{row?.file?.filename}</a>
+                    }</td>
+                  <td>{row?.status}</td>
+                  <td>
+                    <AcceptFile client_id={row?.id} getClientInsurance={getClientInsurance}/>
+                  </td>
+              
+              </tr>
+              )) 
+              }
+            </tbody>
+          </table>
+          :
+          <div style={{textAlign: "center"}}>
+          <p style={{marginTop: "20%", fontWeight: "bold", fontSize: "1.2rem"}}>No Files To Approve.</p>
+        </div>}
+        </div>
         </section>
       </Page>
     </>

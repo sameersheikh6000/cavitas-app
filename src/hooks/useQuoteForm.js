@@ -55,8 +55,22 @@ const useQuoteForm = () => {
         })
         return response;
       };
+
+      const getAllQuoteByAdmin = async () => {
+        const response = await axios.get(
+          `${API_KEY}/api/v1/quote_forms`,
+          getAdminHeaders()
+        ).then((res) => {
+          if (res?.status > 300) {
+            handleErrors(res);
+          }
+          return res.data
+        })
+        return response;
+      }
+
   return {
-    createQuote
+    createQuote, getAllQuoteByAdmin
   }
 }
 
