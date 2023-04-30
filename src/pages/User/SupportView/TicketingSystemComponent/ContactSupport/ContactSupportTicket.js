@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import useContactForm from "../../../../../hooks/useContactForm";
 
 const ContactSupportTicket = () => {
+  const [contact, setContact] = useState();
+  const { id } = useParams();
+  const { getContactFormById } = useContactForm();
+  const [contactStatus, setContactStatus] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const getContactDetail = async () => {
+    const response = await getContactFormById(id);
+    if (response?.status < 300) {
+      setContact(response?.contact_form);
+    }else if (response.status > 300){
+      setErrorMessage(response?.message);
+    }
+  }
+
+  useEffect(() => {
+    getContactDetail()
+  }, [])
   return (
     <Page>
       <section className="insuredClientView">
@@ -47,13 +64,13 @@ const ContactSupportTicket = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <Link to="/support/view">
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support tickets  22233
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit" style={{textDecoration: "none"}}>
+                Contact ticket  #{id}
               </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/SubmitNewTickets">
+            <Link to="/SubmitNewTickets" style={{textDecoration: "none"}}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                 Submit New Tickets
               </Button>
@@ -69,7 +86,7 @@ const ContactSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
-                  <TableCell>112233</TableCell>
+                  <TableCell>#{contact?.id}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -77,7 +94,7 @@ const ContactSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
-                  <TableCell>New</TableCell>
+                  <TableCell>{ contact?.status == "fresh" ? "NEW" : contact?.status.toUpperCase() }</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -87,19 +104,10 @@ const ContactSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                     Subject :
                   </TableCell>
-                  <TableCell>WDC</TableCell>
+                  <TableCell>{contact?.request}</TableCell>
                 </TableRow>
               </TableHead>
-              <TableHead>
-                <TableRow
-                  sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                  <TableCell style={{ fontWeight: "bold" }}>
-                    Attachment(s):
-                  </TableCell>
-                  <TableCell>File Link here</TableCell>
-                </TableRow>
-              </TableHead>
+              
               <TableHead>
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
@@ -108,15 +116,7 @@ const ContactSupportTicket = () => {
                     Created on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        fontSize: "10px",
-                        background: "none",
-                        border: "none",
-                      }}
-                      type="date"
-                    ></input>
+                    {contact?.created_at}
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -128,15 +128,7 @@ const ContactSupportTicket = () => {
                     Last update on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        background: "none",
-                        border: "none",
-                        fontSize: "10px",
-                      }}
-                      type="time"
-                    ></input>
+                    {contact?.updated_at}
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -197,23 +189,9 @@ const ContactSupportTicket = () => {
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />
-                  <p style={{ textTransform: "none" }}>John Smith</p>
+                  <p style={{ textTransform: "none" }}>{contact?.user?.name}</p>
                 </div>
-                <Button size="small">
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="date"
-                  ></input>{" "}
-                  &nbsp; &nbsp;&nbsp;
-                  <p style={{ color: "black", textTransform: "lowercase" }}>
-                    at
-                  </p>
-                  &nbsp; &nbsp;&nbsp;
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="time"
-                  ></input>
-                </Button>
+                  {contact?.created_at}
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                 <table
@@ -222,31 +200,12 @@ const ContactSupportTicket = () => {
                 >
                   <thead>
                     <tr>
-                      <p>
-                        Hi Cavitas
-                        <br></br>
-                        Thank you for your quick answer
-                        <br></br>
-                        BR
-                        <br></br>
-                        John Smith
-                      </p>
+                     {contact?.description}
                     </tr>
                   </thead>
                   <br />
                 </table>
-                <tbody
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    borderTop: "1px solid lightgray",
-                    paddingTop: "1rem",
-                    paddingBottom: "1rem",
-                  }}
-                >
-                  <p>Attachement(s) (Attachement link)</p>
-                </tbody>
+                
               </div>
             </section>
             <br />
@@ -279,6 +238,11 @@ const ContactSupportTicket = () => {
                 </Button>
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
+              {contact?.replies && contact?.replies.map((row) => (
+                  <div style={{border: "2px solid red"}}>
+                 { row?.reply_text}
+                  </div>
+                ))}
                 <table
                   className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
                   style={{ height: "auto" }}

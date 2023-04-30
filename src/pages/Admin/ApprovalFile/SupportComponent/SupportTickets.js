@@ -12,25 +12,12 @@ import { API_KEY } from "../../../../config/helpers/variables";
 
 const SupportTickets = () => {
   const {getTicketsByAdmin} = useTickets();
-  const [submittedContact, setSubmittedContact] = useState([]);
-  const { getAllContactForms } = useContactForm();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const [ticketList, setTicketList] = useState([]);
   const [successMessage, setSuccessMessage] = useState("");
-  console.log(submittedContact);
-
-  const getContactFormData = async () => {
-    const response = await getAllContactForms();
-    if (response.status < 300) {
-      setSubmittedContact(response.contact_forms);
-    } else if (response.status > 300) {
-      setErrorMessage("Something went wrong!");
-    }
-  };
 
   const getTickets = async () => {
-    debugger
     const response = await getTicketsByAdmin();
     if(response?.status < 300){
       setTicketList(response?.tickets)
@@ -41,7 +28,6 @@ const SupportTickets = () => {
   }
 
   useEffect(() => {
-    getContactFormData();
     getTickets();
   }, []);
 

@@ -64,7 +64,7 @@ function useTickets() {
     const getTicketsByUser = async () => {
         const response = await  axios.get(
             `${API_KEY}/api/v1/tickets`,
-            getAdminHeaders()
+            admin ? getAdminHeaders() : getHeaders()
           ).then((res) => {
             if (res.data.status > 300) {
               handleErrors(res);

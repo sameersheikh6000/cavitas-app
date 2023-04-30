@@ -247,7 +247,7 @@ export const routes = [
   },
   
   {
-    path: "/Tickets",
+    path: "/Tickets/:id",
     component: Tickets,
     isPrivate: false,
   },
@@ -275,7 +275,7 @@ export const routes = [
   },
 
   {
-    path: "/ContactSupportTicket",
+    path: "/ContactSupportTicket/:id",
     component: ContactSupportTicket,
     isPrivate: false,
   },

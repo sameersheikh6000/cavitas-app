@@ -56,7 +56,7 @@ function useContactForm() {
     const getAllContactForms = async () => {
       const response = await axios.get(
         `${API_KEY}/api/v1/contact_forms`,
-        getAdminHeaders()
+        admin ? getAdminHeaders() : getHeaders()
       ).then((res) => {
         if (res?.status > 300) {
           handleErrors(res);
@@ -69,7 +69,7 @@ function useContactForm() {
     const getContactFormById = async (id) => {
       const response = await axios.get(
         `${API_KEY}/api/v1/contact_forms/${id}`,
-        getAdminHeaders()
+        admin ? getAdminHeaders() : getHeaders()
       ).then((res) => {
         if (res?.status > 300) {
           handleErrors(res);

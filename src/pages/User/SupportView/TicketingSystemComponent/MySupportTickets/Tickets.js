@@ -1,21 +1,38 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import useTickets from "../../../../../hooks/useTickets";
+import { API_KEY } from "../../../../../config/helpers/variables";
 
 const Tickets = () => {
+  const { id } = useParams();
+  const [supportFormDetail, setSupportFormDetail] = useState();
+  const { getTicketDetail } = useTickets();
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const getSupportTicketDetail = async () => {
+    const response = await getTicketDetail(id);
+    if (response?.status < 300) {
+        setSupportFormDetail(response?.ticket);
+    }else if (response.status > 300){
+      setErrorMessage(response?.message);
+    }
+  }
+
+  useEffect(() => {
+    getSupportTicketDetail()
+  }, [])
   return (
     <Page>
       <section className="insuredClientView">
@@ -46,14 +63,12 @@ const Tickets = () => {
         <br />
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
-            <Link to="/support/view">
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support tickets  112233
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit" style={{padding: "3px 20px"}}>
+                Ticket  #{id }
               </Button>
-            </Link>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/SubmitNewTickets">
+            <Link to="/SubmitNewTickets" style={{textDecoration: "none"}}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                 Submit New Tickets
               </Button>
@@ -69,7 +84,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
-                  <TableCell>112233</TableCell>
+                  <TableCell>{supportFormDetail?.id}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -77,7 +92,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
-                  <TableCell>New</TableCell>
+                  <TableCell>{supportFormDetail?.status == "fresh" ? "NEW" : supportFormDetail?.status.toUpperCase()}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -87,7 +102,7 @@ const Tickets = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                     Subject :
                   </TableCell>
-                  <TableCell>WDC</TableCell>
+                  <TableCell>{supportFormDetail?.request}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -108,15 +123,7 @@ const Tickets = () => {
                     Created on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        fontSize: "10px",
-                        background: "none",
-                        border: "none",
-                      }}
-                      type="date"
-                    ></input>
+                    { supportFormDetail?.created_at }
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -128,15 +135,7 @@ const Tickets = () => {
                     Last update on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        background: "none",
-                        border: "none",
-                        fontSize: "10px",
-                      }}
-                      type="time"
-                    ></input>
+                    { supportFormDetail?.updated_at }
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -160,6 +159,7 @@ const Tickets = () => {
                             marginLeft: "15px",
                             borderRadius: "25px",
                             textTransform: "none",
+                            textDecoration: "none !important"
                           }}
                         >
                           Reopen tickets
@@ -197,22 +197,11 @@ const Tickets = () => {
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />
-                  <p style={{ textTransform: "none" }}>John Smith</p>
+                  <p style={{ textTransform: "none" }}>{supportFormDetail?.user?.name}</p>
                 </div>
                 <Button size="small">
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="date"
-                  ></input>{" "}
+                  {supportFormDetail?.created_at}
                   &nbsp; &nbsp;&nbsp;
-                  <p style={{ color: "black", textTransform: "lowercase" }}>
-                    at
-                  </p>
-                  &nbsp; &nbsp;&nbsp;
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="time"
-                  ></input>
                 </Button>
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
@@ -222,15 +211,7 @@ const Tickets = () => {
                 >
                   <thead>
                     <tr>
-                      <p>
-                        Hi Cavitas
-                        <br></br>
-                        Thank you for your quick answer
-                        <br></br>
-                        BR
-                        <br></br>
-                        John Smith
-                      </p>
+                      {supportFormDetail?.description}
                     </tr>
                   </thead>
                   <br />
@@ -245,7 +226,16 @@ const Tickets = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>Attachement(s) (Attachement link)</p>
+                  {supportFormDetail?.file_name ? 
+                  <a
+                      href={`${API_KEY}/api/v1/tickets/${id}/download`}
+                      target="_blank"
+                    >
+                      {supportFormDetail?.file_name}
+                    </a>
+                    : 
+                    <small><em>No Attachments</em></small>
+                  }
                 </tbody>
               </div>
             </section>
@@ -279,6 +269,11 @@ const Tickets = () => {
                 </Button>
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
+                {supportFormDetail?.replies && supportFormDetail?.replies.map((row) => (
+                  <div style={{border: "2px solid red"}}>
+                 { row?.reply_text}
+                  </div>
+                ))}
                 <table
                   className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
                   style={{ height: "auto" }}

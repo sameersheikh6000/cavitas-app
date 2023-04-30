@@ -16,7 +16,6 @@ const Contactus = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
-  console.log(submittedContact);
 
   const getContactFormData = async () => {
     debugger;
