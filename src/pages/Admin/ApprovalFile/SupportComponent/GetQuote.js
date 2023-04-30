@@ -11,7 +11,7 @@ import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 import useQuoteForm from "../../../../hooks/useQuoteForm";
 
 const GetQuote = () => {
-  const [submittedQuote, setSubmittedQuote] = useState([]);
+  const [quoteList, setQuoteList] = useState([]);
   const { getAllQuoteByAdmin } = useQuoteForm();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
@@ -20,7 +20,7 @@ const GetQuote = () => {
     debugger;
     const response = await getAllQuoteByAdmin();
     if (response.status < 300) {
-      setSubmittedQuote(response.quote_forms);
+      setQuoteList(response.quote_forms);
     } else if (response.status > 300) {
       setErrorMessage("Something went wrong!");
     }
@@ -99,8 +99,8 @@ const GetQuote = () => {
                 </tr>
               </thead>
               <tbody>
-                {submittedQuote.length > 0 &&
-                  submittedQuote.map((row, index) => (
+                {quoteList.length > 0 &&
+                  quoteList.map((row, index) => (
                     <tr key={index}>
                       <td>
                         {row?.status == "fresh"
@@ -108,16 +108,16 @@ const GetQuote = () => {
                           : row?.status.toUpperCase()}
                       </td>
                       <td>
-                        {/* <a
+                        <a
                           href=""
                           onClick={() =>
                             navigate(
-                              `/admin/support-tickets/${row?.id}/TicketDetail`
+                              `/admin/quotes/${row?.id}/QuoteDetail`
                             )
                           }
-                        > */}
+                        >
                           #{row?.id}
-                        {/* </a> */}
+                        </a>
                       </td>
                       <td>{row?.group_name}</td>
                       <td>{row?.number_of_employ}</td>

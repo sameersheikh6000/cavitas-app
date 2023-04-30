@@ -69,8 +69,43 @@ const useQuoteForm = () => {
         return response;
       }
 
+      const getQuoteDetail = async (id) => {
+        debugger
+        const response = await axios.get(
+          `${API_KEY}/api/v1/quote_forms/${id}`,
+          admin ? getAdminHeaders() : getHeaders()
+        ).then((res) => {
+          if (res?.status > 300) {
+            handleErrors(res);
+          }
+          return res.data
+        })
+        return response;
+      }
+
+      const updateQuoteFormStatus = async (id, status) => {
+        const params = {
+          quote_form: {
+            status: status
+          }
+        }
+        const response = await  axios.put(
+            `${API_KEY}/api/v1/quote_forms/${id}`,
+            {
+              ...params
+            },
+            getAdminHeaders()
+          ).then((res) => {
+            if (res.data.status > 300) {
+              handleErrors(res);
+            }
+            return res.data
+          })
+          return response;
+    }
+
   return {
-    createQuote, getAllQuoteByAdmin
+    createQuote, getAllQuoteByAdmin, getQuoteDetail, updateQuoteFormStatus
   }
 }
 

@@ -46,6 +46,7 @@ import QuoteSupportTicket from "../pages/User/SupportView/TicketingSystemCompone
 import InsuredPersonSupportTicket from "../pages/User/SupportView/TicketingSystemComponent/InsuredSupport/InsuredPersonSupportTicket";
 // import contactCavitas from "../pages/Form/ContactCavitas/index"
 import SupportFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/SupportFormDetail";
+import QuoteFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/QuoteFormDetail";
 
 
 export const routes = [
@@ -304,6 +305,11 @@ export const routes = [
     path: "admin/support-tickets/:id/supportFormDetail",
     component: SupportFormDetail,
     isPrivate: false,
+  },
+  {
+    path: "admin/quotes/:id/QuoteDetail",
+    component: QuoteFormDetail,
+    inPrivate: false
   }
 ]
 
