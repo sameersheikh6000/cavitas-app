@@ -15,7 +15,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-const Tickets = () => {
+const InsuredPersonSupportTicket = () => {
   return (
     <Page>
       <section className="insuredClientView">
@@ -23,6 +23,16 @@ const Tickets = () => {
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
             <p>Support Tickets</p>
+          </div>
+        </header>
+        <br />
+        <header className="insuredClientView__header">
+          <div className="insuredClientView__header__left">
+            <Link to="/support/view">
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
+                My support tickets  222233
+              </Button>
+            </Link>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/support/view">
@@ -43,23 +53,6 @@ const Tickets = () => {
             </Link>
           </div>
         </header>
-        <br />
-        <header className="insuredClientView__header">
-          <div className="insuredClientView__header__left">
-            <Link to="/support/view">
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support tickets  112233
-              </Button>
-            </Link>
-          </div>
-          <div className="insuredClientView__header__right">
-            <Link to="/SubmitNewTickets">
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                Submit New Tickets
-              </Button>
-            </Link>
-          </div>
-        </header>
         <br /> <br />
         <Stack direction="row" spacing={7}>
           <section className="dashboard__container__content__cavitasDocs___mysupporttickets___Ticket__detail">
@@ -69,7 +62,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
-                  <TableCell>112233</TableCell>
+                  <TableCell>222233</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -378,4 +371,4 @@ const Tickets = () => {
   );
 };
 
-export default Tickets;
+export default InsuredPersonSupportTicket;

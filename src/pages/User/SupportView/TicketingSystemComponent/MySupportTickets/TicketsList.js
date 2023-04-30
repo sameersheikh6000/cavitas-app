@@ -7,6 +7,7 @@ import Stack from "@mui/material/Stack";
 function TickekList() {
   return (
     <>
+    
       <header className="supportView__header">
         <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
           <div>
@@ -20,17 +21,31 @@ function TickekList() {
             </Link>
           </div>
           <div>
-            <Link to="/SubmitNewTickets">
+            <Link to="/ContactSupportList">
+            <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
+                Contact Support
+              </Button>
+            </Link>
+          </div>
+          <div>
+            <Link to="/QuoteSupportList">
+            <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
+                Quote Support
+              </Button>
+            </Link>
+          </div>
+          <div>
+            <Link to="/InsuredPersonSupportList">
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                Submit New Tickets
+               Insured person support
               </Button>
             </Link>
           </div>
         </Stack>
-        <div className="insuredClientView__header__right">
+        {/* <div className="insuredClientView__header__right">
           <input type="text" placeholder="Search" />
           <SearchOutlinedIcon className="insuredClientView__header__right__icon" />
-        </div>
+        </div> */}
       </header>
       <div>
         <div className="insuredClientView__container__mysupport__tickets">

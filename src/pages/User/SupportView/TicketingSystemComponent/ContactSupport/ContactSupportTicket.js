@@ -15,7 +15,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
-const Tickets = () => {
+const ContactSupportTicket = () => {
   return (
     <Page>
       <section className="insuredClientView">
@@ -48,7 +48,7 @@ const Tickets = () => {
           <div className="insuredClientView__header__left">
             <Link to="/support/view">
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support tickets  112233
+                My support tickets  22233
               </Button>
             </Link>
           </div>
@@ -378,4 +378,4 @@ const Tickets = () => {
   );
 };
 
-export default Tickets;
+export default ContactSupportTicket;
