@@ -23,36 +23,35 @@ import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessag
 import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
 import ReplyForm from "./Component/ReplyForm";
 
-const TicketDetail = () => {
-  const [ticket, setTicket] = useState();
+const ContactFormDetail = () => {
+  const [contact, setContact] = useState();
   const {id} = useParams();
   const {getContactFormById, updateContactFormStatus} = useContactForm();
-  const [ticketStatus, setTicketStatus] = useState('');
+  const [contactStatus, setContactStatus] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  console.log(ticket?.replies)
 
-const getTicketDetail = async () => {
+const getContactDetail = async () => {
   const response = await getContactFormById(id);
   if (response?.status < 300) {
-    setTicket(response?.contact_form);
+    setContact(response?.contact_form);
   }else if (response.status > 300){
     setErrorMessage(response?.message);
   }
 }
 
-const handleTicketStatusUpdate = async () => {
-  const response = await updateContactFormStatus(id, ticketStatus);
+const handleContactStatusUpdate = async () => {
+  const response = await updateContactFormStatus(id, contactStatus);
   if (response?.status < 300) {
     setSuccessMessage('Status Updated Successfully!')
-    setTicketStatus('');
-  }else if (response.status > 300){
+    setContactStatus('');
+  }else if (response?.status > 300){
     setErrorMessage(response?.message);
   }
 }
 
 useEffect(() => {
-  getTicketDetail()
+  getContactDetail()
 }, [])
 
   return (
@@ -66,7 +65,7 @@ useEffect(() => {
             <p>Support Tickets</p>
           </div>
           <div className='insuredClientView__header__right'>
-          <Link to="/admin/support-tickets">
+          <Link to="/admin/support-tickets" style={{textDecoration: "none"}}>
           <Button color='error' variant='outlined' size='small' style={{ color: "white !important", marginLeft: "15px"}}>Return to ticket list</Button>
           </Link>
           </div>
@@ -87,7 +86,7 @@ useEffect(() => {
                 <TableRow>
                   <TableCell sx={{ border: 1 }} component="th" scope="row">
                     <p>
-                      {ticket?.description}
+                      {contact?.description}
                     </p>
                   </TableCell>
                 </TableRow>
@@ -107,7 +106,7 @@ useEffect(() => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {ticket?.replies?.length > 0 && ticket?.replies?.map((row, index) => (
+                {contact?.replies?.length > 0 && contact?.replies?.map((row, index) => (
                   <>
                     <TableRow>
                       <TableCell sx={{ border: 1 }} component="th" scope="row">
@@ -128,7 +127,7 @@ useEffect(() => {
               </TableBody>
             </Table>
           </TableContainer>
-          <ReplyForm contactForm={ticket} getTicketDetail={getTicketDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
+          <ReplyForm contactForm={contact} getContactDetail={getContactDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
        </div>
         <div className="Ticket___detail____right">
           <Box
@@ -142,11 +141,11 @@ useEffect(() => {
             <h3>TICKET DETAILS</h3>
             <div style={{marginTop: 20}}>
                 <label><strong>Ticket Creator:</strong></label>
-              <p id="outlined-size-normal" >{ticket?.email}</p>
+              <p id="outlined-size-normal" >{contact?.email}</p>
             </div>
             <div>
             <label><strong>Topic:</strong></label>
-              <p  id="outlined-size-normal" >{ticket?.request}</p>
+              <p  id="outlined-size-normal" >{contact?.request}</p>
             </div>
             <InputLabel htmlFor="grouped-native-select">Status:</InputLabel>
             <FormControl sx={{ m: 1, width: "25ch" }}>
@@ -155,9 +154,9 @@ useEffect(() => {
                 defaultValue="New"
                 id="grouped-native-select"
                 label="Grouping"
-                onChange={(e) => setTicketStatus(e.target.value)}
+                onChange={(e) => setContactStatus(e.target.value)}
               >
-                <option value={0}>{ticket?.status == 'fresh' ? 'NEW' : ticket?.status.toUpperCase()}</option>
+                <option value={0}>{contact?.status == 'fresh' ? 'NEW' : contact?.status.toUpperCase()}</option>
                 <option value={1}>IN PROCESS</option>
                 <option value={2}>REPLIED</option>
                 <option value={3}>Close</option>
@@ -167,7 +166,7 @@ useEffect(() => {
           <Button
             className="authentication__container__formContainer__form__loginButton_tickets"
             type="submit" 
-            onClick={() => handleTicketStatusUpdate()}
+            onClick={() => handleContactStatusUpdate()}
           >
             Update Ticket
           </Button>
@@ -178,4 +177,4 @@ useEffect(() => {
   );
 };
 
-export default TicketDetail;
+export default ContactFormDetail;

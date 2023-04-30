@@ -31,7 +31,7 @@ import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading
 import UserInformation from "../pages/Admin/UserInformation";
 import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
-import TicketDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/TicketDetail";
+import ContactFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/ContactFormDetail";
 import TickekList from "../pages/User/SupportView/TicketingSystemComponent/MySupportTickets/TicketsList";
 import Tickets from "../pages/User/SupportView/TicketingSystemComponent/MySupportTickets/Tickets";
 import SubmitNewTickets from "../pages/User/SupportView/TicketingSystemComponent/SubmitNewTickets/SubmitNewTickets";
@@ -45,6 +45,8 @@ import InsuredPersonSupportList from "../pages/User/SupportView/TicketingSystemC
 import QuoteSupportTicket from "../pages/User/SupportView/TicketingSystemComponent/QuoteSupport/QuoteSupportTicket";
 import InsuredPersonSupportTicket from "../pages/User/SupportView/TicketingSystemComponent/InsuredSupport/InsuredPersonSupportTicket";
 // import contactCavitas from "../pages/Form/ContactCavitas/index"
+import SupportFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/SupportFormDetail";
+
 
 export const routes = [
 
@@ -224,8 +226,8 @@ export const routes = [
   // Forms
 
   {
-    path: "/admin/support-tickets/:id/TicketDetail",
-    component: TicketDetail,
+    path: "/admin/contact-tickets/:id/ContactFormDetail",
+    component: ContactFormDetail,
     isPrivate: false,
   },
 
@@ -298,6 +300,10 @@ export const routes = [
     component: InsuredPersonSupportTicket,
     isPrivate: false,
   },
-
+  {
+    path: "admin/support-tickets/:id/supportFormDetail",
+    component: SupportFormDetail,
+    isPrivate: false,
+  }
 ]
 

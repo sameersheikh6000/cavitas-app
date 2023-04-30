@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import TicketDetail from "./TicketComponent/TicketDetail";
+import TicketDetail from "./TicketComponent/ContactFormDetail";
 import { Button } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import Stack from "@mui/material/Stack";
@@ -86,10 +86,12 @@ const SupportTickets = () => {
         <table>
           <thead>
             <tr>
-              <th>Attachement</th>
+              <th>Status</th>
+              <th>#id</th>
               <th>Topic</th>
               <th>Description</th>
               <th>Creator</th>
+              <th>Attachement</th>
               <th>Created Date</th>
             </tr>
           </thead>
@@ -97,6 +99,11 @@ const SupportTickets = () => {
             {ticketList.length > 0 &&
               ticketList.map((row, index) => (
                 <tr key={index}>
+                  <td>{row?.status == "fresh" ? "NEW" : row?.status.toUpperCase()}</td>
+                  <td><a href="" onClick={() => navigate( `/admin/support-tickets/${row?.id}/supportFormDetail`)}>{row?.id} </a> </td>
+                  <td>{row?.request}</td>
+                  <td>{row?.description}</td>
+                  <td>{row?.creator?.email}</td>
                   <td>
                     <a
                       href={`${API_KEY}/api/v1/tickets/${row?.id}/download`}
@@ -106,9 +113,6 @@ const SupportTickets = () => {
                       {row?.file_name}
                     </a>
                   </td>
-                  <td>{row?.request}</td>
-                  <td>{row?.description}</td>
-                  <td>{row?.creator?.email}</td>
                   <td>{row?.created_at}</td>
                 </tr>
               ))}

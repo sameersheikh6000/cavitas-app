@@ -25,7 +25,7 @@ const Tickets = () => {
             <p>Support Tickets</p>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/support/view">
+            <Link to="/support/view" style={{textDecoration: "none"}}>
               <Button
                 color="error"
                 variant="outlined"

@@ -74,8 +74,40 @@ function useTickets() {
           return response;
     }
 
+    const getTicketDetail = async (id) => {
+      const response = await  axios.get(
+          `${API_KEY}/api/v1/tickets/${id}`,
+          admin ? getAdminHeaders() : getHeaders()
+        ).then((res) => {
+          if (res.data.status > 300) {
+            handleErrors(res);
+          }
+          return res.data
+        })
+        return response;
+  }
+
+  const updateSupportFormStatus = async (id, status) => {
+    const params = {
+        status: status
+    }
+    const response = await  axios.put(
+        `${API_KEY}/api/v1/tickets/${id}`,
+        {
+          ...params
+        },
+        getAdminHeaders()
+      ).then((res) => {
+        if (res.data.status > 300) {
+          handleErrors(res);
+        }
+        return res.data
+      })
+      return response;
+}
+
     return{
-        createTicket, getTicketsByAdmin, getTicketsByUser
+        createTicket, getTicketsByAdmin, getTicketsByUser, getTicketDetail, updateSupportFormStatus
     }
 
 }

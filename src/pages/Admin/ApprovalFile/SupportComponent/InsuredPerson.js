@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import TicketDetail from "./TicketComponent/TicketDetail";
+import TicketDetail from "./TicketComponent/ContactFormDetail";
 import { Button } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";

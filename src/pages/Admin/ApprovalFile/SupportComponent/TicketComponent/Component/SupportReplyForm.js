@@ -2,12 +2,12 @@ import React, {useState} from 'react'
 import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { Button } from '@mui/material'
-import useReplyForm from '../../../../../../hooks/useReplyForm'
+import useSupportTicketReply from '../../../../../../hooks/useSupportTicketReply';
 
-function ReplyForm({contactForm, getContactDetail, setErrorMessage, setSuccessMessage}) {
+function SupportReplyForm({supportFormDetail, getSupportTicketDetail, setErrorMessage, setSuccessMessage}) {
    
     const [open, setOpen] = useState(false);
-    const {createReply} = useReplyForm();
+    const {createReply} = useSupportTicketReply();
     const [replyText, setReplyText] = useState();
     const style = {
         position: 'absolute',
@@ -27,10 +27,10 @@ function ReplyForm({contactForm, getContactDetail, setErrorMessage, setSuccessMe
 
   const handleSubmit = async () => {
     debugger
-    const response = await createReply(contactForm, replyText)
+    const response = await createReply(supportFormDetail, replyText)
     if(response?.status < 300){
       setSuccessMessage("Successfully Replied!")
-      getContactDetail();
+      getSupportTicketDetail();
       handleClose();
     }else if (response?.status > 300){
       setErrorMessage(response?.message)
@@ -71,4 +71,4 @@ function ReplyForm({contactForm, getContactDetail, setErrorMessage, setSuccessMe
   )
 }
 
-export default ReplyForm
+export default SupportReplyForm
