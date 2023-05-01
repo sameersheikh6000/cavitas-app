@@ -56,10 +56,10 @@ const useQuoteForm = () => {
         return response;
       };
 
-      const getAllQuoteByAdmin = async () => {
+      const getAllQuote = async () => {
         const response = await axios.get(
           `${API_KEY}/api/v1/quote_forms`,
-          getAdminHeaders()
+          admin ? getAdminHeaders() : getHeaders()
         ).then((res) => {
           if (res?.status > 300) {
             handleErrors(res);
@@ -105,7 +105,7 @@ const useQuoteForm = () => {
     }
 
   return {
-    createQuote, getAllQuoteByAdmin, getQuoteDetail, updateQuoteFormStatus
+    createQuote, getAllQuote, getQuoteDetail, updateQuoteFormStatus
   }
 }
 

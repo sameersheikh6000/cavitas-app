@@ -13,6 +13,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import useTickets from "../../../../../hooks/useTickets";
 import { API_KEY } from "../../../../../config/helpers/variables";
+import TicketReplyAnswerForm from "./component/TicketReplyAnswerForm";
 
 const Tickets = () => {
   const { id } = useParams();
@@ -272,6 +273,10 @@ const Tickets = () => {
                 {supportFormDetail?.replies && supportFormDetail?.replies.map((row) => (
                   <div style={{border: "2px solid red"}}>
                  { row?.reply_text}
+                 {row?.answer ? 
+                    <p>{row?.answer.answer_text}</p> : 
+                    <TicketReplyAnswerForm ticket_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getSupportTicketDetail={getSupportTicketDetail} />
+                  }
                   </div>
                 ))}
                 <table

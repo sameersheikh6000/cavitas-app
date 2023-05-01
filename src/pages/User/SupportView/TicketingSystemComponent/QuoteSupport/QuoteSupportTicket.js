@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
 import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import useQuoteForm from "../../../../../hooks/useQuoteForm";
+import QuoteReplyAnswerForm from "./component/QuoteReplyAnswerForm";
 
 const QuoteSupportTicket = () => {
+  const { id } = useParams();
+  const [quoteFormDetail, setQuoteFormDetail] = useState();
+  const { getQuoteDetail } = useQuoteForm();
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const getQuoteFormDetail = async () => {
+    const response = await getQuoteDetail(id);
+    if (response?.status < 300) {
+      setQuoteFormDetail(response?.quote_form);
+    }else if (response.status > 300){
+      setErrorMessage(response?.message);
+    }
+  }
+
+  useEffect(() => {
+    getQuoteFormDetail()
+  }, [])
+
   return (
     <Page>
       <section className="insuredClientView">
@@ -30,7 +48,7 @@ const QuoteSupportTicket = () => {
           <div className="insuredClientView__header__left">
             <Link to="/support/view">
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support tickets  442233
+                My support tickets  #{quoteFormDetail?.id}
               </Button>
             </Link>
           </div>
@@ -62,7 +80,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
-                  <TableCell>442233</TableCell>
+                  <TableCell>#{quoteFormDetail?.id}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -70,7 +88,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
-                  <TableCell>New</TableCell>
+                  <TableCell>{quoteFormDetail?.status == "fresh" ? "NEW" : quoteFormDetail?.status.toUpperCase()}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -80,7 +98,7 @@ const QuoteSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                     Subject :
                   </TableCell>
-                  <TableCell>WDC</TableCell>
+                  <TableCell>{quoteFormDetail?.request}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -101,15 +119,7 @@ const QuoteSupportTicket = () => {
                     Created on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        fontSize: "10px",
-                        background: "none",
-                        border: "none",
-                      }}
-                      type="date"
-                    ></input>
+                    {quoteFormDetail?.created_at}
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -121,15 +131,7 @@ const QuoteSupportTicket = () => {
                     Last update on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        background: "none",
-                        border: "none",
-                        fontSize: "10px",
-                      }}
-                      type="time"
-                    ></input>
+                  {quoteFormDetail?.updated_at}
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -190,7 +192,7 @@ const QuoteSupportTicket = () => {
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />
-                  <p style={{ textTransform: "none" }}>John Smith</p>
+                  <p style={{ textTransform: "none" }}>{quoteFormDetail?.user?.name}</p>
                 </div>
                 <Button size="small">
                   <input
@@ -216,13 +218,7 @@ const QuoteSupportTicket = () => {
                   <thead>
                     <tr>
                       <p>
-                        Hi Cavitas
-                        <br></br>
-                        Thank you for your quick answer
-                        <br></br>
-                        BR
-                        <br></br>
-                        John Smith
+                        {quoteFormDetail?.description}
                       </p>
                     </tr>
                   </thead>
@@ -238,7 +234,12 @@ const QuoteSupportTicket = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>Attachement(s) (Attachement link)</p>
+                  {
+                  quoteFormDetail?.file_name ? 
+                    <p>Attachement(s) (Attachement link)</p>
+                    :
+                    <em><small>No Attachments available</small></em>
+                  }
                 </tbody>
               </div>
             </section>
@@ -279,13 +280,18 @@ const QuoteSupportTicket = () => {
                   <thead>
                     <tr>
                       <p>
-                        Hi Cavitas
-                        <br></br>
-                        Thank you for your quick answer
-                        <br></br>
-                        BR
-                        <br></br>
-                        John Smith
+                        {quoteFormDetail?.replies && 
+                          quoteFormDetail?.replies.map((row) => (
+                            <div>
+                            {row?.reply_text}
+                            {row?.answer ? 
+                               <p>{row?.answer.answer_text}</p> : 
+                               <QuoteReplyAnswerForm quote_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getQuoteFormDetail={getQuoteFormDetail}/>
+                            }
+                            </div>
+
+                          ))
+                        }
                       </p>
                     </tr>
                   </thead>

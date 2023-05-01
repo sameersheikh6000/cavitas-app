@@ -12,13 +12,13 @@ import useQuoteForm from "../../../../hooks/useQuoteForm";
 
 const GetQuote = () => {
   const [quoteList, setQuoteList] = useState([]);
-  const { getAllQuoteByAdmin } = useQuoteForm();
+  const { getAllQuote } = useQuoteForm();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const getQuoteFormData = async () => {
     debugger;
-    const response = await getAllQuoteByAdmin();
+    const response = await getAllQuote();
     if (response.status < 300) {
       setQuoteList(response.quote_forms);
     } else if (response.status > 300) {

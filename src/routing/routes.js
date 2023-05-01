@@ -286,7 +286,7 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/QuoteSupportTicket",
+    path: "/QuoteSupportTicket/:id",
     component: QuoteSupportTicket,
     isPrivate: false,
   },

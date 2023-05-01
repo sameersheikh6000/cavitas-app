@@ -19,6 +19,16 @@ function useQuoteReply() {
         }
       };
 
+      const getHeaders = () => {
+        if (user) {
+          return {
+            headers: {
+              Authorization: user.token,
+            },
+          };
+        }
+      };
+
 
     const createReply = async (quote, reply_text) => {
         const params = {
@@ -41,11 +51,30 @@ function useQuoteReply() {
             return res.data
           })
           return response;
-
     }
 
+    const createQuoteReplyAnswer = async (answer) => {
+      debugger
+      const formData = new FormData()
+      for (const property in answer) {
+        formData.append(
+          property, answer[property]
+        )
+      }
+      const response = await axios.post(
+          `${API_KEY}/api/v1/quote_reply_answers`,formData ,
+          admin ? getAdminHeaders() : getHeaders()
+        ).then((res) => {
+          if (res?.status > 300) {
+            handleErrors(res);
+          }
+          return res.data
+        })
+        return response;
+  }
+
 return {
-        createReply
+        createReply, createQuoteReplyAnswer
     }
 }
 

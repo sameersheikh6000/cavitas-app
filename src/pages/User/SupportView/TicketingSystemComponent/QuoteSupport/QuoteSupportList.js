@@ -1,12 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Stack from "@mui/material/Stack";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import Page from "../../../../../components/Page/Page";
+import { API_KEY } from "../../../../../config/helpers/variables";
+import useQuoteForm from "../../../../../hooks/useQuoteForm";
 
 function QuoteSupportList() {
+  const { getAllQuote } = useQuoteForm();
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const [quoteList, setQuoteList] = useState([]);
+
+  const getQuotes = async () => {
+    const response = await getAllQuote();
+    if(response?.status < 300){
+      setQuoteList(response?.quote_forms)
+    }
+    else if(response?.status > 300){
+      setErrorMessage(response?.message)
+    }
+  }
+
+  useEffect(() => {
+    getQuotes();
+  }, []);
+
   return (
     <>
       <Page>
@@ -83,33 +104,51 @@ function QuoteSupportList() {
               <table>
                 <thead>
                   <tr>
-                    <th>Ticket Number</th>
-                    <th>Topic</th>
                     <th>Status</th>
-                    <th>Last update on</th>
+                    <th>#id</th>
+                    <th>Group Name</th>
+                    <th>No. of Employ</th>
+                    <th>Company Name</th>
+                    <th>Created by</th>
+                    <th>Name</th>
+                    <th>E-mail address</th>
+                    <th>Detail</th>
+                    <th>Date</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <Link to="/QuoteSupportTicket">442233</Link>
-                    </td>
-                    <td>AAC</td>
-                    <td>New</td>
-                    <td>Today</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
+                {quoteList.length > 0 &&
+                  quoteList.map((row, index) => (
+                    <tr key={index}>
+                      <td>
+                        {row?.status == "fresh"
+                          ? "NEW"
+                          : row?.status.toUpperCase()}
+                      </td>
+                      <td>
+                        <a
+                          href=""
+                          onClick={() =>
+                            navigate(
+                              `/QuoteSupportTicket/${row?.id}`
+                            )
+                          }
+                        >
+                          #{row?.id}
+                        </a>
+                      </td>
+                      <td>{row?.group_name}</td>
+                      <td>{row?.number_of_employ}</td>
+                      <td>{row?.company_name}</td>
+                      <td>{row?.identity}</td>
+                      <td>
+                        {row?.name}
+                      </td>
+                      <td>{row?.email}</td>
+                      <td>{row?.description}</td>
+                      <td>{row?.created_at}</td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
