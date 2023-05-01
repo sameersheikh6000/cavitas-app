@@ -243,7 +243,12 @@ const ContactSupportTicket = () => {
               {contact?.replies && contact?.replies.map((row) => (
                   <div style={{border: "2px solid red"}}>
                  { row?.reply_text}
-                 <ContactReplyAnswerForm contact_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} />
+                 {
+                    row?.answer ? 
+                    <p>{row?.answer.answer_text}</p>
+                    :
+                    <ContactReplyAnswerForm contact_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} />
+                 }
                   </div>
                 ))}
                 <table

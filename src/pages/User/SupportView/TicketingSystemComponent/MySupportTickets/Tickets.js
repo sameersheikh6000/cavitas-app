@@ -270,15 +270,34 @@ const Tickets = () => {
                 </Button>
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
+
+
+
                 {supportFormDetail?.replies && supportFormDetail?.replies.map((row) => (
-                  <div style={{border: "2px solid red"}}>
-                 { row?.reply_text}
-                 {row?.answer ? 
-                    <p>{row?.answer.answer_text}</p> : 
-                    <TicketReplyAnswerForm ticket_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getSupportTicketDetail={getSupportTicketDetail} />
-                  }
+                 
+                 <div>
+
+                  <div>reply</div>
+
+                  <div>answere</div>
+
+
+                    <div style={{border: "2px solid red"}}>
+
+                  { row?.reply_text}
+
+                  {row?.answer ? 
+                      <p>{row?.answer.answer_text}</p> : 
+                      <TicketReplyAnswerForm ticket_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getSupportTicketDetail={getSupportTicketDetail} />
+                    }
+                    </div>
                   </div>
+
                 ))}
+
+
+
+                
                 <table
                   className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
                   style={{ height: "auto" }}
