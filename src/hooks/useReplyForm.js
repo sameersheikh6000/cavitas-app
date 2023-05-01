@@ -19,6 +19,16 @@ function useReplyForm() {
         }
       };
 
+      const getHeaders = () => {
+        if (user) {
+          return {
+            headers: {
+              Authorization: user.token,
+            },
+          };
+        }
+      };
+
 
     const createReply = async (ticket, reply_text) => {
         const params = {
@@ -44,8 +54,33 @@ function useReplyForm() {
 
     }
 
+    const createContactReplyAnswer = async (answer) => {
+      debugger
+
+      const formData = new FormData()
+      for (const property in answer) {
+        formData.append(
+          property, answer[property]
+        )
+      }
+
+      
+      const response = await axios.post(
+          `${API_KEY}/api/v1/contact_reply_answers`,formData ,
+          admin ? getAdminHeaders() : getHeaders()
+        ).then((res) => {
+          if (res?.status > 300) {
+            handleErrors(res);
+          }
+          return res.data
+        })
+        return response;
+
+  }
+    
+
 return {
-        createReply
+        createReply, createContactReplyAnswer
     }
 }
 

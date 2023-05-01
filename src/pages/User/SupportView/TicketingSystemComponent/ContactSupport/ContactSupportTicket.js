@@ -12,6 +12,7 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import useContactForm from "../../../../../hooks/useContactForm";
+import ContactReplyAnswerForm from "./component/ContactReplyAnswerForm";
 
 const ContactSupportTicket = () => {
   const [contact, setContact] = useState();
@@ -23,6 +24,7 @@ const ContactSupportTicket = () => {
 
   const getContactDetail = async () => {
     const response = await getContactFormById(id);
+    debugger
     if (response?.status < 300) {
       setContact(response?.contact_form);
     }else if (response.status > 300){
@@ -241,6 +243,7 @@ const ContactSupportTicket = () => {
               {contact?.replies && contact?.replies.map((row) => (
                   <div style={{border: "2px solid red"}}>
                  { row?.reply_text}
+                 <ContactReplyAnswerForm contact_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} />
                   </div>
                 ))}
                 <table
