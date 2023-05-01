@@ -4,11 +4,16 @@ import Box from '@mui/material/Box';
 import { Button } from '@mui/material'
 import useReplyForm from '../../../../../../hooks/useReplyForm'
 
-function ReplyForm({contactForm, getContactDetail, setErrorMessage, setSuccessMessage}) {
+function ReplyForm({contactFormId, email, getContactDetail, setErrorMessage, setSuccessMessage}) {
    
     const [open, setOpen] = useState(false);
     const {createReply} = useReplyForm();
-    const [replyText, setReplyText] = useState();
+    const [contactReply, setContactReply] = useState({
+      reply_text: "",
+      contact_form_id: contactFormId,
+      attached_file: "",
+      reply_to: email
+      })
     const style = {
         position: 'absolute',
         top: '50%',
@@ -27,7 +32,7 @@ function ReplyForm({contactForm, getContactDetail, setErrorMessage, setSuccessMe
 
   const handleSubmit = async () => {
     debugger
-    const response = await createReply(contactForm, replyText)
+    const response = await createReply(contactReply)
     if(response?.status < 300){
       setSuccessMessage("Successfully Replied!")
       getContactDetail();
@@ -57,8 +62,10 @@ function ReplyForm({contactForm, getContactDetail, setErrorMessage, setSuccessMe
                             placeholder="Your text here                 "
                             cols={27}
                             rows={5}
-                            onChange={(e) => setReplyText(e.target.value)}
+                            onChange={(e) => setContactReply({ ...contactReply, reply_text: e.target.value })}
                         />
+
+                        <input type='file' onChange={(e) => setContactReply({ ...contactReply, attached_file: e.target.files[0]})}/>
                 </div>
               <div className="uploadClient__container__body__participation_delete_user_button_container">
                 <Button color='error' variant='contained' size='small' style={{ color: "white" }} onClick={() => handleSubmit()}>Reply</Button>

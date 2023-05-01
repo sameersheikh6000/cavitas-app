@@ -253,7 +253,7 @@ export const routes = [
   },
 
   {
-    path: "/Contactus",
+    path: "/admin/Contactus",
     component: Contactus,
     isPrivate: false,
   },

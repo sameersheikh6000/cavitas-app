@@ -102,7 +102,7 @@ const QuoteSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                     Subject :
                   </TableCell>
-                  <TableCell>{quoteFormDetail?.request}</TableCell>
+                  <TableCell>{quoteFormDetail?.identity}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -197,21 +197,7 @@ const QuoteSupportTicket = () => {
                     {quoteFormDetail?.user?.name}
                   </p>
                 </div>
-                <Button size="small">
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="date"
-                  ></input>{" "}
-                  &nbsp; &nbsp;&nbsp;
-                  <p style={{ color: "black", textTransform: "lowercase" }}>
-                    at
-                  </p>
-                  &nbsp; &nbsp;&nbsp;
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="time"
-                  ></input>
-                </Button>
+                {quoteFormDetail?.created_at}
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                 <table
@@ -225,24 +211,7 @@ const QuoteSupportTicket = () => {
                   </thead>
                   <br />
                 </table>
-                <tbody
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    borderTop: "1px solid lightgray",
-                    paddingTop: "1rem",
-                    paddingBottom: "1rem",
-                  }}
-                >
-                  {quoteFormDetail?.file_name ? (
-                    <p>Attachement(s) (Attachement link)</p>
-                  ) : (
-                    <em>
-                      <small>No Attachments available</small>
-                    </em>
-                  )}
-                </tbody>
+               
               </div>
             </section>
             <br />

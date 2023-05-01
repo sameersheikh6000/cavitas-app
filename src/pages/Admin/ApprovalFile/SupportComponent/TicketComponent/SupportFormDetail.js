@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Button } from "@mui/material";
@@ -22,6 +21,7 @@ import AlertMessage from '../../../../../components/SnackbarMessages/AlertMessag
 import SuccessMessage from '../../../../../components/SnackbarMessages/SuccessMessage';
 import useTickets from '../../../../../hooks/useTickets';
 import SupportReplyForm from './Component/SupportReplyForm';
+import { API_KEY } from '../../../../../config/helpers/variables';
 
 
 function SupportFormDetail() {
@@ -31,6 +31,8 @@ function SupportFormDetail() {
     const [supportTicketStatus, setSupportTicketStatus] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [statusSuccessMessage, setStatusSuccessMessage] = useState('');
+    const [statusErrorMessage, setStatusErrorMessage] = useState('');
   
   const getSupportTicketDetail = async () => {
     const response = await getTicketDetail(id);
@@ -44,10 +46,16 @@ function SupportFormDetail() {
   const handleContactStatusUpdate = async () => {
     const response = await updateSupportFormStatus(id, supportTicketStatus);
     if (response?.status < 300) {
-      setSuccessMessage('Status Updated Successfully!')
+      setStatusSuccessMessage('Status Updated Successfully!')
+      setTimeout(() => {
+        setStatusSuccessMessage('');
+      }, 3000);
       setSupportTicketStatus('');
     }else if (response?.status > 300){
-      setErrorMessage(response?.message);
+      setStatusErrorMessage(response?.message);
+      setTimeout(() => {
+        setStatusErrorMessage('');
+      }, 3000);
     }
   }
   
@@ -91,6 +99,15 @@ function SupportFormDetail() {
                       </p>
                     </TableCell>
                   </TableRow>
+                  <TableRow>
+                        <TableCell sx={{ border: 1}} component="th" scope="row" style={{ padding: 7}}>
+                          {supportFormDetail?.file_path ? 
+                            <small><em>Attached files: <a href={`${API_KEY}/api/v1/tickets/${supportFormDetail?.id}/download`}>{supportFormDetail?.file_name}</a></em></small>
+                            : 
+                            <small><em>No Attachment(s)</em></small>
+                          }
+                        </TableCell>
+                      </TableRow>
                 </TableBody>
               </Table>
             </TableContainer>
@@ -109,6 +126,7 @@ function SupportFormDetail() {
                 <TableBody>
                   {supportFormDetail?.replies?.length > 0 && supportFormDetail?.replies?.map((row, index) => (
                     <>
+                      <small style={{fontSize: "12px"}}><em><b>Your Reply</b></em></small>
                       <TableRow>
                         <TableCell sx={{ border: 1 }} component="th" scope="row">
                           <p>
@@ -118,9 +136,36 @@ function SupportFormDetail() {
                       </TableRow>
                       <TableRow>
                         <TableCell sx={{ border: 1}} component="th" scope="row" style={{ padding: 7}}>
-                          <small><em>Attached file goes here</em></small>
+                          {row?.file_path ? 
+                            <small><em>Attached files: <a href={`${API_KEY}/api/v1/ticket_replies/${row?.id}/download`}>{row?.file_name}</a></em></small>
+                            : 
+                            <small><em>No Attachment(s)</em></small>
+                          }
                         </TableCell>
                       </TableRow>
+
+                    {
+                    row?.answer && 
+                      <>
+                        <small style={{fontSize: "12px", color: "red"}}><em><b>User Reply</b></em></small>
+                          <TableRow>
+                              <TableCell sx={{ border: 1 }} component="th" scope="row">
+                                <p>
+                                  {row?.answer?.answer_text}
+                                </p>
+                              </TableCell>
+                            </TableRow><TableRow>
+                            <TableCell sx={{ border: 1 }} component="th" scope="row" style={{ padding: 7 }}>
+                              {row?.answer?.file_path ? 
+                                <small><em>Attached files: <a href={`${API_KEY}/api/v1/ticket_reply_answers/${row?.answer?.id}/download`}>{row?.answer?.file_name}</a></em></small>
+                                : 
+                                <small><em>No Attachment(s)</em></small>
+                              }
+                            </TableCell>
+                          </TableRow>
+                      </>
+                      }
+                      
                     </>
                   ))
                   }
@@ -128,7 +173,7 @@ function SupportFormDetail() {
                 </TableBody>
               </Table>
             </TableContainer>
-            <SupportReplyForm supportFormDetail={supportFormDetail} getSupportTicketDetail={getSupportTicketDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
+            <SupportReplyForm supportFormId={id} email={supportFormDetail?.creator?.email} getSupportTicketDetail={getSupportTicketDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
          </div>
           <div className="Ticket___detail____right">
             <Box
@@ -142,7 +187,7 @@ function SupportFormDetail() {
               <h3>TICKET DETAILS</h3>
               <div style={{marginTop: 20}}>
                   <label><strong>Ticket Creator:</strong></label>
-                <p id="outlined-size-normal" >{supportFormDetail?.email}</p>
+                <p id="outlined-size-normal" >{supportFormDetail?.creator?.email}</p>
               </div>
               <div>
               <label><strong>Topic:</strong></label>
@@ -164,6 +209,8 @@ function SupportFormDetail() {
                 </Select>
               </FormControl>
             </Box>
+            {statusSuccessMessage && <small style={{color: "green"}}><em>{statusSuccessMessage}</em></small>}
+            {statusErrorMessage && <small style={{color: "red"}}><em>{statusErrorMessage}</em></small>}
             <Button
               className="authentication__container__formContainer__form__loginButton_tickets"
               type="submit" 

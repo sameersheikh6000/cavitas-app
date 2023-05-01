@@ -22,6 +22,7 @@ import useContactForm from "../../../../../hooks/useContactForm";
 import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
 import ReplyForm from "./Component/ReplyForm";
+import { API_KEY } from "../../../../../config/helpers/variables";
 
 const ContactFormDetail = () => {
   const [contact, setContact] = useState();
@@ -30,6 +31,8 @@ const ContactFormDetail = () => {
   const [contactStatus, setContactStatus] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [statusSuccessMessage, setStatusSuccessMessage] = useState('');
+  const [statusErrorMessage, setStatusErrorMessage] = useState('');
 
 const getContactDetail = async () => {
   const response = await getContactFormById(id);
@@ -43,10 +46,16 @@ const getContactDetail = async () => {
 const handleContactStatusUpdate = async () => {
   const response = await updateContactFormStatus(id, contactStatus);
   if (response?.status < 300) {
-    setSuccessMessage('Status Updated Successfully!')
+    setStatusSuccessMessage('Status Updated Successfully!')
+    setTimeout(() => {
+      setStatusSuccessMessage('');
+    }, 3000);
     setContactStatus('');
   }else if (response?.status > 300){
-    setErrorMessage(response?.message);
+    setStatusErrorMessage(response?.message);
+    setTimeout(() => {
+      setStatusErrorMessage('');
+    }, 3000);
   }
 }
 
@@ -62,7 +71,7 @@ useEffect(() => {
       <header className='insuredClientView__header'>
           <div className='insuredClientView__header__left'>
             < MailOutlineIcon  className='insuredClientView__header__left__icon' />
-            <p>Support Tickets</p>
+            <p>Contact Tickets</p>
           </div>
           <div className='insuredClientView__header__right'>
           <Link to="/admin/support-tickets" style={{textDecoration: "none"}}>
@@ -108,6 +117,7 @@ useEffect(() => {
               <TableBody>
                 {contact?.replies?.length > 0 && contact?.replies?.map((row, index) => (
                   <>
+                    <small style={{fontSize: "12px"}}><em><b>Your Reply</b></em></small>
                     <TableRow>
                       <TableCell sx={{ border: 1 }} component="th" scope="row">
                         <p>
@@ -116,18 +126,44 @@ useEffect(() => {
                       </TableCell>
                     </TableRow>
                     <TableRow>
-                      <TableCell sx={{ border: 1}} component="th" scope="row" style={{ padding: 7}}>
-                        <small><em>Attached file goes here</em></small>
-                      </TableCell>
-                    </TableRow>
+                        <TableCell sx={{ border: 1}} component="th" scope="row" style={{ padding: 7}}>
+                          {row?.file_path ? 
+                            <small><em>Attached files: <a href={`${API_KEY}/api/v1/contact_replies/${row?.id}/download`}>{row?.file_name}</a></em></small>
+                            : 
+                            <small><em>No Attachment(s)</em></small>
+                          }
+                        </TableCell>
+                      </TableRow>
+                      {
+                      row?.answer && 
+                        <>
+                          <small style={{fontSize: "12px", color: "red"}}><em><b>User Reply</b></em></small>
+                            <TableRow>
+                                <TableCell sx={{ border: 1 }} component="th" scope="row">
+                                  <p>
+                                    {row?.answer?.answer_text}
+                                  </p>
+                                </TableCell>
+                              </TableRow><TableRow>
+                              <TableCell sx={{ border: 1 }} component="th" scope="row" style={{ padding: 7 }}>
+                                {row?.answer?.file_path ? 
+                                  <small><em>Attached files: <a href={`${API_KEY}/api/v1/contact_reply_answers/${row?.answer?.id}/download`}>{row?.answer?.file_name}</a></em></small>
+                                  : 
+                                  <small><em>No Attachment(s)</em></small>
+                                }
+                              </TableCell>
+                            </TableRow>
+                        </>
+                      }
                   </>
+
                 ))
                 }
                 
               </TableBody>
             </Table>
           </TableContainer>
-          <ReplyForm contactForm={contact} getContactDetail={getContactDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
+          <ReplyForm contactFormId={id} email={contact?.user?.email} getContactDetail={getContactDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
        </div>
         <div className="Ticket___detail____right">
           <Box
@@ -163,6 +199,8 @@ useEffect(() => {
               </Select>
             </FormControl>
           </Box>
+          {statusSuccessMessage && <small style={{color: "green"}}><em>{statusSuccessMessage}</em></small>}
+          {statusErrorMessage && <small style={{color: "red"}}><em>{statusErrorMessage}</em></small>}
           <Button
             className="authentication__container__formContainer__form__loginButton_tickets"
             type="submit" 

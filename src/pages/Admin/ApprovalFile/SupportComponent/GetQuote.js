@@ -62,7 +62,7 @@ const GetQuote = () => {
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/Contactus" style={{textDecoration: "none"}}>
+              <Link to="/admin/Contactus" style={{textDecoration: "none"}}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
 
                   Contact Us

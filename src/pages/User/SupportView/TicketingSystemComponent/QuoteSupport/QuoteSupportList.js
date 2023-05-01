@@ -63,21 +63,21 @@ function QuoteSupportList() {
           <header>
             <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
               <div>
-                <Link to="/support/view">
+                <Link to="/support/view" style={{textDecoration: "none"}}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                     My support tickets
                   </Button>
                 </Link>
               </div>
               <div>
-                <Link to="/ContactSupportList">
+                <Link to="/ContactSupportList" style={{textDecoration: "none"}}>
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                     Contact Support
                   </Button>
                 </Link>
               </div>
               <div>
-              <Link to="/QuoteSupportList">
+              <Link to="/QuoteSupportList" style={{textDecoration: "none"}}>
                   <Button
                     style={{ background: "#5C8894" }}
                     className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"

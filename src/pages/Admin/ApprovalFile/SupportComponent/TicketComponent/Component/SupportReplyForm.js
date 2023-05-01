@@ -4,11 +4,15 @@ import Box from '@mui/material/Box';
 import { Button } from '@mui/material'
 import useSupportTicketReply from '../../../../../../hooks/useSupportTicketReply';
 
-function SupportReplyForm({supportFormDetail, getSupportTicketDetail, setErrorMessage, setSuccessMessage}) {
-   
+function SupportReplyForm({supportFormId, email, getSupportTicketDetail, setErrorMessage, setSuccessMessage}) {   
     const [open, setOpen] = useState(false);
     const {createReply} = useSupportTicketReply();
-    const [replyText, setReplyText] = useState();
+    const [ticketReply, setTicketReply] = useState({
+      reply_text: "",
+      ticket_id: supportFormId,
+      attachment: "",
+      reply_to: email
+      })
     const style = {
         position: 'absolute',
         top: '50%',
@@ -27,7 +31,7 @@ function SupportReplyForm({supportFormDetail, getSupportTicketDetail, setErrorMe
 
   const handleSubmit = async () => {
     debugger
-    const response = await createReply(supportFormDetail, replyText)
+    const response = await createReply(ticketReply)
     if(response?.status < 300){
       setSuccessMessage("Successfully Replied!")
       getSupportTicketDetail();
@@ -57,8 +61,10 @@ function SupportReplyForm({supportFormDetail, getSupportTicketDetail, setErrorMe
                             placeholder="Your text here                 "
                             cols={27}
                             rows={5}
-                            onChange={(e) => setReplyText(e.target.value)}
+                            onChange={(e) => setTicketReply({...ticketReply, reply_text: e.target.value})}
                         />
+
+                      <input type='file' onChange={(e) => setTicketReply({...ticketReply, attachment: e.target.files[0]})}/>
                 </div>
               <div className="uploadClient__container__body__participation_delete_user_button_container">
                 <Button color='error' variant='contained' size='small' style={{ color: "white" }} onClick={() => handleSubmit()}>Reply</Button>

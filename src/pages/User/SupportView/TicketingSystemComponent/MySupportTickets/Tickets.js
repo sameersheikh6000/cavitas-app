@@ -205,10 +205,10 @@ const Tickets = () => {
                     {supportFormDetail?.user?.name}
                   </p>
                 </div>
-                <Button size="small">
+                <small>
                   {supportFormDetail?.created_at}
                   &nbsp; &nbsp;&nbsp;
-                </Button>
+                  </small>
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                 <table
@@ -263,7 +263,7 @@ const Tickets = () => {
 
                           <p style={{ textTransform: "none" }}>Cavitas</p>
                         </div>
-                        <p>{row?.created_at} </p>
+                        <small>{row?.created_at} </small>
                       </header>
 
                       <table
@@ -271,40 +271,78 @@ const Tickets = () => {
                         style={{ height: "auto" }}
                       >
                         <thead>
-                          <tr>
+                          <tr style={{height: "80px"}}>
                             <p>{row?.reply_text} </p>
                           </tr>
                         </thead>
                         <br />
+                          <tbody
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              borderTop: "1px solid lightgray",
+                              paddingTop: "1rem",
+                              paddingBottom: "1rem",
+                            }}
+                          >
+                            {row?.file_name ? (
+                              <p>Attachement(s) <a href={`${API_KEY}/api/v1/ticket_replies/${row?.id}/download`}>{row?.file_name}</a></p>
+                            ) : (
+                              <em>
+                                <small>No Attachments available</small>
+                              </em>
+                            )}
+                          </tbody>
                       </table>
                     </section>
-                    <br />
-                    <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
-                      <header className="dashboard__container__content__cavitasDocs__header">
-                        <div className="dashboard__container__content__cavitasDocs__header__iconBox">
-                          <PersonOutlineOutlinedIcon />
-                          <p style={{ textTransform: "none" }}>
-                            {supportFormDetail?.user?.name}
-                          </p>
-                        </div>
-                        <Button size="small">
-                          {supportFormDetail?.created_at}
-                          &nbsp; &nbsp;&nbsp;
-                        </Button>
-                      </header>
-                      {/* { row?.reply_text} */}
-
-                      {row?.answer ? (
-                        <p>{row?.answer.answer_text}</p>
-                      ) : (
+                    <div style={{display: "flex", flexDirection: "row-reverse"}}>
+                        {!(row?.answer) && 
                         <TicketReplyAnswerForm
-                          ticket_reply_id={row?.id}
-                          setErrorMessage={setErrorMessage}
-                          setSuccessMessage={setSuccessMessage}
-                          getSupportTicketDetail={getSupportTicketDetail}
-                        />
-                      )}
-                    </section>
+                              ticket_reply_id={row?.id}
+                              setErrorMessage={setErrorMessage}
+                              setSuccessMessage={setSuccessMessage}
+                              getSupportTicketDetail={getSupportTicketDetail}
+                            />
+                        }
+                      </div>
+                    <br />
+                    {row?.answer && 
+                      <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
+                        <header className="dashboard__container__content__cavitasDocs__header">
+                          <div className="dashboard__container__content__cavitasDocs__header__iconBox">
+                            <PersonOutlineOutlinedIcon />
+                            <p style={{ textTransform: "none" }}>
+                              {supportFormDetail?.user?.name}
+                            </p>
+                          </div>
+                            <small>{row?.answer?.created_at}
+                            &nbsp; &nbsp;&nbsp;
+                            </small>
+                        </header>
+                          <div style={{ minHeight: "100px"}}>
+                            <p>{row?.answer.answer_text}</p>
+                          </div>
+                          <tbody
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              borderTop: "1px solid lightgray",
+                              paddingTop: "1rem",
+                              paddingBottom: "1rem",
+                            }}
+                          >
+                            {row?.answer?.file_name ? (
+                              <p>Attachement(s) <a href={`${API_KEY}/api/v1/ticket_reply_answers/${row?.answer?.id}/download`}>{row?.answer?.file_name}</a></p>
+                            ) : (
+                              <em>
+                                <small>No Attachments available</small>
+                              </em>
+                            )}
+                          </tbody>
+                      </section>
+                    }
                     <br />
                   </div>
                 ))}

@@ -30,20 +30,17 @@ function useSupportTicketReply() {
       };
 
 
-    const createReply = async (ticket, reply_text) => {
-        debugger
-        const params = {
-            ticket_reply: {
-                reply_text: reply_text,
-                ticket_id: ticket.id,
-                reply_to: ticket.email 
-            } 
-        }
+    const createReply = async (ticket_reply) => {
+      debugger
+      const formData = new FormData()
+      for (const property in ticket_reply) {
+        formData.append(
+          property, ticket_reply[property]
+        )
+      }
+
         const response = await axios.post(
-            `${API_KEY}/api/v1/ticket_replies`,
-            {
-              ...params
-            },
+            `${API_KEY}/api/v1/ticket_replies`, formData ,
             getAdminHeaders()
           ).then((res) => {
             if (res?.status > 300) {

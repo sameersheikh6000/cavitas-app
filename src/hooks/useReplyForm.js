@@ -30,19 +30,15 @@ function useReplyForm() {
       };
 
 
-    const createReply = async (ticket, reply_text) => {
-        const params = {
-            contact_reply: {
-                reply_text: reply_text,
-                contact_form_id: ticket.id,
-                reply_to: ticket.email 
-            } 
-        }
+    const createReply = async (contact_reply) => {
+      const formData = new FormData()
+      for (const property in contact_reply) {
+        formData.append(
+          property, contact_reply[property]
+        )
+      }
         const response = await axios.post(
-            `${API_KEY}/api/v1/contact_replies`,
-            {
-              ...params
-            },
+            `${API_KEY}/api/v1/contact_replies`,formData,
             getAdminHeaders()
           ).then((res) => {
             if (res?.status > 300) {

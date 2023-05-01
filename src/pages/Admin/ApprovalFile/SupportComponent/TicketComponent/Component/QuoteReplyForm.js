@@ -4,11 +4,16 @@ import Box from '@mui/material/Box';
 import { Button } from '@mui/material'
 import useQuoteReply from '../../../../../../hooks/useQuoteReply';
 
-function QuoteReplyForm({quoteFormDetail, getQuoteFormDetail, setErrorMessage, setSuccessMessage}) {
+function QuoteReplyForm({quoteFormId, email, getQuoteFormDetail, setErrorMessage, setSuccessMessage}) {
    
     const [open, setOpen] = useState(false);
     const {createReply} = useQuoteReply();
-    const [replyText, setReplyText] = useState();
+    const [quoteReply, setQuoteReply] = useState({
+      reply_text: "",
+      quote_form_id: quoteFormId,
+      attachment: "",
+      reply_to: email
+      })
     const style = {
         position: 'absolute',
         top: '50%',
@@ -27,7 +32,7 @@ function QuoteReplyForm({quoteFormDetail, getQuoteFormDetail, setErrorMessage, s
 
   const handleSubmit = async () => {
     debugger
-    const response = await createReply(quoteFormDetail, replyText)
+    const response = await createReply(quoteReply)
     if(response?.status < 300){
       setSuccessMessage("Successfully Replied!")
       getQuoteFormDetail();
@@ -57,8 +62,10 @@ function QuoteReplyForm({quoteFormDetail, getQuoteFormDetail, setErrorMessage, s
                             placeholder="Your text here                 "
                             cols={27}
                             rows={5}
-                            onChange={(e) => setReplyText(e.target.value)}
+                            onChange={(e) => setQuoteReply({...quoteReply, reply_text: e.target.value})}
                         />
+
+                        <input type='file' onChange={(e) => setQuoteReply({ ...quoteReply, attachment: e.target.files[0]})}/>
                 </div>
               <div className="uploadClient__container__body__participation_delete_user_button_container">
                 <Button color='error' variant='contained' size='small' style={{ color: "white" }} onClick={() => handleSubmit()}>Reply</Button>

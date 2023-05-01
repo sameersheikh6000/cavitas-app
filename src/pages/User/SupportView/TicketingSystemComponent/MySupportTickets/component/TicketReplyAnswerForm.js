@@ -46,7 +46,7 @@ function TicketReplyAnswerForm({ ticket_reply_id, setErrorMessage, setSuccessMes
 
   return (
     <div>
-        <Button color='success' variant='contained' size='small' style={{ color: "white !important" ,margin: "5px" }} onClick={() => handleOpen()}>Answer</Button>
+        <Button color='error' variant='outlined' size='small' style={{ color: "white !important" ,margin: "5px", width: "10px", fontSize: "10px" }} onClick={() => handleOpen()}>Answer</Button>
         <Modal
           open={open}
           onClose={handleClose}

@@ -22,6 +22,7 @@ import AlertMessage from '../../../../../components/SnackbarMessages/AlertMessag
 import SuccessMessage from '../../../../../components/SnackbarMessages/SuccessMessage';
 import useQuoteForm from '../../../../../hooks/useQuoteForm';
 import QuoteReplyForm from './Component/QuoteReplyForm';
+import { API_KEY } from '../../../../../config/helpers/variables';
 
 
 function QuoteFormDetail() {
@@ -31,6 +32,8 @@ function QuoteFormDetail() {
     const [quoteStatus, setQuoteStatus] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [statusSuccessMessage, setStatusSuccessMessage] = useState('');
+    const [statusErrorMessage, setStatusErrorMessage] = useState('');
   
   const getQuoteFormDetail = async () => {
     debugger
@@ -46,12 +49,16 @@ function QuoteFormDetail() {
     debugger
     const response = await updateQuoteFormStatus(id, quoteStatus);
     if (response?.status < 300) {
-      setSuccessMessage('Status Updated Successfully!')
+      setStatusSuccessMessage('Status Updated Successfully!')
+      setTimeout(() => {
+        setStatusSuccessMessage('');
+      }, 3000);
       setQuoteStatus('');
     }else if (response?.status > 300){
-        debugger
-      setErrorMessage(response?.message);
-      console.log(errorMessage)
+      setStatusErrorMessage(response?.message);
+      setTimeout(() => {
+        setStatusErrorMessage('');
+      }, 3000);
     }
   }
   
@@ -112,6 +119,7 @@ function QuoteFormDetail() {
                 <TableBody>
                   {quoteFormDetail?.replies?.length > 0 && quoteFormDetail?.replies?.map((row, index) => (
                     <>
+                    <small style={{fontSize: "12px"}}><em><b>Your Reply</b></em></small>
                       <TableRow>
                         <TableCell sx={{ border: 1 }} component="th" scope="row">
                           <p>
@@ -120,10 +128,36 @@ function QuoteFormDetail() {
                         </TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell sx={{ border: 1}} component="th" scope="row" style={{ padding: 7}}>
-                          <small><em>Attached file goes here</em></small>
+                        <TableCell sx={{ border: 1 }} component="th" scope="row" style={{ padding: 7 }}>
+                                {row?.file_path ? 
+                                  <small><em>Attached files: <a href={`${API_KEY}/api/v1/quote_replies/${row?.id}/download`}>{row?.file_name}</a></em></small>
+                                  : 
+                                  <small><em>No Attachment(s)</em></small>
+                                }
                         </TableCell>
                       </TableRow>
+
+                      {
+                      row?.answer && 
+                        <>
+                          <small style={{fontSize: "12px", color: "red"}}><em><b>User Reply</b></em></small>
+                            <TableRow>
+                                <TableCell sx={{ border: 1 }} component="th" scope="row">
+                                  <p>
+                                    {row?.answer?.answer_text}
+                                  </p>
+                                </TableCell>
+                              </TableRow><TableRow>
+                              <TableCell sx={{ border: 1 }} component="th" scope="row" style={{ padding: 7 }}>
+                                {row?.answer?.file_path ? 
+                                  <small><em>Attached files: <a href={`${API_KEY}/api/v1/quote_reply_answers/${row?.answer?.id}/download`}>{row?.answer?.file_name}</a></em></small>
+                                  : 
+                                  <small><em>No Attachment(s)</em></small>
+                                }
+                              </TableCell>
+                            </TableRow>
+                        </>
+                      }
                     </>
                   ))
                   }
@@ -131,7 +165,7 @@ function QuoteFormDetail() {
                 </TableBody>
               </Table>
             </TableContainer>
-            <QuoteReplyForm quoteFormDetail={quoteFormDetail} getQuoteFormDetail={getQuoteFormDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
+            <QuoteReplyForm quoteFormId={id} email={quoteFormDetail?.user?.email} getQuoteFormDetail={getQuoteFormDetail} setErrorMessage={setSuccessMessage} setSuccessMessage={setSuccessMessage}  />
          </div>
           <div className="Ticket___detail____right">
             <Box
@@ -167,6 +201,8 @@ function QuoteFormDetail() {
                 </Select>
               </FormControl>
             </Box>
+            {statusSuccessMessage && <small style={{color: "green"}}><em>{statusSuccessMessage}</em></small>}
+            {statusErrorMessage && <small style={{color: "red"}}><em>{statusErrorMessage}</em></small>}
             <Button
               className="authentication__container__formContainer__form__loginButton_tickets"
               type="submit" 

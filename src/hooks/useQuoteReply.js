@@ -30,19 +30,16 @@ function useQuoteReply() {
       };
 
 
-    const createReply = async (quote, reply_text) => {
-        const params = {
-            quote_reply: {
-                reply_text: reply_text,
-                quote_form_id: quote.id,
-                reply_to: quote.email
-            } 
-        }
+    const createReply = async (quote_reply) => {
+      const formData = new FormData()
+      for (const property in quote_reply) {
+        formData.append(
+          property, quote_reply[property]
+        )
+      }
+
         const response = await axios.post(
-            `${API_KEY}/api/v1/quote_replies`,
-            {
-              ...params
-            },
+            `${API_KEY}/api/v1/quote_replies`, formData,
             getAdminHeaders()
           ).then((res) => {
             if (res?.status > 300) {
