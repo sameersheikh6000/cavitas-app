@@ -199,7 +199,8 @@ const Tickets = () => {
           </section>
           <div>
             {/* User side */}
-            <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
+            <section className="dashboard__container__content__cavitasDocs__Detail__tickets"
+            section>
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />
@@ -257,7 +258,7 @@ const Tickets = () => {
                   <div>
                     <section
                       className="dashboard__container__content__cavitasDocs__Detail__tickets"
-                      style={{ backgroundColor: "#f4e4e4" }}
+                      style={{ backgroundColor: "#f4e4e4", }}
                     >
                       <header className="dashboard__container__content__cavitasDocs__header">
                         <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -289,7 +290,6 @@ const Tickets = () => {
                             alignItems: "center",
                             borderTop: "1px solid lightgray",
                             paddingTop: "1rem",
-                            width: "142%",
                             paddingBottom: "1rem",
                           }}
                         >

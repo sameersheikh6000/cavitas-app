@@ -1050,7 +1050,7 @@ body Button {
   width: 100%;
   padding-bottom: 0;
   height: 220px;
-  overflow: auto;
+  overflow-y: auto;
   transition: width 0.5s;
 }
 .dashboard__container__content__cavitasDocs___mysupporttickets___Ticket__detail {
