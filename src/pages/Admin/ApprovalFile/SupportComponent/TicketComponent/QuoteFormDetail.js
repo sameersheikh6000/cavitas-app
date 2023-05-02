@@ -240,12 +240,12 @@ function QuoteFormDetail() {
                 <p id="outlined-size-normal">{quoteFormDetail?.email}</p>
               </div>
               <br />
-              <div>
+              {/* <div>
                 <label>
                   <strong>Topic:</strong>
                 </label>
-                <p id="outlined-size-normal">{quoteFormDetail?.request}</p>
-              </div>
+                <p id="outlined-size-normal">{quoteFormDetail?.identity}</p>
+              </div> */}
               <br />
               <InputLabel htmlFor="grouped-native-select">
                 <b style={{ color: "black" }}>Status:</b>

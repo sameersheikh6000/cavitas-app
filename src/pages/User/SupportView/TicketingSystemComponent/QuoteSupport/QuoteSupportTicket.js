@@ -20,6 +20,7 @@ const QuoteSupportTicket = () => {
   const { getQuoteDetail } = useQuoteForm();
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  console.log(quoteFormDetail)
 
   const getQuoteFormDetail = async () => {
     const response = await getQuoteDetail(id);
@@ -146,49 +147,6 @@ const QuoteSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  {/* <TableCell>
-                    {" "}
-                    <div className="insuredClientView__header__right">
-                      <Link to="/admin/ApprovalFile">
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit"
-                          style={{
-                            fontSize: "10px",
-                            color: "white !important",
-                            color: "white !important",
-                            backgroundColor: "red",
-                            marginLeft: "15px",
-                            borderRadius: "25px",
-                            textTransform: "none",
-                          }}
-                        >
-                          Reopen tickets
-                        </Button>
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="insuredClientView__header__right">
-                      <Link to="/admin/ApprovalFile">
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          style={{
-                            fontSize: "10px",
-                            color: "black",
-                            borderRadius: "25px",
-                            textTransform: "none",
-                            backgroundColor: "white",
-                            border: "none",
-                          }}
-                        >
-                          Answer
-                        </Button>
-                      </Link>
-                    </div>
-                  </TableCell> */}
                 </TableRow>
               </TableHead>
             </Table>
@@ -242,7 +200,7 @@ const QuoteSupportTicket = () => {
 
                         <p style={{ textTransform: "none" }}>Cavitas</p>
                       </div>
-                      <small> {quoteFormDetail?.created_at} </small>
+                      <small> {row?.created_at} </small>
                     </header>
                     <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                       <table
@@ -252,9 +210,6 @@ const QuoteSupportTicket = () => {
                         <thead>
                           <tr>
                             <p>
-                              {/* {quoteFormDetail?.replies && 
-                          quoteFormDetail?.replies.map((row) => (
-                            <div> */}
                               <div>{row?.reply_text}</div>
                             </p>
                           </tr>
@@ -277,14 +232,14 @@ const QuoteSupportTicket = () => {
                   </section>
 
                   <div
-                    style={{ display: "flex", flexDirection: "row-reverse" }}
+                    style={{ display: "flex", flexDirection: "row-reverse"}}
                   >
                     {!row?.answer && (
                       <QuoteReplyAnswerForm
-                        ticket_reply_id={row?.id}
+                        quote_reply={row}
                         setErrorMessage={setErrorMessage}
                         setSuccessMessage={setSuccessMessage}
-                        quoteFormDetail={setQuoteFormDetail}
+                        getQuoteFormDetail={getQuoteFormDetail}
                       />
                     )}
                   </div>
@@ -301,7 +256,7 @@ const QuoteSupportTicket = () => {
                             {quoteFormDetail?.user?.name}
                           </p>
                         </div>
-                        <small> {quoteFormDetail?.created_at} </small>
+                        <small> {row?.answer?.created_at} </small>
                       </header>
                       <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                         <table
@@ -311,21 +266,7 @@ const QuoteSupportTicket = () => {
                           <thead>
                             <tr>
                               <p>
-                                {/* {quoteFormDetail?.replies && 
-                          quoteFormDetail?.replies.map((row) => (
-                            <div> */}
-                                <div>
-                                  {row?.answer ? (
-                                    <p>{row?.answer.answer_text}</p>
-                                  ) : (
-                                    <QuoteReplyAnswerForm
-                                      quote_reply_id={row?.id}
-                                      setErrorMessage={setErrorMessage}
-                                      setSuccessMessage={setSuccessMessage}
-                                      getQuoteFormDetail={getQuoteFormDetail}
-                                    />
-                                  )}
-                                </div>
+                                <p>{row?.answer.answer_text}</p> 
                               </p>
                             </tr>
                           </thead>

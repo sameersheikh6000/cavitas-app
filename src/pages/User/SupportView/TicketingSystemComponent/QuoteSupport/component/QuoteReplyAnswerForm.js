@@ -5,17 +5,13 @@ import { Button } from "@mui/material";
 import useQuoteReply from "../../../../../../hooks/useQuoteReply";
 import { USER_STORAGE_KEY } from "../../../../../../config/helpers/variables";
 
-function QuoteReplyAnswerForm({
-  quote_reply_id,
-  setErrorMessage,
-  setSuccessMessage,
-  getQuoteFormDetail,
-}) {
+function QuoteReplyAnswerForm({ quote_reply, setErrorMessage, setSuccessMessage, getQuoteFormDetail }) {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  console.warn(quote_reply?.id)
   const { createQuoteReplyAnswer } = useQuoteReply();
   const [quoteReplyAnswer, setQuoteReplyAnswer] = useState({
     answer_text: "",
-    quote_reply_id: quote_reply_id,
+    quote_reply_id: quote_reply?.id,
     attachment: "",
     answeree: user?.data?.email,
   });
@@ -52,10 +48,10 @@ function QuoteReplyAnswerForm({
   return (
     <div>
       <Button
-        color="success"
-        variant="contained"
+        color="error"
+        variant="outlined"
         size="small"
-        style={{ color: "white !important", margin: "5px" }}
+        style={{ color: "white !important", margin: "5px", width: "50px", fontSize: "12px" }}
         onClick={() => handleOpen()}
       >
         Answer
