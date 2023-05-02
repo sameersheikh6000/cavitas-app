@@ -105,7 +105,7 @@ function ComplaintForm() {
                   
                 </div>
                   <div style={{ marginTop: "5px" }}>
-                    <select className="select">
+                    <select className="select" onChange={(e) => setContactForm({ ...contactForm, identity: `I am ${e.target.value}`})}>
                       <option>I am ....*</option>
                       <option value="broker">Broker</option>
                       <option value="employer">Employer</option>
@@ -114,7 +114,7 @@ function ComplaintForm() {
                     </select>
                   </div>
                   <div style={{ marginTop: "5px" }}>
-                    <select className="select">
+                    <select className="select" onChange={(e) => setContactForm({ ...contactForm, request: `I want to ${e.target.value}`})}>
                       <option >I want to ...</option>
                       <option value="contact for cooperation">Contact for cooperation</option>
                       <option value="ask a question">Ask a question</option>

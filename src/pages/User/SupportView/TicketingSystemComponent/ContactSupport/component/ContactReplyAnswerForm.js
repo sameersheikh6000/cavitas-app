@@ -6,7 +6,7 @@ import useReplyForm from "../../../../../../hooks/useReplyForm";
 import { USER_STORAGE_KEY } from "../../../../../../config/helpers/variables";
 
 function ContactReplyAnswerForm({
-  contact_reply_id,
+  contact_reply,
   setErrorMessage,
   setSuccessMessage,
 }) {
@@ -14,7 +14,7 @@ function ContactReplyAnswerForm({
   const { createContactReplyAnswer } = useReplyForm();
   const [contactReplyAnswer, setContactReplyAnswer] = useState({
     answer_text: "",
-    contact_reply_id: contact_reply_id,
+    contact_reply_id: contact_reply?.id,
     attachment: "",
     answeree: user?.data?.email,
   });
@@ -51,10 +51,10 @@ function ContactReplyAnswerForm({
   return (
     <div>
       <Button
-        color="success"
-        variant="contained"
+        color="error"
+        variant="outlined"
         size="small"
-        style={{ color: "white !important", margin: "5px" }}
+        style={{ color: "white !important", margin: "5px", width: "50px", fontSize: "12px" }}
         onClick={() => handleOpen()}
       >
         Answer

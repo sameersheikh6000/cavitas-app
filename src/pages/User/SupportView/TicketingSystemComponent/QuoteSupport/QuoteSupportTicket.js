@@ -13,6 +13,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import useQuoteForm from "../../../../../hooks/useQuoteForm";
 import QuoteReplyAnswerForm from "./component/QuoteReplyAnswerForm";
+import { API_KEY } from "../../../../../config/helpers/variables";
 
 const QuoteSupportTicket = () => {
   const { id } = useParams();
@@ -154,7 +155,7 @@ const QuoteSupportTicket = () => {
             {/* User side */}
             <section
               className="dashboard__container__content__cavitasDocs__Detail__tickets"
-              style={{ width: "150%" }}
+              style={{ width: "110%" }}
             >
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -187,7 +188,7 @@ const QuoteSupportTicket = () => {
                 <div>
                   <section
                     className="dashboard__container__content__cavitasDocs__Detail__tickets"
-                    style={{ backgroundColor: "#f4e4e4", width: "150%" }}
+                    style={{ backgroundColor: "#f4e4e4", width: "110%" }}
                   >
                     <header className="dashboard__container__content__cavitasDocs__header">
                       <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -225,13 +226,22 @@ const QuoteSupportTicket = () => {
                           paddingBottom: "1rem",
                         }}
                       >
-                        <p>Attachement(s) (Attachement link)</p>
+                        {row?.file_name ? 
+                            <p>Attachement(s): &nbsp;
+                              <a
+                                href={`${API_KEY}/api/v1/quote_replies/${row?.id}/download`}
+                              >
+                                {row?.file_name}
+                              </a>
+                            </p> : 
+                            <small><em>No Attachements </em></small>
+                          }
                       </tbody>
                     </div>
                   </section>
 
                   <div
-                    style={{ display: "flex", flexDirection: "row-reverse",  width: "150%" }}
+                    style={{ display: "flex", flexDirection: "row-reverse",  width: "110%" }}
                   >
                     {!row?.answer && (
                       <QuoteReplyAnswerForm
@@ -247,7 +257,7 @@ const QuoteSupportTicket = () => {
                   {row?.answer && (
                     <section
                       className="dashboard__container__content__cavitasDocs__Detail__tickets"
-                      style={{ width: "150%" }}
+                      style={{ width: "110%" }}
                     >
                       <header className="dashboard__container__content__cavitasDocs__header">
                         <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -256,7 +266,7 @@ const QuoteSupportTicket = () => {
                             {quoteFormDetail?.user?.name}
                           </p>
                         </div>
-                        <small> {quoteFormDetail?.created_at} </small>
+                        <small> {row?.answer?.created_at} </small>
                       </header>
                       <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                         <table
@@ -266,7 +276,7 @@ const QuoteSupportTicket = () => {
                           <thead>
                             <tr>
                               <p>
-                                <p>{row?.answer.answer_text}</p>
+                                <p>{row?.answer?.answer_text}</p>
                               </p>
                             </tr>
                           </thead>
@@ -282,7 +292,16 @@ const QuoteSupportTicket = () => {
                             paddingBottom: "1rem",
                           }}
                         >
-                          <p>Attachement(s) (Attachement link)</p>
+                          {row?.answer?.file_name ? 
+                            <p>Attachement(s): &nbsp;
+                              <a
+                                href={`${API_KEY}/api/v1/quote_reply_answers/${row?.answer?.id}/download`}
+                              >
+                                {row?.answer?.file_name}
+                              </a>
+                            </p> : 
+                            <small><em>No Attachements </em></small>
+                          }
                         </tbody>
                       </div>
                     </section>

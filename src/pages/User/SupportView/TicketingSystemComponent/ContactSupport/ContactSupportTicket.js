@@ -13,6 +13,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import useContactForm from "../../../../../hooks/useContactForm";
 import ContactReplyAnswerForm from "./component/ContactReplyAnswerForm";
+import { API_KEY } from "../../../../../config/helpers/variables";
 
 const ContactSupportTicket = () => {
   const [contact, setContact] = useState();
@@ -192,7 +193,7 @@ const ContactSupportTicket = () => {
           <div>
             {/* User side */}
             <section className="dashboard__container__content__cavitasDocs__Detail__tickets"
-             style={{ width: "150%" }}
+             style={{ width: "110%" }}
             >
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -221,7 +222,7 @@ const ContactSupportTicket = () => {
                 <div>
                   <section
                     className="dashboard__container__content__cavitasDocs__Detail__tickets"
-                    style={{ backgroundColor: "#f4e4e4", width: "150%" }}
+                    style={{ backgroundColor: "#f4e4e4", width: "110%" }}
                   >
                     <header className="dashboard__container__content__cavitasDocs__header">
                       <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -258,7 +259,16 @@ const ContactSupportTicket = () => {
                           paddingBottom: "1rem",
                         }}
                       >
-                        <p>Attachement(s) (Attachement link)</p>
+                        {row?.file_name ? 
+                            <p>Attachement(s) 
+                              <a
+                                href={`${API_KEY}/api/v1/contact_replies/${row?.id}/download`}
+                              >
+                                {row?.file_name}
+                              </a>
+                            </p> : 
+                            <small><em>No Attachements </em></small>
+                          }
                       </tbody>
                     </div>
                   </section>
@@ -267,12 +277,12 @@ const ContactSupportTicket = () => {
                     style={{
                       display: "flex",
                       flexDirection: "row-reverse",
-                       width: "150%"
+                       width: "110%"
                     }}
                   >
                     {!row?.answer && (
                       <ContactReplyAnswerForm
-                        quote_reply={row}
+                        contact_reply={row}
                         setErrorMessage={setErrorMessage}
                         setSuccessMessage={setSuccessMessage}
                         getContactDetail={getContactDetail}
@@ -283,7 +293,7 @@ const ContactSupportTicket = () => {
                   <br />
                   {row?.answer && (
                     <section className="dashboard__container__content__cavitasDocs__Detail__tickets"
-                    style={{ width: "150%" }}
+                    style={{ width: "110%" }}
                     >
                       <header className="dashboard__container__content__cavitasDocs__header">
                         <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -303,15 +313,7 @@ const ContactSupportTicket = () => {
                           <thead>
                             <tr>
                               <div>
-                                {row?.answer ? (
-                                  <p>{row?.answer.answer_text}</p>
-                                ) : (
-                                  <ContactReplyAnswerForm
-                                    contact_reply_id={row?.id}
-                                    setErrorMessage={setErrorMessage}
-                                    setSuccessMessage={setSuccessMessage}
-                                  />
-                                )}
+                                  <p>{row?.answer?.answer_text}</p>
                               </div>
                             </tr>
                           </thead>
@@ -327,7 +329,16 @@ const ContactSupportTicket = () => {
                             paddingBottom: "1rem",
                           }}
                         >
-                          <p>Attachement(s) (Attachement link)</p>
+                          {row?.answer?.file_name ? 
+                            <p>Attachement(s): &nbsp;
+                              <a
+                                href={`${API_KEY}/api/v1/contact_reply_answers/${row?.answer?.id}/download`}
+                              >
+                                {row?.answer?.file_name}
+                              </a>
+                            </p> : 
+                            <small><em>No Attachements </em></small>
+                          }
                         </tbody>
                       </div>
                     </section>
