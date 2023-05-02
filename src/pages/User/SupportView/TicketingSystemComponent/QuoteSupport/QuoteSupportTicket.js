@@ -20,7 +20,7 @@ const QuoteSupportTicket = () => {
   const { getQuoteDetail } = useQuoteForm();
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  console.log(quoteFormDetail)
+  console.log(quoteFormDetail);
 
   const getQuoteFormDetail = async () => {
     const response = await getQuoteDetail(id);
@@ -146,8 +146,7 @@ const QuoteSupportTicket = () => {
               <TableHead>
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                >
-                </TableRow>
+                ></TableRow>
               </TableHead>
             </Table>
           </section>
@@ -232,7 +231,7 @@ const QuoteSupportTicket = () => {
                   </section>
 
                   <div
-                    style={{ display: "flex", flexDirection: "row-reverse"}}
+                    style={{ display: "flex", flexDirection: "row-reverse",  width: "150%" }}
                   >
                     {!row?.answer && (
                       <QuoteReplyAnswerForm
@@ -243,6 +242,7 @@ const QuoteSupportTicket = () => {
                       />
                     )}
                   </div>
+
                   <br />
                   {row?.answer && (
                     <section
@@ -256,7 +256,7 @@ const QuoteSupportTicket = () => {
                             {quoteFormDetail?.user?.name}
                           </p>
                         </div>
-                        <small> {row?.answer?.created_at} </small>
+                        <small> {quoteFormDetail?.created_at} </small>
                       </header>
                       <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                         <table
@@ -266,7 +266,7 @@ const QuoteSupportTicket = () => {
                           <thead>
                             <tr>
                               <p>
-                                <p>{row?.answer.answer_text}</p> 
+                                <p>{row?.answer.answer_text}</p>
                               </p>
                             </tr>
                           </thead>
