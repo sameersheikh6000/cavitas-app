@@ -41,11 +41,13 @@ function ComplaintForm() {
     setTimeout(() => {
       handleClose();
       setMessage('');
-      setErrorMessage('');
     }, 3000);
     
   } else if (response.status > 300) {
     setErrorMessage(response.message);
+    setTimeout(() => {
+      setErrorMessage('');
+    }, 3000);
   }
 }
 
