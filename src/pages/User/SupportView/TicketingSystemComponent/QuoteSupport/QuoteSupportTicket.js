@@ -42,18 +42,8 @@ const QuoteSupportTicket = () => {
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
             <p>Support Tickets</p>
           </div>
-        </header>
-        <br />
-        <header className="insuredClientView__header">
-          <div className="insuredClientView__header__left">
-            <Link to="/support/view">
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support tickets #{quoteFormDetail?.id}
-              </Button>
-            </Link>
-          </div>
           <div className="insuredClientView__header__right">
-            <Link to="/support/view">
+            <Link to="/support/view" style={{ textDecoration: "none" }}>
               <Button
                 color="error"
                 variant="outlined"
@@ -67,6 +57,23 @@ const QuoteSupportTicket = () => {
                 }}
               >
                 Return to ticket list
+              </Button>
+            </Link>
+          </div>
+        </header>
+        <br />
+        <header className="insuredClientView__header">
+          <div className="insuredClientView__header__left">
+            <Link to="/support/view">
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
+                My support ticket #{quoteFormDetail?.id}
+              </Button>
+            </Link>
+          </div>
+          <div className="insuredClientView__header__right">
+            <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
+                Submit New Ticket
               </Button>
             </Link>
           </div>
@@ -187,9 +194,11 @@ const QuoteSupportTicket = () => {
             </Table>
           </section>
           <div>
-
             {/* User side */}
-            <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
+            <section
+              className="dashboard__container__content__cavitasDocs__Detail__tickets"
+              style={{ width: "150%" }}
+            >
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />
@@ -197,7 +206,7 @@ const QuoteSupportTicket = () => {
                     {quoteFormDetail?.user?.name}
                   </p>
                 </div>
-                {quoteFormDetail?.created_at}
+                <small> {quoteFormDetail?.created_at} </small>
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                 <table
@@ -211,7 +220,6 @@ const QuoteSupportTicket = () => {
                   </thead>
                   <br />
                 </table>
-               
               </div>
             </section>
             <br />
@@ -222,31 +230,19 @@ const QuoteSupportTicket = () => {
                 <div>
                   <section
                     className="dashboard__container__content__cavitasDocs__Detail__tickets"
-                    style={{ backgroundColor: "#f4e4e4" }}
+                    style={{ backgroundColor: "#f4e4e4", width: "150%" }}
                   >
                     <header className="dashboard__container__content__cavitasDocs__header">
                       <div className="dashboard__container__content__cavitasDocs__header__iconBox">
-                        {/* <img src={require("")} alt="" /> */}
+                        <img
+                          style={{ width: "35px", height: "auto" }}
+                          src={require("../../../../../assets/CavitasLogo-img.png")}
+                          alt=""
+                        />
 
                         <p style={{ textTransform: "none" }}>Cavitas</p>
                       </div>
-                      <Button size="small">
-                        <input
-                          style={{ background: "none", border: "none" }}
-                          type="date"
-                        ></input>{" "}
-                        &nbsp; &nbsp;&nbsp;
-                        <p
-                          style={{ color: "black", textTransform: "lowercase" }}
-                        >
-                          at
-                        </p>
-                        &nbsp; &nbsp;&nbsp;
-                        <input
-                          style={{ background: "none", border: "none" }}
-                          type="time"
-                        ></input>
-                      </Button>
+                      <small> {quoteFormDetail?.created_at} </small>
                     </header>
                     <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
                       <table
@@ -279,75 +275,77 @@ const QuoteSupportTicket = () => {
                       </tbody>
                     </div>
                   </section>
+
+                  <div
+                    style={{ display: "flex", flexDirection: "row-reverse" }}
+                  >
+                    {!row?.answer && (
+                      <QuoteReplyAnswerForm
+                        ticket_reply_id={row?.id}
+                        setErrorMessage={setErrorMessage}
+                        setSuccessMessage={setSuccessMessage}
+                        quoteFormDetail={setQuoteFormDetail}
+                      />
+                    )}
+                  </div>
                   <br />
-                  <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
-                    <header className="dashboard__container__content__cavitasDocs__header">
-                      <div className="dashboard__container__content__cavitasDocs__header__iconBox">
-                        <PersonOutlineOutlinedIcon />
-                        <p style={{ textTransform: "none" }}>
-                          {quoteFormDetail?.user?.name}
-                        </p>
-                      </div>
-                      <Button size="small">
-                        <input
-                          style={{ background: "none", border: "none" }}
-                          type="date"
-                        ></input>{" "}
-                        &nbsp; &nbsp;&nbsp;
-                        <p
-                          style={{ color: "black", textTransform: "lowercase" }}
+                  {row?.answer && (
+                    <section
+                      className="dashboard__container__content__cavitasDocs__Detail__tickets"
+                      style={{ width: "150%" }}
+                    >
+                      <header className="dashboard__container__content__cavitasDocs__header">
+                        <div className="dashboard__container__content__cavitasDocs__header__iconBox">
+                          <PersonOutlineOutlinedIcon />
+                          <p style={{ textTransform: "none" }}>
+                            {quoteFormDetail?.user?.name}
+                          </p>
+                        </div>
+                        <small> {quoteFormDetail?.created_at} </small>
+                      </header>
+                      <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
+                        <table
+                          className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
+                          style={{ height: "auto" }}
                         >
-                          at
-                        </p>
-                        &nbsp; &nbsp;&nbsp;
-                        <input
-                          style={{ background: "none", border: "none" }}
-                          type="time"
-                        ></input>
-                      </Button>
-                    </header>
-                    <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
-                      <table
-                        className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
-                        style={{ height: "auto" }}
-                      >
-                        <thead>
-                          <tr>
-                            <p>
-                              {/* {quoteFormDetail?.replies && 
+                          <thead>
+                            <tr>
+                              <p>
+                                {/* {quoteFormDetail?.replies && 
                           quoteFormDetail?.replies.map((row) => (
                             <div> */}
-                              <div>
-                                {row?.answer ? (
-                                  <p>{row?.answer.answer_text}</p>
-                                ) : (
-                                  <QuoteReplyAnswerForm
-                                    quote_reply_id={row?.id}
-                                    setErrorMessage={setErrorMessage}
-                                    setSuccessMessage={setSuccessMessage}
-                                    getQuoteFormDetail={getQuoteFormDetail}
-                                  />
-                                )}
-                              </div>
-                            </p>
-                          </tr>
-                        </thead>
-                        <br />
-                      </table>
-                      <tbody
-                        style={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          alignItems: "center",
-                          borderTop: "1px solid lightgray",
-                          paddingTop: "1rem",
-                          paddingBottom: "1rem",
-                        }}
-                      >
-                        <p>Attachement(s) (Attachement link)</p>
-                      </tbody>
-                    </div>
-                  </section>
+                                <div>
+                                  {row?.answer ? (
+                                    <p>{row?.answer.answer_text}</p>
+                                  ) : (
+                                    <QuoteReplyAnswerForm
+                                      quote_reply_id={row?.id}
+                                      setErrorMessage={setErrorMessage}
+                                      setSuccessMessage={setSuccessMessage}
+                                      getQuoteFormDetail={getQuoteFormDetail}
+                                    />
+                                  )}
+                                </div>
+                              </p>
+                            </tr>
+                          </thead>
+                          <br />
+                        </table>
+                        <tbody
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                            borderTop: "1px solid lightgray",
+                            paddingTop: "1rem",
+                            paddingBottom: "1rem",
+                          }}
+                        >
+                          <p>Attachement(s) (Attachement link)</p>
+                        </tbody>
+                      </div>
+                    </section>
+                  )}
                   <br />
                 </div>
               ))}
