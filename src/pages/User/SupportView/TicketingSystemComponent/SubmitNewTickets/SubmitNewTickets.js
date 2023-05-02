@@ -36,13 +36,19 @@ function SubmitNewTickets() {
     const response = await createTicket(ticket)
     if(response?.status < 300){
       setSuccessMessage("Submited Successfully!")
-      navigate('/support/view')
       setTicket({
         ...ticket, description: "", request: "", attachment: ""
       })
+      setTimeout(() => {
+        setSuccessMessage('');
+        navigate('/support/view')
+      }, 3000);
     }
     else if (response?.status > 300){
       setErrorMessage(response?.message)
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 3000);
 
     }
   }
@@ -87,7 +93,8 @@ function SubmitNewTickets() {
             <h2 style={{ color: "red", fontSize: 35 }}>
               Start conversation with us
             </h2>
-
+            {successMessage && <em>{successMessage}</em> }
+            {errorMessage && <em>{errorMessage}</em> }
             <div className="userProfileView__container__details">
               <div className="userProfileView__container__details__detailsBox">
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
