@@ -19,7 +19,7 @@ const MemberLandingPage = () => {
         {/* <OurOffer /> */}
         {/* <HowItWork /> */}
         <AllCare />
-        <CoverageQuestions />
+        {/* <CoverageQuestions /> */}
         <BecomeMember />
         <ValuableReadings />
       </section>

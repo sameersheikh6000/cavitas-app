@@ -11,12 +11,12 @@ const HowItWork = () => {
         <div className='landingPage__howItwork__container__details'>
           <h1 className='landingPage__howItwork__container__details__heading'>How does it work?</h1>
           <p className='landingPage__howItwork__container__details__desc'>
-          We have long-term plans to keep people's teeth healthy           </p>
+          We have long-term plan to keep people's teeth healthy            </p>
           <div className='landingPage__howItwork__container__details__detailsContainer'>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Free choice of dentists in the home country and in all EU              </p>
+              Free choice of dentists in the home country and EU             </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
@@ -42,7 +42,7 @@ const HowItWork = () => {
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Oral cancer treatment cover once per lifetime              </p>
+              Oral cancer treatment in the home country once per lifetime             </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />

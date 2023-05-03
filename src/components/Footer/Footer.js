@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import ContactCavitas from './FooterFormComponent/ContactCavitas'
 import ComplaintForm from './FooterFormComponent/ComplaintForm'
 import FeedbackForm from './FooterFormComponent/Feedbackform'
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
   return (
@@ -12,7 +16,7 @@ const Footer = () => {
         <div className='footer__container__top'>
           <div className='footer__container__top__box'>
             <p className='footer__container__top__box__details'>
-              The insurance service provider: <br /> is Cavitas dental insurance OU. <br /> License nr 16501780. <br />Tallinn Estonia
+              The insurance service provider: <br /> is Northern1 international insurance brokers OÜ. <br /> License nr 12806139. <br />Tallinn Estonia.
             </p>
           </div>
           <div className='footer__container__top__box'>
@@ -52,13 +56,15 @@ const Footer = () => {
               Find us
             </Link>
             <Link to="/findus">
-              Facebook
+            <FacebookOutlinedIcon /> 
+             {/* Facebook */}
             </Link>
             <Link to="/findus">
-            Linkedin
+              <LinkedInIcon />
+            {/* Linkedin */}
             </Link>
             <Link to="/findus">
-            Tiktok
+            <InstagramIcon />
             </Link>
           </div>
         </div>

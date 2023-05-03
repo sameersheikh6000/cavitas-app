@@ -200,7 +200,7 @@ const Tickets = () => {
           <div>
             {/* User side */}
             <section className="dashboard__container__content__cavitasDocs__Detail__tickets"
-            section>
+            >
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />

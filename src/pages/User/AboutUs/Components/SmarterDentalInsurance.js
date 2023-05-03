@@ -6,7 +6,8 @@ const SmarterDentalInsurance = () => {
     <section className='aboutUs__smarterDentalInsurance'>
       <header>
         <h1>Cavitas - Smmarter dental insurance</h1>
-<p>The insurance service provider is Cavitas dental insurance broker OÜ. We are agent of our clients and we act in best interest of our clients.</p>
+<p>
+The insurance service provider is Northern1 international insurance brokers OÜ. We are agent of our clients and we act in best interest of our clients.   </p>
       <p>We do our best efforts to provide the selection of insurance contracts from various dental insurance capacity providers in Europe. </p>
       <p>Due to specifics of dental insurance cover we currently mediate dental insurance contracts from 2 capacity providers:</p>
       </header>

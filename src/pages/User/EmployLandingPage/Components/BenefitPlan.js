@@ -31,7 +31,8 @@ const BenefitPlan = () => {
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            Improving employees' ability to save on dental costs</p>          </div>
+            Improving employees' ability to save on dental treatment costs            
+            </p>          </div>
         </div>
       </div>
     </section>

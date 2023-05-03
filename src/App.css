@@ -1,7 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
-
+*{
+  font-size: 17px;
+}
 *,
 *::after,
 *::before {
@@ -25,6 +27,7 @@ body Button {
   body h1 {
     font-size: 1.8rem !important;
   }
+ 
 }
 
 .sidebar {
@@ -1502,6 +1505,7 @@ body Button {
   margin-top: 0.5rem;
   margin-left: 1rem;
   font-weight: 600;
+  text-align: justify;
   font-size: 0.9rem;
 }
 .landingPage__howItwork {
@@ -2338,7 +2342,7 @@ body Button {
 }
 .aboutUs__ourStory__container__detailsBox__desc1 {
   margin-top: 0.5rem;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 .aboutUs__ourStory__container__detailsBox__desc2 {
   margin-top: 0.5rem;

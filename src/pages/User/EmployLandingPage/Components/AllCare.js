@@ -8,13 +8,13 @@ const AllCare = () => {
         <div className='landingPage__allCare__container__details'>
           <h1 className='landingPage__allCare__container__details__heading'>Easy for members!</h1>
           <p className='landingPage__allCare__container__details__desc'>
-          Members can download the Cavitas app to have all information in their pocket.           </p>
-          <div className='landingPage__allCare__container__details__detailsContainer'>
+          Members can download the Cavitas app to have all information in their pocket
+          </p>
+                    <div className='landingPage__allCare__container__details__detailsContainer'>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Quick cover information at member's fingertips.
-              </p>
+              Quick dental cover information              </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />

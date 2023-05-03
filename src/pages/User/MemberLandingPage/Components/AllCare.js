@@ -6,20 +6,19 @@ const AllCare = () => {
     <section className='landingPage__allCare'>
       <div className='landingPage__allCare__container'>
         <div className='landingPage__allCare__container__details'>
-          <h1 className='landingPage__allCare__container__details__heading'>All-in 1 teeth care!</h1>
+          <h1 className='landingPage__allCare__container__details__heading'>All-in-1 teeth care!</h1>
           <p className='landingPage__allCare__container__details__desc'>
-            Download the Cavitas app to heave all information in one place. Even filling claims is made easy. Try it out yourself!
-          </p>
+          Download the Cavitas app to have all information in your pocket. Try it out!          </p>
           <div className='landingPage__allCare__container__details__detailsContainer'>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-              Quick policy information at your fingertips               </p>
+              Quick dental cover information              </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Daily brushing tips and hints.
+              Daily brushing tips & hints
               </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>

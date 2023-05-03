@@ -10,7 +10,7 @@ const SmartInsurance = () => {
           <h1 className='landingPage__smartInsurance__container__details__heading'>Smarter</h1>
           <h1 className='landingPage__smartInsurance__container__details__heading2'>Dental Insurance</h1>
           <p className='landingPage__smartInsurance__container__details__desc'>
-          Healthy teeth are the foundation of healthy employees. We provide employers dental insurance as highly appreciated employee benefit.           </p>
+          Healthy teeth are the foundation of healthy employees. We provide dental insurance to employers as a highly appreciated employee benefit product.               </p>
           <div className='landingPage__smartInsurance__container__details__buttons ' >
             <Link to="/employ">
               <Button variant='outlined'>I'm employer</Button>
@@ -25,7 +25,7 @@ const SmartInsurance = () => {
           </div>
         </div>
         <div className='landingPage__smartInsurance__container__picture'>
-          <img src={require("../../../../assets/SmartInsurance-image.png")} alt="" />
+          <img src={require("../../../../assets/home_new.png")} alt="" />
         </div>
       </div>
     </section>

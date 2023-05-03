@@ -54,38 +54,7 @@ const BrokerTab = () => {
           </div>
         }
       </div>
-      {/* <div className='faqTab__container'>
-        <div className='faqTab__container__box'>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
-          }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
-          }
-        </div>
-        {faqData === true &&
-          <div className='faqTab__container__box2'>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-          </div>
-        }
-      </div>
-      <div className='faqTab__container'>
-        <div className='faqTab__container__box'>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
-          }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
-          }
-        </div>
-        {faqData === true &&
-          <div className='faqTab__container__box2'>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-          </div>
-        }
-      </div> */}
+     
     </section>
   )
 }

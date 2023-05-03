@@ -22,7 +22,7 @@ function QuoteReplyAnswerForm({ quote_reply, setErrorMessage, setSuccessMessage,
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 600,
     borderRadius: 5,
     bgcolor: "#edf4f4",
     // border: '2px solid #000',
@@ -66,7 +66,7 @@ function QuoteReplyAnswerForm({ quote_reply, setErrorMessage, setSuccessMessage,
           <div className="uploadClient__container__body__participation">
             <h3>Write Your Answer Here!</h3>
             <textarea
-              cols={49}
+             
               onChange={(e) =>
                 setQuoteReplyAnswer({
                   ...quoteReplyAnswer,
@@ -77,6 +77,7 @@ function QuoteReplyAnswerForm({ quote_reply, setErrorMessage, setSuccessMessage,
               style={{
                 margin: "8px",
                 padding: "5px",
+                width:"100%",
                 background: "none",
                 borderRadius: "15px",
               }}

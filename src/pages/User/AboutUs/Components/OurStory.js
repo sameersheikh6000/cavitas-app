@@ -24,13 +24,12 @@ const OurStory = () => {
         </div>
         <div className='aboutUs__ourStory__container__detailsBox'>
           <h1>Our Story</h1>
-          <p className='aboutUs__ourStory__container__detailsBox__desc'>We started in 2018.....</p>
+          {/* <p className='aboutUs__ourStory__container__detailsBox__desc'>We started in 2018.....</p> */}
           <p className='aboutUs__ourStory__container__detailsBox__desc1'>
-          In 2018 we started mediating dental insurance contracts to people in Estonia where, like in other Estern-Europe (post-Soviet) countries such insurance product offer was not existing. During 4 years we eperience high interest towards such risk as well high risk profile of the product.             </p>
-          
+          In 2018 we started mediating dental insurance contracts to people in Estonia where, like in other Estern-Europe countries, such insurance product offer was not existing. Now we are happy to provide dental insurance contracts to Poland under trading name Cavitas</p>          
           <p className='aboutUs__ourStory__container__detailsBox__desc1'>
-          Via discussions with numerous dental insurance risk carriers, we have found a way to both satisfy the insurance interest needs of our clients and, on the other hand, satisfy insurers' demands for the fair loss ratios.</p>          
-          <p className='aboutUs__ourStory__container__detailsBox__desc2'>
+          The goal of Cavitas - Smarter Dental Insurance is to help people maintain their natural teeth for a longer period of time—hopefully for the rest of their lives—while also providing dental insurance in a more intelligent way that focuses on prevention of teeth-related problems and also covering various dental treatment costs. It also makes all dental-related information accessible on smart mobile devises.</p>
+                    <p className='aboutUs__ourStory__container__detailsBox__desc2'>
           Last but not least - we are getting even more smarter! Stay turned!             </p>
         </div>
       </div>

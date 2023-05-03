@@ -27,7 +27,7 @@ import InsuredClientGroup from "../pages/User/InsuredClientView/InsuredClientGro
 import AdminInsuredClientView from "../pages/Admin/InsuredClientView";
 import LandingPage from "../pages/User/LandingPage";
 import Cart from "../pages/User/Cart";
-import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading";
+// import ValuableReadingView from "../pages/User/MemberLandingPage/ValuableReading";
 import UserInformation from "../pages/Admin/UserInformation";
 import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
@@ -47,6 +47,9 @@ import InsuredPersonSupportTicket from "../pages/User/SupportView/TicketingSyste
 // import contactCavitas from "../pages/Form/ContactCavitas/index"
 import SupportFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/SupportFormDetail";
 import QuoteFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/QuoteFormDetail";
+import Blog2 from "../pages/User/MemberLandingPage/ValuableReading/Blog2";
+import Blog3 from "../pages/User/MemberLandingPage/ValuableReading/Blog3";
+import Blog1 from "../pages/User/MemberLandingPage/ValuableReading/Blog1";
 
 
 export const routes = [
@@ -159,11 +162,11 @@ export const routes = [
     component: Cart,
     isPrivate: false,
   },
-  {
-    path: "/valuablereading/view/:id",
-    component: ValuableReadingView,
-    isPrivate: false,
-  },
+  // {
+  //   path: "/valuablereading/view/:id",
+  //   component: ValuableReadingView,
+  //   isPrivate: false,
+  // },
 
 
   // admin routes
@@ -310,6 +313,26 @@ export const routes = [
     path: "admin/quotes/:id/QuoteDetail",
     component: QuoteFormDetail,
     inPrivate: false
-  }
+  },
+  // blog
+  {
+    path: "/Blog1",
+    component: Blog1,
+    inPrivate: false
+  },
+  {
+    path: "/Blog2",
+    component: Blog2,
+    inPrivate: false
+  },
+  {
+    path: "/Blog3",
+    component: Blog3,
+    inPrivate: false
+  },
 ]
 
+
+
+
+// blog

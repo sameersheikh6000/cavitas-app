@@ -6,8 +6,11 @@ const OurOffer = () => {
   return (
     <section className='landingPage__ourOffer'>
       <header className='landingPage__ourOffer__header'>
-        <h1>What we offer</h1>
-<p>In order to attract and retain top talents, companies often provide additional benefits beyond just salary. Dental expenses can be a significant financial burden for employees, which is why we offer reimbursement for dental treatment costs as one of our services.</p>
+        <h1>What do we offer?</h1>
+<p>
+To attract and retain top talent, companies often provide additional benefits beyond just salary. We offer reimbursement for dental treatment costs as one of our services because dental expenses can be a significant financial burden for employees
+
+</p>
       </header>
       <div className='landingPage__ourOffer__container'>
         <div className='landingPage__ourOffer__container__boxes'>
@@ -39,6 +42,7 @@ const OurOffer = () => {
             </div> */}
             <Button>Suggest to your employer</Button>
           </div>
+          
           <div className='landingPage__ourOffer__container__boxes__detailsContainer'>
             <h4 className='landingPage__ourOffer__container__boxes__detailsContainer__heading'>Value for employer</h4>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>

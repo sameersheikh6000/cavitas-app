@@ -5,7 +5,7 @@ const BenefitPlan = () => {
     <section className='landingPage__benefitPlan'>
       <div className='landingPage__benefitPlan__container'>
         <div className='landingPage__benefitPlan__container__picture'>
-          <img src={require("../../../../assets/BenefitPlan-image.png")} alt="" />
+          <img src={require("../../../../assets/broker3.png")} alt="" />
         </div>
 
         <div className='landingPage__benefitPlan__container__details'>
@@ -25,8 +25,7 @@ const BenefitPlan = () => {
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            To helping employees to access preventive dental care, which can help detect oral health issues at early stage
-            </p>
+            To help employees to access preventive dental care, which can help detect oral health issues at early stage            </p>
           </div>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />

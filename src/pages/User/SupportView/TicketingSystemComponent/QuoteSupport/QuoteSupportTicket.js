@@ -68,7 +68,7 @@ const QuoteSupportTicket = () => {
           <div className="insuredClientView__header__left">
             <Link to="/support/view">
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support ticket #{quoteFormDetail?.id}
+                My Quote ticket #{quoteFormDetail?.id}
               </Button>
             </Link>
           </div>

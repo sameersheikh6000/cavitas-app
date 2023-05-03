@@ -24,7 +24,7 @@ function QuoteReplyForm({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 600,
     borderRadius: 5,
     bgcolor: "#edf4f4",
     // border: '2px solid #000',

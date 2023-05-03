@@ -24,7 +24,7 @@ function SupportReplyForm({
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: 400,
+    width: 600,
     borderRadius: 5,
     bgcolor: "#edf4f4",
     // border: '2px solid #000',
@@ -76,8 +76,8 @@ function SupportReplyForm({
                   padding: "5px",
                   background: "none",
                   borderRadius: "15px",
+                  width: "100%"
                 }}
-                cols={49}
                 onChange={(e) =>
                   setTicketReply({ ...ticketReply, reply_text: e.target.value })
                 }
