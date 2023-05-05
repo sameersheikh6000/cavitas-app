@@ -3,15 +3,14 @@ import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 
 const MemberTab = () => {
-  const [faqData, setFaqData] = useState(false);
+  const [faqData, setFaqData] = useState([false, false, false]);
 
-  const handleFaqData = () => {
-    if (faqData == false) {
-      setFaqData(true)
-    } else {
-      setFaqData(false)
-    }
+  const handleFaqData = (index) => {
+    const newData = [...faqData];
+    newData[index] = !newData[index];
+    setFaqData(newData);
   }
+
   return (
     <section className='faqTab'>
       <div className='faqTab__container'>
@@ -19,14 +18,14 @@ const MemberTab = () => {
           <p>
           Q1: How can me as employee of the company get Cavitas dental insurance cover?
           </p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[0] === false &&
+            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(0)} />
           }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[0] === true &&
+            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(0)} />
           }
         </div>
-        {faqData === true &&
+        {faqData[0] === true &&
           <div className='faqTab__container__box2'>
             <p>
             A1: In order for the group insurance contract between the insurer and your company to be finalized and for you to receive the advantages of Cavitas dental insurance, your employer must declare its insurance interest to us (or do it through another mandated broker).</p>          </div>
@@ -37,14 +36,14 @@ const MemberTab = () => {
           <p>
           Q2: Can me as employee add my family members to cover?            
           </p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[1] === false &&
+            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(1)} />
           }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[1] === true &&
+            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(1)} />
           }
         </div>
-        {faqData === true &&
+        {faqData[1] === true &&
           <div className='faqTab__container__box2'>
             <p>
             A2: Yes you can add your spouse/partner and children up to 23 year old if you have such permission from your employer.
@@ -56,14 +55,14 @@ const MemberTab = () => {
         <div className='faqTab__container__box'>
           <p>
           Q3: In wich dental clinics Cavitas dental insurance is valid?            </p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[2] === false &&
+            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(2)} />
           }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[2] === true &&
+            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(2)} />
           }
         </div>
-        {faqData === true &&
+        {faqData[2] === true &&
           <div className='faqTab__container__box2'>
             <p>
             A3: Cavitas dental insurance is valid in any dental clinic in Poland or EU/EEA country (except oral cancer treatment what must be done in Poland only). In the event of an dental accident coverage is valid in all licensed dental clinics wordlwide. 

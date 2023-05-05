@@ -3,29 +3,28 @@ import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 
 const EmployerTab = () => {
-  const [faqData, setFaqData] = useState(false);
+  const [faqData, setFaqData] = useState([false, false, false]);
 
-  const handleFaqData = () => {
-    if (faqData == false) {
-      setFaqData(true)
-    } else {
-      setFaqData(false)
-    }
+  const handleFaqData = (index) => {
+    const newData = [...faqData];
+    newData[index] = !newData[index];
+    setFaqData(newData);
   }
+
   return (
     <section className='faqTab'>
       <div className='faqTab__container'>
         <div className='faqTab__container__box'>
           <p>
           Q1: How us as company can get Cavitas dental insurance cover for our employees?            </p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[0] === false &&
+            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(0)} />
           }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[0] === true &&
+            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(0)} />
           }
         </div>
-        {faqData === true &&
+        {faqData[0] === true &&
           <div className='faqTab__container__box2'>
             <p>
             A1: In order for the group insurance contract between the insurer and the company please declare your insurance interest to us (or to your other mandated broker).
@@ -38,14 +37,14 @@ const EmployerTab = () => {
           <p>Q2: Is there a requirement for minimum amount of employees to conclude Cavitas dental insurance contract with insurer?
 
           </p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[1] === false &&
+            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(1)} />
           }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[1] === true &&
+            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(1)} />
           }
         </div>
-        {faqData === true &&
+        {faqData[1] === true &&
           <div className='faqTab__container__box2'>
             <p>A2: Yes, please contact us and we'll share you the requirements.</p>
           </div>
@@ -56,14 +55,14 @@ const EmployerTab = () => {
           <p>
           Q3: How my employees would se serviced during policy period?
           </p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[2] === false &&
+            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(2)} />
           }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
+          {faqData[2] === true &&
+            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(2)} />
           }
         </div>
-        {faqData === true &&
+        {faqData[2] === true &&
           <div className='faqTab__container__box2'>
             <p>
             A3: All members (employee and family members) can download Cavitas dental insurance mobile application to have a quick access to policy information, submit quickly claims, get guidelines how to brush the teeth as well buy effective teeth care products. On website (www.cavitas.pl) all members can access to login-protected area to have a access to the same information. 

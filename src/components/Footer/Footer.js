@@ -5,7 +5,6 @@ import ComplaintForm from "./FooterFormComponent/ComplaintForm";
 import FeedbackForm from "./FooterFormComponent/Feedbackform";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 const Footer = () => {

@@ -85,7 +85,7 @@ const SupportTickets = () => {
             {ticketList.length > 0 &&
               ticketList.map((row, index) => (
                 <tr key={index}>
-                  <td>{row?.status == "fresh" ? "NEW" : row?.status.toUpperCase()}</td>
+                  <td>{row?.status == "fresh" ? "NEW" : row?.status?.toUpperCase()}</td>
                   <td><a href="" onClick={() => navigate( `/admin/support-tickets/${row?.id}/supportFormDetail`)}>{row?.id} </a> </td>
                   <td>{row?.request}</td>
                   <td>{row?.description}</td>
