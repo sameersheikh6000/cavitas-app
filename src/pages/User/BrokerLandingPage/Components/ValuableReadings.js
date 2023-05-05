@@ -3,6 +3,8 @@ import React from 'react'
 const ValuableReadings = () => {
   return (
     <section className='landingPage__valuableReadings'>
+          <section className='landingPage__conversation'>
+
       <header className='landingPage__valuableReadings__header'>
         <h1>Valuable Reading</h1>
         <p>Recent blog posts</p>
@@ -29,6 +31,7 @@ const ValuableReadings = () => {
           </div>
         </div>
       </div>
+    </section>
     </section>
   )
 }

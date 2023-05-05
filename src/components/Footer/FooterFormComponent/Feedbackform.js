@@ -63,7 +63,7 @@ function FeedbackForm() {
         }}
         onClick={() => handleOpen()}
       >
-   Give Us Feedback
+  Give us feedback
       </Button>
       <Modal
         open={open}
@@ -129,7 +129,7 @@ function FeedbackForm() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div>
                     <textarea
-                    style={{ marginLeft: "20px" }}
+                      style={{width: "200%" }}
                       className="textarea"
                       placeholder="Your text here                 "
                       cols={10}

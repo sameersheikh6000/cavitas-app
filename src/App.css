@@ -1,9 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
-*{
+/* *{
   font-size: 17px;
-}
+} */
 *,
 *::after,
 *::before {
@@ -197,11 +197,17 @@ body Button {
   }
 }
 .appbar__linksBox__links {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   flex: 1;
   overflow: hidden;
-  margin-left: 1rem;
+  margin-left: 1rem; */
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1;
+  overflow: hidden;
+  margin-top: 15px;
+  margin-left: 6rem;
 }
 .appbar__linksBox__links__link {
   color: black;
@@ -224,6 +230,7 @@ body Button {
 .appbar__linksBox__translate {
   margin-right: 1rem;
   margin-left: 1rem;
+  margin-top: 15px;
 }
 .appbar__sidebar1 {
   display: none;
@@ -1432,12 +1439,22 @@ body Button {
   text-transform: none;
   color: white !important;
   background-color: #dd3333 !important;
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   margin-top: 0.5rem;
+  border-radius: 2rem !important;
+  border: none !important;
+  padding: 0.9rem 2.5rem;
+}
+.landingPage__ourOffer__container__boxes__detailsContainer BUtton:hover {
+  background: white !important;
+  border: 2px solid #dd3333 !important;
+  color: #dd3333 !important;
 }
 .landingPage__valuableReadings {
-  padding: 4rem 1rem;
-  margin: 0 10%;
+  padding: 2rem 1rem;
+  margin: 4rem 10%;
+  box-shadow: 0 0.5rem 1.5rem #d3d3d3;
+  border-radius: 2rem;
 }
 @media (max-width: 1250px) {
   .landingPage__valuableReadings {
@@ -1504,7 +1521,7 @@ body Button {
 .landingPage__valuableReadings__container__cardsBox__card__desc {
   margin-top: 0.5rem;
   margin-left: 1rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   text-align: justify;
   font-size: 0.9rem;
 }
@@ -1568,8 +1585,8 @@ body Button {
 .landingPage__howItwork__container__details__detailsContainer__box__text {
   margin-left: 0.3rem;
   font-weight: 500;
-  font-size: 0.8rem;
-  color: gray;
+  /* font-size: 0.8rem; */
+  /* color: gray; */
 }
 .landingPage__howItwork__container__picture {
   width: 45%;

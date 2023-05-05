@@ -50,7 +50,7 @@ function Navbar() {
                   <Link className='appbar__linksBox__links__link' to="/broker">Broker login</Link>
                 </div>
                 <img className='appbar__linksBox__translate' src={require("../../assets/Navbar-translate.png")} alt="" />
-                <IconButton>
+                <IconButton style={{marginTop: "13px"}}>
                   <ShoppingCartOutlinedIcon className='appbar__linksBox__icon' onClick={() => navigate("/cart")} />
                 </IconButton>
               </Box>

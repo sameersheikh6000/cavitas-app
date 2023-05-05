@@ -63,7 +63,7 @@ function ContactCavitas() {
         }}
         onClick={() => handleOpen()}
       >
-        Contact For Support
+        Contact for support
       </Button>
       <Modal
         open={open}
@@ -129,10 +129,10 @@ function ContactCavitas() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div>
                     <textarea
-                      style={{ marginLeft: "20px" }}
+                      style={{width: "200%" }}
+
                       className="textarea"
                       placeholder="Your text here                 "
-                      cols={10}
                       rows={5}
                       onChange={(e) => setContactForm({...contactForm, description: e.target.value})}
                     ></textarea>

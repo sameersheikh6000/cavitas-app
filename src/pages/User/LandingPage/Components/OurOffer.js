@@ -40,7 +40,7 @@ To attract and retain top talent, companies often provide additional benefits be
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
               <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Lorem ipsum</span>
             </div> */}
-            <Button>Suggest to your employer</Button>
+            {/* <Button>Suggest to your employer</Button> */}
           </div>
           
           <div className='landingPage__ourOffer__container__boxes__detailsContainer'>
@@ -69,8 +69,25 @@ To attract and retain top talent, companies often provide additional benefits be
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
               <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Lorem ipsum</span>
             </div> */}
+            {/* <GetQuoteCavitas /> */}
+          </div>
+          
+        </div>
+       
+       
+        <div className='landingPage__ourOffer__container__boxes'>
+          <div className='landingPage__ourOffer__container__boxes__detailsContainer'
+           style={{border: "none"}}>
+         
+          
+            <Button>Suggest to your employer</Button>
+          </div>
+          
+          <div className='landingPage__ourOffer__container__boxes__detailsContainer'
+          style={{border: "none"}}>
             <GetQuoteCavitas />
           </div>
+          
         </div>
       </div>
     </section>

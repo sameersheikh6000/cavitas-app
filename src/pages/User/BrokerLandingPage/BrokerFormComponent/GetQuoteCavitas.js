@@ -146,7 +146,7 @@ function GetQuoteCavitas() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div>
                     <textarea
-                      style={{ marginLeft: "20px" }}
+                      style={{width: "200%" }}
                       className="textarea"
                       placeholder="Are there any other details you'd like to tell us about your group?"
                       cols={10}

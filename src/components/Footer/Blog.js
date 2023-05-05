@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import Page from "../Page/Page";
 
-const ValuableReadings = () => {
+const Blog = () => {
   const navigate = useNavigate();
   return (
-
+<Page>
     <section className="landingPage__valuableReadings">
       <header className="landingPage__valuableReadings__header">
         <h1>Valuable Reading</h1>
@@ -108,7 +109,8 @@ const ValuableReadings = () => {
         </div>
       </div>
     </section>
+    </Page>
   );
 };
 
-export default ValuableReadings;
+export default Blog;

@@ -50,6 +50,7 @@ import QuoteFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/Ticket
 import Blog2 from "../pages/User/MemberLandingPage/ValuableReading/Blog2";
 import Blog3 from "../pages/User/MemberLandingPage/ValuableReading/Blog3";
 import Blog1 from "../pages/User/MemberLandingPage/ValuableReading/Blog1";
+import Blog from "../components/Footer/Blog";
 
 
 export const routes = [
@@ -328,6 +329,11 @@ export const routes = [
   {
     path: "/Blog3",
     component: Blog3,
+    inPrivate: false
+  },
+  {
+    path: "/Blog",
+    component: Blog,
     inPrivate: false
   },
 ]
