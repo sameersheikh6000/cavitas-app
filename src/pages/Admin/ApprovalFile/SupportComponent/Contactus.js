@@ -102,7 +102,7 @@ const Contactus = () => {
                       <td>
                         {row?.status == "fresh"
                           ? "NEW"
-                          : row?.status}
+                          : row?.status ? row?.status.toUpperCase() : ""}
                       </td>
                       <td>
                         <a
