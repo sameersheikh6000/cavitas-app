@@ -8,7 +8,7 @@ const HealthyTeeth = () => {
     <section className='landingPage__healthyTeeth'>
       <div className='landingPage__healthyTeeth__container'>
         <h1>Healthy Teeth-Healthy Employees</h1>
-        <Button onClick={() => navigate('/employ-signin')} > Employer / HR manager login</Button>
+        <Button onClick={() => navigate('/employ-signin')} > Employer / HR manager Log in</Button>
       </div>
     </section >
   )

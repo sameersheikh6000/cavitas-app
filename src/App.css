@@ -1631,7 +1631,7 @@ body Button {
   display: flex;
   flex-direction: column;
   width: 45%;
-  margin-top: 25px;
+  margin-top: 45px;
 }
 @media (max-width: 1000px) {
   .landingPage__allCare__container__details {
@@ -1728,7 +1728,7 @@ body Button {
 .landingPage__clientDeserve__container h1 {
   font-size: 3rem;
   font-weight: bolder;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   color: #dd3333;
 }
 @media (max-width: 1000px) {

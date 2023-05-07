@@ -19,11 +19,12 @@ const CoverWorks = () => {
             <p>Prevention treatment</p>
             <p>X-rays</p>
             <p>Anesthesia</p>
-            <p>Filling</p>
+            <p>Fillings</p>
             <p>Root canal treatment</p>
-            <p>Extraction</p>
+            <p>Extractions</p>
+            <p>Periodontal treatment</p>
             <p>Worldwide accident cover</p>
-            <p>Oral cacer</p>
+            <p>Oral cancer cover</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>*One (1) per lifetime</span>
             </div>
@@ -35,15 +36,16 @@ const CoverWorks = () => {
             <p>Prevention treatment</p>
             <p>X-rays</p>
             <p>Anesthesia</p>
-            <p>Filling</p>
+            <p>Fillings</p>
             <p>Root canal treatment</p>
-            <p>Extraction</p>
-            <p>Crown</p>
+            <p>Extractions</p>
+            <p>Periodontal treatment</p>
+            <p>Crowns</p>
             <p>Bridge</p>
-            <p>Denture</p>
-            <p>Implant</p>
+            {/* <p>Denture</p>
+            <p>Implant</p> */}
             <p>Worldwide accident cover</p>
-            <p>Oral cacer cover*</p>
+            <p>Oral cancer cover*</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>*One (1) per lifetime</span>
             </div>
@@ -55,16 +57,18 @@ const CoverWorks = () => {
             <p>Prevention treatment</p>
             <p>X-rays</p>
             <p>Anesthesia</p>
-            <p>Filling</p>
+            <p>Fillings</p>
             <p>Root canal treatment</p>
-            <p>Extraction</p>
-            <p>Crown</p>
+            <p>Extractions</p>
+            <p>Periodontal treatment</p>
+            <p>Crowns</p>
             <p>Bridge</p>
-            <p>Denture implant!!!</p>
-            <p>Teeth whitening</p>
-            <p>Adult orthodontics*</p>
+            <p>Dentures</p>
+            <p>Implant</p>
+            <p> !!! Teeth whitening</p>
+            <p>!!! Adult orthodontics*</p>
             <p>Worldwide accident cover</p>
-            <p>Oral cacer cover*</p>
+            <p>Oral cancer cover*</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>*One (1) per lifetime</span>
             </div>

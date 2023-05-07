@@ -16,9 +16,10 @@ const CoverWorks = () => {
             <p>Prevention treatment</p>
             <p>X-rays</p>
             <p>Anesthesia</p>
-            <p>Filling</p>
+            <p>Fillings</p>
             <p>Root canal treatment</p>
-            <p>Extraction</p>
+            <p>Extractions</p>
+           <p> Periodontal treatment</p>
             <p>Worldwide accident cover</p>
             <p>Oral cacer</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
@@ -32,9 +33,9 @@ const CoverWorks = () => {
             <p>Prevention treatment</p>
             <p>X-rays</p>
             <p>Anesthesia</p>
-            <p>Filling</p>
+            <p>Fillings</p>
             <p>Root canal treatment</p>
-            <p>Extraction</p>
+            <p>Extractions</p>
             <p>Crown</p>
             <p>Bridge</p>
             <p>Denture</p>
@@ -52,9 +53,9 @@ const CoverWorks = () => {
             <p>Prevention treatment</p>
             <p>X-rays</p>
             <p>Anesthesia</p>
-            <p>Filling</p>
+            <p>Fillings</p>
             <p>Root canal treatment</p>
-            <p>Extraction</p>
+            <p>Extractions</p>
             <p>Crown</p>
             <p>Bridge</p>
             <p>Denture implant!!!</p>

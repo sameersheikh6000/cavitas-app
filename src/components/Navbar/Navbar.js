@@ -56,15 +56,17 @@ function Navbar() {
                   <Link className="appbar__linksBox__links__link" to="/claims">
                     Claims
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to="/member">
-                    Member login
+                  <Link className="appbar__linksBox__links__link" to="/broker">
+                    Broker log in
                   </Link>
                   <Link className="appbar__linksBox__links__link" to="/employ">
-                    Employer login
+                    Employer log in
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to="/broker">
-                    Broker login
+                  <Link className="appbar__linksBox__links__link" to="/member">
+                    Member log in
                   </Link>
+                 
+                  
                 </div>
                 <img
                   className="appbar__linksBox__translate"
