@@ -11,7 +11,9 @@ const ValuableReadings = () => {
       <header className="landingPage__valuableReadings__header">
         <h1>Valuable Reading</h1>
         {/* <p>Recent blog posts</p> */}
-        <p>Cavitas blog</p>
+        <Link to="/Blog" style={{ color: "red", textDecoration:"none" }}>
+                  <p>Recent blog posts</p>
+                </Link>
       </header>
       <div className="landingPage__valuableReadings__container">
         <div className="landingPage__valuableReadings__container__cardsBox">
@@ -25,7 +27,7 @@ const ValuableReadings = () => {
                 Importance of dental insurance
               </p>
               <span className="landingPage__valuableReadings__container__cardsBox__card__date">
-                by Cavitas | April 3, 2023
+              by Cavitas |  May 20, 2023
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 Maintaining good dental health is an important aspect of overall
@@ -55,7 +57,7 @@ const ValuableReadings = () => {
                 Good teeth care matters!
               </p>
               <span className="landingPage__valuableReadings__container__cardsBox__card__date">
-                by Cavitas | April 3, 2023
+              by Cavitas |  May 20, 2023
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 Taking care of your teeth is essential for maintaining good oral
@@ -86,7 +88,7 @@ const ValuableReadings = () => {
                 employees?
               </p>
               <span className="landingPage__valuableReadings__container__cardsBox__card__date">
-                by Cavitas | April 3, 2023
+              by Cavitas |  May 20, 2023
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 Dental insurance is a type of insurance that helps employees pay

@@ -14,7 +14,7 @@ const Blog3 = () => {
           <h1>
             Why is it a good investment to offer dental insurance to employees?
           </h1>
-          <p>by Cavitas | April 3, 2023</p>
+          <p>by Cavitas |  May 20, 2023</p>
         </header>
         <div
           className="valuableReadingView__container"

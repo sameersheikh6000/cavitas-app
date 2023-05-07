@@ -8,8 +8,7 @@ const OurOffer = () => {
       <header className='landingPage__ourOffer__header'>
         <h1>What do we offer?</h1>
 <p>
-To attract and retain top talent, companies often provide additional benefits beyond just salary. We offer reimbursement for dental treatment costs as one of our services because dental expenses can be a significant financial burden for employees
-
+To attract and retain top talents, companies often provide additional benefits beyond just salary. We offer reimbursement for dental treatment costs as one of our services because dental expenses can be a significant financial burden for employees.
 </p>
       </header>
       <div className='landingPage__ourOffer__container'>
