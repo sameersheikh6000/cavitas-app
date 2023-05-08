@@ -62,9 +62,10 @@ const OurStory = () => {
           {/* <p className='aboutUs__ourStory__container__detailsBox__desc'>We started in 2018.....</p> */}
           <p className="aboutUs__ourStory__container__detailsBox__desc1">
             In 2018 we started mediating dental insurance contracts to people in
-            Estonia where, like in other Estern-Europe countries, such insurance
-            product offer was not existing. Now we are happy to provide dental
-            insurance contracts to Poland under trading name Cavitas
+            Estonia where like in many other countries such insurance product
+            offer did not exist. Now we are happy to provide dental insurance
+            contracts to Polish employee benefit market under the trading name
+            Cavitas.
           </p>
           <p className="aboutUs__ourStory__container__detailsBox__desc1">
             The goal of Cavitas - Smarter Dental Insurance is to help people
@@ -75,7 +76,7 @@ const OurStory = () => {
             makes all dental-related information accessible on smart mobile
             devises.
           </p>
-          <p className="aboutUs__ourStory__container__detailsBox__desc2">
+          <p className="aboutUs__ourStory__container__detailsBox__desc1">
             Last but not least - we are getting even more smarter! Stay turned!{" "}
           </p>
         </div>

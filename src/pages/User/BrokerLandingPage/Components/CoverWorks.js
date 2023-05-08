@@ -24,7 +24,7 @@ const CoverWorks = () => {
             <p>Extractions</p>
             <p>Periodontal treatment</p>
             <p>Worldwide accident cover</p>
-            <p>Oral cancer cover</p>
+            <p>Oral cancer cover*</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>*One (1) per lifetime</span>
             </div>

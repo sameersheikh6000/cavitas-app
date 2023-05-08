@@ -89,7 +89,7 @@ function GetQuoteCavitas() {
                   <div>
                     <input 
                       type="text" 
-                      placeholder="First and last Name*" 
+                      placeholder="First and last name*" 
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
                   </div>
@@ -138,9 +138,14 @@ function GetQuoteCavitas() {
                   <div style={{ marginTop: "8px" }}>
                     <input
                       type="date"
-                      placeholder="Desired inception date of the cover?*"
+                      placeholder="date"
                       onChange={(e) => setFormData({ ...formData, inceptionDate: e.target.value})}
                     />
+ <input
+                      type="date" placeholder="hello"
+                    />
+
+               
                   </div>
                 </div>
               </div>

@@ -71,6 +71,7 @@ body Button {
 .sidebar__linkButtons__link {
   display: flex;
   align-items: center;
+  cursor: pointer;
   text-decoration: unset;
   margin: 0.5rem 0;
   margin-left: 3rem;
@@ -78,20 +79,22 @@ body Button {
 .sidebar__linkButtons__link p {
   margin-left: 1rem;
   color: white;
+  cursor: pointer;
   font-size: 0.8rem;
 }
 .sidebar__linkButtons__link__icon {
   color: white;
+  cursor: pointer;
   font-size: 1.8rem !important;
 }
-.sidebar__linkButtons a:hover p,
-.sidebar__linkButtons a:focus p,
-.sidebar__linkButtons :active p {
+.sidebar__linkButtons__link:hover p ,
+.sidebar__linkButtons__link:active p,
+.sidebar__linkButtons__link:focus p {
   color: #dd3333 !important;
 }
-.sidebar__linkButtons a:hover__icon,
-.sidebar__linkButtons a:focus__icon,
-.sidebar__linkButtons :active__icon {
+.sidebar__linkButtons__link__icon:hover __link ,
+.sidebar__linkButtons__link__icon:focus  __link ,
+.sidebar__linkButtons__link__icon:active  __link {
   color: #dd3333 !important;
 }
 .sidebar__linkButtons__buttons {
@@ -626,11 +629,13 @@ body Button {
   }
 }
 .dashboard__container__content__welcomePage__heading {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .dashboard__container__content__welcomePage__description {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  /* margin-top: 1rem; */
+  font-size: 13px;
+  line-height: 21px;
+
 }
 .dashboard__container__content__welcomePage__support {
   margin-top: 2rem;
@@ -2254,7 +2259,8 @@ body Button {
 }
 .aboutUs__ourStory__container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
   align-items: center;
 }
 @media (max-width: 1000px) {
@@ -2365,11 +2371,13 @@ body Button {
 .aboutUs__ourStory__container__detailsBox__desc {
   color: #dd3333;
   font-weight: 500;
+ 
   margin-top: 0.5rem;
 }
 .aboutUs__ourStory__container__detailsBox__desc1 {
   margin-top: 0.5rem;
   font-size: 0.9rem;
+   text-align: justify;
 }
 .aboutUs__ourStory__container__detailsBox__desc2 {
   margin-top: 0.5rem;

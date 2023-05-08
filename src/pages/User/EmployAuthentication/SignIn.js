@@ -99,7 +99,7 @@ const EmploySignIn = () => {
               }
               <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowPassword} />
             </div>
-            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In</Button>
+            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In To</Button>
           </form>
           <Link to="/" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
           <div className='authentication__container__formContainer__registerNow'>

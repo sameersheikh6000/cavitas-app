@@ -66,6 +66,7 @@ const SignIn = () => {
           <form className='authentication__container__formContainer__form' onSubmit={submitHandler}>
             <input
               className='authentication__container__formContainer__form__email'
+              style={{backgroundColor: "#edf4f4"}}
               type='email'
               placeholder='Email'
               name='email'
@@ -76,6 +77,7 @@ const SignIn = () => {
             <div className='authentication__container__formContainer__form__passwordBox'>
               {viewPassword === true ?
                 <input
+                style={{backgroundColor: "#edf4f4"}}
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='text'
                   name='password'
@@ -87,6 +89,7 @@ const SignIn = () => {
                 />
                 :
                 <input
+              
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='password'
                   name='password'
@@ -99,7 +102,7 @@ const SignIn = () => {
               }
               <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowPassword} />
             </div>
-            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In</Button>
+            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In To</Button>
           </form>
           <Link to="/" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
           <div className='authentication__container__formContainer__registerNow'>

@@ -14,7 +14,7 @@ const DentalInsurance = () => {
           </p>
           <div className='landingPage__dentaltInsurance__container__details__buttons'>
             <Link to="/member-signin">
-              <Button variant='outlined'>Member login</Button>
+              <Button variant='outlined'>Member log in</Button>
             </Link>
             <Link to="/claims">
               <Button variant='outlined'>Submit claim</Button>
