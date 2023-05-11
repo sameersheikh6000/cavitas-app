@@ -141,11 +141,6 @@ function GetQuoteCavitas() {
                       placeholder="date"
                       onChange={(e) => setFormData({ ...formData, inceptionDate: e.target.value})}
                     />
- <input
-                      type="date" placeholder="hello"
-                    />
-
-               
                   </div>
                 </div>
               </div>

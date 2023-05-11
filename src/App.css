@@ -218,6 +218,12 @@ body Button {
   font-weight: 500;
   white-space: nowrap;
   margin-right: 1rem;
+}.appbar__linksBox__links__verification {
+  color: red;
+  text-decoration: unset;
+  font-size: 13px;
+  white-space: nowrap;
+  
 }
 .appbar__linksBox__links a:hover,
 .appbar__linksBox__links a:focus,
@@ -359,6 +365,18 @@ body Button {
   justify-content: center;
   align-items: center;
 }
+
+.authentication__container__imageBox__bottom__forget {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authentication__container__imageBox__bottom__forget img {
+  object-fit: contain;
+  width: 100%;
+}
 .authentication__container__imageBox__bottom img {
   object-fit: contain;
   width: 100%;
@@ -400,6 +418,14 @@ body Button {
   width: 220px;
   background-color: #edf4f4;
 }
+.authentication__container__formContainer__form__forget input {
+  border-radius: 2rem;
+  padding: 0.5rem 0.7rem;
+  outline: none;
+  border: none;
+  width: 320px;
+  background-color: #edf4f4;
+}
 .authentication__container__formContainer__form__passwordBox {
   margin-top: 1rem;
 }
@@ -409,7 +435,19 @@ body Button {
 .authentication__container__formContainer__form__passwordBox__passwordIcon {
   position: absolute;
   margin-left: -2.5rem;
+  margin-top: 0.5rem;
+}
+.authentication__container__formContainer__form__passwordBox__passwordIcon__forget {
+  position: absolute;
+  margin-left: -2.5rem;
   margin-top: 0.3rem;
+  cursor: pointer;
+}
+.supportView__header__iconBox__forget__update{
+margin-left: 0.5rem;
+/* font-weight: 600; */
+color: gray !important;
+font-size: 1rem !important;
 }
 .authentication__container__formContainer__form__loginButton_tickets {
   background-color: #dd3333 !important;
@@ -430,6 +468,26 @@ body Button {
   padding: 5px 0 !important;
   font-weight: 400 !important;
   font-family: "poppins" !important;
+}
+.authentication__container__formContainer__form__forget__loginButton {
+  background-color: #dd3333 !important;
+  color: white !important;
+  width: 320px !important;
+  text-transform: none;
+  border-radius: 50px !important;
+  margin: 1rem 0 !important;
+  padding: 5px 0 !important;
+  font-weight: 600 !important;
+}
+.authentication__container__formContainer__form__forget__loginButton__update {
+  background-color: #dd3333 !important;
+  color: white !important;
+  width: 300px !important;
+  text-transform: none;
+  border-radius: 50px !important;
+  margin: 1rem 0 !important;
+  padding: 5px 0 !important;
+  font-weight: 600 !important;
 }
 .authentication__container__formContainer__form__loginButton_Form {
   background-color: #dd3333 !important;
@@ -3217,6 +3275,26 @@ body Button {
   color: #dd3333;
   font-size: 1.5rem;
 }
+.supportView__header__iconBox__forget {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.supportView__header__iconBox__icon__forget {
+  color: #dd3333 !important;
+  font-size: 2rem !important;
+  cursor: pointer;
+}
+.supportView__header__iconBox__icon__forget {
+  color: #dd3333 !important;
+  font-size: 2rem !important;
+}
+.supportView__header__iconBox__forget p {
+  margin-left: 0.5rem;
+  font-weight:600;
+  color: gray !important;
+  font-size: 1.2rem;
+}
 .supportView__details {
   margin-top: 2rem;
   overflow: auto;
@@ -3602,3 +3680,25 @@ body.active-modal {
   color: white;
   background-color: #2ea3f2;
 }
+
+
+ 
+ .confirmation-code {
+  display: flex;
+  width: 200px;
+  letter-spacing: 20px;
+  margin: 0;
+} 
+
+.confirmation-code input {
+  width: 50px;
+  margin: 10px 4px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 3px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1.5rem #fff;
+  background-color: #fff;
+} 

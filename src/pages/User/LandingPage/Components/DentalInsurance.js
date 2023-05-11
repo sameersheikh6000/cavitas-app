@@ -21,7 +21,7 @@ const DentalInsurance = () => {
           </div>
         </div>
         <div className='landingPage__dentaltInsurance__container__picture'>
-          <img src={require("../../../../assets/DentalInsurance-image.png")} alt="" />
+          {/* <img src={require("../../../../assets/AllCare-image.png")} alt="" /> */}
         </div>
       </div>
     </section >

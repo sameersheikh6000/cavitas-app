@@ -54,7 +54,7 @@ const AdminSignIn = () => {
 
         <div className='authentication__container__formContainer'>
           <p className='authentication__container__formContainer__heading'>Welcome to Cavitas Admin! </p>
-          <p className='authentication__container__formContainer__login'>Log In To</p>
+          <br />   {/* <p className='authentication__container__formContainer__login'>Log In To</p> */}
           <form className='authentication__container__formContainer__form' onSubmit={submitHandler}>
             <input
               className='authentication__container__formContainer__form__email'

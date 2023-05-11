@@ -62,7 +62,7 @@ const MemberSignIn = () => {
 
         <div className='authentication__container__formContainer'>
           <p className='authentication__container__formContainer__heading'>Welcome to Cavitas! </p>
-          <p className='authentication__container__formContainer__login'>Log In To</p>
+         <br /> {/* <p className='authentication__container__formContainer__login'>Log In To</p> */}
           <form className='authentication__container__formContainer__form' onSubmit={submitHandler}>
             <input
               className='authentication__container__formContainer__form__email'
@@ -101,7 +101,7 @@ const MemberSignIn = () => {
             </div>
             <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In</Button>
           </form>
-          <Link to="/" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
+          <Link to="/MemberEnterMail" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
           <div className='authentication__container__formContainer__registerNow'>
             <p>Don't have account yet?</p>
             <Link to="/member-signup">
