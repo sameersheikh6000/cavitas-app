@@ -104,6 +104,10 @@ const useUsers = () => {
         phone_number: user.phone_number,
         password: user.password,
         password_confirmation: user.confirm_password,
+        company_krs_number: user.company_krs_number,
+        company_pesel_number: user.company_pesel_number,
+        company_address: user.company_address,
+        company_name: user.company_name
       }
     }
     const response = await axios.put(

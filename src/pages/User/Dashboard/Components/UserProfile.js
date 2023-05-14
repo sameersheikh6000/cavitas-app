@@ -18,32 +18,33 @@ const UserProfile = () => {
       </header>
       <div className='dashboard__container__content__userProfile__details'>
         <div className='dashboard__container__content__userProfile__details__detailsBox'>
-          <p>First Name: {user?.data?.first_name ? user?.data?.first_name : "NiL"}</p>
-          <p>Last Name: {user?.data?.last_name ? user?.data?.last_name : "NiL"}</p>
+          <p><b>First Name:</b> {user?.data?.first_name ? user?.data?.first_name : "NiL"}</p>
+          <p><b>Last Name:</b> {user?.data?.last_name ? user?.data?.last_name : "NiL"}</p>
         </div>
         {user?.data?.role === "member" ?
           <>
             <div className='dashboard__container__content__userProfile__details__detailsBox'>
-              <p>PESEL number: </p>
-              <p>Address: </p>
+              <p><b>PESEL number:</b> </p>
+              <p><b>Address:</b> { user?.data?.company_address ? user?.data?.company_address : "N/A"}</p>
             </div>
             <div className='dashboard__container__content__userProfile__details__detailsBox'>
-              <p>Email address: </p>
-              <p>Phone number: </p>
+              <p><b>Email address:</b> </p>
+              <p><b>Phone number:</b> {user?.data?.phone_number ? user?.data?.phone_number : "N/A"} </p>
             </div>
           </>
           :
           <>
             <div className='dashboard__container__content__userProfile__details__detailsBox'>
-              <p>Role in Company: </p>
-              <p>Company Name: </p>
+              <p><b>Role in Company:</b> { user?.data?.role ? user?.data?.role.toUpperCase() : "N/A" }</p>
+              <p><b>Company Name:</b> { user?.data?.company_name ? user?.data?.company_name : "N/A"  }</p>
             </div>
             <div className='dashboard__container__content__userProfile__details__detailsBox'>
-              <p>Company KRS Number</p>
-              <p>Email Address: {user?.data?.email ? user?.data?.email : "NiL"}</p>
+              <p><b>Company KRS Number:</b> { user?.data?.company_krs_number ? user?.data?.company_krs_number : "N/A"}</p>
+              <p><b>Email Address:</b> {user?.data?.email ? user?.data?.email : "N/A"}</p>
             </div>
             <div className='dashboard__container__content__userProfile__details__detailsBox'>
-              <p>Phone Number: {user?.data?.phone_number ? user?.data?.phone_number : "NiL"}</p>
+              <p><b>Phone Number:</b> {user?.data?.phone_number ? user?.data?.phone_number : "N/A"}</p>
+              <p><b>Company Location:</b> {user?.data?.company_address ? user?.data?.company_address : "N/A"}</p>
             </div>
           </>
         }

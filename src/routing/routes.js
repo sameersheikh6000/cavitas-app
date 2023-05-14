@@ -58,8 +58,19 @@ export const routes = [
   // user routes
 
   {
+    path: "/:lang" || "/",
+    component: LandingPage,
+    isPrivate: false,
+  },
+  {
     path: "/",
     component: LandingPage,
+    isPrivate: false,
+  },
+
+  {
+    path: "/broker/:lang",
+    component: BrokerLandingPage,
     isPrivate: false,
   },
   {
@@ -67,9 +78,21 @@ export const routes = [
     component: BrokerLandingPage,
     isPrivate: false,
   },
+
+  {
+    path: "/employ/:lang",
+    component: EmployLandingPage,
+    isPrivate: false,
+  },
   {
     path: "/employ",
     component: EmployLandingPage,
+    isPrivate: false,
+  },
+
+  {
+    path: "/member/:lang",
+    component: MemberLandingPage,
     isPrivate: false,
   },
   {
@@ -77,9 +100,21 @@ export const routes = [
     component: MemberLandingPage,
     isPrivate: false,
   },
+
+  {
+    path: "/signin/:lang",
+    component: SignIn,
+    isPrivate: false,
+  },
   {
     path: "/signin",
     component: SignIn,
+    isPrivate: false,
+  },
+
+  {
+    path: "/signup/:lang",
+    component: SignUp,
     isPrivate: false,
   },
   {
@@ -87,9 +122,21 @@ export const routes = [
     component: SignUp,
     isPrivate: false,
   },
+
+  {
+    path: "/member-signin/:lang",
+    component: MemberSignIn,
+    isPrivate: false,
+  },
   {
     path: "/member-signin",
     component: MemberSignIn,
+    isPrivate: false,
+  },
+
+  {
+    path: "/member-signup/:lang",
+    component: MemberSignUp,
     isPrivate: false,
   },
   {
@@ -97,9 +144,21 @@ export const routes = [
     component: MemberSignUp,
     isPrivate: false,
   },
+
+  {
+    path: "/employ-signin/:lang",
+    component: EmploySignIn,
+    isPrivate: false,
+  },
   {
     path: "/employ-signin",
     component: EmploySignIn,
+    isPrivate: false,
+  },
+
+  {
+    path: "/employ-signup/:lang",
+    component: EmploySignUp,
     isPrivate: false,
   },
   {
@@ -109,57 +168,57 @@ export const routes = [
   },
 
   {
-    path: "/dashboard",
+    path: "/dashboard/:lang",
     component: Dashboard,
     isPrivate: false,
   },
   {
-    path: "/uploadclient",
+    path: "/uploadclient/:lang",
     component: UploadClient,
     isPrivate: false,
   },
   {
-    path: "/insuredclient/view",
+    path: "/insuredclient/view/:lang",
     component: InsuredClientView,
     isPrivate: false,
   },
   {
-    path: "/insuredclient/group",
+    path: "/insuredclient/group/:lang",
     component: InsuredClientGroup,
     isPrivate: false,
   },
   {
-    path: "/about",
+    path: "/about/:lang",
     component: AboutUs,
     isPrivate: false,
   },
   {
-    path: "/faq",
+    path: "/faq/:lang",
     component: FAQ,
     isPrivate: false,
   },
   {
-    path: "/claims",
+    path: "/claims/:lang",
     component: Claims,
     isPrivate: false,
   },
   {
-    path: "/profile/user/view",
+    path: "/profile/user/view/:lang",
     component: UserProfileView,
     isPrivate: false,
   },
   {
-    path: "/support/view",
+    path: "/support/view/:lang",
     component: SupportView,
     isPrivate: false,
   },
   {
-    path: "/cavitasdocs/view",
+    path: "/cavitasdocs/view/:lang",
     component: CavitasDocsView,
     isPrivate: false,
   },
   {
-    path: "/cart",
+    path: "/cart/:lang",
     component: Cart,
     isPrivate: false,
   },
@@ -173,57 +232,57 @@ export const routes = [
   // admin routes
 
   {
-    path: "/admin/signin",
+    path: "/admin/signin/:lang",
     component: AdminSignIn,
     isPrivate: false,
   },
   {
-    path: "/admin/signup",
+    path: "/admin/signup/:lang",
     component: AdminSignUp,
     isPrivate: false,
   },
   {
-    path: "/admin",
+    path: "/admin/:lang",
     component: AdminDashboard,
     isPrivate: false,
   },
   {
-    path: "/admin/InsuredClientView",
+    path: "/admin/InsuredClientView/:lang",
     component: AdminInsuredClientView,
     isPrivate: false,
   },
   {
-    path: "/admin/PolicyInformation",
+    path: "/admin/PolicyInformation/:lang",
     component: AdminPolicyInformation,
     isPrivate: false,
   },
   {
-    path: "/admin/PannelData",
+    path: "/admin/PannelData/:lang",
     component:  AdminFileApproval,
     isPrivate: false,
   },
   {
-    path: "/admin/support-tickets",
+    path: "/admin/support-tickets/:lang",
     component:   ApprovalFile,
     isPrivate: false,
   },
   {
-    path: "/admin/UserInformation",
+    path: "/admin/UserInformation/:lang",
     component:   UserInformation,
     isPrivate: false,
   },
   {
-    path: "/admin/CavitasDocuments",
+    path: "/admin/CavitasDocuments/:lang",
     component:   AdminUploadCavitasDocuments,
     isPrivate: false,
   },
   {
-    path: "/admin/profile/view",
+    path: "/admin/profile/view/:lang",
     component:   AdminProfileView,
     isPrivate: false,
   },
   {
-    path: "/admin/AdminPolicyInformation",
+    path: "/admin/AdminPolicyInformation/:lang",
     component: AdminPolicyInformation,
     isPrivate: false,
   },
@@ -231,108 +290,108 @@ export const routes = [
   // Forms
 
   {
-    path: "/admin/contact-tickets/:id/ContactFormDetail",
+    path: "/admin/contact-tickets/:id/ContactFormDetail/:lang",
     component: ContactFormDetail,
     isPrivate: false,
   },
 
   {
 
-    path: "/user/Support/TicketsList",
+    path: "/user/Support/TicketsList/:lang",
          component: SupportView,
     isPrivate: false,
   }
   ,
   {
 
-    path: "/SubmitNewTickets",
+    path: "/SubmitNewTickets/:lang",
          component: SubmitNewTickets,
     isPrivate: false,
   },
   
   {
-    path: "/Tickets/:id",
+    path: "/Tickets/:id/:lang",
     component: Tickets,
     isPrivate: false,
   },
 
   {
-    path: "/admin/Contactus",
+    path: "/admin/Contactus/:lang",
     component: Contactus,
     isPrivate: false,
   },
   {
-    path: "/InsuredPerson",
+    path: "/InsuredPerson/:lang",
     component: InsuredPerson,
     isPrivate: false,
   },
   {
-    path: "/GetQuote",
+    path: "/GetQuote/:lang",
     component: GetQuote,
     isPrivate: false,
   },
 
   {
-    path: "/ContactSupportList",
+    path: "/ContactSupportList/:lang",
     component: ContactSupportList,
     isPrivate: false,
   },
 
   {
-    path: "/ContactSupportTicket/:id",
+    path: "/ContactSupportTicket/:id/:lang",
     component: ContactSupportTicket,
     isPrivate: false,
   },
 
   {
-    path: "/QuoteSupportList",
+    path: "/QuoteSupportList/:lang",
     component: QuoteSupportList,
     isPrivate: false,
   },
   {
-    path: "/QuoteSupportTicket/:id",
+    path: "/QuoteSupportTicket/:id/:lang",
     component: QuoteSupportTicket,
     isPrivate: false,
   },
 
   {
-    path: "/InsuredPersonSupportList",
+    path: "/InsuredPersonSupportList/:lang",
     component:  InsuredPersonSupportList  ,
     isPrivate: false,
   },
   {
-    path: "/InsuredPersonSupportTicket",
+    path: "/InsuredPersonSupportTicket/:lang",
     component: InsuredPersonSupportTicket,
     isPrivate: false,
   },
   {
-    path: "admin/support-tickets/:id/supportFormDetail",
+    path: "admin/support-tickets/:id/supportFormDetail/:lang",
     component: SupportFormDetail,
     isPrivate: false,
   },
   {
-    path: "admin/quotes/:id/QuoteDetail",
+    path: "admin/quotes/:id/QuoteDetail/:lang",
     component: QuoteFormDetail,
     inPrivate: false
   },
   // blog
   {
-    path: "/Blog1",
+    path: "/Blog1/:lang",
     component: Blog1,
     inPrivate: false
   },
   {
-    path: "/Blog2",
+    path: "/Blog2/:lang",
     component: Blog2,
     inPrivate: false
   },
   {
-    path: "/Blog3",
+    path: "/Blog3/:lang",
     component: Blog3,
     inPrivate: false
   },
   {
-    path: "/Blog",
+    path: "/Blog/:lang",
     component: Blog,
     inPrivate: false
   },

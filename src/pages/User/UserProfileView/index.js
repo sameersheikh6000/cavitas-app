@@ -6,22 +6,27 @@ import Page from '../../../components/Page/Page';
 import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
 import useUsers from '../../../hooks/useUsers';
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
+import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
 import { useNavigate } from 'react-router-dom';
 
 const UserProfileView = () => {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [profile, setProfile] = useState(user?.data)
   const [errorMessage, setErrorMessage] = useState();
+  const [successMessage, setSuccessMessage] = useState("");
   const { updateUser } = useUsers();
   const navigate = useNavigate();
   console.warn(profile)
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const response = await updateUser(profile);
     debugger
+    const response = await updateUser(profile);
     if (response.status < 300) {
-      navigate("/signin")
+      setSuccessMessage("Updated Successfully!")
+      setTimeout(() => {
+        navigate("/dashboard")
+      }, 3000);
     } else if (response.status > 300) {
       setErrorMessage(response.message);
     }
@@ -29,6 +34,7 @@ const UserProfileView = () => {
 
   return (
     <Page>
+      <SuccessMessage successMessage={successMessage}/>
       <AlertMessage errorMessage={errorMessage} />
       <section className='userProfileView'>
         <div className='userProfileView__top'>
@@ -69,15 +75,15 @@ const UserProfileView = () => {
                 <div><input
                   type="text"
                   placeholder='PESEL number'
-                  value={profile?.pesel_number}
-                  disabled="true"
+                  value={profile?.company_pesel_number}
+                  onChange={(e) => setProfile({ ...profile, company_pesel_number: e.target.value })}
                 />
                 </div>
                 <div><input
                   type="text"
                   placeholder='Address'
-                  value={profile?.address}
-                  // disabled="true"
+                  value={profile?.company_address}
+                  onChange={(e) => setProfile({ ...profile, company_address: e.target.value })}
                 />
                 </div>
               </div>
@@ -95,7 +101,7 @@ const UserProfileView = () => {
                     type="text"
                     placeholder='Company name'
                     value={profile?.company_name}
-                    disabled="true"
+                    onChange={(e) => setProfile({ ...profile, company_name: e.target.value })}
                   />
                   </div>
                 </div>
@@ -103,8 +109,8 @@ const UserProfileView = () => {
                   <div><input
                     type="text"
                     placeholder='Company KRS number'
-                    disabled="true"
-                    value={profile?.comapany_krs_number}
+                    value={profile?.company_krs_number}
+                    onChange={(e) => setProfile({ ...profile, company_krs_number: e.target.value })}
                   />
                   </div>
                   <div>
@@ -112,7 +118,8 @@ const UserProfileView = () => {
                       type="text"
                       placeholder='company address'
                       value={profile?.company_address}
-                      disabled="true"
+                      onChange={(e) => setProfile({ ...profile, company_address: e.target.value })}
+
                     />
                   </div>
                 </div>

@@ -134,8 +134,10 @@ function GetQuoteCavitas() {
                   </div>
                   <div style={{ marginTop: "8px" }}>
                     <input
+                      className="placeholder_class"
                       type="date"
-                      placeholder="Desired inception date of the cover?*"
+                      
+                      // placeholder="Desired inception date of the cover?*"
                       onChange={(e) => setFormData({ ...formData, inceptionDate: e.target.value})}
                     />
                   </div>

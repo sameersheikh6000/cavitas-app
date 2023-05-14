@@ -1,0 +1,15 @@
+{
+  "nav": {
+    "faq": "FAQ",
+    "claims": "Roszczenia",
+    "aboutUs": "O nas",
+    "memberLogin": "Logowanie (członek)",
+    "brokerLogin": "Logowanie (broker)",
+    "employLogin": "Logowanie (pracodawca)",
+    "language": "Język",
+    "english": "Angielski",
+    "polish": "Polski",
+    "selectLang": "Wybierz język"
+  }
+}
+

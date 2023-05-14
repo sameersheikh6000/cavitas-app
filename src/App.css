@@ -2851,6 +2851,10 @@ body Button {
   margin-top: 5px;
 }
 
+.placeholder_class {
+  content: "Inception Date" !important;
+}
+
 .insuredClientView {
   margin: 2rem 5rem 0 380px;
 }

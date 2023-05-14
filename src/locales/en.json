@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "faq": "FAQ",
+    "claims": "Claims",
+    "aboutUs": "About Us",
+    "memberLogin": "Member Login",
+    "brokerLogin": "Broker Login",
+    "employLogin": "Employ Login",
+    "language": "Language",
+    "english": "English",
+    "polish": "Polish",
+    "selectLang": "Select Language"
+  }
+}
