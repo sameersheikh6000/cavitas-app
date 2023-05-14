@@ -20,7 +20,7 @@ const CoverWorks = () => {
             <p>Root canal treatment</p>
             <p>Extraction</p>
             <p>Worldwide accident cover</p>
-            <p>Oral cacer</p>
+            <p>Oral cancer cover*</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>*One (1) per lifetime</span>
             </div>
@@ -40,7 +40,7 @@ const CoverWorks = () => {
             <p>Denture</p>
             <p>Implant</p>
             <p>Worldwide accident cover</p>
-            <p>Oral cacer cover*</p>
+            <p>Oral cancer cover*</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>*One (1) per lifetime</span>
             </div>
@@ -62,7 +62,7 @@ const CoverWorks = () => {
             <p>Teeth whitening</p>
             <p>Adult orthodontics*</p>
             <p>Worldwide accident cover</p>
-            <p>Oral cacer cover*</p>
+            <p>Oral cancer cover*</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>*One (1) per lifetime</span>
             </div>

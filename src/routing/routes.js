@@ -51,7 +51,18 @@ import Blog2 from "../pages/User/MemberLandingPage/ValuableReading/Blog2";
 import Blog3 from "../pages/User/MemberLandingPage/ValuableReading/Blog3";
 import Blog1 from "../pages/User/MemberLandingPage/ValuableReading/Blog1";
 import Blog from "../components/Footer/Blog";
-
+import EnterMail from "../pages/User/Authentication/BrokerForgetPassword/EnterMail"
+import AddCode from "../pages/User/Authentication/BrokerForgetPassword/AddCode"
+import SetPassword from "../pages/User/Authentication/BrokerForgetPassword/SetPassword"
+import UpdatePassword from "../pages/User/Authentication/BrokerForgetPassword/UpdatePassword"
+import EmployerAddCode from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerAddCode";
+import EmployerSetPassword from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerSetPassword";
+import EmployerUpdatePassword from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerUpdatePassword";
+import EmployerEnterMail from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerEnterMail";
+import MemberEnterMail from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberEnterMail"
+import MemberSetPassword from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberSetPassword";
+import MemberUpdatePassword from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberUpdatePassword";
+import MemberAddCode from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberAddCode";
 
 export const routes = [
 
@@ -395,9 +406,75 @@ export const routes = [
     component: Blog,
     inPrivate: false
   },
+
+  // ForgetPassword
+
+  {
+    path: "/Add-Mail",
+    component: EnterMail,
+    inPrivate: false
+  },
+  
+  {
+    path: "/AddCode",
+    component: AddCode,
+    inPrivate: false
+  },
+  {
+    path: "/SetPassword",
+    component: SetPassword,
+    inPrivate: false
+  },
+  {
+    path: "/UpdatePassword",
+    component: UpdatePassword,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerUpdatePassword",
+    component: EmployerUpdatePassword,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerSetPassword",
+    component: EmployerSetPassword,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerAddCode",
+    component: EmployerAddCode,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerEnterMail",
+    component: EmployerEnterMail,
+    inPrivate: false
+  },
+
+  {
+    path: "/MemberEnterMail",
+    component: MemberEnterMail,
+    inPrivate: false
+  }, 
+  {
+    path: "/MemberAddCode",
+    component: MemberAddCode,
+    inPrivate: false
+  },
+   {
+    path: "/MemberSetPassword",
+    component: MemberSetPassword,
+    inPrivate: false
+  },
+  {
+    path: "/MemberUpdatePassword",
+    component: MemberUpdatePassword,
+    inPrivate: false
+  },
 ]
 
 
-
-
-// blog

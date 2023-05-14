@@ -6,9 +6,12 @@ const AllCare = () => {
     <section className='landingPage__allCare'>
       <div className='landingPage__allCare__container'>
         <div className='landingPage__allCare__container__details'>
-          <h1 className='landingPage__allCare__container__details__heading'>All-in-1 teeth care!</h1>
+        <h1 className='landingPage__allCare__container__details__heading'>Easy for members!</h1>
+          
           <p className='landingPage__allCare__container__details__desc'>
-          Download the Cavitas app to have all information in your pocket. Try it out!          </p>
+                    Members can download the Cavitas app to have all information in their pocket:          </p>
+                             
+         
           <div className='landingPage__allCare__container__details__detailsContainer'>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />

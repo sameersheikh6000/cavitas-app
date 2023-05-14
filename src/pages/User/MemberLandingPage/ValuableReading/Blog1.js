@@ -12,7 +12,7 @@ const Blog1 = () => {
       <section className="valuableReadingView">
         <header>
           <h1>Importance of dental insurance</h1>
-          <p>by Cavitas | April 3, 2023</p>
+          <p>by Cavitas |  May 20, 2023</p>
         </header>
         <div
           className="valuableReadingView__container"

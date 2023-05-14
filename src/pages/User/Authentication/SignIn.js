@@ -62,10 +62,11 @@ const SignIn = () => {
 
         <div className='authentication__container__formContainer'>
           <p className='authentication__container__formContainer__heading'>Welcome to Cavitas! </p>
-          <p className='authentication__container__formContainer__login'>Log In To</p>
+          <br />  {/* <p className='authentication__container__formContainer__login'>Log In To</p> */}
           <form className='authentication__container__formContainer__form' onSubmit={submitHandler}>
             <input
               className='authentication__container__formContainer__form__email'
+              style={{backgroundColor: "#edf4f4"}}
               type='email'
               placeholder='Email'
               name='email'
@@ -76,6 +77,7 @@ const SignIn = () => {
             <div className='authentication__container__formContainer__form__passwordBox'>
               {viewPassword === true ?
                 <input
+                style={{backgroundColor: "#edf4f4"}}
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='text'
                   name='password'
@@ -87,6 +89,7 @@ const SignIn = () => {
                 />
                 :
                 <input
+              
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='password'
                   name='password'
@@ -101,7 +104,7 @@ const SignIn = () => {
             </div>
             <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In</Button>
           </form>
-          <Link to="/" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
+          <Link to="/Add-Mail" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
           <div className='authentication__container__formContainer__registerNow'>
             <p>Don't have account yet?</p>
             <Link to="/signup">

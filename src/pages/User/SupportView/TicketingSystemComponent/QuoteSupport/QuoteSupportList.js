@@ -16,13 +16,12 @@ function QuoteSupportList() {
 
   const getQuotes = async () => {
     const response = await getAllQuote();
-    if(response?.status < 300){
-      setQuoteList(response?.quote_forms)
+    if (response?.status < 300) {
+      setQuoteList(response?.quote_forms);
+    } else if (response?.status > 300) {
+      setErrorMessage(response?.message);
     }
-    else if(response?.status > 300){
-      setErrorMessage(response?.message)
-    }
-  }
+  };
 
   useEffect(() => {
     getQuotes();
@@ -63,21 +62,24 @@ function QuoteSupportList() {
           <header>
             <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
               <div>
-                <Link to="/support/view" style={{textDecoration: "none"}}>
+                <Link to="/support/view" style={{ textDecoration: "none" }}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                     My support tickets
                   </Button>
                 </Link>
               </div>
               <div>
-                <Link to="/ContactSupportList" style={{textDecoration: "none"}}>
-                <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
+                <Link
+                  to="/ContactSupportList"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                     Contact Support
                   </Button>
                 </Link>
               </div>
               <div>
-              <Link to="/QuoteSupportList" style={{textDecoration: "none"}}>
+                <Link to="/QuoteSupportList" style={{ textDecoration: "none" }}>
                   <Button
                     style={{ background: "#5C8894" }}
                     className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
@@ -117,38 +119,30 @@ function QuoteSupportList() {
                   </tr>
                 </thead>
                 <tbody>
-                {quoteList.length > 0 &&
-                  quoteList.map((row, index) => (
-                    <tr key={index}>
-                      <td>
-                        {row?.status == "fresh"
-                          ? "NEW"
-                          : row?.status.toUpperCase()}
-                      </td>
-                      <td>
-                        <a
-                          href=""
-                          onClick={() =>
-                            navigate(
-                              `/QuoteSupportTicket/${row?.id}`
-                            )
-                          }
-                        >
-                          #{row?.id}
-                        </a>
-                      </td>
-                      <td>{row?.group_name}</td>
-                      <td>{row?.number_of_employ}</td>
-                      <td>{row?.company_name}</td>
-                      <td>{row?.identity}</td>
-                      <td>
-                        {row?.name}
-                      </td>
-                      <td>{row?.email}</td>
-                      <td>{row?.description}</td>
-                      <td>{row?.created_at}</td>
-                    </tr>
-                  ))}
+                  {quoteList.length > 0 &&
+                    quoteList.map((row, index) => (
+                      <tr key={index}>
+                        <td>{row?.status == "fresh" ? "NEW" : row?.status}</td>
+                        <td>
+                          <a
+                            href=""
+                            onClick={() =>
+                              navigate(`/QuoteSupportTicket/${row?.id}`)
+                            }
+                          >
+                            #{row?.id}
+                          </a>
+                        </td>
+                        <td>{row?.group_name}</td>
+                        <td>{row?.number_of_employ}</td>
+                        <td>{row?.company_name}</td>
+                        <td>{row?.identity}</td>
+                        <td>{row?.name}</td>
+                        <td>{row?.email}</td>
+                        <td>{row?.description}</td>
+                        <td>{row?.created_at}</td>
+                      </tr>
+                    ))}
                 </tbody>
               </table>
             </div>

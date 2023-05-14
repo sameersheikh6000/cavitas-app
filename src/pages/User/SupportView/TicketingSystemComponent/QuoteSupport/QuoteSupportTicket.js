@@ -226,22 +226,30 @@ const QuoteSupportTicket = () => {
                           paddingBottom: "1rem",
                         }}
                       >
-                        {row?.file_name ? 
-                            <p>Attachement(s): &nbsp;
-                              <a
-                                href={`${API_KEY}/api/v1/quote_replies/${row?.id}/download`}
-                              >
-                                {row?.file_name}
-                              </a>
-                            </p> : 
-                            <small><em>No Attachements </em></small>
-                          }
+                        {row?.file_name ? (
+                          <p>
+                            Attachement(s): &nbsp;
+                            <a
+                              href={`${API_KEY}/api/v1/quote_replies/${row?.id}/download`}
+                            >
+                              {row?.file_name}
+                            </a>
+                          </p>
+                        ) : (
+                          <small>
+                            <em>No Attachements </em>
+                          </small>
+                        )}
                       </tbody>
                     </div>
                   </section>
 
                   <div
-                    style={{ display: "flex", flexDirection: "row-reverse",  width: "110%" }}
+                    style={{
+                      display: "flex",
+                      flexDirection: "row-reverse",
+                      width: "110%",
+                    }}
                   >
                     {!row?.answer && (
                       <QuoteReplyAnswerForm
@@ -292,16 +300,20 @@ const QuoteSupportTicket = () => {
                             paddingBottom: "1rem",
                           }}
                         >
-                          {row?.answer?.file_name ? 
-                            <p>Attachement(s): &nbsp;
+                          {row?.answer?.file_name ? (
+                            <p>
+                              Attachement(s): &nbsp;
                               <a
                                 href={`${API_KEY}/api/v1/quote_reply_answers/${row?.answer?.id}/download`}
                               >
                                 {row?.answer?.file_name}
                               </a>
-                            </p> : 
-                            <small><em>No Attachements </em></small>
-                          }
+                            </p>
+                          ) : (
+                            <small>
+                              <em>No Attachements </em>
+                            </small>
+                          )}
                         </tbody>
                       </div>
                     </section>

@@ -120,7 +120,7 @@ function ContactSupportList() {
                       <td>
                         {row?.status == "fresh"
                           ? "NEW"
-                          : row?.status.toUpperCase()}
+                          : row?.status}
                       </td>
                       <td>
                       <a href="" onClick={() => navigate(`/ContactSupportTicket/${row?.id}`)}>{row?.id}</a>

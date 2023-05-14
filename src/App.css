@@ -71,6 +71,7 @@ body Button {
 .sidebar__linkButtons__link {
   display: flex;
   align-items: center;
+  cursor: pointer;
   text-decoration: unset;
   margin: 0.5rem 0;
   margin-left: 3rem;
@@ -78,20 +79,22 @@ body Button {
 .sidebar__linkButtons__link p {
   margin-left: 1rem;
   color: white;
+  cursor: pointer;
   font-size: 0.8rem;
 }
 .sidebar__linkButtons__link__icon {
   color: white;
+  cursor: pointer;
   font-size: 1.8rem !important;
 }
-.sidebar__linkButtons a:hover p,
-.sidebar__linkButtons a:focus p,
-.sidebar__linkButtons :active p {
+.sidebar__linkButtons__link:hover p ,
+.sidebar__linkButtons__link:active p,
+.sidebar__linkButtons__link:focus p {
   color: #dd3333 !important;
 }
-.sidebar__linkButtons a:hover__icon,
-.sidebar__linkButtons a:focus__icon,
-.sidebar__linkButtons :active__icon {
+.sidebar__linkButtons__link__icon:hover __link ,
+.sidebar__linkButtons__link__icon:focus  __link ,
+.sidebar__linkButtons__link__icon:active  __link {
   color: #dd3333 !important;
 }
 .sidebar__linkButtons__buttons {
@@ -215,6 +218,12 @@ body Button {
   font-weight: 500;
   white-space: nowrap;
   margin-right: 1rem;
+}.appbar__linksBox__links__verification {
+  color: red;
+  text-decoration: unset;
+  font-size: 13px;
+  white-space: nowrap;
+  
 }
 .appbar__linksBox__links a:hover,
 .appbar__linksBox__links a:focus,
@@ -279,13 +288,14 @@ body Button {
 .footer__container__top {
   display: flex;
   flex-wrap: wrap;
+  width: 90%;
   align-items: flex-start;
   margin-top: 3rem;
   justify-content: space-between;
   transition: flex-wrap 0.5s;
 }
 .footer__container__top__box {
-  width: 300px;
+  /* width: 300px; */
   font-size: 0.9rem;
   font-weight: 500;
   display: flex;
@@ -355,6 +365,18 @@ body Button {
   justify-content: center;
   align-items: center;
 }
+
+.authentication__container__imageBox__bottom__forget {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authentication__container__imageBox__bottom__forget img {
+  object-fit: contain;
+  width: 100%;
+}
 .authentication__container__imageBox__bottom img {
   object-fit: contain;
   width: 100%;
@@ -396,6 +418,14 @@ body Button {
   width: 220px;
   background-color: #edf4f4;
 }
+.authentication__container__formContainer__form__forget input {
+  border-radius: 2rem;
+  padding: 0.5rem 0.7rem;
+  outline: none;
+  border: none;
+  width: 320px;
+  background-color: #edf4f4;
+}
 .authentication__container__formContainer__form__passwordBox {
   margin-top: 1rem;
 }
@@ -405,7 +435,19 @@ body Button {
 .authentication__container__formContainer__form__passwordBox__passwordIcon {
   position: absolute;
   margin-left: -2.5rem;
+  margin-top: 0.5rem;
+}
+.authentication__container__formContainer__form__passwordBox__passwordIcon__forget {
+  position: absolute;
+  margin-left: -2.5rem;
   margin-top: 0.3rem;
+  cursor: pointer;
+}
+.supportView__header__iconBox__forget__update{
+margin-left: 0.5rem;
+/* font-weight: 600; */
+color: gray !important;
+font-size: 1rem !important;
 }
 .authentication__container__formContainer__form__loginButton_tickets {
   background-color: #dd3333 !important;
@@ -426,6 +468,26 @@ body Button {
   padding: 5px 0 !important;
   font-weight: 400 !important;
   font-family: "poppins" !important;
+}
+.authentication__container__formContainer__form__forget__loginButton {
+  background-color: #dd3333 !important;
+  color: white !important;
+  width: 320px !important;
+  text-transform: none;
+  border-radius: 50px !important;
+  margin: 1rem 0 !important;
+  padding: 5px 0 !important;
+  font-weight: 600 !important;
+}
+.authentication__container__formContainer__form__forget__loginButton__update {
+  background-color: #dd3333 !important;
+  color: white !important;
+  width: 300px !important;
+  text-transform: none;
+  border-radius: 50px !important;
+  margin: 1rem 0 !important;
+  padding: 5px 0 !important;
+  font-weight: 600 !important;
 }
 .authentication__container__formContainer__form__loginButton_Form {
   background-color: #dd3333 !important;
@@ -625,11 +687,13 @@ body Button {
   }
 }
 .dashboard__container__content__welcomePage__heading {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .dashboard__container__content__welcomePage__description {
-  margin-top: 1rem;
-  font-size: 1.2rem;
+  /* margin-top: 1rem; */
+  font-size: 13px;
+  line-height: 21px;
+
 }
 .dashboard__container__content__welcomePage__support {
   margin-top: 2rem;
@@ -1373,8 +1437,8 @@ body Button {
 }
 .landingPage__ourOffer__header h1 {
   font-weight: 600;
-  font-size: 1.5rem;
-  text-transform: capitalize;
+  font-size: 2.5rem;
+  text-transform:none;
 }
 .landingPage__ourOffer__header p {
   font-size: 0.9rem;
@@ -1422,7 +1486,7 @@ body Button {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid lightgray;
+  /* border-bottom: 1px solid lightgray; */
   padding-bottom: 0.3rem;
   width: 253px;
   margin-left: 4.5rem;
@@ -1576,15 +1640,19 @@ body Button {
 }
 .landingPage__howItwork__container__details__detailsContainer__box {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  
 }
 .landingPage__howItwork__container__details__detailsContainer__box__icon {
   color: #dd3333;
   font-size: 1.2rem !important;
+  line-height: 1.5rem;
 }
 .landingPage__howItwork__container__details__detailsContainer__box__text {
   margin-left: 0.3rem;
-  font-weight: 500;
+  /* font-weight: 500; */
+  line-height: 1.8rem;
+  justify-content: center;
   /* font-size: 0.8rem; */
   /* color: gray; */
 }
@@ -1626,6 +1694,7 @@ body Button {
   display: flex;
   flex-direction: column;
   width: 45%;
+  margin-top: 45px;
 }
 @media (max-width: 1000px) {
   .landingPage__allCare__container__details {
@@ -1722,7 +1791,7 @@ body Button {
 .landingPage__clientDeserve__container h1 {
   font-size: 3rem;
   font-weight: bolder;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
   color: #dd3333;
 }
 @media (max-width: 1000px) {
@@ -2248,7 +2317,8 @@ body Button {
 }
 .aboutUs__ourStory__container {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  justify-content: center;
   align-items: center;
 }
 @media (max-width: 1000px) {
@@ -2295,8 +2365,10 @@ body Button {
   align-items: center;
   background-color: #dd3333;
   margin-top: 0.5rem;
+  height: 35px;
   padding: 0.4rem;
   border-radius: 50%;
+  width: 35px;
 }
 .aboutUs__ourStory__container__profilesBox__left__linkedInIcon img {
   object-fit: cover;
@@ -2328,8 +2400,10 @@ body Button {
   align-items: center;
   background-color: #dd3333;
   margin-top: 0.5rem;
+  height: 35px;
   padding: 0.4rem;
   border-radius: 50%;
+  width: 35px;
 }
 .aboutUs__ourStory__container__profilesBox__right__linkedInIcon img {
   object-fit: cover;
@@ -2355,11 +2429,13 @@ body Button {
 .aboutUs__ourStory__container__detailsBox__desc {
   color: #dd3333;
   font-weight: 500;
+ 
   margin-top: 0.5rem;
 }
 .aboutUs__ourStory__container__detailsBox__desc1 {
   margin-top: 0.5rem;
   font-size: 0.9rem;
+   text-align: justify;
 }
 .aboutUs__ourStory__container__detailsBox__desc2 {
   margin-top: 0.5rem;
@@ -3203,6 +3279,26 @@ body Button {
   color: #dd3333;
   font-size: 1.5rem;
 }
+.supportView__header__iconBox__forget {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.supportView__header__iconBox__icon__forget {
+  color: #dd3333 !important;
+  font-size: 2rem !important;
+  cursor: pointer;
+}
+.supportView__header__iconBox__icon__forget {
+  color: #dd3333 !important;
+  font-size: 2rem !important;
+}
+.supportView__header__iconBox__forget p {
+  margin-left: 0.5rem;
+  font-weight:600;
+  color: gray !important;
+  font-size: 1.2rem;
+}
 .supportView__details {
   margin-top: 2rem;
   overflow: auto;
@@ -3588,3 +3684,25 @@ body.active-modal {
   color: white;
   background-color: #2ea3f2;
 }
+
+
+ 
+ .confirmation-code {
+  display: flex;
+  width: 200px;
+  letter-spacing: 20px;
+  margin: 0;
+} 
+
+.confirmation-code input {
+  width: 50px;
+  margin: 10px 4px;
+  height: 50px;
+  font-size: 24px;
+  text-align: center;
+  border: 3px solid red;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1.5rem #fff;
+  background-color: #fff;
+} 

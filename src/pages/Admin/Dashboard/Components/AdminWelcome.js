@@ -17,6 +17,7 @@ const AdminWelcome = () => {
       <p className='dashboard__container__content__welcomePage__description'>Cavitas broker dashboard is for ...</p>
       <p className='dashboard__container__content__welcomePage__support'>Need some help? Let's Chat.</p>
       <p className='dashboard__container__content__welcomePage__contact'>XXXXXXX &nbsp; | &nbsp;  support@cavitas.eu</p>
+   
     </section>
   )
 }

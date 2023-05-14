@@ -88,7 +88,7 @@ function TickekList() {
             {ticketList.length > 0 &&
               ticketList.map((row, index) => (
               <tr>
-                <td>{row?.status == "fresh" ? "NEW" : row?.status.toUpperCase()}</td>
+                <td>{row?.status == "fresh" ? "NEW" : row?.status}</td>
                 <td><a href="" onClick={() => navigate( `/Tickets/${row?.id}`)}>{row?.id} </a> </td>
                 <td>{row?.request}</td>
                 <td>{row?.description}</td>

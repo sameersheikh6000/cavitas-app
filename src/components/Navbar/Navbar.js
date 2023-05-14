@@ -13,6 +13,7 @@ import { ADMIN_STORAGE_KEY, USER_STORAGE_KEY } from '../../config/helpers/variab
 import { useTranslation } from 'react-i18next';
 import i18n from '../../config/helpers/i18n';
 
+
 function Navbar() {
   const navigate = useNavigate();
   const currentUrl = window.location.href;
@@ -33,52 +34,72 @@ function Navbar() {
   }, [])
   return (
     <>
-      {(user?.data?.role || admin?.data?.role) ?
-        <section className='navbar'>
-          <div className='navbar__sidebarLarge' >
+      {user?.data?.role || admin?.data?.role ? (
+        <section className="navbar">
+          <div className="navbar__sidebarLarge">
             <Sidebar />
           </div>
-          <div className='navbar__sidebarDrawers' >
-            <div className='navbar__sidebarDrawers__box' >
+          <div className="navbar__sidebarDrawers">
+            <div className="navbar__sidebarDrawers__box">
               <SidebarDrawer />
-              <header className='navbar__sidebarDrawers__box__heading'>Cavitas</header>
+              <header className="navbar__sidebarDrawers__box__heading">
+                Cavitas
+              </header>
             </div>
           </div>
         </section>
-        :
-        <AppBar position="static" className='appbar' >
+      ) : (
+        <AppBar position="static" className="appbar">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <Box className='appbar__imageBox' onClick={() => navigate("/")}>
-                <img className='appbar__imageBox__image' src={require("../../assets/Navbar-logo.png")} alt="" />
+              <Box className="appbar__imageBox" onClick={() => navigate("/")}>
+                <img
+                  className="appbar__imageBox__image"
+                  src={require("../../assets/Navbar-logo.png")}
+                  alt=""
+                />
               </Box>
-              <Box className='appbar__linksBox'>
-                <div className='appbar__linksBox__links'>
-                  <Link
-                    to="/about"
-                    className='appbar__linksBox__links__link'>
-                   {t('nav.aboutUs')}
+              <Box className="appbar__linksBox">
+                <div className="appbar__linksBox__links">
+                  <Link to="/about" className="appbar__linksBox__links__link">
+                    About us
                   </Link>
-                  <Link className='appbar__linksBox__links__link' to={`/faq/${lang}`}>{t('nav.faq')}</Link>
-                  <Link className='appbar__linksBox__links__link' to={`/claims/${lang}`}>{t('nav.claims')}</Link>
-                  <Link className='appbar__linksBox__links__link' to={`/member/${lang}`}>{t('nav.memberLogin')}</Link>
-                  <Link className='appbar__linksBox__links__link' to={`/employ/${lang}`}>{t('nav.employLogin')}</Link>
-                  <Link className='appbar__linksBox__links__link' to={`/broker/${lang}`}>{t('nav.brokerLogin')}</Link>
+                  <Link className="appbar__linksBox__links__link" to="/faq">
+                    FAQ
+                  </Link>
+                  <Link className="appbar__linksBox__links__link" to="/claims">
+                    Claims
+                  </Link>
+                  <Link className="appbar__linksBox__links__link" to="/broker">
+                    Broker log in
+                  </Link>
+                  <Link className="appbar__linksBox__links__link" to="/employ">
+                    Employer log in
+                  </Link>
+                  <Link className="appbar__linksBox__links__link" to="/member">
+                    Member log in
+                  </Link>
+                 
+                  
                 </div>
-                <select onChange={(e) => handleLanguageChange(e.target.value)}>
-                  <option >{t('nav.selectLang')}</option>
-                  <option value="en">{t('nav.english')}</option>
-                  <option value="pl">{t('nav.polish')}</option>
-                </select>
-                {/* <img className='appbar__linksBox__translate' src={require("../../assets/Navbar-translate.png")} alt="" />
-                <IconButton style={{marginTop: "13px"}}>
-                  <ShoppingCartOutlinedIcon className='appbar__linksBox__icon' onClick={() => navigate("/cart")} />
-                </IconButton> */}
+                <img
+                  className="appbar__linksBox__translate"
+                  src={require("../../assets/Navbar-translate.png")}
+                  alt=""
+                />
+                <IconButton style={{ marginTop: "13px" }}>
+                  <ShoppingCartOutlinedIcon
+                    className="appbar__linksBox__icon"
+                    onClick={() => navigate("/cart")}
+                  />
+                </IconButton>
               </Box>
-              <Box className='appbar__sidebar1'>
+              <Box className="appbar__sidebar1">
                 <IconButton>
                   <ShoppingCartOutlinedIcon
-                    className='appbar__sidebar1__icon' onClick={() => navigate("/cart")} />
+                    className="appbar__sidebar1__icon"
+                    onClick={() => navigate("/cart")}
+                  />
                 </IconButton>
                 <div>
                   <SidebarMenu />
@@ -87,7 +108,7 @@ function Navbar() {
             </Toolbar>
           </Container>
         </AppBar>
-      }
+      )}
     </>
   );
 }

@@ -21,7 +21,7 @@ const SupportView = () => {
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/SubmitNewTickets">
-            <Button
+              <Button
                 color="error"
                 variant="outlined"
                 size="small"
