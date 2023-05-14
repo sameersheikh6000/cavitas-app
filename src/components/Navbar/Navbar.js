@@ -17,21 +17,25 @@ import i18n from '../../config/helpers/i18n';
 function Navbar() {
   const navigate = useNavigate();
   const currentUrl = window.location.href;
-  let lang = currentUrl.split("/").pop();
+  const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
-
+  const currentPathname = window.location.pathname;
+  
+  
   const handleLanguageChange = (language) => {
-    i18n.changeLanguage(language);
+    const newPathname = currentPathname.replace(/\/[a-z]{2}$/, `/${language}`);
+    navigate(newPathname);    
+    i18n.changeLanguage(language);window.location.reload();
   };
 
   React.useEffect(() => {
-    debugger
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang ? handleLanguageChange(lang) : handleLanguageChange("en") 
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
   }, [])
+
   return (
     <>
       {user?.data?.role || admin?.data?.role ? (
@@ -61,38 +65,32 @@ function Navbar() {
               </Box>
               <Box className="appbar__linksBox">
                 <div className="appbar__linksBox__links">
-                  <Link to="/about" className="appbar__linksBox__links__link">
-                    About us
+                  <Link to={`/about/${lang == "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
+                    {t("nav.aboutUs")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to="/faq">
-                    FAQ
+                  <Link className="appbar__linksBox__links__link" to={`/faq/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.faq")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to="/claims">
-                    Claims
+                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.claims")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to="/broker">
-                    Broker log in
+                  <Link className="appbar__linksBox__links__link" to={`/broker/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.brokerLogin")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to="/employ">
-                    Employer log in
+                  <Link className="appbar__linksBox__links__link" to={`/employ/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.employLogin")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to="/member">
-                    Member log in
+                  <Link className="appbar__linksBox__links__link" to={`/member/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.memberLogin")}
                   </Link>
                  
                   
                 </div>
-                <img
-                  className="appbar__linksBox__translate"
-                  src={require("../../assets/Navbar-translate.png")}
-                  alt=""
-                />
-                <IconButton style={{ marginTop: "13px" }}>
-                  <ShoppingCartOutlinedIcon
-                    className="appbar__linksBox__icon"
-                    onClick={() => navigate("/cart")}
-                  />
-                </IconButton>
+                <select onChange={(e) => handleLanguageChange(e.target.value)}>
+                  <option value="">{t("nav.selectLang")}</option>
+                  <option value="en">{t("nav.english")}</option>
+                  <option value="pl">{t("nav.polish")}</option>
+                </select>
               </Box>
               <Box className="appbar__sidebar1">
                 <IconButton>

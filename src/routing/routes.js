@@ -69,7 +69,7 @@ export const routes = [
   // user routes
 
   {
-    path: "/:lang" || "/",
+    path: "/:lang",
     component: LandingPage,
     isPrivate: false,
   },
@@ -184,52 +184,117 @@ export const routes = [
     isPrivate: false,
   },
   {
+    path: "/dashboard",
+    component: Dashboard,
+    isPrivate: false,
+  },
+
+  {
     path: "/uploadclient/:lang",
     component: UploadClient,
     isPrivate: false,
   },
+  {
+    path: "/uploadclient",
+    component: UploadClient,
+    isPrivate: false,
+  },
+
   {
     path: "/insuredclient/view/:lang",
     component: InsuredClientView,
     isPrivate: false,
   },
   {
+    path: "/insuredclient/view",
+    component: InsuredClientView,
+    isPrivate: false,
+  },
+
+  {
     path: "/insuredclient/group/:lang",
     component: InsuredClientGroup,
     isPrivate: false,
   },
+  {
+    path: "/insuredclient/group",
+    component: InsuredClientGroup,
+    isPrivate: false,
+  },
+
   {
     path: "/about/:lang",
     component: AboutUs,
     isPrivate: false,
   },
   {
+    path: "/about",
+    component: AboutUs,
+    isPrivate: false,
+  },
+
+  {
     path: "/faq/:lang",
     component: FAQ,
     isPrivate: false,
   },
+  {
+    path: "/faq",
+    component: FAQ,
+    isPrivate: false,
+  },
+
   {
     path: "/claims/:lang",
     component: Claims,
     isPrivate: false,
   },
   {
+    path: "/claims",
+    component: Claims,
+    isPrivate: false,
+  },
+
+  {
     path: "/profile/user/view/:lang",
     component: UserProfileView,
     isPrivate: false,
   },
+  {
+    path: "/profile/user/view",
+    component: UserProfileView,
+    isPrivate: false,
+  },
+
   {
     path: "/support/view/:lang",
     component: SupportView,
     isPrivate: false,
   },
   {
+    path: "/support/view",
+    component: SupportView,
+    isPrivate: false,
+  },
+
+  {
     path: "/cavitasdocs/view/:lang",
     component: CavitasDocsView,
     isPrivate: false,
   },
   {
+    path: "/cavitasdocs/view",
+    component: CavitasDocsView,
+    isPrivate: false,
+  },
+
+  {
     path: "/cart/:lang",
+    component: Cart,
+    isPrivate: false,
+  },
+  {
+    path: "/cart",
     component: Cart,
     isPrivate: false,
   },
@@ -406,6 +471,170 @@ export const routes = [
     component: Blog,
     inPrivate: false
   },
+  {
+    path: "/admin/signin",
+    component: AdminSignIn,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/signup",
+    component: AdminSignUp,
+    isPrivate: false,
+  },
+  {
+    path: "/admin",
+    component: AdminDashboard,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/InsuredClientView",
+    component: AdminInsuredClientView,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/PolicyInformation",
+    component: AdminPolicyInformation,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/PannelData",
+    component:  AdminFileApproval,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/support-tickets",
+    component:   ApprovalFile,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/UserInformation",
+    component:   UserInformation,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/CavitasDocuments",
+    component:   AdminUploadCavitasDocuments,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/profile/view",
+    component:   AdminProfileView,
+    isPrivate: false,
+  },
+  {
+    path: "/admin/AdminPolicyInformation",
+    component: AdminPolicyInformation,
+    isPrivate: false,
+  },
+
+  // Forms
+
+  {
+    path: "/admin/contact-tickets/:id/ContactFormDetail",
+    component: ContactFormDetail,
+    isPrivate: false,
+  },
+
+  {
+
+    path: "/user/Support/TicketsList",
+         component: SupportView,
+    isPrivate: false,
+  }
+  ,
+  {
+
+    path: "/SubmitNewTickets",
+         component: SubmitNewTickets,
+    isPrivate: false,
+  },
+  
+  {
+    path: "/Tickets/:id",
+    component: Tickets,
+    isPrivate: false,
+  },
+
+  {
+    path: "/admin/Contactus",
+    component: Contactus,
+    isPrivate: false,
+  },
+  {
+    path: "/InsuredPerson",
+    component: InsuredPerson,
+    isPrivate: false,
+  },
+  {
+    path: "/GetQuote",
+    component: GetQuote,
+    isPrivate: false,
+  },
+
+  {
+    path: "/ContactSupportList",
+    component: ContactSupportList,
+    isPrivate: false,
+  },
+
+  {
+    path: "/ContactSupportTicket/:id",
+    component: ContactSupportTicket,
+    isPrivate: false,
+  },
+
+  {
+    path: "/QuoteSupportList",
+    component: QuoteSupportList,
+    isPrivate: false,
+  },
+  {
+    path: "/QuoteSupportTicket/:id",
+    component: QuoteSupportTicket,
+    isPrivate: false,
+  },
+
+  {
+    path: "/InsuredPersonSupportList",
+    component:  InsuredPersonSupportList  ,
+    isPrivate: false,
+  },
+  {
+    path: "/InsuredPersonSupportTicket",
+    component: InsuredPersonSupportTicket,
+    isPrivate: false,
+  },
+  {
+    path: "admin/support-tickets/:id/supportFormDetail",
+    component: SupportFormDetail,
+    isPrivate: false,
+  },
+  {
+    path: "admin/quotes/:id/QuoteDetail",
+    component: QuoteFormDetail,
+    inPrivate: false
+  },
+  // blog
+  {
+    path: "/Blog1",
+    component: Blog1,
+    inPrivate: false
+  },
+  {
+    path: "/Blog2",
+    component: Blog2,
+    inPrivate: false
+  },
+  {
+    path: "/Blog3",
+    component: Blog3,
+    inPrivate: false
+  },
+  {
+    path: "/Blog",
+    component: Blog,
+    inPrivate: false
+  },
 
   // ForgetPassword
 
@@ -472,6 +701,72 @@ export const routes = [
   },
   {
     path: "/MemberUpdatePassword",
+    component: MemberUpdatePassword,
+    inPrivate: false
+  },
+  {
+    path: "/Add-Mail/:lang",
+    component: EnterMail,
+    inPrivate: false
+  },
+  
+  {
+    path: "/AddCode/:lang",
+    component: AddCode,
+    inPrivate: false
+  },
+  {
+    path: "/SetPassword/:lang",
+    component: SetPassword,
+    inPrivate: false
+  },
+  {
+    path: "/UpdatePassword/:lang",
+    component: UpdatePassword,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerUpdatePassword/:lang",
+    component: EmployerUpdatePassword,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerSetPassword/:lang",
+    component: EmployerSetPassword,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerAddCode/:lang",
+    component: EmployerAddCode,
+    inPrivate: false
+  },
+
+  {
+    path: "/EmployerEnterMail/:lang",
+    component: EmployerEnterMail,
+    inPrivate: false
+  },
+
+  {
+    path: "/MemberEnterMail/:lang",
+    component: MemberEnterMail,
+    inPrivate: false
+  }, 
+  {
+    path: "/MemberAddCode/:lang",
+    component: MemberAddCode,
+    inPrivate: false
+  },
+   {
+    path: "/MemberSetPassword/:lang",
+    component: MemberSetPassword,
+    inPrivate: false
+  },
+  {
+    path: "/MemberUpdatePassword/:lang",
     component: MemberUpdatePassword,
     inPrivate: false
   },

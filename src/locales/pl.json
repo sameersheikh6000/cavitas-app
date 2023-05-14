@@ -10,6 +10,15 @@
     "english": "Angielski",
     "polish": "Polski",
     "selectLang": "Wybierz język"
+  },
+
+  "home": {
+    "smarter": "mądrzejszy",
+    "dentalInsurance": "Ubezpieczenie dentystyczne"
+  },
+
+  "about": {
+    "cavitasMeaning": "Co znaczy Jama?"
   }
 }
 

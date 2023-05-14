@@ -10,5 +10,14 @@
     "english": "English",
     "polish": "Polish",
     "selectLang": "Select Language"
+  },
+
+  "home": {
+    "smarter": "Smarter",
+    "dentalInsurance": "Dental Insurance"
+  },
+
+  "about": {
+    "cavitasMeaning": "What Cavitas mean?"
   }
 }
