@@ -22,11 +22,11 @@ function Navbar() {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
   const currentPathname = window.location.pathname;
-  
+
   
   const handleLanguageChange = (language) => {
     const newPathname = currentPathname.replace(/\/[a-z]{2}$/, `/${language}`);
-    navigate(newPathname);    
+    navigate(newPathname);
     i18n.changeLanguage(language);window.location.reload();
   };
 
@@ -83,8 +83,8 @@ function Navbar() {
                   <Link className="appbar__linksBox__links__link" to={`/member/${lang == "pl" ? "pl" : "en"}`}>
                   {t("nav.memberLogin")}
                   </Link>
-                 
-                  
+
+
                 </div>
                 <select onChange={(e) => handleLanguageChange(e.target.value)}>
                   <option value="">{t("nav.selectLang")}</option>

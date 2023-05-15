@@ -384,7 +384,7 @@ export const routes = [
          component: SubmitNewTickets,
     isPrivate: false,
   },
-  
+
   {
     path: "/Tickets/:id/:lang",
     component: Tickets,
@@ -548,7 +548,7 @@ export const routes = [
          component: SubmitNewTickets,
     isPrivate: false,
   },
-  
+
   {
     path: "/Tickets/:id",
     component: Tickets,
@@ -643,7 +643,7 @@ export const routes = [
     component: EnterMail,
     inPrivate: false
   },
-  
+
   {
     path: "/AddCode",
     component: AddCode,
@@ -688,7 +688,7 @@ export const routes = [
     path: "/MemberEnterMail",
     component: MemberEnterMail,
     inPrivate: false
-  }, 
+  },
   {
     path: "/MemberAddCode",
     component: MemberAddCode,
@@ -709,7 +709,7 @@ export const routes = [
     component: EnterMail,
     inPrivate: false
   },
-  
+
   {
     path: "/AddCode/:lang",
     component: AddCode,
@@ -754,7 +754,7 @@ export const routes = [
     path: "/MemberEnterMail/:lang",
     component: MemberEnterMail,
     inPrivate: false
-  }, 
+  },
   {
     path: "/MemberAddCode/:lang",
     component: MemberAddCode,
