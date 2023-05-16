@@ -24,19 +24,19 @@ const SmartInsurance = () => {
           <h1 className='landingPage__smartInsurance__container__details__heading'>{t("home.smarter")}</h1>
           <h1 className='landingPage__smartInsurance__container__details__heading2'>{t("home.dentalInsurance")}</h1>
           <p className='landingPage__smartInsurance__container__details__desc'>
-          Healthy teeth are the foundation of healthy employees. We provide dental insurance to employers as a highly appreciated employee benefit product.               </p>
+          {t("home.upperDescription")}               </p>
           <div className='landingPage__smartInsurance__container__details__buttons ' >
-          <Link to="/broker">
+          <Link to={`/broker/${lang}`}>
               <Button variant='outlined'>I'm broker</Button>
             </Link>
-            <Link to="/employ">
+            <Link to={`/employ/${lang}`}>
               <Button variant='outlined'>I'm employer</Button>
             </Link>
-            <Link to="/member">
+            <Link to={`/member/${lang}`}>
               <Button variant='outlined'>I'm member</Button>
             </Link>
 
-            
+
           </div>
         </div>
         <div className='landingPage__smartInsurance__container__picture'>
