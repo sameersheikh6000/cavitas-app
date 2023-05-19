@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ContactCavitas from "../BrokerFormComponent/ContactCavitas";
 
+
 const Conversation = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
  
   const navigate = useNavigate();
 
@@ -13,8 +25,7 @@ const Conversation = () => {
         <div className="landingPage__conversation__container">
           <div className="landingPage__clientDeserve__container">
             <h1>
-              Let's discuss how we can help you to <br />
-              serve your corporate clients best
+              {t("Broker.Broker__conversion")}
             </h1>
             <ContactCavitas />
            

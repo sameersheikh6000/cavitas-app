@@ -1,10 +1,21 @@
 import { Button } from '@mui/material'
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../config/helpers/i18n";
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useNavigate } from 'react-router-dom';
 import useClientInsurance from '../../../../hooks/useClientInsurance';
 import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 const Support = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const { getAllClientInsurance } = useClientInsurance();
   const navigate = useNavigate();
   const [clientInfos, setClientInfos] = useState([]);
@@ -31,7 +42,7 @@ const Support = () => {
       <header className='dashboard__container__content__support__header'>
         <div className='dashboard__container__content__support__header__iconBox'>
           < EmailOutlinedIcon className='dashboard__container__content__support__header__iconBox__icon' />
-          <p>SUPPORT TICKETS</p>
+          <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
         </div>
         <Button size='small' onClick={() => navigate("/support/view")}>View all</Button>
       </header>
@@ -40,22 +51,13 @@ const Support = () => {
         <table className='dashboard__container__content__support__details__table'>
           <thead>
             <tr>
-                <th>Ticket#</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Total Employees in Company</th>
-                <th>Participation</th>
-                <th>Mandatory Employees</th>
-                <th>Voluntary Employees</th>
-                <th>Employee Family Info</th>
-                <th>Payment Type</th>
-                <th>Broker Reference</th>
-                <th>Broker Name</th>
-                <th>File</th>
-                <th>Status</th>
+                <th>{t("Pannel_Dashboard_Supporttickets.Ticketnumber")}</th>
+                <th>{t("Pannel_Dashboard_Supporttickets.Status")}</th>
+                <th>{t("Pannel_Dashboard_Supporttickets.Lastupdate")}</th>
+                <th>{t("Pannel_Dashboard_Supporttickets.Openmessage")}</th>
             </tr>
           </thead>
-          <tbody>
+          {/* <tbody>
           {clientInfos.map((row, index) => (
                 <tr key={index}>
                   <td>{row?.id}</td>
@@ -74,7 +76,7 @@ const Support = () => {
                 </tr>
               )) 
             }
-          </tbody>
+          </tbody> */}
         </table>
       </div>
       : 

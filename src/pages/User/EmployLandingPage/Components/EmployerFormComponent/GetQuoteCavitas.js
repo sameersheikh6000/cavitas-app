@@ -1,10 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import useQuoteForm from "../../../../../hooks/useQuoteForm";
 
 function GetQuoteCavitas() {
+
+  
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
+
   const { createQuote } = useQuoteForm();
   const [message, setMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
@@ -60,7 +74,7 @@ function GetQuoteCavitas() {
         }}
         onClick={() => handleOpen()}
       >
-        Get a quote in 24hrs
+        {t("Broker.CoverWork__year__button")}
       </Button>
       <Modal
         open={open}
@@ -70,8 +84,8 @@ function GetQuoteCavitas() {
       >
         <Box sx={style}>
           <div className="uploadClient__container__body__participation">
-            <h2>Contact Cavitas</h2>
-            <h1 style={{ color: "red" }}>Get a quote in 24 hours</h1>
+            <h2>  {t("get24contactform.contactcavitas")}</h2>
+            <h1 style={{ color: "red" }}>  {t("get24contactform.quotein24form")}</h1>
 
             {
               message && <span style={{color: "green"}}>{message}</span>
@@ -86,7 +100,7 @@ function GetQuoteCavitas() {
                   <div>
                     <input 
                       type="text" 
-                      placeholder="First and last Name*" 
+                      placeholder={`${t("get24contactform.firstandlastname")}`} 
                       onChange={(e) => setFormData({...formData, name: e.target.value})}
                       />
                   </div>
@@ -103,16 +117,16 @@ function GetQuoteCavitas() {
                       className="select"
                       onChange={(e) => setFormData({...formData, identity: `I am ${e.target.value}` })}
                     >
-                      <option>I am ....*</option>
-                      <option value="broker">Broker</option>
-                      <option value="employer">Employer</option>
-                      <option value="member">Member</option>
+                              <option>{t("contactform.iam")}</option>
+                      <option value="broker">{t("contactform.Broker")}</option>
+                      <option value="employer">{t("contactform.Employer")}</option>
+                      <option value="member">{t("contactform.Member")}</option>
                     </select>
                   </div>
                   <div>
                     <input 
                       type="text" 
-                      placeholder="Company Name*" 
+                      placeholder={`${t("get24contactform.companyname")}`} 
                       onChange={(e) => setFormData({...formData, companyName: e.target.value})}
                       />
                   </div>
@@ -121,14 +135,14 @@ function GetQuoteCavitas() {
                   <div>
                     <input
                       type="text"
-                      placeholder="Name of the group you want to insure*"
+                      placeholder={`${t("get24contactform.nameofgroup")}`} 
                       onChange={(e) => setFormData({...formData, groupName: e.target.value})}
                     />
                   </div>
                   <div>
                     <input
                       type="number"
-                      placeholder="Total number of employees*"
+                      placeholder={`${t("get24contactform.totalnumber")}`} 
                       onChange={(e) => setFormData({ ...formData, numberOfEmploy: e.target.value})}
                     />
                   </div>
@@ -148,7 +162,7 @@ function GetQuoteCavitas() {
                     <textarea
                       style={{width: "200%" }}
                       className="textarea"
-                      placeholder="Are there any other details you'd like to tell us about your group?"
+                      placeholder={`${t("get24contactform.aboutyourgroup")}`} 
                       cols={10}
                       rows={5}
                       onChange={(e) => setFormData({...formData, description: e.target.value})}
@@ -163,7 +177,7 @@ function GetQuoteCavitas() {
               type="submit"
               onClick={() => submitQuoteForm()}
             >
-              SEND
+               {t("get24contactform.send")}
             </Button>
           </div>
         </Box>

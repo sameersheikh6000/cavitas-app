@@ -1,74 +1,82 @@
-import { Button } from '@mui/material'
-import React, {useState, useEffect} from 'react'
-
-import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
-import { useNavigate } from 'react-router-dom';
-import useUsers from '../../../../hooks/useUsers';
-import DeleteUserConfirmModal from '../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs';
-import SuccessMessage from '../../../../components/SnackbarMessages/SuccessMessage';
-import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
-import useCavitasDocs from '../../../../hooks/useCavitasDocs';
-import { API_KEY } from '../../../../config/helpers/variables';
-import DeleteCavitasDocs from '../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs';
-import UpdateCavitasDocs from '../../../Admin/CavitasDocuments/Components/UpdateCavitasDocs';
+import { Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../config/helpers/i18n";
+import TextSnippetOutlinedIcon from "@mui/icons-material/TextSnippetOutlined";
+import { useNavigate } from "react-router-dom";
+import useUsers from "../../../../hooks/useUsers";
+import DeleteUserConfirmModal from "../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs";
+import SuccessMessage from "../../../../components/SnackbarMessages/SuccessMessage";
+import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
+import useCavitasDocs from "../../../../hooks/useCavitasDocs";
+import { API_KEY } from "../../../../config/helpers/variables";
+import DeleteCavitasDocs from "../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs";
+import UpdateCavitasDocs from "../../../Admin/CavitasDocuments/Components/UpdateCavitasDocs";
 const CavitasDocs = () => {
+
+  
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const navigate = useNavigate();
-    
+
   const { getCavitasDocs } = useCavitasDocs();
   const [errorMessage, setErrorMessage] = useState(null);
   const [cavitasDocs, setCavitasDocs] = useState([]);
   const [successMessage, setSuccessMessage] = useState();
 
   const fetchCavitasDocs = async () => {
-    debugger
+    debugger;
     const response = await getCavitasDocs();
-    debugger
+    debugger;
     if (response?.status < 300) {
-      setCavitasDocs(response?.cavitas_documents)
+      setCavitasDocs(response?.cavitas_documents);
     } else if (response?.status > 300) {
       setErrorMessage(response.message);
     }
-  }
+  };
 
   useEffect(() => {
-      fetchCavitasDocs();
-  }, [])
+    fetchCavitasDocs();
+  }, []);
 
   return (
-    <section className='dashboard__container__content__cavitasDocs'>
-      <header className='dashboard__container__content__cavitasDocs__header'>
-        <div className='dashboard__container__content__cavitasDocs__header__iconBox'>
-          < TextSnippetOutlinedIcon className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
-          <p>Cavitas Documents</p>
+    <section className="dashboard__container__content__cavitasDocs">
+      <header className="dashboard__container__content__cavitasDocs__header">
+        <div className="dashboard__container__content__cavitasDocs__header__iconBox">
+          <TextSnippetOutlinedIcon className="dashboard__container__content__cavitasDocs__header__iconBox__icon" />
+          <p>{t("Pannel_Dashboard.Cavitasdocuments")}</p>
         </div>
-        <Button size='small' onClick={() => navigate("/cavitasdocs/view")}>All Documents</Button>
+        <Button size="small" onClick={() => navigate("/cavitasdocs/view")}>
+        {t("Pannel_Dashboard_Alldocuments.Alldocuments")}
+        </Button>
       </header>
-      <div className='dashboard__container__content__cavitasDocs__details'>
-        <table className='dashboard__container__content__cavitasDocs__details__table'>
+      <div className="dashboard__container__content__cavitasDocs__details">
+        <table className="dashboard__container__content__cavitasDocs__details__table">
           <thead>
             <tr>
-            <th>Title</th>
-                  <th> Vaid Date</th>
+              <th>{t("Pannel_Dashboard_Alldocuments.Documenttype")}</th>
+              <th>{t("Pannel_Dashboard_Alldocuments.Validfrom")}</th>
             </tr>
           </thead>
           <tbody>
- {cavitasDocs?.map((row, index) => (
-                     <tr>               
-                         <td>{row?.title}</td>
-                         <td>{row?.valid_date}</td>
-                        
-                     </tr>
-                 ))}
-              </tbody>
-             </table>
-          </div>
+            {cavitasDocs?.map((row, index) => (
+              <tr>
+                <td>{row?.title}</td>
+                <td>{row?.valid_date}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default CavitasDocs
-
-
-
-
-
+export default CavitasDocs;

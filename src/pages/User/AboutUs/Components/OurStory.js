@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import { Link, useNavigate } from "react-router-dom";
 
 const OurStory = () => {
   const navigate = useNavigate();
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   return (
     <section className="aboutUs__ourStory">
@@ -58,26 +69,16 @@ const OurStory = () => {
           </div>
         </div>
         <div className="aboutUs__ourStory__container__detailsBox">
-          <h1>Our Story</h1>
+          <h1>{t("about.ourstory")}</h1>
           {/* <p className='aboutUs__ourStory__container__detailsBox__desc'>We started in 2018.....</p> */}
           <p className="aboutUs__ourStory__container__detailsBox__desc1">
-            In 2018 we started mediating dental insurance contracts to people in
-            Estonia where like in many other countries such insurance product
-            offer did not exist. Now we are happy to provide dental insurance
-            contracts to Polish employee benefit market under the trading name
-            Cavitas.
+          {t("about.ourstory_desc1")}
           </p>
           <p className="aboutUs__ourStory__container__detailsBox__desc1">
-            The goal of Cavitas - Smarter Dental Insurance is to help people
-            maintain their natural teeth for a longer period of time—hopefully
-            for the rest of their lives—while also providing dental insurance in
-            a more intelligent way that focuses on prevention of teeth-related
-            problems and also covering various dental treatment costs. It also
-            makes all dental-related information accessible on smart mobile
-            devises.
+          {t("about.ourstory_desc2")}
           </p>
           <p className="aboutUs__ourStory__container__detailsBox__desc1">
-            Last but not least - we are getting even more smarter! Stay turned!{" "}
+          {t("about.ourstory_desc3")}
           </p>
         </div>
       </div>

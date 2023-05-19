@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../config/helpers/i18n';
 import Page from '../../../components/Page/Page';
 import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import { Button } from '@mui/material';
@@ -8,6 +10,15 @@ import useClientInsurance from '../../../hooks/useClientInsurance';
 import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 
 const UploadClient = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const {createClientInsurance} = useClientInsurance();
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
@@ -76,9 +87,9 @@ const UploadClient = () => {
       <SuccessMessage successMessage={successMessage}/>
       <section className='uploadClient'>
         <header>
-          <h1>Upload new members for the group cover</h1>
+          <h1>{t("Uploadinsuredperson.Uploadinsuredperson_title")}</h1>
           {user?.data?.role === "broker" ?
-            <p>Please describe the group of your corporate client and upload the group census as spreadsheet (.xls or .csv) here via the form below and follow our communication with via "Support tickets" on the left side menu.</p>
+            <p>{t("Uploadinsuredperson.Uploadinsuredperson_heading")}</p>
             :
             <p>Please describe your group and upload the group census as spreadsheet (.xls or .csv) here via the form below
               and follow our communication with you via "Support tickets" on the left side menu.</p>
@@ -87,12 +98,12 @@ const UploadClient = () => {
         <div className='uploadClient__container'>
           <div className='uploadClient__container__body'>
             <div className='uploadClient__container__body__generalInfo'>
-              <p>General info</p>
+              <p>{t("Uploadinsuredperson.Question_no1")}</p>
               {user?.data?.role === "broker" ?
                 <input
                   className='uploadClient__container__body__generalInfo__input1'
                   type='text'
-                  placeholder='Name of your corporate client*'
+                  placeholder={`${t("Uploadinsuredperson.Question_no1_part1")}`}
                   name="corporate_client_name"
                   value={client.corporate_client_name}
                   required={true}
@@ -108,7 +119,7 @@ const UploadClient = () => {
                 className='uploadClient__container__body__generalInfo__input2'
                 type='number'
                 minlength="50"
-                placeholder='Total number of employees in the company*'
+                placeholder={`${t("Uploadinsuredperson.Question_no1_part2")}`}
                 name="number_of_employees_in_company"
                 value={client.number_of_employees_in_company}
                 onChange={handleChange}
@@ -117,7 +128,7 @@ const UploadClient = () => {
             </div>
 
             <div className='uploadClient__container__body__participation'>
-              <p>Mode of participation in Cavitas dental insurance cover</p>
+            <p>{t("Uploadinsuredperson.Question_no2")}</p>
               <div className='uploadClient__container__body__participation__head'>
                 <input
                   type='radio'
@@ -128,11 +139,11 @@ const UploadClient = () => {
                   value={1}
                   required={true}
                 />
-                <label>Mandatory group of employees</label>
+                <label>{t("Uploadinsuredperson.Question_no2_part1")}</label>
               </div>
               {mandatoryEmployees === true &&
                 <div className='uploadClient__container__body__participation__buttonBox'>
-                  <span>How many employees?</span>
+                  <span>{t("Uploadinsuredperson.Question_no2_part1_part1")}</span>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
@@ -187,11 +198,11 @@ const UploadClient = () => {
                   required={true}
                   onChange={handleChange}
                 />
-                <label>Voluntry group of employees</label>
+                <label>{t("Uploadinsuredperson.Question_no2_part2")}</label>
               </div>
               {voluntaryEmployees === true &&
                 <div className='uploadClient__container__body__participation__buttonBox'>
-                  <span>How many employees?</span>
+                  <span>{t("Uploadinsuredperson.Question_no2_part2_part1")}</span>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
                       type='radio'
@@ -200,7 +211,7 @@ const UploadClient = () => {
                       // required={true}
                       onChange={handleChange}
                     />
-                    <label>100 - 200 (min 70% participation)</label>
+                    <label>{t("Uploadinsuredperson.Question_no2_part2_part2")}</label>
                   </div>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
@@ -210,7 +221,7 @@ const UploadClient = () => {
                       // required={true}
                       onChange={handleChange}
                     />
-                    <label>201 - 500 (min 60% participation)</label>
+                    <label>{t("Uploadinsuredperson.Question_no2_part2_part3")}</label>
                   </div>
                   <div className='uploadClient__container__body__participation__buttonBox__button'>
                     <input
@@ -220,12 +231,12 @@ const UploadClient = () => {
                       // required={true}
                       onChange={handleChange}
                     />
-                    <label>501 - 1000 (min 50% participation)</label>
+                    <label>{t("Uploadinsuredperson.Question_no2_part2_part4")}</label>
                   </div>
                 </div>
               }
               <div className='uploadClient__container__body__participation'>
-                <p>Do you want to add employees' family members to the group cover?</p>
+              <p>{t("Uploadinsuredperson.Question_no3")}</p>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
@@ -234,7 +245,7 @@ const UploadClient = () => {
                     // required={true}
                     onChange={handleChange}
                   />
-                  <label>NO</label>
+                  <label>{t("Uploadinsuredperson.Question_no3_part1")}</label>
                 </div>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
@@ -244,7 +255,7 @@ const UploadClient = () => {
                     // required={true}
                     onChange={handleChange}
                   />
-                  <label>YES - Family members are included in the list</label>
+                  <label>{t("Uploadinsuredperson.Question_no3_part2")}</label>
                 </div>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
@@ -254,12 +265,12 @@ const UploadClient = () => {
                     // required={true}
                     onChange={handleChange}
                   />
-                  <label>YES - Please collect family members data from our employees included in the list
+                  <label>{t("Uploadinsuredperson.Question_no3_part3")}
                   </label>
                 </div>
               </div>
               <div className='uploadClient__container__body__participation'>
-                <p>How insurance premium of family members is paid?</p>
+              <p>{t("Uploadinsuredperson.Question_no4")}</p>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
@@ -268,7 +279,7 @@ const UploadClient = () => {
                     // required={true}
                     onChange={handleChange}
                   />
-                  <label>By employer via employee's monthly salary</label>
+                  <label>{t("Uploadinsuredperson.Question_no4_part1")}</label>
                 </div>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
@@ -278,12 +289,12 @@ const UploadClient = () => {
                     // required={true}
                     onChange={handleChange}
                   />
-                  <label>By the family members themselves
+                  <label>{t("Uploadinsuredperson.Question_no4_part2")}
                   </label>
                 </div>
               </div>
               <div className='uploadClient__container__body__participation'>
-                <p>Do you have a mandated insurance broker through whom you found out about Cavitas dental insurance?</p>
+              <p>{t("Uploadinsuredperson.Question_no5")}</p>
                 <div className='uploadClient__container__body__participation__head'>
                   <input
                     type='radio'
@@ -292,14 +303,14 @@ const UploadClient = () => {
                     // required={true}
                     onChange={handleChange}
                   />
-                  <label>YES</label>
+                  <label>{t("Uploadinsuredperson.Question_no5_part1")}</label>
                 </div>
                 <input
                   className='uploadClient__container__body__participation__headInput'
                   type='text'
                   name="referenced_broker_name"
                   onChange={handleChange}
-                  placeholder='Name of insurance broker company'
+                  placeholder={`${t("Uploadinsuredperson.Question_no5_part2")}`}
                   value={client?.referenced_broker_name}
                 />
 
@@ -315,7 +326,7 @@ const UploadClient = () => {
                 </div>
               </div>
               <div className='uploadClient__container__body__participation'>
-                <p>Desired Cavitas dental insurance group cover inception date?</p>
+              <p>{t("Uploadinsuredperson.Question_no6")}</p>
                 <input
                   className='uploadClient__container__body__participation__headInput'
                   type='date'
@@ -327,7 +338,7 @@ const UploadClient = () => {
                 />
               </div>
               <div className='uploadClient__container__body__participation'>
-                <p>Please upload the group census as spreadsheet (.xls or .csv)</p>
+              <p>{t("Uploadinsuredperson.Question_no7")}</p>
                 <div className='uploadClient__container__body__participation__fileUpload'>
                   <label for="file-input">
                     <FileUploadOutlinedIcon className='uploadClient__container__body__participation__fileUpload__icon' />
@@ -342,11 +353,11 @@ const UploadClient = () => {
                 </div>
               </div>
               <div className='uploadClient__container__body__participation'>
-                <p>Are there any other details you'd like to tell us about your group?</p>
+              <p>{t("Uploadinsuredperson.Question_no8")}</p>
                 <textarea
                   rows="6"
                   className='uploadClient__container__body__participation__headInput'
-                  placeholder='Start here...'
+                  placeholder={`${t("contactform.texthere")}`}
                   value={client.details}
                   required={true}
                   onChange={handleChange}
@@ -354,7 +365,7 @@ const UploadClient = () => {
                 />
               </div>
             </div>
-            <Button onClick={(e) => handleSubmit(e)}>Submit</Button>
+            <Button onClick={(e) => handleSubmit(e)}>{t("Uploadinsuredperson.Submitform")}</Button>
           </div>
         </div>
       </section>

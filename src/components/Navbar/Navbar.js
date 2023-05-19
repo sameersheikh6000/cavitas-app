@@ -83,14 +83,15 @@ function Navbar() {
                   <Link className="appbar__linksBox__links__link" to={`/member/${lang == "pl" ? "pl" : "en"}`}>
                   {t("nav.memberLogin")}
                   </Link>
-
-
-                </div>
-                <select onChange={(e) => handleLanguageChange(e.target.value)}>
+                  <select onChange={(e) => handleLanguageChange(e.target.value)}>
                   <option value="">{t("nav.selectLang")}</option>
                   <option value="en">{t("nav.english")}</option>
                   <option value="pl">{t("nav.polish")}</option>
                 </select>
+
+                </div>
+               
+               
               </Box>
               <Box className="appbar__sidebar1">
                 <IconButton>

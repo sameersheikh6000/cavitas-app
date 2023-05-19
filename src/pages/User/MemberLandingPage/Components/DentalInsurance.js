@@ -1,27 +1,39 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import { Link } from 'react-router-dom'
 
 const DentalInsurance = () => {
+  
+  
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className='landingPage__dentaltInsurance'>
       <div className='landingPage__dentaltInsurance__container'>
         <div className='landingPage__dentaltInsurance__container__details'>
-        <h1 className='landingPage__smartInsurance__container__details__heading'>Smarter</h1>
-          <h1 className='landingPage__smartInsurance__container__details__heading2'>Dental Insurance</h1>
+        <h1 className='landingPage__smartInsurance__container__details__heading'>{t("Member.Member_landingPage_title1")}</h1>
+          <h1 className='landingPage__smartInsurance__container__details__heading2'>{t("Member.Member_landingPage_title2")}</h1>
                    <p className='landingPage__dentaltInsurance__container__details__desc'>
-          Cavitas dental insurance is here to help you to keep your teeth in good health
-          </p>
+                   {t("Member.Member_landingPage_heading")}          </p>
           <div className='landingPage__dentaltInsurance__container__details__buttons'>
             <Link to="/member-signin">
-              <Button variant='outlined'>Member log in</Button>
+              <Button variant='outlined'>{t("Member.Member_landingPage_btn1")}</Button>
             </Link>
             <Link to="/claims">
-              <Button variant='outlined'>Submit claim</Button>
+              <Button variant='outlined'>{t("Member.Member_landingPage_title2")}</Button>
             </Link>
           </div>
         </div>
-        <div className='landingPage__dentaltInsurance__container__picture'>
+        <div className='landingPage__dentaltInsurance__container__picture' style={{width:"42%"}}>
           <img src={require("../../../../assets/DentalInsurance-image.png")} alt="" />
         </div>
       </div>

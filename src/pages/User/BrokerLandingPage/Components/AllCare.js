@@ -1,40 +1,47 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import DoneIcon from '@mui/icons-material/Done';
-
+import i18n from '../../../../config/helpers/i18n';
 const AllCare = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className='landingPage__allCare'>
       <div className='landingPage__allCare__container'>
         <div className='landingPage__allCare__container__details'>
           {/* <h1 className='landingPage__allCare__container__details__heading'>All-in 1 teeth care!</h1> */}
-          <h1 className='landingPage__allCare__container__details__heading'>Easy for members!</h1>
+          <h1 className='landingPage__allCare__container__details__heading'>{t("home.Easyformember_title")}</h1>
           
           <p className='landingPage__allCare__container__details__desc'>
-                    Members can download the Cavitas app to have all information in their pocket:          </p>
+          {t("home.Easyformember_heading")}         </p>
                              
           <div className='landingPage__allCare__container__details__detailsContainer'>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-              Quick dental cover information              </p>
+              {t("home.Easyformember_desc1")}             </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-              Daily brushing tips & hints
-              </p>
+              {t("home.Easyformember_desc2")}               </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-              Easy claim reporting & monitoring
-              </p>
+              {t("home.Easyformember_desc3")}               </p>
             </div>
             <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
               <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-              Shop for effective teeth care products 
-              </p>
+              {t("home.Easyformember_desc4")}               </p>
             </div>
             {/* <div className='landingPage__allCare__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />

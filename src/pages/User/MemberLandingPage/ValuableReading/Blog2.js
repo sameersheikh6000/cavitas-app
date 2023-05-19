@@ -1,18 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../config/helpers/i18n";
 import { useLocation } from "react-router-dom";
 import Page from "../../../../components/Page/Page";
 
 const Blog2 = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
   const location = useLocation();
   let splittedLoc = location.pathname.split("/");
   let id = splittedLoc[splittedLoc.length - 1];
   console.log(id);
+
   return (
     <Page>
       <section className="valuableReadingView">
         <header>
-          <h1>Good teeth care matters!</h1>
-          <p>by Cavitas |  May 20, 2023</p>
+          <h1>{t("Blog.Blog2_title")}</h1>
+          <p>by Cavitas | May 20, 2023</p>
         </header>
         <div
           className="valuableReadingView__container"
@@ -20,77 +32,37 @@ const Blog2 = () => {
         >
           <p>
             <br />
-            Taking care of your teeth is essential for maintaining good oral
-            hygiene and overall health. Neglecting dental health can lead to a
-            variety of problems, ranging from bad breath and tooth decay to gum
-            disease and tooth loss. In this blog post, we'll discuss why it's
-            important to take care of your teeth and how you can do it.
+            {t("Blog.Blog2_part1")}
             <br /> <br />
-            <h3>1. Prevention of dental problems:</h3>
-            The primary benefit of taking care of your teeth is that it can
-            prevent dental problems. Brushing and flossing regularly can help
-            remove plaque, a sticky film of bacteria that forms on the teeth and
-            causes tooth decay and gum disease. Additionally, regular dental
-            check-ups can help identify any potential dental problems before
-            they become severe. This can save you from the pain, expense, and
-            time required to treat dental problems.
+            <h3> {t("Blog.Blog2_part2_heading")}</h3>
+            {t("Blog.Blog2_part3")}
             <br /> <br />
-            <h3> 2. Better overall health:</h3>
-            Taking care of your teeth is not just good for your oral health but
-            also for your overall health. Poor dental health has been linked to
-            several health problems, including heart disease, stroke, diabetes,
-            and respiratory disease. Research suggests that the bacteria that
-            cause gum disease can enter the bloodstream and contribute to these
-            health issues. Therefore, taking care of your teeth can reduce your
-            risk of developing these conditions.
+            <h3> {t("Blog.Blog2_part4_heading")}</h3>
+            {t("Blog.Blog2_part5")}
             <br /> <br />
-            <h3>3. Improved self-esteem: </h3>
-            Having healthy teeth can improve your self-esteem and confidence.
-            When you have good dental health, you're more likely to smile and
-            engage with others. On the other hand, poor dental health can lead
-            to embarrassment, social isolation, and even depression.
+            <h3> {t("Blog.Blog2_part6_heading")} </h3>
+            {t("Blog.Blog2_part7")}
             <br /> <br />
-            <h3>4. Save money in the long run:</h3>
-            Preventing dental problems can save you money in the long run. When
-            you take care of your teeth, you can avoid expensive dental
-            procedures, such as root canals, crowns, and dental implants.
-            Additionally, regular dental check-ups can help detect dental issues
-            before they become severe and require more costly treatments.
+            <h3> {t("Blog.Blog2_part8_heading")}</h3>
+            {t("Blog.Blog2_part9")}
             <br /> <br />
-            <h2> So, how can you take care of your teeth? </h2>
-            <h3>1. Brush twice a day:</h3>
-            Brushing your teeth twice a day is crucial for maintaining good
-            dental health. Use a fluoride toothpaste and a soft-bristled
-            toothbrush to brush your teeth gently in circular motions for two
-            minutes each time.
+            <h2> {t("Blog.Blog2_part10_heading")} </h2>
+            <h3> {t("Blog.Blog2_part11")}</h3>
+            {t("Blog.Blog2_part12")}
             <br /> <br />
-            <h3>2. Floss daily:</h3>
-            Flossing is just as important as brushing for removing plaque and
-            food particles from between your teeth. Use a piece of floss to
-            clean between each tooth, being careful not to snap the floss
-            against your gums.
+            <h3> {t("Blog.Blog2_part13")}</h3>
+            {t("Blog.Blog2_part14")}
             <br /> <br />
-            <h3>3. Use mouthwash:</h3>
-            Mouthwash can help kill bacteria and freshen your breath. Choose a
-            mouthwash that contains fluoride to strengthen your teeth and
-            prevent cavities.
+            <h3> {t("Blog.Blog2_part15")}</h3>
+            {t("Blog.Blog2_part16")}
             <br /> <br />
-            <h3>4. Eat a healthy diet:</h3>
-            Eating a healthy diet can help prevent tooth decay and gum disease.
-            Limit sugary and acidic foods and drinks and choose foods that are
-            rich in vitamins and minerals, such as fruits, vegetables, and dairy
-            products.
+            <h3> {t("Blog.Blog2_part17")}</h3>
+            {t("Blog.Blog2_part18")}
             <br /> <br />
-            <h3>5. Visit your dentist regularly:</h3>
-            Regular dental check-ups are essential for maintaining good oral
-            health. Your dentist can detect dental problems early and provide
-            treatment before they become more severe.
+            <h3> {t("Blog.Blog2_part19")}</h3>
+            {t("Blog.Blog2_part20")}
             <br /> <br />
-            In conclusion, taking care of your teeth is crucial for maintaining
-            good oral hygiene, overall health, and self-esteem. By following a
-            simple oral hygiene routine and visiting your dentist regularly, you
-            can prevent dental problems, save money in the long run, and enjoy a
-            healthier, happier life.
+            {t("Blog.Blog2_part21")}
           </p>
         </div>
       </section>

@@ -1,5 +1,7 @@
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../config/helpers/i18n';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
 import Page from '../../../components/Page/Page';
@@ -10,6 +12,15 @@ import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage"
 import { useNavigate } from 'react-router-dom';
 
 const UserProfileView = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [profile, setProfile] = useState(user?.data)
   const [errorMessage, setErrorMessage] = useState();
@@ -40,31 +51,32 @@ const UserProfileView = () => {
         <div className='userProfileView__top'>
           <div className='userProfileView__top__left'>
             < PersonOutlineOutlinedIcon className='userProfileView__top__left__icon' />
-            <p>User Profile</p>
+            <p>{t("Pannel_Dashboard.Userprofile")}</p>
           </div>
           <div className='userProfileView__top__right'>
             <Button onClick={(e) => handleSubmit(e)}><SaveOutlinedIcon className='userProfileView__top__right__icon' />
-              Save changes</Button>
+            {t("Pannel_Dashboard_Supporttickets.Save")}              
+</Button>
           </div>
         </div>
         <div className='userProfileView__container'>
           <header className='userProfileView__container__header'>
             <div className='userProfileView__container__header__iconBox'>
               < PersonOutlineOutlinedIcon lassName='userProfileView__container__header__iconBox__icon' />
-              <p>User Profile</p>
+              <p>{t("Pannel_Dashboard.Userprofile")}</p>
             </div>
           </header>
           <div className='userProfileView__container__details'>
             <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
-                placeholder='First name'
+                placeholder={`${t("Pannel_registration.Firstname")}`} 
                 value={profile?.first_name}
                 onChange={(e) => setProfile({ ...profile, first_name: e.target.value })}
               /></div>
               <div><input
                 type="text"
-                placeholder='Last name'
+                placeholder={`${t("Pannel_registration.Lastname")}`} 
                 value={profile?.last_name}
                 onChange={(e) => setProfile({ ...profile, last_name: e.target.value })}
               />
@@ -99,7 +111,7 @@ const UserProfileView = () => {
                   </div>
                   <div><input
                     type="text"
-                    placeholder='Company name'
+                    placeholder={`${t("Employer_Pannel_registration.companyname")}`}               
                     value={profile?.company_name}
                     onChange={(e) => setProfile({ ...profile, company_name: e.target.value })}
                   />
@@ -108,7 +120,7 @@ const UserProfileView = () => {
                 <div className='userProfileView__container__details__detailsBox'>
                   <div><input
                     type="text"
-                    placeholder='Company KRS number'
+                    placeholder={`${t("Employer_Pannel_registration.companykrsname")}`}               
                     value={profile?.company_krs_number}
                     onChange={(e) => setProfile({ ...profile, company_krs_number: e.target.value })}
                   />
@@ -116,7 +128,7 @@ const UserProfileView = () => {
                   <div>
                     <input
                       type="text"
-                      placeholder='company address'
+                      placeholder={`${t("Employer_Pannel_registration.companyURLaddress")}`}               
                       value={profile?.company_address}
                       onChange={(e) => setProfile({ ...profile, company_address: e.target.value })}
 
@@ -130,7 +142,8 @@ const UserProfileView = () => {
                 type="text"
                 value={profile?.phone_number}
                 onChange={(e) => setProfile({ ...profile, phone_number: e.target.value })}
-                placeholder='Phone number' />
+                placeholder={`${t("Pannel_registration.Phonenumber")}`} 
+                />
               </div>
               <div><input
                 type="text"
@@ -142,14 +155,14 @@ const UserProfileView = () => {
             <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
-                placeholder='Password'
+                placeholder={`${t("Pannel_Dashboard_Supporttickets.Password")}`}               
                 onChange={(e) => setProfile({ ...profile, password: e.target.value })}
               />
               </div>
               <div>
                 <input
                   type="text"
-                  placeholder='Confirm password'
+                  placeholder={`${t("Pannel_Dashboard_Supporttickets.Confirmpassword")}`}               
                   onChange={(e) => setProfile({ ...profile, confirm_password: e.target.value })}
                 />
               </div>

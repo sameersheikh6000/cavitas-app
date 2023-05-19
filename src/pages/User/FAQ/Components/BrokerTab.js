@@ -1,8 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 
 const BrokerTab = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const [faqData, setFaqData] = useState([false, false]);
 
   const handleFaqData = (index) => {
@@ -15,9 +26,8 @@ const BrokerTab = () => {
     <section className='faqTab'>
       <div className='faqTab__container'>
         <div className='faqTab__container__box'>
-          <p>
-          Q1: How can us as broker get Cavitas dental insurance for our corporate clients?
-          </p>
+        <p>{t("FAQ.FAQ_broker_Q1")}</p>
+
           {faqData[0] === false &&
             <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(0)} />
           }
@@ -27,17 +37,13 @@ const BrokerTab = () => {
         </div>
         {faqData[0] === true &&
           <div className='faqTab__container__box2'>
-            <p>
-            A1: You must declare your insurance interest to us in order for the group insurance contract between the insurer and your corporate client to be finalized. From there, we'll guide you furthure. 
-              </p>
+ <p>{t("FAQ.FAQ_broker_A1")}</p>
           </div>
         }
       </div>
       <div className='faqTab__container'>
         <div className='faqTab__container__box'>
-          <p>
-          Q2: Is there a requirement for minimum amount of employees of my corporate client to conclude Cavitas dental insurance contract with an insurer?
-          </p>
+        <p>{t("FAQ.FAQ_broker_Q2")}</p>
           {faqData[1] === false &&
             <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(1)} />
           }
@@ -47,9 +53,7 @@ const BrokerTab = () => {
         </div>
         {faqData[1] === true &&
           <div className='faqTab__container__box2'>
-            <p>
-            A2: Yes, please contact us and we'll share you the requirements.
-               </p>
+         <p>{t("FAQ.FAQ_broker_A2")}</p>
           </div>
         }
       </div>

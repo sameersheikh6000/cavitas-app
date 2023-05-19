@@ -624,7 +624,7 @@ font-size: 1rem !important;
 .authentication__container__formContainer__registerForm__registerButton {
   background-color: #dd3333 !important;
   color: white !important;
-  width: 120px !important;
+  width: 205px !important;
   border-radius: 0.7rem !important;
   margin: 3rem 0 0 0 !important;
   padding: 5px 0 !important;
@@ -1340,7 +1340,7 @@ font-size: 1rem !important;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-left: 120px;
+  margin-left: 85px;
   align-items: center;
 }
 @media (max-width: 1000px) {
@@ -1372,6 +1372,7 @@ font-size: 1rem !important;
   font-size: 3rem;
   font-weight: bolder;
   color: #dd3333;
+  width: 130%;
 }
 @media (max-width: 768px) {
   .landingPage__smartInsurance__container__details__heading2 {
@@ -1464,7 +1465,8 @@ font-size: 1rem !important;
 .landingPage__ourOffer__container__boxes__detailsContainer {
   border: 1px solid lightgray;
   border-radius: 1rem;
-  width: 385px;
+  
+  width: 500px;
   padding-bottom: 1rem;
 }
 @media (max-width: 750px) {
@@ -1488,7 +1490,7 @@ font-size: 1rem !important;
   justify-content: flex-start;
   /* border-bottom: 1px solid lightgray; */
   padding-bottom: 0.3rem;
-  width: 253px;
+  /* width: 253px; */
   margin-left: 4.5rem;
   margin-bottom: 0.3rem;
 }
@@ -2476,7 +2478,7 @@ font-size: 1rem !important;
   font-size: 0.9rem;
   color: #dd3333;
   margin-top: -8rem;
-  margin-left: 2.5rem;
+  margin-left: 1.2rem;
 }
 .aboutUs__smarterDentalInsurance {
   padding: 2rem;
@@ -3462,6 +3464,11 @@ font-size: 1rem !important;
   padding: 0 10%;
   margin-left: 1rem;
   margin-right: 1rem;
+
+}
+.Blog3_header{
+  background-image: url("./assets/NavbarBG-image.png");
+  width: 105%;
 }
 @media (max-width: 1250px) {
   .valuableReadingView {

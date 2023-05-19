@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import useContactForm from "../../../../../hooks/useContactForm";
 
 function ContactCavitas() {
+    
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const { createContact } = useContactForm()
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -59,7 +71,7 @@ function ContactCavitas() {
         }}
         onClick={() => handleOpen()}
       >
-        Contact Us
+     {t("Broker.Broker__contactUs__button")}
       </Button>
       <Modal
         open={open}
@@ -69,8 +81,8 @@ function ContactCavitas() {
       >
         <Box sx={style}>
           <div className="uploadClient__container__body__participation">
-            <h2>Contact Cavitas</h2>
-            <h1 style={{ color: "red" }}>Start conversation with us</h1>
+            <h2>{t("contactform.contactfrom_title")}</h2>
+            <h1 style={{ color: "red" }}>{t("contactform.contactfrom_heading")}</h1>
             {
               message && <span style={{color: "green"}}>{message}</span> 
             }
@@ -84,7 +96,7 @@ function ContactCavitas() {
                   <div>
                     <input 
                     type="text" 
-                    placeholder="First & Last name" 
+                    placeholder={`${t("get24contactform.firstandlastname")}`} 
                     onChange={(e) => setContactForm({...contactForm, first_name: e.target.value})}
                     />
                   </div>
@@ -103,20 +115,20 @@ function ContactCavitas() {
 
                   <div style={{ marginTop: "5px" }}>
                     <select className="select"  onChange={(e) => setContactForm({ ...contactForm, identity: `I am ${e.target.value} `})}>
-                      <option>I am ....*</option>
-                      <option value="broker">Broker</option>
-                      <option value="employer">Employer</option>
-                      <option value="member">Member</option>
-                      <option value="other">Other</option>
+                    <option>{t("contactform.iam")}</option>
+                      <option value="broker">{t("contactform.Broker")}</option>
+                      <option value="employer">{t("contactform.Employer")}</option>
+                      <option value="member">{t("contactform.Member")}</option>
+                      <option value="other">{t("contactform.Other")}</option>
                     </select>
                   </div>
                   <div style={{ marginTop: "5px" }}>
                     <select className="select"  onChange={(e) => setContactForm({ ...contactForm, request: `I want to ${e.target.value} `})}>
-                      <option >I want to ...</option>
-                      <option value="contact for cooperation">Contact for cooperation</option>
-                      <option value="ask a question">Ask a question</option>
-                      <option value="submit a complaint">Submit a complaint</option>
-                      <option value="give feedback">Give feedback</option>
+                    <option >{t("contactform.iwant")}</option>
+                      <option value="contact for cooperation">{t("contactform.Contactcooperation")}</option>
+                      <option value="ask a question">{t("contactform.Askquestion")}</option>
+                      <option value="submit a complaint">{t("contactform.Submitcomplaint")}</option>
+                      <option value="give feedback">{t("contactform.feedback")}</option>
                     </select>
                   </div>
                 </div>
@@ -128,7 +140,7 @@ function ContactCavitas() {
                     <textarea
                       style={{width: "200%" }}
                       className="textarea"
-                      placeholder="Your text here                 "
+                      placeholder={`${t("contactform.texthere")}`} 
                       cols={10}
                       rows={5}
                       onChange={(e) => setContactForm({...contactForm, description: e.target.value})}
@@ -143,7 +155,7 @@ function ContactCavitas() {
               type="submit"
               onClick={() => handleSubmit()}
             >
-              Submit
+               {t("get24contactform.send")}
             </Button>
           </div>
         </Box>

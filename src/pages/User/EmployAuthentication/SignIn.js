@@ -1,11 +1,21 @@
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../config/helpers/i18n';
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuthenticate from '../../../hooks/useAuthenticate';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 const EmploySignIn = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
 
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const { userLogin } = useAuthenticate();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -61,7 +71,7 @@ const EmploySignIn = () => {
         </div>
 
         <div className='authentication__container__formContainer'>
-          <p className='authentication__container__formContainer__heading'>Welcome to Cavitas! </p>
+          <p className='authentication__container__formContainer__heading'>{t("Pannel_Login.welcomecavitas")} </p>
           <br />       {/* <p className='authentication__container__formContainer__login'>Log In To</p> */}
           <form className='authentication__container__formContainer__form' onSubmit={submitHandler}>
             <input
@@ -79,7 +89,7 @@ const EmploySignIn = () => {
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='text'
                   name='password'
-                  placeholder='Password'
+                  placeholder={`${t("Pannel_Login.password")}`} 
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
@@ -90,7 +100,7 @@ const EmploySignIn = () => {
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='password'
                   name='password'
-                  placeholder='Password'
+                  placeholder={`${t("Pannel_Login.password")}`} 
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
@@ -99,13 +109,13 @@ const EmploySignIn = () => {
               }
               <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowPassword} />
             </div>
-            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In</Button>
+            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>{t("Pannel_Login.login")}</Button>
           </form>
-          <Link to="/EmployerEnterMail" className='authentication__container__formContainer__forgotPassword'>Forgot your password?</Link>
+          <Link to="/EmployerEnterMail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
-            <p>Don't have account yet?</p>
+          <p>{t("Pannel_Login.don'thaveaccount")}</p>
             <Link to="/employ-signup">
-              <Button>Register now!</Button>
+            <Button>{t("Pannel_Login.registernow")}</Button>
             </Link>
           </div>
         </div>

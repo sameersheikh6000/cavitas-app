@@ -9,16 +9,366 @@
     "language": "Language",
     "english": "English",
     "polish": "Polish",
-    "selectLang": "Select Language"
+    "Blog":"Blog",
+    "PrivacyPolicy":  "Privacy Policy",
+    "Shop":"Shop",
+    "selectLang": "Select Language",
+    "Contactforsupport":"Contact for support",
+    "Sentcomplaint":"Sent us a complaint",
+    "givefeedback":"Give us feedback"
   },
 
   "home": {
     "smarter": "Smarter",
     "dentalInsurance": "Dental Insurance",
-    "upperDescription": "Healthy teeth are the foundation of healthy employees. We provide dental insurance to employers as a highly appreciated employee benefit product"
+    "upperDescription": "Healthy teeth are the foundation of healthy employees. We provide dental insurance to employers as a highly appreciated employee benefit product",
+    "smarter_insurance_button_broker": "I'M BROKER",
+    "smarter_insurance_button2_employer": "I'M EMPLOYER",
+    "smarter_insurance_button3_member": "I'M MEMBER",
+    "landingPage__ourOffer__header_h1": "What do we offer?",
+    "landingPage__ourOffer__header_p": "To attract and retain top talents, companies often provide additional benefits beyond just salary. We offer reimbursement for dental treatment costs as one of our services because dental expenses can be a significant financial burden for employees.",
+    "value_member": "VALUE FOR MEMBER",
+    "value_member1": "Eases the cost of dental treatment    ",
+    "value_member2": "Regular prevention care    ",
+    "value_member3": "Healthier teeth    ",
+    "value_member4": "Better overall health    ",
+    "value_member5": "Family is also covered ",
+    "value_employer": "VALUE FOR EMPLOYER",
+    "value_employer1": "Attract and retain top talents",
+    "value_employer2": "Healthier employees",
+    "value_employer3": "Less sickness days",
+    "value_employer4": "Increased productivity ",
+    "value_employer5": "A caring company image",
+    "Howdoeswork_title": "How does it work?",
+    "Howdoeswork_heading": "We have long-term plan to keep people's teeth healthy",
+    "Howdoeswork_des1": "Free choice of dentists in the home country and EU",
+    "Howdoeswork_des2": "All teeth in the mouth are covered regadless of previous treatments",
+    "Howdoeswork_des3": "Increasing coverage during 3 consecutive years",
+    "Howdoeswork_des4": "Cover includes check-ups, cleanings, fillings, root canal treatments, tooth extractions, crowns, bridges, implants - and much more",
+    "Howdoeswork_des5": "Accident cover wordwide",
+    "Howdoeswork_des6": "Oral cancer treatment in the home country once per lifetime",
+    "Howdoeswork_des7": "Easy claiming and refunding process via Cavitas mobile app or online",
+    "Easyformember_title": "Easy for members!",
+    "Easyformember_heading": "Members can download the Cavitas app to have all information in their pocket:",
+    "Easyformember_desc1": "Quick dental cover information    ",
+    "Easyformember_desc2": "Daily brushing tips & hints",
+    "Easyformember_desc3": "Easy claim reporting & monitoring",
+    "Easyformember_desc4": "Shop for effective teeth care products "
   },
 
   "about": {
-    "cavitasMeaning": "What Cavitas mean?"
+    "cavitasMeaning": "What Cavitas mean?",
+    "Meaningofcavitas": "The Latin word 'Cavitas' implies 'cavity' or 'cavity in the human body.' Oral cavity with gums and teeth is very important area of the mouth. Cardiovascular disease, diabetes, and respiratory infections have all been related to poor dental health. Healthy teeth, gums, and mouth can help lower the chance of developing these and other serious illnesses.",
+    "ourstory": "Our Story",
+    "ourstory_desc1": "In 2018 we started mediating dental insurance contracts to people in Estonia where like in many other countries such insurance product offer did not exist. ",
+    "ourstory_desc2": "The goal of Cavitas - Smarter Dental Insurance is to help people maintain their natural teeth for a longer period of time—hopefully for the rest of their lives—while also providing dental insurance in a more intelligent way that focuses on prevention of teeth-related problems and also covering various dental treatment costs. It also makes all dental-related information accessible on smart mobile devises.",
+    "ourstory_desc3": "Last but not least - we are getting even more smarter! Stay turned!",
+    "smartdental_title": "Cavitas - smarter dental insurance    ",
+    "smartdental_p1": "We are agent of clients and we act in their best interest. ", 
+    "smartdental_p2": "We do our best efforts to provide the selection of insurance contracts from various dental insurance capacity providers in Europe.    ",
+    "smartdental_p3": "Due to specifics of dental insurance cover we currently mediate dental insurance contracts from 2 capacity providers:    ",
+    "ourpolicy_title": "Our privacy policy and other documents    ",
+    "ourpolicy_policy1": "Privacy policy    ",
+    "ourpolicy_policy2": "Cookie policy    ",
+    "ourpolicy_policy3": "Broker agreement"
+  },
+
+  "FAQ": {
+    "FAQ_title": "Frequently Asked Questions",
+    "FAQ_genral_title": "All",
+    "FAQ_genral_Q1": "Q1: What is the purpose of Cavitas dental insurance?",
+    "FAQ_genral_A1": "A1: Insurance is a tool to protect against financial loss. In accordance with the principle of insurance and on the basis of mutual assistance, persons seeking to avoid the realization of a certain similar risk collect their funds at the insurer so that some of them receive insurance benefits in the event of a negative consequence. Thus, the principle of insurance is the distribution of the damages (claims) between a large number of persons carrying the same risk.",
+    "FAQ_genral_Q2": "Q2: Why to join Cavitas dental insurance?",
+    "FAQ_genral_A2": "A2: Cavitas dental insurance, like any other insurance, is to prevent and diminish your potential risks. In the case of dental insurance, these risks are the dental costs that you may incur in the future.",
+    "FAQ_genral_Q3": "Q3: Does an insured person have to disclose their dental status in order to get Cavitas dental insurance cover?",
+    "FAQ_genral_A3": "A3: . No, this is not required. All existing teeth are covered regardless of previous treatment history (missing teeth are excluded). This includes, already ongoing, planned or recommended treatments, provided that the treatment occurs after the start date of the policy period.",
+    "FAQ_genral_Q4": "Q4: How long is the policy period?",
+    "FAQ_genral_A4": "Q4: Policy period is 1 year although the Cavitas insurance benefit plan is for the 3-years so that the cover is increasing over three (3) years giving the maximum coverage in the third year.",
+    "FAQ_Employer_title": "For Employers",
+    "FAQ_Employer_Q1": "Q1: How us as company can get Cavitas dental insurance cover for our employees?",
+    "FAQ_Employer_A1": "A1: In order for the group insurance contract between the insurer and the company please declare your insurance interest to us (or to your other mandated broker).",
+    "FAQ_Employer_Q2": "Q2: Is there a requirement for minimum amount of employees to conclude Cavitas dental insurance contract with insurer?",
+    "FAQ_Employer_A2": "A2: Yes, please contact us and we'll share you the requirements.",
+    "FAQ_Employer_Q3": "Q3: How my employees would se serviced during policy period?",
+    "FAQ_Employer_A3": "A3: All members (employee and family members) can download Cavitas dental insurance mobile application to have a quick access to policy information, submit quickly claims, get guidelines how to brush the teeth as well buy effective teeth care products. On website (www.cavitas.pl) all members can access to login-protected area to have a access to the same information.",
+    "FAQ_member_title": "For Members",
+    "FAQ_member_Q1": "Q1: How can me as employee of the company get Cavitas dental insurance cover?",
+    "FAQ_member_A1": "A1: In order for the group insurance contract between the insurer and your company to be finalized and for you to receive the advantages of Cavitas dental insurance, your employer must declare its insurance interest to us (or do it through another mandated broker).",
+    "FAQ_member_Q2": "Q2: Can me as employee add my family members to cover?",
+    "FAQ_member_A2": "A2: Yes you can add your spouse/partner and children up to 23 year old if you have such permission from your employer.",
+    "FAQ_member_Q3": "Q3: In wich dental clinics Cavitas dental insurance is valid?    ",
+    "FAQ_member_A3": "A3: Cavitas dental insurance is valid in any dental clinic in Poland or EU/EEA country (except oral cancer treatment what must be done in Poland only). In the event of an dental accident coverage is valid in all licensed dental clinics wordlwide.",
+    "FAQ_broker_title": "For Broker",
+    "FAQ_broker_Q1": "Q1: How can us as broker get Cavitas dental insurance for our corporate clients?",
+    "FAQ_broker_A1": "A1: You must declare your insurance interest to us in order for the group insurance contract between the insurer and your corporate client to be finalized. From there, we'll guide you furthure.    ",
+    "FAQ_broker_Q2": "Q2: Is there a requirement for minimum amount of employees of my corporate client to conclude Cavitas dental insurance contract with an insurer?    ",
+    "FAQ_broker_A2": "A2: Yes, please contact us and we'll share you the requirements."
+  },
+  "Broker": {
+    "Broker_landing_Page_title1": "Your Clients Deserve    ",
+    "Broker_landing_Page_title2": "Good dental coverage    ",
+    "Broker_login_button": "Broker Log In",
+    "Broker__Benefits__title": "Provide long-awaited dental care benefits to your clients' employees",
+    "Broker__Benefits__1": "To attract and keep talented employees",
+    "Broker__Benefits__2": "To demonstrate commitment to the health of employees and their families",
+    "Broker__Benefits__3": "To help employees to access preventive dental care, which can help detect oral health issues at early stage",
+    "Broker__Benefits__4": "To improve productivity and reduce absenteeism caused by toothaches or gum disease",
+    "Broker__Benefits__5": "To relieave employees' dental costs burden",
+    "CoverWork__title": "How cover works?",
+    "CoverWork__heading": "We offer long-term support to keep member's teeth healthy.    ",
+    "CoverWork__year1": "Year 1",
+    "CoverWork__year2": "Year 2",
+    "CoverWork__year3": "Year 3",
+    "CoverWork_no1": "Prevention treatment",
+    "CoverWork_no2": "X-rays",
+    "CoverWork_no3": "Anesthesia",
+    "CoverWork_no4": "Fillings",
+    "CoverWork_no5": "Extractions",
+    "CoverWork_no6": "Root canal treatment",
+    "CoverWork_no7": "Worldwide accident cover",
+    "CoverWork_no8": "Oral cancer cover*",
+    "CoverWork_no9": "*One (1) per lifetime",
+    "CoverWork_no10": "Crowns",
+    "CoverWork_no11": "Bridge",
+    "CoverWork_no12": "Denture",
+    "CoverWork_no13": "Implant",
+    "CoverWork_no14": "!!! Teeth whitening",
+    "CoverWork_no15": "!!! Adult orthodontics*",
+    "CoverWork__year__button": "Get a quote in 24 hrs",
+    "Broker__contactUs__button": "Contact Us",
+    "suggest":"Suggest to your employer",
+    "Broker__conversion": "Let's discuss how we can help you to serve your corporate clients best"
+  },
+  "Employer": {
+    "Employer_conversion": "Let's cover your employees",
+    "Employer_landingpage_title": "Healthy Teeth-Healthy Employees",
+    "Employer_landingpage_button": "Employer / HR Manager Log In",
+    "Employer_benefits": "By enabling oral health related employee benefit plan you are:",
+    "Employer_benefits1": "Attracting and retaining talented employees",
+    "Employer_benefits2": "Demonstrating your commitment to the health and well-being of your employees and their families",
+    "Employer_benefits3": " Improving productivity and reduce absenteeism caused by toothaches or gum disease",
+    "Employer_benefits4": "Improving employees' ability to save on dental treatment costs"
+  },
+  "Member": {
+    "Member_landingPage_title1": "Smarter",
+    "Member_landingPage_title2": "Dental Insurance",
+    "Member_landingPage_heading": "Cavitas dental insurance is here to help you to keep your teeth in good health",
+    "Member_landingPage_btn1": "Member Log In",
+    "Member_landingPage_btn2": "Submit Claim",
+    "Member_landingPage_notmember_title": "You are not member yet?",
+    "Member_landingPage_notmember_desc": "If you don't already have Cavitas dental insurance help your employer to know about this employee benefit.",
+    "Member_landingPage_notmember_btn": "Suggest To Your Employer"
+  },
+  "Blog": {
+    "Blog_title": "Valuable Reading",
+    "Blog_heading": "Recent blog posts",
+    "Blog1_title": "Importance of dental insurance",
+    "Blog1_desc": "Maintaining good dental health is an important aspect of overall health and well-being. However, dental care can be expensive, and many people may avoid seeking care due to cost concerns. That's where dental insurance comes in. Dental insurance is a type of insurance that provides coverage",
+    "Blog2_title": "Good teeth care matters!",
+    "Blog2_desc": "Taking care of your teeth is essential for maintaining good oral hygiene and overall health. Neglecting dental health can lead to a variety of problems, ranging from bad breath and tooth decay to gum disease and tooth loss. In this blog post, we'll discuss why it's important to take care of your teeth and how you can do it.",
+    "Blog3_title": "Why is it a good investment to offer dental insurance to employees?",
+    "Blog3_desc": "Dental insurance is a type of insurance that helps employees pay for dental care, such as regular check-ups, cleanings, fillings, and other procedures. Here are some reasons why employers should consider providing",
+    "Blog1_part1": "Maintaining good dental health is an important aspect of overall health and well-being. However, dental care can be expensive, and many people may avoid seeking care due to cost concerns. That's where dental insurance comes in. Dental insurance is a type of insurance that provides coverage for dental treatments and services, helping to reduce the out-of-pocket cost for individuals and families. In this blog post, we'll explore the importance of dental insurance and how it can benefit individuals and families.",
+    "Blog1_part2_heading": "1. Preventive care",
+    "Blog1_part3": "Dental insurance often covers preventive care, such as regular check-ups, cleanings, and X-rays. These services are essential for maintaining good dental health and detecting problems early, before they become more serious and costly to treat. By covering these preventive services, dental insurance encourages individuals to seek regular dental care and maintain good dental health.",
+    "Blog1_part4_heading": "2. Lower out-of-pocket costs",
+    "Blog1_part5": "Dental treatments and services can be expensive, and without insurance, individuals may be reluctant to seek care due to cost concerns. Dental insurance can help reduce the out-of-pocket cost for individuals and families, making dental care more affordable and accessible. By providing coverage for dental treatments and services, dental insurance can help individuals and families save money on their dental care expenses.",
+    "Blog1_part6_heading": "3. Comprehensive coverage",
+    "Blog1_part7": "Dental insurance provides coverage for a wide range of dental treatments and services, including fillings, crowns, root canals, and orthodontics. This comprehensive coverage ensures that individuals and families have access to the care they need, regardless of their dental health needs or financial situation. With dental insurance, individuals can receive the care they need to maintain good dental health and address dental problems as they arise.",
+    "Blog1_part8_heading": "4. Peace of mind",
+    "Blog1_part9": "Dental problems can be stressful and disruptive, and without insurance, individuals may worry about the cost of dental care and how they will afford it. Dental insurance provides peace of mind, knowing that individuals and families have coverage for dental treatments and services when they need them. This peace of mind can reduce stress and anxiety, helping individuals and families maintain good mental health and well-being.",
+    "Blog1_part10_heading": "5. Improved overall health",
+    "Blog1_part11": "Good dental health is essential for overall health and well-being. Poor dental health has been linked to a variety of health problems, including heart disease, diabetes, respiratory infections, and dementia. By providing coverage for dental treatments and services, dental insurance can help individuals maintain good dental health and reduce the risk of associated health problems.",
+    "Blog1_part12": "In conclusion, dental insurance is an important investment in overall health and well-being. By providing coverage for preventive care, lowering out-of-pocket costs, offering comprehensive coverage, providing peace of mind, and improving overall health, dental insurance can benefit individuals and families in a variety of ways. If you're considering dental insurance, it's important to research your options and choose a plan that meets your needs and budget. With dental insurance, you can maintain good dental health and enjoy the many benefits of a healthy smile.",
+
+    "Blog3_part1": "Dental insurance is a type of insurance that helps employees pay for dental care, such as regular check-ups, cleanings, fillings, and other procedures. Here are some reasons why employers should consider providing dental insurance to their employees as part of their benefits package.",
+    "Blog3_part2_heading": "1. Improves Employee Health and Well-being",
+    "Blog3_part3": "Dental problems can lead to serious health issues if left untreated. For example, gum disease has been linked to heart disease, stroke, and other health problems. By providing dental insurance, employers can help their employees maintain good oral health, which can improve their overall health and well-being.",
+    "Blog3_part4_heading": "2. Increases Employee Satisfaction and Retention",
+    "Blog3_part5": "Providing dental insurance can also increase employee satisfaction and retention. When employees have access to dental insurance, they are more likely to visit the dentist regularly, which can help prevent dental problems from becoming more serious and expensive to treat. Additionally, employees who have dental insurance are less likely to leave their jobs in search of better benefits.",
+    "Blog3_part6_heading": "3. Attracts Top Talent",
+    "Blog3_part7": "Offering dental insurance as part of a benefits package can also help attract top talent. In today's competitive job market, employees are looking for more than just a good salary. They want comprehensive benefits packages that include things like health and dental insurance. By providing dental insurance, employers can differentiate themselves from other companies and attract top talent.",
+    "Blog3_part8_heading": "4. Cost-effective for Employers",
+    "Blog3_part9": "Employers may be hesitant to offer dental insurance because they assume it will be too expensive. However, dental insurance can be cost-effective for employers in the long run. Regular dental care can help prevent more serious and costly dental problems down the road. Additionally, dental insurance premiums are tax-deductible for employers, which can help offset the cost.",
+    "Blog3_part10_heading": "5. Boosts Employee Morale",
+    "Blog3_part11": "Providing dental insurance can also boost employee morale. When employees feel valued and supported by their employer, they are more likely to be satisfied with their job and perform better. Additionally, dental insurance can help employees feel more financially secure, which can reduce stress and anxiety.",
+    "Blog3_part12": "In conclusion, providing dental insurance as part of a benefits package can have many benefits for employers and employees alike. It can improve employee health and well-being, increase employee satisfaction and retention, attract top talent, be cost-effective for employers, and boost employee morale. If you're an employer, consider adding dental insurance to your benefits package to help support your employees' overall health and well-being.",
+
+    "Blog2_part1": "Taking care of your teeth is essential for maintaining good oral hygiene and overall health. Neglecting dental health can lead to a variety of problems, ranging from bad breath and tooth decay to gum disease and tooth loss. In this blog post, we'll discuss why it's important to take care of your teeth and how you can do it.",
+    "Blog2_part2_heading": "1. Prevention of dental problems:",
+    "Blog2_part3": "The primary benefit of taking care of your teeth is that it can prevent dental problems. Brushing and flossing regularly can help remove plaque, a sticky film of bacteria that forms on the teeth and causes tooth decay and gum disease. Additionally, regular dental check-ups can help identify any potential dental problems before they become severe. This can save you from the pain, expense, and time required to treat dental problems.",
+    "Blog2_part4_heading": "2. Better overall health:",
+    "Blog2_part5": "Taking care of your teeth is not just good for your oral health but also for your overall health. Poor dental health has been linked to several health problems, including heart disease, stroke, diabetes, and respiratory disease. Research suggests that the bacteria that cause gum disease can enter the bloodstream and contribute to these health issues. Therefore, taking care of your teeth can reduce your risk of developing these conditions.",
+    "Blog2_part6_heading": "3. Improved self-esteem:",
+    "Blog2_part7": "Having healthy teeth can improve your self-esteem and confidence. When you have good dental health, you're more likely to smile and engage with others. On the other hand, poor dental health can lead to embarrassment, social isolation, and even depression.",
+    "Blog2_part8_heading": "4. Save money in the long run:",
+    "Blog2_part9": "Preventing dental problems can save you money in the long run. When you take care of your teeth, you can avoid expensive dental procedures, such as root canals, crowns, and dental implants. Additionally, regular dental check-ups can help detect dental issues before they become severe and require more costly treatments.",
+    "Blog2_part10_heading": "So, how can you take care of your teeth?",
+    "Blog2_part11": "1. Brush twice a day:",
+    "Blog2_part12": "Brushing your teeth twice a day is crucial for maintaining good dental health. Use a fluoride toothpaste and a soft-bristled toothbrush to brush your teeth gently in circular motions for two minutes each time.",
+    "Blog2_part13": "2. Floss daily:",
+    "Blog2_part14": "Flossing is just as important as brushing for removing plaque and food particles from between your teeth. Use a piece of floss to clean between each tooth, being careful not to snap the floss against your gums.",
+    "Blog2_part15": "3. Use mouthwash:",
+    "Blog2_part16": "Mouthwash can help kill bacteria and freshen your breath. Choose a mouthwash that contains fluoride to strengthen your teeth and prevent cavities.",
+    "Blog2_part17": "4. Eat a healthy diet:",
+    "Blog2_part18": "Eating a healthy diet can help prevent tooth decay and gum disease. Limit sugary and acidic foods and drinks and choose foods that are rich in vitamins and minerals, such as fruits, vegetables, and dairy products.",
+    "Blog2_part19": "5. Visit your dentist regularly:",
+    "Blog2_part20": "Regular dental check-ups are essential for maintaining good oral health. Your dentist can detect dental problems early and provide treatment before they become more severe.",
+    "Blog2_part21": "In conclusion, taking care of your teeth is crucial for maintaining good oral hygiene, overall health, and self-esteem. By following a simple oral hygiene routine and visiting your dentist regularly, you can prevent dental problems, save money in the long run, and enjoy a healthier, happier life."
+  },
+
+  "get24contactform":{
+    "contactcavitas":"Contact Cavitas",
+    "quotein24form":"Get a quote in 24 hours",
+    "firstandlastname":"First and last name",
+    "email":"",
+    "iam":"",
+    "companyname":"Company name",
+    "nameofgroup":"Name of the group you want to insure",
+    "totalnumber":"Total number of employees",
+    "aboutyourgroup":"Are there any other details you'd like us about your group?",
+    "send": "Send"
+  },
+  "contactform":{
+    "contactfrom_title":"Contact Cavitas",
+    "contactfrom_heading":"Start conversation with us",
+    "iam":"I am...*",
+    "Broker":"Broker",
+    "Employer":"Employer",
+    "Member":"Member",
+    "Other":"Other",
+    "iwant":"I want to…*",
+    "Contactcooperation":"Contact for cooperation",
+    "Submitcomplain":"Submit a complaint",
+    "Askquestion":"Ask a question",
+    "feedback":"Give feedback",
+    "texthere":"Your text here"
   }
+  ,
+  "Pannel_Login":
+  {
+    "welcomecavitas":"Welcome to Cavitas!",
+    "password":"password",
+   "login":"Log In",
+   "forgetpassword":"Forgot your password?",
+   "don'thaveaccount":"Don't have account yet?",
+   "registernow":"Register now"
+},
+"Pannel_registration":
+{
+  "letsregister":"LET'S GET YOU REGISTERED",
+  "Firstname":"First name*",
+  "Lastname":"Last name*",
+  "Phonenumber":"Phone number*",
+  "Brokercompanyname":"Broker company name",
+  "Brokercompanykrsname":"Broker company KRS number",
+  "BrokercompanyURLaddress":"Broker company URL address",
+  "Rolecompany":"Role in company",
+  "setpassword":"Set your password*",
+  "repeatpassword":"Repeat your password*"
+}
+,
+"Employer_Pannel_registration":
+{
+  "companyname":"Company name",
+  "companykrsname":"Company KRS number",
+  "companyURLaddress":"Company URL address",
+  "Mandatebroker":"Mandated broker (if exist)"
+}
+,
+"Pannel_Dashboard":{
+  "Dasboard":"Dasboard",
+  "Insuredclients":"Insured clients",
+  "Cavitasdocuments":"Cavitas documents",
+  "Supporttickets":"Support tickets",
+  "Userprofile":"User profile",
+  "Uploadclient":"UPLOAD NEW CLIENTS",
+  "Uploadnewperson":"UPLOAD NEW INSURED PERSONS",
+  "submitaclaim":"SUBMIT A CLAIM"
+}
+,
+"Pannel_Dashboard_Dashboard":{
+  "Heading":"Welcome to Cavitas dental insurance!",
+  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
+  "Heading_Part2":"a) access policy information; ",
+  "Heading_Part3":"b) contact us through support tickets and   ",
+  "Heading_Part4":"c) submit your claim. ",
+  "Heading_Part5":"Best regards",
+  "Heading_Part6":"Cavitas"
+}
+,
+"Pannel_Dashboard_Userprofile":{
+
+  "Update":"UPDATE",
+  "Companylocation":"Company location",
+  "Peselnumber":"Numer PESEL",
+  "Address":"Address"
+
+}
+,
+"Pannel_Dashboard_insuredperson":{
+  "Insuredclient":"Insured clients",
+  "View":"View all",
+  "Krsnumber":"KRS number",
+  "Riskrenewaldate":"Risk renewal date",
+  "Opengroup":"Open group"
+},
+"Pannel_Dashboard_Alldocuments":{
+  "Alldocuments":"All Documents",
+  "Documenttype":"Document type:",
+  "Validfrom":"Valid from:"
+}
+,
+"Pannel_Dashboard_Supporttickets":{
+  "Supporttitle": "SUPPORT TICKETS",
+  "Ticketnumber":"Support ticket number",
+  "Status":"Status",
+  "Lastupdate":"Last update",
+  "Openmessage":"Open Message",
+  "Password":"Password",
+  "Confirmpassword":"Confirm password",
+  "Save":"Save changes"
+}
+,
+"Uploadinsuredperson":{
+  "Uploadinsuredperson_title":"UPLOAD NEW MEMBERS FOR THE GROUP COVER",
+  "Uploadinsuredperson_heading":"Please describe the group of your corporate client and upload the group census as spreadsheet (.xls or .csv) here via the form below and follow our communication with via 'Support tickets' on the left side menu.",
+
+  "Question_no1":"General info",
+  "Question_no1_part1":"Name of your corporate client*",
+  "Question_no1_part2":" Total number of employees in the company*",
+
+  "Question_no2":"Mode of participation in Cavitas dental insurance cover",
+  "Question_no2_part1":"Mandatory group of employees",
+  "Question_no2_part1_part1":"How many employees?",
+  "Question_no2_part2":"Voluntry group of employees",
+  "Question_no2_part2_part1":"How many employees?",
+  "Question_no2_part2_part2":"100 - 200 (min 70% participation)",
+  "Question_no2_part2_part3":"201 - 500 (min 60% participation)",
+  "Question_no2_part2_part4":"501 - 1000 (min 50% participation)",
+
+  "Question_no3":"Do you want to add employees' family members to the group cover?",
+  "Question_no3_part1":"NO",
+  "Question_no3_part2":"YES - Family members are included in the list",
+  "Question_no3_part3":"YES - Please collect family members data from our employees included in the list",
+
+  "Question_no4":"How insurance premium of family members is paid?",
+  "Question_no4_part1":"By employer via employee's monthly salary",
+  "Question_no4_part2":"By the family members themselves",
+  
+  "Question_no5":"Do you have a mandated insurance broker through whom you found out about Cavitas dental insurance?",
+  "Question_no5_part1":"YES",
+  "Question_no5_part2":" Name of insurance broker company",
+  "Question_no5_part3":"NO",
+
+  "Question_no6":"Desired Cavitas dental insurance group cover inception date?",
+
+  "Question_no7":"Please upload the group census as spreadsheet (.xls or .csv)",
+
+  "Question_no8":"Are there any other details you'd like to tell us about your group?",
+  "Question_no8_part1":" Start here...",
+
+  "Submitform": "Submit"
+
+}
 }

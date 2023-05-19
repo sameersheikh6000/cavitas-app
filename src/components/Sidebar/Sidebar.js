@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../config/helpers/i18n';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { Link, useNavigate } from 'react-router-dom';
@@ -15,6 +17,17 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 const Sidebar = () => {
+
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
+
   const navigate = useNavigate();
   const { userLogout, adminLogout } = useAuthenticate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
@@ -48,7 +61,7 @@ const Sidebar = () => {
         <div className='sidebar__linkButtons'>
           <Link to="/dashboard" className='sidebar__linkButtons__link'>
             <HomeOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Dashboard</p>
+            <p>{t("Pannel_Dashboard.Dasboard")}</p>
           </Link>
           {user?.data?.role === "broker" ?
             <></>
@@ -64,31 +77,33 @@ const Sidebar = () => {
             <>
               <Link to="/insuredclient/view" className='sidebar__linkButtons__link'>
                 <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
-                <p>Insured clients</p>
+                <p>{t("Pannel_Dashboard.Insuredclients")}</p>
               </Link>
               <Link to="/cavitasdocs/view" className='sidebar__linkButtons__link'>
                 <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
-                <p>Cavitas Documents</p>
+                <p>{t("Pannel_Dashboard.Cavitasdocuments")}</p>
               </Link>
             </>
           }
           <Link to="/support/view" className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>Support tickets</p>
+            <p>{t("Pannel_Dashboard.Supporttickets")}</p>
           </Link>
           <Link to="/profile/user/view" className='sidebar__linkButtons__link'>
             <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />
-            <p>User profile</p>
+            <p>{t("Pannel_Dashboard.Userprofile")}</p>
           </Link>
           <div className='sidebar__linkButtons__buttons'>
             {user?.data?.role === "broker" &&
-              <Button onClick={() => navigate("/uploadclient")}>Upload new clients</Button>
+              <Button onClick={() => navigate("/uploadclient")}><p>{t("Pannel_Dashboard.Uploadclient")}</p>              </Button>
             }
             {user?.data?.role === "employ" &&
-              <Button onClick={() => navigate("/uploadclient")}>Upload new insured persons</Button>
+              <Button 
+              style={{width: "105%"}}
+              onClick={() => navigate("/uploadclient")}>{t("Pannel_Dashboard.Uploadnewperson")}</Button>
             }
             {user?.data?.role === "member" &&
-              <Button onClick={() => navigate("/dashboard")}>Submit a claim</Button>
+              <Button onClick={() => navigate("/dashboard")}>{t("Pannel_Dashboard.submitaclaim")}</Button>
             }
             {/* <Button>Get a Quote</Button> */}
           </div>

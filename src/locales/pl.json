@@ -9,17 +9,373 @@
     "language": "Język",
     "english": "Angielski",
     "polish": "Polski",
-    "selectLang": "Wybierz język"
+    "Blog":"Blog",
+    "PrivacyPolicy": "Polityka prywatności",
+    "Shop":"Sklep",
+    "selectLang": "Wybierz język",
+    "Contactforsupport":"Skontaktuj się z nami, aby uzyskać pomoc",
+    "Sentcomplaint":"Zgłoś roszczenie",
+    "givefeedback":"Podziel się z nami swoją opinią"
   },
 
   "home": {
-    "smarter": "mądrzejszy",
-    "dentalInsurance": "Ubezpieczenie dentystyczne",
-    "upperDescription": "Zdrowe zęby to podstawa zdrowych pracowników. Zapewniamy ubezpieczenie dentystyczne pracodawcom jako wysoko ceniony produkt socjalny dla pracowników"
+    "smarter": "Inteligentniejsze",
+    "dentalInsurance": "ubezpieczenie stomatologiczne",
+    "upperDescription": "Zdrowe zęby to zdrowi pracownicy. Zapewniamy pracodawcom ubezpieczenie stomatologiczne – wysoko cenione świadczenie pracownicze. ",
+    "smarter_insurance_button_broker": "Jestem brokerem",
+    "smarter_insurance_button2_employer": "Jestem pracodawcą",
+    "smarter_insurance_button3_member": "Jestem członkiem",
+    "landingPage__ourOffer__header_h1": "Co oferujemy?",
+    "landingPage__ourOffer__header_p": "Aby przyciągnąć i zatrzymać najlepszych pracowników, firmy często oferują nie tylko podstawowe wynagrodzenie, ale także dodatkowe świadczenia. Biorąc pod uwagę, że wydatki na leczenie stomatologiczne mogą stanowić dla pracowników duże obciążenie finansowe, jedną z naszych usług jest zwrot kosztów takiego leczenia.",
+    "value_member": "Korzyści dla członka",
+    "value_member1": "Niższe koszty leczenia stomatologicznego",
+    "value_member2": "Regularna profilaktyka",
+    "value_member3": "Zdrowsze zęby",
+    "value_member4": "Lepszy ogólny stan zdrowia",
+    "value_member5": "Ubezpieczenie dla członków rodziny",
+    "member_button": "Uzyskaj wycenę w ciągu 24 godzin",
+    "value_employer": "Korzyści dla pracodawcy",
+    "value_employer1": "Przyciąganie i zatrzymywanie najlepszych pracowników",
+    "value_employer2": "Zdrowsi pracownicy",
+    "value_employer3": "Mniejsza absencja",
+    "value_employer4": "Większa produktywność",
+    "value_employer5": "Wizerunek firmy dbającej o pracowników",
+    "employer_button": "Zaproponuj swojemu pracodawcy",
+    "Howdoeswork_title": "Jak to działa?",
+    "Howdoeswork_heading": "Mamy długoterminowy plan dbania o zdrowe zęby",
+    "Howdoeswork_des1": "Swobodny wybór stomatologów w kraju ojczystym i na terenie Unii Europejskiej",
+    "Howdoeswork_des2": "Leczenie wszystkich zębów w jamie ustnej, niezależnie od wcześniejszych zabiegów",
+    "Howdoeswork_des3": "Zakres ubezpieczenia zwiększający się w ciągu 3 kolejnych lat",
+    "Howdoeswork_des4": "Polisa obejmująca między innymi wizyty kontrolne, czyszczenie, wypełnianie ubytków, leczenie kanałowe i usuwanie zębów, a także korony, mosty i implanty",
+    "Howdoeswork_des5": "Ubezpieczenie od następstw nieszczęśliwych wypadków ważne na całym świecie",
+    "Howdoeswork_des6": "Leczenie raka jamy ustnej w kraju ojczystym (raz w życiu)",
+    "Howdoeswork_des7": "Łatwy proces zgłaszania roszczeń i wniosków o zwrot pieniędzy za pośrednictwem aplikacji mobilnej lub strony internetowej Cavitas",
+    "Easyformember_title": "Korzyści dla członków!",
+    "Easyformember_heading": "Członkowie mogą pobrać aplikację Cavitas, aby mieć wszystkie informacje w zasięgu ręki",
+    "Easyformember_desc1": "Szybki dostęp do informacji o ubezpieczeniu stomatologicznym",
+    "Easyformember_desc2": "Wskazówki dotyczące codziennego szczotkowania",
+    "Easyformember_desc3": "Łatwe zgłaszanie i monitorowanie roszczeń",
+    "Easyformember_desc4": "Skuteczne produkty do pielęgnacji zębów "
   },
 
   "about": {
-    "cavitasMeaning": "Co znaczy Jama?"
-  }
-}
+    "cavitasMeaning": "Skąd się wzięła nazwa Cavitas?",
+    "Meaningofcavitas": "Łacińskie słowo „cavitas” oznacza „jamę” lub „jamę w ludzkim ciele”. Jama ustna wraz z dziąsłami i zębami to bardzo ważna część naszego ciała. Zły stan uzębienia może być przyczyną chorób układu krążenia, cukrzycy i infekcji dróg oddechowych. Zdrowe zęby, dziąsła i usta zmniejszają ryzyko rozwoju tych i innych poważnych schorzeń.",
+    "ourstory": "Nasza historia",
+    "ourstory_desc1": "W 2018 roku zaczęliśmy pośredniczyć w zawieraniu umów ubezpieczenia stomatologicznego w Estonii, gdzie, podobnie jak w wielu innych krajach, oferta tego typu produktów nie była wcześniej dostępna. ", 
+    "ourstory_desc2": "Celem firmy Cavitas, która oferuje inteligentniejsze ubezpieczenie stomatologiczne, jest pomoc ludziom w zachowaniu naturalnych zębów tak długo, jak to możliwe – najlepiej do końca życia – a jednocześnie zapewnienie takiego ubezpieczenia stomatologicznego, które pozwala zapobiegać problemom związanym z uzębieniem oraz pokryć koszty leczenia stomatologicznego. Co więcej, wszystkie informacje związane z pielęgnacją zębów dostępne są na inteligentnych urządzeniach mobilnych.",
+    "ourstory_desc3": "Ponadto stajemy się coraz lepsi! Bądź na bieżąco! ",
+    "smartdental_title": "Cavitas – Inteligentniejsze ubezpieczenie stomatologiczne",
+    "smartdental_p1": "Jesteśmy przedstawicielami naszych klientów i działamy w ich najlepszym interesie. ",
+    "smartdental_p2": "Dokładamy wszelkich starań, aby zapewnić im wybór umów od różnych dostawców ubezpieczenia stomatologicznego w Europie. ",
+    "smartdental_p3": "Ze względu na specyfikę ubezpieczenia stomatologicznego obecnie pośredniczymy w zawieraniu umów z dwoma dostawcami. Są to:",
+    "ourpolicy_title": "Nasza polityka prywatności i inne dokumenty",
+    "ourpolicy_policy1": "Polityka prywatności",
+    "ourpolicy_policy2": "Polityka plików cookie",
+    "ourpolicy_policy3": "Umowa brokerska"
+  },
+  "FAQ": {
+    "FAQ_title": "Często zadawane pytania (FAQ)",
+    "FAQ_genral_title": "Ogólne",
+    "FAQ_genral_Q1": "P1: Jaki jest cel ubezpieczenia stomatologicznego Cavitas?",
+    "FAQ_genral_A1": "O1: Ubezpieczenie jest narzędziem chroniącym przed stratami finansowymi. Zgodnie z ideą ubezpieczenia i na zasadzie wzajemnej pomocy, osoby pragnące uniknąć określonego ryzyka gromadzą swoje środki u ubezpieczyciela, aby w przypadku wystąpienia negatywnych konsekwencji część z nich otrzymała świadczenie ubezpieczeniowe. Zasadą ubezpieczenia jest zatem podział szkody (roszczeń) pomiędzy dużą liczbę osób ponoszących to samo ryzyko.",
+    "FAQ_genral_Q2": "P2: Dlaczego warto skorzystać z ubezpieczenia stomatologicznego Cavitas?",
+    "FAQ_genral_A2": "O2: Ubezpieczenie stomatologiczne Cavitas, jak każde inne ubezpieczenie, ma na celu zapobieganie i zmniejszanie potencjalnego ryzyka. W przypadku ubezpieczenia stomatologicznego są to koszty leczenia, które możesz ponieść w przyszłości.",
+    "FAQ_genral_Q3": "P3: Czy osoba ubezpieczona musi ujawnić stan swojego uzębienia, aby móc skorzystać z ubezpieczenia stomatologicznego Cavitas?",
+    "FAQ_genral_A3": "O3: Nie, nie ma takiego wymogu. Ubezpieczenie obejmuje wszystkie zęby w jamie ustnej, niezależnie od historii wcześniejszego leczenia (z wyłączeniem brakujących zębów). Dotyczy to trwających, planowanych lub zalecanych zabiegów, pod warunkiem, że leczenie nastąpi po dacie rozpoczęcia okresu obowiązywania polisy.",
+    "FAQ_genral_Q4": "P4: Ile wynosi okres polisy?",
+    "FAQ_genral_A4": "O4: Okres polisy wynosi 1 rok, chociaż plan świadczenia ubezpieczeniowego Cavitas obejmuje 3 lata. W ciągu trzech (3) lat zakres ochrony się zwiększa, co oznacza, że w trzecim roku jest maksymalny. ",
+    "FAQ_Employer_title": "Dla pracodawców",
+    "FAQ_Employer_Q1": "P1: W jaki sposób jako firma możemy zaoferować swoim pracownikom ubezpieczenie stomatologiczne Cavitas?",
+    "FAQ_Employer_A1": "O1: W celu zawarcia umowy ubezpieczenia grupowego pomiędzy ubezpieczycielem a firmą należy zgłosić się bezpośrednio do nas lub do innego autoryzowanego brokera.",
+    "FAQ_Employer_Q2": "P2: Czy do zawarcia umowy ubezpieczenia stomatologicznego Cavitas z ubezpieczycielem wymagana jest minimalna liczba pracowników?",
+    "FAQ_Employer_A2": "O2: Tak. Skontaktuj się z nami, a my przedstawimy Ci wszystkie wymagania.",
+    "FAQ_Employer_Q3": "P3: Czego mogą oczekiwać pracownicy w okresie obowiązywania polisy?",
+    "FAQ_Employer_A3": "O3: Wszyscy członkowie (pracownicy i ich rodziny) mogą pobrać aplikację mobilną Cavitas, która zapewnia szybki dostęp do informacji związanych z polisą, ułatwia zgłaszanie roszczeń, zawiera wskazówki na temat prawidłowego mycia zębów oraz umożliwia zakup skutecznych produktów do pielęgnacji zębów. Na stronie www.cavitas.pl wszyscy członkowie mogą uzyskać dostęp do obszaru chronionego hasłem, gdzie znajdą te same informacje.     ",
+    "FAQ_member_title": "Dla członków",
+    "FAQ_member_Q1": "P1: W jaki sposób jako pracownik firmy mogę skorzystać z ubezpieczenia stomatologicznego Cavitas?",
+    "FAQ_member_A1": "O1: W celu zawarcia umowy ubezpieczenia grupowego pomiędzy ubezpieczycielem i daną firmą, na podstawie której pracownicy tej firmy będą mogli korzystać z zalet ubezpieczenia stomatologicznego Cavitas, pracodawca musi zgłosić się bezpośrednio do nas lub do innego autoryzowanego brokera.",
+    "FAQ_member_Q2": "P2: Czy jako pracownik mogę dodać do ubezpieczenia członków swojej rodziny?",
+    "FAQ_member_A2": "O2: Tak. Za zgodą pracodawcy do ubezpieczenia można dodać współmałżonka/partnera oraz dzieci do 23. roku życia.",
+    "FAQ_member_Q3": "P3: Które kliniki stomatologiczne honorują ubezpieczenie stomatologiczne Cavitas?",
+    "FAQ_member_A3": "O3: Ubezpieczenie stomatologiczne Cavitas jest ważne w każdej klinice stomatologicznej w Polsce lub innym kraju na terenie Unii Europejskiej/Europejskiego Obszaru Gospodarczego (z wyjątkiem leczenia raka jamy ustnej, w przypadku którego ubezpieczenie obowiązuje tylko w Polsce). W nagłych wypadkach ubezpieczenie jest ważne we wszystkich licencjonowanych klinikach stomatologicznych na całym świecie. ",
+    "FAQ_broker_title": "Dla brokerów",
+    "FAQ_broker_Q1": "P1: W jaki sposób jako broker mogę zaoferować ubezpieczenie stomatologiczne Cavitas swoim klientom korporacyjnym?",
+    "FAQ_broker_A1": "O1: Aby sfinalizować umowę ubezpieczenia grupowego pomiędzy ubezpieczycielem a klientem korporacyjnym, należy skontaktować się bezpośrednio z nami. Przekażemy wówczas wszystkie niezbędne informacje. ",
+    "FAQ_broker_Q2": "P2: Czy do zawarcia umowy ubezpieczenia stomatologicznego Cavitas między ubezpieczycielem a klientem korporacyjnym wymagana jest minimalna liczba pracowników?",
+    "FAQ_broker_A2": "O2: Tak. Skontaktuj się z nami, a my przedstawimy Ci wszystkie wymagania."
+  },
+  "Broker": {
+    "Broker_landing_Page_title1": "Twoi klienci zasługują na",
+    "Broker_landing_Page_title2": "Dobre ubezpieczenie stomatologiczne",
+    "Broker_login_button": "Logowanie broker",
+    "Broker__Benefits__title": "Zapewnij pracownikom swoich klientów długo wyczekiwane świadczenie w postaci opieki stomatologicznej",
+    "Broker__Benefits__1": "Aby przyciągnąć i zatrzymać utalentowanych pracowników",
+    "Broker__Benefits__2": "Aby wykazać zaangażowanie w zdrowie pracowników i ich rodzin",
+    "Broker__Benefits__3": "Aby ułatwić pracownikom dostęp do profilaktycznej opieki stomatologicznej, która może pomóc w wykryciu problemów ze zdrowiem jamy ustnej na wczesnym etapie",
+    "Broker__Benefits__4": "Aby zwiększyć produktywność i zmniejszyć absencję spowodowaną bólami zęba lub chorobami dziąseł",
+    "Broker__Benefits__5": "Aby pomóc pracownikom w pokryciu kosztów leczenia stomatologicznego",
+    "CoverWork__title": "Jak działa ubezpieczenie?",
+    "CoverWork__heading": "Oferujemy długoterminowe wsparcie w utrzymaniu zdrowych zębów ",
+    "CoverWork__year1": "Pierwszy rok",
+    "CoverWork__year2": "Drugi rok",
+    "CoverWork__year3": "Trzeci rok",
+    "CoverWork_no1": "Profilaktyka",
+    "CoverWork_no2": "Prześwietlenia",
+    "CoverWork_no3": "Znieczulenie ",
+    "CoverWork_no4": "Wypełnianie ubytków",
+    "CoverWork_no5": "Usuwanie zębów",
+    "CoverWork_no6": "Leczenie kanałowe",
+    "CoverWork_no7": "Ubezpieczenie od następstw nieszczęśliwych wypadków ważne na całym świecie",
+    "CoverWork_no8": "Ubezpieczenie w przypadku raka jamy ustnej*",
+    "CoverWork_no9": "*Raz w życiu ",
+    "CoverWork_no10": "Korona",
+    "CoverWork_no11": "Most",
+    "CoverWork_no12": "Proteza",
+    "CoverWork_no13": "Implant",
+    "CoverWork_no14": "!!! Wybielanie zębów",
+    "CoverWork_no15": "!!! Leczenie ortodontyczne osób dorosłych*",
+    "CoverWork__year__button": "Uzyskaj wycenę w ciągu 24 godzin",
+    "Broker__contactUs__button": "Skontaktuj się z nami",
+    "suggest":"Zaproponuj swojemu pracodawcy",
+    "Broker__conversion": "Porozmawiajmy o tym, jak możemy Ci w tym pomóc najlepiej obsłuż swoich klientów korporacyjnych"
+  },
+  "Employer": {
+    "Employer_conversion": "Zadbajmy o Twoich pracowników!",
+    "Employer_landingpage_title": "Zdrowe zęby – zdrowi pracownicy",
+    "Employer_landingpage_button": "Logowanie (pracodawca/kierownik działu HR)",
+    "Employer_benefits": "Oferując świadczenie pracownicze związane ze zdrowiem jamy ustnej:",
+    "Employer_benefits1": "Przyciągasz i zatrzymujesz w firmie utalentowanych pracowników",
+    "Employer_benefits2": "Pokazujesz swoje zaangażowanie w zdrowie oraz dobre samopoczucie swoich pracowników i ich rodzin",
+    "Employer_benefits3": "Zwiększasz produktywność i zmniejszasz absencję spowodowaną bólami zęba lub chorobami dziąseł",
+    "Employer_benefits4": "Pomagasz pracownikom obniżyć koszty leczenia stomatologicznego"
+  },
+  "Member": {
+    "Member_landingPage_title1": "Inteligentniejsze",
+    "Member_landingPage_title2": "ubezpieczenie stomatologiczne",
+    "Member_landingPage_heading": "Ubezpieczenie stomatologiczne Cavitas pomaga dbać o zdrowe zęby",
+    "Member_landingPage_btn1": "Logowanie (członek)",
+    "Member_landingPage_btn2": "Zgłoś roszczenie",
+    "Member_landingPage_notmember_title": "Nie jesteś jeszcze członkiem?",
+    "Member_landingPage_notmember_desc": "Jeśli nie masz jeszcze ubezpieczenia stomatologicznego Cavitas, poinformuj o nim swojego pracodawcę.",
+    "Member_landingPage_notmember_btn": "Zaproponuj swojemu pracodawcy"
+  },
+  "Blog": {
+    "Blog_title": "Przydatna lektura",
+    "Blog_heading": "Najnowsze posty na blogu",
+    "Blog1_title": "Znaczenie ubezpieczenia stomatologicznego",
+    "Blog1_desc": "Utrzymanie zębów w dobrym stanie jest ważnym elementem ogólnego stanu zdrowia i dobrego samopoczucia. Opieka stomatologiczna może być jednak kosztowna, w związku z czym wiele osób jej unika. I tu pojawia się ubezpieczenie stomatologiczne. Jest to rodzaj ubezpieczenia,",
+    "Blog2_title": "Odpowiednia pielęgnacja zębów ma znaczenie! ",
+    "Blog2_desc": "Dbanie o zęby to niezbędny element higieny jamy ustnej oraz podstawa naszego zdrowia. Zaniedbanie zębów może prowadzić do różnych problemów, począwszy od nieświeżego oddechu i próchnicy po choroby dziąseł i utratę zębów. W tym poście wyjaśnimy, dlaczego dbanie o zęby jest takie.",
+    "Blog3_title": "Dlaczego ubezpieczenie stomatologiczne dla pracowników to dobra inwestycja?",
+    "Blog3_desc": "Ubezpieczenie stomatologiczne to rodzaj ubezpieczenia, które pomaga pracownikom płacić za opiekę stomatologiczną, taką jak regularne wizyty kontrolne, czyszczenie, wypełnienia i inne procedury. Oto kilka powodów, dla których pracodawcy powinni rozważyć.",
+    "Blog1_part1": "Utrzymanie zębów w dobrym stanie jest ważnym elementem ogólnego stanu zdrowia i dobrego samopoczucia. Opieka stomatologiczna może być jednak kosztowna, w związku z czym wiele osób jej unika. I tu pojawia się ubezpieczenie stomatologiczne. Jest to rodzaj ubezpieczenia, które zapewnia pokrycie kosztów leczenia i usług stomatologicznych, pomagając ubezpieczonym i ich rodzinom obniżyć bieżące koszty. W tym poście przyjrzymy się znaczeniu ubezpieczenia stomatologicznego oraz korzyściom, jakie może ono przynieść ubezpieczonym i ich rodzinom.",
+    "Blog1_part2_heading": "1. Profilaktyka",
+    "Blog1_part3": "Ubezpieczenie stomatologiczne często obejmuje profilaktykę, między innymi regularne wizyty kontrolne, czyszczenie i prześwietlenia. Usługi te są niezbędne do utrzymania dobrego stanu zębów i wczesnego wykrywania problemów, zanim staną się one poważniejsze i kosztowne. Ubezpieczenie stomatologiczne, które obejmuje profilaktykę, zachęca ubezpieczonych do korzystania z regularnej opieki stomatologicznej i utrzymywania zębów w dobrym stanie.",
+    "Blog1_part4_heading": "2. Niższe koszty bieżące",
+    "Blog1_part5": "Leczenie i usługi stomatologiczne mogą być drogie, dlatego osoby nieposiadające specjalnego ubezpieczenia często z nich rezygnują. Ubezpieczenie stomatologiczne może pomóc ubezpieczonym i ich rodzinom obniżyć koszty bieżące, dzięki czemu opieka stomatologiczna staje się bardziej dostępna i przystępna cenowo. Pokrywając koszty leczenia i usług stomatologicznych, pozwala ograniczyć związane z nią wydatki.",
+    "Blog1_part6_heading": "3. Wszechstronna polisa",
+    "Blog1_part7": "Ubezpieczenie stomatologiczne zapewnia pokrycie kosztów wielu różnych zabiegów i usług, w tym wypełnień, koron, leczenia kanałowego i leczenia ortodontycznego. Dzięki temu osoby ubezpieczone i ich rodziny mają dostęp do niezbędnej opieki, niezależnie od potrzeb w zakresie zdrowia zębów lub sytuacji finansowej. Mając ubezpieczenie stomatologiczne, mogą skorzystać z niezbędnej opieki, aby zachować dobry stan uzębienia i na bieżąco rozwiązywać problemy stomatologiczne.",
+    "Blog1_part8_heading": "4. Spokój ducha",
+    "Blog1_part9": "Problemy stomatologiczne mogą być stresujące i uciążliwe. Osoby nieposiadające specjalnego ubezpieczenia często martwią się kosztami opieki stomatologicznej i tym, czy będą mogły sobie na nią pozwolić. Ubezpieczenie stomatologiczne zapewnia spokój ducha, ponieważ ubezpieczeni i ich rodziny mogą liczyć na pokrycie kosztów leczenia oraz usług stomatologicznych wtedy, kiedy ich potrzebują. Ten spokój ducha może zmniejszyć stres i niepokój, pomagając w zachowaniu zdrowia psychicznego i dobrego samopoczucia.",
+    "Blog1_part10_heading": "5. Lepszy ogólny stan zdrowia",
+    "Blog1_part11": "Dobry stan zębów jest istotnym elementem ogólnego stanu zdrowia i dobrego samopoczucia. Zły stan uzębienia może skutkować różnymi problemami zdrowotnymi, w tym chorobami serca, cukrzycą, infekcjami dróg oddechowych i demencją. Zapewniając pokrycie kosztów leczenia i usług stomatologicznych, ubezpieczenie stomatologiczne może pomóc w utrzymaniu dobrego zdrowia zębów i zmniejszeniu ryzyka związanych z nimi problemów zdrowotnych.",
+    "Blog1_part12": "Podsumowując, ubezpieczenie stomatologiczne jest ważną inwestycją w ogólny stan zdrowia i dobre samopoczucie. Zapewniając pokrycie kosztów profilaktyki, obniżając koszty bieżące, oferując wszechstronną polisę, gwarantując spokój ducha i poprawiając ogólny stan zdrowia, ubezpieczenie stomatologiczne może przynosić korzyści ubezpieczonym i ich rodzinom na wiele różnych sposobów. Jeśli zastanawiasz się nad ubezpieczeniem stomatologicznym, sprawdź wszystkie dostępne opcje i wybierz plan, który odpowiada Twoim potrzebom i budżetowi. Dzięki ubezpieczeniu stomatologicznemu możesz łatwiej dbać o swoje zęby i cieszyć się wieloma korzyściami płynącymi ze zdrowego uśmiechu.",
 
+    "Blog3_part1": "Ubezpieczenie stomatologiczne to rodzaj ubezpieczenia, które pomaga pracownikom płacić za opiekę stomatologiczną, taką jak regularne wizyty kontrolne, czyszczenie, wypełnienia i inne procedury. Oto kilka powodów, dla których pracodawcy powinni rozważyć zapewnienie swoim pracownikom ubezpieczenia stomatologicznego w ramach pakietu świadczeń.",
+    "Blog3_part2_heading": "1. Poprawa zdrowia i samopoczucia pracowników",
+    "Blog3_part3": "Nieleczone zęby mogą prowadzić do poważnych problemów zdrowotnych. Na przykład, choroba dziąseł została powiązana z chorobami serca, udarami mózgu i innymi problemami zdrowotnymi. Zapewniając ubezpieczenie stomatologiczne, pracodawcy mogą pomóc swoim pracownikom w utrzymaniu dobrego stanu jamy ustnej, co może poprawić ich ogólny stan zdrowia i samopoczucie.",
+
+    "Blog3_part4_heading": "2. Większa satysfakcja i retencja pracowników",
+    "Blog3_part5": "Ubezpieczenie stomatologiczne może również zwiększyć satysfakcję pracowników i zatrzymać ich w firmie. Kiedy pracownicy mają dostęp do ubezpieczenia stomatologicznego, częściej odwiedzają dentystę, co może pomóc w zapobieganiu poważniejszym i kosztownym problemom stomatologicznym. Ponadto pracownicy, którzy mają ubezpieczenie stomatologiczne, są mniej skłonni do rezygnacji z pracy w poszukiwaniu lepszych świadczeń.",
+    "Blog3_part6_heading": "3. Przyciąganie najlepszych pracowników",
+    "Blog3_part7": "Having healthy teeth can improve your self-esteem and confidence. When you have good dental health, you're more likely to smile and engage with others. On the other hand, poor dental health can lead to embarrassment, social isolation, and even depression.",
+
+    "Blog3_part8_heading": "4. Korzyści finansowe dla pracodawców",
+    "Blog3_part9": "Pracodawcy mogą wahać się przed oferowaniem ubezpieczenia stomatologicznego, ponieważ zakładają, że będzie to zbyt drogie. Jednak na dłuższą metę może być ono dla nich opłacalne. Regularna opieka stomatologiczna może pomóc w zapobieganiu poważniejszym i bardziej kosztownym problemom z zębami w przyszłości. Ponadto pracodawca może odliczyć składki na ubezpieczenie stomatologiczne od podatku, co pomaga zrekompensować koszty.",
+
+    "Blog3_part10_heading": "5. Zwiększone morale pracowników",
+    "Blog3_part11": "Ubezpieczenie stomatologiczne może również podnieść morale pracowników. Kiedy pracownicy czują się doceniani i wspierani przez pracodawcę, są bardziej zadowoleni ze swojej pracy i osiągają lepsze wyniki. Ponadto ubezpieczenie stomatologiczne może sprawić, że pracownicy będą mieli poczucie bezpieczeństwa finansowego, co może zmniejszyć ich stres i niepokój.",
+    "Blog3_part12": "Podsumowując, zapewnienie ubezpieczenia stomatologicznego w ramach pakietu świadczeń może przynieść wiele korzyści zarówno pracodawcom, jak i pracownikom. Może poprawić zdrowie i samopoczucie pracowników, zwiększyć ich satysfakcję, przyciągnąć i zatrzymać najbardziej utalentowanych ludzi, przynieść korzyści finansowe pracodawcom oraz podnieść morale pracowników. Jeśli jesteś pracodawcą, rozważ dodanie ubezpieczenia stomatologicznego do swojego pakietu świadczeń, aby wspomóc ogólny stan zdrowia i dobre samopoczucie swoich pracowników.",
+
+    "Blog2_part1": "Dbanie o zęby to niezbędny element higieny jamy ustnej oraz podstawa naszego zdrowia. Zaniedbanie zębów może prowadzić do różnych problemów, począwszy od nieświeżego oddechu i próchnicy po choroby dziąseł i utratę zębów. W tym poście wyjaśnimy, dlaczego dbanie o zęby jest takie ważne i jak należy to robić.",
+    "Blog2_part2_heading": "1. Zapobieganie problemom stomatologicznym:",
+    "Blog2_part3": "Główną korzyścią wynikającą z dbania o zęby jest zapobieganie problemom stomatologicznym. Regularne szczotkowanie i nitkowanie może pomóc usunąć osad nazębny, czyli lepką warstwę bakterii, która tworzy się na zębach i powoduje próchnicę oraz choroby dziąseł. Ponadto regularne wizyty kontrolne mogą pomóc zidentyfikować potencjalne problemy z zębami, zanim staną się one poważne. Może to uchronić przed bólem, wysokimi kosztami i czasem potrzebnym na leczenie.",
+    "Blog2_part4_heading": "2. Lepszy ogólny stan zdrowia:",
+    "Blog2_part5": "Dbanie o zęby jest dobre nie tylko dla kondycji jamy ustnej, ale także dla ogólnego stanu zdrowia. Zły stan uzębienia może skutkować różnymi problemami zdrowotnymi, w tym chorobami serca, udarem, cukrzycą, a nawet chorobą układu oddechowego. Badania sugerują, że bakterie wywołujące choroby dziąseł mogą dostać się do krwiobiegu i przyczynić się do rozwoju różnych dolegliwości. Dlatego dbanie o zęby może zmniejszyć ryzyko wystąpienia tych chorób.",
+    "Blog2_part6_heading": "3. Wyższa samoocena:",
+    "Blog2_part7": "Zdrowe zęby mogą poprawić samoocenę i pewność siebie. Osoby mające zdrowe zęby częściej się uśmiechają i łatwiej nawiązują kontakty z innymi. Z drugiej strony, zły stan uzębienia może prowadzić do uczucia zakłopotania, izolacji społecznej, a nawet depresji.",
+    "Blog2_part8_heading": "4. Oszczędzanie pieniędzy na dłuższą metę:",
+    "Blog2_part9": "Zapobiegając problemom z zębami, można na dłuższą metę zaoszczędzić pieniądze poprzez unikanie kosztownych zabiegów stomatologicznych, takich jak leczenie kanałowe czy zakładanie koron i implantów. Ponadto regularne wizyty kontrolne mogą pomóc wykryć problemy z zębami, zanim staną się one poważne i będą wymagały bardziej kosztownych zabiegów.",
+    "Blog2_part10_heading": "Jak zatem dbać o zęby?",
+    "Blog2_part11": "1. Szczotkuj zęby dwa razy dziennie:",
+    "Blog2_part12": "Szczotkowanie zębów dwa razy dziennie ma kluczowe znaczenie dla utrzymania dobrego stanu uzębienia. Używając pasty do zębów z fluorem i szczoteczki z miękkim włosiem, delikatnie myj zęby okrężnymi ruchami przez dwie minuty.",
+    "Blog2_part13": "2. Nitkuj zęby codziennie:",
+    "Blog2_part14": "Jeśli chodzi o usuwanie osadu i resztek jedzenia spomiędzy zębów, nitkowanie jest równie ważne co szczotkowanie. Wyczyść przestrzenie między zębami za pomocą nici dentystycznej, uważając, aby nie uszkodzić dziąseł.",
+    "Blog2_part15": "3. Stosuj płyn do płukania ust:",
+    "Blog2_part16": "Płyn do płukania jamy ustnej może pomóc zabić bakterie i odświeżyć oddech. Wybierz płyn zawierający fluor, który wzmocni zęby i zapobiegnie powstawaniu próchnicy.",
+    "Blog2_part17": "4. Jedz zdrowo:",
+    "Blog2_part18": "Zdrowa dieta może pomóc w zapobieganiu próchnicy zębów i chorobom dziąseł. Ogranicz słodkie i kwaśne pokarmy oraz napoje. Wybieraj produkty bogate w witaminy i minerały, takie jak owoce, warzywa i nabiał.",
+    "Blog2_part19": "5. Regularnie odwiedzaj stomatologa:",
+    "Blog2_part20": "Regularne wizyty kontrolne u stomatologa są niezbędne do utrzymania dobrego stanu zdrowia jamy ustnej. W ich trakcie lekarz może wcześnie wykryć problemy z zębami i zacząć leczenie, zanim sytuacja stanie się poważna.",
+    "Blog2_part21": "Podsumowując, dbanie o zęby ma kluczowe znaczenie dla utrzymania dobrej higieny jamy ustnej, ogólnego stanu zdrowia i poczucia własnej wartości. Przestrzegając prostych zasad w zakresie higieny jamy ustnej i regularnie odwiedzając stomatologa, możesz zapobiegać problemom z zębami, oszczędzać pieniądze na dłuższą metę i cieszyć się zdrowszym, szczęśliwszym życiem."
+  }
+  ,
+  "get24contactform":{
+    "contactcavitas":"Skontaktuj się z Cavitas",
+    "quotein24form":"Uzyskaj wycenę w ciągu 24 godzin",
+    "firstandlastname":"Imię i nazwisko",
+    "companyname":"Nazwa firmy",
+    "nameofgroup":"Nazwa grupy, którą chcesz ubezpieczyć",
+    "totalnumber":"Łączna liczba pracowników",
+    "aboutyourgroup":"Chcesz nam przekazać inne szczegóły dotyczące Twojej grupy?",
+    "send": "WYŚLIJ"
+  }
+  ,
+  "contactform":{
+    "contactfrom_title":"Skontaktuj się z Cavitas",
+    "contactfrom_heading":"Porozmawiaj z nami",
+    "iam":"Jestem...*",
+    "Broker":"Brokerem",
+    "Employer":"Pracodawcą",
+    "Member":"Członkiem ",
+    "Other":"Inna odpowiedź",
+    "iwant":"Chcę...*",
+    "Contactcooperation":"Skontaktować się w sprawie współpracy",
+    "Submitcomplain":"Złożyć skargę",
+    "Askquestion":"Zadać pytanie",
+    "feedback":"Wyrazić opinię",
+    "texthere":"Wpisz tutaj swoją wiadomość"
+  },
+  "Pannel_Login":
+  {
+    "welcomecavitas":"Witamy w Cavitas!",
+    "password":"hasło",
+   "login":"ZALOGUJ SIĘ",
+   "forgetpassword":"Nie pamiętasz hasła?",
+   "don'thaveaccount":"Nie masz jeszcze konta?",
+   "registernow":"Zarejestruj się teraz"
+},
+
+"Pannel_registration":
+{
+  "letsregister":"REJESTRACJA",
+  "Firstname":"Imię*",
+  "Lastname":"Nazwisko*",
+  "Phonenumber":"Telefon*",
+  "Brokercompanyname":"Nazwa firmy brokerskiej*",
+  "Brokercompanykrsname":"Numer KRS firmy brokerskiej*",
+  "BrokercompanyURLaddress":"Strona internetowa firmy brokerskiej*",
+  "Rolecompany":"Stanowisko w firmie brokerskiej",
+  "setpassword":"Utwórz hasło",
+  "repeatpassword":"Powtórz hasło"
+
+}
+,
+"Employer_Pannel_registration":
+{
+  "companyname":"Nazwa firmy*",
+  "companykrsname":"Numer KRS firmy*",
+  "companyURLaddress":"Strona internetowa firmy*",
+  "Mandatebroker":"Upoważniony broker (jeśli istnieje)"
+}
+,
+"Pannel_Dashboard":{
+  "Dasboard":"Pulpit",
+  "Insuredclients":"Ubezpieczeni klienci",
+  "Cavitasdocuments":"Dokumenty Cavitas",
+  "Supporttickets":"Zgłoszenia",
+  "Userprofile":"Profil użytkownika",
+  "Uploadclient":"PRZEŚLIJ NOWYCH KLIENTÓW",
+  "Uploadnewperson":"WPISUJ NOWE OSOBY UBEZPIECZONE",
+  "submitaclaim":"Zgłoś roszczenie"
+
+
+
+}
+,
+"Pannel_Dashboard_Dashboard":{
+  "Heading":"  Witamy w Cavitas!   ",
+  "Heading_Part1":"  Ta specjalnie chroniona część naszej strony internetowej służy jako platforma do wymiany informacji. Dzięki niej możesz:    ",
+  "Heading_Part2":"  a) informacje o polityce dostępu;  ",
+  "Heading_Part3":"  b) skontaktuj się z nami za pośrednictwem zgłoszeń pomocy technicznej oraz ",
+  "Heading_Part4":"  c) prześlij zgłoszenie Pozdrawiamy ",
+  "Heading_Part5":"Zespół",
+  "Heading_Part6":"Cavitas"
+
+}
+,
+"Pannel_Dashboard_Userprofile":{
+  "Update":"AKTUALIZACJA",
+  "Companylocation":"Strona internetowa firmy*",
+  "Peselnumber":"PESEL Number",
+  "Address":"Adres"
+}
+,
+"Pannel_Dashboard_insuredperson":{
+  "Insuredclient":"Ubezpieczeni klienci",
+  "View":"POKAŻ WSZYSTKIE",
+  "Krsnumber":"Numer KRS",
+  "Riskrenewaldate":"Data odnowienia ubezpieczenia",
+  "Opengroup":"GRUPA OTWARTA"
+},
+"Pannel_Dashboard_Alldocuments":{
+  "Alldocuments":"Wszystkie dokumenty",
+  "Documenttype":"Rodzaj dokumentu:",
+  "Validfrom":"Obowiązuje od:"
+},
+"Pannel_Dashboard_Supporttickets":{
+  "Supporttitle": "ZGŁOSZENIA",
+  "Ticketnumber":"Numer zgłoszenia",
+  "Status":"Status",
+  "Lastupdate":"Ostatnia aktualizacja",
+  "Openmessage":"OTWÓRZ WIADOMOŚĆ",
+  "Password":"Hasło",
+  "Confirmpassword":"Potwierdź hasło",
+  "Save":"ZAPISZ ZMIANY"
+},
+"Uploadinsuredperson":{
+  "Uploadinsuredperson_title":"PRZEŚLIJ NOWYCH CZŁONKÓW UBEZPIECZENIA GRUPOWEGO",
+  "Uploadinsuredperson_heading":"Opisz grupę swojego klienta korporacyjnego i prześlij arkusz kalkulacyjny (.xls lub .csv) z listą członków za pomocą poniższego formularza. Śledź naszą komunikację za pośrednictwem „Zgłoszeń” w menu po lewej stronie.",
+
+  "Question_no1":"Ogólne informacje",
+  "Question_no1_part1":"Nazwa klienta korporacyjnego (firmy)*",
+  "Question_no1_part2":"Całkowita liczba pracowników*",
+
+  "Question_no2":"Tryb uczestnictwa w ubezpieczeniu stomatologicznym Cavitas",
+  "Question_no2_part1":"Obowiązkowa grupa pracowników",
+  "Question_no2_part1_part1":"Ilu pracowników?",
+  "Question_no2_part2":"Dobrowolna grupa pracowników",
+  "Question_no2_part2_part1":"Ilu pracowników?",
+  "Question_no2_part2_part2":"100–200 (minimalny udział na poziomie 70%)",
+  "Question_no2_part2_part3":"201–500 (minimalny udział na poziomie 60%)",
+  "Question_no2_part2_part4":"501–1000 (minimalny udział na poziomie 50%)",
+
+  "Question_no3":"Chcesz dodać członków rodzin pracowników do ubezpieczenia grupowego?",
+  "Question_no3_part1":"NIE",
+  "Question_no3_part2":"TAK – Członkowie rodzin są uwzględnieni na liście",
+  "Question_no3_part3":"TAK – Proszę o zebranie danych członków rodzin od naszych pracowników znajdujących się na liście",
+
+  "Question_no4":"W jaki sposób opłacana jest składka członków rodziny?",
+  "Question_no4_part1":"Przez pracodawcę w postaci miesięcznego odliczenia od wynagrodzenia pracownika ",
+  "Question_no4_part2":"Bezpośrednio przez członków rodziny",
+
+
+
+  "Question_no5":"Czy masz upoważnionego brokera ubezpieczeniowego, od którego dowiedziałeś się o ubezpieczeniu dentystycznym Cavitas?",
+  "Question_no5_part1":"TAK ",
+  "Question_no5_part2":"Bezpośrednio przez członków rodziny",
+  "Question_no5_part3":"NIE",
+ 
+  "Question_no6":"Preferowana data rozpoczęcia grupowego ubezpieczenia stomatologicznego Cavitas?",
+
+  
+  "Question_no7":"Prześlij listę członków grupy w formie arkusza kalkulacyjnego (.xls lub .csv)",
+  "Question_no7_part1":"Prześlij plik",
+
+  "Question_no8":"  Chcesz nam przekazać inne szczegóły dotyczące Twojej grupy?  ",
+  "Starthere":"Start here",
+  "Submitform": "WYŚLIJ"
+
+}
+}

@@ -88,13 +88,13 @@ function QuoteSupportList() {
                   </Button>
                 </Link>
               </div>
-              {/* <div>
+              <div>
                 <Link to="/InsuredPersonSupportList">
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                     Insured person support
                   </Button>
                 </Link>
-              </div> */}
+              </div>
             </Stack>
             {/* <div className="insuredClientView__header__right">
           <input type="text" placeholder="Search" />

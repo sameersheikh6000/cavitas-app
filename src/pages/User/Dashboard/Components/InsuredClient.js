@@ -1,5 +1,7 @@
 import { Button } from '@mui/material'
 import React, {useState, useEffect} from 'react'
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import { useNavigate } from 'react-router-dom';
 import useClientInsurance from '../../../../hooks/useClientInsurance';
@@ -7,6 +9,17 @@ import moment from 'moment';
 import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 
 const InsuredClient = () => {
+
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
+
   const navigate = useNavigate();
   const { getInsuredClients } = useClientInsurance();
   const [insuredClientsList, setInsuredClientsList] = useState([]);
@@ -32,18 +45,19 @@ const InsuredClient = () => {
       <header className='dashboard__container__content__insuredClient__header'>
         <div className='dashboard__container__content__insuredClient__header__iconBox'>
           < BusinessCenterOutlinedIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
-          <p>INSURED CLIENTS ({insuredClientsList.length})</p>
+          <p> {t("Pannel_Dashboard_insuredperson.Insuredclient")} ({insuredClientsList.length})</p>
         </div>
-        <Button size='small' onClick={() => navigate("/insuredclient/view")}>View all</Button>
+        <Button size='small' onClick={() => navigate("/insuredclient/view")}>{t("Pannel_Dashboard_insuredperson.View")}</Button>
       </header>
       <div className='dashboard__container__content__insuredClient__details'>
         {insuredClientsList.length > 0 ? 
         <table className='dashboard__container__content__insuredClient__details__table'>
           <thead>
             <tr>
-              <th>Company name</th>
-              <th>KRS number</th>
-              <th>Risk renewal date</th>
+            <th>{t("Employer_Pannel_registration.companyname")}</th>
+              
+              <th>{t("Pannel_Dashboard_insuredperson.Krsnumber")}</th>
+              <th>{t("Pannel_Dashboard_insuredperson.Riskrenewaldate")}</th>
               <th></th>
             </tr>
           </thead>
@@ -54,7 +68,7 @@ const InsuredClient = () => {
                   <td>{row?.company_krs_number}</td>
                   <td>{row?.risk_renewal_date}</td>
                   <td>
-                  <Button size='small' onClick={() => navigate("/insuredclient/group")}>Open Group</Button>
+                  <Button size='small' onClick={() => navigate("/insuredclient/group")}>{t("Pannel_Dashboard_insuredperson.Opengroup")}</Button>
                   </td>
                 </tr>
             ))}

@@ -1,22 +1,29 @@
 import { Card } from "@mui/material";
-import React from "react";
-
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 const SmarterDentalInsurance = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className="aboutUs__smarterDentalInsurance">
       <header>
-        <h1>Cavitas - smarter dental insurance</h1>
+        <h1>{t("about.smartdental_title")}</h1>
         <p>
-          The insurance service provider is Northern1 international insurance
-          brokers OÜ. We are agent of clients and we act in their best interest.
+        {t("about.smartdental_p1")}
         </p>
         <p>
-          We do our best efforts to provide the selection of insurance contracts
-          from various dental insurance capacity providers in Europe.{" "}
+        {t("about.smartdental_p2")}
         </p>
         <p>
-          Due to specifics of dental insurance cover we currently mediate dental
-          insurance contracts from 2 capacity providers:
+        {t("about.smartdental_p3")}
         </p>
       </header>
       <div className="aboutUs__smarterDentalInsurance__imageContainer">

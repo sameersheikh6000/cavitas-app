@@ -1,10 +1,21 @@
 import { Button } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../config/helpers/i18n';
 import useUsers from '../../../hooks/useUsers';
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const { createUser } = useUsers();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -61,12 +72,12 @@ const SignUp = () => {
         </div>
 
         <div className='authentication__container__formContainer'>
-          <p className='authentication__container__formContainer__registerHeading'>LET'S GET YOU REGISTERED</p>
+          <p className='authentication__container__formContainer__registerHeading'>{t("Pannel_registration.letsregister")}</p>
           <form onSubmit={submitHandler} className='authentication__container__formContainer__registerForm'>
             <div>
               <input
                 type="text"
-                placeholder='First name *'
+                placeholder={`${t("Pannel_registration.Firstname")}`} 
                 name='first_name'
                 value={user.first_name}
                 onChange={changeHandler}
@@ -74,7 +85,7 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder='Last name *'
+                placeholder={`${t("Pannel_registration.Lastname")}`} 
                 name='last_name'
                 value={user.last_name}
                 onChange={changeHandler}
@@ -90,7 +101,7 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder='Phone number *'
+                placeholder={`${t("Pannel_registration.Phonenumber")}`} 
                 name='phone_number'
                 value={user.phone_number}
                 onChange={changeHandler}
@@ -100,7 +111,7 @@ const SignUp = () => {
             <div>
               <input
                 type="text"
-                placeholder='Broker company name'
+                placeholder={`${t("Pannel_registration.Brokercompanyname")}`} 
                 name='company_name'
                 value={user.company_name}
                 onChange={changeHandler}
@@ -108,15 +119,15 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder='Broker company KRS number'
-                name='company_krs_number'
+                placeholder={`${t("Pannel_registration.Brokercompanykrsname")}`}               
+                 name='company_krs_number'
                 value={user.company_krs_number}
                 onChange={changeHandler}
                 required={true}
               />
               <input
                 type="text"
-                placeholder='Broker company URL address'
+                placeholder={`${t("Pannel_registration.BrokercompanyURLaddress")}`}               
                 name='company_url_address'
                 value={user.company_url_address}
                 onChange={changeHandler}
@@ -124,7 +135,7 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder='Role in company'
+                placeholder={`${t("Pannel_registration.Rolecompany")}`}               
                 name='role'
                 value={user.role}
                 onChange={changeHandler}
@@ -134,7 +145,7 @@ const SignUp = () => {
             <div>
               <input
                 type="password"
-                placeholder='Set your password *'
+                placeholder={`${t("Pannel_registration.setpassword")}`}               
                 name='password'
                 value={user.password}
                 onChange={changeHandler}
@@ -142,14 +153,20 @@ const SignUp = () => {
               />
               <input
                 type="password"
-                placeholder='Repeat your password *'
+                placeholder={`${t("Pannel_registration.repeatpassword")}`}               
                 name='password_confirmation'
                 value={user.password_confirmation}
                 onChange={changeHandler}
                 required={true}
               />
             </div>
-            <Button className='authentication__container__formContainer__registerForm__registerButton' type="submit">Register Now</Button>
+            <Button className='authentication__container__formContainer__registerForm__registerButton' type="submit"
+            style={{width: "auto"}}
+            >
+            {t("Pannel_Login.registernow")}
+
+
+            </Button>
           </form>
         </div >
 

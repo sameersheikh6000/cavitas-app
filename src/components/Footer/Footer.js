@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+import i18n from '../../config/helpers/i18n';
 import { Link } from "react-router-dom";
 import ContactCavitas from "./FooterFormComponent/ContactCavitas";
 import ComplaintForm from "./FooterFormComponent/ComplaintForm";
@@ -7,7 +9,16 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-const Footer = () => {
+const Footer = () => { 
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className="footer">
       <div className="footer__container">
@@ -34,14 +45,22 @@ const Footer = () => {
             <Link>
               <FeedbackForm />
             </Link>
-          </div>
+          </div> 
           <div className="footer__container__top__box">
-            <Link to="/about">About us</Link>
-            <Link to="/Blog">Blog</Link>
-            <Link to="/faq">FAQ</Link>
-            <Link to="/claims">Claim</Link>
-            <Link to="#">Privacy policy</Link>
-            <Link to="#">Shop</Link>
+          <Link to={`/about/${lang == "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
+                    {t("nav.aboutUs")}
+                  </Link>
+                  <Link className="appbar__linksBox__links__link" to={`/Blog/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.Blog")}
+                  </Link>
+            <Link className="appbar__linksBox__links__link" to={`/faq/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.faq")}
+                  </Link>
+                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? "pl" : "en"}`}>
+                  {t("nav.claims")}
+                  </Link>
+            <Link to="#">{t("nav.PrivacyPolicy")}</Link>
+            <Link to="#">{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">
             <Link to="/findus">Find us</Link>

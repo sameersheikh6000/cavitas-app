@@ -27,13 +27,13 @@ const SmartInsurance = () => {
           {t("home.upperDescription")}               </p>
           <div className='landingPage__smartInsurance__container__details__buttons ' >
           <Link to={`/broker/${lang}`}>
-              <Button variant='outlined'>I'm broker</Button>
+              <Button variant='outlined'>{t("home.smarter_insurance_button_broker")}</Button>
             </Link>
             <Link to={`/employ/${lang}`}>
-              <Button variant='outlined'>I'm employer</Button>
+              <Button variant='outlined'>{t("home.smarter_insurance_button2_employer")}</Button>
             </Link>
             <Link to={`/member/${lang}`}>
-              <Button variant='outlined'>I'm member</Button>
+              <Button variant='outlined'>{t("home.smarter_insurance_button3_member")}</Button>
             </Link>
 
 

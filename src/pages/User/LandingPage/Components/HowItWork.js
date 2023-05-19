@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import DoneIcon from '@mui/icons-material/Done';
 const HowItWork = () => {
+    const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className='landingPage__howItwork'>
       <div className='landingPage__howItwork__container'>
@@ -9,45 +20,44 @@ const HowItWork = () => {
         </div>
 
         <div className='landingPage__howItwork__container__details'>
-          <h1 className='landingPage__howItwork__container__details__heading'>How does it work?</h1>
+          <h1 className='landingPage__howItwork__container__details__heading'>{t("home.Howdoeswork_title")}</h1>
           <p className='landingPage__howItwork__container__details__desc'>
-          We have long-term plan to keep people's teeth healthy            </p>
+          {t("home.Howdoeswork_heading")}           </p>
           <div className='landingPage__howItwork__container__details__detailsContainer'>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Free choice of dentists in the home country and EU             </p>
+              {t("home.Howdoeswork_des1")}            </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              All teeth in the mouth are covered regadless of previous treatments      
-                      </p>
+              {t("home.Howdoeswork_des2")}                       </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Increasing coverage during 3 consecutive years              </p>
+              {t("home.Howdoeswork_des3")}              </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Cover includes check-ups, cleanings, fillings, root canal treatments, tooth extractions, crowns, bridges, implants - and much more              </p>
+              {t("home.Howdoeswork_des4")}             </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Accident cover wordwide              </p>
+              {t("home.Howdoeswork_des5")}              </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Oral cancer treatment in the home country once per lifetime             </p>
+              {t("home.Howdoeswork_des6")}             </p>
             </div>
             <div className='landingPage__howItwork__container__details__detailsContainer__box'>
               <DoneIcon className='landingPage__howItwork__container__details__detailsContainer__box__icon' />
               <p className='landingPage__howItwork__container__details__detailsContainer__box__text'>
-              Easy claiming and refunding process via Cavitas mobile app or online              </p>
+              {t("home.Howdoeswork_des7")}             </p>
             </div>
           </div>
         </div>

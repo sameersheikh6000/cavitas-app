@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 
 const BenefitPlan = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className='landingPage__benefitPlan'>
       <div className='landingPage__benefitPlan__container'>
@@ -10,32 +21,31 @@ const BenefitPlan = () => {
 
         <div className='landingPage__benefitPlan__container__details'>
           <p className='landingPage__benefitPlan__container__details__head'>
-          Provide long-awaited dental care benefits to your clients' employees          </p>
+          {t("Broker.Broker__Benefits__title")}          </p>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            To attract and keep talented employees              </p>
+            {t("Broker.Broker__Benefits__1")}                </p>
           </div>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            To demonstrate commitment to the health of employees and their families
-            </p>
+            {t("Broker.Broker__Benefits__2")}             </p>
           </div>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            To help employees to access preventive dental care, which can help detect oral health issues at early stage            </p>
+            {t("Broker.Broker__Benefits__3")}            </p>
           </div>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            To improve productivity and reduce absenteeism caused by toothaches or gum disease            </p>
+            {t("Broker.Broker__Benefits__4")}             </p>
           </div>
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            To relieave employees' dental costs burden</p>          </div>
+            {t("Broker.Broker__Benefits__5")} </p>          </div>
         </div>
       </div>
     </section>

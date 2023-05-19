@@ -1,39 +1,52 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import GetQuoteCavitas from './LandingPageFormComponent/GetQuoteCavitas'
 
 const OurOffer = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className='landingPage__ourOffer'>
       <header className='landingPage__ourOffer__header'>
-        <h1>What do we offer?</h1>
+        <h1>{t("home.landingPage__ourOffer__header_h1")}</h1>
 <p>
-To attract and retain top talents, companies often provide additional benefits beyond just salary. We offer reimbursement for dental treatment costs as one of our services because dental expenses can be a significant financial burden for employees.
+{t("home.landingPage__ourOffer__header_p")}
 </p>
       </header>
       <div className='landingPage__ourOffer__container'>
         <div className='landingPage__ourOffer__container__boxes'>
           <div className='landingPage__ourOffer__container__boxes__detailsContainer'>
-            <h4 className='landingPage__ourOffer__container__boxes__detailsContainer__heading'>Value for member</h4>
+            <h4 className='landingPage__ourOffer__container__boxes__detailsContainer__heading'>{t("home.value_member")}
+
+</h4>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Eases the cost of dental treatment</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_member1")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Regular prevention care</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_member2")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Healthier teeth</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_member3")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Better overall health</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_member4")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Family is also covered</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_member5")}</span>
             </div>
             {/* <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
@@ -43,32 +56,27 @@ To attract and retain top talents, companies often provide additional benefits b
           </div>
           
           <div className='landingPage__ourOffer__container__boxes__detailsContainer'>
-            <h4 className='landingPage__ourOffer__container__boxes__detailsContainer__heading'>Value for employer</h4>
+            <h4 className='landingPage__ourOffer__container__boxes__detailsContainer__heading'>{t("home.value_employer")}</h4>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Attract and retain top talents</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_employer1")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Healthier employees</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_employer2")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Less sickness days</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_employer3")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Increased productivity</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_employer4")}</span>
             </div>
             <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
               <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>A caring company image</span>
+              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>{t("home.value_employer5")}</span>
             </div>
-            {/* <div className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox'>
-              <img className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__tickImage' src={require("../../../../assets/OfferTick-image.png")} alt="" />
-              <span className='landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc'>Lorem ipsum</span>
-            </div> */}
-            {/* <GetQuoteCavitas /> */}
           </div>
           
         </div>
@@ -79,7 +87,7 @@ To attract and retain top talents, companies often provide additional benefits b
            style={{border: "none"}}>
          
           
-            <Button>Suggest to your employer</Button>
+            <Button>{t("Broker.suggest")}</Button>
           </div>
           
           <div className='landingPage__ourOffer__container__boxes__detailsContainer'

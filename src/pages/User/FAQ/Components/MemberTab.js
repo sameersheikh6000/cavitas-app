@@ -1,8 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import ArrowDownwardOutlinedIcon from '@mui/icons-material/ArrowDownwardOutlined';
 import ArrowUpwardOutlinedIcon from '@mui/icons-material/ArrowUpwardOutlined';
 
 const MemberTab = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
+
   const [faqData, setFaqData] = useState([false, false, false]);
 
   const handleFaqData = (index) => {
@@ -15,9 +27,8 @@ const MemberTab = () => {
     <section className='faqTab'>
       <div className='faqTab__container'>
         <div className='faqTab__container__box'>
-          <p>
-          Q1: How can me as employee of the company get Cavitas dental insurance cover?
-          </p>
+        <p>{t("FAQ.FAQ_member_Q1")}</p>
+
           {faqData[0] === false &&
             <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(0)} />
           }
@@ -27,15 +38,15 @@ const MemberTab = () => {
         </div>
         {faqData[0] === true &&
           <div className='faqTab__container__box2'>
-            <p>
-            A1: In order for the group insurance contract between the insurer and your company to be finalized and for you to receive the advantages of Cavitas dental insurance, your employer must declare its insurance interest to us (or do it through another mandated broker).</p>          </div>
+                   <p>{t("FAQ.FAQ_member_A1")}</p>
+
+            </div>
         }
       </div>
       <div className='faqTab__container'>
         <div className='faqTab__container__box'>
-          <p>
-          Q2: Can me as employee add my family members to cover?            
-          </p>
+        <p>{t("FAQ.FAQ_member_Q2")}</p>
+
           {faqData[1] === false &&
             <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(1)} />
           }
@@ -45,16 +56,15 @@ const MemberTab = () => {
         </div>
         {faqData[1] === true &&
           <div className='faqTab__container__box2'>
-            <p>
-            A2: Yes you can add your spouse/partner and children up to 23 year old if you have such permission from your employer.
-              </p>
+                   <p>{t("FAQ.FAQ_member_A2")}</p>
+
           </div>
         }
       </div>
       <div className='faqTab__container'>
         <div className='faqTab__container__box'>
-          <p>
-          Q3: In wich dental clinics Cavitas dental insurance is valid?            </p>
+        <p>{t("FAQ.FAQ_member_Q3")}</p>
+
           {faqData[2] === false &&
             <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(2)} />
           }
@@ -64,28 +74,11 @@ const MemberTab = () => {
         </div>
         {faqData[2] === true &&
           <div className='faqTab__container__box2'>
-            <p>
-            A3: Cavitas dental insurance is valid in any dental clinic in Poland or EU/EEA country (except oral cancer treatment what must be done in Poland only). In the event of an dental accident coverage is valid in all licensed dental clinics wordlwide. 
-               </p>
+                  <p>{t("FAQ.FAQ_member_Q3")}</p>
+
           </div>
         }
       </div>
-      {/* <div className='faqTab__container'>
-        <div className='faqTab__container__box'>
-          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-          {faqData === false &&
-            <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
-          }
-          {faqData === true &&
-            <ArrowUpwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={handleFaqData} />
-          }
-        </div>
-        {faqData === true &&
-          <div className='faqTab__container__box2'>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-          </div>
-        }
-      </div> */}
     </section>
   )
 }
