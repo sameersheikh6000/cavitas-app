@@ -138,7 +138,7 @@ const ValuableReadings = () => {
                 &nbsp;{" "}
                 <Link to="/Blog1" style={{ color: "red" }}>
                   {" "}
-                  Read More
+                  {t("home.readmore")}
                 </Link>
                 {/* <div className='landingPage__smartInsurance__container__details__buttons ' >
           <Link to="/Blog1">
@@ -165,7 +165,7 @@ const ValuableReadings = () => {
                 {t("Blog.Blog2_desc")}&nbsp;{" "}
                 <Link to="/Blog2" style={{ color: "red" }}>
                   {" "}
-                  Read More
+                  {t("home.readmore")}
                 </Link>
               </p>
             </div>
@@ -187,7 +187,7 @@ const ValuableReadings = () => {
                 {t("Blog.Blog3_desc")} &nbsp;{" "}
                 <Link to="/Blog3" style={{ color: "red" }}>
                   {" "}
-                  Read More
+                  {t("home.readmore")}
                 </Link>
               </p>
             </div>

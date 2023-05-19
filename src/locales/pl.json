@@ -55,7 +55,9 @@
     "Easyformember_desc1": "Szybki dostęp do informacji o ubezpieczeniu stomatologicznym",
     "Easyformember_desc2": "Wskazówki dotyczące codziennego szczotkowania",
     "Easyformember_desc3": "Łatwe zgłaszanie i monitorowanie roszczeń",
-    "Easyformember_desc4": "Skuteczne produkty do pielęgnacji zębów "
+    "Easyformember_desc4": "Skuteczne produkty do pielęgnacji zębów ",
+    "readmore":"Czytaj więcej"
+
   },
 
   "about": {
@@ -378,4 +380,42 @@
   "Submitform": "WYŚLIJ"
 
 }
+
+,
+
+"MysupportTickets":{
+  "Submitnewticket":"Prześlij nowy bilet",
+  "Mysupportticket":"Moje BILETY WSPARCIA",
+  "contactsupport":"SKONTAKTUJ SIĘ Z POMOCĄ TECHNICZNĄ",
+  "quotesupport":"WSPARCIE CYTATU",
+  "insuredpersonsupport":"WSPARCIE OSOBY UBEZPIECZONEJ",
+  "Status":"Status",
+  "#id":"#ID",
+  "topic":"Temat",
+  "description":"Opis",
+  "creator":"Twórca",
+  "createddate":"stworz Date",
+  "attachement":"załącznik"
+
+},
+
+"contactsupport":{
+ "ticketnumber":"Numer biletu",
+ "createdby":"Stworzone przez",
+ "detail":"Szczegół",
+ "date":"Data"
+ 
+
+},
+"quotesupport":{
+  "groupname":"Nazwa grupy",
+  "numberemployer":"Nr pracownika",
+  "name":"Nazwa"
+
+ },
+
+ "Insuredsupport":{
+  "Lastupdateon":"Ostatnia aktualizacja dot"
+
+ }
 }

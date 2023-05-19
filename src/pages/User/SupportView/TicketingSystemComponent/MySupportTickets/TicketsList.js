@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -7,6 +9,15 @@ import useTickets from "../../../../../hooks/useTickets";
 import { API_KEY } from "../../../../../config/helpers/variables";
 
 function TickekList() {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   const { getTicketsByUser } = useTickets();
   const [errorMessage, setErrorMessage] = useState("");
@@ -39,28 +50,31 @@ function TickekList() {
                 style={{ background: "#5C8894" }}
                 className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
               >
-                My support tickets
+                  {t("MysupportTickets.Mysupportticket")}
+
               </Button>
             </Link>
           </div>
           <div>
             <Link to="/ContactSupportList" style={{textDecoration: "none"}}>
             <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                Contact Support
+            {t("MysupportTickets.contactsupport")}
+
               </Button>
             </Link>
           </div>
           <div>
             <Link to="/QuoteSupportList" style={{textDecoration: "none"}}>
             <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                Quote Support
+            {t("MysupportTickets.quotesupport")}
+
               </Button>
             </Link>
           </div>
           <div>
             <Link to="/InsuredPersonSupportList" style={{textDecoration: "none"}}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-               Insured person support
+              {t("MysupportTickets.insuredpersonsupport")}
               </Button>
             </Link>
           </div>
@@ -75,13 +89,13 @@ function TickekList() {
           <table>
             <thead>
               <tr>
-               <th>Status</th>
-              <th>#id</th>
-              <th>Topic</th>
-              <th>Description</th>
-              <th>Creator</th>
-              <th>Attachement</th>
-              <th>Created Date</th>
+               <th>{t("MysupportTickets.Status")}</th>
+               <th>{t("MysupportTickets.#id")}</th>
+               <th>{t("MysupportTickets.topic")}</th>
+               <th>{t("MysupportTickets.description")}</th>
+               <th>{t("MysupportTickets.creator")}</th>
+               <th>{t("MysupportTickets.attachement")}</th>
+               <th>{t("MysupportTickets.createddate")}</th>
               </tr>
             </thead>
             <tbody>

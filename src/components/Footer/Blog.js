@@ -45,9 +45,10 @@ const Blog = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog1_desc")}
                 &nbsp;{" "}
-                <Link to="/Blog1" style={{ color: "red" }}>
+                <Link to={`/Blog1/${lang == "pl" ? "pl" : "en"}`}
+                style={{ color: "red" }}>
                   {" "}
-                  Read More
+                  {t("home.readmore")}
                 </Link>
                 {/* <div className='landingPage__smartInsurance__container__details__buttons ' >
           <Link to="/Blog1">
@@ -72,9 +73,10 @@ const Blog = () => {
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog2_desc")}&nbsp;{" "}
-                <Link to="/Blog2" style={{ color: "red" }}>
+                <Link to={`/Blog2/${lang == "pl" ? "pl" : "en"}`}
+                style={{ color: "red" }}>
                   {" "}
-                  Read More
+                  {t("home.readmore")}
                 </Link>
               </p>
             </div>
@@ -94,9 +96,11 @@ const Blog = () => {
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog3_desc")} &nbsp;{" "}
-                <Link to="/Blog3" style={{ color: "red" }}>
+           <Link to={`/Blog3/${lang == "pl" ? "pl" : "en"}`}
+
+                style={{ color: "red" }}>
                   {" "}
-                  Read More
+                  {t("home.readmore")}
                 </Link>
               </p>
             </div>

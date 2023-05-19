@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -8,6 +10,16 @@ import Page from "../../../../../components/Page/Page";
 import useContactForm from "../../../../../hooks/useContactForm";
 
 function ContactSupportList() {
+
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const [submittedContact, setSubmittedContact] = useState([]);
   const { getAllContactForms } = useContactForm();
   const [errorMessage, setErrorMessage] = useState("");
@@ -34,7 +46,7 @@ function ContactSupportList() {
           <header className="insuredClientView__header">
             <div className="supportView__header__iconBox">
               <EmailOutlinedIcon className="supportView__header__iconBox__icon" />
-              <p>SUPPORT TICKETS</p>
+              <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
             </div>
             {/* <div className="insuredClientView__header__right">
               <input type="text" placeholder="Search" />
@@ -54,7 +66,7 @@ function ContactSupportList() {
                     textTransform: "none",
                   }}
                 >
-                  Submit New Ticket
+                  {t("MysupportTickets.Submitnewticket")}
                 </Button>
               </Link>
             </div>
@@ -64,7 +76,7 @@ function ContactSupportList() {
               <div>
                 <Link to="/support/view" style={{textDecoration: "none"}}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                    My support tickets
+                  {t("MysupportTickets.Mysupportticket")}
                   </Button>
                 </Link>
               </div>
@@ -74,21 +86,21 @@ function ContactSupportList() {
                     style={{ background: "#5C8894" }}
                     className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
                   >
-                    Contact Support
+            {t("MysupportTickets.contactsupport")}
                   </Button>
                 </Link>
               </div>
               <div>
               <Link to="/QuoteSupportList" style={{textDecoration: "none"}}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                    Quote Support
+                  {t("MysupportTickets.quotesupport")}
                   </Button>
                 </Link>
               </div>
               <div>
                 <Link to="/InsuredPersonSupportList" style={{textDecoration: "none"}}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                    Insured person support
+                  {t("MysupportTickets.insuredpersonsupport")}
                   </Button>
                 </Link>
               </div>
@@ -103,14 +115,14 @@ function ContactSupportList() {
               <table>
                 <thead>
                   <tr>
-                  <th>Status</th>
-                  <th>Ticket Number</th>
-                  <th>Topic</th>
-                  <th>Created by</th>
-                  <th>First and last name</th>
+                  <th>{t("MysupportTickets.Status")}</th>
+                  <th>{t("contactsupport.ticketnumber")}</th>
+                  <th>{t("MysupportTickets.topic")}</th>
+                  <th>{t("contactsupport.createdby")}</th>
+                  <th>{t("get24contactform.firstandlastname")}</th>
                   <th>E-mail address</th>
-                  <th>Detail</th>
-                  <th>Date</th>
+                  <th>{t("contactsupport.detail")}</th>
+                  <th>{t("contactsupport.date")}</th>
                   </tr>
                 </thead>
                 <tbody>

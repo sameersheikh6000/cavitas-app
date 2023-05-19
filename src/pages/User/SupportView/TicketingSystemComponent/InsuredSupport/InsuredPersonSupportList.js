@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -7,6 +9,16 @@ import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import Page from "../../../../../components/Page/Page";
 
 function InsuredPersonSupportList() {
+  
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <>
       <Page>
@@ -14,7 +26,7 @@ function InsuredPersonSupportList() {
           <header className="insuredClientView__header">
             <div className="supportView__header__iconBox">
               <EmailOutlinedIcon className="supportView__header__iconBox__icon" />
-              <p>SUPPORT TICKETS</p>
+              <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
             </div>
             {/* <div className="insuredClientView__header__right">
               <input type="text" placeholder="Search" />
@@ -34,7 +46,7 @@ function InsuredPersonSupportList() {
                     textTransform: "none",
                   }}
                 >
-                  Submit New Ticket
+                  {t("MysupportTickets.Submitnewticket")}
                 </Button>
               </Link>
             </div>
@@ -44,21 +56,21 @@ function InsuredPersonSupportList() {
               <div>
                 <Link to="/support/view">
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                    My support tickets
+                  {t("MysupportTickets.Mysupportticket")}
                   </Button>
                 </Link>
               </div>
               <div>
                 <Link to="/ContactSupportList">
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                    Contact Support
+                {t("MysupportTickets.contactsupport")}
                   </Button>
                 </Link>
               </div>
               <div>
               <Link to="/QuoteSupportList">
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                    Quote Support
+                  {t("MysupportTickets.quotesupport")}
                   </Button>
                 </Link>
               </div>
@@ -67,7 +79,8 @@ function InsuredPersonSupportList() {
                 <Button
                     style={{ background: "#5C8894" }}
                     className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
-                  >                    Insured person support
+                  >                   
+                  {t("MysupportTickets.insuredpersonsupport")}
                   </Button>
                 </Link>
               </div>
@@ -82,10 +95,10 @@ function InsuredPersonSupportList() {
               <table>
                 <thead>
                   <tr>
-                    <th>Ticket Number</th>
-                    <th>Topic</th>
-                    <th>Status</th>
-                    <th>Last update on</th>
+                  <th>{t("contactsupport.ticketnumber")}</th>
+                  <th>{t("MysupportTickets.topic")}</th>
+                  <th>{t("MysupportTickets.Status")}</th>
+                  <th>{t("Insuredsupport.Lastupdateon")}</th>
                   </tr>
                 </thead>
                 <tbody>

@@ -53,7 +53,8 @@
     "Easyformember_desc1": "Quick dental cover information    ",
     "Easyformember_desc2": "Daily brushing tips & hints",
     "Easyformember_desc3": "Easy claim reporting & monitoring",
-    "Easyformember_desc4": "Shop for effective teeth care products "
+    "Easyformember_desc4": "Shop for effective teeth care products ",
+    "readmore":"Read More"
   },
 
   "about": {
@@ -371,4 +372,42 @@
   "Submitform": "Submit"
 
 }
+
+,
+
+"MysupportTickets":{
+  "Submitnewticket":"Submit New Ticket",
+  "Mysupportticket":"My SUPPORT TICKETS",
+  "contactsupport":"CONTACT SUPPORT",
+  "quotesupport":"QUOTE SUPPORT",
+  "insuredpersonsupport":"INSURED PERSON SUPPORT",
+  "Status":"Status",
+  "#id":"#id",
+  "topic":"Topic",
+  "description":"Description",
+  "creator":"Creator",
+  "createddate":"Created Date",
+  "attachement":"Attachement"
+
+},
+
+"contactsupport":{
+ "ticketnumber":"Ticket Number",
+ "createdby":"Created by",
+ "detail":"Detail",
+ "date":"Date"
+ 
+
+},
+"quotesupport":{
+  "groupname":"Group Name",
+  "numberemployer":"No. of Employ",
+  "name":"Name"
+
+ },
+
+ "Insuredsupport":{
+  "Lastupdateon":"Last update on"
+
+ }
 }
