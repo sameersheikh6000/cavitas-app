@@ -1,7 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../config/helpers/i18n";
 import usePolicyInformation from "../.../../../../../hooks/usePolicyInoformation";
 
 const PolicyInfo = ({ user }) => {
+
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
   const {getPolicyInformation} = usePolicyInformation();
   const [policyInfo, setPolicyInfo] = useState();
   const [errorMessage, setErrorMessage] = useState();
@@ -25,44 +37,54 @@ const PolicyInfo = ({ user }) => {
         {user?.data?.role === "broker" ?
           <p>Policy info</p>
           :
-          <p>Group policy info</p>
+          <p>{t("Policyinformation.pi_heading")}</p>
         }
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Company Name:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Insured_clients.Companyname")}:</p>
           <p>{policyInfo?.company_name}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Company KRS number:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Insured_clients.Companykrsnumber")}:</p>
           <p>{policyInfo?.company_krs_number}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Company URL address:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Insured_clients.Companyaddress")}:</p>
           <p>{policyInfo?.company_url_address}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Risk inception date:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
+          {t("Policyinformation.Riskinceptiondate")}
+:</p>
           <p>{policyInfo?.risk_inseption_date}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Risk expiry date:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>     
+               {t("Policyinformation.Riskexpirydate")}:
+</p>
           <p>{policyInfo?.risk_expiry_date}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Risk renewal date:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
+        {t("Policyinformation.Riskrenewaldate")}:
+
+            </p>
           <p>{policyInfo?.risk_renewal_date}</p>
         </div>
         {user?.data?.role === "member" ?
           <></>
           :
           <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-            <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>No of insured persons:</p>
+            <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
+              No of insured persons:</p>
             <p>{policyInfo?.no_of_insured_persons}</p>
           </div>
         }
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Mandated broker:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
+          {t("Policyinformation.Mandatedbroker")}
+:</p>
           <p>{policyInfo?.mandated_broker}</p>
         </div>
       </div>

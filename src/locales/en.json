@@ -313,7 +313,8 @@
   "View":"View all",
   "Krsnumber":"KRS number",
   "Riskrenewaldate":"Risk renewal date",
-  "Opengroup":"Open group"
+  "Opengroup":"Open group",
+  "nodata":"No Clients Data"
 },
 "Pannel_Dashboard_Alldocuments":{
   "Alldocuments":"All Documents",
@@ -329,7 +330,8 @@
   "Openmessage":"Open Message",
   "Password":"Password",
   "Confirmpassword":"Confirm password",
-  "Save":"Save changes"
+  "Save":"Save changes",
+  "Noticket":"No Ticket History"
 }
 ,
 "Uploadinsuredperson":{
@@ -453,6 +455,75 @@
 "Send":"Send",
 "Cancel":"Cancel",
 "Writeanswer":"Write Your Answer Here!"
+},
+
+"Insured_clients":{
+
+  "Companyname":"Company name",
+  "Companykrsnumber": "Company KRS number",
+  "Companyaddress":"Company URL address",
+  "Membergender":"Member gender",
+  "Memberfirstname":"Member first name",
+  "MemberLastname":"Member Last name",
+  "MemberPESEL":"Member PESEL",
+  "MemberDOB":"Member DOB",
+  "Memberage":"Member age",
+  "Memberrelation":"Member relation",
+  "Memberphonenumber":"Member phone number",
+  "Membermail":"Member e-mail",
+  "Memberaddress":"Member address",
+  "Opengroup": "Open Group",
+  "noclient":"No Clients To show",
+  "search":"Search"
+
+},
+
+"Policyinformation":{
+  "Pi_title":"POLICY INFORMATION",
+  "pi_heading":"Group policy info",
+  "Riskinceptiondate":"Risk inception date",
+  "Riskexpirydate":"Risk expiry date",
+  "Riskrenewaldate":"Risk renewal date",
+  "Mandatedbroker":"Mandated broker",
+  "PolicyDocuments":"  Policy Documents",
+  "Policyschedule":" Policy schedule",
+  "ptac":" Policy terms and conditions",
+  "IPID":"  IPID",
+  "claimform":" Claim form",
+  "Coverage":" Coverage",
+  "Typeofinsurance":"Type of insurance",
+  "Insuranceplan":" Insurance plan",
+  "Insurer":"Insurer",
+  "plan":"Sum insured per insured person per policy year",
+  "Payment":"Payment",
+  "Annualpremium":"Annual premium per insured person",
+  "Paymentfrequency":" Payment frequency",
+  "Monthly":" Monthly",
+  "BRONZE":"  BRONZE",
+  "Cavitasdentalinsurance":"Cavitas dental insurance",
+  "LTD":"Very good LTD",
+  "Bpip":"Benefits per insured person",
+  "Treatmnenttype":"Treatmnent type:",
+  "Annualsum":"Annual sum insured",
+  "Poland":"Poland and EU/EEA",
+  "plan2":"REGULAR DENTAL TREATMENT 4500 PLN",
+  "Group1":"Group1",
+  "Group11":"Prevention and scling",
+  "Group2":"Group2",
+  "Group22":"X-rays",
+  "Group3":"Group3",
+  "Group33":"Basic treatments",
+  "Group4":"Group4",
+  "Group44":" Major treatments",
+  "plan3":"ACCIDENT DENTAL TREATMENT 4500 PLN",
+  "result3":"Worlwide",
+  "plan4":"ORAL CANCER TREATMENT 25000 PLN",
+  "plan5":"*Once per lifetime, Poland",
+  "plan6":"NB! For detailed information about your benefits see Policy terms and conditions"
+
+
+
+
 }
 
 }

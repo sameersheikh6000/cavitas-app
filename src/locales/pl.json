@@ -311,7 +311,7 @@
 "Pannel_Dashboard_Userprofile":{
   "Update":"AKTUALIZACJA",
   "Companylocation":"Strona internetowa firmy*",
-  "Peselnumber":"PESEL Number",
+  "Peselnumber":"Numer PESEL",
   "Address":"Adres"
 }
 ,
@@ -320,7 +320,8 @@
   "View":"POKAŻ WSZYSTKIE",
   "Krsnumber":"Numer KRS",
   "Riskrenewaldate":"Data odnowienia ubezpieczenia",
-  "Opengroup":"GRUPA OTWARTA"
+  "Opengroup":"GRUPA OTWARTA",
+  "nodata":"Brak danych klientów"
 },
 "Pannel_Dashboard_Alldocuments":{
   "Alldocuments":"Wszystkie dokumenty",
@@ -335,7 +336,8 @@
   "Openmessage":"OTWÓRZ WIADOMOŚĆ",
   "Password":"Hasło",
   "Confirmpassword":"Potwierdź hasło",
-  "Save":"ZAPISZ ZMIANY"
+  "Save":"ZAPISZ ZMIANY",
+  "Noticket":"Brak historii biletów"
 },
 "Uploadinsuredperson":{
   "Uploadinsuredperson_title":"PRZEŚLIJ NOWYCH CZŁONKÓW UBEZPIECZENIA GRUPOWEGO",
@@ -459,7 +461,73 @@
 "Send":"Wysłać",
 "Cancel":"anulować",
 "Writeanswer":"Wpisz swoją odpowiedź tutaj!"
+},
+"Insured_clients":{
+
+  "Companyname":"Nazwa firmy",
+  "Companykrsnumber": "Numer KRS firmy",
+  "Companyaddress":"Adres URL firmy",
+  "Membergender":"Płeć członka",
+  "Memberfirstname":"Imię członka",
+  "MemberLastname":"Nazwisko członka",
+  "MemberPESEL":"Członek PESEL",
+  "MemberDOB":"Data urodzenia członka",
+  "Memberage":"Wiek członka",
+  "Memberrelation":"Relacja członkowska",
+  "Memberphonenumber":"Numer telefonu członka",
+  "Membermail":"E-mail członka",
+  "Memberaddress":"Adres członka",
+  "Opengroup": "Grupa otwarta",
+  "noclient":"Brak klientów do wyświetlenia",
+  "search":"Szukaj"
+}
+,
+"Policyinformation":{
+  "Pi_title":"INFORMACJE DOTYCZĄCE POLITYKI",
+  "pi_heading":"Informacje na temat polisy",
+  "Riskinceptiondate":"Data rozpoczęcia ubezpieczenia",
+  "Riskexpirydate":"Data wygaśnięcia ubezpieczenia",
+  "Riskrenewaldate":"Data odnowienia ubezpieczenia",
+  "Mandatedbroker":"Upoważniony broker",
+  "PolicyDocuments":"Polisa",
+  "Policyschedule":"Podstawowa umowa ubezpieczenia",
+  "ptac":"Warunki polisy",
+  "IPID":"IPID",
+  "claimform":"Formularz zgłoszenia ",
+  "Coverage":"Zakres ubezpieczenia",
+  "Typeofinsurance":"Rodzaj ubezpieczenia",
+  "Insuranceplan":"Plan ubezpieczeniowy",
+  "Insurer":"Ubezpieczyciel",
+  "plan":"Zakres ubezpieczenia",
+  "Payment":"Płatność",
+  "Annualpremium":"Łączna składka roczna:",
+  "Paymentfrequency":"Częstotliwość płatności:",
+  "Monthly":"Miesięczny",
+  "BRONZE":"BRĄZOWY",
+  "Cavitasdentalinsurance":"Ubezpieczenie stomatologiczne Cavitas",
+  "LTD":"Bardzo dobra spółka z ograniczoną odpowiedzialnością",
+  "Bpip":"Świadczenia na osobę ubezpieczoną",
+  "Treatmnenttype":"Rodzaj zabiegu",
+  "Annualsum":"Roczna suma ubezpieczenia",
+  "Poland":"Polska i UE/EOG  ",
+  "plan2":"REGULARNE LECZENIE STOMATOLOGICZNE 4500 zł",
+  "Group1":"Grupa 1",
+  "Group11":"Profilaktyka i sling",
+  "Group2":"Grupa 2",
+  "Group22":"promienie rentgenowskie",
+  "Group3":"Grupa 3",
+  "Group33":"Podstawowe zabiegi",
+  "Group4":"Grupa 4",
+  "Group44":"Główne zabiegi",
+  "plan3":"WYPADKOWE LECZENIE STOMATOLOGICZNE 4500 zł",
+  "result3":"Na całym świecie  ",
+  "plan4":"LECZENIE RAKA JAMY USTNEJ 25000 zł",
+  "plan5":"*Raz w życiu, Polska",
+  "plan6":"Uwaga! Aby uzyskać szczegółowe informacje na temat korzyści, zobacz Warunki polisy"
+
+
 
 
 }
+
 }

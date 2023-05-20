@@ -86,14 +86,14 @@ const UserProfileView = () => {
               <div className='userProfileView__container__details__detailsBox'>
                 <div><input
                   type="text"
-                  placeholder='PESEL number'
+                  placeholder={`${t("Pannel_Dashboard_Userprofile.Peselnumber")}`} 
                   value={profile?.company_pesel_number}
                   onChange={(e) => setProfile({ ...profile, company_pesel_number: e.target.value })}
                 />
                 </div>
                 <div><input
                   type="text"
-                  placeholder='Address'
+                  placeholder={`${t("Pannel_Dashboard_Userprofile.Address")}`} 
                   value={profile?.company_address}
                   onChange={(e) => setProfile({ ...profile, company_address: e.target.value })}
                 />

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../../../../config/helpers/i18n';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../../../config/helpers/i18n";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
@@ -30,7 +30,7 @@ function TicketReplyAnswerForm({
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
+  }, []);
 
   const [open, setOpen] = useState(false);
   const style = {
@@ -75,7 +75,7 @@ function TicketReplyAnswerForm({
         }}
         onClick={() => handleOpen()}
       >
-                       {t("Replypannel.Answer")}:
+        {t("Replypannel.Answer")}:
       </Button>
       <Modal
         open={open}
@@ -85,9 +85,8 @@ function TicketReplyAnswerForm({
       >
         <Box sx={style}>
           <div className="uploadClient__container__body__participation">
-          <h3> {t("Replypannel.Writeanswer")}: </h3>
+            <h3> {t("Replypannel.Writeanswer")}: </h3>
             <textarea
-              
               onChange={(e) =>
                 setTicketReplyAnswer({
                   ...ticketReplyAnswer,
@@ -105,7 +104,7 @@ function TicketReplyAnswerForm({
             ></textarea>
 
             <label>
-            <small> {t("Replypannel.Attachement")}:</small>
+              <small> {t("Replypannel.Attachement")}</small>
             </label>
             <input
               type="file"
@@ -124,7 +123,7 @@ function TicketReplyAnswerForm({
                 style={{ color: "white" }}
                 onClick={() => handleSubmit()}
               >
-               {t("Replypannel.Send")}
+                {t("Replypannel.Send")}
               </Button>
               <Button
                 color="success"
@@ -133,8 +132,7 @@ function TicketReplyAnswerForm({
                 style={{ color: "black" }}
                 onClick={() => handleClose()}
               >
-                               {t("Replypannel.Cancel")}
-
+                {t("Replypannel.Cancel")}
               </Button>
             </div>
           </div>

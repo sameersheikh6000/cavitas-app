@@ -94,7 +94,7 @@ function QuoteReplyAnswerForm({ quote_reply, setErrorMessage, setSuccessMessage,
             ></textarea>
 
             <label>
-            <small> {t("Replypannel.Attachement")}:</small>
+            <small> {t("Replypannel.Attachement")}</small>
             </label>
             <input
               type="file"

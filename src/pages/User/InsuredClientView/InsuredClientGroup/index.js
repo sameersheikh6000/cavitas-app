@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../config/helpers/i18n";
 import { useNavigate } from 'react-router-dom';
 import Page from '../../../../components/Page/Page';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
@@ -13,6 +15,16 @@ import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 import { USER_STORAGE_KEY } from '../../../../config/helpers/variables';
 
 const InsuredClientGroup = () => {
+
+   const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   return (
@@ -32,7 +44,7 @@ const InsuredClientGroup = () => {
           <>
             <header className='insuredClientGroup__header'>
               <GppGoodOutlinedIcon className='insuredClientGroup__header__icon' />
-              <p>POLICY INFORMATION</p>
+              <p>{t("Policyinformation.Pi_title")}</p>
             </header>
           </>
         }

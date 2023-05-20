@@ -1,15 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../config/helpers/i18n";
 
 const Commission = ({ user }) => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
   return (
     <div className='insuredClientGroup__container__cardsBox__card'>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
-        <p>Benefits per insured person</p>
+        <p>{t("Policyinformation.Bpip")}</p>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Treatmnent type:</p>
-          <p>Annual sum insured</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Treatmnenttype")}:</p>
+          
+          <p>{t("Policyinformation.Annualsum")}</p>
         </div>
         {user?.data?.role === "broker" &&
           <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
@@ -19,24 +31,24 @@ const Commission = ({ user }) => {
         }
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
-        <p style={{ border: "none" }}>REGULAR DENTAL TREATMENT 4500 PLN</p>
-        <span>Poland and EU/EEA</span>
+        <p style={{ border: "none" }}>{t("Policyinformation.plan2")}</p>
+        <span>{t("Policyinformation.Poland")}</span>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Group1: Prevention and scling</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Group1")}:{t("Policyinformation.Group11")}</p>
           <p>1330PLN</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Group2: X-rays</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Group2")}:{t("Policyinformation.Group22")}</p>
           <p>1330PLN</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Group3: Basic treatments</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Group3")}:{t("Policyinformation.Group33")}</p>
           <p>1330PLN</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Group4: Major treatments</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Group4")}:{t("Policyinformation.Group44")}</p>
           <p>1330PLN</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
@@ -45,8 +57,8 @@ const Commission = ({ user }) => {
         </div>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
-        <p style={{ border: "none" }}>ACCIDENT DENTAL TREATMENT 4500 PLN</p>
-        <span>Worlwide</span>
+        <p style={{ border: "none" }}>{t("Policyinformation.plan3")}</p>
+        <span>{t("Policyinformation.result3")}</span>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
@@ -55,8 +67,8 @@ const Commission = ({ user }) => {
         </div>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
-        <p style={{ border: "none" }}>ORAL CANCER TREATMENT 25000 PLN</p>
-        <span>*Once per lifetime, Poland
+        <p style={{ border: "none" }}>{t("Policyinformation.plan4")}</p>
+        <span>{t("Policyinformation.plan5")}
         </span>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
@@ -66,8 +78,7 @@ const Commission = ({ user }) => {
         </div>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__bottom'>
-        <p>NB! For detailed information about your benefits see Policy terms
-          and conditions</p>
+        <p>{t("Policyinformation.plan6")}</p>
       </div>
     </div>
   )

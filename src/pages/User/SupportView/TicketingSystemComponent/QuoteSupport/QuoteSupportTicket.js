@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../../../config/helpers/i18n';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../../config/helpers/i18n";
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
@@ -18,7 +18,6 @@ import QuoteReplyAnswerForm from "./component/QuoteReplyAnswerForm";
 import { API_KEY } from "../../../../../config/helpers/variables";
 
 const QuoteSupportTicket = () => {
-
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -27,7 +26,7 @@ const QuoteSupportTicket = () => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
+  }, []);
   const { id } = useParams();
   const [quoteFormDetail, setQuoteFormDetail] = useState();
   const { getQuoteDetail } = useQuoteForm();
@@ -70,7 +69,7 @@ const QuoteSupportTicket = () => {
                   textTransform: "none",
                 }}
               >
-               {t("Replypannel.Returnticket")}
+                {t("Replypannel.Returnticket")}
               </Button>
             </Link>
           </div>
@@ -80,14 +79,14 @@ const QuoteSupportTicket = () => {
           <div className="insuredClientView__header__left">
             <Link to="/support/view">
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-              {t("Replypannel.myquoteticket")} #{quoteFormDetail?.id}
+                {t("Replypannel.myquoteticket")} #{quoteFormDetail?.id}
               </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-              {t("MysupportTickets.Submitnewticket")}
+                {t("MysupportTickets.Submitnewticket")}
               </Button>
             </Link>
           </div>
@@ -100,7 +99,9 @@ const QuoteSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Number")} :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>
+                    {t("Replypannel.Number")} :
+                  </TableCell>
                   <TableCell>#{quoteFormDetail?.id}</TableCell>
                 </TableRow>
               </TableHead>
@@ -108,7 +109,9 @@ const QuoteSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")} :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>
+                    {t("Replypannel.Status")} :
+                  </TableCell>
                   <TableCell>
                     {quoteFormDetail?.status == "fresh"
                       ? "NEW"
@@ -121,7 +124,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Replypannel.Subject")}  :
+                    {t("Replypannel.Subject")} :
                   </TableCell>
                   <TableCell>{quoteFormDetail?.identity}</TableCell>
                 </TableRow>
@@ -131,7 +134,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Replypannel.Attachement")}:
+                    {t("Replypannel.Attachement")}:
                   </TableCell>
                   <TableCell>File Link here</TableCell>
                 </TableRow>
@@ -141,7 +144,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Replypannel.Createdon")}:
+                    {t("Replypannel.Createdon")}:
                   </TableCell>
                   <TableCell>{quoteFormDetail?.created_at}</TableCell>
                 </TableRow>
@@ -151,7 +154,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Insuredsupport.Lastupdateon")}:
+                    {t("Insuredsupport.Lastupdateon")}:
                   </TableCell>
                   <TableCell>{quoteFormDetail?.updated_at}</TableCell>
                 </TableRow>

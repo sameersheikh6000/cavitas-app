@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../../../config/helpers/i18n';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../../config/helpers/i18n";
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
@@ -26,7 +26,7 @@ const Tickets = () => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
+  }, []);
   const { id } = useParams();
   const [supportFormDetail, setSupportFormDetail] = useState();
   const { getTicketDetail } = useTickets();
@@ -67,7 +67,7 @@ const Tickets = () => {
                   textTransform: "none",
                 }}
               >
-               {t("Replypannel.Returnticket")}
+                {t("Replypannel.Returnticket")}
               </Button>
             </Link>
           </div>
@@ -80,14 +80,14 @@ const Tickets = () => {
                 className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit"
                 style={{ padding: "3px 20px" }}
               >
-              {t("MysupportTickets.Mysupportticket")} #{id}
+                {t("MysupportTickets.Mysupportticket")} #{id}
               </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-              {t("MysupportTickets.Submitnewticket")}
+                {t("MysupportTickets.Submitnewticket")}
               </Button>
             </Link>
           </div>
@@ -100,7 +100,9 @@ const Tickets = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Number")} :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>
+                    {t("Replypannel.Number")} :
+                  </TableCell>
                   <TableCell>{supportFormDetail?.id}</TableCell>
                 </TableRow>
               </TableHead>
@@ -108,7 +110,9 @@ const Tickets = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")}:</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>
+                    {t("Replypannel.Status")}:
+                  </TableCell>
                   <TableCell>
                     {supportFormDetail?.status == "fresh"
                       ? "NEW"
@@ -121,7 +125,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Replypannel.Subject")} :
+                    {t("Replypannel.Subject")} :
                   </TableCell>
                   <TableCell>{supportFormDetail?.request}</TableCell>
                 </TableRow>
@@ -131,8 +135,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Replypannel.Attachement")}
-
+                    {t("Replypannel.Attachement")}
                   </TableCell>
                   <TableCell>File Link here</TableCell>
                 </TableRow>
@@ -142,7 +145,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Replypannel.Createdon")}:
+                    {t("Replypannel.Createdon")}:
                   </TableCell>
                   <TableCell>{supportFormDetail?.created_at}</TableCell>
                 </TableRow>
@@ -152,8 +155,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Insuredsupport.Lastupdateon")}:
-
+                    {t("Insuredsupport.Lastupdateon")}:
                   </TableCell>
                   <TableCell>{supportFormDetail?.updated_at}</TableCell>
                 </TableRow>
@@ -212,8 +214,7 @@ const Tickets = () => {
           </section>
           <div>
             {/* User side */}
-            <section className="dashboard__container__content__cavitasDocs__Detail__tickets"
-            >
+            <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />
@@ -255,7 +256,7 @@ const Tickets = () => {
                     </a>
                   ) : (
                     <small>
-                              <small>   {t("Replypannel.Noattachemnt")}</small>
+                      <small> {t("Replypannel.Noattachemnt")}</small>
                     </small>
                   )}
                 </tbody>
@@ -271,7 +272,7 @@ const Tickets = () => {
                   <div>
                     <section
                       className="dashboard__container__content__cavitasDocs__Detail__tickets"
-                      style={{ backgroundColor: "#f4e4e4", }}
+                      style={{ backgroundColor: "#f4e4e4" }}
                     >
                       <header className="dashboard__container__content__cavitasDocs__header">
                         <div className="dashboard__container__content__cavitasDocs__header__iconBox">
@@ -308,7 +309,7 @@ const Tickets = () => {
                         >
                           {row?.file_name ? (
                             <p>
-                              Attachement(s){" "}
+                              {t("Replypannel.Attachement")}{" "}
                               <a
                                 href={`${API_KEY}/api/v1/ticket_replies/${row?.id}/download`}
                               >
@@ -317,7 +318,7 @@ const Tickets = () => {
                             </p>
                           ) : (
                             <em>
-                              <small>   {t("Replypannel.Noattachemnt")}</small>
+                              <small> {t("Replypannel.Noattachemnt")}</small>
                             </em>
                           )}
                         </tbody>
@@ -367,7 +368,7 @@ const Tickets = () => {
                         >
                           {row?.answer?.file_name ? (
                             <p>
-                              Attachement(s){" "}
+                              {t("Replypannel.Attachement")}{" "}
                               <a
                                 href={`${API_KEY}/api/v1/ticket_reply_answers/${row?.answer?.id}/download`}
                               >
@@ -376,7 +377,7 @@ const Tickets = () => {
                             </p>
                           ) : (
                             <em>
-                              <small>   {t("Replypannel.Noattachemnt")}</small>
+                              <small> {t("Replypannel.Noattachemnt")}</small>
                             </em>
                           )}
                         </tbody>

@@ -13,8 +13,6 @@ import { API_KEY } from "../../../../config/helpers/variables";
 import DeleteCavitasDocs from "../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs";
 import UpdateCavitasDocs from "../../../Admin/CavitasDocuments/Components/UpdateCavitasDocs";
 const CavitasDocs = () => {
-
-  
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -23,7 +21,7 @@ const CavitasDocs = () => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
+  }, []);
   const navigate = useNavigate();
 
   const { getCavitasDocs } = useCavitasDocs();
@@ -54,7 +52,7 @@ const CavitasDocs = () => {
           <p>{t("Pannel_Dashboard.Cavitasdocuments")}</p>
         </div>
         <Button size="small" onClick={() => navigate("/cavitasdocs/view")}>
-        {t("Pannel_Dashboard_Alldocuments.Alldocuments")}
+          {t("Pannel_Dashboard_Alldocuments.Alldocuments")}
         </Button>
       </header>
       <div className="dashboard__container__content__cavitasDocs__details">

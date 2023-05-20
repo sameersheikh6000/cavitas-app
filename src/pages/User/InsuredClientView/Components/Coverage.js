@@ -1,19 +1,32 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../../config/helpers/i18n";
 
 const Coverage = ({user}) => {
+  
+ 
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
   return (
     <div className='insuredClientGroup__container__cardsBox__card'>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
-        <p>Coverage</p>
+        <p>{t("Policyinformation.Coverage")}</p>
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Type of insurance:</p>
-          <p>Cavitas dental insurance</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Typeofinsurance")}:</p>
+          <p>{t("Policyinformation.Cavitasdentalinsurance")}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Insurance plan:</p>
-          <p>BRONZE</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Insuranceplan")}:</p>
+          <p>{t("Policyinformation.BRONZE")}</p>
         </div>
         {user?.data?.role === "broker" ?
           <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
@@ -22,14 +35,13 @@ const Coverage = ({user}) => {
           </div>
           :
           <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-            <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Sum insured per insured person
-              per policy year:</p>
+            <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.plan")}:</p>
             <p>4500/4500/25000 PLN</p>
           </div>
         }
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>Insurer:</p>
-          <p>Very good LTD.</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Insurer")}:</p>
+          <p>{t("Policyinformation.LTD")}.</p>
         </div>
       </div>
     </div>
