@@ -63,6 +63,7 @@ import MemberEnterMail from "../pages/User/MemberAuthentication/MemberForgetPass
 import MemberSetPassword from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberSetPassword";
 import MemberUpdatePassword from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberUpdatePassword";
 import MemberAddCode from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberAddCode";
+import ResetPassword from "../pages/ResetPassword";
 
 export const routes = [
 
@@ -770,6 +771,12 @@ export const routes = [
     component: MemberUpdatePassword,
     inPrivate: false
   },
+
+  {
+    path: '/reset_password',
+    component: ResetPassword,
+    isPrivate: false
+  }
 ]
 
 

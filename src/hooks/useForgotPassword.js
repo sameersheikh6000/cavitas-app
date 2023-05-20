@@ -7,7 +7,7 @@ const useForgotPassword = () =>  {
 
   const forgotPassword = async (email) => {
     const params = {
-      email: JSON.stringify(email)
+      email: email
     }
     const response = await axios.post(
       `${API_KEY}/api/v1/forgot_password`,
@@ -26,7 +26,7 @@ const useForgotPassword = () =>  {
   const resetPassword = async (credentials) => {
 
     const params = {
-      credentials: JSON.stringify(credentials)
+      credentials: credentials
     }
 
     const response = await axios.post(
