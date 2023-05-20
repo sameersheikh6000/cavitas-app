@@ -7,21 +7,37 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Stack from "@mui/material/Stack";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import Page from "../../../../../components/Page/Page";
+import useClientInsurance from '../../../../../hooks/useClientInsurance';
+import AlertMessage from '../../../../../components/SnackbarMessages/AlertMessage';
 
 function InsuredPersonSupportList() {
-  
+  const { getAllClientInsurance } = useClientInsurance();
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
+  const [ errorMessage, setErrorMessage] = useState('');
+  const [clientInfo, setClientInfo] = useState([]);
   const { t } = useTranslation();
+  console.log(clientInfo)
+
+  const getClientInfos = async () => {
+    const response = await getAllClientInsurance();
+    if (response?.status < 300) {
+      setClientInfo(response?.client_infos);
+    } else if (response?.status > 300) {
+      setErrorMessage("Something went wrong!");
+    }
+  };
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    getClientInfos();
   }, [])
   return (
     <>
       <Page>
+        <AlertMessage errorMessage={errorMessage} />
         <section className="insuredClientView">
           <header className="insuredClientView__header">
             <div className="supportView__header__iconBox">
@@ -102,26 +118,23 @@ function InsuredPersonSupportList() {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>
-                      <Link to="/InsuredPersonSupportTicket">222233</Link>
-                    </td>
-                    <td>ABC</td>
-                    <td>New</td>
-                    <td>Today</td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
+                  {
+                    clientInfo ? clientInfo.map((row, index) => (
+
+                    <tr key={index}>
+                      <td>
+                        <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang == 'pl' ? lang : 'en'}`}>{row?.id}</Link>
+                      </td>
+                      <td>{row?.details}</td>
+                      <td>{row?.status}</td>
+                      <td>{row?.updated_at}</td>
+                    </tr>
+                    ))
+                    :
+                    <tr>
+                      <td colSpan={4}>No Data To Display!</td>
+                    </tr>
+                  }
                 </tbody>
               </table>
             </div>

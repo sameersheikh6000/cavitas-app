@@ -10,7 +10,9 @@ import HowItWork from './Components/HowItWork';
 import OurOffer from './Components/OurOffer';
 import SmartInsurance from './Components/SmartInsurance';
 import ValuableReadings from './Components/ValuableReadings';
+import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
 const LandingPage = () => {
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   return (
     <Page>
       <section className='landingPage'>

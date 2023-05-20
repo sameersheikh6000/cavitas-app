@@ -1,21 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@mui/material";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
-import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import useClientInsurance from "../../../../../hooks/useClientInsurance";
+import { useEffect } from "react";
+import { API_KEY } from "../../../../../config/helpers/variables";
 
 const InsuredPersonSupportTicket = () => {
+  const { id } = useParams();
+  const { getClientInfoById } = useClientInsurance();
+  const [clientInfo, setClientInfo] = useState()
+  const [ errorMessage, setErrorMessage ] = useState('');
+  console.log(clientInfo)
+
+  const getClient = async () => {
+    const response = await getClientInfoById(id);
+    debugger;
+    if (response?.status < 300) {
+      setClientInfo(response?.client_info);
+    } else if (response?.status > 300) {
+      setErrorMessage(response?.message);
+    }
+  };
+
+  useEffect(() => {
+    getClient();
+  }, [])
   return (
     <Page>
       <section className="insuredClientView">
@@ -62,7 +80,7 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
-                  <TableCell>222233</TableCell>
+                  <TableCell>{clientInfo?.id}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -70,7 +88,7 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
-                  <TableCell>New</TableCell>
+                  <TableCell>{clientInfo?.status}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -80,7 +98,7 @@ const InsuredPersonSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                     Subject :
                   </TableCell>
-                  <TableCell>WDC</TableCell>
+                  <TableCell>No Subject</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -90,7 +108,7 @@ const InsuredPersonSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                     Attachment(s):
                   </TableCell>
-                  <TableCell>File Link here</TableCell>
+                  <TableCell>{clientInfo?.file?.url}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -101,15 +119,8 @@ const InsuredPersonSupportTicket = () => {
                     Created on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        fontSize: "10px",
-                        background: "none",
-                        border: "none",
-                      }}
-                      type="date"
-                    ></input>
+                    {clientInfo?.created_at}
+                    
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -121,15 +132,8 @@ const InsuredPersonSupportTicket = () => {
                     Last update on:
                   </TableCell>
                   <TableCell>
-                    {" "}
-                    <input
-                      style={{
-                        background: "none",
-                        border: "none",
-                        fontSize: "10px",
-                      }}
-                      type="time"
-                    ></input>
+                    {clientInfo?.updated_at}
+                    
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -190,22 +194,10 @@ const InsuredPersonSupportTicket = () => {
               <header className="dashboard__container__content__cavitasDocs__header">
                 <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <PersonOutlineOutlinedIcon />
-                  <p style={{ textTransform: "none" }}>John Smith</p>
+                  <p style={{ textTransform: "none" }}>{clientInfo?.user?.name}</p>
                 </div>
                 <Button size="small">
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="date"
-                  ></input>{" "}
-                  &nbsp; &nbsp;&nbsp;
-                  <p style={{ color: "black", textTransform: "lowercase" }}>
-                    at
-                  </p>
-                  &nbsp; &nbsp;&nbsp;
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="time"
-                  ></input>
+                 {clientInfo?.created_at}
                 </Button>
               </header>
               <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
@@ -216,13 +208,7 @@ const InsuredPersonSupportTicket = () => {
                   <thead>
                     <tr>
                       <p>
-                        Hi Cavitas
-                        <br></br>
-                        Thank you for your quick answer
-                        <br></br>
-                        BR
-                        <br></br>
-                        John Smith
+                       {clientInfo?.details}
                       </p>
                     </tr>
                   </thead>
@@ -238,131 +224,141 @@ const InsuredPersonSupportTicket = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>Attachement(s) (Attachement link)</p>
+                  <p>Attachement(s): {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : 'No files'}</p>
                 </tbody>
               </div>
             </section>
             <br />
 
             {/* admin side */}
-            <section
-              className="dashboard__container__content__cavitasDocs__Detail__tickets"
-              style={{ backgroundColor: "#f4e4e4" }}
-            >
-              <header className="dashboard__container__content__cavitasDocs__header">
-                <div className="dashboard__container__content__cavitasDocs__header__iconBox">
-                  {/* <img src={require("")} alt="" /> */}
 
-                  <p style={{ textTransform: "none" }}>Cavitas</p>
+
+
+
+
+
+
+
+            { clientInfo?.replies ?
+              <>
+              <section
+                className="dashboard__container__content__cavitasDocs__Detail__tickets"
+                style={{ backgroundColor: "#f4e4e4" }}
+              >
+                <header className="dashboard__container__content__cavitasDocs__header">
+                  <div className="dashboard__container__content__cavitasDocs__header__iconBox">
+                    {/* <img src={require("")} alt="" /> */}
+
+                    <p style={{ textTransform: "none" }}>Cavitas</p>
+                  </div>
+                  <Button size="small">
+                  {}
+                  </Button>
+                </header>
+                <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
+                  <table
+                    className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
+                    style={{ height: "auto" }}
+                  >
+                    <thead>
+                      <tr>
+                        <p>
+                          Hi Cavitas
+                          <br></br>
+                          Thank you for your quick answer
+                          <br></br>
+                          BR
+                          <br></br>
+                          John Smith
+                        </p>
+                      </tr>
+                    </thead>
+                    <br />
+                  </table>
+                  <tbody
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      borderTop: "1px solid lightgray",
+                      paddingTop: "1rem",
+                      paddingBottom: "1rem",
+                    }}
+                  >
+                    <p>Attachement(s) (Attachement link)</p>
+                  </tbody>
                 </div>
-                <Button size="small">
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="date"
-                  ></input>{" "}
-                  &nbsp; &nbsp;&nbsp;
-                  <p style={{ color: "black", textTransform: "lowercase" }}>
-                    at
-                  </p>
-                  &nbsp; &nbsp;&nbsp;
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="time"
-                  ></input>
-                </Button>
-              </header>
-              <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
-                <table
-                  className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
-                  style={{ height: "auto" }}
-                >
-                  <thead>
-                    <tr>
-                      <p>
-                        Hi Cavitas
-                        <br></br>
-                        Thank you for your quick answer
-                        <br></br>
-                        BR
-                        <br></br>
-                        John Smith
-                      </p>
-                    </tr>
-                  </thead>
-                  <br />
-                </table>
-                <tbody
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    borderTop: "1px solid lightgray",
-                    paddingTop: "1rem",
-                    paddingBottom: "1rem",
-                  }}
-                >
-                  <p>Attachement(s) (Attachement link)</p>
-                </tbody>
-              </div>
-            </section>
-            <br />
-            {/* User side */}
-            <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
-              <header className="dashboard__container__content__cavitasDocs__header">
-                <div className="dashboard__container__content__cavitasDocs__header__iconBox">
-                  <PersonOutlineOutlinedIcon />
-                  <p style={{ textTransform: "none" }}>John Smith</p>
+              </section>
+              <br />
+              {/* User side */}
+              <section className="dashboard__container__content__cavitasDocs__Detail__tickets">
+                <header className="dashboard__container__content__cavitasDocs__header">
+                  <div className="dashboard__container__content__cavitasDocs__header__iconBox">
+                    <PersonOutlineOutlinedIcon />
+                    <p style={{ textTransform: "none" }}>John Smith</p>
+                  </div>
+                  <Button size="small">
+                    <input
+                      style={{ background: "none", border: "none" }}
+                      type="date"
+                    ></input>{" "}
+                    &nbsp; &nbsp;&nbsp;
+                    <p style={{ color: "black", textTransform: "lowercase" }}>
+                      at
+                    </p>
+                    &nbsp; &nbsp;&nbsp;
+                    <input
+                      style={{ background: "none", border: "none" }}
+                      type="time"
+                    ></input>
+                  </Button>
+                </header>
+                <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
+                  <table
+                    className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
+                    style={{ height: "auto" }}
+                  >
+                    <thead>
+                      <tr>
+                        <p>
+                          Hi Cavitas
+                          <br></br>
+                          Thank you for your quick answer
+                          <br></br>
+                          BR
+                          <br></br>
+                          John Smith
+                        </p>
+                      </tr>
+                    </thead>
+                    <br />
+                  </table>
+                  <tbody
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      borderTop: "1px solid lightgray",
+                      paddingTop: "1rem",
+                      paddingBottom: "1rem",
+                    }}
+                  >
+                    <p>Attachement(s) (Attachement link)</p>
+                  </tbody>
                 </div>
-                <Button size="small">
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="date"
-                  ></input>{" "}
-                  &nbsp; &nbsp;&nbsp;
-                  <p style={{ color: "black", textTransform: "lowercase" }}>
-                    at
-                  </p>
-                  &nbsp; &nbsp;&nbsp;
-                  <input
-                    style={{ background: "none", border: "none" }}
-                    type="time"
-                  ></input>
-                </Button>
-              </header>
-              <div className="dashboard__container__content__cavitasDocs__Ticketsdetails">
-                <table
-                  className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
-                  style={{ height: "auto" }}
-                >
-                  <thead>
-                    <tr>
-                      <p>
-                        Hi Cavitas
-                        <br></br>
-                        Thank you for your quick answer
-                        <br></br>
-                        BR
-                        <br></br>
-                        John Smith
-                      </p>
-                    </tr>
-                  </thead>
-                  <br />
-                </table>
-                <tbody
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    borderTop: "1px solid lightgray",
-                    paddingTop: "1rem",
-                    paddingBottom: "1rem",
-                  }}
-                >
-                  <p>Attachement(s) (Attachement link)</p>
-                </tbody>
-              </div>
-            </section>
+              </section>
+            </>
+              : 
+              <></>
+            }
+
+
+
+
+
+
+
+
             <br />
           </div>
         </Stack>
