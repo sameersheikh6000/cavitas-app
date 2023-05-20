@@ -42,7 +42,7 @@ const ValuableReadings = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog1_desc")}
                 &nbsp;{" "}
-                <Link to={`/Blog1/${lang == "pl" ? "pl" : "en"}`}
+                <Link to={`/Blog1/${lang == "pl" ? lang : "en"}`}
                  style={{ color: "red" }}>
                   {" "}
                   {t("home.readmore")}

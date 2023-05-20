@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
@@ -16,6 +18,16 @@ import QuoteReplyAnswerForm from "./component/QuoteReplyAnswerForm";
 import { API_KEY } from "../../../../../config/helpers/variables";
 
 const QuoteSupportTicket = () => {
+
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const { id } = useParams();
   const [quoteFormDetail, setQuoteFormDetail] = useState();
   const { getQuoteDetail } = useQuoteForm();
@@ -42,7 +54,7 @@ const QuoteSupportTicket = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>Support Tickets</p>
+            <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/support/view" style={{ textDecoration: "none" }}>
@@ -58,7 +70,7 @@ const QuoteSupportTicket = () => {
                   textTransform: "none",
                 }}
               >
-                Return to ticket list
+               {t("Replypannel.Returnticket")}
               </Button>
             </Link>
           </div>
@@ -68,14 +80,14 @@ const QuoteSupportTicket = () => {
           <div className="insuredClientView__header__left">
             <Link to="/support/view">
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My Quote ticket #{quoteFormDetail?.id}
+              {t("Replypannel.myquoteticket")} #{quoteFormDetail?.id}
               </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                Submit New Ticket
+              {t("MysupportTickets.Submitnewticket")}
               </Button>
             </Link>
           </div>
@@ -88,7 +100,7 @@ const QuoteSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Number")} :</TableCell>
                   <TableCell>#{quoteFormDetail?.id}</TableCell>
                 </TableRow>
               </TableHead>
@@ -96,7 +108,7 @@ const QuoteSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")} :</TableCell>
                   <TableCell>
                     {quoteFormDetail?.status == "fresh"
                       ? "NEW"
@@ -109,7 +121,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Subject :
+                  {t("Replypannel.Subject")}  :
                   </TableCell>
                   <TableCell>{quoteFormDetail?.identity}</TableCell>
                 </TableRow>
@@ -119,7 +131,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Attachment(s):
+                  {t("Replypannel.Attachement")}:
                   </TableCell>
                   <TableCell>File Link here</TableCell>
                 </TableRow>
@@ -129,7 +141,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Created on:
+                  {t("Replypannel.Createdon")}:
                   </TableCell>
                   <TableCell>{quoteFormDetail?.created_at}</TableCell>
                 </TableRow>
@@ -139,7 +151,7 @@ const QuoteSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Last update on:
+                  {t("Insuredsupport.Lastupdateon")}:
                   </TableCell>
                   <TableCell>{quoteFormDetail?.updated_at}</TableCell>
                 </TableRow>
@@ -228,7 +240,7 @@ const QuoteSupportTicket = () => {
                       >
                         {row?.file_name ? (
                           <p>
-                            Attachement(s): &nbsp;
+                            {t("Replypannel.Attachement")}: &nbsp;
                             <a
                               href={`${API_KEY}/api/v1/quote_replies/${row?.id}/download`}
                             >
@@ -237,7 +249,7 @@ const QuoteSupportTicket = () => {
                           </p>
                         ) : (
                           <small>
-                            <em>No Attachements </em>
+                            <em>{t("Replypannel.Noattachemnt")} </em>
                           </small>
                         )}
                       </tbody>
@@ -302,7 +314,7 @@ const QuoteSupportTicket = () => {
                         >
                           {row?.answer?.file_name ? (
                             <p>
-                              Attachement(s): &nbsp;
+                              {t("Replypannel.Attachement")}: &nbsp;
                               <a
                                 href={`${API_KEY}/api/v1/quote_reply_answers/${row?.answer?.id}/download`}
                               >
@@ -311,7 +323,7 @@ const QuoteSupportTicket = () => {
                             </p>
                           ) : (
                             <small>
-                              <em>No Attachements </em>
+                              <em>{t("Replypannel.Noattachemnt")} </em>
                             </small>
                           )}
                         </tbody>

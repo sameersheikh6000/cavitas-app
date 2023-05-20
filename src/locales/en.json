@@ -131,10 +131,11 @@
     "CoverWork_no9": "*One (1) per lifetime",
     "CoverWork_no10": "Crowns",
     "CoverWork_no11": "Bridge",
-    "CoverWork_no12": "Denture",
+    "CoverWork_no12": "Dentures",
     "CoverWork_no13": "Implant",
     "CoverWork_no14": "!!! Teeth whitening",
     "CoverWork_no15": "!!! Adult orthodontics*",
+    "CoverWork_no16": "Periodontal treatment",
     "CoverWork__year__button": "Get a quote in 24 hrs",
     "Broker__contactUs__button": "Contact Us",
     "suggest":"Suggest to your employer",
@@ -387,7 +388,8 @@
   "description":"Description",
   "creator":"Creator",
   "createddate":"Created Date",
-  "attachement":"Attachement"
+  "attachement":"Attachement",
+  "Submitticket":"Submit Ticket"
 
 },
 
@@ -410,4 +412,47 @@
   "Lastupdateon":"Last update on"
 
  }
+ ,
+ "footer":{
+  "findus":"Find us",
+  "heading_1":"The insurance service provider is",
+  "heading_2":"Northern1 international insurance brokers OÜ  ",
+  "heading_3":"License no 12806139",
+  "heading_4":"Tallinn Estonia"
+  
+ }
+ ,
+ "claim":{
+  "claim_title":"Welcome to the dental claims portal",
+  "claim_heading_part1":"If you already registered on this portal, simply login with your",
+  "claim_heading_part2":"email address",
+  "claim_heading_part3":"and your",
+  "claim_heading_part4":"   password. Please note that you must belong to an existing dental insurance Plan in order to login.",
+  "claim_logindetail":"Login Details",
+  "claim_login":"Log In",
+  "claim_clickhere":"Click Here",
+  "claim_clickhere_forget":"Forgot your password?",
+  "claim_newaccount":"Not Yet Registered?",
+  "claim_newaccount_create":"Create an account",
+  "claim_troubbling":"Trouble Logging In?",
+  "claim_trobbling_support":"Contact support"
+ }
+,
+
+"Replypannel":{
+"Returnticket":"Return to ticket list",
+"Number":"Number",
+"Status":"Status",
+"Subject":"Subject",
+"Createdon":"Created on",
+"Attachement":"Attachement(s):",
+"Noattachemnt":"No Attachments available",
+"Answer":"Answer",
+"contactticket":"My contact ticket",
+"myquoteticket":"My Quote Ticket",
+"Send":"Send",
+"Cancel":"Cancel",
+"Writeanswer":"Write Your Answer Here!"
+}
+
 }

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
@@ -16,6 +18,15 @@ import ContactReplyAnswerForm from "./component/ContactReplyAnswerForm";
 import { API_KEY } from "../../../../../config/helpers/variables";
 
 const ContactSupportTicket = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const [contact, setContact] = useState();
   const { id } = useParams();
   const { getContactFormById } = useContactForm();
@@ -43,7 +54,7 @@ const ContactSupportTicket = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>Support Tickets</p>
+            <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/support/view">
@@ -59,7 +70,7 @@ const ContactSupportTicket = () => {
                   textTransform: "none",
                 }}
               >
-                Return to ticket list
+               {t("Replypannel.Returnticket")}
               </Button>
             </Link>
           </div>
@@ -72,14 +83,14 @@ const ContactSupportTicket = () => {
                 className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit"
                 style={{ textDecoration: "none" }}
               >
-                My Contact ticket #{id}
+              {t("Replypannel.contactticket")} #{id}
               </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                Submit New Tickets
+              {t("MysupportTickets.Submitnewticket")}
               </Button>
             </Link>
           </div>
@@ -92,7 +103,7 @@ const ContactSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Number")}:</TableCell>
                   <TableCell>#{contact?.id}</TableCell>
                 </TableRow>
               </TableHead>
@@ -100,7 +111,7 @@ const ContactSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")} :</TableCell>
                   <TableCell>
                     {contact?.status == "fresh"
                       ? "NEW"
@@ -113,7 +124,7 @@ const ContactSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Subject :
+                  {t("Replypannel.Subject")} :
                   </TableCell>
                   <TableCell>{contact?.request}</TableCell>
                 </TableRow>
@@ -124,7 +135,7 @@ const ContactSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Created on:
+                  {t("Replypannel.Createdon")}:
                   </TableCell>
                   <TableCell>{contact?.created_at}</TableCell>
                 </TableRow>
@@ -134,7 +145,7 @@ const ContactSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Last update on:
+                  <th>{t("Insuredsupport.Lastupdateon")}</th>
                   </TableCell>
                   <TableCell>{contact?.updated_at}</TableCell>
                 </TableRow>
@@ -260,14 +271,15 @@ const ContactSupportTicket = () => {
                         }}
                       >
                         {row?.file_name ? 
-                            <p>Attachement(s) 
+                            <p>                  {t("Replypannel.Attachement")}
+ 
                               <a
                                 href={`${API_KEY}/api/v1/contact_replies/${row?.id}/download`}
                               >
                                 {row?.file_name}
                               </a>
                             </p> : 
-                            <small><em>No Attachements </em></small>
+                            <small><em> {t("Replypannel.Noattachemnt")} </em></small>
                           }
                       </tbody>
                     </div>
@@ -330,14 +342,15 @@ const ContactSupportTicket = () => {
                           }}
                         >
                           {row?.answer?.file_name ? 
-                            <p>Attachement(s): &nbsp;
+                            <p>                  {t("Replypannel.Attachement")}
+                            &nbsp;
                               <a
                                 href={`${API_KEY}/api/v1/contact_reply_answers/${row?.answer?.id}/download`}
                               >
                                 {row?.answer?.file_name}
                               </a>
                             </p> : 
-                            <small><em>No Attachements </em></small>
+                            <small><em> {t("Replypannel.Noattachemnt")} </em></small>
                           }
                         </tbody>
                       </div>

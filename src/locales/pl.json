@@ -131,12 +131,13 @@
     "CoverWork_no7": "Ubezpieczenie od następstw nieszczęśliwych wypadków ważne na całym świecie",
     "CoverWork_no8": "Ubezpieczenie w przypadku raka jamy ustnej*",
     "CoverWork_no9": "*Raz w życiu ",
-    "CoverWork_no10": "Korona",
+    "CoverWork_no10": "Korony",
     "CoverWork_no11": "Most",
-    "CoverWork_no12": "Proteza",
+    "CoverWork_no12": "Protezy",
     "CoverWork_no13": "Implant",
     "CoverWork_no14": "!!! Wybielanie zębów",
     "CoverWork_no15": "!!! Leczenie ortodontyczne osób dorosłych*",
+    "CoverWork_no16": "Leczenie periodontologiczne",
     "CoverWork__year__button": "Uzyskaj wycenę w ciągu 24 godzin",
     "Broker__contactUs__button": "Skontaktuj się z nami",
     "suggest":"Zaproponuj swojemu pracodawcy",
@@ -395,7 +396,8 @@
   "description":"Opis",
   "creator":"Twórca",
   "createddate":"stworz Date",
-  "attachement":"załącznik"
+  "attachement":"załącznik",
+  "Submitticket":"przedstawić bilet"
 
 },
 
@@ -417,5 +419,47 @@
  "Insuredsupport":{
   "Lastupdateon":"Ostatnia aktualizacja dot"
 
+ },
+ "footer":{
+  "findus":"Znajdź nas",
+  "heading_1":"Dostawcą usług ubezpieczeniowych jest",
+  "heading_2":"firma Northern1 International Insurance Brokers OÜ",
+  "heading_3":"Nr licencji: 12806139",
+  "heading_4":"Tallin, Estonia"
+  
+ },
+ "claim":{
+  "claim_title":"Witamy na portalu roszczeń dentystycznych",
+  "claim_heading_part1":"Jeśli jesteś już zarejestrowany w tym portalu, po prostu zaloguj się za pomocą swojego",
+  "claim_heading_part2":"adres e-mail",
+  "claim_heading_part3":"I twój",
+  "claim_heading_part4":"hasło. Pamiętaj, że aby się zalogować, musisz należeć do istniejącego Planu ubezpieczenia dentystycznego.",
+  "claim_logindetail":"szczegóły logowania",
+  "claim_login":"Zaloguj sie",
+  "claim_clickhere":"Kliknij tutaj",
+  "claim_clickhere_forget":"Zapomniałeś hasła?",
+  "claim_newaccount":"Jeszcze nie zarejestrowany?",
+  "claim_newaccount_create":"Utwórz konto",
+  "claim_troubbling":"Problem z zalogowaniem się?",
+  "claim_trobbling_support":"Skontaktuj się z pomocą techniczną"
  }
+ ,
+
+"Replypannel":{
+"Returnticket":"Powrót do listy biletów",
+"Number":"Numer",
+"Status":"Status",
+"Subject":"Temat",
+"Createdon":"Utworzono dnia",
+"Noattachemnt":"Brak dostępnych załączników",
+"Answer":"Odpowiedź",
+"Attachement":"Załącznik(i):",
+"contactticket":"Mój bilet kontaktowy",
+"myquoteticket":"Mój bilet z cytatem",
+"Send":"Wysłać",
+"Cancel":"anulować",
+"Writeanswer":"Wpisz swoją odpowiedź tutaj!"
+
+
+}
 }

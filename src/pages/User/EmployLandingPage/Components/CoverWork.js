@@ -34,9 +34,9 @@ const EmployerCoverWorks = () => {
             <p>{t("Broker.CoverWork_no2")}</p>
             <p>{t("Broker.CoverWork_no3")}</p>
             <p>{t("Broker.CoverWork_no4")}</p>
-            <p>{t("Broker.CoverWork_no6")}</p>
             <p>{t("Broker.CoverWork_no5")}</p>
-            {/* <p>Periodontal treatment</p> */}
+            <p>{t("Broker.CoverWork_no6")}</p>
+            <p>{t("Broker.CoverWork_no16")}</p>
             <p>{t("Broker.CoverWork_no7")}</p>
             <p>{t("Broker.CoverWork_no8")}</p>
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
@@ -54,8 +54,7 @@ const EmployerCoverWorks = () => {
             <p>{t("Broker.CoverWork_no4")}</p>
             <p>{t("Broker.CoverWork_no5")}</p>
             <p>{t("Broker.CoverWork_no6")}</p>
-{/* 
-            <p>Periodontal treatment</p> */}
+            <p>{t("Broker.CoverWork_no16")}</p>
             <p>{t("Broker.CoverWork_no10")}</p>
             <p>{t("Broker.CoverWork_no11")}</p>
 
@@ -76,9 +75,9 @@ const EmployerCoverWorks = () => {
             <p>{t("Broker.CoverWork_no2")}</p>
             <p>{t("Broker.CoverWork_no3")}</p>
             <p>{t("Broker.CoverWork_no4")}</p>
-            <p>{t("Broker.CoverWork_no6")}</p>
             <p>{t("Broker.CoverWork_no5")}</p>
-            {/* <p>Periodontal treatment</p> */}
+            <p>{t("Broker.CoverWork_no6")}</p>
+            <p>{t("Broker.CoverWork_no16")}</p>
             <p>{t("Broker.CoverWork_no10")}</p>
             <p>{t("Broker.CoverWork_no11")}</p>
             <p>{t("Broker.CoverWork_no12")}</p>

@@ -30,8 +30,10 @@ const Footer = () => {
         <div className="footer__container__top">
           <div className="footer__container__top__box">
             <p className="footer__container__top__box__details">
-            The insurance service provider is <br />Northern1 international insurance brokers OÜ <br /> License no 12806139 <br />
-              Tallinn Estonia
+            {t("footer.heading_1")}
+            <br />   {t("footer.heading_2")}
+             <br />    {t("footer.heading_3")}<br />
+             {t("footer.heading_4")}
             </p>
           </div>
           <div className="footer__container__top__box">
@@ -63,7 +65,7 @@ const Footer = () => {
             <Link to="#">{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">
-            <Link to="/findus">Find us</Link>
+            <Link to="/findus">   {t("footer.findus")}</Link>
             <Link to="/findus">
               <FacebookOutlinedIcon />
               {/* Facebook */}

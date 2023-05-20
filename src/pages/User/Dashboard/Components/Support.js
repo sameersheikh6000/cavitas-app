@@ -44,7 +44,7 @@ const Support = () => {
           < EmailOutlinedIcon className='dashboard__container__content__support__header__iconBox__icon' />
           <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
         </div>
-        <Button size='small' onClick={() => navigate("/support/view")}>View all</Button>
+        <Button size='small' onClick={() => navigate("/support/view")}>{t("Pannel_Dashboard_insuredperson.View")}</Button>
       </header>
       {clientInfos.length > 0 ? 
       <div className='dashboard__container__content__support__details'>

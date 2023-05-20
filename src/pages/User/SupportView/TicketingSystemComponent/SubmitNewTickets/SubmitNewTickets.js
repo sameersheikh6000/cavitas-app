@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from '../../../../../config/helpers/i18n';
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
@@ -10,6 +12,15 @@ import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMe
 import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
 
 function SubmitNewTickets() {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
   const {createTicket} = useTickets();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
@@ -61,16 +72,17 @@ function SubmitNewTickets() {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>Support Tickets</p>
+            <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
         </header>
+     
         <br />
         <header className="insuredClientView__header">
           <Stack direction="row" spacing={2}>
             <div className="insuredClientView__header__left">
               <Link to="/support/view">
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                  My support tickets
+                {t("MysupportTickets.Mysupportticket")}
                 </Button>
               </Link>
             </div>
@@ -80,7 +92,7 @@ function SubmitNewTickets() {
                   style={{ background: "#5C8894" }}
                   className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
                 >
-                  Submit New Tickets
+               {t("MysupportTickets.Submitnewticket")}
                 </Button>
               </Link>
             </div>
@@ -89,9 +101,9 @@ function SubmitNewTickets() {
 
         <Box sx={style}>
           <div className="uploadClient__container__body__participation">
-            <h2 style={{ color: "black" }}>Contact Cavitas</h2>
+            <h2 style={{ color: "black" }}>{t("contactform.contactfrom_title")}</h2>
             <h2 style={{ color: "red", fontSize: 35 }}>
-              Start conversation with us
+            {t("contactform.contactfrom_heading")}
             </h2>
             {successMessage && <em>{successMessage}</em> }
             {errorMessage && <em>{errorMessage}</em> }
@@ -100,11 +112,11 @@ function SubmitNewTickets() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div style={{ marginTop: "5px", marginLeft: "20px" }}>
                     <select className="select" onChange={(e) => setTicket({...ticket, request: `I want to ${e.target.value}`})}>
-                      <option>I want to... *</option>
-                      <option value="contact for corporation">Contact for cooperation</option>
-                      <option value="ask a question">Ask a question</option>
-                      <option value="submit a complaint">Submit a complaint</option>
-                      <option value="give feedback">Give Feedback</option>
+                      <option>{t("contactform.iwant")}</option>
+                      <option value="contact for corporation">{t("contactform.Contactcooperation")}</option>
+                      <option value="ask a question">{t("contactform.Askquestion")}</option>
+                      <option value="submit a complaint">{t("contactform.Submitcomplain")}</option>
+                      <option value="give feedback">{t("contactform.feedback")}</option>
                     </select>
                   </div>
                 </div>
@@ -115,7 +127,7 @@ function SubmitNewTickets() {
                     <textarea
                       style={{ marginLeft: "20px" }}
                       className="textarea"
-                      placeholder="Your text here"
+                      placeholder={`${t("contactform.texthere")}`} 
                       onChange={(e) => setTicket({...ticket, description: e.target.value})}
                       cols={10}
                       rows={5}
@@ -126,7 +138,7 @@ function SubmitNewTickets() {
               <div className="userProfileView__container__details__detailsBox">
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div style={{ marginLeft: "20px" }}>
-                    <label style={{ marginLeft: "20px" }}>Attachments</label>
+                    <label style={{ marginLeft: "20px" }}>  {t("MysupportTickets.attachement")}</label>
                     <input className="textarea" type="file" onChange={(e) => setTicket({ ...ticket, attachment: e.target.files[0] })}></input>
                   </div>
                 </div>
@@ -139,7 +151,8 @@ function SubmitNewTickets() {
               type="submit"
               onClick={() => handleSubmit()}
             >
-              SUBMIT TICKET
+                            {t("MysupportTickets.Submitticket")}
+
             </Button>
           </div>
         </Box>

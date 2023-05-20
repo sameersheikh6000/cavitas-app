@@ -10,6 +10,8 @@ const Blog = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
+  
+  
 
   useEffect(() => {
     const currentUrl = window.location.href;

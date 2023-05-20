@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
@@ -16,6 +18,15 @@ import { API_KEY } from "../../../../../config/helpers/variables";
 import TicketReplyAnswerForm from "./component/TicketReplyAnswerForm";
 
 const Tickets = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   const { id } = useParams();
   const [supportFormDetail, setSupportFormDetail] = useState();
   const { getTicketDetail } = useTickets();
@@ -40,7 +51,7 @@ const Tickets = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>Support Tickets</p>
+            <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/support/view" style={{ textDecoration: "none" }}>
@@ -56,7 +67,7 @@ const Tickets = () => {
                   textTransform: "none",
                 }}
               >
-                Return to ticket list
+               {t("Replypannel.Returnticket")}
               </Button>
             </Link>
           </div>
@@ -69,14 +80,14 @@ const Tickets = () => {
                 className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit"
                 style={{ padding: "3px 20px" }}
               >
-                My support ticket #{id}
+              {t("MysupportTickets.Mysupportticket")} #{id}
               </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
             <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                Submit New Ticket
+              {t("MysupportTickets.Submitnewticket")}
               </Button>
             </Link>
           </div>
@@ -89,7 +100,7 @@ const Tickets = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Number")} :</TableCell>
                   <TableCell>{supportFormDetail?.id}</TableCell>
                 </TableRow>
               </TableHead>
@@ -97,7 +108,7 @@ const Tickets = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")}:</TableCell>
                   <TableCell>
                     {supportFormDetail?.status == "fresh"
                       ? "NEW"
@@ -110,7 +121,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Subject :
+                  {t("Replypannel.Subject")} :
                   </TableCell>
                   <TableCell>{supportFormDetail?.request}</TableCell>
                 </TableRow>
@@ -120,7 +131,8 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Attachment(s):
+                  {t("Replypannel.Attachement")}
+
                   </TableCell>
                   <TableCell>File Link here</TableCell>
                 </TableRow>
@@ -130,7 +142,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Created on:
+                  {t("Replypannel.Createdon")}:
                   </TableCell>
                   <TableCell>{supportFormDetail?.created_at}</TableCell>
                 </TableRow>
@@ -140,7 +152,8 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Last update on:
+                  {t("Insuredsupport.Lastupdateon")}:
+
                   </TableCell>
                   <TableCell>{supportFormDetail?.updated_at}</TableCell>
                 </TableRow>
@@ -242,7 +255,7 @@ const Tickets = () => {
                     </a>
                   ) : (
                     <small>
-                      <em>No Attachments</em>
+                              <small>   {t("Replypannel.Noattachemnt")}</small>
                     </small>
                   )}
                 </tbody>
@@ -304,7 +317,7 @@ const Tickets = () => {
                             </p>
                           ) : (
                             <em>
-                              <small>No Attachments available</small>
+                              <small>   {t("Replypannel.Noattachemnt")}</small>
                             </em>
                           )}
                         </tbody>
@@ -363,7 +376,7 @@ const Tickets = () => {
                             </p>
                           ) : (
                             <em>
-                              <small>No Attachments available</small>
+                              <small>   {t("Replypannel.Noattachemnt")}</small>
                             </em>
                           )}
                         </tbody>
