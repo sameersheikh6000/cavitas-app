@@ -1,9 +1,29 @@
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
-import { Link } from "react-router-dom";
+import useForgotPassword from "../../../../hooks/useForgotPassword";
+import { Link, useNavigate } from "react-router-dom";
 const EmployerEnterMail = () => {
+  const [successMessage, setSuccessMessage] = useState('');
+  const [alertMessage, setAlertMessage] = useState('');
+  const navigate = useNavigate();
+  const { forgotPassword } = useForgotPassword();
+  const [email, setEmail ] = useState('');
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const response = await forgotPassword(email);
+    if(response?.status < 300){
+      setSuccessMessage(response?.message)
+      setTimeout(() => {
+        navigate('/')
+      }, 3000);
+      setEmail("");
+    }else if(response?.status > 300){
+      setAlertMessage(response?.message)
+    }
+  }
+
   return (
     <section className="authentication">
       <div className="authentication__container">
@@ -58,6 +78,7 @@ const EmployerEnterMail = () => {
           <form
             className="authentication__container__formContainer__form__forget"
             style={{ width: "300" }}
+            onSubmit={handleSubmit}
           >
             <input
               style={{
@@ -68,9 +89,12 @@ const EmployerEnterMail = () => {
               type="email"
               placeholder="email address"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             <br />
-            <Link to="/EmployerAddCode">
+            {successMessage && <p style={{color: "green"}}><small>{successMessage}</small></p>}
+            {alertMessage && <p style={{color: "red"}}><small>{alertMessage}</small></p>}
               <Button
                 style={{ borderRadius: "50px" }}
                 className="authentication__container__formContainer__form__forget__loginButton"
@@ -78,7 +102,6 @@ const EmployerEnterMail = () => {
               >
                 Continue
               </Button>
-            </Link>
           </form>
         </div>
       </div>
