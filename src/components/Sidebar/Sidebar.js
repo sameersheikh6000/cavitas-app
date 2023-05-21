@@ -39,7 +39,7 @@ const Sidebar = () => {
       if (response.status < 300) {
         sessionStorage.removeItem(USER_STORAGE_KEY);
       }
-      navigate("/")
+      navigate(`/${lang == 'pl' ? lang : 'en'}`)
     }else if(admin !== null){
       const response = await adminLogout(admin)
       if(response?.status < 300){

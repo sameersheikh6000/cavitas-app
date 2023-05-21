@@ -11,11 +11,7 @@ const MemberSignIn = () => {
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
+  
   const { userLogin } = useAuthenticate();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -46,13 +42,19 @@ const MemberSignIn = () => {
     }
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
-      navigate("/dashboard");
+      navigate(`/dashboard/${lang == 'pl' ? lang : 'en'}`);
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {
       setErrorMessage("Something went wrong!");
     }
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   return (
     <section className='authentication'>

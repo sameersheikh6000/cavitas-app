@@ -44,7 +44,7 @@ const UserProfile = () => {
           <>
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
-                <b>{t("Pannel_Dashboard_Userprofile.Peselnumber")}:</b>{" "}
+                <b>{t("Pannel_Dashboard_Userprofile.Peselnumber")}:</b>{user?.data?.company_pesel_number}
               </p>
               <p>
                 <b>{t("Pannel_Dashboard_Userprofile.Address")}</b>{" "}
@@ -55,7 +55,7 @@ const UserProfile = () => {
             </div>
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
-                <b>Email address:</b>{" "}
+                <b>Email address: </b>{user?.data?.email}
               </p>
               <p>
                 <b>{t("Pannel_registration.Phonenumber")}:</b>{" "}

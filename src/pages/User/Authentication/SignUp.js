@@ -46,7 +46,7 @@ const SignUp = () => {
     const response = await createUser(user, "broker");
 
     if (response?.status?.code < 300) {
-      navigate("/signin");
+      navigate(`/dashboard/${lang == 'pl' ? lang : 'en'}`);
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {

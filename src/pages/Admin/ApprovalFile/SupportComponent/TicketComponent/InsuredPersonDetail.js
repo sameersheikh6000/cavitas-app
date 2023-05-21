@@ -18,7 +18,6 @@ import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import useContactForm from "../../../../../hooks/useContactForm";
 import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
 import { API_KEY } from "../../../../../config/helpers/variables";
@@ -29,13 +28,10 @@ const InsuredPersonDetail = () => {
   const [clientInfo, setClientInfo] = useState();
   const { id } = useParams();
   const { getClientInfoById } = useClientInsurance();
-//   const { getContactFormById, updateContactFormStatus } = useContactForm();
-//   const [contactStatus, setContactStatus] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-//   const [statusSuccessMessage, setStatusSuccessMessage] = useState("");
-//   const [statusErrorMessage, setStatusErrorMessage] = useState("");
-console.log(clientInfo)
+
+  console.log(clientInfo)
   const getClientInsuranceDetail = async () => {
     const response = await getClientInfoById(id);
     if (response?.status < 300) {
@@ -44,22 +40,6 @@ console.log(clientInfo)
       setErrorMessage(response?.message);
     }
   };
-
-//   const handleContactStatusUpdate = async () => {
-//     const response = await updateContactFormStatus(id, contactStatus);
-//     if (response?.status < 300) {
-//       setStatusSuccessMessage("Status Updated Successfully!");
-//       setTimeout(() => {
-//         setStatusSuccessMessage("");
-//       }, 3000);
-//       setContactStatus("");
-//     } else if (response?.status > 300) {
-//       setStatusErrorMessage(response?.message);
-//       setTimeout(() => {
-//         setStatusErrorMessage("");
-//       }, 3000);
-//     }
-//   };
 
   useEffect(() => {
     getClientInsuranceDetail();
@@ -265,43 +245,14 @@ console.log(clientInfo)
                 <p id="outlined-size-normal">{clientInfo?.user?.email}</p>
               </div>
               <br />
-              {/* <div>
-                <label>
-                  <strong>Topic:</strong>
-                </label>
-                <p id="outlined-size-normal">{clientInfo?.request}</p>
-              </div> */}
               <br />
               <InputLabel htmlFor="grouped-native-select">
                 <b style={{ color: "black" }}>Status:</b>
               </InputLabel>
               <FormControl sx={{ m: 1, width: "25ch" }}>
                 {clientInfo?.status.toUpperCase()}
-                {/* <Select
-                  native
-                  defaultValue="New"
-                  id="grouped-native-select"
-                  label="Grouping"
-                  onChange={(e) => setContactStatus(e.target.value)}
-                >
-                  <option value={0}>
-                    {clientInfo?.status == "fresh"
-                      ? "NEW"
-                      : clientInfo?.status.toUpperCase()}
-                  </option>
-                  <option value={1}>IN PROCESS</option>
-                  <option value={2}>REPLIED</option>
-                  <option value={3}>Close</option>
-                </Select> */}
               </FormControl>
             </Box>
-            {/* <Button
-              className="authentication__container__formContainer__form__loginButton_tickets"
-              type="submit"
-              onClick={() => handleContactStatusUpdate()}
-            >
-              Update Ticket
-            </Button> */}
           </div>
         </Stack>
       </section>

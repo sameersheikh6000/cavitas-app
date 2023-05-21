@@ -108,6 +108,13 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
                         onChange={(e) => setProfile({ ...profile, phone_number: e.target.value })}
                         placeholder='Phone number' />
                     </div>
+                    
+                    <div style={{marginTop: "5px"}}><input
+                        type="text"
+                        value={profile?.company_pesel_number}
+                        onChange={(e) => setProfile({ ...profile, company_pesel_number: e.target.value })}
+                        placeholder='Phone number' />
+                    </div>
                     <div style={{marginTop: "5px"}}><input
                         type="text"
                         value={profile?.email}

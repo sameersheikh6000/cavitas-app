@@ -50,6 +50,7 @@ const useUsers = () => {
         company_postal_code: user.company_postal_code,
         company_country: user.company_country,
         password: user.password,
+        company_pesel_number: user.company_pesel_number,
         role: role,
         password_confirmation: user.password_confirmation,
       }
@@ -60,9 +61,12 @@ const useUsers = () => {
         ...params
       },
       getHeaders()
-    ).then((res) => {
+      ).then((res) => {
       if (res?.status > 300) {
         handleErrors(res);
+      }
+      else if(res.status < 300 ){
+        sessionStorage.setItem(USER_STORAGE_KEY, JSON.stringify({ ...res.data, token: res.headers.get("Authorization") }));
       }
       return res.data
     })
@@ -139,31 +143,31 @@ const useUsers = () => {
   };
 
 
-  const createAdminUser = async user => {
-    const params = {
-      user: {
-        // first_name: user.first_name,
-        // last_name: user.last_name,
-        email: user.email,
-        password: user.password,
-        role: 0,
-        password_confirmation: user.password_confirmation,
-      }
-    }
-    const response = await axios.post(
-      `${API_KEY}/users`,
-      {
-        ...params
-      },
-      getAdminHeaders()
-    ).then((res) => {
-      if (res.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
-  };
+  // const createAdminUser = async user => {
+  //   const params = {
+  //     user: {
+  //       // first_name: user.first_name,
+  //       // last_name: user.last_name,
+  //       email: user.email,
+  //       password: user.password,
+  //       role: 0,
+  //       password_confirmation: user.password_confirmation,
+  //     }
+  //   }
+  //   const response = await axios.post(
+  //     `${API_KEY}/users`,
+  //     {
+  //       ...params
+  //     },
+  //     getAdminHeaders()
+  //   ).then((res) => {
+  //     if (res.status > 300) {
+  //       handleErrors(res);
+  //     }
+  //     return res.data
+  //   })
+  //   return response;
+  // };
 
   const getAllAdminUsers = async () => {
     const response = await axios.get(
@@ -258,6 +262,7 @@ const useUsers = () => {
         company_krs_number: user.company_krs_number,
         phone_number: user.phone_number,
         password: user.password,
+        company_pesel_number: user.company_pesel_number,
         password_confirmation: user.password_confirmation,
       }
     }
@@ -291,7 +296,7 @@ const useUsers = () => {
   }
 
   return {
-    createUser, getAllUsers, deleteUser, updateUser, getUserById, createAdminUser, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById, deleteUserByAdmin, updateUserByAdmin, getUserByAdmin
+    createUser, getAllUsers, deleteUser, updateUser, getUserById, getAllAdminUsers, deleteAdminUser, updateAdminUser, getAdminUserById, deleteUserByAdmin, updateUserByAdmin, getUserByAdmin
   };
 };
 export default useUsers;

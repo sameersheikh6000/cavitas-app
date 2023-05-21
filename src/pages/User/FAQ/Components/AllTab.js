@@ -8,12 +8,6 @@ const AllTab = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
   const [faqData, setFaqData] = useState([false, false, false, false]);
 
   const handleFaqData = (index) => {
@@ -22,6 +16,12 @@ const AllTab = () => {
     setFaqData(newData);
     
   }
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
   return (
     <section className='faqTab'>
       <div className='faqTab__container'>

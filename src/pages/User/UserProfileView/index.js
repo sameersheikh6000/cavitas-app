@@ -15,12 +15,6 @@ const UserProfileView = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [profile, setProfile] = useState(user?.data)
   const [errorMessage, setErrorMessage] = useState();
@@ -42,6 +36,12 @@ const UserProfileView = () => {
       setErrorMessage(response.message);
     }
   }
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   return (
     <Page>

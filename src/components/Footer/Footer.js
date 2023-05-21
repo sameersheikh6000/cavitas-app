@@ -52,13 +52,13 @@ const Footer = () => {
           <Link to={`/about/${lang == "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
                     {t("nav.aboutUs")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/Blog/${lang == "pl" ? "pl" : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/Blog/${lang == "pl" ? lang : "en"}`}>
                   {t("nav.Blog")}
                   </Link>
-            <Link className="appbar__linksBox__links__link" to={`/faq/${lang == "pl" ? "pl" : "en"}`}>
+            <Link className="appbar__linksBox__links__link" to={`/faq/${lang == "pl" ? lang : "en"}`}>
                   {t("nav.faq")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? "pl" : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? lang : "en"}`}>
                   {t("nav.claims")}
                   </Link>
             <Link to="#">{t("nav.PrivacyPolicy")}</Link>

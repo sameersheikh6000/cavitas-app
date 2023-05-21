@@ -47,7 +47,7 @@ const EmploySignUp = () => {
     const response = await createUser(user, "employ");
 
     if (response?.status?.code < 300) {
-      navigate("/employ-signin");
+      navigate(`/dashboard/${lang == 'pl' ? lang : 'en'}`);
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {

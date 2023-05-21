@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from "../../../../config/helpers/i18n";
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -10,6 +8,8 @@ import AllTab from './AllTab';
 import EmployerTab from './EmployerTab';
 import MemberTab from './MemberTab';
 import BrokerTab from './BrokerTab';
+import i18n from "../../../../config/helpers/i18n";
+import { useTranslation } from "react-i18next";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -46,10 +46,17 @@ function a11yProps(index) {
 
 export default function FAQTabs() {
   const [value, setValue] = React.useState(0);
+  const { t } = useTranslation();
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, []);
 
   return (
     <Box sx={{ width: '100%', minWidth: "30rem" }}>
@@ -61,10 +68,10 @@ export default function FAQTabs() {
           aria-label="basic tabs example"
         // textColor='black'
         >
-          <Tab className='faq__tabs__tabsLabel' label="All" {...a11yProps(0)} />
-          <Tab className='faq__tabs__tabsLabel' label="For Employers" {...a11yProps(1)} />
-          <Tab className='faq__tabs__tabsLabel' label="For Members" {...a11yProps(2)} />
-          <Tab className='faq__tabs__tabsLabel' label="For Brokers" {...a11yProps(3)} />
+          <Tab className='faq__tabs__tabsLabel' label={t('FAQ.FAQ_genral_title')} {...a11yProps(0)} />
+          <Tab className='faq__tabs__tabsLabel' label={t("FAQ.FAQ_Employer_title")} {...a11yProps(1)} />
+          <Tab className='faq__tabs__tabsLabel' label={t("FAQ.FAQ_member_title")} {...a11yProps(2)} />
+          <Tab className='faq__tabs__tabsLabel' label={t("FAQ.FAQ_broker_title")} {...a11yProps(3)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -79,6 +86,6 @@ export default function FAQTabs() {
       <TabPanel value={value} index={3}>
         <BrokerTab />
       </TabPanel>
-    </Box >
+    </Box>
   );
 }

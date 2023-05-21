@@ -74,16 +74,32 @@ export const routes = [
 
   // user routes
 
-  {
-    path: "/:lang",
-    component: LandingPage,
-    isPrivate: false,
-  },
-  {
-    path: "/",
-    component: LandingPage,
-    isPrivate: false,
-  },
+  ...(user ? [
+    {
+      path: "/:lang",
+      component: Dashboard,
+      isPrivate: false,
+    },
+
+    {
+      path: "/",
+      component: Dashboard,
+      isPrivate: false,
+    },
+  ] : [
+    {
+      path: "/:lang",
+      component: LandingPage,
+      isPrivate: false,
+    },
+    {
+      path: "/",
+      component: LandingPage,
+      isPrivate: false,
+    },
+  ]),
+  
+  
 
   {
     path: "/broker/:lang",
@@ -442,7 +458,7 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/InsuredPersonSupportTicket/:id/:lang",
+    path: "/InsuredPersonSupportTicket/:lang",
     component: InsuredPersonSupportTicket,
     isPrivate: false,
   },
@@ -540,11 +556,6 @@ export const routes = [
     component: ContactFormDetail,
     isPrivate: false,
   },
-  // {
-  //   path: "/admin/contact-tickets/:id/InsuredFormDetail",
-  //   component: Insuredpersonformdetail,
-  //   isPrivate: false,
-  // },
 
   {
 
@@ -611,7 +622,7 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/InsuredPersonSupportTicket/:id",
+    path: "/InsuredPersonSupportTicket",
     component: InsuredPersonSupportTicket,
     isPrivate: false,
   },
@@ -781,24 +792,6 @@ export const routes = [
     component: MemberUpdatePassword,
     inPrivate: false
   },
-
-  {
-    path: "/InsuredPersonDetail/:id",
-    component: InsuredPersonDetail,
-    isPrivate: false
-  },
-
-  {
-    path: "/insuredPersonDetail/:id/:lang",
-    component: InsuredPersonDetail,
-    isPrivate: false
-  },
-
-  {
-    path: '/reset_password',
-    component: ResetPassword,
-    isPrivate: false
-  }
 ]
 
 

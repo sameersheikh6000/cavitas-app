@@ -15,6 +15,7 @@ const LandingPage = () => {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   return (
     <Page>
+      {!user && 
       <section className='landingPage'>
         <SmartInsurance />
         {/* <CoverWorks /> */}
@@ -25,6 +26,7 @@ const LandingPage = () => {
         {/* <BecomeMember /> */}
         <ValuableReadings />
       </section>
+    }
     </Page>
   )
 }

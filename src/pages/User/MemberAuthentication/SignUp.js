@@ -23,6 +23,7 @@ const MemberSignUp = () => {
     first_name: "",
     last_name: "",
     email: "",
+    company_pesel_number: '',
     password: "",
     password_confirmation: "",
   });
@@ -39,9 +40,8 @@ const MemberSignUp = () => {
       if (!user[prop]) return alert('Please fill the form correctly')
     }
     const response = await createUser(user, "member");
-
     if (response?.status?.code < 300) {
-      navigate("/member-signin");
+      navigate(`/dashboard/${lang == 'pl' ? lang : "en" }`);
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {
@@ -92,6 +92,15 @@ const MemberSignUp = () => {
                 name='email'
                 value={user.email}
                 onChange={changeHandler}
+                required={true}
+              />
+              
+              <input
+                type="text"
+                placeholder='PESEL Number *'
+                name='company_pasel_number'
+                value={user.company_pesel_number}
+                onChange={(e) => setUser({ ...user, company_pesel_number: e.target.value})}
                 required={true}
               />
             </div>
