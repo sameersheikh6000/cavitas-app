@@ -51,6 +51,7 @@ function Navbar() {
               </header>
             </div>
           </div>
+      
         </section>
       ) : (
         <AppBar position="static" className="appbar">

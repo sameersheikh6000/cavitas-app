@@ -43,15 +43,16 @@ const SignIn = () => {
 
     e.preventDefault();
     for (let prop in user) {
-      if (!user[prop]) return alert('Please fill the form correctly')
+      if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"))
     }
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
-      navigate("/dashboard");
+      navigate(`/dashboard/${lang == "pl" ? lang : "en"}`)
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {
-      setErrorMessage("Something went wrong!");
+      setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
+
     }
   };
 

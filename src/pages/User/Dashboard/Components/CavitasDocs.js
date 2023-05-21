@@ -51,7 +51,7 @@ const CavitasDocs = () => {
           <TextSnippetOutlinedIcon className="dashboard__container__content__cavitasDocs__header__iconBox__icon" />
           <p>{t("Pannel_Dashboard.Cavitasdocuments")}</p>
         </div>
-        <Button size="small" onClick={() => navigate("/cavitasdocs/view")}>
+        <Button size="small" onClick={() => navigate(`/cavitasdocs/view/${lang == "pl" ? lang : "en"}`)}>
           {t("Pannel_Dashboard_Alldocuments.Alldocuments")}
         </Button>
       </header>

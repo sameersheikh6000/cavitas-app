@@ -45,7 +45,7 @@ const Sidebar = () => {
       if(response?.status < 300){
         sessionStorage.removeItem(ADMIN_STORAGE_KEY);
       }
-      navigate('/')
+      navigate(`/${lang == 'pl' ? lang : 'en'}`)
     }
     
   }

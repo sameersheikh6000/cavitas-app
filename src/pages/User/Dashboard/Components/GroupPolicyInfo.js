@@ -51,7 +51,7 @@ const GroupPolicyInfo = ({ user }) => {
           <GppGoodOutlinedIcon lassName="dashboard__container__content__groupPolicyInfo__header__iconBox__icon" />
           <p>{t("Policyinformation.pi_heading")}</p>
         </div>
-        <Button size="small" onClick={() => navigate("/insuredclient/group")}>
+        <Button size="small" onClick={() => navigate(`/insuredclient/group/${lang == "pl" ? lang : "en"}`)}>
           {t("Pannel_Dashboard_insuredperson.View")}
         </Button>
       </header>

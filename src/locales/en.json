@@ -229,7 +229,8 @@
     "nameofgroup":"Name of the group you want to insure",
     "totalnumber":"Total number of employees",
     "aboutyourgroup":"Are there any other details you'd like us about your group?",
-    "send": "Send"
+    "send": "Send",
+    "date":"Desired inception date of the cover"
   },
   "contactform":{
     "contactfrom_title":"Contact Cavitas",
@@ -331,7 +332,9 @@
   "Password":"Password",
   "Confirmpassword":"Confirm password",
   "Save":"Save changes",
-  "Noticket":"No Ticket History"
+  "Noticket":"No Ticket History",
+  "message":"Submited Successfully!",
+  "wrong":"Something went wrong!"
 }
 ,
 "Uploadinsuredperson":{

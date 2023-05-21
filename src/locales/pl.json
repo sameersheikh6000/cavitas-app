@@ -232,7 +232,9 @@
     "nameofgroup":"Nazwa grupy, którą chcesz ubezpieczyć",
     "totalnumber":"Łączna liczba pracowników",
     "aboutyourgroup":"Chcesz nam przekazać inne szczegóły dotyczące Twojej grupy?",
-    "send": "WYŚLIJ"
+    "send": "WYŚLIJ",
+    "date":"Preferowana data rozpoczęcia ochrony ubezpieczeniowej"
+
   }
   ,
   "contactform":{
@@ -337,7 +339,15 @@
   "Password":"Hasło",
   "Confirmpassword":"Potwierdź hasło",
   "Save":"ZAPISZ ZMIANY",
-  "Noticket":"Brak historii biletów"
+  "Noticket":"Brak historii biletów",
+  "message":"Przesłano pomyślnie!",
+  "wrong":"Coś poszło nie tak!",
+  "done":"Zaktualizowano pomyślnie!",
+  "fill":"Proszę poprawnie wypełnić formularz"
+
+
+
+
 },
 "Uploadinsuredperson":{
   "Uploadinsuredperson_title":"PRZEŚLIJ NOWYCH CZŁONKÓW UBEZPIECZENIA GRUPOWEGO",

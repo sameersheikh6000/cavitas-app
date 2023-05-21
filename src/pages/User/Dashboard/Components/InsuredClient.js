@@ -50,7 +50,7 @@ const InsuredClient = () => {
               {insuredClientsList.length})
             </p>
           </div>
-          <Button size="small" onClick={() => navigate("/insuredclient/view")}>
+          <Button size="small" onClick={() => navigate(`/insuredclient/view/${lang == "pl" ? lang : "en"}`)}>
             {t("Pannel_Dashboard_insuredperson.View")}
           </Button>
         </header>

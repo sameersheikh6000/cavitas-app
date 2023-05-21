@@ -150,7 +150,7 @@ function GetQuoteCavitas() {
                     <input
                       className="placeholder_class"
                       type={dateType == 'date' ? dateType : 'text'}
-                      placeholder="Inception Date"
+                      placeholder={`${t("get24contactform.date")}`} 
                       onBlur={() => setDateType('text')}
                       onFocus={() => setDateType('date')}
                       onChange={(e) => setFormData({ ...formData, inceptionDate: e.target.value})}

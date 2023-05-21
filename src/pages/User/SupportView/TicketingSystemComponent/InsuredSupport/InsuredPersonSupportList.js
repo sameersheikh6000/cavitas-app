@@ -49,7 +49,8 @@ function InsuredPersonSupportList() {
               <SearchOutlinedIcon className="insuredClientView__header__right__icon" />
             </div> */}
             <div className="insuredClientView__header__right">
-              <Link to="/SubmitNewTickets">
+              <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
+                
                 <Button
                   color="error"
                   variant="outlined"
@@ -70,28 +71,33 @@ function InsuredPersonSupportList() {
           <header>
             <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
               <div>
-                <Link to="/support/view">
+              <Link  to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+                >
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   {t("MysupportTickets.Mysupportticket")}
                   </Button>
                 </Link>
               </div>
               <div>
-                <Link to="/ContactSupportList">
+              <Link to={`/ContactSupportList/${lang == "pl" ? "pl" : "en"}`}
+                >
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                 {t("MysupportTickets.contactsupport")}
                   </Button>
                 </Link>
               </div>
               <div>
-              <Link to="/QuoteSupportList">
+              <Link to={`/QuoteSupportList/${lang == "pl" ? "pl" : "en"}`}
+              
+              >
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   {t("MysupportTickets.quotesupport")}
                   </Button>
                 </Link>
               </div>
               <div>
-                <Link to="/InsuredPersonSupportList">
+              <Link to={`/InsuredPersonSupportList/${lang == "pl" ? "pl" : "en"}`}
+                >
                 <Button
                     style={{ background: "#5C8894" }}
                     className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"

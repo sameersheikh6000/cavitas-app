@@ -9,6 +9,7 @@ import useQuoteForm from "../../../../../hooks/useQuoteForm";
 function GetQuoteCavitas() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
+  const [dateType, setDateType] = useState();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -171,8 +172,10 @@ function GetQuoteCavitas() {
                   </div>
                   <div style={{ marginTop: "8px" }}>
                     <input
-                      type="date"
-                      placeholder="date"
+                       type={dateType == 'date' ? dateType : 'text'}
+                       placeholder={`${t("get24contactform.date")}`} 
+                       onBlur={() => setDateType('text')}
+                       onFocus={() => setDateType('date')}
                       onChange={(e) =>
                         setFormData({
                           ...formData,
