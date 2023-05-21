@@ -69,6 +69,7 @@ import InsuredPersonDetail from "../pages/Admin/ApprovalFile/SupportComponent/Ti
 
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
+
 export const routes = [
 
   // user routes
@@ -539,6 +540,11 @@ export const routes = [
     component: ContactFormDetail,
     isPrivate: false,
   },
+  // {
+  //   path: "/admin/contact-tickets/:id/InsuredFormDetail",
+  //   component: Insuredpersonformdetail,
+  //   isPrivate: false,
+  // },
 
   {
 

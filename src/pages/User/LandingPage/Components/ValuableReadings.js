@@ -30,7 +30,7 @@ const ValuableReadings = () => {
           <div className="landingPage__valuableReadings__container__cardsBox__card">
             <div
               className="landingPage__valuableReadings__container__cardsBox__card"
-              onClick={() => navigate("/Blog1")}
+              onClick={() => navigate(`/Blog1/${lang == "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image.png")} alt='' /> */}
               <p className="landingPage__valuableReadings__container__cardsBox__card__name">
@@ -42,11 +42,15 @@ const ValuableReadings = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog1_desc")}
                 &nbsp;{" "}
+
+
                 <Link to={`/Blog1/${lang == "pl" ? lang : "en"}`}
                  style={{ color: "red" }}>
                   {" "}
                   {t("home.readmore")}
                                   </Link>
+
+
                 {/* <div className='landingPage__smartInsurance__container__details__buttons ' >
           <Link to="/Blog1">
           <Button variant='outlined'>Read More</Button>
