@@ -32,7 +32,7 @@ const BecomeMember = () => {
             {t("Member.Member_landingPage_notmember_desc")}
           </p>
           <div>
-            <Button variant="outlined" onClick={() => navigate("/employ")}>
+            <Button variant="outlined" onClick={() => navigate(`/employ/${lang == "pl" ? "pl" : "en"}`)}>
               {t("Member.Member_landingPage_notmember_btn")}
             </Button>
           </div>

@@ -520,9 +520,28 @@
   "plan4":"ORAL CANCER TREATMENT 25000 PLN",
   "plan5":"*Once per lifetime, Poland",
   "plan6":"NB! For detailed information about your benefits see Policy terms and conditions"
-
-
-
+}
+,
+"Cavitasdocuments":{
+  "date":"Valid from 01.03.2023",
+  "card1":"Cavitas dental insurance terms and conditions HAM-1/2023",
+  "card2":"Cavitas dental insurance IPID",
+  "card3":"Cavitas dental insurance master insurance contract",
+  "card4":"Cavitas dental insurance policy schedule template",
+  "card5":"Cavitas dental insurance brochure"
+}
+,
+"forgetpassword":{
+  "Token":"Token",
+  "Email":"E-mail",
+  "Resetpassword":"Reset Password",
+  "Sensitive":"The code that was emailed to you. This is case-sensitive.",
+  "Newpassword":"New password:  ",
+  "confirmpassword":"Confirm new password:",
+  "continue":"Continue",
+  "password":"Password",
+  "confirmationpassword":"password confirmation",
+  "setnewpassword":"Set your new password here."
 
 }
 

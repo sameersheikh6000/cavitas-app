@@ -59,7 +59,8 @@ const Sidebar = () => {
       </header>
       {user?.data?.role ?
         <div className='sidebar__linkButtons'>
-          <Link to="/dashboard" className='sidebar__linkButtons__link'>
+          <Link to={`/dashboard/${lang == "pl" ? "pl" : "en"}`}
+          className='sidebar__linkButtons__link'>
             <HomeOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>{t("Pannel_Dashboard.Dasboard")}</p>
           </Link>
@@ -67,7 +68,9 @@ const Sidebar = () => {
             <></>
             :
             // <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
-                          <Link to="/insuredclient/group" className='sidebar__linkButtons__link'>
+                          <Link 
+                          to={`/insuredclient/group/${lang == "pl" ? "pl" : "en"}`}
+                          className='sidebar__linkButtons__link'>
 
               <GppGoodOutlinedIcon className='sidebar__linkButtons__link__icon' />
               <p>Policy information</p>
@@ -75,35 +78,47 @@ const Sidebar = () => {
           }
           {user?.data?.role === "broker" &&
             <>
-              <Link to="/insuredclient/view" className='sidebar__linkButtons__link'>
+              <Link to={`/insuredclient/view/${lang == "pl" ? "pl" : "en"}`}
+              className='sidebar__linkButtons__link'>
                 <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
                 <p>{t("Pannel_Dashboard.Insuredclients")}</p>
               </Link>
-              <Link to="/cavitasdocs/view" className='sidebar__linkButtons__link'>
+              <Link 
+                 to={`/cavitasdocs/view/${lang == "pl" ? "pl" : "en"}`}
+              className='sidebar__linkButtons__link'>
                 <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
                 <p>{t("Pannel_Dashboard.Cavitasdocuments")}</p>
               </Link>
             </>
           }
-          <Link to="/support/view" className='sidebar__linkButtons__link'>
+          <Link 
+          to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+          className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>{t("Pannel_Dashboard.Supporttickets")}</p>
           </Link>
-          <Link to="/profile/user/view" className='sidebar__linkButtons__link'>
+          <Link  to={`/profile/user/view/${lang == "pl" ? "pl" : "en"}`}
+
+          className='sidebar__linkButtons__link'>
             <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>{t("Pannel_Dashboard.Userprofile")}</p>
           </Link>
           <div className='sidebar__linkButtons__buttons'>
             {user?.data?.role === "broker" &&
-              <Button onClick={() => navigate("/uploadclient")}><p>{t("Pannel_Dashboard.Uploadclient")}</p>              </Button>
+              <Button onClick={() => navigate(`/uploadclient/${lang == "pl" ? lang : "en"}`)}
+              
+              ><p>{t("Pannel_Dashboard.Uploadclient")}</p>              </Button>
             }
             {user?.data?.role === "employ" &&
               <Button 
               style={{width: "105%"}}
-              onClick={() => navigate("/uploadclient")}>{t("Pannel_Dashboard.Uploadnewperson")}</Button>
+              onClick={() => navigate(`/uploadclient/${lang == "pl" ? lang : "en"}`)}>
+                
+                {t("Pannel_Dashboard.Uploadnewperson")}</Button>
             }
             {user?.data?.role === "member" &&
-              <Button onClick={() => navigate("/dashboard")}>{t("Pannel_Dashboard.submitaclaim")}</Button>
+              <Button onClick={() => navigate(`/dashboard/${lang == "pl" ? lang : "en"}`)}>
+                {t("Pannel_Dashboard.submitaclaim")}</Button>
             }
             {/* <Button>Get a Quote</Button> */}
           </div>

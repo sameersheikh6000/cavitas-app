@@ -64,12 +64,32 @@ const CavitasDocs = () => {
             </tr>
           </thead>
           <tbody>
-            {cavitasDocs?.map((row, index) => (
+            {/* {cavitasDocs?.map((row, index) => (
               <tr>
                 <td>{row?.title}</td>
                 <td>{row?.valid_date}</td>
               </tr>
-            ))}
+            ))} */}
+            <tr>
+              <td>{t("Cavitasdocuments.card1")}</td>
+              <td>{t("Cavitasdocuments.date")}</td>
+            </tr>
+            <tr>
+              <td>{t("Cavitasdocuments.card2")}</td>
+              <td>{t("Cavitasdocuments.date")}</td>
+            </tr>
+            <tr>
+              <td>{t("Cavitasdocuments.card3")}</td>
+              <td>{t("Cavitasdocuments.date")}</td>
+            </tr>
+            <tr>
+              <td>{t("Cavitasdocuments.card4")}</td>
+              <td>{t("Cavitasdocuments.date")}</td>
+            </tr>
+            <tr>
+              <td>{t("Cavitasdocuments.card5")}</td>
+              <td>{t("Cavitasdocuments.date")}</td>
+            </tr>
           </tbody>
         </table>
       </div>

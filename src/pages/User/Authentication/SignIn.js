@@ -118,7 +118,7 @@ const SignIn = () => {
           <Link to="/Add-Mail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
             <p>{t("Pannel_Login.don'thaveaccount")}</p>
-            <Link to="/signup">
+            <Link to={`/signup/${lang == "pl" ? "pl" : "en"}`}>     
               <Button>{t("Pannel_Login.registernow")}</Button>
             </Link>
           </div>

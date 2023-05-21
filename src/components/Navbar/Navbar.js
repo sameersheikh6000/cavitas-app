@@ -56,7 +56,7 @@ function Navbar() {
         <AppBar position="static" className="appbar">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <Box className="appbar__imageBox" onClick={() => navigate("/")}>
+              <Box className="appbar__imageBox" onClick={() => navigate(`/${lang == "pl" ? lang : "en"}`)}>
                 <img
                   className="appbar__imageBox__image"
                   src={require("../../assets/Navbar-logo.png")}

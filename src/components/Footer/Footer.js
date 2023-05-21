@@ -65,16 +65,16 @@ const Footer = () => {
             <Link to="#">{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">
-            <Link to="/findus">   {t("footer.findus")}</Link>
-            <Link to="/findus">
+            <Link>   {t("footer.findus")}</Link>
+            <Link>
               <FacebookOutlinedIcon />
               {/* Facebook */}
             </Link>
-            <Link to="/findus">
+            <Link>
               <LinkedInIcon />
               {/* Linkedin */}
             </Link>
-            <Link to="/findus">
+            <Link >
               <InstagramIcon />
             </Link>
           </div>
