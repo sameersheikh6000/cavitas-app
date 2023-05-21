@@ -118,7 +118,7 @@ const useClientInsurance = () => {
   const getClientInfoById = async (id) => {
     const response = await axios.get(
       `${API_KEY}/api/v1/client_infos/${id}`,
-      getHeaders()
+      admin ? getAdminHeaders() : getHeaders()
     ).then((res) => {
       if (res.data.status > 300) {
         handleErrors(res);

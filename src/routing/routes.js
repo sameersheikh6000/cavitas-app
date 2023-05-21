@@ -65,6 +65,7 @@ import MemberUpdatePassword from "../pages/User/MemberAuthentication/MemberForge
 import MemberAddCode from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberAddCode";
 import ResetPassword from "../pages/ResetPassword";
 import { USER_STORAGE_KEY } from "../config/helpers/variables";
+import InsuredPersonDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/InsuredPersonDetail";
 
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
@@ -773,6 +774,18 @@ export const routes = [
     path: "/MemberUpdatePassword/:lang",
     component: MemberUpdatePassword,
     inPrivate: false
+  },
+
+  {
+    path: "/InsuredPersonDetail/:id",
+    component: InsuredPersonDetail,
+    isPrivate: false
+  },
+
+  {
+    path: "/insuredPersonDetail/:id/:lang",
+    component: InsuredPersonDetail,
+    isPrivate: false
   },
 
   {

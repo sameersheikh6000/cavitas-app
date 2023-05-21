@@ -4,19 +4,21 @@ import i18n from '../../../../../../config/helpers/i18n';
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import useReplyForm from "../../../../../../hooks/useReplyForm";
 import { USER_STORAGE_KEY } from '../../../../../../config/helpers/variables';
-function ContactReplyAnswerForm({
+import useClientInfoReply from '../../../../../../hooks/useClientInfoReply';
+function ClientInfoReplyAnswerForm({
   
-  contact_reply,
+  client_info_reply,
   setErrorMessage,
   setSuccessMessage,
+  getClientInfoData
 }) {
+  console.log(client_info_reply)
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
-  const { createContactReplyAnswer } = useReplyForm();
-  const [contactReplyAnswer, setContactReplyAnswer] = useState({
+  const { createClientInfoReplyAnswer } = useClientInfoReply();
+  const [clientInfoReplyAnswer, setClientInfoReplyAnswer] = useState({
     answer_text: "",
-    contact_reply_id: contact_reply?.id,
+    client_info_reply_id: "",
     attachment: "",
     answeree: user?.data?.email,
   });
@@ -24,11 +26,6 @@ function ContactReplyAnswerForm({
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
   const [open, setOpen] = useState(false);
   const style = {
     position: "absolute",
@@ -47,16 +44,24 @@ function ContactReplyAnswerForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    const response = await createContactReplyAnswer(contactReplyAnswer);
+    debugger
+    setClientInfoReplyAnswer({ ...clientInfoReplyAnswer, client_info_reply_id: client_info_reply?.id})
+    const response = await createClientInfoReplyAnswer(clientInfoReplyAnswer);
     debugger;
     if (response?.status < 300) {
       setSuccessMessage("Answer Submitted!");
-
+      getClientInfoData()
       handleClose();
     } else if (response?.status > 300) {
       setErrorMessage(response?.message);
     }
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   return (
     <div>
@@ -80,8 +85,8 @@ function ContactReplyAnswerForm({
           <h3> {t("Replypannel.Writeanswer")}: </h3>
             <textarea
               onChange={(e) =>
-                setContactReplyAnswer({
-                  ...contactReplyAnswer,
+                setClientInfoReplyAnswer({
+                  ...clientInfoReplyAnswer,
                   answer_text: e.target.value,
                 })
               }
@@ -100,8 +105,8 @@ function ContactReplyAnswerForm({
             <input
               type="file"
               onChange={(e) =>
-                setContactReplyAnswer({
-                  ...contactReplyAnswer,
+                setClientInfoReplyAnswer({
+                  ...clientInfoReplyAnswer,
                   attachment: e.target.files[0],
                 })
               }
@@ -133,4 +138,4 @@ function ContactReplyAnswerForm({
   );
 }
 
-export default ContactReplyAnswerForm;
+export default ClientInfoReplyAnswerForm;
