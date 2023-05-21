@@ -13,6 +13,8 @@ import { API_KEY } from "../../../../config/helpers/variables";
 
 const InsuredPerson = () => {
   const navigate = useNavigate();
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [clientInfoList, setClientInfoList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -104,7 +106,7 @@ const InsuredPerson = () => {
             <tbody>
             {clientInfoList.map((row, index) => (
                 <tr>
-              <td>{row?.id}</td>
+              <td><Button onClick={() => navigate(`/InsuredPersonDetail/${row?.id}/${lang == 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
                   <td>{row?.corporate_client_name}</td>
                   <td>{row?.details}</td>
                   <td>{row?.number_of_employees_in_company}</td>

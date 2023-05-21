@@ -23,6 +23,7 @@ function GetQuoteCavitas() {
   const [message, setMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [open, setOpen] = useState(false);
+  const [dateType, setDateType] = useState();
 
   const [formData, setFormData] = useState({
         name: "",
@@ -148,8 +149,10 @@ function GetQuoteCavitas() {
                   </div>
                   <div style={{ marginTop: "8px" }}>
                     <input
-                      type="date"
+                      type={dateType == 'date' ? dateType : 'text'}
                       placeholder="Desired inception date of the cover?*"
+                      onFocus={() => setDateType('date')}
+                      onBlur={() => setDateType('text')}
                       onChange={(e) => setFormData({ ...formData, inceptionDate: e.target.value})}
                     />
                   </div>

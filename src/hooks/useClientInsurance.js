@@ -115,6 +115,19 @@ const useClientInsurance = () => {
     return response;
   };
 
+  const getClientInfoById = async (id) => {
+    const response = await axios.get(
+      `${API_KEY}/api/v1/client_infos/${id}`,
+      admin ? getAdminHeaders() : getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  }
+
 
   const updateClientInsuranceAdmin = async (id) => {
     const params = {
@@ -182,7 +195,7 @@ const useClientInsurance = () => {
 
 
   return {
-    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, exportCsv
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv
   };
 };
 export default useClientInsurance;

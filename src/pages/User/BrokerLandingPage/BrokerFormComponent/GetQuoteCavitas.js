@@ -10,6 +10,7 @@ function GetQuoteCavitas() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
+  const [dateType, setDateType] = useState();
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -148,9 +149,10 @@ function GetQuoteCavitas() {
                   <div style={{ marginTop: "8px" }}>
                     <input
                       className="placeholder_class"
-                      type="date"
-                      
-                      // placeholder="Desired inception date of the cover?*"
+                      type={dateType == 'date' ? dateType : 'text'}
+                      placeholder="Inception Date"
+                      onBlur={() => setDateType('text')}
+                      onFocus={() => setDateType('date')}
                       onChange={(e) => setFormData({ ...formData, inceptionDate: e.target.value})}
                     />
                   </div>

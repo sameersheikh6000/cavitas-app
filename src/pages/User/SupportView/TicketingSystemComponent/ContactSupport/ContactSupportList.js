@@ -15,11 +15,6 @@ function ContactSupportList() {
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
   const [submittedContact, setSubmittedContact] = useState([]);
   const { getAllContactForms } = useContactForm();
   const [errorMessage, setErrorMessage] = useState("");
@@ -36,6 +31,9 @@ function ContactSupportList() {
   };
 
   useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
     getContactFormData();
   }, []);
 

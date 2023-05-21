@@ -21,12 +21,6 @@ const ContactSupportTicket = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
   const [contact, setContact] = useState();
   const { id } = useParams();
   const { getContactFormById } = useContactForm();
@@ -45,6 +39,9 @@ const ContactSupportTicket = () => {
   };
 
   useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
     getContactDetail();
   }, []);
 
