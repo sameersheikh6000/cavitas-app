@@ -22,6 +22,7 @@ const UploadClient = () => {
   const {createClientInsurance} = useClientInsurance();
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  console.log(user?.data?.role == 'broker')
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
   const [successMessage, setSuccessMessage] = useState();
@@ -50,7 +51,6 @@ const UploadClient = () => {
     setClient({ ...client, [name]: name !== "file" ? value : e.target.files[0] });
     e.target.files[0] && setFileName(e.target.files[0].name)
   }
-  console.log({ ...client });
 
   const handleMandatoryEmployees = () => {
     if (mandatoryEmployees === false) {
@@ -293,38 +293,43 @@ const UploadClient = () => {
                   </label>
                 </div>
               </div>
-              <div className='uploadClient__container__body__participation'>
-              <p>{t("Uploadinsuredperson.Question_no5")}</p>
-                <div className='uploadClient__container__body__participation__head'>
+              {user?.data?.role !== 'broker' && 
+                <div className='uploadClient__container__body__participation'>
+                <p>{t("Uploadinsuredperson.Question_no5")}</p>
+                  <div className='uploadClient__container__body__participation__head'>
+                    <input
+                      type='radio'
+                      name='broker_reference'
+                      value={1}
+                      // required={true}
+                      onChange={handleChange}
+                    />
+                    <label>{t("Uploadinsuredperson.Question_no5_part1")}</label>
+                  </div>
                   <input
-                    type='radio'
-                    name='broker_reference'
-                    value={1}
-                    // required={true}
+                    className='uploadClient__container__body__participation__headInput'
+                    type='text'
+                    name="referenced_broker_name"
                     onChange={handleChange}
+                    placeholder={`${t("Uploadinsuredperson.Question_no5_part2")}`}
+                    value={client?.referenced_broker_name}
                   />
-                  <label>{t("Uploadinsuredperson.Question_no5_part1")}</label>
+                  <div className='uploadClient__container__body__participation__head'>
+                    <input
+                      type='radio'
+                      name='broker_reference'
+                      value={2}
+                      // required={true}
+                      onChange={handleChange}
+                    />
+                    <label>NO</label>
+                  </div>
                 </div>
-                <input
-                  className='uploadClient__container__body__participation__headInput'
-                  type='text'
-                  name="referenced_broker_name"
-                  onChange={handleChange}
-                  placeholder={`${t("Uploadinsuredperson.Question_no5_part2")}`}
-                  value={client?.referenced_broker_name}
-                />
-
-                <div className='uploadClient__container__body__participation__head'>
-                  <input
-                    type='radio'
-                    name='broker_reference'
-                    value={2}
-                    // required={true}
-                    onChange={handleChange}
-                  />
-                  <label>NO</label>
-                </div>
-              </div>
+                }
+                {user?.data?.role !== 'broker' && 
+                  setClient({ ...client, referenced_broker_name: `${user?.first_name}`+ ` ` +`${user?.last_name}`, broker_reference: 1})
+                }
+                
               <div className='uploadClient__container__body__participation'>
               <p>{t("Uploadinsuredperson.Question_no6")}</p>
                 <input
