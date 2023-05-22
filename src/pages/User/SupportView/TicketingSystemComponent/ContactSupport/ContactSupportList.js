@@ -51,7 +51,7 @@ function ContactSupportList() {
               <SearchOutlinedIcon className="insuredClientView__header__right__icon" />
             </div> */}
             <div className="insuredClientView__header__right">
-              <Link to="/SubmitNewTickets">
+            <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
                 <Button
                   color="error"
                   variant="outlined"
@@ -72,14 +72,19 @@ function ContactSupportList() {
           <header>
             <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
               <div>
-                <Link to="/support/view" style={{textDecoration: "none"}}>
+                <Link  to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+
+                
+                style={{textDecoration: "none"}}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   {t("MysupportTickets.Mysupportticket")}
                   </Button>
                 </Link>
               </div>
               <div>
-                <Link to="/ContactSupportList" style={{textDecoration: "none"}}>
+                <Link to={`/ContactSupportList/${lang == "pl" ? "pl" : "en"}`}
+                
+                style={{textDecoration: "none"}}>
                   <Button
                     style={{ background: "#5C8894" }}
                     className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
@@ -89,14 +94,17 @@ function ContactSupportList() {
                 </Link>
               </div>
               <div>
-              <Link to="/QuoteSupportList" style={{textDecoration: "none"}}>
+              <Link to={`/QuoteSupportList/${lang == "pl" ? "pl" : "en"}`}
+              
+              style={{textDecoration: "none"}}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   {t("MysupportTickets.quotesupport")}
                   </Button>
                 </Link>
               </div>
               <div>
-                <Link to="/InsuredPersonSupportList" style={{textDecoration: "none"}}>
+              <Link to={`/InsuredPersonSupportList/${lang == "pl" ? "pl" : "en"}`}
+                 style={{textDecoration: "none"}}>
                   <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                   {t("MysupportTickets.insuredpersonsupport")}
                   </Button>
@@ -133,7 +141,7 @@ function ContactSupportList() {
                           : row?.status}
                       </td>
                       <td>
-                      <a href="" onClick={() => navigate(`/ContactSupportTicket/${row?.id}`)}>{row?.id}</a>
+                      <a href="" onClick={() => navigate(`/ContactSupportTicket/${row?.id}/${lang == "pl" ? "pl" : "en"}`)}>{row?.id}</a>
                       </td>
                       <td>{row?.request}</td>
                       <td>{row?.identity}</td>

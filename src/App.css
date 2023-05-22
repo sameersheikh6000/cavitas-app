@@ -485,7 +485,7 @@ font-size: 1rem !important;
   width: 300px !important;
   text-transform: none;
   border-radius: 50px !important;
-  margin: 1rem 0 !important;
+  margin: 1rem 0rem;
   padding: 5px 0 !important;
   font-weight: 600 !important;
 }
@@ -3367,7 +3367,7 @@ font-size: 1rem !important;
   flex-wrap: wrap;
 }
 .cavitasDocsView__container__cards__card {
-  width: 45%;
+  width: 100%;
   min-width: 300px;
   display: flex;
   flex-direction: column;

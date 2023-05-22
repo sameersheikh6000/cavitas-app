@@ -25,10 +25,10 @@ const DentalInsurance = () => {
                    <p className='landingPage__dentaltInsurance__container__details__desc'>
                    {t("Member.Member_landingPage_heading")}          </p>
           <div className='landingPage__dentaltInsurance__container__details__buttons'>
-            <Link to="/member-signin">
+            <Link to={`/member-signin/${lang == "pl" ? "pl" : "en"}`}>
               <Button variant='outlined'>{t("Member.Member_landingPage_btn1")}</Button>
             </Link>
-            <Link to="/claims">
+            <Link to={`/claims/${lang == "pl" ? "pl" : "en"}`}>
               <Button variant='outlined'>{t("Member.Member_landingPage_title2")}</Button>
             </Link>
           </div>

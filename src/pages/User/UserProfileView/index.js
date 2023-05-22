@@ -28,9 +28,9 @@ const UserProfileView = () => {
     debugger
     const response = await updateUser(profile);
     if (response.status < 300) {
-      setSuccessMessage("Updated Successfully!")
+      setSuccessMessage(t("Pannel_Dashboard_Supporttickets.done"))
       setTimeout(() => {
-        navigate("/dashboard")
+        navigate(`/dashboard/${lang == "pl" ? lang : "en"}`) 
       }, 3000);
     } else if (response.status > 300) {
       setErrorMessage(response.message);

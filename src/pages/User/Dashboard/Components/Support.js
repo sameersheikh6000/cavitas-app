@@ -44,7 +44,7 @@ const Support = () => {
             <EmailOutlinedIcon className="dashboard__container__content__support__header__iconBox__icon" />
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
-          <Button size="small" onClick={() => navigate("/support/view")}>
+          <Button size="small" onClick={() => navigate(`/support/view/${lang == "pl" ? lang : "en"}`)}>
             {t("Pannel_Dashboard_insuredperson.View")}
           </Button>
         </header>

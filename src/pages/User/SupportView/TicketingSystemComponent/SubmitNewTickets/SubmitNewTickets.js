@@ -46,13 +46,15 @@ function SubmitNewTickets() {
   const handleSubmit = async () => {
     const response = await createTicket(ticket)
     if(response?.status < 300){
-      setSuccessMessage("Submited Successfully!")
+      // setSuccessMessage("Submited Successfully!")
+      setSuccessMessage(t("Pannel_Dashboard_Supporttickets.message"))
+
       setTicket({
         ...ticket, description: "", request: "", attachment: ""
       })
       setTimeout(() => {
         setSuccessMessage('');
-        navigate('/support/view')
+        navigate(`/support/view/${lang == "pl" ? "pl" : "en"}`)
       }, 3000);
     }
     else if (response?.status > 300){
@@ -80,14 +82,15 @@ function SubmitNewTickets() {
         <header className="insuredClientView__header">
           <Stack direction="row" spacing={2}>
             <div className="insuredClientView__header__left">
-              <Link to="/support/view">
+               <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                 {t("MysupportTickets.Mysupportticket")}
                 </Button>
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-              <Link to="/SubmitNewTickets">
+            <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
                 <Button
                   style={{ background: "#5C8894" }}
                   className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"

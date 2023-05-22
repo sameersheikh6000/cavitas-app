@@ -38,7 +38,7 @@ const MemberSignIn = () => {
 
     e.preventDefault();
     for (let prop in user) {
-      if (!user[prop]) return alert('Please fill the form correctly')
+      if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"))
     }
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
@@ -46,7 +46,7 @@ const MemberSignIn = () => {
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
     } else if (response?.data?.status?.message == undefined) {
-      setErrorMessage("Something went wrong!");
+      setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
     }
   };
 
@@ -116,7 +116,8 @@ const MemberSignIn = () => {
           <Link to="/MemberEnterMail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
           <p>{t("Pannel_Login.don'thaveaccount")}</p>
-            <Link to="/member-signup">
+            <Link to={`/member-signup/${lang == "pl" ? "pl" : "en"}`}>     
+
             <Button>{t("Pannel_Login.registernow")}</Button>
             </Link>
           </div>

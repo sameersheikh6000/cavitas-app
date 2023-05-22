@@ -25,7 +25,7 @@ const UserProfile = () => {
           <PersonOutlineOutlinedIcon lassName="dashboard__container__content__userProfile__header__iconBox__icon" />
           <p>{t("Pannel_Dashboard.Userprofile")}</p>
         </div>
-        <Button size="small" onClick={() => navigate("/profile/user/view")}>
+        <Button size="small" onClick={() => navigate(`/profile/user/view/${lang == "pl" ? lang : "en"}`)}>
           {t("Pannel_Dashboard_Userprofile.Update")}
         </Button>
       </header>

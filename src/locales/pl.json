@@ -232,7 +232,9 @@
     "nameofgroup":"Nazwa grupy, którą chcesz ubezpieczyć",
     "totalnumber":"Łączna liczba pracowników",
     "aboutyourgroup":"Chcesz nam przekazać inne szczegóły dotyczące Twojej grupy?",
-    "send": "WYŚLIJ"
+    "send": "WYŚLIJ",
+    "date":"Preferowana data rozpoczęcia ochrony ubezpieczeniowej"
+
   }
   ,
   "contactform":{
@@ -337,7 +339,15 @@
   "Password":"Hasło",
   "Confirmpassword":"Potwierdź hasło",
   "Save":"ZAPISZ ZMIANY",
-  "Noticket":"Brak historii biletów"
+  "Noticket":"Brak historii biletów",
+  "message":"Przesłano pomyślnie!",
+  "wrong":"Coś poszło nie tak!",
+  "done":"Zaktualizowano pomyślnie!",
+  "fill":"Proszę poprawnie wypełnić formularz"
+
+
+
+
 },
 "Uploadinsuredperson":{
   "Uploadinsuredperson_title":"PRZEŚLIJ NOWYCH CZŁONKÓW UBEZPIECZENIA GRUPOWEGO",
@@ -524,9 +534,29 @@
   "plan4":"LECZENIE RAKA JAMY USTNEJ 25000 zł",
   "plan5":"*Raz w życiu, Polska",
   "plan6":"Uwaga! Aby uzyskać szczegółowe informacje na temat korzyści, zobacz Warunki polisy"
+}
+,
+"Cavitasdocuments":{
+  "date":"Obowiązuje od 01.03.2023 r.",
+  "card1":"Warunki ubezpieczenia stomatologicznego Cavitas HAM-1/2023",
+  "card2":"Ubezpieczenie stomatologiczne Cavitas (wersja standardowa)",
+  "card3":"Podstawowa umowa ubezpieczenia stomatologicznego Cavitas",
+  "card4":"Wzór harmonogramu polisy ubezpieczenia stomatologicznego Cavitas",
+  "card5":"Broszura ubezpieczenia stomatologicznego Cavitas"
 
+},
 
-
+"forgetpassword":{
+  "Token":"znak",
+  "Email":"E-mail",
+  "Resetpassword":"Zresetuj hasło",
+  "Sensitive":"Kod, który został wysłany do Ciebie e-mailem. Wielkość liter jest rozróżniana.",
+  "Newpassword":"Nowe hasło:  ",
+  "confirmpassword":"Potwierdź nowe hasło:",
+  "continue":"Kontynuować",
+  "password":"hasło",
+  "confirmationpassword":"Potwierdzenie hasła",
+  "setnewpassword":"Ustaw tutaj swoje nowe hasło."
 
 }
 

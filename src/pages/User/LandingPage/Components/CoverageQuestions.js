@@ -1,18 +1,20 @@
-import React from 'react'
-import { Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const CoverageQuestions = () => {
   const navigate = useNavigate();
 
   return (
-    <section className='landingPage__coverageQuestions'>
-      <div className='landingPage__coverageQuestions__container'>
+    <section className="landingPage__coverageQuestions">
+      <div className="landingPage__coverageQuestions__container">
         <h1>Your coverage questions answered</h1>
-        <Button onClick={() => navigate("/faq")}>Frequently asked questions</Button>
+        <Button onClick={() => navigate("/faq")}>
+          Frequently asked questions
+        </Button>
       </div>
-    </section >
-  )
-}
+    </section>
+  );
+};
 
-export default CoverageQuestions
+export default CoverageQuestions;

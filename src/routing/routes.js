@@ -458,7 +458,7 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/InsuredPersonSupportTicket/:lang",
+    path: "/InsuredPersonSupportTicket/:id/:lang",
     component: InsuredPersonSupportTicket,
     isPrivate: false,
   },

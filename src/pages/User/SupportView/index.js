@@ -31,7 +31,7 @@ const SupportView = () => {
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/SubmitNewTickets">
+          <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
               <Button
                 color="error"
                 variant="outlined"
