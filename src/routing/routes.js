@@ -549,6 +549,12 @@ export const routes = [
     isPrivate: false,
   },
 
+  {
+    path: "/admin/InsuredPersonDetail/:id/:lang",
+    component: InsuredPersonDetail,
+    isPrivate: false
+  },
+
   // Forms
 
   {

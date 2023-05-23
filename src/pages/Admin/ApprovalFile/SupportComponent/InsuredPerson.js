@@ -106,7 +106,7 @@ const InsuredPerson = () => {
             <tbody>
             {clientInfoList.map((row, index) => (
                 <tr>
-              <td><Button onClick={() => navigate(`/InsuredPersonDetail/${row?.id}/${lang == 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
+              <td><Button onClick={() => navigate(`/admin/InsuredPersonDetail/${row?.id}/${lang == 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
 
                   <td>{row?.corporate_client_name}</td>
                   <td>{row?.details}</td>
