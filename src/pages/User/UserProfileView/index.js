@@ -15,25 +15,33 @@ const UserProfileView = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
-  const [profile, setProfile] = useState(user?.data)
+  const current_user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  const [profile, setProfile] = useState({})
   const [errorMessage, setErrorMessage] = useState();
   const [successMessage, setSuccessMessage] = useState("");
-  const { updateUser } = useUsers();
+  const { getUserByAdmin, updateUser } = useUsers();
   const navigate = useNavigate();
-  console.warn(profile)
 
   const handleSubmit = async e => {
     e.preventDefault();
-    debugger
     const response = await updateUser(profile);
     if (response.status < 300) {
-      setSuccessMessage(t("Pannel_Dashboard_Supporttickets.done"))
+      setSuccessMessage(`${t("Pannel_Dashboard_Supporttickets.done")}`)
       setTimeout(() => {
-        navigate(`/dashboard/${lang == "pl" ? lang : "en"}`) 
+        navigate(`/dashboard/${lang == "pl" ? lang : "en"}`)
       }, 3000);
     } else if (response.status > 300) {
       setErrorMessage(response.message);
+    }
+  }
+
+  const getUser = async () => {
+    debugger
+    const response = await getUserByAdmin(current_user?.data?.id)
+    if (response?.status < 300 ) {
+      setProfile(response?.user)
+    } else if (response?.status > 300 ) {
+      setErrorMessage(response?.message)
     }
   }
 
@@ -41,6 +49,7 @@ const UserProfileView = () => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    getUser()
   }, [])
 
   return (
@@ -55,7 +64,7 @@ const UserProfileView = () => {
           </div>
           <div className='userProfileView__top__right'>
             <Button onClick={(e) => handleSubmit(e)}><SaveOutlinedIcon className='userProfileView__top__right__icon' />
-            {t("Pannel_Dashboard_Supporttickets.Save")}              
+            {t("Pannel_Dashboard_Supporttickets.Save")}
 </Button>
           </div>
         </div>
@@ -70,30 +79,30 @@ const UserProfileView = () => {
             <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
-                placeholder={`${t("Pannel_registration.Firstname")}`} 
+                placeholder={`${t("Pannel_registration.Firstname")}`}
                 value={profile?.first_name}
                 onChange={(e) => setProfile({ ...profile, first_name: e.target.value })}
               /></div>
               <div><input
                 type="text"
-                placeholder={`${t("Pannel_registration.Lastname")}`} 
+                placeholder={`${t("Pannel_registration.Lastname")}`}
                 value={profile?.last_name}
                 onChange={(e) => setProfile({ ...profile, last_name: e.target.value })}
               />
               </div>
             </div>
-            {user?.data?.role === "member" ?
+            {current_user?.data?.role === "member" ?
               <div className='userProfileView__container__details__detailsBox'>
                 <div><input
                   type="text"
-                  placeholder={`${t("Pannel_Dashboard_Userprofile.Peselnumber")}`} 
+                  placeholder={`${t("Pannel_Dashboard_Userprofile.Peselnumber")}`}
                   value={profile?.company_pesel_number}
                   onChange={(e) => setProfile({ ...profile, company_pesel_number: e.target.value })}
                 />
                 </div>
                 <div><input
                   type="text"
-                  placeholder={`${t("Pannel_Dashboard_Userprofile.Address")}`} 
+                  placeholder={`${t("Pannel_Dashboard_Userprofile.Address")}`}
                   value={profile?.company_address}
                   onChange={(e) => setProfile({ ...profile, company_address: e.target.value })}
                 />
@@ -111,7 +120,7 @@ const UserProfileView = () => {
                   </div>
                   <div><input
                     type="text"
-                    placeholder={`${t("Employer_Pannel_registration.companyname")}`}               
+                    placeholder={`${t("Employer_Pannel_registration.companyname")}`}
                     value={profile?.company_name}
                     onChange={(e) => setProfile({ ...profile, company_name: e.target.value })}
                   />
@@ -120,7 +129,7 @@ const UserProfileView = () => {
                 <div className='userProfileView__container__details__detailsBox'>
                   <div><input
                     type="text"
-                    placeholder={`${t("Employer_Pannel_registration.companykrsname")}`}               
+                    placeholder={`${t("Employer_Pannel_registration.companykrsname")}`}
                     value={profile?.company_krs_number}
                     onChange={(e) => setProfile({ ...profile, company_krs_number: e.target.value })}
                   />
@@ -128,7 +137,7 @@ const UserProfileView = () => {
                   <div>
                     <input
                       type="text"
-                      placeholder={`${t("Employer_Pannel_registration.companyURLaddress")}`}               
+                      placeholder={`${t("Employer_Pannel_registration.companyURLaddress")}`}
                       value={profile?.company_address}
                       onChange={(e) => setProfile({ ...profile, company_address: e.target.value })}
 
@@ -142,7 +151,7 @@ const UserProfileView = () => {
                 type="text"
                 value={profile?.phone_number}
                 onChange={(e) => setProfile({ ...profile, phone_number: e.target.value })}
-                placeholder={`${t("Pannel_registration.Phonenumber")}`} 
+                placeholder={`${t("Pannel_registration.Phonenumber")}`}
                 />
               </div>
               <div><input
@@ -155,14 +164,14 @@ const UserProfileView = () => {
             <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
-                placeholder={`${t("Pannel_Dashboard_Supporttickets.Password")}`}               
+                placeholder={`${t("Pannel_Dashboard_Supporttickets.Password")}`}
                 onChange={(e) => setProfile({ ...profile, password: e.target.value })}
               />
               </div>
               <div>
                 <input
                   type="text"
-                  placeholder={`${t("Pannel_Dashboard_Supporttickets.Confirmpassword")}`}               
+                  placeholder={`${t("Pannel_Dashboard_Supporttickets.Confirmpassword")}`}
                   onChange={(e) => setProfile({ ...profile, confirm_password: e.target.value })}
                 />
               </div>

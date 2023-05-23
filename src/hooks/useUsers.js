@@ -37,7 +37,7 @@ const useUsers = () => {
     else if (type === "employ"){
       var role = 3
     }
-    
+
     const params = {
       user: {
         first_name: user.first_name,
@@ -285,7 +285,7 @@ const useUsers = () => {
 
   const getUserByAdmin = async (id) => {
     const response = await axios.get(`${API_KEY}/api/v1/manage_users/${id}`,
-    getAdminHeaders()
+    admin ? getAdminHeaders() : getHeaders()
   ).then((res) => {
     if (res.data.status > 300) {
       handleErrors(res);

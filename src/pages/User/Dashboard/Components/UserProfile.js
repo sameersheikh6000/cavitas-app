@@ -5,21 +5,38 @@ import i18n from "../../../../config/helpers/i18n";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import { USER_STORAGE_KEY } from "../../../../config/helpers/variables";
 import { useNavigate } from "react-router-dom";
+import useUsers from "../../../../hooks/useUsers";
+import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 
 const UserProfile = () => {
+  const { getUserByAdmin } = useUsers()
   const currentUrl = window.location.href;
+  const [user, setUser] = useState();
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const [ errorMessage, setErrorMessage ] = useState('')
+  const current_user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
+
+  const getUser = async () => {
+    const response = await getUserByAdmin(current_user?.data?.id)
+    if (response?.status < 300 ) {
+      setUser(response?.user)
+    }else if (response?.status > 300 ) {
+      setErrorMessage(response?.message)
+    }
+  }
   useEffect(() => {
+    getUser()
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
   }, []);
-  const navigate = useNavigate();
-  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+
   return (
     <section className="dashboard__container__content__userProfile">
+      <AlertMessage errorMessage={errorMessage} />
       <header className="dashboard__container__content__userProfile__header">
         <div className="dashboard__container__content__userProfile__header__iconBox">
           <PersonOutlineOutlinedIcon lassName="dashboard__container__content__userProfile__header__iconBox__icon" />
@@ -33,33 +50,33 @@ const UserProfile = () => {
         <div className="dashboard__container__content__userProfile__details__detailsBox">
           <p>
             <b>{t("Pannel_registration.Firstname")}:</b>{" "}
-            {user?.data?.first_name ? user?.data?.first_name : "NiL"}
+            {user?.first_name ? user?.first_name : "NiL"}
           </p>
           <p>
             <b>{t("Pannel_registration.Lastname")}:</b>{" "}
-            {user?.data?.last_name ? user?.data?.last_name : "NiL"}
+            {user?.last_name ? user?.last_name : "NiL"}
           </p>
         </div>
-        {user?.data?.role === "member" ? (
+        {user?.role === "member" ? (
           <>
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
-                <b>{t("Pannel_Dashboard_Userprofile.Peselnumber")}:</b>{user?.data?.company_pesel_number}
+                <b>{t("Pannel_Dashboard_Userprofile.Peselnumber")}:</b>{user?.company_pesel_number}
               </p>
               <p>
                 <b>{t("Pannel_Dashboard_Userprofile.Address")}</b>{" "}
-                {user?.data?.company_address
-                  ? user?.data?.company_address
+                {user?.company_address
+                  ? user?.company_address
                   : "N/A"}
               </p>
             </div>
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
-                <b>Email address: </b>{user?.data?.email}
+                <b>Email address: </b>{user?.email}
               </p>
               <p>
                 <b>{t("Pannel_registration.Phonenumber")}:</b>{" "}
-                {user?.data?.phone_number ? user?.data?.phone_number : "N/A"}{" "}
+                {user?.phone_number ? user?.phone_number : "N/A"}{" "}
               </p>
             </div>
           </>
@@ -68,34 +85,34 @@ const UserProfile = () => {
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
                 <b>{t("Pannel_registration.Rolecompany")}:</b>{" "}
-                {user?.data?.role ? user?.data?.role.toUpperCase() : "N/A"}
+                {user?.role ? user?.role.toUpperCase() : "N/A"}
               </p>
               <p>
                 <b>{t("Employer_Pannel_registration.companyname")}:</b>{" "}
-                {user?.data?.company_name ? user?.data?.company_name : "N/A"}
+                {user?.company_name ? user?.company_name : "N/A"}
               </p>
             </div>
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
                 <b>{t("Employer_Pannel_registration.companykrsname")}:</b>{" "}
-                {user?.data?.company_krs_number
-                  ? user?.data?.company_krs_number
+                {user?.company_krs_number
+                  ? user?.company_krs_number
                   : "N/A"}
               </p>
               <p>
                 <b>Email Address:</b>{" "}
-                {user?.data?.email ? user?.data?.email : "N/A"}
+                {user?.email ? user?.email : "N/A"}
               </p>
             </div>
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
                 <b>{t("Pannel_registration.Phonenumber")}:</b>{" "}
-                {user?.data?.phone_number ? user?.data?.phone_number : "N/A"}
+                {user?.phone_number ? user?.phone_number : "N/A"}
               </p>
               <p>
                 <b>{t("Pannel_Dashboard_Userprofile.Companylocation")}</b>{" "}
-                {user?.data?.company_address
-                  ? user?.data?.company_address
+                {user?.company_address
+                  ? user?.company_address
                   : "N/A"}
               </p>
             </div>
