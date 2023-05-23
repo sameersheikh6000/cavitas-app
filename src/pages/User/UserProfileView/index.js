@@ -1,3 +1,5 @@
+
+
 import { Button } from '@mui/material'
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -58,25 +60,25 @@ const UserProfileView = () => {
       <AlertMessage errorMessage={errorMessage} />
       <section className='userProfileView'>
         <div className='userProfileView__top'>
-          <div className='userProfileView__top__left'>
-            < PersonOutlineOutlinedIcon className='userProfileView__top__left__icon' />
+          <div className='userProfileView_top_left'>
+            < PersonOutlineOutlinedIcon className='userProfileView_topleft_icon' />
             <p>{t("Pannel_Dashboard.Userprofile")}</p>
           </div>
-          <div className='userProfileView__top__right'>
-            <Button onClick={(e) => handleSubmit(e)}><SaveOutlinedIcon className='userProfileView__top__right__icon' />
+          <div className='userProfileView_top_right'>
+            <Button onClick={(e) => handleSubmit(e)}><SaveOutlinedIcon className='userProfileView_topright_icon' />
             {t("Pannel_Dashboard_Supporttickets.Save")}
 </Button>
           </div>
         </div>
         <div className='userProfileView__container'>
-          <header className='userProfileView__container__header'>
-            <div className='userProfileView__container__header__iconBox'>
-              < PersonOutlineOutlinedIcon lassName='userProfileView__container__header__iconBox__icon' />
+          <header className='userProfileView_container_header'>
+            <div className='userProfileView_containerheader_iconBox'>
+              < PersonOutlineOutlinedIcon lassName='userProfileView_containerheadericonBox_icon' />
               <p>{t("Pannel_Dashboard.Userprofile")}</p>
             </div>
           </header>
-          <div className='userProfileView__container__details'>
-            <div className='userProfileView__container__details__detailsBox'>
+          <div className='userProfileView_container_details'>
+            <div className='userProfileView_containerdetails_detailsBox'>
               <div><input
                 type="text"
                 placeholder={`${t("Pannel_registration.Firstname")}`}
@@ -92,7 +94,7 @@ const UserProfileView = () => {
               </div>
             </div>
             {current_user?.data?.role === "member" ?
-              <div className='userProfileView__container__details__detailsBox'>
+              <div className='userProfileView_containerdetails_detailsBox'>
                 <div><input
                   type="text"
                   placeholder={`${t("Pannel_Dashboard_Userprofile.Peselnumber")}`}
@@ -110,7 +112,7 @@ const UserProfileView = () => {
               </div>
               :
               <>
-                <div className='userProfileView__container__details__detailsBox'>
+                <div className='userProfileView_containerdetails_detailsBox'>
                   <div><input
                     type="text"
                     placeholder='Role in company'
@@ -126,7 +128,7 @@ const UserProfileView = () => {
                   />
                   </div>
                 </div>
-                <div className='userProfileView__container__details__detailsBox'>
+                <div className='userProfileView_containerdetails_detailsBox'>
                   <div><input
                     type="text"
                     placeholder={`${t("Employer_Pannel_registration.companykrsname")}`}
@@ -146,7 +148,7 @@ const UserProfileView = () => {
                 </div>
               </>
             }
-            <div className='userProfileView__container__details__detailsBox'>
+            <div className='userProfileView_containerdetails_detailsBox'>
               <div><input
                 type="text"
                 value={profile?.phone_number}
@@ -161,7 +163,7 @@ const UserProfileView = () => {
               />
               </div>
             </div>
-            <div className='userProfileView__container__details__detailsBox'>
+            <div className='userProfileView_containerdetails_detailsBox'>
               <div><input
                 type="text"
                 placeholder={`${t("Pannel_Dashboard_Supporttickets.Password")}`}

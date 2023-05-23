@@ -56,7 +56,9 @@ const QuoteSupportTicket = () => {
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/support/view" style={{ textDecoration: "none" }}>
+            <Link 
+            to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+            style={{ textDecoration: "none" }}>
               <Button
                 color="error"
                 variant="outlined"
@@ -77,14 +79,16 @@ const QuoteSupportTicket = () => {
         <br />
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
-            <Link to="/support/view">
+            <Link 
+            to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
                 {t("Replypannel.myquoteticket")} #{quoteFormDetail?.id}
               </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
+            <Link    to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
+             style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                 {t("MysupportTickets.Submitnewticket")}
               </Button>

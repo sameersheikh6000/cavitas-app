@@ -230,7 +230,8 @@
     "totalnumber":"Total number of employees",
     "aboutyourgroup":"Are there any other details you'd like us about your group?",
     "send": "Send",
-    "date":"Desired inception date of the cover"
+    "date":"Desired inception date of the cover",
+    "setmessage":"Form Submitted Successfully! We will get back to you soon."
   },
   "contactform":{
     "contactfrom_title":"Contact Cavitas",
@@ -304,7 +305,7 @@
 
   "Update":"UPDATE",
   "Companylocation":"Company location",
-  "Peselnumber":"Numer PESEL",
+  "Peselnumber":"PESEL number",
   "Address":"Address"
 
 }
@@ -334,7 +335,9 @@
   "Save":"Save changes",
   "Noticket":"No Ticket History",
   "message":"Submited Successfully!",
-  "wrong":"Something went wrong!"
+  "done":"Updated Successfully!",
+  "wrong":"Something went wrong!",
+  "fill":"Please fill the form correctly"
 }
 ,
 "Uploadinsuredperson":{
@@ -457,7 +460,11 @@
 "myquoteticket":"My Quote Ticket",
 "Send":"Send",
 "Cancel":"Cancel",
-"Writeanswer":"Write Your Answer Here!"
+"Writeanswer":"Write Your Answer Here!",
+"insuredticket":"Insured Tickets",
+"myinsuredticket":"My Insured Ticket",
+"nosubject":"No subject"
+
 },
 
 "Insured_clients":{
@@ -545,7 +552,6 @@
   "password":"Password",
   "confirmationpassword":"password confirmation",
   "setnewpassword":"Set your new password here."
-
 }
 
 }

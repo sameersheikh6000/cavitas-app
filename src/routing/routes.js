@@ -424,6 +424,11 @@ export const routes = [
     isPrivate: false,
   },
   {
+    path: "/InsuredPersonDetail/:lang",
+    component: InsuredPersonDetail,
+    isPrivate: false,
+  },
+  {
     path: "/GetQuote/:lang",
     component: GetQuote,
     isPrivate: false,

@@ -38,7 +38,7 @@ const AdminFileApproval = () => {
             <MailOutlineIcon ClassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
             <p>Support Tickets</p>
           </div>
-          <Button size='small' onClick={() => navigate("/admin/ApprovalFile")}>View all</Button>
+          <Button size='small' onClick={() => navigate("/InsuredPerson")}>View all</Button>
         </header>
         <div className='dashboard__container__content__insuredClient__details'>
         {clientInfoList.length > 0 ?

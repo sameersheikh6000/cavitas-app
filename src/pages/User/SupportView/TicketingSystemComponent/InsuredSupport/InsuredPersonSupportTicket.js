@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
@@ -11,7 +13,6 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import useClientInsurance from "../../../../../hooks/useClientInsurance";
-import { useEffect } from "react";
 import ClientInfoReplyAnswerForm from "./component/ClientInfoReplyAnswerForm";
 import { API_KEY } from "../../../../../config/helpers/variables";
 
@@ -32,7 +33,15 @@ const InsuredPersonSupportTicket = () => {
     }
   };
 
+  
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
   useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
     getClient();
   }, [])
   return (
@@ -41,20 +50,28 @@ const InsuredPersonSupportTicket = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>Support Tickets</p>
+            <p>{t("Replypannel.insuredticket")}</p>  
+          </div>
+          <div className="insuredClientView__header__right">
+            <Link 
+            to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
+            
+            style={{ textDecoration: "none" }}>
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
+              {t("MysupportTickets.Submitnewticket")}
+              </Button>
+            </Link>
           </div>
         </header>
         <br />
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
-            <Link to="/support/view">
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
-                My support tickets  222233
-              </Button>
+            <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/support/view">
+            <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
               <Button
                 color="error"
                 variant="outlined"
@@ -67,10 +84,11 @@ const InsuredPersonSupportTicket = () => {
                   textTransform: "none",
                 }}
               >
-                Return to ticket list
+               {t("Replypannel.Returnticket")}
               </Button>
             </Link>
           </div>
+          
         </header>
         <br /> <br />
         <Stack direction="row" spacing={7}>
@@ -80,7 +98,7 @@ const InsuredPersonSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Number :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Number")}:</TableCell>
                   <TableCell>{clientInfo?.id}</TableCell>
                 </TableRow>
               </TableHead>
@@ -88,7 +106,7 @@ const InsuredPersonSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
+                  <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")}:</TableCell>
                   <TableCell>{clientInfo?.status}</TableCell>
                 </TableRow>
               </TableHead>
@@ -97,9 +115,9 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Subject :
+                  {t("Replypannel.Subject")}:
                   </TableCell>
-                  <TableCell>No Subject</TableCell>
+                  <TableCell>      {t("Replypannel.nosubject")}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -107,7 +125,7 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Attachment(s):
+                  {t("Replypannel.Attachement")}
                   </TableCell>
                   <TableCell>{clientInfo?.file?.url}</TableCell>
                 </TableRow>
@@ -117,7 +135,7 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Created on:
+                  {t("Replypannel.Createdon")}:
                   </TableCell>
                   <TableCell>
                     {clientInfo?.created_at}
@@ -130,7 +148,7 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                    Last update on:
+                  {t("Insuredsupport.Lastupdateon")}:
                   </TableCell>
                   <TableCell>
                     {clientInfo?.updated_at}
@@ -142,49 +160,7 @@ const InsuredPersonSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  {/* <TableCell>
-                    {" "}
-                    <div className="insuredClientView__header__right">
-                      <Link to="/admin/ApprovalFile">
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit"
-                          style={{
-                            fontSize: "10px",
-                            color: "white !important",
-                            color: "white !important",
-                            backgroundColor: "red",
-                            marginLeft: "15px",
-                            borderRadius: "25px",
-                            textTransform: "none",
-                          }}
-                        >
-                          Reopen tickets
-                        </Button>
-                      </Link>
-                    </div>
-                  </TableCell>
-                  <TableCell>
-                    <div className="insuredClientView__header__right">
-                      <Link to="/admin/ApprovalFile">
-                        <Button
-                          variant="outlined"
-                          size="small"
-                          style={{
-                            fontSize: "10px",
-                            color: "black",
-                            borderRadius: "25px",
-                            textTransform: "none",
-                            backgroundColor: "white",
-                            border: "none",
-                          }}
-                        >
-                          Answer
-                        </Button>
-                      </Link>
-                    </div>
-                  </TableCell> */}
+                  
                 </TableRow>
               </TableHead>
             </Table>
@@ -225,7 +201,7 @@ const InsuredPersonSupportTicket = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>Attachement(s): {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : 'No files'}</p>
+                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : 'No files'}</p>
                 </tbody>
               </div>
             </section>
@@ -274,7 +250,7 @@ const InsuredPersonSupportTicket = () => {
                       paddingBottom: "1rem",
                     }}
                   >
-                    <p>Attachement(s): {row?.file_name ? <a href={`${API_KEY}/api/v1/client_info_replies/${row?.id}/download`}>{row?.file_name}</a> : 'No files'}</p>
+                    <p>  {t("Replypannel.Attachement")} {row?.file_name ? <a href={`${API_KEY}/api/v1/client_info_replies/${row?.id}/download`}>{row?.file_name}</a> : 'No files'}</p>
                   </tbody>
                 </div>
               </section>
@@ -315,7 +291,7 @@ const InsuredPersonSupportTicket = () => {
                       paddingBottom: "1rem",
                     }}
                   >
-                    <p>Attachement(s): {row?.answer?.file_name ? <a href={`${API_KEY}/api/v1/client_info_reply_answers/${row?.answer.id}/download`}>{row?.answer?.file_name}</a> : 'No files'}</p>
+                    <p>  {t("Replypannel.Attachement")} {row?.answer?.file_name ? <a href={`${API_KEY}/api/v1/client_info_reply_answers/${row?.answer.id}/download`}>{row?.answer?.file_name}</a> : 'No files'}</p>
                   </tbody>
                 </div>
               </section>

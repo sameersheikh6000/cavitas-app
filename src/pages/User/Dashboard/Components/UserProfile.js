@@ -73,6 +73,7 @@ const UserProfile = () => {
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
                 <b>Email address: </b>{user?.email}
+
               </p>
               <p>
                 <b>{t("Pannel_registration.Phonenumber")}:</b>{" "}
@@ -102,6 +103,7 @@ const UserProfile = () => {
               <p>
                 <b>Email Address:</b>{" "}
                 {user?.email ? user?.email : "N/A"}
+
               </p>
             </div>
             <div className="dashboard__container__content__userProfile__details__detailsBox">

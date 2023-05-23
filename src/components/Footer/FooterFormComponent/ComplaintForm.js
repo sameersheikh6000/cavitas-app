@@ -48,7 +48,7 @@ function ComplaintForm() {
   const handleSubmit = async () => {
   const response = await createContact(contactForm)
   if (response.status < 300) {
-    setMessage("From Submitted Successfully! We will get back to you soon.")
+    setMessage(t("get24contactform.setmessage"))
     setTimeout(() => {
       handleClose();
       setMessage('');

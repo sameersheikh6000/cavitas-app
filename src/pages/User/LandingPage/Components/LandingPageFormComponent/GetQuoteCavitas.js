@@ -51,7 +51,7 @@ function GetQuoteCavitas() {
   const submitQuoteForm = async () => {
     const response = await createQuote(formData);
     if (response.status < 300) {
-      setMessage("From Submitted Successfully! We will get back to you soon.");
+      setMessage(t("get24contactform.setmessage"))
       setTimeout(() => {
         handleClose();
         setMessage("");

@@ -54,7 +54,7 @@ const ContactSupportTicket = () => {
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/support/view">
+            <Link  to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
               <Button
                 color="error"
                 variant="outlined"
@@ -68,6 +68,7 @@ const ContactSupportTicket = () => {
                 }}
               >
                {t("Replypannel.Returnticket")}
+               
               </Button>
             </Link>
           </div>
@@ -75,7 +76,7 @@ const ContactSupportTicket = () => {
         <br />
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
-            <Link to="/support/view">
+            <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
               <Button
                 className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit"
                 style={{ textDecoration: "none" }}
@@ -85,7 +86,10 @@ const ContactSupportTicket = () => {
             </Link>
           </div>
           <div className="insuredClientView__header__right">
-            <Link to="/SubmitNewTickets" style={{ textDecoration: "none" }}>
+            <Link 
+            to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
+            
+            style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
               {t("MysupportTickets.Submitnewticket")}
               </Button>

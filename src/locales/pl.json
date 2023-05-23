@@ -233,7 +233,9 @@
     "totalnumber":"Łączna liczba pracowników",
     "aboutyourgroup":"Chcesz nam przekazać inne szczegóły dotyczące Twojej grupy?",
     "send": "WYŚLIJ",
-    "date":"Preferowana data rozpoczęcia ochrony ubezpieczeniowej"
+    "date":"Preferowana data rozpoczęcia ochrony ubezpieczeniowej",
+    "setmessage":"Z przesłanego pomyślnie! Wkrótce do Ciebie wrócimy."
+
 
   }
   ,
@@ -470,7 +472,12 @@
 "myquoteticket":"Mój bilet z cytatem",
 "Send":"Wysłać",
 "Cancel":"anulować",
-"Writeanswer":"Wpisz swoją odpowiedź tutaj!"
+"Writeanswer":"Wpisz swoją odpowiedź tutaj!",
+"insuredticket":"Ubezpieczone bilety",
+"myinsuredticket":"Moje Ubezpieczone Bilety",
+"nosubject":"Brak tematu"
+
+
 },
 "Insured_clients":{
 

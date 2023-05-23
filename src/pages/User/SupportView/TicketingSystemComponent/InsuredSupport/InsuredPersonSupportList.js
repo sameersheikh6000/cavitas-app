@@ -24,7 +24,7 @@ function InsuredPersonSupportList() {
     if (response?.status < 300) {
       setClientInfo(response?.client_infos);
     } else if (response?.status > 300) {
-      setErrorMessage("Something went wrong!");
+      setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
     }
   };
 
@@ -116,6 +116,7 @@ function InsuredPersonSupportList() {
             <div className="insuredClientView__container__mysupport__tickets">
               <table>
                 <thead>
+                  
                   <tr>
                   <th>{t("contactsupport.ticketnumber")}</th>
                   <th>{t("MysupportTickets.topic")}</th>
