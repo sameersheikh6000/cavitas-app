@@ -27,7 +27,6 @@ const SignUp = () => {
     company_name: "",
     company_krs_number: "",
     company_url_address: "",
-    role: "",
     password: "",
     password_confirmation: "",
   });
@@ -38,7 +37,6 @@ const SignUp = () => {
   };
 
   const submitHandler = async e => {
-
     e.preventDefault();
     for (let prop in user) {
       if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"))
@@ -103,8 +101,8 @@ const SignUp = () => {
                 type="text"
                 placeholder={`${t("Pannel_registration.Phonenumber")}`} 
                 name='phone_number'
-                value={user.phone_number}
-                onChange={changeHandler}
+                value={user?.phone_number}
+                onChange={(e) => setUser({...user, phone_number: e.target.value})}
                 required={true}
               />
             </div>
@@ -121,26 +119,26 @@ const SignUp = () => {
                 type="text"
                 placeholder={`${t("Pannel_registration.Brokercompanykrsname")}`}               
                  name='company_krs_number'
-                value={user.company_krs_number}
-                onChange={changeHandler}
+                value={user?.company_krs_number}
+                onChange={(e) => setUser({...user, company_krs_number: e.target.value})}
                 required={true}
               />
               <input
                 type="text"
                 placeholder={`${t("Pannel_registration.BrokercompanyURLaddress")}`}               
                 name='company_url_address'
-                value={user.company_url_address}
-                onChange={changeHandler}
+                value={user?.company_url_address}
+                onChange={(e) => setUser({...user, company_url_address: e.target.value})}
                 required={true}
               />
-              <input
+              {/* <input
                 type="text"
                 placeholder={`${t("Pannel_registration.Rolecompany")}`}               
                 name='role'
                 value={user.role}
                 onChange={changeHandler}
                 required={true}
-              />
+              /> */}
             </div>
             <div>
               <input

@@ -13,16 +13,10 @@ const UploadClient = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, []);
   const { createClientInsurance } = useClientInsurance();
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
-  console.log(user?.data?.role == 'broker')
+  
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
   const [successMessage, setSuccessMessage] = useState();
@@ -77,7 +71,11 @@ const UploadClient = () => {
   };
 
   const handleSubmit = async (e) => {
+    
     e.preventDefault();
+    if (user?.data?.role == 'broker') {
+      setClient({ ...client, referenced_broker_name: `${user?.data?.first_name}`+ ` ` +`${user?.data?.last_name}`, broker_reference: 1})
+    } 
     let data = {
       ...client,
     };
@@ -89,6 +87,13 @@ const UploadClient = () => {
       // setErrorMessage(response.message);
     }
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
+
   return (
     <Page>
       <SuccessMessage successMessage={successMessage} />
@@ -313,7 +318,7 @@ const UploadClient = () => {
                   <label>{t("Uploadinsuredperson.Question_no4_part2")}</label>
                 </div>
               </div>
-              {user?.data?.role !== 'broker' &&
+              {user?.data?.role == 'employ' &&
                 <div className='uploadClient__container__body__participation'>
                 <p>{t("Uploadinsuredperson.Question_no5")}</p>
                   <div className='uploadClient__container__body__participation__head'>
@@ -345,10 +350,7 @@ const UploadClient = () => {
                     <label>NO</label>
                   </div>
                 </div>
-                }
-                {user?.data?.role == 'broker' &&
-                  setClient({ ...client, referenced_broker_name: `${user?.first_name}`+ ` ` +`${user?.last_name}`, broker_reference: 1})
-                }
+               }
 
               <div className='uploadClient__container__body__participation'>
               <p>{t("Uploadinsuredperson.Question_no6")}</p>

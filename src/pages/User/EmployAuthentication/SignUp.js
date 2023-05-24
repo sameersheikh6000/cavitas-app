@@ -10,12 +10,6 @@ const EmploySignUp = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
   const { createUser } = useUsers();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -23,11 +17,10 @@ const EmploySignUp = () => {
     first_name: "",
     last_name: "",
     email: "",
-    phone: "",
+    phone_number: "",
     company_name: "",
-    krs_number: "",
-    url_address: "",
-    role: "",
+    company_krs_number: "",
+    company_url_address: "",
     broker_mandate: "",
     password: "",
     password_confirmation: "",
@@ -55,6 +48,12 @@ const EmploySignUp = () => {
     }
   };
 
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   return (
     <section className='authentication'>
@@ -103,8 +102,8 @@ const EmploySignUp = () => {
               <input
                 type="text"
                 placeholder={`${t("Pannel_registration.Phonenumber")}`} 
-                name='phone'
-                value={user.phone}
+                name='phone_number'
+                value={user.phone_number}
                 onChange={changeHandler}
                 required={true}
               />
@@ -121,27 +120,27 @@ const EmploySignUp = () => {
               <input
                 type="text"
                 placeholder={`${t("Employer_Pannel_registration.companykrsname")}`}               
-                name='krs_number'
-                value={user.krs_number}
+                name='company_krs_number'
+                value={user.company_krs_number}
                 onChange={changeHandler}
                 required={true}
               />
               <input
                 type="text"
                 placeholder={`${t("Employer_Pannel_registration.companyURLaddress")}`}               
-                name='url_address'
-                value={user.url_address}
+                name='company_url_address'
+                value={user.company_url_address}
                 onChange={changeHandler}
                 required={true}
               />
-              <input
+              {/* <input
                 type="text"
                 placeholder={`${t("Pannel_registration.Rolecompany")}`}               
                 name='role'
                 value={user.role}
                 onChange={changeHandler}
                 required={true}
-              />
+              /> */}
               <input
                 type="text"
                 placeholder={`${t("Employer_Pannel_registration.Mandatebroker")}`}               

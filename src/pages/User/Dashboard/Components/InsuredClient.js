@@ -25,7 +25,7 @@ const InsuredClient = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const getInsuredClientList = async () => {
-    debugger
+    
     const response = await getInsuredClients();
     if (response?.status < 300) {
       setInsuredClientsList(response?.insured_clients);
