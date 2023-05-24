@@ -100,7 +100,7 @@ const useUsers = () => {
   };
 
   const updateUser = async user => {
-    debugger
+    
     const params = {
       user: {
         first_name: user.first_name,
@@ -251,7 +251,7 @@ const useUsers = () => {
   };
 
   const updateUserByAdmin = async (user) => {
-    debugger
+    
     const params = {
       user: {
         first_name: user.first_name,
@@ -274,7 +274,7 @@ const useUsers = () => {
       },
       getAdminHeaders(),
       ).then((res) => {
-        debugger
+        
         if (res.data.status > 300) {
           handleErrors(res);
         }

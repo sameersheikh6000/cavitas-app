@@ -36,7 +36,7 @@ function SupportReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    debugger;
+    ;
     const response = await createReply(ticketReply);
     if (response?.status < 300) {
       setSuccessMessage("Successfully Replied!");

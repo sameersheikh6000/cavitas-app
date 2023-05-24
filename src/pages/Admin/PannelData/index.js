@@ -37,7 +37,7 @@ const AdminFileApproval = () => {
   }, []);
 
   const requestSearch = (searchedVal) => {
-    debugger
+    
     const filteredRows = insuredClientsList.filter((row) => {
       if(searchedVal !== null){
         return  (

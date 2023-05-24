@@ -34,7 +34,7 @@ function ClientInfoUpdate({client_id, getClientInsurance}) {
     }
     
     const handleUpdate = async (infoID) => {
-        debugger
+        
         const response = await updateClientInsuranceAdmin(infoID, file)
         if (response?.status > 300 ){
           setErrorMessage(response?.message)

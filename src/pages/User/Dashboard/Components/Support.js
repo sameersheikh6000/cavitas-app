@@ -52,32 +52,32 @@ const Support = () => {
             <div className="insuredClientView__container__mysupport__tickets" 
           
             >
-              <table    >
-                <thead>
+              <table    style={{ textAlign:"center", border:"none"}}>
+                <thead style={{ textAlign:"center", border:"none"}}>
                   
-                  <tr >
-                  <th >{t("contactsupport.ticketnumber")}</th>
-                  <th>{t("MysupportTickets.topic")}</th>
-                  <th>{t("MysupportTickets.Status")}</th>
-                  <th>{t("Insuredsupport.Lastupdateon")}</th>
+                  <tr style={{ textAlign:"center", border:"none"}}>
+                  <th style={{ textAlign:"center", border:"none"}}>{t("contactsupport.ticketnumber")}</th>
+                  <th style={{ textAlign:"center", border:"none"}}>{t("MysupportTickets.topic")}</th>
+                  <th style={{ textAlign:"center", border:"none"}}>{t("MysupportTickets.Status")}</th>
+                  <th style={{ textAlign:"center", border:"none"}}>{t("Insuredsupport.Lastupdateon")}</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody style={{ textAlign:"center", border:"none"}}>
                   {
                     clientInfo ? clientInfo.map((row, index) => (
 
-                    <tr key={index}>
-                      <td>
+                    <tr key={index} style={{ textAlign:"center", border:"none"}}>
+                      <td style={{ textAlign:"center", border:"none"}}>
                         <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang == 'pl' ? lang : 'en'}`}>{row?.id}</Link>
                       </td>
-                      <td>{row?.details}</td>
-                      <td>{row?.status}</td>
-                      <td>{row?.updated_at}</td>
+                      <td style={{ textAlign:"center", border:"none"}}>{row?.details}</td>
+                      <td style={{ textAlign:"center", border:"none"}}>{row?.status}</td>
+                      <td style={{ textAlign:"center", border:"none"}}>{row?.updated_at}</td>
                     </tr>
                     ))
                     :
-                    <tr>
-                      <td colSpan={4}>No Data To Display!</td>
+                    <tr style={{ textAlign:"center", border:"none"}}>
+                      <td style={{ textAlign:"center", border:"none"}} colSpan={4}>No Data To Display!</td>
                     </tr>
                   }
                 </tbody>

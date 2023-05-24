@@ -16,7 +16,7 @@ const AdminInsuredClient = () => {
 
 
   const getInsuredClientList = async () => {
-    debugger
+    
     const response = await getInsuredClientsByAdmin();
     if (response.status < 300) {
       console.log(response)

@@ -19,7 +19,7 @@ function AdminProfileView() {
   const handleSubmit = async e => {
     e.preventDefault();
     const response = await updateAdminUser(profile);
-    debugger
+    
     if (response.status < 300) {
       navigate("/admin/signin")
     } else if (response.status > 300) {

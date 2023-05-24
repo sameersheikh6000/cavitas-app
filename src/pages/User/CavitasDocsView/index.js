@@ -20,9 +20,9 @@ const CavitasDocsView = () => {
   const [errorMessage, setErrorMessage] = useState();
 
   const getAllCavitasDocs = async () => {
-    debugger
+    
       const response = await getCavitasDocs();
-      debugger
+      
       if (response?.status < 300) {
         setCavitasDocs(response?.cavitas_documents)
       } else if (response?.status > 300) {

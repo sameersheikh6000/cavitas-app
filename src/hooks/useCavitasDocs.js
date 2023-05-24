@@ -35,7 +35,7 @@ const useCavitasDocs = () => {
             if (res.data.status > 300) {
               handleErrors(res);
             }
-            debugger
+            
             return res.data
           })
           return response;
@@ -49,7 +49,7 @@ const useCavitasDocs = () => {
             if (res.data.status > 300) {
               handleErrors(res);
             }
-            debugger
+            
             return res.data
           })
           return response;
@@ -76,7 +76,7 @@ const useCavitasDocs = () => {
     }
 
     const updateCavitasDocs =  async (cavitas_docs) => {
-        debugger
+        
         const formData = new FormData()
             for (const property in cavitas_docs) {
                 formData.append(

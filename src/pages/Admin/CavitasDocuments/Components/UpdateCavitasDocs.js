@@ -22,7 +22,7 @@ function UpdateCavitasDocs({cavitasDocs_id, setSuccessMessage, setErrorMessage, 
       };
 
     const fetchCavitasDocsById = async () => {
-      debugger
+      
       const response = await getCavitasDocsById(cavitasDocs_id);
       if (response?.status < 300){
         setCavitasDocsUpdate(response?.cavitas_document)

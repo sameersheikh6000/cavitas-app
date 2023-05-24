@@ -44,10 +44,10 @@ function ClientInfoReplyAnswerForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    debugger
+    
     setClientInfoReplyAnswer({ ...clientInfoReplyAnswer, client_info_reply_id: client_info_reply?.id})
     const response = await createClientInfoReplyAnswer(clientInfoReplyAnswer);
-    debugger;
+    ;
     if (response?.status < 300) {
       setSuccessMessage("Answer Submitted!");
       getClientInfoData()
@@ -72,7 +72,7 @@ function ClientInfoReplyAnswerForm({
         style={{ color: "white !important", margin: "5px", width: "auto", fontSize: "12px" }}
         onClick={() => handleOpen()}
       >
-                       {t("Replypannel.Answer")}:
+                       {t("Replypannel.Answer")}
       </Button>
       <Modal
         open={open}
@@ -82,7 +82,7 @@ function ClientInfoReplyAnswerForm({
       >
         <Box sx={style}>
           <div className="uploadClient__container__body__participation">
-          <h3> {t("Replypannel.Writeanswer")}: </h3>
+          <h3> {t("Replypannel.Writeanswer")} </h3>
             <textarea
               onChange={(e) =>
                 setClientInfoReplyAnswer({
@@ -100,7 +100,7 @@ function ClientInfoReplyAnswerForm({
               }}
             ></textarea>
             <label>
-              <small> {t("Replypannel.Attachement")}:</small>
+              <small> {t("Replypannel.Attachement")}</small>
             </label>
             <input
               type="file"

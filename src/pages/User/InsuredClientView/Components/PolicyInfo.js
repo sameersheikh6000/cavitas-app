@@ -19,7 +19,7 @@ const PolicyInfo = ({ user }) => {
   const [errorMessage, setErrorMessage] = useState();
 
   const fetchPoicy = async () => {
-    debugger
+    
     const response = await getPolicyInformation();
     if (response?.status < 300) {
       setPolicyInfo(response?.policy_information)
@@ -35,7 +35,7 @@ const PolicyInfo = ({ user }) => {
     <div className='insuredClientGroup__container__cardsBox__card'>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
         {user?.data?.role === "broker" ?
-          <p>Policy info</p>
+          <p>{t("Policyinformation.pi_brokertitle")}</p>
           :
           <p>{t("Policyinformation.pi_heading")}</p>
         }
@@ -77,7 +77,7 @@ const PolicyInfo = ({ user }) => {
           :
           <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
             <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
-              No of insured persons:</p>
+            {t("Policyinformation.noperson")}:</p>
             <p>{policyInfo?.no_of_insured_persons}</p>
           </div>
         }

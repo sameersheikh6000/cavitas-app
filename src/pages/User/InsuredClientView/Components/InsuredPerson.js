@@ -63,9 +63,12 @@ const InsuredPerson = () => {
   return (
     <section className='insuredClientGroup__container2__insuredPerson'>
       <header className='insuredClientGroup__container2__insuredPerson__header'>
-        <p>Insured Person</p>
+        <p>{t("Policyinformation.noinsured")}</p>
         <div>
-          <input type="text" onChange={(e) => requestSearch(e.target.value)} placeholder='Search' />
+          <input type="text" onChange={(e) => requestSearch(e.target.value)} 
+          
+          placeholder={`${t("Insured_clients.search")}`}
+          />
           <SearchOutlinedIcon className='insuredClientGroup__container2__insuredPerson__header__icon' />
         </div>
       </header>

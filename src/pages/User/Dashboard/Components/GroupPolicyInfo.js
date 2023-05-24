@@ -31,7 +31,7 @@ const GroupPolicyInfo = ({ user }) => {
   const [successMessage, setSuccessMessage] = useState();
 
   const getPolicyInfo = async () => {
-    debugger;
+    ;
     const response = await getPolicyInformation();
     if (response?.status < 300) {
       setPolicyInformation(response?.policy_information);
@@ -64,21 +64,14 @@ const GroupPolicyInfo = ({ user }) => {
               <th>{t("Policyinformation.Riskinceptiondate")}</th>
               <th>{t("Policyinformation.Riskexpirydate")}</th>
               <th>{t("Policyinformation.Riskrenewaldate")}</th>
-              {/* <th>No of insured persons</th> */}
-              {/* <th>Risk inception date</th>
-              <th>Risk expiry date</th>
-              <th>Risk renewal date</th> */}
-
-              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>{policyInformation?.company_name}</td>
-              {/* <td>{policyInformation?.no_of_insured_persons}</td> */}
               <td>{policyInformation?.risk_inseption_date}</td>
               <td>{policyInformation?.risk_expiry_date}</td>
-              <td>{policyInformation?.risk_renewal_date}</td>
+              <td style={{textAlign:"center"}}>{policyInformation?.risk_renewal_date}</td>
             </tr>
           </tbody>
         </table>

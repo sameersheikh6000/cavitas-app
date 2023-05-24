@@ -500,6 +500,10 @@
 }
 ,
 "Policyinformation":{
+  "noinsured": "Osoba ubezpieczona",
+  "noperson":"Liczba ubezpieczonych",
+  "pi_brokertitle":"Informacje o zasadach",
+  "pi_maintitle":"KLIENCI UBEZPIECZENI - INFORMACJE O GRUPIE",
   "Pi_title":"INFORMACJE DOTYCZĄCE POLITYKI",
   "pi_heading":"Informacje na temat polisy",
   "Riskinceptiondate":"Data rozpoczęcia ubezpieczenia",
@@ -550,6 +554,7 @@
   "card3":"Podstawowa umowa ubezpieczenia stomatologicznego Cavitas",
   "card4":"Wzór harmonogramu polisy ubezpieczenia stomatologicznego Cavitas",
   "card5":"Broszura ubezpieczenia stomatologicznego Cavitas"
+
 
 },
 

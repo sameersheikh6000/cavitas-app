@@ -30,7 +30,7 @@ const ContactSupportTicket = () => {
 
   const getContactDetail = async () => {
     const response = await getContactFormById(id);
-    debugger;
+    ;
     if (response?.status < 300) {
       setContact(response?.contact_form);
     } else if (response.status > 300) {

@@ -17,7 +17,7 @@ const GetQuote = () => {
   const navigate = useNavigate();
 
   const getQuoteFormData = async () => {
-    debugger;
+    ;
     const response = await getAllQuote();
     if (response.status < 300) {
       setQuoteList(response.quote_forms);

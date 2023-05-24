@@ -19,9 +19,9 @@ const CavitasDocument = () =>  {
     const [successMessage, setSuccessMessage] = useState();
   
     const fetchCavitasDocs = async () => {
-      debugger
+      
       const response = await getCavitasDocsByAdmin();
-      debugger
+      
       if (response?.status < 300) {
         setCavitasDocs(response?.cavitas_documents)
       } else if (response?.status > 300) {

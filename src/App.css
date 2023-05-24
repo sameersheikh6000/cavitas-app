@@ -813,6 +813,7 @@ font-size: 1rem !important;
   flex-direction: column;
   font-size: 0.8rem;
   overflow: auto;
+  text-align: center;
 }
 .dashboard__container__content__insuredClient__details__table {
   min-width: 30rem;
@@ -834,6 +835,7 @@ font-size: 1rem !important;
   tr
   td {
   padding: 5px;
+  text-align: center;
   border: 1px solid gray;
 }
 .dashboard__container__content__insuredClient__details__table thead tr th {
@@ -3029,7 +3031,7 @@ font-size: 1rem !important;
 }
 .insuredClientView__container__mysupport__tickets table tbody tr td {
   border: 1px solid gray;
-
+  text-align: center;
   color: black;
   width: 70px;
   height: 50px;

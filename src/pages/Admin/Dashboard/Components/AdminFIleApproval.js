@@ -15,7 +15,7 @@ const AdminFileApproval = () => {
 
 
   const getClientInsurance = async () => {
-    debugger
+    
     const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
       console.log(response)

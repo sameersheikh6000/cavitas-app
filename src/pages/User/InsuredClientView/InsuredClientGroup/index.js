@@ -37,7 +37,7 @@ const InsuredClientGroup = () => {
           </div> */}
           <header className='insuredClientGroup__header'>
             <BusinessCenterOutlinedIcon className='insuredClientGroup__header__icon' />
-            <p>Insured Clients - Group - Rabbit Ltd.</p>
+            <p>{t("Policyinformation.pi_maintitle")}</p>
           </header>
         </>
           :

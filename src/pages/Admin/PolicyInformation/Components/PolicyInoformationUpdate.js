@@ -37,7 +37,7 @@ function PolicyInoformationUpdate({policyInformation, setSuccessMessage, setErro
   }
 
   useEffect(() => {
-    debugger
+    
    setPolicyInformationUpdate(policyInformation);
   }, [])
 

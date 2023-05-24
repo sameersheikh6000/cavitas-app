@@ -35,7 +35,7 @@ const usePolicyInformation = () => {
             if (res.data.status > 300) {
               handleErrors(res);
             }
-            debugger
+            
             return res.data
           })
           return response;
@@ -49,7 +49,7 @@ const usePolicyInformation = () => {
             if (res.data.status > 300) {
               handleErrors(res);
             }
-            debugger
+            
             return res.data
           })
           return response;
@@ -86,7 +86,7 @@ const usePolicyInformation = () => {
     }
 
     const updatePolicyInformation =  async (policyInfo) => {
-        debugger
+        
         const params = {
             policy_information: {
               company_address: policyInfo.company_address,

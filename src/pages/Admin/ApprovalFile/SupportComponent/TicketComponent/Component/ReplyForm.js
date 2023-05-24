@@ -36,7 +36,7 @@ function ReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    debugger;
+    ;
     const response = await createReply(contactReply);
     if (response?.status < 300) {
       setSuccessMessage("Successfully Replied!");

@@ -19,7 +19,7 @@ const AdminPolicyInfor = () => {
   const [successMessage, setSuccessMessage] = useState();
 
   const getPolicyInfo = async () => {
-    debugger
+    
     const response = await getPolicyInformationByAdmin();
     if (response?.status < 300) {
       setPolicyInformation(response?.policy_information)

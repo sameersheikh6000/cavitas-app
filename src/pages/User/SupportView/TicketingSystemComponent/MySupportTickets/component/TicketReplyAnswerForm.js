@@ -51,7 +51,7 @@ function TicketReplyAnswerForm({
 
   const handleSubmit = async () => {
     const response = await createTicketReplyAnswer(ticketReplyAnswer);
-    debugger;
+    ;
     if (response?.status < 300) {
       setSuccessMessage("Answer Submitted!");
       getSupportTicketDetail();

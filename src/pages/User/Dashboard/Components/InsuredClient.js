@@ -25,7 +25,7 @@ const InsuredClient = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const getInsuredClientList = async () => {
-    debugger;
+    debugger
     const response = await getInsuredClients();
     if (response?.status < 300) {
       setInsuredClientsList(response?.insured_clients);
@@ -54,26 +54,26 @@ const InsuredClient = () => {
             {t("Pannel_Dashboard_insuredperson.View")}
           </Button>
         </header>
-        <div className="dashboard__container__content__insuredClient__details">
+        <div className="dashboard__container__content__insuredClient__details" >
           {insuredClientsList.length > 0 ? (
-            <table className="dashboard__container__content__insuredClient__details__table">
-              <thead>
-                <tr>
-                  <th>{t("Employer_Pannel_registration.companyname")}</th>
-
-                  <th>{t("Pannel_Dashboard_insuredperson.Krsnumber")}</th>
-                  <th>{t("Pannel_Dashboard_insuredperson.Riskrenewaldate")}</th>
-                  <th></th>
+            <table className="dashboard__container__content__insuredClient__details__table" >
+              <thead  style={{ textAlign:"center"}}>
+                <tr style={{ textAlign:"center"}}>
+                  <th style={{ textAlign:"center"}}>{t("Employer_Pannel_registration.companyname")}</th>
+                  <th style={{ textAlign:"center"}}>{t("Pannel_Dashboard_insuredperson.Krsnumber")}</th>
+                  <th style={{ textAlign:"center"}}>{t("Pannel_Dashboard_insuredperson.Riskrenewaldate")}</th>
+                  <th style={{ textAlign:"center"}}></th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody style={{ textAlign:"center"}}>
                 {insuredClientsList.map((row, index) => (
-                  <tr key={index}>
-                    <td>{row?.company_name}</td>
-                    <td>{row?.company_krs_number}</td>
-                    <td>{row?.risk_renewal_date}</td>
+                  <tr key={index} style={{ textAlign:"center"}}>
+                    <td style={{ textAlign:"center"}}>{row?.company_name}</td>
+                    <td style={{ textAlign:"center"}}>{row?.company_krs_number}</td>
+                    <td style={{ textAlign:"center"}}>{row?.risk_renewal_date}</td>
                     <td>
                       <Button
+                      style={{ textAlign:"center"}}
                         size="small"
                         onClick={() => navigate("/insuredclient/group")}
                       >

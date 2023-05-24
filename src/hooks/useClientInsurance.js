@@ -29,7 +29,7 @@ const useClientInsurance = () => {
 
 
   const createClientInsurance = async insurance => {
-    debugger
+    
     // let participation_mode ;
     if (insurance.mandatory !== ""){
        insurance.participation_mode = 1
@@ -96,7 +96,7 @@ const useClientInsurance = () => {
       if (res.data.status > 300) {
         handleErrors(res);
       }
-      debugger
+      
       return res.data
     })
     return response;

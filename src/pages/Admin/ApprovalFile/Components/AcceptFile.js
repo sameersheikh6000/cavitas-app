@@ -29,7 +29,7 @@ function AcceptFile({client_id, getClientInsurance}) {
     const handleClose = () => setOpen(false);
     
     const handleUpdate = async (infoID) => {
-        debugger
+        
         const response = await updateClientInsuranceAdmin(infoID)
         if (response?.status > 300 ){
           setErrorMessage(response?.message)

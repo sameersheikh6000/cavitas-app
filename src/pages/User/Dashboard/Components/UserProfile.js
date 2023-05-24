@@ -101,7 +101,7 @@ const UserProfile = () => {
                   : "N/A"}
               </p>
               <p>
-                <b>Email Address:</b>{" "}
+                <b>Email address:</b>{" "}
                 {user?.email ? user?.email : "N/A"}
 
               </p>

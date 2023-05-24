@@ -36,7 +36,7 @@ function InsuredClientReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    debugger;
+    ;
     const response = await createClientReply(clientInfoReply);
     if (response?.status < 300) {
       setSuccessMessage("Successfully Replied!");

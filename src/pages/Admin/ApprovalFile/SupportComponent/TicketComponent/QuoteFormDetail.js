@@ -35,7 +35,7 @@ function QuoteFormDetail() {
   const [statusErrorMessage, setStatusErrorMessage] = useState("");
 
   const getQuoteFormDetail = async () => {
-    debugger;
+    ;
     const response = await getQuoteDetail(id);
     if (response?.status < 300) {
       setQuoteFormDetail(response?.quote_form);
@@ -45,7 +45,7 @@ function QuoteFormDetail() {
   };
 
   const handleQuoteStatusUpdate = async () => {
-    debugger;
+    ;
     const response = await updateQuoteFormStatus(id, quoteStatus);
     if (response?.status < 300) {
       setStatusSuccessMessage("Status Updated Successfully!");

@@ -489,6 +489,10 @@
 },
 
 "Policyinformation":{
+  "noinsured": "Insured Person",
+  "noperson":" No of insured persons",
+  "pi_brokertitle":"Policy info",
+  "pi_maintitle":"INSURED CLIENTS - GROUP INFO",
   "Pi_title":"POLICY INFORMATION",
   "pi_heading":"Group policy info",
   "Riskinceptiondate":"Risk inception date",

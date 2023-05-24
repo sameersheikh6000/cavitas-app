@@ -1,17 +1,15 @@
-
-
-import { Button } from '@mui/material'
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../config/helpers/i18n';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
-import Page from '../../../components/Page/Page';
-import SaveOutlinedIcon from '@mui/icons-material/SaveOutlined';
-import useUsers from '../../../hooks/useUsers';
-import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
+import { Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../config/helpers/i18n";
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { USER_STORAGE_KEY } from "../../../config/helpers/variables";
+import Page from "../../../components/Page/Page";
+import SaveOutlinedIcon from "@mui/icons-material/SaveOutlined";
+import useUsers from "../../../hooks/useUsers";
+import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const UserProfileView = () => {
   const currentUrl = window.location.href;
@@ -19,6 +17,7 @@ const UserProfileView = () => {
   const { t } = useTranslation();
   const current_user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [profile, setProfile] = useState({})
+
   const [errorMessage, setErrorMessage] = useState();
   const [successMessage, setSuccessMessage] = useState("");
   const { getUserByAdmin, updateUser } = useUsers();
@@ -35,10 +34,10 @@ const UserProfileView = () => {
     } else if (response.status > 300) {
       setErrorMessage(response.message);
     }
-  }
+  };
 
   const getUser = async () => {
-    debugger
+    
     const response = await getUserByAdmin(current_user?.data?.id)
     if (response?.status < 300 ) {
       setProfile(response?.user)
@@ -54,31 +53,33 @@ const UserProfileView = () => {
     getUser()
   }, [])
 
+
   return (
     <Page>
-      <SuccessMessage successMessage={successMessage}/>
+      <SuccessMessage successMessage={successMessage} />
       <AlertMessage errorMessage={errorMessage} />
-      <section className='userProfileView'>
-        <div className='userProfileView__top'>
-          <div className='userProfileView_top_left'>
-            < PersonOutlineOutlinedIcon className='userProfileView_topleft_icon' />
+      <section className="userProfileView">
+        <div className="userProfileView__top">
+          <div className="userProfileView__top__left">
+            <PersonOutlineOutlinedIcon className="userProfileView__top__left__icon" />
             <p>{t("Pannel_Dashboard.Userprofile")}</p>
           </div>
-          <div className='userProfileView_top_right'>
-            <Button onClick={(e) => handleSubmit(e)}><SaveOutlinedIcon className='userProfileView_topright_icon' />
+          <div className='userProfileView__top__right'>
+            <Button onClick={(e) => handleSubmit(e)}><SaveOutlinedIcon className='userProfileView__top__right__icon' />
             {t("Pannel_Dashboard_Supporttickets.Save")}
 </Button>
+
           </div>
         </div>
-        <div className='userProfileView__container'>
-          <header className='userProfileView_container_header'>
-            <div className='userProfileView_containerheader_iconBox'>
-              < PersonOutlineOutlinedIcon lassName='userProfileView_containerheadericonBox_icon' />
+        <div className="userProfileView__container">
+          <header className="userProfileView__container__header">
+            <div className="userProfileView__container__header__iconBox">
+              <PersonOutlineOutlinedIcon lassName="userProfileView__container__header__iconBox__icon" />
               <p>{t("Pannel_Dashboard.Userprofile")}</p>
             </div>
           </header>
-          <div className='userProfileView_container_details'>
-            <div className='userProfileView_containerdetails_detailsBox'>
+          <div className='userProfileView__container__details'>
+            <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
                 placeholder={`${t("Pannel_registration.Firstname")}`}
@@ -94,7 +95,7 @@ const UserProfileView = () => {
               </div>
             </div>
             {current_user?.data?.role === "member" ?
-              <div className='userProfileView_containerdetails_detailsBox'>
+              <div className='userProfileView__container__details__detailsBox'>
                 <div><input
                   type="text"
                   placeholder={`${t("Pannel_Dashboard_Userprofile.Peselnumber")}`}
@@ -112,7 +113,7 @@ const UserProfileView = () => {
               </div>
               :
               <>
-                <div className='userProfileView_containerdetails_detailsBox'>
+                <div className='userProfileView__container__details__detailsBox'>
                   <div><input
                     type="text"
                     placeholder='Role in company'
@@ -128,7 +129,7 @@ const UserProfileView = () => {
                   />
                   </div>
                 </div>
-                <div className='userProfileView_containerdetails_detailsBox'>
+                <div className='userProfileView__container__details__detailsBox'>
                   <div><input
                     type="text"
                     placeholder={`${t("Employer_Pannel_registration.companykrsname")}`}
@@ -148,7 +149,7 @@ const UserProfileView = () => {
                 </div>
               </>
             }
-            <div className='userProfileView_containerdetails_detailsBox'>
+            <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
                 value={profile?.phone_number}
@@ -163,18 +164,20 @@ const UserProfileView = () => {
               />
               </div>
             </div>
-            <div className='userProfileView_containerdetails_detailsBox'>
+            <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
                 placeholder={`${t("Pannel_Dashboard_Supporttickets.Password")}`}
                 onChange={(e) => setProfile({ ...profile, password: e.target.value })}
               />
+
               </div>
               <div>
                 <input
                   type="text"
                   placeholder={`${t("Pannel_Dashboard_Supporttickets.Confirmpassword")}`}
                   onChange={(e) => setProfile({ ...profile, confirm_password: e.target.value })}
+
                 />
               </div>
             </div>
@@ -182,7 +185,7 @@ const UserProfileView = () => {
         </div>
       </section>
     </Page>
-  )
-}
+  );
+};
 
-export default UserProfileView
+export default UserProfileView;

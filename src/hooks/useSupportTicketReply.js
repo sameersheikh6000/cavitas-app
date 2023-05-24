@@ -31,7 +31,7 @@ function useSupportTicketReply() {
 
 
     const createReply = async (ticket_reply) => {
-      debugger
+      
       const formData = new FormData()
       for (const property in ticket_reply) {
         formData.append(
@@ -52,7 +52,7 @@ function useSupportTicketReply() {
     }
 
     const createTicketReplyAnswer = async (answer) => {
-      debugger
+      
       const formData = new FormData()
       for (const property in answer) {
         formData.append(

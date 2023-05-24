@@ -25,7 +25,7 @@ const InsuredPersonSupportTicket = () => {
 
   const getClient = async () => {
     const response = await getClientInfoById(id);
-    debugger;
+    ;
     if (response?.status < 300) {
       setClientInfo(response?.client_info);
     } else if (response?.status > 300) {
@@ -201,7 +201,7 @@ const InsuredPersonSupportTicket = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : 'No files'}</p>
+                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : '{t("Replypannel.Noattachemnt")}'}</p>
                 </tbody>
               </div>
             </section>
@@ -218,7 +218,11 @@ const InsuredPersonSupportTicket = () => {
               >
                 <header className="dashboard__container__content__cavitasDocs__header">
                   <div className="dashboard__container__content__cavitasDocs__header__iconBox">
-                    {/* <img src={require("")} alt="" /> */}
+                  <img
+                            style={{ width: "35px", height: "auto" }}
+                            src={require("../../../../../assets/CavitasLogo-img.png")}
+                            alt=""
+                          />
 
                     <p style={{ textTransform: "none" }}>Cavitas</p>
                   </div>

@@ -36,7 +36,7 @@ function QuoteReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    debugger;
+    ;
     const response = await createReply(quoteReply);
     if (response?.status < 300) {
       setSuccessMessage("Successfully Replied!");

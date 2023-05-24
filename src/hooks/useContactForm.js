@@ -29,7 +29,7 @@ function useContactForm() {
 
 
     const createContact = async (contactForm) => {
-      debugger
+      
         const params = {
             contact_form: {
                 first_name: contactForm.first_name,

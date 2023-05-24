@@ -70,7 +70,7 @@ const useQuoteForm = () => {
       }
 
       const getQuoteDetail = async (id) => {
-        debugger
+        
         const response = await axios.get(
           `${API_KEY}/api/v1/quote_forms/${id}`,
           admin ? getAdminHeaders() : getHeaders()

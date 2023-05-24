@@ -18,7 +18,7 @@ const Contactus = () => {
   const [successMessage, setSuccessMessage] = useState("");
 
   const getContactFormData = async () => {
-    debugger;
+    ;
     const response = await getAllContactForms();
     if (response.status < 300) {
       setSubmittedContact(response.contact_forms);

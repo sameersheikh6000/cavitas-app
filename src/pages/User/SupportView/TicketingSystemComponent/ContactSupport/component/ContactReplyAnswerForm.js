@@ -49,7 +49,7 @@ function ContactReplyAnswerForm({
 
   const handleSubmit = async () => {
     const response = await createContactReplyAnswer(contactReplyAnswer);
-    debugger;
+    ;
     if (response?.status < 300) {
       setSuccessMessage("Answer Submitted!");
 
