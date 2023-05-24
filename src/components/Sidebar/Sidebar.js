@@ -47,10 +47,12 @@ const Sidebar = () => {
       }
       navigate(`/${lang == 'pl' ? lang : 'en'}`)
     }
-    
+
   }
 
   return (
+    <>
+    {(window.location.pathname !== '/' && user || admin ) &&
     <section className='sidebar'>
       <header className='sidebar__header'>
         <img className='sidebar__header__logo' src={require('../../assets/CavitasLogo-img.png')} alt="" />
@@ -68,7 +70,7 @@ const Sidebar = () => {
             <></>
             :
             // <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
-                          <Link 
+                          <Link
                           to={`/insuredclient/group/${lang == "pl" ? "pl" : "en"}`}
                           className='sidebar__linkButtons__link'>
 
@@ -83,7 +85,7 @@ const Sidebar = () => {
                 <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
                 <p>{t("Pannel_Dashboard.Insuredclients")}</p>
               </Link>
-              <Link 
+              <Link
                  to={`/cavitasdocs/view/${lang == "pl" ? "pl" : "en"}`}
               className='sidebar__linkButtons__link'>
                 <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
@@ -91,7 +93,7 @@ const Sidebar = () => {
               </Link>
             </>
           }
-          <Link 
+          <Link
           to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
           className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
@@ -106,14 +108,14 @@ const Sidebar = () => {
           <div className='sidebar__linkButtons__buttons'>
             {user?.data?.role === "broker" &&
               <Button onClick={() => navigate(`/uploadclient/${lang == "pl" ? lang : "en"}`)}
-              
+
               ><p>{t("Pannel_Dashboard.Uploadclient")}</p>              </Button>
             }
             {user?.data?.role === "employ" &&
-              <Button 
+              <Button
               style={{width: "105%"}}
               onClick={() => navigate(`/uploadclient/${lang == "pl" ? lang : "en"}`)}>
-                
+
                 {t("Pannel_Dashboard.Uploadnewperson")}</Button>
             }
             {user?.data?.role === "member" &&
@@ -140,7 +142,7 @@ const Sidebar = () => {
             <p>Support Tickets</p>
           </Link>
 
-          
+
 
           <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
             <PolicyIcon className='sidebar__linkButtons__link__icon' />
@@ -153,18 +155,18 @@ const Sidebar = () => {
             <p>Cavitas Documents</p>
           </Link>
 
-         
+
 
           <Link to="/admin/UserInformation/" className='sidebar__linkButtons__link'>
             < GroupsIcon className='sidebar__linkButtons__link__icon' />
             <p>Users</p>
           </Link>
-          
+
           <Link to="/admin/profile/view" className='sidebar__linkButtons__link'>
             <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />
             {/* <p>User profile</p> */}
             <p>Admin Profile</p>
-            
+
           </Link>
           {/* <div className='sidebar__linkButtons__buttons'>
             <Button onClick={() => navigate("/admin/uploadclient")}>Upload new clients</Button>
@@ -173,6 +175,8 @@ const Sidebar = () => {
         </div>
       }
     </section>
+    }
+    </>
   )
 }
 

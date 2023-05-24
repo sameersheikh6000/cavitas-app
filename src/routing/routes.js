@@ -74,32 +74,18 @@ export const routes = [
 
   // user routes
 
-  ...(user ? [
-    {
-      path: "/:lang",
-      component: Dashboard,
-      isPrivate: false,
-    },
 
-    {
-      path: "/",
-      component: Dashboard,
-      isPrivate: false,
-    },
-  ] : [
-    {
-      path: "/:lang",
-      component: LandingPage,
-      isPrivate: false,
-    },
-    {
-      path: "/",
-      component: LandingPage,
-      isPrivate: false,
-    },
-  ]),
-  
-  
+   {
+     path: "/:lang",
+     component: user ? Dashboard : LandingPage,
+     isPrivate: false,
+   },
+
+   {
+     path: "/",
+     component: user ? Dashboard : LandingPage,
+     isPrivate: false,
+   },
 
   {
     path: "/broker/:lang",

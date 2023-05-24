@@ -313,7 +313,7 @@ const UploadClient = () => {
                   <label>{t("Uploadinsuredperson.Question_no4_part2")}</label>
                 </div>
               </div>
-              {user?.data?.role !== 'broker' && 
+              {user?.data?.role !== 'broker' &&
                 <div className='uploadClient__container__body__participation'>
                 <p>{t("Uploadinsuredperson.Question_no5")}</p>
                   <div className='uploadClient__container__body__participation__head'>
@@ -346,10 +346,10 @@ const UploadClient = () => {
                   </div>
                 </div>
                 }
-                {user?.data?.role !== 'broker' && 
+                {user?.data?.role == 'broker' &&
                   setClient({ ...client, referenced_broker_name: `${user?.first_name}`+ ` ` +`${user?.last_name}`, broker_reference: 1})
                 }
-                
+
               <div className='uploadClient__container__body__participation'>
               <p>{t("Uploadinsuredperson.Question_no6")}</p>
 
