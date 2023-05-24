@@ -38,14 +38,17 @@ const Dashboard = () => {
             <Welcome />
             <UserProfile />
             {user?.data?.role === "broker" &&
+                       
               <InsuredClient insuranceList={insuranceList} />
             }
-            {user?.data?.role === "employ" || 'member' &&
+ {user?.data?.role === "broker" ?
+             <></>
+              :
               <GroupPolicyInfo user={user} />
             }
             <Support />
-            {user?.data?.role !== "employ" || 'member' &&
-              <CavitasDocs />
+            {user?.data?.role === "broker" &&
+                          <CavitasDocs />
             }
           </div>
         </div>
