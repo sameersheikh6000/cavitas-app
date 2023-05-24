@@ -75,7 +75,7 @@ function TicketReplyAnswerForm({
         }}
         onClick={() => handleOpen()}
       >
-        {t("Replypannel.Answer")}:
+        {t("Replypannel.Answer")}
       </Button>
       <Modal
         open={open}

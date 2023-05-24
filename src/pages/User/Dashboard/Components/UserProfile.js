@@ -63,22 +63,22 @@ const UserProfile = () => {
               <p>
                 <b>{t("Pannel_Dashboard_Userprofile.Peselnumber")}:</b>{user?.company_pesel_number}
               </p>
-              <p>
+              {/* <p>
                 <b>{t("Pannel_Dashboard_Userprofile.Address")}</b>{" "}
                 {user?.company_address
                   ? user?.company_address
                   : "N/A"}
-              </p>
-            </div>
-            <div className="dashboard__container__content__userProfile__details__detailsBox">
+              </p> */}
+            {/* </div>
+            <div className="dashboard__container__content__userProfile__details__detailsBox"> */}
               <p>
                 <b>Email address: </b>{user?.email}
 
               </p>
-              <p>
+              {/* <p>
                 <b>{t("Pannel_registration.Phonenumber")}:</b>{" "}
                 {user?.phone_number ? user?.phone_number : "N/A"}{" "}
-              </p>
+              </p> */}
             </div>
           </>
         ) : (
