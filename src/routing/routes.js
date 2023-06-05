@@ -461,28 +461,28 @@ export const routes = [
   {
     path: "admin/quotes/:id/QuoteDetail/:lang",
     component: QuoteFormDetail,
-    inPrivate: false
+    isPrivate: false
   },
   // blog
   {
     path: "/Blog1/:lang",
     component: Blog1,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Blog2/:lang",
     component: Blog2,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Blog3/:lang",
     component: Blog3,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Blog/:lang",
     component: Blog,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/admin/signin",
@@ -631,28 +631,28 @@ export const routes = [
   {
     path: "admin/quotes/:id/QuoteDetail",
     component: QuoteFormDetail,
-    inPrivate: false
+    isPrivate: false
   },
   // blog
   {
     path: "/Blog1",
     component: Blog1,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Blog2",
     component: Blog2,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Blog3",
     component: Blog3,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Blog",
     component: Blog,
-    inPrivate: false
+    isPrivate: false
   },
 
   // ForgetPassword
@@ -660,139 +660,144 @@ export const routes = [
   {
     path: "/Add-Mail",
     component: EnterMail,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/AddCode",
     component: AddCode,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/SetPassword",
     component: SetPassword,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/UpdatePassword",
     component: UpdatePassword,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerUpdatePassword",
     component: EmployerUpdatePassword,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerSetPassword",
     component: EmployerSetPassword,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerAddCode",
     component: EmployerAddCode,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerEnterMail",
     component: EmployerEnterMail,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/MemberEnterMail",
     component: MemberEnterMail,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/MemberAddCode",
     component: MemberAddCode,
-    inPrivate: false
+    isPrivate: false
   },
    {
     path: "/MemberSetPassword",
     component: MemberSetPassword,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/MemberUpdatePassword",
     component: MemberUpdatePassword,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Add-Mail/:lang",
     component: EnterMail,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/AddCode/:lang",
     component: AddCode,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/SetPassword/:lang",
     component: SetPassword,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/UpdatePassword/:lang",
     component: UpdatePassword,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerUpdatePassword/:lang",
     component: EmployerUpdatePassword,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerSetPassword/:lang",
     component: EmployerSetPassword,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerAddCode/:lang",
     component: EmployerAddCode,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/EmployerEnterMail/:lang",
     component: EmployerEnterMail,
-    inPrivate: false
+    isPrivate: false
   },
 
   {
     path: "/MemberEnterMail/:lang",
     component: MemberEnterMail,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/MemberAddCode/:lang",
     component: MemberAddCode,
-    inPrivate: false
+    isPrivate: false
   },
    {
     path: "/MemberSetPassword/:lang",
     component: MemberSetPassword,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/MemberUpdatePassword/:lang",
     component: MemberUpdatePassword,
-    inPrivate: false
+    isPrivate: false
   },
   {
     path: "/Privacypolicy/:lang",
     component: PrivacyPolicy,
-    inPrivate: false
+    isPrivate: false
+  },
+  {
+    path: "/reset_password",
+    component: ResetPassword,
+    isPrivate: false
   },
 ]
 
