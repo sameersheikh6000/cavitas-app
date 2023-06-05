@@ -56,8 +56,8 @@ const MemberSignUp = () => {
       <div className='authentication__container'>
 
         <div className='authentication__container__imageBox'>
-          <div className='authentication__container__imageBox__top' onClick={() => navigate("/")}>
-            <img className='authentication__container__imageBox__top__logo' src={require("../../../assets/Signin-logo.png")} alt='' />
+          <div className='authentication__container__imageBox__top' >
+            <img className='authentication__container__imageBox__top__logo' onClick={() => navigate("/")} src={require("../../../assets/Signin-logo.png")} alt='' />
             <img className='authentication__container__imageBox__top__flag' src={require("../../../assets/Signin-flag.png")} alt='' />
           </div>
 
@@ -72,7 +72,7 @@ const MemberSignUp = () => {
             <div>
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Firstname")}`} 
+                placeholder={`${t("Registration.Firstname")}`} 
                 name='first_name'
                 value={user.first_name}
                 onChange={changeHandler}
@@ -80,7 +80,7 @@ const MemberSignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Lastname")}`} 
+                placeholder={`${t("Registration.Lastname")}`} 
                 name='last_name'
                 value={user.last_name}
                 onChange={changeHandler}
@@ -88,7 +88,7 @@ const MemberSignUp = () => {
               />
               <input
                 type="email"
-                placeholder='Email address *'
+                placeholder='Email address'
                 name='email'
                 value={user.email}
                 onChange={changeHandler}
@@ -97,7 +97,7 @@ const MemberSignUp = () => {
               
               <input
                 type="text"
-                placeholder='PESEL Number *'
+                placeholder='PESEL Number'
                 name='company_pasel_number'
                 value={user.company_pesel_number}
                 onChange={(e) => setUser({ ...user, company_pesel_number: e.target.value})}
@@ -108,7 +108,7 @@ const MemberSignUp = () => {
             <div>
               <input
                 type="password"
-                placeholder={`${t("Pannel_registration.setpassword")}`}               
+                placeholder={`${t("Registration.setpassword")}`}               
                 name='password'
                 value={user.password}
                 onChange={changeHandler}
@@ -116,7 +116,7 @@ const MemberSignUp = () => {
               />
               <input
                 type="password"
-                placeholder={`${t("Pannel_registration.repeatpassword")}`}               
+                placeholder={`${t("Registration.repeatpassword")}`}               
                 name='password_confirmation'
                 value={user.password_confirmation}
                 onChange={changeHandler}

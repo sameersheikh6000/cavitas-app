@@ -3,9 +3,9 @@
     "faq": "FAQ",
     "claims": "Claims",
     "aboutUs": "About Us",
-    "memberLogin": "Member Login",
-    "brokerLogin": "Broker Login",
-    "employLogin": "Employ Login",
+    "memberLogin": "Member Log In",
+    "brokerLogin": "Broker Log In",
+    "employLogin": "Employer Log In",
     "language": "Language",
     "english": "English",
     "polish": "Polish",
@@ -270,6 +270,13 @@
   "Rolecompany":"Role in company",
   "setpassword":"Set your password*",
   "repeatpassword":"Repeat your password*"
+},
+"Registration":{
+  "Firstname":"First name",
+  "Lastname":"Last name",
+  "Phonenumber":"Phone number",
+  "setpassword":"Set your password",
+  "repeatpassword":"Repeat your password"
 }
 ,
 "Employer_Pannel_registration":
@@ -433,7 +440,7 @@
  "claim":{
   "claim_title":"Welcome to the dental claims portal",
   "claim_heading_part1":"If you already registered on this portal, simply login with your",
-  "claim_heading_part2":"email address",
+  "claim_heading_part2":"Email address",
   "claim_heading_part3":"and your",
   "claim_heading_part4":"   password. Please note that you must belong to an existing dental insurance Plan in order to login.",
   "claim_logindetail":"Login Details",

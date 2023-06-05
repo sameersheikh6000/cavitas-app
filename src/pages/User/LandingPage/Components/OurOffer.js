@@ -113,7 +113,9 @@ const OurOffer = () => {
                 src={require("../../../../assets/OfferTick-image.png")}
                 alt=""
               />
-              <span className="landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc">
+              <span className="landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc"
+              style={{fontSize:"14px"}}
+              >
                 {t("home.value_employer1")}
               </span>
             </div>
@@ -166,8 +168,8 @@ const OurOffer = () => {
             style={{ border: "none" }}
           >
             <Button onClick={() => handleComposeEmail()}>
-              Suggest To Your Employer
-            </Button>
+            {t("Broker.suggest")}
+                        </Button>
           </div>
 
           <div

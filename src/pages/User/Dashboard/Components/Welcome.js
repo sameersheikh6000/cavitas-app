@@ -40,6 +40,7 @@ const Welcome = () => {
         <br />
         {t("Pannel_Dashboard_Dashboard.Heading_Part6")}
       </p>
+      
       {/* <p className='dashboard__container__content__welcomePage__support'>Need some help? Let's Chat.</p>
       <p className='dashboard__container__content__welcomePage__contact'>XXXXXXX &nbsp; | &nbsp;  support@cavitas.eu</p>
      */}

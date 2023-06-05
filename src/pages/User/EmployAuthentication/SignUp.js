@@ -61,8 +61,8 @@ const EmploySignUp = () => {
       <div className='authentication__container'>
 
         <div className='authentication__container__imageBox'>
-          <div className='authentication__container__imageBox__top' onClick={() => navigate("/")}>
-            <img className='authentication__container__imageBox__top__logo' src={require("../../../assets/Signin-logo.png")} alt='' />
+          <div className='authentication__container__imageBox__top' >
+            <img className='authentication__container__imageBox__top__logo' onClick={() => navigate("/")} src={require("../../../assets/Signin-logo.png")} alt='' />
             <img className='authentication__container__imageBox__top__flag' src={require("../../../assets/Signin-flag.png")} alt='' />
           </div>
 
@@ -77,7 +77,7 @@ const EmploySignUp = () => {
             <div>
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Firstname")}`} 
+                placeholder={`${t("Registration.Firstname")}`} 
                 name='first_name'
                 value={user.first_name}
                 onChange={changeHandler}
@@ -85,7 +85,7 @@ const EmploySignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Lastname")}`} 
+                placeholder={`${t("Registration.Lastname")}`} 
                 name='last_name'
                 value={user.last_name}
                 onChange={changeHandler}
@@ -93,7 +93,7 @@ const EmploySignUp = () => {
               />
               <input
                 type="email"
-                placeholder='Email address *'
+                placeholder='Email address'
                 name='email'
                 value={user.email}
                 onChange={changeHandler}
@@ -101,7 +101,7 @@ const EmploySignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Phonenumber")}`} 
+                placeholder={`${t("Registration.Phonenumber")}`} 
                 name='phone_number'
                 value={user.phone_number}
                 onChange={changeHandler}
@@ -133,14 +133,14 @@ const EmploySignUp = () => {
                 onChange={changeHandler}
                 required={true}
               />
-              {/* <input
+              <input
                 type="text"
                 placeholder={`${t("Pannel_registration.Rolecompany")}`}               
                 name='role'
                 value={user.role}
                 onChange={changeHandler}
                 required={true}
-              /> */}
+              />
               <input
                 type="text"
                 placeholder={`${t("Employer_Pannel_registration.Mandatebroker")}`}               
@@ -153,7 +153,7 @@ const EmploySignUp = () => {
             <div>
               <input
                 type="password"
-                placeholder={`${t("Pannel_registration.setpassword")}`}               
+                placeholder={`${t("Registration.setpassword")}`}               
                 name='password'
                 value={user.password}
                 onChange={changeHandler}
@@ -161,7 +161,7 @@ const EmploySignUp = () => {
               />
               <input
                 type="password"
-                placeholder={`${t("Pannel_registration.repeatpassword")}`}               
+                placeholder={`${t("Registration.repeatpassword")}`}               
                 name='password_confirmation'
                 value={user.password_confirmation}
                 onChange={changeHandler}

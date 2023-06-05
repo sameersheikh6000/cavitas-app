@@ -61,7 +61,7 @@ const Footer = () => {
                   <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? lang : "en"}`}>
                   {t("nav.claims")}
                   </Link>
-            <Link to="#">{t("nav.PrivacyPolicy")}</Link>
+            <Link to={`/Privacypolicy/${lang == "pl" ? "pl" : "en"}`}>{t("nav.PrivacyPolicy")}</Link>
             <Link to="#">{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">

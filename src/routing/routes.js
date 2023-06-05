@@ -66,7 +66,7 @@ import MemberAddCode from "../pages/User/MemberAuthentication/MemberForgetPasswo
 import ResetPassword from "../pages/ResetPassword";
 import { USER_STORAGE_KEY } from "../config/helpers/variables";
 import InsuredPersonDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/InsuredPersonDetail";
-
+import PrivacyPolicy from "../pages/User/Privacypolicy/index";
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
 
@@ -247,7 +247,7 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/faq",
+    path: "/faq/:lang",
     component: FAQ,
     isPrivate: false,
   },
@@ -787,6 +787,11 @@ export const routes = [
   {
     path: "/MemberUpdatePassword/:lang",
     component: MemberUpdatePassword,
+    inPrivate: false
+  },
+  {
+    path: "/Privacypolicy/:lang",
+    component: PrivacyPolicy,
     inPrivate: false
   },
 ]

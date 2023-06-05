@@ -348,7 +348,7 @@ body Button {
   padding: 1rem 2rem;
 }
 .authentication__container__imageBox__top__logo {
-  width: 40%;
+  width: 30%;
   object-fit: cover;
 }
 .authentication__container__imageBox__top__flag {
@@ -1501,7 +1501,7 @@ font-size: 1rem !important;
   width: 15px;
 }
 .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc {
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
 }
 .landingPage__ourOffer__container__boxes__detailsContainer BUtton {
   text-transform: none;
@@ -2567,15 +2567,14 @@ font-size: 1rem !important;
   overflow-x: auto;
 }
 .faq__tabs__tabsLabel {
-  font-weight: bold !important;
+  font-weight: bolder !important;
   font-family: "poppins" !important;
   text-transform: capitalize !important;
-  color: gray !important;
+  color: gray;
 }
 
 .css-heg063-MuiTabs-flexContainer {
-  background-color: #f1f1f0 !important;
-  border-top: 1px solid lightgray;
+  background-color: #fff ;
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
@@ -2583,7 +2582,7 @@ font-size: 1rem !important;
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  background-color: #dd3333 !important;
+  background-color: #dd3333;
 }
 
 .faqTab {
@@ -2614,7 +2613,7 @@ font-size: 1rem !important;
 }
 .faqTab__container__box__arrowDown {
   color: #dd3333 !important;
-  font-size: 1.2rem !important;
+  font-size: 2rem !important;
 }
 .faqTab__container__box2 {
   display: flex;

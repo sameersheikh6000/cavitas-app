@@ -49,11 +49,11 @@ const UserProfile = () => {
       <div className="dashboard__container__content__userProfile__details">
         <div className="dashboard__container__content__userProfile__details__detailsBox">
           <p>
-            <b>{t("Pannel_registration.Firstname")}:</b>{" "}
+            <b>{t("Registration.Firstname")}:</b>{" "}
             {user?.first_name ? user?.first_name : "NiL"}
           </p>
           <p>
-            <b>{t("Pannel_registration.Lastname")}:</b>{" "}
+            <b>{t("Registration.Lastname")}:</b>{" "}
             {user?.last_name ? user?.last_name : "NiL"}
           </p>
         </div>
@@ -108,7 +108,7 @@ const UserProfile = () => {
             </div>
             <div className="dashboard__container__content__userProfile__details__detailsBox">
               <p>
-                <b>{t("Pannel_registration.Phonenumber")}:</b>{" "}
+                <b>{t("Registration.Phonenumber")}:</b>{" "}
                 {user?.phone_number ? user?.phone_number : "N/A"}
               </p>
               <p>

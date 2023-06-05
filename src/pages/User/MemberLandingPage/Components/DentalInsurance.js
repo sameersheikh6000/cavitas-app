@@ -20,7 +20,7 @@ const DentalInsurance = () => {
     <section className='landingPage__dentaltInsurance'>
       <div className='landingPage__dentaltInsurance__container'>
         <div className='landingPage__dentaltInsurance__container__details'>
-        <h1 className='landingPage__smartInsurance__container__details__heading'>{t("Member.Member_landingPage_title1")}</h1>
+        <h1 className='landingPage__smartInsurance__container__details__heading'>{t("Pannel_Dashboard_Dashboard.Heading_Part6")}</h1>
           <h1 className='landingPage__smartInsurance__container__details__heading2'>{t("Member.Member_landingPage_title2")}</h1>
                    <p className='landingPage__dentaltInsurance__container__details__desc'>
                    {t("Member.Member_landingPage_heading")}          </p>
@@ -29,7 +29,7 @@ const DentalInsurance = () => {
               <Button variant='outlined'>{t("Member.Member_landingPage_btn1")}</Button>
             </Link>
             <Link to={`/claims/${lang == "pl" ? "pl" : "en"}`}>
-              <Button variant='outlined'>{t("Member.Member_landingPage_title2")}</Button>
+              <Button variant='outlined'>{t("Pannel_Dashboard.submitaclaim")}</Button>
             </Link>
           </div>
         </div>

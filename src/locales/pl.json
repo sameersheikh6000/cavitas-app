@@ -279,6 +279,14 @@
 
 }
 ,
+"Registration":{
+  "Firstname":"Imię",
+  "Lastname":"Nazwisko",
+  "Phonenumber":"Telefon",
+  "setpassword":"Utwórz hasło",
+  "repeatpassword":"Powtórz hasło"
+}
+,
 "Employer_Pannel_registration":
 {
   "companyname":"Nazwa firmy*",
