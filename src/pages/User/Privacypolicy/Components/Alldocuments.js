@@ -66,34 +66,33 @@ export default function Alldocuments() {
           value={value}
           onChange={handleChange}
           TabIndicatorProps={{ style: { background: "#DD3333" } }}
-          style={{ backgroundColor: "yellow" }}
           aria-label="basic tabs example"
           // textColor='black'
         >
             <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold" }}
+            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
             label="Privacy Policy"
             {...a11yProps(0)}
           />
           
            <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold" }}
+            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold",color:"black" }}
             label="Cookie policy"
 
             {...a11yProps(1)}
           />
             <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold" }}
+            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold" , color:"black" }}
             label="Complaint resolution"
             {...a11yProps(2)}
           />
          
           <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold" }}
+            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
             label="Broker agreement"
             {...a11yProps(3)}
           />
