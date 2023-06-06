@@ -16,8 +16,7 @@ function ContactCavitas() {
   const [errorMessage, setErrorMessage] = useState('');
   const [open, setOpen] = useState(false);
   const [contactForm, setContactForm] = useState({
-        first_name: "",
-        last_name: "",
+        full_name: "",
         email: "",
         details: "",
         identity: "",
@@ -99,15 +98,10 @@ function ContactCavitas() {
                     <input
                     type="text"
                     placeholder={`${t("get24contactform.firstandlastname")}`}
-                    onChange={(e) => setContactForm({...contactForm, first_name: e.target.value})}
+                    onChange={(e) => setContactForm({...contactForm, full_name: e.target.value})}
                     />
                   </div>
                   <div>
-                    {/* <input
-                    type="text"
-                    placeholder="Last name"
-                    onChange={(e) => setContactForm({...contactForm, last_name: e.target.value})}/>
-                     */}
                      <input
                     type="text"
                     placeholder="Email"

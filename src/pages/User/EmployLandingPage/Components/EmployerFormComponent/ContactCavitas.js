@@ -4,30 +4,24 @@ import i18n from '../../../../../config/helpers/i18n';
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import useContactForm from "../../../../../hooks/useContactForm";
+import useClientInsurance from '../../../../../hooks/useClientInsurance';
 
 function ContactCavitas() {
     
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
-  const { createContact } = useContactForm()
+  const { forSupportForms } = useClientInsurance();
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [open, setOpen] = useState(false);
   const [contactForm, setContactForm] = useState({
-        first_name: "",
-        last_name: "",
+        full_name: "",
         email: "",
-        description: "",
+        details: "",
         identity: "",
-        request: ""
+        request: "",
+        status: 3
       });
   const style = {
     position: "absolute",
@@ -47,7 +41,7 @@ function ContactCavitas() {
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-  const response = await createContact(contactForm)
+  const response = await forSupportForms(contactForm)
   if (response.status < 300) {
     setMessage(t("get24contactform.setmessage"))
     setTimeout(() => {
@@ -60,6 +54,12 @@ function ContactCavitas() {
     setErrorMessage(response.message);
   }
 }
+
+useEffect(() => {
+  const currentUrl = window.location.href;
+  let lang = currentUrl.split("/").pop();
+  lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+}, [])
 
   return (
     <div>
@@ -97,7 +97,7 @@ function ContactCavitas() {
                     <input 
                     type="text" 
                     placeholder={`${t("get24contactform.firstandlastname")}`} 
-                    onChange={(e) => setContactForm({...contactForm, first_name: e.target.value})}
+                    onChange={(e) => setContactForm({...contactForm, full_name: e.target.value})}
                     />
                   </div>
                   <div>
@@ -143,7 +143,7 @@ function ContactCavitas() {
                       placeholder={`${t("contactform.texthere")}`} 
                       cols={10}
                       rows={5}
-                      onChange={(e) => setContactForm({...contactForm, description: e.target.value})}
+                      onChange={(e) => setContactForm({...contactForm, details: e.target.value})}
                     ></textarea>
                   </div>
                 </div>
