@@ -219,8 +219,28 @@ const useClientInsurance = () => {
     return response;
   }
 
+  const createNewTicket = async info => {
+    debugger
+    const formData = new FormData()
+    for (const property in info) {
+      formData.append(
+        property, info[property]
+      )
+    }
+    const response = await axios.post(
+      `${API_KEY}/api/v1/client_infos/support_ticket`, formData,
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  }
+
   return {
-    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket
   };
 };
 export default useClientInsurance;

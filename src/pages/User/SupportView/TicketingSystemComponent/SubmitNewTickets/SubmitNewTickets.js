@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 import i18n from '../../../../../config/helpers/i18n';
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import { Link, Route, Routes, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
 import Stack from "@mui/material/Stack";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import useTickets from "../../../../../hooks/useTickets";
+import useClientInsurance from "../../../../../hooks/useClientInsurance";
 import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
 import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
 
@@ -15,20 +15,15 @@ function SubmitNewTickets() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, []);
-  const {createTicket} = useTickets();
+  const { createNewTicket } = useClientInsurance();
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [ticket, setTicket] = useState({
     request: "",
-    description: "",
-    attachment: ""
+    details: "",
+    file: "",
+    status: 3
   })
 
   const style = {
@@ -44,13 +39,12 @@ function SubmitNewTickets() {
   };
 
   const handleSubmit = async () => {
-    const response = await createTicket(ticket)
+    const response = await createNewTicket(ticket)
     if(response?.status < 300){
       // setSuccessMessage("Submited Successfully!")
       setSuccessMessage(t("Pannel_Dashboard_Supporttickets.message"))
-
       setTicket({
-        ...ticket, description: "", request: "", attachment: ""
+        ...ticket, details: "", request: "", file: ""
       })
       setTimeout(() => {
         setSuccessMessage('');
@@ -66,6 +60,12 @@ function SubmitNewTickets() {
     }
   }
 
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
+
   return (
     <Page>
       <AlertMessage errorMessage={errorMessage}/>
@@ -77,7 +77,7 @@ function SubmitNewTickets() {
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
         </header>
-     
+
         <br />
         <header className="insuredClientView__header">
           <Stack direction="row" spacing={2}>
@@ -130,8 +130,8 @@ function SubmitNewTickets() {
                     <textarea
                       style={{ marginLeft: "20px" }}
                       className="textarea"
-                      placeholder={`${t("contactform.texthere")}`} 
-                      onChange={(e) => setTicket({...ticket, description: e.target.value})}
+                      placeholder={`${t("contactform.texthere")}`}
+                      onChange={(e) => setTicket({...ticket, details: e.target.value})}
                       cols={10}
                       rows={5}
                     ></textarea>
@@ -142,7 +142,7 @@ function SubmitNewTickets() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div style={{ marginLeft: "20px" }}>
                     <label style={{ marginLeft: "20px" }}>  {t("MysupportTickets.attachement")}</label>
-                    <input className="textarea" type="file" onChange={(e) => setTicket({ ...ticket, attachment: e.target.files[0] })}></input>
+                    <input className="textarea" type="file" onChange={(e) => setTicket({ ...ticket, file: e.target.files[0] })}></input>
                   </div>
                 </div>
               </div>
