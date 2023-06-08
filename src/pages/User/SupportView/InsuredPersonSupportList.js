@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../../../config/helpers/i18n';
+import i18n from '../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import Stack from "@mui/material/Stack";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import Page from "../../../../../components/Page/Page";
-import useClientInsurance from '../../../../../hooks/useClientInsurance';
-import AlertMessage from '../../../../../components/SnackbarMessages/AlertMessage';
+import Page from "../../../components/Page/Page";
+import useClientInsurance from '../../../hooks/useClientInsurance';
+import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 
 function InsuredPersonSupportList() {
   const { getAllClientInsurance } = useClientInsurance();
@@ -44,13 +42,9 @@ function InsuredPersonSupportList() {
               <EmailOutlinedIcon className="supportView__header__iconBox__icon" />
               <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
             </div>
-            {/* <div className="insuredClientView__header__right">
-              <input type="text" placeholder="Search" />
-              <SearchOutlinedIcon className="insuredClientView__header__right__icon" />
-            </div> */}
             <div className="insuredClientView__header__right">
               <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
-                
+
                 <Button
                   color="error"
                   variant="outlined"
@@ -68,55 +62,11 @@ function InsuredPersonSupportList() {
               </Link>
             </div>
           </header>
-          <header>
-            <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
-              <div>
-              <Link  to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
-                >
-                  <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                  {t("MysupportTickets.Mysupportticket")}
-                  </Button>
-                </Link>
-              </div>
-              <div>
-              <Link to={`/ContactSupportList/${lang == "pl" ? "pl" : "en"}`}
-                >
-                <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                {t("MysupportTickets.contactsupport")}
-                  </Button>
-                </Link>
-              </div>
-              <div>
-              <Link to={`/QuoteSupportList/${lang == "pl" ? "pl" : "en"}`}
-              
-              >
-                  <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-                  {t("MysupportTickets.quotesupport")}
-                  </Button>
-                </Link>
-              </div>
-              <div>
-              <Link to={`/InsuredPersonSupportList/${lang == "pl" ? "pl" : "en"}`}
-                >
-                <Button
-                    style={{ background: "#5C8894" }}
-                    className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
-                  >                   
-                  {t("MysupportTickets.insuredpersonsupport")}
-                  </Button>
-                </Link>
-              </div>
-            </Stack>
-            {/* <div className="insuredClientView__header__right">
-          <input type="text" placeholder="Search" />
-          <SearchOutlinedIcon className="insuredClientView__header__right__icon" />
-        </div> */}
-          </header>
           <div>
             <div className="insuredClientView__container__mysupport__tickets">
               <table>
                 <thead>
-                  
+
                   <tr>
                   <th>{t("contactsupport.ticketnumber")}</th>
                   <th>{t("MysupportTickets.topic")}</th>
@@ -133,7 +83,7 @@ function InsuredPersonSupportList() {
                         <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang == 'pl' ? lang : 'en'}`}>{row?.id}</Link>
                       </td>
                       <td>{row?.details}</td>
-                      <td>{row?.status}</td>
+                      <td>{(row?.status && row?.status === 'fresh') ? 'NEW' : row?.status.toUpperCase()}</td>
                       <td>{row?.updated_at}</td>
                     </tr>
                     ))

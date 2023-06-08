@@ -141,34 +141,7 @@ const useUsers = () => {
       return res.data
     })
     return response;
-  };
-
-
-  // const createAdminUser = async user => {
-  //   const params = {
-  //     user: {
-  //       // first_name: user.first_name,
-  //       // last_name: user.last_name,
-  //       email: user.email,
-  //       password: user.password,
-  //       role: 0,
-  //       password_confirmation: user.password_confirmation,
-  //     }
-  //   }
-  //   const response = await axios.post(
-  //     `${API_KEY}/users`,
-  //     {
-  //       ...params
-  //     },
-  //     getAdminHeaders()
-  //   ).then((res) => {
-  //     if (res.status > 300) {
-  //       handleErrors(res);
-  //     }
-  //     return res.data
-  //   })
-  //   return response;
-  // };
+  };  
 
   const getAllAdminUsers = async () => {
     const response = await axios.get(
@@ -239,16 +212,18 @@ const useUsers = () => {
   };
 
   const deleteUserByAdmin = async id => {
-    const response = await axios.delete(
-      `${API_KEY}/api/v1/manage_users/${id}`,
-      getAdminHeaders()
-    ).then((res) => {
-      if (res.data.status > 300) {
-        handleErrors(res);
-      }
-      return res.data
-    })
-    return response;
+    if(id !== undefined) {
+      const response = await axios.delete(
+        `${API_KEY}/api/v1/manage_users/${id}`,
+        getAdminHeaders()
+      ).then((res) => {
+        if (res.data.status > 300) {
+          handleErrors(res);
+        }
+        return res.data
+      })
+      return response;
+    }
   };
 
   const updateUserByAdmin = async (user) => {
@@ -267,33 +242,37 @@ const useUsers = () => {
         password_confirmation: user.password_confirmation,
       }
     }
+    if (user.id !== undefined ) {
+      const response = await axios.put(
+        `${API_KEY}/api/v1/manage_users/${user.id}`,
+        {
+          ...params
+        },
+        getAdminHeaders(),
+        ).then((res) => {
+          
+          if (res.data.status > 300) {
+            handleErrors(res);
+          }
+          return res.data
+        })
+        return response;
+    }
+  }
 
-    const response = await axios.put(
-      `${API_KEY}/api/v1/manage_users/${user.id}`,
-      {
-        ...params
-      },
-      getAdminHeaders(),
-      ).then((res) => {
-        
+  const getUserByAdmin = async (id) => {
+    debugger
+    if(id !== undefined){
+        const response = await axios.get(`${API_KEY}/api/v1/manage_users/${id}`,
+        admin ? getAdminHeaders() : getHeaders()
+        ).then((res) => {
         if (res.data.status > 300) {
           handleErrors(res);
         }
         return res.data
       })
       return response;
-  }
-
-  const getUserByAdmin = async (id) => {
-    const response = await axios.get(`${API_KEY}/api/v1/manage_users/${id}`,
-    admin ? getAdminHeaders() : getHeaders()
-  ).then((res) => {
-    if (res.data.status > 300) {
-      handleErrors(res);
     }
-    return res.data
-  })
-  return response;
   }
 
   return {

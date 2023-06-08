@@ -9,12 +9,6 @@ const ResetPassword = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
   const navigate = useNavigate();
   const { resetPassword } = useForgotPassword();
   const [errorMessage, setErrorMessage] = useState("");
@@ -27,6 +21,7 @@ const ResetPassword = () => {
   });
 
   const handleSubmit = async (event) => {
+    debugger
     event.preventDefault();
     if (credential?.password == credential?.passwordConfirmation) {
       const response = await resetPassword(credential);
@@ -40,6 +35,12 @@ const ResetPassword = () => {
       setErrorMessage("Please Check If Both Passwords Are Correct");
     }
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   return (
     <section className="authentication">
@@ -211,7 +212,8 @@ const ResetPassword = () => {
               </div>
               <Button
                 style={{ borderRadius: "50px", margin: "1rem 10rem" }}
-                type="secondary"
+                type="submit"
+                onClick={(e) => handleSubmit(e)}
                 className="authentication__container__formContainer__form__forget__loginButton__update"
               >
                 Update password

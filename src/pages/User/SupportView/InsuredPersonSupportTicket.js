@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import i18n from '../../../../../config/helpers/i18n';
+import i18n from '../../../config/helpers/i18n';
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
-import Page from "../../../../../components/Page/Page";
+import Page from "../../../components/Page/Page";
 import Table from "@mui/material/Table";
 import TableCell from "@mui/material/TableCell";
 import TableHead from "@mui/material/TableHead";
@@ -11,10 +11,9 @@ import TableRow from "@mui/material/TableRow";
 import Stack from "@mui/material/Stack";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import useClientInsurance from "../../../../../hooks/useClientInsurance";
-import ClientInfoReplyAnswerForm from "./component/ClientInfoReplyAnswerForm";
-import { API_KEY } from "../../../../../config/helpers/variables";
+import useClientInsurance from "../../../hooks/useClientInsurance";
+import ClientInfoReplyAnswerForm from "./TicketingSystemComponent/InsuredSupport/component/ClientInfoReplyAnswerForm";
+import { API_KEY } from "../../../config/helpers/variables";
 
 const InsuredPersonSupportTicket = () => {
   const { id } = useParams();
@@ -33,7 +32,7 @@ const InsuredPersonSupportTicket = () => {
     }
   };
 
-  
+
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -50,12 +49,12 @@ const InsuredPersonSupportTicket = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>{t("Replypannel.insuredticket")}</p>  
+            <p>{t("Replypannel.insuredticket")}</p>
           </div>
           <div className="insuredClientView__header__right">
-            <Link 
+            <Link
             to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
-            
+
             style={{ textDecoration: "none" }}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
               {t("MysupportTickets.Submitnewticket")}
@@ -88,7 +87,7 @@ const InsuredPersonSupportTicket = () => {
               </Button>
             </Link>
           </div>
-          
+
         </header>
         <br /> <br />
         <Stack direction="row" spacing={7}>
@@ -139,7 +138,7 @@ const InsuredPersonSupportTicket = () => {
                   </TableCell>
                   <TableCell>
                     {clientInfo?.created_at}
-                    
+
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -152,7 +151,7 @@ const InsuredPersonSupportTicket = () => {
                   </TableCell>
                   <TableCell>
                     {clientInfo?.updated_at}
-                    
+
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -160,7 +159,7 @@ const InsuredPersonSupportTicket = () => {
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  
+
                 </TableRow>
               </TableHead>
             </Table>
@@ -201,7 +200,7 @@ const InsuredPersonSupportTicket = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : '{t("Replypannel.Noattachemnt")}'}</p>
+                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</p>
                 </tbody>
               </div>
             </section>
@@ -220,7 +219,7 @@ const InsuredPersonSupportTicket = () => {
                   <div className="dashboard__container__content__cavitasDocs__header__iconBox">
                   <img
                             style={{ width: "35px", height: "auto" }}
-                            src={require("../../../../../assets/CavitasLogo-img.png")}
+                            src={require("../../../assets/CavitasLogo-img.png")}
                             alt=""
                           />
 
@@ -300,24 +299,16 @@ const InsuredPersonSupportTicket = () => {
                 </div>
               </section>
               :
-              (index === (clientInfo?.replies?.length - 1) && !row?.answer) && 
+              (index === (clientInfo?.replies?.length - 1) && !row?.answer) &&
                 <ClientInfoReplyAnswerForm client_info_reply={row} setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} getClientInfoData={getClient}/>
-              
+
               }
               </>
 
             ))
-             
-            }
 
-
-
-
-
-
-
-
-            <br />
+          }
+          <br />
           </div>
         </Stack>
       </section>

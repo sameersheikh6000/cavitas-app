@@ -1,15 +1,11 @@
-import { Button } from '@mui/material'
 import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
 import GroupsIcon from '@mui/icons-material/Groups';
 import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
-import useClientInsurance from '../../../hooks/useClientInsurance';
 import useUsers from '../../../hooks/useUsers';
 import DeleteUserConfirmModal from './Components/DeleteUserConfirmModal';
 import UpdateUserModal from './Components/UpdateUserModal';
-
 
 const UserInformation = () => {
 
@@ -19,10 +15,10 @@ const UserInformation = () => {
   const [users, setUsers] = useState([])
 
   const now = new Date();
-    const year = now.getFullYear();
-    const month = String(now.getMonth() + 1).padStart(2, '0');
-    const day = String(now.getDate()).padStart(2, '0');
-    const today = `${year}-${month}-${day}`;
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const today = `${year}-${month}-${day}`;
 
   const getUsersList = async () => {
     const response = await getAllUsers()
@@ -77,7 +73,7 @@ const UserInformation = () => {
                 <td>{row?.company_krs_number}</td>                
                 <td>{row?.role}</td>
                 <td style={{display: "flex"}}>
-                <UpdateUserModal user_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getUsersList={getUsersList} usersList={users}/>
+                <UpdateUserModal user_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getUsersList={getUsersList} />
                 <DeleteUserConfirmModal user_id={row?.id} getUsersList={getUsersList} setErrorMessage={setErrorMessage} deleteUserByAdmin={deleteUserByAdmin}/>
                 </td>
               </tr>

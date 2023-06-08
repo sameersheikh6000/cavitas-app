@@ -4,33 +4,28 @@ import i18n from '../../../../config/helpers/i18n';
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import useQuoteForm from '../../../../hooks/useQuoteForm';
+import useClientInsurance from "../../../../hooks/useClientInsurance";
 
 function GetQuoteCavitas() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
   const [dateType, setDateType] = useState();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
-  const { createQuote } = useQuoteForm();
+  const { forSupportForms } = useClientInsurance();
   const [message, setMessage] = useState('')
   const [errorMessage, setErrorMessage] = useState('')
   const [open, setOpen] = useState(false);
 
   const [formData, setFormData] = useState({
-        name: "",
+        full_name: "",
         email: "",
         identity: "",
-        companyName: "",
-        groupName: "",
-        numberOfEmploy: "",
-        inceptionDate: "",
-        description: "",
+        company_name: "",
+        group_name: "",
+        number_of_employees_in_company: "",
+        inception_date: "",
+        details: "",
+        status: 3
       });
 
   const style = {
@@ -49,7 +44,7 @@ function GetQuoteCavitas() {
   const handleClose = () => setOpen(false);
 
   const submitQuoteForm = async () => {
-    const response = await createQuote(formData);
+    const response = await forSupportForms(formData);
     if (response.status < 300) {
       setMessage(t("get24contactform.setmessage"))
       setTimeout(() => {
@@ -61,6 +56,12 @@ function GetQuoteCavitas() {
       setErrorMessage(response.message);
     }
   }
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, [])
 
   return (
     <div>
@@ -100,7 +101,7 @@ function GetQuoteCavitas() {
                     <input 
                       type="text" 
                       placeholder={`${t("get24contactform.firstandlastname")}`} 
-                      onChange={(e) => setFormData({...formData, name: e.target.value})}
+                      onChange={(e) => setFormData({...formData, full_name: e.target.value})}
                       />
                   </div>
                   <div>
@@ -127,7 +128,7 @@ function GetQuoteCavitas() {
                     <input 
                       type="text" 
                       placeholder={`${t("get24contactform.companyname")}`} 
-                      onChange={(e) => setFormData({...formData, companyName: e.target.value})}
+                      onChange={(e) => setFormData({...formData, company_name: e.target.value})}
                       />
                   </div>
                 </div>
@@ -136,14 +137,14 @@ function GetQuoteCavitas() {
                     <input
                       type="text"
                       placeholder={`${t("get24contactform.nameofgroup")}`} 
-                      onChange={(e) => setFormData({...formData, groupName: e.target.value})}
+                      onChange={(e) => setFormData({...formData, group_name: e.target.value})}
                     />
                   </div>
                   <div>
                     <input
                       type="number"
                       placeholder={`${t("get24contactform.totalnumber")}`} 
-                      onChange={(e) => setFormData({ ...formData, numberOfEmploy: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, number_of_employees_in_company: e.target.value})}
                     />
                   </div>
                   <div style={{ marginTop: "8px" }}>
@@ -153,7 +154,7 @@ function GetQuoteCavitas() {
                       placeholder={`${t("get24contactform.date")}`} 
                       onBlur={() => setDateType('text')}
                       onFocus={() => setDateType('date')}
-                      onChange={(e) => setFormData({ ...formData, inceptionDate: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, inception_date: e.target.value})}
                     />
                   </div>
                 </div>
@@ -168,7 +169,7 @@ function GetQuoteCavitas() {
                       placeholder={`${t("get24contactform.aboutyourgroup")}`} 
                       cols={10}
                       rows={5}
-                      onChange={(e) => setFormData({...formData, description: e.target.value})}
+                      onChange={(e) => setFormData({...formData, details: e.target.value})}
                     ></textarea>
                   </div>
                 </div>

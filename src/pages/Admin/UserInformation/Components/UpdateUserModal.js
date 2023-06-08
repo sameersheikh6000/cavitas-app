@@ -7,7 +7,7 @@ import useUsers from '../../../../hooks/useUsers';
 function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersList}) {
     const {updateUserByAdmin, getUserByAdmin} = useUsers();
     const [open, setOpen] = useState(false);
-    const [profile, setProfile] = useState()
+    const [profile, setProfile] = useState({})
     const style = {
         position: 'absolute',
         top: '50%',
@@ -25,6 +25,7 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
     const response = await getUserByAdmin(user_id);
     if (response?.status < 300){
         setProfile(response?.user)
+        console.log(response?.user)
     }else if (response?.status > 300){
         setErrorMessage(response?.message);
     }
@@ -50,6 +51,7 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
   useEffect(() => {
     fetchUser();
   }, [])
+
   return (
     <div>
         <Button color='warning' variant='contained' size='small' style={{ color: "white !important" ,margin: "5px" }} onClick={() => handleOpen()}>Update</Button>
@@ -113,7 +115,7 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
                         type="text"
                         value={profile?.company_pesel_number}
                         onChange={(e) => setProfile({ ...profile, company_pesel_number: e.target.value })}
-                        placeholder='Phone number' />
+                        placeholder='Company Pesel Number' />
                     </div>
                     <div style={{marginTop: "5px"}}><input
                         type="text"

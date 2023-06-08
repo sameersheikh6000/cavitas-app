@@ -29,7 +29,7 @@ const useClientInsurance = () => {
 
 
   const createClientInsurance = async insurance => {
-    
+
     // let participation_mode ;
     if (insurance.mandatory !== ""){
        insurance.participation_mode = 1
@@ -50,6 +50,12 @@ const useClientInsurance = () => {
     employees_family_info: parseInt(insurance.employees_family_info),
     insurance_payment_type: parseInt(insurance.insurance_payment_type),
     broker_reference: parseInt(insurance.broker_reference),
+    first_name: insurance.first_name,
+    last_name: insurance.last_name,
+    identity: insurance.identity,
+    request: insurance.request,
+    email: insurance.email,
+    status: parseInt(insurance.status)
     }
     const formData = new FormData()
     for (const property in params) {
@@ -68,6 +74,7 @@ const useClientInsurance = () => {
     })
     return response;
   };
+
   const createClientInsuranceAdmin = async insurance => {
     const formData = new FormData()
     for (const property in insurance) {
@@ -96,7 +103,7 @@ const useClientInsurance = () => {
       if (res.data.status > 300) {
         handleErrors(res);
       }
-      
+
       return res.data
     })
     return response;
@@ -193,9 +200,47 @@ const useClientInsurance = () => {
       return response;
   }
 
+  const forSupportForms = async info => {
+    debugger
+    const formData = new FormData()
+    for (const property in info) {
+      formData.append(
+        property, info[property]
+      )
+    }
+    const response = await axios.post(
+      `${API_KEY}/api/v1/client_infos/support_forms`, formData
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  }
+
+  const createNewTicket = async info => {
+    debugger
+    const formData = new FormData()
+    for (const property in info) {
+      formData.append(
+        property, info[property]
+      )
+    }
+    const response = await axios.post(
+      `${API_KEY}/api/v1/client_infos/support_ticket`, formData,
+      getHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  }
 
   return {
-    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket
   };
 };
 export default useClientInsurance;
