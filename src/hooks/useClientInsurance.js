@@ -122,6 +122,19 @@ const useClientInsurance = () => {
     return response;
   };
 
+  const getAllSupportForms = async () => {
+    const response = await axios.get(
+      `${API_KEY}/api/v1/client_infos/all_support_forms`,
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
   const getClientInfoById = async (id) => {
     const response = await axios.get(
       `${API_KEY}/api/v1/client_infos/${id}`,
@@ -201,7 +214,6 @@ const useClientInsurance = () => {
   }
 
   const forSupportForms = async info => {
-    debugger
     const formData = new FormData()
     for (const property in info) {
       formData.append(
@@ -220,7 +232,6 @@ const useClientInsurance = () => {
   }
 
   const createNewTicket = async info => {
-    debugger
     const formData = new FormData()
     for (const property in info) {
       formData.append(
@@ -240,7 +251,7 @@ const useClientInsurance = () => {
   }
 
   return {
-    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket, getAllSupportForms
   };
 };
 export default useClientInsurance;

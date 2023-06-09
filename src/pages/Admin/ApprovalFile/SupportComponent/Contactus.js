@@ -6,22 +6,22 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Page from "../../../../components/Page/Page";
 import Stack from "@mui/material/Stack";
-import useContactForm from "../../../../hooks/useContactForm";
+import useClientInsurance from "../../../../hooks/useClientInsurance";
 import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../../components/SnackbarMessages/SuccessMessage";
 
 const Contactus = () => {
   const [submittedContact, setSubmittedContact] = useState([]);
-  const { getAllContactForms } = useContactForm();
+  const { getAllSupportForms } = useClientInsurance();
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
 
   const getContactFormData = async () => {
     ;
-    const response = await getAllContactForms();
+    const response = await getAllSupportForms();
     if (response.status < 300) {
-      setSubmittedContact(response.contact_forms);
+      setSubmittedContact(response.client_infos);
     } else if (response.status > 300) {
       setErrorMessage("Something went wrong!");
     }
@@ -119,10 +119,10 @@ const Contactus = () => {
                       <td>{row?.request}</td>
                       <td>{row?.identity}</td>
                       <td>
-                        {`${row?.first_name}` + " " + `${row?.last_name}`}
+                        {row?.full_name}
                       </td>
                       <td>{row?.email}</td>
-                      <td>{row?.description}</td>
+                      <td>{row?.details}</td>
                       <td>{row?.created_at}</td>
                     </tr>
                   ))}

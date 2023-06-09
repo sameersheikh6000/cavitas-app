@@ -4,30 +4,25 @@ import i18n from '../../../config/helpers/i18n';
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import useContactForm from '../../../hooks/useContactForm';
+import useClientInsurance from '../../../hooks/useClientInsurance';
 
 function FeedbackForm() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, [])
-  const { createContact } = useContactForm()
+  const { forSupportForms } = useClientInsurance();
   const [message, setMessage] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   const [open, setOpen] = useState(false);
   const [contactForm, setContactForm] = useState({
-        first_name: "",
-        last_name: "",
+        full_name: "",
         email: "",
-        description: "",
+        details: "",
         identity: "",
-        request: ""
+        request: "",
+        status: 3
       });
+
   const style = {
     position: "absolute",
     top: "50%",
@@ -40,13 +35,13 @@ function FeedbackForm() {
     p: 4,
   };
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  
+  const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+
   const handleSubmit = async () => {
-  const response = await createContact(contactForm)
+  const response = await forSupportForms(contactForm)
   if (response.status < 300) {
     setMessage(t("get24contactform.setmessage"))
     setTimeout(() => {
@@ -62,6 +57,12 @@ function FeedbackForm() {
     }, 3000)
   }
 }
+
+useEffect(() => {
+  const currentUrl = window.location.href;
+  let lang = currentUrl.split("/").pop();
+  lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+}, [])
 
   return (
     <div>
@@ -100,15 +101,10 @@ function FeedbackForm() {
                     <input 
                     type="text" 
                     placeholder={`${t("get24contactform.firstandlastname")}`} 
-                    onChange={(e) => setContactForm({...contactForm, first_name: e.target.value})}
+                    onChange={(e) => setContactForm({...contactForm, full_name: e.target.value})}
                     />
                   </div>
                   <div>
-                    {/* <input 
-                    type="text" 
-                    placeholder="Last name" 
-                    onChange={(e) => setContactForm({...contactForm, last_name: e.target.value})}/>
-                  */}
                  <input 
                     type="text" 
                     placeholder="Email" 
@@ -145,7 +141,7 @@ function FeedbackForm() {
                       placeholder={`${t("contactform.texthere")}`} 
                       cols={10}
                       rows={5}
-                      onChange={(e) => setContactForm({...contactForm, description: e.target.value})}
+                      onChange={(e) => setContactForm({...contactForm, details: e.target.value})}
                     ></textarea>
                   </div>
                 </div>
