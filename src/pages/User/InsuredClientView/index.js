@@ -129,8 +129,8 @@ const InsuredClientView = () => {
                   <th>{t("Insured_clients.Memberfirstname")}</th>
                   <th>{t("Insured_clients.MemberLastname")}</th>
                   <th>{t("Insured_clients.MemberPESEL")}</th>
-                  <th>{t("Insured_clients.MemberDOB")}</th>
-                  <th>{t("Insured_clients.Memberage")}</th>
+                  {/* <th>{t("Insured_clients.MemberDOB")}</th> */}
+                  {/* <th>{t("Insured_clients.Memberage")}</th> */}
                   <th>{t("Insured_clients.Memberrelation")}</th>
                   <th>{t("Insured_clients.Memberphonenumber")}</th>
                   <th>{t("Insured_clients.Membermail")}</th>
@@ -167,8 +167,8 @@ const InsuredClientView = () => {
                     <td>{row?.member_first_name}</td>
                     <td>{row?.member_last_name}</td>
                     <td>{row?.member_pesel}</td>
-                    <td>{row?.member_dob}</td>
-                    <td>{row?.member_age}</td>
+                    {/* <td>{row?.member_dob}</td>
+                    <td>{row?.member_age}</td> */}
                     <td>{row?.member_relation}</td>
                     <td>{row?.member_phone_number}</td>
                     <td>{row?.member_email}</td>

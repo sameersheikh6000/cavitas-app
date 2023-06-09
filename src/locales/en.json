@@ -243,7 +243,7 @@
     "Other":"Other",
     "iwant":"I want to…*",
     "Contactcooperation":"Contact for cooperation",
-    "Submitcomplain":"Submit a complaint",
+    "Submitcomplaint":"Submit a complaint",
     "Askquestion":"Ask a question",
     "feedback":"Give feedback",
     "texthere":"Your text here"
@@ -304,6 +304,27 @@
   "Heading_Part2":"a) access policy information; ",
   "Heading_Part3":"b) contact us through support tickets and   ",
   "Heading_Part4":"c) submit your claim. ",
+  "Heading_Part5":"Best regards",
+  "Heading_Part6":"Cavitas"
+}
+,
+"Pannel_Dashboard_Dashboard_Broker":{
+  "Heading":"Welcome to Cavitas dental insurance!",
+  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
+  "Heading_Part2":"a) To inform us who you want to include to the insurance cover",
+  "Heading_Part3":"b) To see a summary of your insured clients ",
+  "Heading_Part4":"c) To access and download valid contract documents",
+  "Heading_Part7":"d) To contact us through support tickets",
+  "Heading_Part5":"Best regards",
+  "Heading_Part6":"Cavitas"
+},
+"Pannel_Dashboard_Dashboard_Employ":{
+  "Heading":"Welcome to Cavitas dental insurance!",
+  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
+  "Heading_Part2":"a)  Inform us who you want to include to insurance cover;",
+  "Heading_Part3":"b) see a summary of the members covered;",
+  "Heading_Part4":"c) access valid contract documents and",
+  "Heading_Part7":"d) contact us through support tickets.",
   "Heading_Part5":"Best regards",
   "Heading_Part6":"Cavitas"
 }

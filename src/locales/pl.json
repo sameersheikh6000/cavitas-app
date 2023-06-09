@@ -318,6 +318,26 @@
   "Heading_Part5":"Zespół",
   "Heading_Part6":"Cavitas"
 
+},
+"Pannel_Dashboard_Dashboard_Broker":{
+  "Heading":"Welcome to Cavitas dental insurance!",
+  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
+  "Heading_Part2":"a) To inform us who you want to include to the insurance cover",
+  "Heading_Part3":"b) To see a summary of your insured clients ",
+  "Heading_Part4":"c) To access and download valid contract documents",
+  "Heading_Part7":"d) To contact us through support tickets",
+  "Heading_Part5":"Best regards",
+  "Heading_Part6":"Cavitas"
+},
+"Pannel_Dashboard_Dashboard_Employ":{
+  "Heading":"Welcome to Cavitas dental insurance!",
+  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
+  "Heading_Part2":" a) Poinformować nas, kogo chcesz ubezpieczyć",
+  "Heading_Part3":"b) Zobacz podsumowanie objętych członków",
+  "Heading_Part4":"c) Uzyskać dostęp i pobrać ważne dokumenty",
+  "Heading_Part7":"d) Skontaktować się z nami w sprawie pomocy technicznej za pośrednictwem zgłoszeń",
+  "Heading_Part5":"Best regards",
+  "Heading_Part6":"Cavitas"
 }
 ,
 "Pannel_Dashboard_Userprofile":{

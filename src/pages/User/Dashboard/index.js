@@ -9,6 +9,8 @@ import useClientInsurance from '../../../hooks/useClientInsurance'
 import UserProfile from './Components/UserProfile';
 import { USER_STORAGE_KEY } from '../../../config/helpers/variables';
 import GroupPolicyInfo from './Components/GroupPolicyInfo';
+import Brokerwelcome from './Components/Brokerwelcome';
+import Employerwelcome from './Components/Employerwelcome'
 const Dashboard = () => {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY))
   const { getAllClientInsurance } = useClientInsurance();
@@ -35,7 +37,21 @@ const Dashboard = () => {
       <section className='dashboard'>
         <div className='dashboard__container'>
           <div className='dashboard__container__content'>
-            <Welcome />
+          {user?.data?.role === "broker" &&
+
+            <Brokerwelcome />
+
+          }
+           {user?.data?.role === "member" &&
+
+<Welcome />
+
+}
+{user?.data?.role === "employ" &&
+
+<Employerwelcome />
+
+}
             <UserProfile />
             {user?.data?.role === "broker" &&
                        

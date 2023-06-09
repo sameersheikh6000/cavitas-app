@@ -60,11 +60,11 @@ const InsuredClientGroup = () => {
               <Commission user={user} />
             </div>
           </div>
-          {user?.data?.role != 'member' && 
+  
           <div className='insuredClientGroup__container2'>
             <InsuredPerson />
           </div>
-          }
+      
         </div>
       </section>
     </Page>

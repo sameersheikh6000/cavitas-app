@@ -24,7 +24,7 @@ const PolicyDocuments = ({ user }) => {
       </div>
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Pannel_Dashboard_Alldocuments.Documenttype")}:</p>
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Pannel_Dashboard_Alldocuments.Documenttype")}</p>
           <p></p>
         </div>
         {user?.data?.role === "member" ?
