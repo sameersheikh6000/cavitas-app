@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
-import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -17,7 +15,6 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
 import { API_KEY } from "../../../../../config/helpers/variables";
@@ -27,17 +24,35 @@ import InsuredClientReplyForm from "./Component/InsuredClientReplyForm";
 const InsuredPersonDetail = () => {
   const [clientInfo, setClientInfo] = useState();
   const { id } = useParams();
-  const { getClientInfoById } = useClientInsurance();
+  const [clientInfoStatus, setClientInfoStatus] = useState('')
+  const { getClientInfoById, updateClientInfoTicketStatusAdmin } = useClientInsurance();
+  const [statusSuccessMessage, setStatusSuccessMessage] = useState("");
+  const [statusErrorMessage, setStatusErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  console.log(clientInfo)
   const getClientInsuranceDetail = async () => {
     const response = await getClientInfoById(id);
     if (response?.status < 300) {
         setClientInfo(response?.client_info);
     } else if (response.status > 300) {
       setErrorMessage(response?.message);
+    }
+  };
+
+  const handleClientInfoStatusUpdate = async () => {  
+    const response = await updateClientInfoTicketStatusAdmin(id, clientInfoStatus);
+    if (response?.status < 300) {
+      setStatusSuccessMessage("Status Updated Successfully!");
+      setTimeout(() => {
+        setStatusSuccessMessage("");
+      }, 3000);
+      setClientInfoStatus("");
+    } else if (response?.status > 300) {
+      setStatusErrorMessage(response?.message);
+      setTimeout(() => {
+        setStatusErrorMessage("");
+      }, 3000);
     }
   };
 
@@ -96,7 +111,7 @@ const InsuredPersonDetail = () => {
                         scope="row"
                         style={{ padding: 7 }}
                       >
-                        {clientInfo?.file.url ? (
+                        {clientInfo?.file?.url ? (
                           <small>
                             <em>
                               Attached files:{" "}
@@ -243,6 +258,54 @@ const InsuredPersonDetail = () => {
                   <strong>Ticket Creator:</strong>
                 </label>
                 <p id="outlined-size-normal">{clientInfo?.user?.email}</p>
+              { clientInfo?.form_type === 'insured client file' &&
+                <> 
+                  <label>
+                    <strong>Client Name:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.corporate_client_name}</p>
+
+                  <label>
+                    <strong>No. of Employees:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.number_of_employees_in_company}</p>
+
+                  <label>
+                    <strong>Participation Mode:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.participation_mode}</p>
+
+                  <label>
+                    <strong>Mandatory Employees:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.mandatory_number_of_employees}</p>
+
+                  <label>
+                    <strong>Voluntary Employees:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.voluntary_number_of_employees}</p>
+
+                  <label>
+                    <strong>Employee Family Info:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.employees_family_info}</p>
+
+                  <label>
+                    <strong>Insurance Payment Type:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.insurance_payment_type}</p>
+                  
+                  <label>
+                    <strong>Broker Reference:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.broker_reference}</p>
+                  
+                  <label>
+                    <strong>Broker Name:</strong>
+                  </label>
+                  <p id="outlined-size-normal">{clientInfo?.referenced_broker_name}</p>
+                </>
+                }
               </div>
               <br />
               <br />
@@ -250,9 +313,43 @@ const InsuredPersonDetail = () => {
                 <b style={{ color: "black" }}>Status:</b>
               </InputLabel>
               <FormControl sx={{ m: 1, width: "25ch" }}>
-                {clientInfo?.status.toUpperCase()}
+                <Select
+                  native
+                  defaultValue="New"
+                  id="grouped-native-select"
+                  label="Grouping"
+                  onChange={(e) => setClientInfoStatus(e.target.value)}
+                >
+                  <p >
+                    {clientInfo?.status == "fresh"
+                      ? "NEW"
+                      : clientInfo?.status.toUpperCase()}
+                  </p>
+                  <option value={4}>IN PROCESS</option>
+                  <option value={5}>REPLIED</option>
+                  <option value={6}>CLOSE</option>
+                </Select>
               </FormControl>
             </Box>
+            <p>
+            {statusSuccessMessage && (
+              <small style={{ color: "green" }}>
+                <em>{statusSuccessMessage}</em>
+              </small>
+            )}
+            {statusErrorMessage && (
+              <small style={{ color: "red" }}>
+                <em>{statusErrorMessage}</em>
+              </small>
+            )}
+            </p>
+            <Button
+              className="authentication__container__formContainer__form__loginButton_tickets"
+              type="submit"
+              onClick={() => handleClientInfoStatusUpdate()}
+            >
+              Update Ticket
+            </Button>
           </div>
         </Stack>
       </section>

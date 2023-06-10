@@ -4,33 +4,30 @@ import i18n from "../../../../../config/helpers/i18n";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import useQuoteForm from "../../../../../hooks/useQuoteForm";
+import useClientInsurance from "../../../../../hooks/useClientInsurance";
 
 function GetQuoteCavitas() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const [dateType, setDateType] = useState();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
-  }, []);
-  const { createQuote } = useQuoteForm();
+  const { forSupportForms } = useClientInsurance();
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [open, setOpen] = useState(false);
 
   const [formData, setFormData] = useState({
-    name: "",
+    full_name: "",
     email: "",
     identity: "",
-    companyName: "",
-    groupName: "",
-    numberOfEmploy: "",
-    inceptionDate: "",
-    description: "",
+    company_name: "",
+    group_name: "",
+    number_of_employees_in_company: "",
+    inception_date: "",
+    details: "",
+    form_type: 2,
+    status: 3
+
   });
 
   const style = {
@@ -49,7 +46,7 @@ function GetQuoteCavitas() {
   const handleClose = () => setOpen(false);
 
   const submitQuoteForm = async () => {
-    const response = await createQuote(formData);
+    const response = await forSupportForms(formData);
     if (response.status < 300) {
       setMessage(t("get24contactform.setmessage"))
       setTimeout(() => {
@@ -63,6 +60,12 @@ function GetQuoteCavitas() {
       }, 3000);
     }
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  }, []);
 
   return (
     <div>
@@ -103,7 +106,7 @@ function GetQuoteCavitas() {
                       type="text"
                       placeholder={`${t("get24contactform.firstandlastname")}`}
                       onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
+                        setFormData({ ...formData, full_name: e.target.value })
                       }
                     />
                   </div>
@@ -142,7 +145,7 @@ function GetQuoteCavitas() {
                       onChange={(e) =>
                         setFormData({
                           ...formData,
-                          companyName: e.target.value,
+                          company_name: e.target.value,
                         })
                       }
                     />
@@ -154,7 +157,7 @@ function GetQuoteCavitas() {
                       type="text"
                       placeholder={`${t("get24contactform.nameofgroup")}`}
                       onChange={(e) =>
-                        setFormData({ ...formData, groupName: e.target.value })
+                        setFormData({ ...formData, group_name: e.target.value })
                       }
                     />
                   </div>
@@ -165,7 +168,7 @@ function GetQuoteCavitas() {
                       onChange={(e) =>
                         setFormData({
                           ...formData,
-                          numberOfEmploy: e.target.value,
+                          number_of_employees_in_company: e.target.value,
                         })
                       }
                     />
@@ -179,7 +182,7 @@ function GetQuoteCavitas() {
                       onChange={(e) =>
                         setFormData({
                           ...formData,
-                          inceptionDate: e.target.value,
+                          inception_date: e.target.value,
                         })
                       }
                     />
@@ -199,7 +202,7 @@ function GetQuoteCavitas() {
                       onChange={(e) =>
                         setFormData({
                           ...formData,
-                          description: e.target.value,
+                          details: e.target.value,
                         })
                       }
                     ></textarea>

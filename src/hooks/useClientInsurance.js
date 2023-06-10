@@ -49,12 +49,10 @@ const useClientInsurance = () => {
     voluntary_number_of_employees: parseInt(insurance.voluntary_number_of_employees),
     employees_family_info: parseInt(insurance.employees_family_info),
     insurance_payment_type: parseInt(insurance.insurance_payment_type),
-    broker_reference: parseInt(insurance.broker_reference),
-    first_name: insurance.first_name,
-    last_name: insurance.last_name,
+    broker_reference: (insurance.broker_reference !== '0' || "") ? parseInt(insurance.broker_reference) : 1,
     identity: insurance.identity,
     request: insurance.request,
-    email: insurance.email,
+    email: user?.data?.email,
     status: parseInt(insurance.status)
     }
     const formData = new FormData()
@@ -170,6 +168,27 @@ const useClientInsurance = () => {
     return response;
   };
 
+  const updateClientInfoTicketStatusAdmin = async (id, status) => {
+    const params = {
+      client_info: {
+        status: status
+      }
+    }
+    const response = await axios.put(
+      `${API_KEY}/api/v1/client_infos/${id}/update_ticket_status`,
+      {
+        ...params
+      },
+      getAdminHeaders()
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  };
+
   const getInsuredClientsByAdmin = async () => {
     const response = await axios.get(
       `${API_KEY}/api/v1/insured_clients`,
@@ -251,7 +270,7 @@ const useClientInsurance = () => {
   }
 
   return {
-    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket, getAllSupportForms
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket, getAllSupportForms, updateClientInfoTicketStatusAdmin
   };
 };
 export default useClientInsurance;

@@ -25,7 +25,8 @@ function GetQuoteCavitas() {
         number_of_employees_in_company: "",
         inception_date: "",
         details: "",
-        status: 3
+        status: 3,
+        form_type: 2
       });
 
   const style = {

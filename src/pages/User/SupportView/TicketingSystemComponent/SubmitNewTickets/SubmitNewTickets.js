@@ -23,7 +23,8 @@ function SubmitNewTickets() {
     request: "",
     details: "",
     file: "",
-    status: 3
+    status: 3,
+    form_type: 1
   })
 
   const style = {

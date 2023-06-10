@@ -20,7 +20,8 @@ function FeedbackForm() {
         details: "",
         identity: "",
         request: "",
-        status: 3
+        status: 3,
+        form_type: 0
       });
 
   const style = {

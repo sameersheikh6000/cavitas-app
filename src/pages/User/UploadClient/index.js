@@ -48,6 +48,12 @@ const UploadClient = () => {
   const handleMandatoryEmployees = () => {
     if (mandatoryEmployees === false) {
       setMandatoryEmployees(true);
+      setVoluntaryEmployees(false);
+      setClient({
+        ...client,
+        voluntary: "",
+        voluntary_number_of_employees: "",
+      });
     } else {
       setClient({
         ...client,
@@ -60,6 +66,12 @@ const UploadClient = () => {
   const handleVoluntaryEmployees = () => {
     if (voluntaryEmployees === false) {
       setVoluntaryEmployees(true);
+      setMandatoryEmployees(false);
+      setClient({
+        ...client,
+        mandatory: "",
+        mandatory_number_of_employees: "",
+      });
     } else {
       setClient({
         ...client,
@@ -71,7 +83,6 @@ const UploadClient = () => {
   };
 
   const handleSubmit = async (e) => {
-    
     e.preventDefault();
     if (user?.data?.role == 'broker') {
       setClient({ ...client, referenced_broker_name: `${user?.data?.first_name}`+ ` ` +`${user?.data?.last_name}`, broker_reference: 1})
@@ -79,12 +90,14 @@ const UploadClient = () => {
     let data = {
       ...client,
     };
-    const response = await createClientInsurance(data);
-    if (response?.status < 300) {
-      setSuccessMessage(t("get24contactform.setmessage"));
-      navigate(`/dashboard/${lang == "pl" ? lang : "en"}`);
-    } else if (response.status > 300) {
-      // setErrorMessage(response.message);
+    if(data?.broker_reference !== '0' || ""){
+      const response = await createClientInsurance(data);
+      if (response?.status < 300) {
+        setSuccessMessage(t("get24contactform.setmessage"));
+        navigate(`/dashboard/${lang == "pl" ? lang : "en"}`);
+      } else if (response.status > 300) {
+        // setErrorMessage(response.message);
+      }
     }
   };
 
