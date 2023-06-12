@@ -21,8 +21,10 @@ function ContactCavitas() {
         details: "",
         identity: "",
         request: "",
+
         status: 3,
         form_type: 0
+
       });
 
   const style = {
@@ -99,6 +101,7 @@ function ContactCavitas() {
                     <input
                     type="text"
                     placeholder={`${t("get24contactform.firstandlastname")}`}
+
                     onChange={(e) => setContactForm({...contactForm, full_name: e.target.value})}
                     />
                   </div>

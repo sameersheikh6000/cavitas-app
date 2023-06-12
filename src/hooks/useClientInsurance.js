@@ -49,10 +49,12 @@ const useClientInsurance = () => {
     voluntary_number_of_employees: parseInt(insurance.voluntary_number_of_employees),
     employees_family_info: parseInt(insurance.employees_family_info),
     insurance_payment_type: parseInt(insurance.insurance_payment_type),
+
     broker_reference: (insurance.broker_reference !== '0' || "") ? parseInt(insurance.broker_reference) : 1,
     identity: insurance.identity,
     request: insurance.request,
     email: user?.data?.email,
+
     status: parseInt(insurance.status)
     }
     const formData = new FormData()
@@ -250,6 +252,7 @@ const useClientInsurance = () => {
     return response;
   }
 
+
   const createNewTicket = async info => {
     const formData = new FormData()
     for (const property in info) {
@@ -271,6 +274,7 @@ const useClientInsurance = () => {
 
   return {
     createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket, getAllSupportForms, updateClientInfoTicketStatusAdmin
+
   };
 };
 export default useClientInsurance;
