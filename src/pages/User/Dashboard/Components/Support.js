@@ -50,7 +50,7 @@ const Support = () => {
         </header>
         <div>
             <div className="insuredClientView__container__mysupport__tickets" 
-          
+          style={{marginTop:"0rem"}}
             >
               <table    style={{ textAlign:"center", border:"none"}}>
                 <thead style={{ textAlign:"center", border:"none"}}>

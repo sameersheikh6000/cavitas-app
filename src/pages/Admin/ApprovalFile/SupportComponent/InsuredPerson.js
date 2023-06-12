@@ -77,11 +77,13 @@ const InsuredPerson = () => {
                 <td>{row?.email}</td>
                 <td>{row?.details}</td>
                 <td>{
-                  <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download_file`}>{row?.file?.filename}</a>
+                  <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download`}>{row?.file?.filename}</a>
                   }</td>
                 
                 <td>
                   {  (row?.status !== 'accepted' && (row?.file?.filename.split('.')[1] === 'csv' || row?.file?.filename.split('.')[1] === 'xlsx' ) ) && 
+
+                 
                     <AcceptFile client_id={row?.id} getClientInsurance={getClientInsurance}/>
                   }
                 </td>
