@@ -10,11 +10,13 @@ const Page = ({ children }) => {
     <section className='page'>
       <Navbar />
       {children}
-      {(user?.data?.role || admin?.data?.role) ?
+      {/* {(user?.data?.role || admin?.data?.role) ?
         <></>
-        :
-        <Footer />
-      }
+        : */}
+        {!(user?.data?.role || admin?.data?.role) && 
+          <Footer />
+        }
+      {/* } */}
     </section >
   )
 }

@@ -12,12 +12,12 @@ import useClientInsurance from "../../../../hooks/useClientInsurance";
 import { API_KEY } from "../../../../config/helpers/variables";
 
 const InsuredPerson = () => {
-  debugger
   const navigate = useNavigate();
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [clientInfoList, setClientInfoList] = useState([]);
+ console.log(clientInfoList)
   const [errorMessage, setErrorMessage] = useState(null)
   const getClientInsurance = async () => {
     const response = await getAllClientInsuranceAdmin();
@@ -70,7 +70,7 @@ const InsuredPerson = () => {
               <tr key={index}>
             <td><Button onClick={() => navigate(`/admin/InsuredPersonDetail/${row?.id}/${lang == 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
                 <td>{row?.form_type.toUpperCase()}</td>
-                <td>{row?.status}</td>
+                <td>{row?.status === 'fresh' ? 'NEW' : row?.status?.toUpperCase() }</td>
                 <td>{row?.request}</td>
                 <td>{row?.created_at}</td>
                 <td>{row?.full_name}</td>
@@ -81,7 +81,7 @@ const InsuredPerson = () => {
                   }</td>
                 
                 <td>
-                  { !(row?.status != 'accepted' && row?.file?.filename.split('.')[1] === 'csv' || 'xlsx') && 
+                  {  (row?.status !== 'accepted' && (row?.file?.filename.split('.')[1] === 'csv' || row?.file?.filename.split('.')[1] === 'xlsx' ) ) && 
                     <AcceptFile client_id={row?.id} getClientInsurance={getClientInsurance}/>
                   }
                 </td>

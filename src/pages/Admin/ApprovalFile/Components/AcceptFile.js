@@ -44,7 +44,7 @@ function AcceptFile({client_id, getClientInsurance}) {
     <div>
         <AlertMessage errorMessage={errorMessage} />
         <SuccessMessage successMessage={successMessage} />
-        <Button color='success' variant='contained' size='small' style={{ color: "white !important" }} onClick={handleOpen}>Approve</Button>
+        <Button color='success' variant='outlined' size='small' onClick={handleOpen}>Approve</Button>
         <Modal
           open={open}
           onClose={handleClose}
