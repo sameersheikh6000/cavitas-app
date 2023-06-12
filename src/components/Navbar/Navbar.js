@@ -70,7 +70,7 @@ function Navbar() {
                     {t("nav.aboutUs")}
                   </Link>
                   <Link className="appbar__linksBox__links__link" to={`/faq/${lang == "pl" ? "pl" : "en"}`}>
-                  {t("nav.faq")}
+                   {t("nav.faq")}
                   </Link>
                   <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? "pl" : "en"}`}>
                   {t("nav.claims")}
