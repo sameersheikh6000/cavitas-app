@@ -50,7 +50,6 @@ const UserInformation = () => {
         <table className='dashboard__container__content__cavitasDocs__details__table'>
           <thead>
             <tr>
-              <th></th>
               <th>Company Name</th>
               <th>User Email</th>
               <th>First Name</th>
@@ -67,7 +66,7 @@ const UserInformation = () => {
                       fontWeight: row?.created_at == today ? "bold" : "normal"
                     }}
                   >
-                <td>{row?.created_at == today && <span style={{color: "red"}}>NEW</span>}{row?.company_name}</td>
+                <td>{row?.created_at == today && <span style={{color: "red"}}>NEW</span>}&nbsp;&nbsp;&nbsp;{row?.company_name}</td>
                 <td>{row?.email}</td>
                 <td>{row?.first_name}</td>
                 <td>{row?.last_name}</td>
