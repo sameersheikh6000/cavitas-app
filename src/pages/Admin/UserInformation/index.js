@@ -40,16 +40,17 @@ const UserInformation = () => {
       <AlertMessage errorMessage={errorMessage} />
       <section className='uploadClient'>
         <header>
-         
+
              <div className='insuredClientView__header__left'>
             <  GroupsIcon   className='insuredClientView__header__left__icon' />
-            &nbsp;&nbsp; <h1>Users information</h1>   
+            &nbsp;&nbsp; <h1>Users information</h1>
                    </div>
         </header>
         <div className='dashboard__container__content__cavitasDocs__details'>
         <table className='dashboard__container__content__cavitasDocs__details__table'>
           <thead>
             <tr>
+              <th></th>
               <th>Company Name</th>
               <th>User Email</th>
               <th>First Name</th>
@@ -70,14 +71,14 @@ const UserInformation = () => {
                 <td>{row?.email}</td>
                 <td>{row?.first_name}</td>
                 <td>{row?.last_name}</td>
-                <td>{row?.company_krs_number}</td>                
+                <td>{row?.company_krs_number}</td>
                 <td>{row?.role}</td>
                 <td style={{display: "flex"}}>
                 <UpdateUserModal user_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getUsersList={getUsersList} />
                 <DeleteUserConfirmModal user_id={row?.id} getUsersList={getUsersList} setErrorMessage={setErrorMessage} deleteUserByAdmin={deleteUserByAdmin}/>
                 </td>
               </tr>
-            )) : 
+            )) :
             <div>
               <p>No records.</p>
             </div>
