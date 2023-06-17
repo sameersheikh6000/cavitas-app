@@ -155,7 +155,7 @@ const MemberSetPassword = () => {
                 className="authentication__container__formContainer__form__forget__loginButton__update"
               >
                 Continue
-              </Button> 
+              </Button>
               </Link>
             </form>
           </div>

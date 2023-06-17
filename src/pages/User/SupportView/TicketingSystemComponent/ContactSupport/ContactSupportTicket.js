@@ -41,7 +41,7 @@ const ContactSupportTicket = () => {
   // useEffect(() => {
   //   const currentUrl = window.location.href;
   //   let lang = currentUrl.split("/").pop();
-  //   lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  //   lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   //   getContactDetail();
   // }, []);
 
@@ -54,7 +54,7 @@ const ContactSupportTicket = () => {
   //           <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
   //         </div>
   //         <div className="insuredClientView__header__right">
-  //           <Link  to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+  //           <Link  to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
   //             <Button
   //               color="error"
   //               variant="outlined"
@@ -76,7 +76,7 @@ const ContactSupportTicket = () => {
   //       <br />
   //       <header className="insuredClientView__header">
   //         <div className="insuredClientView__header__left">
-  //           <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+  //           <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
   //             <Button
   //               className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit"
   //               style={{ textDecoration: "none" }}
@@ -87,7 +87,7 @@ const ContactSupportTicket = () => {
   //         </div>
   //         <div className="insuredClientView__header__right">
   //           <Link
-  //           to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
+  //           to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
 
   //           style={{ textDecoration: "none" }}>
   //             <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
@@ -114,7 +114,7 @@ const ContactSupportTicket = () => {
   //               >
   //                 <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")} :</TableCell>
   //                 <TableCell>
-  //                   {contact?.status == "fresh"
+  //                   {contact?.status === "fresh"
   //                     ? "NEW"
   //                     : contact?.status.toUpperCase()}
   //                 </TableCell>
@@ -125,7 +125,7 @@ const ContactSupportTicket = () => {
   //                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
   //               >
   //                 <TableCell style={{ fontWeight: "bold" }}>
-  //                 {t("Replypannel.Subject")} :
+  //                 {t("Replypannel.Topic")} :
   //                 </TableCell>
   //                 <TableCell>{contact?.request}</TableCell>
   //               </TableRow>

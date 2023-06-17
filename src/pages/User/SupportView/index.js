@@ -15,7 +15,7 @@
 //   useEffect(() => {
 //     const currentUrl = window.location.href;
 //     let lang = currentUrl.split("/").pop();
-//     lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+//     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
 //   }, [])
 //   const [open, setOpen] = useState(false);
 
@@ -31,7 +31,7 @@
 //             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
 //           </div>
 //           <div className="insuredClientView__header__right">
-//           <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
+//           <Link to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}>
 //               <Button
 //                 color="error"
 //                 variant="outlined"

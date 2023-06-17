@@ -29,7 +29,7 @@ const UserProfileView = () => {
     if (response.status < 300) {
       setSuccessMessage(`${t("Pannel_Dashboard_Supporttickets.done")}`)
       setTimeout(() => {
-        navigate(`/dashboard/${lang == "pl" ? lang : "en"}`)
+        navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)
       }, 3000);
     } else if (response.status > 300) {
       setErrorMessage(response.message);
@@ -37,7 +37,7 @@ const UserProfileView = () => {
   };
 
   const getUser = async () => {
-    
+
     const response = await getUserByAdmin(current_user?.data?.id)
     if (response?.status < 300 ) {
       setProfile(response?.user)
@@ -49,7 +49,7 @@ const UserProfileView = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
     getUser()
   }, [])
 

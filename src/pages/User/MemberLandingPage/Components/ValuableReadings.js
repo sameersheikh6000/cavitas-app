@@ -14,7 +14,7 @@ const ValuableReadings = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const navigate = useNavigate();
   return (
@@ -115,7 +115,7 @@ const ValuableReadings = () => {
         <h1>{t("Blog.Blog_title")}</h1>
         {/* <p>Recent blog posts</p> */}
         {/* <p>Recent blog posts</p> */}
-        <Link   to={`/Blog/${lang == "pl" ? lang : "en"}`}
+        <Link   to={`/Blog/${lang === "pl" ? lang : "en"}`}
         style={{ color: "red", textDecoration: "none" }}>
           <p>{t("Blog.Blog_heading")}</p>
         </Link>
@@ -125,7 +125,7 @@ const ValuableReadings = () => {
           <div className="landingPage__valuableReadings__container__cardsBox__card">
             <div
               className="landingPage__valuableReadings__container__cardsBox__card"
-              onClick={() => navigate(`/Blog1/${lang == "pl" ? lang : "en"}`)}
+              onClick={() => navigate(`/Blog1/${lang === "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image.png")} alt='' /> */}
               <p className="landingPage__valuableReadings__container__cardsBox__card__name">
@@ -137,7 +137,7 @@ const ValuableReadings = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog1_desc")}
                 &nbsp;{" "}
-                <Link to={`/Blog1/${lang == "pl" ? lang : "en"}`} style={{ color: "red" }}>
+                <Link to={`/Blog1/${lang === "pl" ? lang : "en"}`} style={{ color: "red" }}>
                   {" "}
                   {t("home.readmore")}
                 </Link>
@@ -155,7 +155,7 @@ const ValuableReadings = () => {
           <div className="landingPage__valuableReadings__container__cardsBox__card">
             <div
               className="landingPage__valuableReadings__container__cardsBox__card"
-              onClick={() => navigate(`/Blog3/${lang == "pl" ? lang : "en"}`)}
+              onClick={() => navigate(`/Blog3/${lang === "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image-1.png")} alt='' /> */}
               <p className="landingPage__valuableReadings__container__cardsBox__card__name">
@@ -166,7 +166,7 @@ const ValuableReadings = () => {
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog2_desc")}&nbsp;{" "}
-                <Link  to={`/Blog2/${lang == "pl" ? lang : "en"}`}
+                <Link  to={`/Blog2/${lang === "pl" ? lang : "en"}`}
                  style={{ color: "red" }}>
                   {" "}
                   {t("home.readmore")}
@@ -178,7 +178,7 @@ const ValuableReadings = () => {
           <div className="landingPage__valuableReadings__container__cardsBox__card">
             <div
               className="landingPage__valuableReadings__container__cardsBox__card"
-              onClick={() => navigate(`/Blog3/${lang == "pl" ? lang : "en"}`)}
+              onClick={() => navigate(`/Blog3/${lang === "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image-2.png")} alt='' /> */}
               <p className="landingPage__valuableReadings__container__cardsBox__card__name">
@@ -189,7 +189,7 @@ const ValuableReadings = () => {
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog3_desc")} &nbsp;{" "}
-                <Link  to={`/Blog3/${lang == "pl" ? lang : "en"}`}
+                <Link  to={`/Blog3/${lang === "pl" ? lang : "en"}`}
                 style={{ color: "red" }}>
                   {" "}
                   {t("home.readmore")}

@@ -49,7 +49,7 @@ function SubmitNewTickets() {
       })
       setTimeout(() => {
         setSuccessMessage('');
-        navigate(`/support/view/${lang == "pl" ? "pl" : "en"}`)
+        navigate(`/support/view/${lang === "pl" ? "pl" : "en"}`)
       }, 3000);
     }
     else if (response?.status > 300){
@@ -64,7 +64,7 @@ function SubmitNewTickets() {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
   return (
@@ -83,7 +83,7 @@ function SubmitNewTickets() {
         <header className="insuredClientView__header">
           <Stack direction="row" spacing={2}>
             <div className="insuredClientView__header__left">
-               <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+               <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
 
                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
                 {t("MysupportTickets.Mysupportticket")}
@@ -91,7 +91,7 @@ function SubmitNewTickets() {
               </Link>
             </div>
             <div className="insuredClientView__header__left">
-            <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
+            <Link to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}>
                 <Button
                   style={{ background: "#5C8894" }}
                   className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"

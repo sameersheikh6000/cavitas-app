@@ -29,7 +29,7 @@ function InsuredPersonSupportList() {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
     getClientInfos();
   }, [])
   return (
@@ -43,7 +43,7 @@ function InsuredPersonSupportList() {
               <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
             </div>
             <div className="insuredClientView__header__right">
-              <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
+              <Link to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}>
 
                 <Button
                   color="error"
@@ -80,9 +80,9 @@ function InsuredPersonSupportList() {
 
                     <tr key={index}>
                       <td>
-                        <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang == 'pl' ? lang : 'en'}`}>{row?.id}</Link>
+                        <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang === 'pl' ? lang : 'en'}`}>{row?.id}</Link>
                       </td>
-                      <td>{row?.request}</td>
+                      <td>{row?.request ? row?.request : <small><em>No Topic</em></small>}</td>
                       <td>{(row?.status && row?.status === 'fresh') ? 'NEW' : row?.status.toUpperCase()}</td>
                       <td>{row?.updated_at}</td>
                     </tr>

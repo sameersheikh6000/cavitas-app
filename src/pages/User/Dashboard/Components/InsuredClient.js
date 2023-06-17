@@ -16,7 +16,7 @@ const InsuredClient = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const InsuredClient = () => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const getInsuredClientList = async () => {
-    
+
     const response = await getInsuredClients();
     if (response?.status < 300) {
       setInsuredClientsList(response?.insured_clients);
@@ -50,7 +50,7 @@ const InsuredClient = () => {
               {insuredClientsList.length})
             </p>
           </div>
-          <Button size="small" onClick={() => navigate(`/insuredclient/view/${lang == "pl" ? lang : "en"}`)}>
+          <Button size="small" onClick={() => navigate(`/insuredclient/view/${lang === "pl" ? lang : "en"}`)}>
             {t("Pannel_Dashboard_insuredperson.View")}
           </Button>
         </header>

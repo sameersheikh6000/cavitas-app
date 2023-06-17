@@ -3,8 +3,8 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
 
 const Coverage = ({user}) => {
-  
- 
+
+
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -12,7 +12,7 @@ const Coverage = ({user}) => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   return (
     <div className='insuredClientGroup__container__cardsBox__card'>

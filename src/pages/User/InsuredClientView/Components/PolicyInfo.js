@@ -12,14 +12,14 @@ const PolicyInfo = ({ user }) => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const {getPolicyInformation} = usePolicyInformation();
   const [policyInfo, setPolicyInfo] = useState();
   const [errorMessage, setErrorMessage] = useState();
 
   const fetchPoicy = async () => {
-    
+
     const response = await getPolicyInformation();
     if (response?.status < 300) {
       setPolicyInfo(response?.policy_information)
@@ -60,7 +60,7 @@ const PolicyInfo = ({ user }) => {
           <p>{policyInfo?.risk_inseption_date}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
-          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>     
+          <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
                {t("Policyinformation.Riskexpirydate")}:
 </p>
           <p>{policyInfo?.risk_expiry_date}</p>

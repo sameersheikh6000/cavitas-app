@@ -12,7 +12,7 @@ const BecomeMember = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const handleComposeEmail = () => {
     const subject = "Cavitas dental insurance for employees";
@@ -51,9 +51,15 @@ const BecomeMember = () => {
             {t("Member.Member_landingPage_notmember_desc")}
           </p>
           <div>
+<<<<<<< Updated upstream
           <Button onClick={() => handleComposeEmail()}>
             {t("Broker.suggest")}
                         </Button>
+=======
+            <Button variant="outlined" onClick={() => navigate(`/employ/${lang === "pl" ? "pl" : "en"}`)}>
+              {t("Member.Member_landingPage_notmember_btn")}
+            </Button>
+>>>>>>> Stashed changes
           </div>
         </div>
       </div>

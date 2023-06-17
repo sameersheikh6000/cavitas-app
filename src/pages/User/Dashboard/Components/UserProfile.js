@@ -31,7 +31,7 @@ const UserProfile = () => {
     getUser()
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
   return (
@@ -42,7 +42,7 @@ const UserProfile = () => {
           <PersonOutlineOutlinedIcon lassName="dashboard__container__content__userProfile__header__iconBox__icon" />
           <p>{t("Pannel_Dashboard.Userprofile")}</p>
         </div>
-        <Button size="small" onClick={() => navigate(`/profile/user/view/${lang == "pl" ? lang : "en"}`)}>
+        <Button size="small" onClick={() => navigate(`/profile/user/view/${lang === "pl" ? lang : "en"}`)}>
           {t("Pannel_Dashboard_Userprofile.Update")}
         </Button>
       </header>

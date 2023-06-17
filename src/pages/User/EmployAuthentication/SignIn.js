@@ -14,7 +14,7 @@ const EmploySignIn = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const { userLogin } = useAuthenticate();
   const navigate = useNavigate();
@@ -46,10 +46,10 @@ const EmploySignIn = () => {
     }
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
-      navigate(`/dashboard/${lang == "pl" ? lang : "en"}`)
+      navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)
         } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
-    } else if (response?.data?.status?.message == undefined) {
+    } else if (response?.data?.status?.message === undefined) {
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
     }
   };
@@ -89,7 +89,7 @@ const EmploySignIn = () => {
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='text'
                   name='password'
-                  placeholder={`${t("Pannel_Login.password")}`} 
+                  placeholder={`${t("Pannel_Login.password")}`}
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
@@ -100,7 +100,7 @@ const EmploySignIn = () => {
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='password'
                   name='password'
-                  placeholder={`${t("Pannel_Login.password")}`} 
+                  placeholder={`${t("Pannel_Login.password")}`}
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
@@ -114,7 +114,7 @@ const EmploySignIn = () => {
           <Link to="/EmployerEnterMail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
           <p>{t("Pannel_Login.don'thaveaccount")}</p>
-                        <Link to={`/employ-signup/${lang == "pl" ? "pl" : "en"}`}>     
+                        <Link to={`/employ-signup/${lang === "pl" ? "pl" : "en"}`}>
 
             <Button>{t("Pannel_Login.registernow")}</Button>
             </Link>

@@ -64,7 +64,7 @@ function GetQuoteCavitas() {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
   return (
@@ -175,8 +175,8 @@ function GetQuoteCavitas() {
                   </div>
                   <div style={{ marginTop: "8px" }}>
                     <input
-                       type={dateType == 'date' ? dateType : 'text'}
-                       placeholder={`${t("get24contactform.date")}`} 
+                       type={dateType === 'date' ? dateType : 'text'}
+                       placeholder={`${t("get24contactform.date")}`}
                        onBlur={() => setDateType('text')}
                        onFocus={() => setDateType('date')}
                       onChange={(e) =>

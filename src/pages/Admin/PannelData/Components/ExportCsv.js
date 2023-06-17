@@ -41,7 +41,7 @@ const ExportCsv = ({setErrorMessage, setSuccessMessage}) => {
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-    } else if(response?.data == ""){
+    } else if(response?.data === ""){
         handleClose();
         setErrorMessage("Please Select the Correct date");
     }
@@ -66,14 +66,14 @@ const ExportCsv = ({setErrorMessage, setSuccessMessage}) => {
                                 <input
                                 type="date"
                                 value={duration?.from}
-                                
+
                                 onChange={(e) => setDuration({ ...duration, from: e.target.value })}
                             /></div>
                             <div>
                                 <label>To:</label>
                                 <input
                                 type="date"
-                                
+
                                 value={duration?.to}
                                 onChange={(e) => setDuration({ ...duration, to: e.target.value })}
                                 />

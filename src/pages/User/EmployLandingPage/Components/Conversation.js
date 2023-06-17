@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 import ContactCavitas from './EmployerFormComponent/ContactCavitas';
 
 const Conversation = () => {
-  
+
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ const Conversation = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const navigate = useNavigate();
 
@@ -24,7 +24,7 @@ const Conversation = () => {
     <div className='landingPage__clientDeserve__container'>
     <h1>
       {t("Employer.Employer_conversion")}
-      
+
     </h1>
       {/* <Button onClick={() => navigate('/')} > Contact US</Button> */}
       <ContactCavitas />

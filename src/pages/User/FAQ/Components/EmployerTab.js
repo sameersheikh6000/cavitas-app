@@ -12,7 +12,7 @@ const EmployerTab = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const [faqData, setFaqData] = useState([false, false, false]);
 
@@ -28,7 +28,7 @@ const EmployerTab = () => {
         <div className='faqTab__container__box'>
         <p>{t("FAQ.FAQ_Employer_Q1")}</p>
 
-            
+
                       {faqData[0] === false &&
             <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(0)} />
           }

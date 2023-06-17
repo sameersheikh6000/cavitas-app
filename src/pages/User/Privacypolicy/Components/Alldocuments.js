@@ -61,7 +61,7 @@ export default function Alldocuments() {
   return (
     <Box sx={{ width: "100%", minWidth: "30rem" }}>
       <Box sx={{ borderBottom: 0.5 }}>
-        
+
         <Tabs
           value={value}
           onChange={handleChange}
@@ -75,7 +75,7 @@ export default function Alldocuments() {
             label="Privacy Policy"
             {...a11yProps(0)}
           />
-          
+
            <Tab
             className="faq__tabs__tabsLabel"
             style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold",color:"black" }}
@@ -89,18 +89,18 @@ export default function Alldocuments() {
             label="Complaint resolution"
             {...a11yProps(2)}
           />
-         
+
           <Tab
             className="faq__tabs__tabsLabel"
             style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
             label="Broker agreement"
             {...a11yProps(3)}
           />
-        
-        
+
+
         </Tabs>
       </Box>
-     
+
       <TabPanel
       value={value} index={0}>
         <PPT />

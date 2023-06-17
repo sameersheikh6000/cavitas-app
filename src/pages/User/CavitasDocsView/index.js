@@ -20,9 +20,9 @@ const CavitasDocsView = () => {
   const [errorMessage, setErrorMessage] = useState();
 
   const getAllCavitasDocs = async () => {
-    
+
       const response = await getCavitasDocs();
-      
+
       if (response?.status < 300) {
         setCavitasDocs(response?.cavitas_documents)
       } else if (response?.status > 300) {
@@ -33,7 +33,7 @@ const CavitasDocsView = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
     getAllCavitasDocs();
   }, [])
   return (

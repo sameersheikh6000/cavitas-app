@@ -126,7 +126,7 @@ function SupportFormDetail() {
                         </small>
                       ) : (
                         <small>
-                          <em>No Attachment(s)</em>
+                          <em>No File(s)</em>
                         </small>
                       )}
                     </TableCell>
@@ -226,7 +226,7 @@ function SupportFormDetail() {
                                   </small>
                                 ) : (
                                   <small>
-                                    <em>No Attachment(s)</em>
+                                    <em>No File(s)</em>
                                   </small>
                                 )}
                               </TableCell>
@@ -284,7 +284,7 @@ function SupportFormDetail() {
                   onChange={(e) => setSupportTicketStatus(e.target.value)}
                 >
                   <option value={0}>
-                    {supportFormDetail?.status == "fresh"
+                    {supportFormDetail?.status === "fresh"
                       ? "NEW"
                       : supportFormDetail?.status.toUpperCase()}
                   </option>

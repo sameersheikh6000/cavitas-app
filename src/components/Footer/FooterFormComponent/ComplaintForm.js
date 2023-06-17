@@ -48,7 +48,7 @@ function ComplaintForm() {
       handleClose();
       setMessage('');
     }, 3000);
-    
+
   } else if (response.status > 300) {
     setErrorMessage(response.message);
     setTimeout(() => {
@@ -60,7 +60,7 @@ function ComplaintForm() {
 useEffect(() => {
   const currentUrl = window.location.href;
   let lang = currentUrl.split("/").pop();
-  lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
 }, [])
 
   return (
@@ -88,29 +88,29 @@ useEffect(() => {
             <h2>{t("contactform.contactfrom_title")}</h2>
             <h1 style={{ color: "red" }}>{t("contactform.contactfrom_heading")}</h1>
             {
-              message && <span style={{color: "green"}}>{message}</span> 
+              message && <span style={{color: "green"}}>{message}</span>
             }
             {
-              errorMessage && <span style={{color: "red"}}>{errorMessage}</span> 
+              errorMessage && <span style={{color: "red"}}>{errorMessage}</span>
             }
             <div className="userProfileView__container__details">
               <div className="userProfileView__container__details__detailsBox">
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
-                  
+
                   <div>
-                    <input 
-                    type="text" 
-                    placeholder={`${t("get24contactform.firstandlastname")}`} 
+                    <input
+                    type="text"
+                    placeholder={`${t("get24contactform.firstandlastname")}`}
                     onChange={(e) => setContactForm({...contactForm, full_name: e.target.value})}
                     />
                   </div>
                   <div>
-                    <input 
-                    type="text" 
-                    placeholder="Email" 
+                    <input
+                    type="text"
+                    placeholder="Email"
                     onChange={(e) => setContactForm({...contactForm, email: e.target.value})}/>
 
-                  
+
                 </div>
                   <div style={{ marginTop: "5px" }}>
                     <select className="select" onChange={(e) => setContactForm({ ...contactForm, identity: `I am ${e.target.value}`})}>

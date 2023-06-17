@@ -5,8 +5,8 @@ import { Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom';
 
 const CoverageQuestions = () => {
-  
-  
+
+
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ const CoverageQuestions = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const navigate = useNavigate();
 

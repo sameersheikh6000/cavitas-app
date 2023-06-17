@@ -40,7 +40,7 @@ const InsuredPersonSupportTicket = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
     getClient();
   }, [])
   return (
@@ -52,7 +52,25 @@ const InsuredPersonSupportTicket = () => {
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
-          <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+            <Link
+            to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
+
+            style={{ textDecoration: "none" }}>
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
+              {t("MysupportTickets.Submitnewticket")}
+              </Button>
+            </Link>
+          </div>
+        </header>
+        <br />
+        <header className="insuredClientView__header">
+          <div className="insuredClientView__header__left">
+            <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
+            </Link>
+          </div>
+          <div className="insuredClientView__header__right">
+            <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
               <Button
                 color="error"
                 variant="outlined"
@@ -78,7 +96,7 @@ const InsuredPersonSupportTicket = () => {
             </Link>
           </div>
           <div className="insuredClientView__header__right">
-           
+
             <Link
             to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
 
@@ -110,7 +128,7 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>{t("Replypannel.Status")}:</TableCell>
-                  <TableCell>{clientInfo?.status}</TableCell>
+                  <TableCell>{clientInfo?.status === 'fresh' ? 'NEW' : clientInfo?.status?.toUpperCase()}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -118,9 +136,9 @@ const InsuredPersonSupportTicket = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>
-                  {t("Replypannel.Subject")}:
+                  {t("Replypannel.Topic")}:
                   </TableCell>
-                  <TableCell>      {t("Replypannel.nosubject")}</TableCell>
+                  <TableCell>{clientInfo?.request ? clientInfo?.request : t("Replypannel.notopic")}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -130,7 +148,7 @@ const InsuredPersonSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                   {t("Replypannel.Attachement")}
                   </TableCell>
-                  <TableCell>{clientInfo?.file?.url}</TableCell>
+                  <TableCell>{clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>

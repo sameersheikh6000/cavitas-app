@@ -23,7 +23,7 @@ const InsuredClientGroup = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
@@ -60,11 +60,11 @@ const InsuredClientGroup = () => {
               <Commission user={user} />
             </div>
           </div>
-  
+
           <div className='insuredClientGroup__container2'>
             <InsuredPerson />
           </div>
-      
+
         </div>
       </section>
     </Page>

@@ -25,7 +25,7 @@ const Sidebar = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
 
   const navigate = useNavigate();
@@ -39,13 +39,13 @@ const Sidebar = () => {
       if (response.status < 300) {
         sessionStorage.removeItem(USER_STORAGE_KEY);
       }
-      navigate(`/${lang == 'pl' ? lang : 'en'}`)
+      navigate(`/${lang === 'pl' ? lang : 'en'}`)
     }else if(admin !== null){
       const response = await adminLogout(admin)
       if(response?.status < 300){
         sessionStorage.removeItem(ADMIN_STORAGE_KEY);
       }
-      navigate(`/${lang == 'pl' ? lang : 'en'}`)
+      navigate(`/${lang === 'pl' ? lang : 'en'}`)
     }
 
   }
@@ -61,7 +61,7 @@ const Sidebar = () => {
       </header>
       {user?.data?.role ?
         <div className='sidebar__linkButtons'>
-          <Link to={`/dashboard/${lang == "pl" ? "pl" : "en"}`}
+          <Link to={`/dashboard/${lang === "pl" ? "pl" : "en"}`}
           className='sidebar__linkButtons__link'>
             <HomeOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>{t("Pannel_Dashboard.Dasboard")}</p>
@@ -71,7 +71,7 @@ const Sidebar = () => {
             :
             // <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
                           <Link
-                          to={`/insuredclient/group/${lang == "pl" ? "pl" : "en"}`}
+                          to={`/insuredclient/group/${lang === "pl" ? "pl" : "en"}`}
                           className='sidebar__linkButtons__link'>
 
               <GppGoodOutlinedIcon className='sidebar__linkButtons__link__icon' />
@@ -80,13 +80,13 @@ const Sidebar = () => {
           }
           {user?.data?.role === "broker" &&
             <>
-              <Link to={`/insuredclient/view/${lang == "pl" ? "pl" : "en"}`}
+              <Link to={`/insuredclient/view/${lang === "pl" ? "pl" : "en"}`}
               className='sidebar__linkButtons__link'>
                 <BusinessCenterOutlinedIcon className='sidebar__linkButtons__link__icon' />
                 <p>{t("Pannel_Dashboard.Insuredclients")}</p>
               </Link>
               <Link
-                 to={`/cavitasdocs/view/${lang == "pl" ? "pl" : "en"}`}
+                 to={`/cavitasdocs/view/${lang === "pl" ? "pl" : "en"}`}
               className='sidebar__linkButtons__link'>
                 <TextSnippetOutlinedIcon className='sidebar__linkButtons__link__icon' />
                 <p>{t("Pannel_Dashboard.Cavitasdocuments")}</p>
@@ -94,12 +94,12 @@ const Sidebar = () => {
             </>
           }
           <Link
-          to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+          to={`/support/view/${lang === "pl" ? "pl" : "en"}`}
           className='sidebar__linkButtons__link'>
             <EmailOutlinedIcon className='sidebar__linkButtons__link__icon' />
             <p>{t("Pannel_Dashboard.Supporttickets")}</p>
           </Link>
-          <Link  to={`/profile/user/view/${lang == "pl" ? "pl" : "en"}`}
+          <Link  to={`/profile/user/view/${lang === "pl" ? "pl" : "en"}`}
 
           className='sidebar__linkButtons__link'>
             <PersonOutlineOutlinedIcon className='sidebar__linkButtons__link__icon' />
@@ -107,19 +107,19 @@ const Sidebar = () => {
           </Link>
           <div className='sidebar__linkButtons__buttons'>
             {user?.data?.role === "broker" &&
-              <Button onClick={() => navigate(`/uploadclient/${lang == "pl" ? lang : "en"}`)}
+              <Button onClick={() => navigate(`/uploadclient/${lang === "pl" ? lang : "en"}`)}
 
               ><p>{t("Pannel_Dashboard.Uploadclient")}</p>              </Button>
             }
             {user?.data?.role === "employ" &&
               <Button
               style={{width: "105%"}}
-              onClick={() => navigate(`/uploadclient/${lang == "pl" ? lang : "en"}`)}>
+              onClick={() => navigate(`/uploadclient/${lang === "pl" ? lang : "en"}`)}>
 
                 {t("Pannel_Dashboard.Uploadnewperson")}</Button>
             }
             {user?.data?.role === "member" &&
-              <Button onClick={() => navigate(`/dashboard/${lang == "pl" ? lang : "en"}`)}>
+              <Button onClick={() => navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)}>
                 {t("Pannel_Dashboard.submitaclaim")}</Button>
             }
             {/* <Button>Get a Quote</Button> */}

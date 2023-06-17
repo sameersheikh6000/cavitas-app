@@ -12,7 +12,7 @@ const ClientDeserve = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const navigate = useNavigate();
   return (
@@ -20,7 +20,7 @@ const ClientDeserve = () => {
       <div className='landingPage__clientDeserve__container'>
         <p>{t("Broker.Broker_landing_Page_title1")}</p>
         <h1>{t("Broker.Broker_landing_Page_title2")}</h1>
-        <Button onClick={() => navigate(`/signin/${lang == "pl" ? "pl" : "en"}`)}
+        <Button onClick={() => navigate(`/signin/${lang === "pl" ? "pl" : "en"}`)}
         >{t("Broker.Broker_login_button")}</Button>
       </div>
     </section >

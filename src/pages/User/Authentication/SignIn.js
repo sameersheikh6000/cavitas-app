@@ -14,7 +14,7 @@ const SignIn = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
 
   const { userLogin } = useAuthenticate();
@@ -47,10 +47,10 @@ const SignIn = () => {
     }
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
-      navigate(`/dashboard/${lang == "pl" ? lang : "en"}`)
+      navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
-    } else if (response?.data?.status?.message == undefined) {
+    } else if (response?.data?.status?.message === undefined) {
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
 
     }
@@ -69,7 +69,7 @@ const SignIn = () => {
 
           <div className='authentication__container__imageBox__bottom'>
             <img className='authentication__container__imageBox__bottom' src={require("../../../assets/BrokerLogin_image.png")} alt='' />
-          </div> 
+          </div>
         </div>
 
         <div className='authentication__container__formContainer'>
@@ -93,7 +93,7 @@ const SignIn = () => {
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='text'
                   name='password'
-                  placeholder={`${t("Pannel_Login.password")}`} 
+                  placeholder={`${t("Pannel_Login.password")}`}
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
@@ -101,11 +101,11 @@ const SignIn = () => {
                 />
                 :
                 <input
-              
+
                   className='authentication__container__formContainer__form__passwordBox__password'
                   type='password'
                   name='password'
-                  placeholder={`${t("Pannel_Login.password")}`} 
+                  placeholder={`${t("Pannel_Login.password")}`}
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
@@ -119,7 +119,7 @@ const SignIn = () => {
           <Link to="/Add-Mail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
             <p>{t("Pannel_Login.don'thaveaccount")}</p>
-            <Link to={`/signup/${lang == "pl" ? "pl" : "en"}`}>     
+            <Link to={`/signup/${lang === "pl" ? "pl" : "en"}`}>
               <Button>{t("Pannel_Login.registernow")}</Button>
             </Link>
           </div>

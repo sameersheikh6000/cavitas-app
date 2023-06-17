@@ -5,8 +5,8 @@ import i18n from '../../../../config/helpers/i18n';
 import { Link } from 'react-router-dom'
 
 const SmartInsurance = () => {
-  
-  
+
+
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ const SmartInsurance = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   return (
     <section className='landingPage__smartInsurance'>

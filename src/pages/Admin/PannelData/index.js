@@ -37,12 +37,12 @@ const AdminFileApproval = () => {
   }, []);
 
   const requestSearch = (searchedVal) => {
-    
+
     const filteredRows = insuredClientsList.filter((row) => {
       if(searchedVal !== null){
         return  (
           row?.member_first_name?.toString().toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_last_name?.toLowerCase().includes(searchedVal.toString().toLowerCase()) || 
+          row?.member_last_name?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.member_email?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.company_name?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.company_krs_number?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
@@ -50,7 +50,7 @@ const AdminFileApproval = () => {
           row?.member_pesel?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.member_relation?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.member_phone_number?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_address?.toLowerCase().includes(searchedVal.toString().toLowerCase()) 
+          row?.member_address?.toLowerCase().includes(searchedVal.toString().toLowerCase())
           )
         }
     });
@@ -71,7 +71,7 @@ const AdminFileApproval = () => {
             <VerifiedUserIcon   className='insuredClientView__header__left__icon' />
             <p>Insured Persons</p>
           </div>
-         
+
           <div className='insuredClientView__header__right' style={{display: "flex"}} >
             <input
               id='search-text'
@@ -90,42 +90,42 @@ const AdminFileApproval = () => {
           <table className='dashboard__container__content__insuredClient__details__table__page__view'>
             <thead>
             <tr>
-                <th>Risk country</th>   
-                <th>Type of insurance</th>    
-                <th>Insurance plan</th>   
-                <th>Sum Insured per insured person per policy year</th>   
-                <th>Policy number</th>   
-                <th>Risk inception date</th>  
-                <th>Risk expiry date</th>  
-                <th>Risk renewal date</th>  
-                <th>Policyholder/Company name</th>  
-                <th>Company KRS number</th>  
-                <th>Company URL address</th>  
-                <th>Member gender</th>  
-                <th>Member first name</th>  
-                <th>Member last name</th>  
-                <th>Member PESEL</th>  
-                <th>Member DOB</th>  
-                <th>Member age</th>  
-                <th>Member relation</th>  
-                <th>Member phone number</th>  
-                <th>Member e-mail</th>  
-                <th>Member address</th>  
+                <th>Risk country</th>
+                <th>Type of insurance</th>
+                <th>Insurance plan</th>
+                <th>Sum Insured per insured person per policy year</th>
+                <th>Policy number</th>
+                <th>Risk inception date</th>
+                <th>Risk expiry date</th>
+                <th>Risk renewal date</th>
+                <th>Policyholder/Company name</th>
+                <th>Company KRS number</th>
+                <th>Company URL address</th>
+                <th>Member gender</th>
+                <th>Member first name</th>
+                <th>Member last name</th>
+                <th>Member PESEL</th>
+                <th>Member DOB</th>
+                <th>Member age</th>
+                <th>Member relation</th>
+                <th>Member phone number</th>
+                <th>Member e-mail</th>
+                <th>Member address</th>
 
                 <th></th>
-                <th>Group Type</th>  
-                <th>PARTICIPATION</th>  
-                <th>Currency</th>  
-                <th>Payment Frequency</th>  
-                <th>Annual GWP</th>  
-                <th>Annual BC</th>  
-                <th>Annual NP</th>  
-                <th>Monthly NP</th>  
-                <th>Monthly BC</th>  
-                <th>Insurer</th>  
-                <th>Mandated broker</th> 
-                
-                {/* <th>File</th>  
+                <th>Group Type</th>
+                <th>PARTICIPATION</th>
+                <th>Currency</th>
+                <th>Payment Frequency</th>
+                <th>Annual GWP</th>
+                <th>Annual BC</th>
+                <th>Annual NP</th>
+                <th>Monthly NP</th>
+                <th>Monthly BC</th>
+                <th>Insurer</th>
+                <th>Mandated broker</th>
+
+                {/* <th>File</th>
                 <th>Status</th>   */}
               </tr>
             </thead>

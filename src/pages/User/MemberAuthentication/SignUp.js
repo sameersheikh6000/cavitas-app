@@ -14,7 +14,7 @@ const MemberSignUp = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const { createUser } = useUsers();
   const navigate = useNavigate();
@@ -41,10 +41,10 @@ const MemberSignUp = () => {
     }
     const response = await createUser(user, "member");
     if (response?.status?.code < 300) {
-      navigate(`/dashboard/${lang == 'pl' ? lang : "en" }`);
+      navigate(`/dashboard/${lang === 'pl' ? lang : "en" }`);
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
-    } else if (response?.data?.status?.message == undefined) {
+    } else if (response?.data?.status?.message === undefined) {
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
     }
   };
@@ -72,7 +72,7 @@ const MemberSignUp = () => {
             <div>
               <input
                 type="text"
-                placeholder={`${t("Registration.Firstname")}`} 
+                placeholder={`${t("Registration.Firstname")}`}
                 name='first_name'
                 value={user.first_name}
                 onChange={changeHandler}
@@ -80,7 +80,7 @@ const MemberSignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Registration.Lastname")}`} 
+                placeholder={`${t("Registration.Lastname")}`}
                 name='last_name'
                 value={user.last_name}
                 onChange={changeHandler}
@@ -94,7 +94,7 @@ const MemberSignUp = () => {
                 onChange={changeHandler}
                 required={true}
               />
-              
+
               <input
                 type="text"
                 placeholder='PESEL Number'
@@ -108,7 +108,7 @@ const MemberSignUp = () => {
             <div>
               <input
                 type="password"
-                placeholder={`${t("Registration.setpassword")}`}               
+                placeholder={`${t("Registration.setpassword")}`}
                 name='password'
                 value={user.password}
                 onChange={changeHandler}
@@ -116,7 +116,7 @@ const MemberSignUp = () => {
               />
               <input
                 type="password"
-                placeholder={`${t("Registration.repeatpassword")}`}               
+                placeholder={`${t("Registration.repeatpassword")}`}
                 name='password_confirmation'
                 value={user.password_confirmation}
                 onChange={changeHandler}
@@ -125,7 +125,7 @@ const MemberSignUp = () => {
             </div>
             <Button className='authentication__container__formContainer__registerForm__registerButton' type="submit">
             {t("Pannel_Login.registernow")}
-          
+
             </Button>
           </form>
         </div >

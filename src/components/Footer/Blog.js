@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import i18n from '../../config/helpers/i18n';
 import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Page from "../Page/Page";
 
@@ -10,15 +9,13 @@ const Blog = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-  
-  
+  const navigate = useNavigate();
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
-  const navigate = useNavigate();
   return (
 <Page>
     <section className="landingPage__valuableReadings">
@@ -47,7 +44,7 @@ const Blog = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog1_desc")}
                 &nbsp;{" "}
-                <Link to={`/Blog1/${lang == "pl" ? "pl" : "en"}`}
+                <Link to={`/Blog1/${lang === "pl" ? "pl" : "en"}`}
                 style={{ color: "red" }}>
                   {" "}
                   {t("home.readmore")}
@@ -75,7 +72,7 @@ const Blog = () => {
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog2_desc")}&nbsp;{" "}
-                <Link to={`/Blog2/${lang == "pl" ? "pl" : "en"}`}
+                <Link to={`/Blog2/${lang === "pl" ? "pl" : "en"}`}
                 style={{ color: "red" }}>
                   {" "}
                   {t("home.readmore")}
@@ -98,7 +95,7 @@ const Blog = () => {
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog3_desc")} &nbsp;{" "}
-           <Link to={`/Blog3/${lang == "pl" ? "pl" : "en"}`}
+           <Link to={`/Blog3/${lang === "pl" ? "pl" : "en"}`}
 
                 style={{ color: "red" }}>
                   {" "}

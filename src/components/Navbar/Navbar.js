@@ -23,7 +23,7 @@ function Navbar() {
   const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
   const currentPathname = window.location.pathname;
 
-  
+
   const handleLanguageChange = (language) => {
     const newPathname = currentPathname.replace(/\/[a-z]{2}$/, `/${language}`);
     navigate(newPathname);
@@ -33,7 +33,7 @@ function Navbar() {
   React.useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
 
   return (
@@ -51,13 +51,13 @@ function Navbar() {
               </header>
             </div>
           </div>
-      
+
         </section>
       ) : (
         <AppBar position="static" className="appbar">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <Box className="appbar__imageBox" onClick={() => navigate(`/${lang == "pl" ? lang : "en"}`)}>
+              <Box className="appbar__imageBox" onClick={() => navigate(`/${lang === "pl" ? lang : "en"}`)}>
                 <img
                   className="appbar__imageBox__image"
                   src={require("../../assets/Navbar-logo.png")}
@@ -66,22 +66,22 @@ function Navbar() {
               </Box>
               <Box className="appbar__linksBox">
                 <div className="appbar__linksBox__links">
-                  <Link to={`/about/${lang == "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
+                  <Link to={`/about/${lang === "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
                     {t("nav.aboutUs")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/faq/${lang == "pl" ? "pl" : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/faq/${lang === "pl" ? "pl" : "en"}`}>
                    {t("nav.faq")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? "pl" : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang === "pl" ? "pl" : "en"}`}>
                   {t("nav.claims")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/broker/${lang == "pl" ? "pl" : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/broker/${lang === "pl" ? "pl" : "en"}`}>
                   {t("nav.brokerLogin")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/employ/${lang == "pl" ? "pl" : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/employ/${lang === "pl" ? "pl" : "en"}`}>
                   {t("nav.employLogin")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/member/${lang == "pl" ? "pl" : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/member/${lang === "pl" ? "pl" : "en"}`}>
                   {t("nav.memberLogin")}
                   </Link>
                   <select onChange={(e) => handleLanguageChange(e.target.value)}>
@@ -91,8 +91,8 @@ function Navbar() {
                 </select>
 
                 </div>
-               
-               
+
+
               </Box>
               <Box className="appbar__sidebar1">
                 <IconButton>

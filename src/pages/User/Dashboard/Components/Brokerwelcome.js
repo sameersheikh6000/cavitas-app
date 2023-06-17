@@ -11,7 +11,7 @@ const Brokerwelcome = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   if (user?.data?.first_name && user?.data?.last_name) {
@@ -34,15 +34,15 @@ const Brokerwelcome = () => {
         <br />
         {t("Pannel_Dashboard_Dashboard_Broker.Heading_Part3")}
         <br />
-        {t("Pannel_Dashboard_Dashboard_Broker.Heading_Part4")} 
+        {t("Pannel_Dashboard_Dashboard_Broker.Heading_Part4")}
         <br />
-        {t("Pannel_Dashboard_Dashboard_Broker.Heading_Part7")} 
+        {t("Pannel_Dashboard_Dashboard_Broker.Heading_Part7")}
         <br />
         {t("Pannel_Dashboard_Dashboard.Heading_Part5")}
         <br />
         {t("Pannel_Dashboard_Dashboard.Heading_Part6")}
       </p>
-      
+
       {/* <p className='dashboard__container__content__welcomePage__support'>Need some help? Let's Chat.</p>
       <p className='dashboard__container__content__welcomePage__contact'>XXXXXXX &nbsp; | &nbsp;  support@cavitas.eu</p>
      */}

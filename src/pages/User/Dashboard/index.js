@@ -32,7 +32,7 @@ const Dashboard = () => {
 
   return (
     <>
-      { (user || admin) && 
+      { (user || admin) &&
         <Page>
           <AlertMessage errorMessage={errorMessage} />
           <section className='dashboard'>
@@ -48,7 +48,7 @@ const Dashboard = () => {
                 <Employerwelcome />
               }
                 <UserProfile />
-              {user?.data?.role === "broker" &&          
+              {user?.data?.role === "broker" &&
                 <InsuredClient insuranceList={insuranceList} />
               }
               {user?.data?.role === "broker" ?

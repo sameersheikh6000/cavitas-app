@@ -36,31 +36,25 @@ const useClientInsurance = () => {
     } else if (insurance.voluntary !== ""){
       insurance.participation_mode = 2
     }
-
     const params = {
     corporate_client_name: insurance.corporate_client_name,
-    number_of_employees_in_company: parseInt(insurance.number_of_employees_in_company),
+    number_of_employees_in_company: insurance.number_of_employees_in_company,
     inception_date: insurance.inception_date,
     file: insurance.file,
     details: insurance.details,
-    referenced_broker_name: insurance.referenced_broker_name,
-    participation_mode: parseInt(insurance.participation_mode),
-    mandatory_number_of_employees: parseInt(insurance.mandatory_number_of_employees),
-    voluntary_number_of_employees: parseInt(insurance.voluntary_number_of_employees),
-    employees_family_info: parseInt(insurance.employees_family_info),
-    insurance_payment_type: parseInt(insurance.insurance_payment_type),
-
-    broker_reference: (insurance.broker_reference !== '0' || "") ? parseInt(insurance.broker_reference) : 1,
-    identity: insurance.identity,
-    request: insurance.request,
+    referenced_broker_name: user?.data?.role === 'broker' ? `${user?.data?.first_name}` + ` ` + `${user?.data?.last_name}` : insurance?.referenced_broker_name,
+    participation_mode: insurance.participation_mode,
+    mandatory_number_of_employees: insurance.mandatory_number_of_employees,
+    voluntary_number_of_employees: insurance.voluntary_number_of_employees,
+    employees_family_info: insurance.employees_family_info,
+    insurance_payment_type: insurance.insurance_payment_type,
+    broker_reference: user?.data?.role === 'broker' ? 1 : insurance?.broker_reference,
     email: user?.data?.email,
-
-    status: parseInt(insurance.status)
     }
     const formData = new FormData()
     for (const property in params) {
       formData.append(
-        property, insurance[property]
+        property, params[property]
       )
     }
     const response = await axios.post(

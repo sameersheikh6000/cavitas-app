@@ -61,7 +61,7 @@ function GetQuoteCavitas() {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
 
   return (
@@ -98,22 +98,22 @@ function GetQuoteCavitas() {
               <div className="userProfileView__container__details__detailsBox">
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div>
-                    <input 
-                      type="text" 
-                      placeholder={`${t("get24contactform.firstandlastname")}`} 
+                    <input
+                      type="text"
+                      placeholder={`${t("get24contactform.firstandlastname")}`}
                       onChange={(e) => setFormData({...formData, full_name: e.target.value})}
                       />
                   </div>
                   <div>
-                    <input 
-                      type="email" 
-                      placeholder="E-mail address*" 
+                    <input
+                      type="email"
+                      placeholder="E-mail address*"
                       onChange={(e) => setFormData({ ...formData, email: e.target.value})}
                       />
                   </div>
 
                   <div style={{ marginTop: "5px" }}>
-                    <select 
+                    <select
                       className="select"
                       onChange={(e) => setFormData({...formData, identity: `I am ${e.target.value}` })}
                     >
@@ -124,9 +124,9 @@ function GetQuoteCavitas() {
                     </select>
                   </div>
                   <div>
-                    <input 
-                      type="text" 
-                      placeholder={`${t("get24contactform.companyname")}`} 
+                    <input
+                      type="text"
+                      placeholder={`${t("get24contactform.companyname")}`}
                       onChange={(e) => setFormData({...formData, company_name: e.target.value})}
                       />
                   </div>
@@ -135,21 +135,21 @@ function GetQuoteCavitas() {
                   <div>
                     <input
                       type="text"
-                      placeholder={`${t("get24contactform.nameofgroup")}`} 
+                      placeholder={`${t("get24contactform.nameofgroup")}`}
                       onChange={(e) => setFormData({...formData, group_name: e.target.value})}
                     />
                   </div>
                   <div>
                     <input
                       type="number"
-                      placeholder={`${t("get24contactform.totalnumber")}`} 
+                      placeholder={`${t("get24contactform.totalnumber")}`}
                       onChange={(e) => setFormData({ ...formData, number_of_employees_in_company: e.target.value})}
                     />
                   </div>
                   <div style={{ marginTop: "8px" }}>
                     <input
-                      type={dateType == 'date' ? dateType : 'text'}
-                      placeholder={`${t("get24contactform.date")}`} 
+                      type={dateType === 'date' ? dateType : 'text'}
+                      placeholder={`${t("get24contactform.date")}`}
                       onFocus={() => setDateType('date')}
                       onBlur={() => setDateType('text')}
                       onChange={(e) => setFormData({ ...formData, inception_date: e.target.value})}
@@ -164,7 +164,7 @@ function GetQuoteCavitas() {
                     <textarea
                       style={{width: "200%" }}
                       className="textarea"
-                      placeholder={`${t("get24contactform.aboutyourgroup")}`} 
+                      placeholder={`${t("get24contactform.aboutyourgroup")}`}
                       cols={10}
                       rows={5}
                       onChange={(e) => setFormData({...formData, details: e.target.value})}

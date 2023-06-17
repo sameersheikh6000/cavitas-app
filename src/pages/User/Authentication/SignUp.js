@@ -14,7 +14,7 @@ const SignUp = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const { createUser } = useUsers();
   const navigate = useNavigate();
@@ -44,10 +44,10 @@ const SignUp = () => {
     const response = await createUser(user, "broker");
 
     if (response?.status?.code < 300) {
-      navigate(`/dashboard/${lang == 'pl' ? lang : 'en'}`);
+      navigate(`/dashboard/${lang === 'pl' ? lang : 'en'}`);
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
-    } else if (response?.data?.status?.message == undefined) {
+    } else if (response?.data?.status?.message === undefined) {
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
     }
   };
@@ -63,7 +63,7 @@ const SignUp = () => {
             <img className='authentication__container__imageBox__top__logo' onClick={() => navigate("/")} src={require("../../../assets/Signin-logo.png")} alt='' />
             <img className='authentication__container__imageBox__top__flag' src={require("../../../assets/Signin-flag.png")} alt='' />
           </div>
-          
+
 
           <div className='authentication__container__imageBox__bottom'>
             <img className='authentication__container__imageBox__bottom' src={require("../../../assets/BrokerLogin_image.png")} alt='' />
@@ -76,7 +76,7 @@ const SignUp = () => {
             <div>
               <input
                 type="text"
-                placeholder={`${t("Registration.Firstname")}`} 
+                placeholder={`${t("Registration.Firstname")}`}
                 name='first_name'
                 value={user.first_name}
                 onChange={changeHandler}
@@ -84,8 +84,8 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Registration.Lastname")}`} 
-               
+                placeholder={`${t("Registration.Lastname")}`}
+
                 name='last_name'
                 value={user.last_name}
                 onChange={changeHandler}
@@ -93,7 +93,7 @@ const SignUp = () => {
               />
               <input
                 type="email"
-                placeholder={`${t("claim.claim_heading_part2")}`} 
+                placeholder={`${t("claim.claim_heading_part2")}`}
                 name='email'
                 value={user.email}
                 onChange={changeHandler}
@@ -101,7 +101,7 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Registration.Phonenumber")}`} 
+                placeholder={`${t("Registration.Phonenumber")}`}
                 name='phone_number'
                 value={user?.phone_number}
                 onChange={(e) => setUser({...user, phone_number: e.target.value})}
@@ -111,7 +111,7 @@ const SignUp = () => {
             <div>
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Brokercompanyname")}`} 
+                placeholder={`${t("Pannel_registration.Brokercompanyname")}`}
                 name='company_name'
                 value={user.company_name}
                 onChange={changeHandler}
@@ -119,7 +119,7 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Brokercompanykrsname")}`}               
+                placeholder={`${t("Pannel_registration.Brokercompanykrsname")}`}
                  name='company_krs_number'
                 value={user?.company_krs_number}
                 onChange={(e) => setUser({...user, company_krs_number: e.target.value})}
@@ -127,7 +127,7 @@ const SignUp = () => {
               />
               <input
                 type="text"
-                placeholder={`${t("Pannel_registration.BrokercompanyURLaddress")}`}               
+                placeholder={`${t("Pannel_registration.BrokercompanyURLaddress")}`}
                 name='company_url_address'
                 value={user?.company_url_address}
                 onChange={(e) => setUser({...user, company_url_address: e.target.value})}
@@ -135,7 +135,7 @@ const SignUp = () => {
               />
               {/* <input
                 type="text"
-                placeholder={`${t("Pannel_registration.Rolecompany")}`}               
+                placeholder={`${t("Pannel_registration.Rolecompany")}`}
                 name='role'
                 value={user.role}
                 onChange={changeHandler}
@@ -145,7 +145,7 @@ const SignUp = () => {
             <div>
               <input
                 type="password"
-                placeholder={`${t("Registration.setpassword")}`}               
+                placeholder={`${t("Registration.setpassword")}`}
                 name='password'
                 value={user.password}
                 onChange={changeHandler}
@@ -153,7 +153,7 @@ const SignUp = () => {
               />
               <input
                 type="password"
-                placeholder={`${t("Registration.repeatpassword")}`}               
+                placeholder={`${t("Registration.repeatpassword")}`}
                 name='password_confirmation'
                 value={user.password_confirmation}
                 onChange={changeHandler}

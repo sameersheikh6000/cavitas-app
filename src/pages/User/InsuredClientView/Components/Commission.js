@@ -10,7 +10,7 @@ const Commission = ({ user }) => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   return (
     <div className='insuredClientGroup__container__cardsBox__card'>
@@ -20,7 +20,7 @@ const Commission = ({ user }) => {
       <div className='insuredClientGroup__container__cardsBox__card__detailsBox'>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>{t("Policyinformation.Treatmnenttype")}:</p>
-          
+
           <p>{t("Policyinformation.Annualsum")}</p>
         </div>
         {user?.data?.role === "broker" &&

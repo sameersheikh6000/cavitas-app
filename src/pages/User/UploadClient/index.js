@@ -16,7 +16,7 @@ const UploadClient = () => {
   const { createClientInsurance } = useClientInsurance();
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
-  
+
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
   const [successMessage, setSuccessMessage] = useState();
@@ -27,7 +27,6 @@ const UploadClient = () => {
     inception_date: "",
     file: "",
     details: "",
-    status: "",
     referenced_broker_name: "",
     participation_mode: "",
     mandatory: "",
@@ -84,9 +83,6 @@ const UploadClient = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (user?.data?.role == 'broker') {
-      setClient({ ...client, referenced_broker_name: `${user?.data?.first_name}`+ ` ` +`${user?.data?.last_name}`, broker_reference: 1})
-    } 
     let data = {
       ...client,
     };
@@ -94,7 +90,7 @@ const UploadClient = () => {
       const response = await createClientInsurance(data);
       if (response?.status < 300) {
         setSuccessMessage(t("get24contactform.setmessage"));
-        navigate(`/dashboard/${lang == "pl" ? lang : "en"}`);
+        navigate(`/dashboard/${lang === "pl" ? lang : "en"}`);
       } else if (response.status > 300) {
         // setErrorMessage(response.message);
       }
@@ -104,7 +100,7 @@ const UploadClient = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
   return (
@@ -331,7 +327,7 @@ const UploadClient = () => {
                   <label>{t("Uploadinsuredperson.Question_no4_part2")}</label>
                 </div>
               </div>
-              {user?.data?.role == 'employ' &&
+              {user?.data?.role === 'employ' &&
                 <div className='uploadClient__container__body__participation'>
                 <p>{t("Uploadinsuredperson.Question_no5")}</p>
                   <div className='uploadClient__container__body__participation__head'>

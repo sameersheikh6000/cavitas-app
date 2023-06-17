@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import { USER_STORAGE_KEY } from '../../../../../../config/helpers/variables';
 import useClientInfoReply from '../../../../../../hooks/useClientInfoReply';
 function ClientInfoReplyAnswerForm({
-  
+
   client_info_reply,
   setErrorMessage,
   setSuccessMessage,
@@ -44,7 +44,7 @@ function ClientInfoReplyAnswerForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    
+
     setClientInfoReplyAnswer({ ...clientInfoReplyAnswer, client_info_reply_id: client_info_reply?.id})
     const response = await createClientInfoReplyAnswer(clientInfoReplyAnswer);
     ;
@@ -60,7 +60,7 @@ function ClientInfoReplyAnswerForm({
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
 
   return (

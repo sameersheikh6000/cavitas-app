@@ -64,7 +64,7 @@
     "cavitasMeaning": "Skąd się wzięła nazwa Cavitas?",
     "Meaningofcavitas": "Łacińskie słowo „cavitas” oznacza „jamę” lub „jamę w ludzkim ciele”. Jama ustna wraz z dziąsłami i zębami to bardzo ważna część naszego ciała. Zły stan uzębienia może być przyczyną chorób układu krążenia, cukrzycy i infekcji dróg oddechowych. Zdrowe zęby, dziąsła i usta zmniejszają ryzyko rozwoju tych i innych poważnych schorzeń.",
     "ourstory": "Nasza historia",
-    "ourstory_desc1": "W 2018 roku zaczęliśmy pośredniczyć w zawieraniu umów ubezpieczenia stomatologicznego w Estonii, gdzie, podobnie jak w wielu innych krajach, oferta tego typu produktów nie była wcześniej dostępna. ", 
+    "ourstory_desc1": "W 2018 roku zaczęliśmy pośredniczyć w zawieraniu umów ubezpieczenia stomatologicznego w Estonii, gdzie, podobnie jak w wielu innych krajach, oferta tego typu produktów nie była wcześniej dostępna. ",
     "ourstory_desc2": "Celem firmy Cavitas, która oferuje inteligentniejsze ubezpieczenie stomatologiczne, jest pomoc ludziom w zachowaniu naturalnych zębów tak długo, jak to możliwe – najlepiej do końca życia – a jednocześnie zapewnienie takiego ubezpieczenia stomatologicznego, które pozwala zapobiegać problemom związanym z uzębieniem oraz pokryć koszty leczenia stomatologicznego. Co więcej, wszystkie informacje związane z pielęgnacją zębów dostępne są na inteligentnych urządzeniach mobilnych.",
     "ourstory_desc3": "Ponadto stajemy się coraz lepsi! Bądź na bieżąco! ",
     "smartdental_title": "Cavitas – Inteligentniejsze ubezpieczenie stomatologiczne",
@@ -411,10 +411,10 @@
   "Question_no5_part1":"TAK ",
   "Question_no5_part2":"Bezpośrednio przez członków rodziny",
   "Question_no5_part3":"NIE",
- 
+
   "Question_no6":"Preferowana data rozpoczęcia grupowego ubezpieczenia stomatologicznego Cavitas?",
 
-  
+
   "Question_no7":"Prześlij listę członków grupy w formie arkusza kalkulacyjnego (.xls lub .csv)",
   "Question_no7_part1":"Prześlij plik",
 
@@ -448,7 +448,7 @@
  "createdby":"Stworzone przez",
  "detail":"Szczegół",
  "date":"Data"
- 
+
 
 },
 "quotesupport":{
@@ -468,7 +468,7 @@
   "heading_2":"firma Northern1 International Insurance Brokers OÜ",
   "heading_3":"Nr licencji: 12806139",
   "heading_4":"Tallin, Estonia"
-  
+
  },
  "claim":{
   "claim_title":"Witamy na portalu roszczeń dentystycznych",
@@ -493,7 +493,7 @@
 "Status":"Status",
 "Subject":"Temat",
 "Createdon":"Utworzono dnia",
-"Noattachemnt":"Brak dostępnych załączników",
+"Noattachemnt":"Żadnych plików",
 "Answer":"Odpowiedź",
 "Attachement":"Załącznik(i):",
 "contactticket":"Mój bilet kontaktowy",

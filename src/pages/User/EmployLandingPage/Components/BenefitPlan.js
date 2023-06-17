@@ -10,7 +10,7 @@ const BenefitPlan = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   return (
     <section className='landingPage__benefitPlan'>
@@ -41,7 +41,7 @@ const BenefitPlan = () => {
           <div>
             <img src={require('../../../../assets/OfferTick-image.png')} alt="" />
             <p>
-            {t("Employer.Employer_benefits4")}           
+            {t("Employer.Employer_benefits4")}
             </p>          </div>
         </div>
       </div>

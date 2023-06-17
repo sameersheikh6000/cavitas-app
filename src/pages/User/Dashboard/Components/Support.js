@@ -30,10 +30,10 @@ const Support = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
     getClientInfos();
   }, [])
-  
+
 
   return (
     <>
@@ -44,17 +44,17 @@ const Support = () => {
             <EmailOutlinedIcon className="dashboard__container__content__support__header__iconBox__icon" />
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
-          <Button size="small" onClick={() => navigate(`/support/view/${lang == "pl" ? lang : "en"}`)}>
+          <Button size="small" onClick={() => navigate(`/support/view/${lang === "pl" ? lang : "en"}`)}>
             {t("Pannel_Dashboard_insuredperson.View")}
           </Button>
         </header>
         <div>
-            <div className="insuredClientView__container__mysupport__tickets" 
+            <div className="insuredClientView__container__mysupport__tickets"
           style={{marginTop:"0rem"}}
             >
               <table    style={{ textAlign:"center", border:"none"}}>
                 <thead style={{ textAlign:"center", border:"none"}}>
-                  
+
                   <tr style={{ textAlign:"center", border:"none"}}>
                   <th style={{ textAlign:"center", border:"none"}}>{t("contactsupport.ticketnumber")}</th>
                   <th style={{ textAlign:"center", border:"none"}}>{t("MysupportTickets.topic")}</th>
@@ -68,7 +68,7 @@ const Support = () => {
 
                     <tr key={index} style={{ textAlign:"center", border:"none"}}>
                       <td style={{ textAlign:"center", border:"none"}}>
-                        <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang == 'pl' ? lang : 'en'}`}>{row?.id}</Link>
+                        <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang === 'pl' ? lang : 'en'}`}>{row?.id}</Link>
                       </td>
                       <td style={{ textAlign:"center", border:"none"}}>{row?.request}</td>
                       <td style={{ textAlign:"center", border:"none"}}>{row?.status}</td>
@@ -84,7 +84,7 @@ const Support = () => {
               </table>
             </div>
           </div>
-          
+
       </section>
     </>
   );

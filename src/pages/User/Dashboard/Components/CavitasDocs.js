@@ -20,7 +20,7 @@ const CavitasDocs = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const CavitasDocs = () => {
           <TextSnippetOutlinedIcon className="dashboard__container__content__cavitasDocs__header__iconBox__icon" />
           <p>{t("Pannel_Dashboard.Cavitasdocuments")}</p>
         </div>
-        <Button size="small" onClick={() => navigate(`/cavitasdocs/view/${lang == "pl" ? lang : "en"}`)}>
+        <Button size="small" onClick={() => navigate(`/cavitasdocs/view/${lang === "pl" ? lang : "en"}`)}>
           {t("Pannel_Dashboard_Alldocuments.Alldocuments")}
         </Button>
       </header>

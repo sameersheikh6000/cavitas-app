@@ -23,7 +23,7 @@ const ResetPassword = () => {
   const handleSubmit = async (event) => {
     debugger
     event.preventDefault();
-    if (credential?.password == credential?.passwordConfirmation) {
+    if (credential?.password === credential?.passwordConfirmation) {
       const response = await resetPassword(credential);
       if (response?.status < 300) {
         setSuccessMessage(response?.message);
@@ -39,7 +39,7 @@ const ResetPassword = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
 
   return (

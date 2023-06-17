@@ -33,7 +33,7 @@ function ContactSupportList() {
   // useEffect(() => {
   //   const currentUrl = window.location.href;
   //   let lang = currentUrl.split("/").pop();
-  //   lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  //   lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   //   getContactFormData();
   // }, []);
 
@@ -51,7 +51,7 @@ function ContactSupportList() {
   //             <SearchOutlinedIcon className="insuredClientView__header__right__icon" />
   //           </div> */}
   //           <div className="insuredClientView__header__right">
-  //           <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
+  //           <Link to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}>
   //               <Button
   //                 color="error"
   //                 variant="outlined"
@@ -72,7 +72,7 @@ function ContactSupportList() {
   //         <header>
   //           <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
   //             <div>
-  //               <Link  to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+  //               <Link  to={`/support/view/${lang === "pl" ? "pl" : "en"}`}
 
 
   //               style={{textDecoration: "none"}}>
@@ -82,7 +82,7 @@ function ContactSupportList() {
   //               </Link>
   //             </div>
   //             <div>
-  //               <Link to={`/ContactSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //               <Link to={`/ContactSupportList/${lang === "pl" ? "pl" : "en"}`}
 
   //               style={{textDecoration: "none"}}>
   //                 <Button
@@ -94,7 +94,7 @@ function ContactSupportList() {
   //               </Link>
   //             </div>
   //             <div>
-  //             <Link to={`/QuoteSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //             <Link to={`/QuoteSupportList/${lang === "pl" ? "pl" : "en"}`}
 
   //             style={{textDecoration: "none"}}>
   //                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
@@ -103,7 +103,7 @@ function ContactSupportList() {
   //               </Link>
   //             </div>
   //             <div>
-  //             <Link to={`/InsuredPersonSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //             <Link to={`/InsuredPersonSupportList/${lang === "pl" ? "pl" : "en"}`}
   //                style={{textDecoration: "none"}}>
   //                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
   //                 {t("MysupportTickets.insuredpersonsupport")}
@@ -136,12 +136,12 @@ function ContactSupportList() {
   //                       submittedContact.map((row, index) => (
   //                   <tr key={index}>
   //                     <td>
-  //                       {row?.status == "fresh"
+  //                       {row?.status === "fresh"
   //                         ? "NEW"
   //                         : row?.status}
   //                     </td>
   //                     <td>
-  //                     <a href="" onClick={() => navigate(`/ContactSupportTicket/${row?.id}/${lang == "pl" ? "pl" : "en"}`)}>{row?.id}</a>
+  //                     <a href="" onClick={() => navigate(`/ContactSupportTicket/${row?.id}/${lang === "pl" ? "pl" : "en"}`)}>{row?.id}</a>
   //                     </td>
   //                     <td>{row?.request}</td>
   //                     <td>{row?.identity}</td>

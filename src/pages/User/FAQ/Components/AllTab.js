@@ -14,13 +14,13 @@ const AllTab = () => {
     const newData = [...faqData];
     newData[index] = !newData[index];
     setFaqData(newData);
-    
+
   }
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   return (
     <section className='faqTab'>
@@ -36,7 +36,7 @@ const AllTab = () => {
         </div>
         {faqData[0] === true &&
           <div className='faqTab__container__box2'>
-          
+
             <p>{t("FAQ.FAQ_genral_A1")}</p>
                      </div>
         }
@@ -55,14 +55,14 @@ const AllTab = () => {
         </div>
         {faqData[1] === true &&
           <div className='faqTab__container__box2'>
-          
+
            <p>{t("FAQ.FAQ_genral_A2")}</p>
           </div>
         }
       </div>
       <div className='faqTab__container'>
         <div className='faqTab__container__box'>
-        
+
           <p>{t("FAQ.FAQ_genral_Q3")}</p>
           {faqData[2] === false &&
             <ArrowDownwardOutlinedIcon className='faqTab__container__box__arrowDown' onClick={() => handleFaqData(2)} />
@@ -73,7 +73,7 @@ const AllTab = () => {
         </div>
         {faqData[2] === true &&
           <div className='faqTab__container__box2'>
-         
+
             <p>{t("FAQ.FAQ_genral_A3")}</p>
                       </div>
         }

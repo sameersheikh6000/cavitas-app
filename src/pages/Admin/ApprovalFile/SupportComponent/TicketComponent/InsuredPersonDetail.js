@@ -40,7 +40,7 @@ const InsuredPersonDetail = () => {
     }
   };
 
-  const handleClientInfoStatusUpdate = async () => {  
+  const handleClientInfoStatusUpdate = async () => {
     const response = await updateClientInfoTicketStatusAdmin(id, clientInfoStatus);
     if (response?.status < 300) {
       setStatusSuccessMessage("Status Updated Successfully!");
@@ -255,11 +255,19 @@ const InsuredPersonDetail = () => {
               <h3>TICKET DETAILS</h3>
               <div style={{ marginTop: 20 }}>
                 <label>
+<<<<<<< Updated upstream
                   <strong style={{textTransform: "uppercase"}}>Ticket Creator:</strong>
+=======
+                  <strong>Ticket Creator Email:</strong>
+>>>>>>> Stashed changes
                 </label>
                 <p id="outlined-size-normal">{clientInfo?.user?.email}</p>
+                <label>
+                  <strong>Ticket Creator Name:</strong>
+                </label>
+                <p id="outlined-size-normal">{clientInfo?.user?.name}</p>
               { clientInfo?.form_type === 'insured client file' &&
-                <> 
+                <>
                   <label>
                     <strong>Client Name:</strong>
                   </label>
@@ -294,12 +302,12 @@ const InsuredPersonDetail = () => {
                     <strong>Insurance Payment Type:</strong>
                   </label>
                   <p id="outlined-size-normal">{clientInfo?.insurance_payment_type}</p>
-                  
+
                   <label>
                     <strong>Broker Reference:</strong>
                   </label>
                   <p id="outlined-size-normal">{clientInfo?.broker_reference}</p>
-                  
+
                   <label>
                     <strong>Broker Name:</strong>
                   </label>
@@ -321,7 +329,7 @@ const InsuredPersonDetail = () => {
                   onChange={(e) => setClientInfoStatus(e.target.value)}
                 >
                   <p >
-                    {clientInfo?.status == "fresh"
+                    {clientInfo?.status === "fresh"
                       ? "NEW"
                       : clientInfo?.status.toUpperCase()}
                   </p>

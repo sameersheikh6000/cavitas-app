@@ -65,7 +65,7 @@
     "ourstory_desc2": "The goal of Cavitas - Smarter Dental Insurance is to help people maintain their natural teeth for a longer period of time—hopefully for the rest of their lives—while also providing dental insurance in a more intelligent way that focuses on prevention of teeth-related problems and also covering various dental treatment costs. It also makes all dental-related information accessible on smart mobile devises.",
     "ourstory_desc3": "Last but not least - we are getting even more smarter! Stay turned!",
     "smartdental_title": "Cavitas - smarter dental insurance    ",
-    "smartdental_p1": "We are agent of clients and we act in their best interest. ", 
+    "smartdental_p1": "We are agent of clients and we act in their best interest. ",
     "smartdental_p2": "We do our best efforts to provide the selection of insurance contracts from various dental insurance capacity providers in Europe.    ",
     "smartdental_p3": "Due to specifics of dental insurance cover we currently mediate dental insurance contracts from 2 capacity providers:    ",
     "ourpolicy_title": "Our privacy policy and other documents    ",
@@ -393,7 +393,7 @@
   "Question_no4":"How insurance premium of family members is paid?",
   "Question_no4_part1":"By employer via employee's monthly salary",
   "Question_no4_part2":"By the family members themselves",
-  
+
   "Question_no5":"Do you have a mandated insurance broker through whom you found out about Cavitas dental insurance?",
   "Question_no5_part1":"YES",
   "Question_no5_part2":" Name of insurance broker company",
@@ -434,7 +434,7 @@
  "createdby":"Created by",
  "detail":"Detail",
  "date":"Date"
- 
+
 
 },
 "quotesupport":{
@@ -455,7 +455,7 @@
   "heading_2":"Northern1 international insurance brokers OÜ  ",
   "heading_3":"License no 12806139",
   "heading_4":"Tallinn Estonia"
-  
+
  }
  ,
  "claim":{
@@ -479,10 +479,10 @@
 "Returnticket":"Return to ticket list",
 "Number":"Number",
 "Status":"Status",
-"Subject":"Topic",
+"Topic":"Topic",
 "Createdon":"Created on",
 "Attachement":"Attachement(s):",
-"Noattachemnt":"No Attachments available",
+"Noattachemnt":"No Files",
 "Answer":"Answer",
 "contactticket":"My contact ticket",
 "myquoteticket":"My Quote Ticket",
@@ -491,7 +491,7 @@
 "Writeanswer":"Write Your Answer Here!",
 "insuredticket":"Insured Tickets",
 "myinsuredticket":"MY TICKET ",
-"nosubject":"No subject"
+"notopic":"No Topic"
 
 },
 

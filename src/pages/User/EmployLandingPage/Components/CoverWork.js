@@ -13,7 +13,7 @@ const EmployerCoverWorks = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const navigate = useNavigate();
 
@@ -25,7 +25,7 @@ const EmployerCoverWorks = () => {
       </header>
       <div className='landingPage__coverWorks__container'>
         <div className='landingPage__coverWorks__container__cards'>
-        
+
         <div className='landingPage__coverWorks__container__cards__card'>
             <div className='landingPage__coverWorks__container__cards__card__top'>
               <h1>{t("Broker.CoverWork__year1")}</h1>
@@ -43,7 +43,7 @@ const EmployerCoverWorks = () => {
               <span>{t("Broker.CoverWork_no9")}</span>
             </div>
           </div>
-          
+
           <div className='landingPage__coverWorks__container__cards__card'>
             <div className='landingPage__coverWorks__container__cards__card__top'>
               <h1>{t("Broker.CoverWork__year2")}</h1>
@@ -66,7 +66,7 @@ const EmployerCoverWorks = () => {
               <span>{t("Broker.CoverWork_no9")}</span>
             </div>
           </div>
-         
+
           <div className='landingPage__coverWorks__container__cards__card'>
             <div className='landingPage__coverWorks__container__cards__card__top'>
               <h1>{t("Broker.CoverWork__year3")}</h1>
@@ -92,7 +92,7 @@ const EmployerCoverWorks = () => {
             <div className='landingPage__coverWorks__container__cards__card__bottom'>
               <span>{t("Broker.CoverWork_no9")}</span>
             </div>
-         
+
           </div>
         </div>
       </div>

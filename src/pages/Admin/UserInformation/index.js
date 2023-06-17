@@ -63,10 +63,10 @@ const UserInformation = () => {
               <tr
                     key={index}
                     style={{
-                      fontWeight: row?.created_at == today ? "bold" : "normal"
+                      fontWeight: row?.created_at === today ? "bold" : "normal"
                     }}
                   >
-                <td>{row?.created_at == today && <span style={{color: "red"}}>NEW</span>}&nbsp;&nbsp;&nbsp;{row?.company_name}</td>
+                <td>{row?.created_at === today && <span style={{color: "red"}}>NEW</span>}&nbsp;&nbsp;&nbsp;{row?.company_name}</td>
                 <td>{row?.email}</td>
                 <td>{row?.first_name}</td>
                 <td>{row?.last_name}</td>

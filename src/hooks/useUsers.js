@@ -101,7 +101,7 @@ const useUsers = () => {
   };
 
   const updateUser = async user => {
-    
+
     const params = {
       user: {
         first_name: user.first_name,
@@ -141,7 +141,7 @@ const useUsers = () => {
       return res.data
     })
     return response;
-  };  
+  };
 
   const getAllAdminUsers = async () => {
     const response = await axios.get(
@@ -227,7 +227,7 @@ const useUsers = () => {
   };
 
   const updateUserByAdmin = async (user) => {
-    
+
     const params = {
       user: {
         first_name: user.first_name,
@@ -250,7 +250,7 @@ const useUsers = () => {
         },
         getAdminHeaders(),
         ).then((res) => {
-          
+
           if (res.data.status > 300) {
             handleErrors(res);
           }

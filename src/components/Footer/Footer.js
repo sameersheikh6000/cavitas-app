@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next';
 import i18n from '../../config/helpers/i18n';
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-const Footer = () => { 
+const Footer = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -17,7 +17,7 @@ const Footer = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   return (
     <section className="footer">
@@ -47,21 +47,21 @@ const Footer = () => {
             <Link>
               <FeedbackForm />
             </Link>
-          </div> 
+          </div>
           <div className="footer__container__top__box">
-          <Link to={`/about/${lang == "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
+          <Link to={`/about/${lang === "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
                     {t("nav.aboutUs")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/Blog/${lang == "pl" ? lang : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/Blog/${lang === "pl" ? lang : "en"}`}>
                   {t("nav.Blog")}
                   </Link>
-            <Link className="appbar__linksBox__links__link" to={`/faq/${lang == "pl" ? lang : "en"}`}>
+            <Link className="appbar__linksBox__links__link" to={`/faq/${lang === "pl" ? lang : "en"}`}>
                   {t("nav.faq")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang == "pl" ? lang : "en"}`}>
+                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang === "pl" ? lang : "en"}`}>
                   {t("nav.claims")}
                   </Link>
-            <Link to={`/Privacypolicy/${lang == "pl" ? "pl" : "en"}`}>{t("nav.PrivacyPolicy")}</Link>
+            <Link to={`/Privacypolicy/${lang === "pl" ? "pl" : "en"}`}>{t("nav.PrivacyPolicy")}</Link>
             <Link to="#">{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">

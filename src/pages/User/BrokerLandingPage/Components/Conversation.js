@@ -14,9 +14,9 @@ const Conversation = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
- 
+
   const navigate = useNavigate();
 
   return (
@@ -28,7 +28,7 @@ const Conversation = () => {
               {t("Broker.Broker__conversion")}
             </h1>
             <ContactCavitas />
-           
+
           </div>
         </div>
       </section>

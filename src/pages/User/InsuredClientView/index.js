@@ -18,7 +18,7 @@ const InsuredClientView = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
   const navigate = useNavigate();
@@ -114,13 +114,13 @@ const InsuredClientView = () => {
             <table>
               <thead>
                 <tr>
-                  {/* <th>Risk country</th>   
-                <th>Type of insurance</th>    
-                <th>Insurance plan</th>   
-                <th>Sum Insured per insured person per policy year</th>   
-                <th>Policy number</th>   
-                <th>Risk inception date</th>  
-                <th>Risk expiry date</th>  
+                  {/* <th>Risk country</th>
+                <th>Type of insurance</th>
+                <th>Insurance plan</th>
+                <th>Sum Insured per insured person per policy year</th>
+                <th>Policy number</th>
+                <th>Risk inception date</th>
+                <th>Risk expiry date</th>
                 <th>Risk renewal date</th>   */}
                   <th>{t("Insured_clients.Companyname")}</th>
                   <th>{t("Insured_clients.Companykrsnumber")}</th>
@@ -135,16 +135,16 @@ const InsuredClientView = () => {
                   <th>{t("Insured_clients.Memberphonenumber")}</th>
                   <th>{t("Insured_clients.Membermail")}</th>
                   <th>{t("Insured_clients.Memberaddress")}</th>
-                  {/* <th>Group Type</th>  
-                <th>PARTICIPATION</th>  
-                <th>Currency</th>  
-                <th>Payment Frequency</th>  
-                <th>Annual GWP</th>  
-                <th>Annual BC</th>  
-                <th>Annual NP</th>  
-                <th>Monthly NP</th>  
-                <th>Monthly BC</th>  
-                <th>Insurer</th>  
+                  {/* <th>Group Type</th>
+                <th>PARTICIPATION</th>
+                <th>Currency</th>
+                <th>Payment Frequency</th>
+                <th>Annual GWP</th>
+                <th>Annual BC</th>
+                <th>Annual NP</th>
+                <th>Monthly NP</th>
+                <th>Monthly BC</th>
+                <th>Insurer</th>
                 <th>Mandated broker</th>  */}
                   <th></th>
                 </tr>

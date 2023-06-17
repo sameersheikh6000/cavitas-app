@@ -38,7 +38,7 @@ const AdminSignIn = () => {
       navigate("/admin");
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
-    } else if (response?.data?.status?.message == undefined) {
+    } else if (response?.data?.status?.message === undefined) {
       setErrorMessage("Something went wrong!");
     }
   };

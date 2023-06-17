@@ -75,7 +75,7 @@
 //                   style={{ background: "#5C8894" }}
 //                   className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn__Submit"
 //                 >
-                  
+
 //                   get quote
 //                 </Button>
 //               </Link>
@@ -103,7 +103,7 @@
 //                   quoteList.map((row, index) => (
 //                     <tr key={index}>
 //                       <td>
-//                         {row?.status == "fresh"
+//                         {row?.status === "fresh"
 //                           ? "NEW"
 //                           : row?.status ? row?.status.toUpperCase() : ""}
 //                       </td>

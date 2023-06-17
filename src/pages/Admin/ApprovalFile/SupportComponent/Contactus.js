@@ -100,7 +100,7 @@
 //                   submittedContact.map((row, index) => (
 //                     <tr key={index}>
 //                       <td>
-//                         {row?.status == "fresh"
+//                         {row?.status === "fresh"
 //                           ? "NEW"
 //                           : row?.status ? row?.status.toUpperCase() : ""}
 //                       </td>

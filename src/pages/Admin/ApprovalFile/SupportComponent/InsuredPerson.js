@@ -50,7 +50,7 @@ const InsuredPerson = () => {
         <br />
         <AlertMessage errorMessage={errorMessage} />
         <div className='insuredClientView__container'>
-        { clientInfoList.length > 0 ? 
+        { clientInfoList.length > 0 ?
         <table >
           <thead>
             <tr>
@@ -63,34 +63,39 @@ const InsuredPerson = () => {
               <th>Email</th>
               <th>Details</th>
               <th>File</th>
-              <th></th>
+              <th>Actions</th>
             </tr>
           </thead>
           <tbody>
           {clientInfoList.map((row, index) => (
               <tr key={index}>
-            <td><Button onClick={() => navigate(`/admin/InsuredPersonDetail/${row?.id}/${lang == 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
+            <td><Button onClick={() => navigate(`/admin/InsuredPersonDetail/${row?.id}/${lang === 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
                 <td>{row?.form_type.toUpperCase()}</td>
                 <td>{row?.status === 'fresh' ? 'NEW' : row?.status?.toUpperCase() }</td>
-                <td>{row?.request}</td>
+                <td>{row?.request ? row?.request : <small style={{color: 'gray'}}><em><u>No Topic</u></em></small>}</td>
                 <td>{row?.created_at}</td>
                 <td>{row?.full_name}</td>
                 <td>{row?.email}</td>
                 <td>{row?.details}</td>
                 <td>{
+                  row?.file?.filename ?
                   <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download`}>{row?.file?.filename}</a>
+                  :
+                  <small style={{color: 'gray'}}><em>No File(s)</em></small>
                   }</td>
-                
-                <td>
-                  {  (row?.status !== 'accepted' && (row?.file?.filename.split('.')[1] === 'csv' || row?.file?.filename.split('.')[1] === 'xlsx' ) ) && 
 
-                 
+                <td style={{textAlign: "left"}}>
+                  {  (row?.status !== 'accepted' && (row?.file?.filename.split('.')[1] === 'csv' || row?.file?.filename.split('.')[1] === 'xlsx' ) ) ?
+
+
                     <AcceptFile client_id={row?.id} getClientInsurance={getClientInsurance}/>
+                    :
+                    <small style={{color: 'gray'}}><em>Not An Approval File <br /> Or Already Approved</em></small>
                   }
                 </td>
-            
+
             </tr>
-            )) 
+            ))
             }
           </tbody>
         </table>

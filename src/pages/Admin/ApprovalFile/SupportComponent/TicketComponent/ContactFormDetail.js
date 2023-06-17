@@ -257,7 +257,7 @@ const ContactFormDetail = () => {
                   onChange={(e) => setContactStatus(e.target.value)}
                 >
                   <option value={0}>
-                    {contact?.status == "fresh"
+                    {contact?.status === "fresh"
                       ? "NEW"
                       : contact?.status.toUpperCase()}
                   </option>

@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 import useClientInsurance from '../../../../../hooks/useClientInsurance';
 
 function ContactCavitas() {
-    
+
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -50,7 +50,7 @@ function ContactCavitas() {
       setMessage('');
       setErrorMessage('');
     }, 3000);
-    
+
   } else if (response.status > 300) {
     setErrorMessage(response.message);
   }
@@ -59,7 +59,7 @@ function ContactCavitas() {
 useEffect(() => {
   const currentUrl = window.location.href;
   let lang = currentUrl.split("/").pop();
-  lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
 }, [])
 
   return (
@@ -85,31 +85,31 @@ useEffect(() => {
             <h2>{t("contactform.contactfrom_title")}</h2>
             <h1 style={{ color: "red" }}>{t("contactform.contactfrom_heading")}</h1>
             {
-              message && <span style={{color: "green"}}>{message}</span> 
+              message && <span style={{color: "green"}}>{message}</span>
             }
             {
-              errorMessage && <span style={{color: "red"}}>{errorMessage}</span> 
+              errorMessage && <span style={{color: "red"}}>{errorMessage}</span>
             }
             <div className="userProfileView__container__details">
               <div className="userProfileView__container__details__detailsBox">
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
-                  
+
                   <div>
-                    <input 
-                    type="text" 
-                    placeholder={`${t("get24contactform.firstandlastname")}`} 
+                    <input
+                    type="text"
+                    placeholder={`${t("get24contactform.firstandlastname")}`}
                     onChange={(e) => setContactForm({...contactForm, full_name: e.target.value})}
                     />
                   </div>
                   <div>
-                    {/* <input 
-                    type="text" 
-                    placeholder="Last name" 
+                    {/* <input
+                    type="text"
+                    placeholder="Last name"
                     onChange={(e) => setContactForm({...contactForm, last_name: e.target.value})}/>
                   */}
-                 <input 
-                    type="text" 
-                    placeholder="Email" 
+                 <input
+                    type="text"
+                    placeholder="Email"
                     onChange={(e) => setContactForm({...contactForm, email: e.target.value})}/>
 
                   </div>
@@ -141,7 +141,7 @@ useEffect(() => {
                     <textarea
                       style={{width: "200%" }}
                       className="textarea"
-                      placeholder={`${t("contactform.texthere")}`} 
+                      placeholder={`${t("contactform.texthere")}`}
                       cols={10}
                       rows={5}
                       onChange={(e) => setContactForm({...contactForm, details: e.target.value})}

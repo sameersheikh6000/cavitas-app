@@ -14,7 +14,7 @@ const InsuredPerson = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   const navigate = useNavigate();
   const { getInsuredClients } = useClientInsurance();
@@ -45,7 +45,7 @@ const InsuredPerson = () => {
           row?.member_pesel?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.member_relation?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
           row?.member_phone_number?.toLowerCase().includes(searchedVal.toString().toLowerCase()) ||
-          row?.member_address?.toLowerCase().includes(searchedVal.toString().toLowerCase()) 
+          row?.member_address?.toLowerCase().includes(searchedVal.toString().toLowerCase())
           )
     });
     if (searchedVal.length < 1) {
@@ -65,8 +65,8 @@ const InsuredPerson = () => {
       <header className='insuredClientGroup__container2__insuredPerson__header'>
         <p>{t("Policyinformation.noinsured")}</p>
         <div>
-          <input type="text" onChange={(e) => requestSearch(e.target.value)} 
-          
+          <input type="text" onChange={(e) => requestSearch(e.target.value)}
+
           placeholder={`${t("Insured_clients.search")}`}
           />
           <SearchOutlinedIcon className='insuredClientGroup__container2__insuredPerson__header__icon' />
@@ -109,7 +109,7 @@ const InsuredPerson = () => {
                   <th>{t("Insured_clients.Memberphonenumber")}</th>
                   <th>{t("Insured_clients.Membermail")}</th>
                   <th>{t("Insured_clients.Memberaddress")}</th>
-              
+
             </tr>
           </thead>
           <tbody>
@@ -128,7 +128,7 @@ const InsuredPerson = () => {
                     <td>{row?.member_phone_number}</td>
                     <td>{row?.member_email}</td>
                     <td>{row?.member_address}</td>
-{/*                   
+{/*
                   <td>{row?.type_of_insurance}</td>
                   <td>{row?.insurance_plan}</td>
                   <td>{row?.sum_insured_per_insured_person_per_policy_year}</td>
@@ -136,7 +136,7 @@ const InsuredPerson = () => {
                   <td>{row?.risk_expiry_date}</td>
                   <td>{row?.risk_renewal_date}</td>
                   <td>{row?.company_name}</td>
-                  <td>{row?.company_krs_number}</td> 
+                  <td>{row?.company_krs_number}</td>
                   <td>{row?.company_url_address}</td>
                   <td>{row?.member_first_name}</td>
                   <td>{row?.member_last_name}</td>
@@ -149,10 +149,10 @@ const InsuredPerson = () => {
                   <td>{row?.annual_gwp}</td>
                   <td>{row?.insurer}</td>
                   <td>{row?.mandated_broker}</td> */}
-                  
+
                 </tr>
             ))}
-           
+
           </tbody>
         </table>
       </div>

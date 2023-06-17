@@ -19,7 +19,7 @@ function QuoteSupportList() {
   // useEffect(() => {
   //   const currentUrl = window.location.href;
   //   let lang = currentUrl.split("/").pop();
-  //   lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  //   lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   // }, [])
   // const { getAllQuote } = useQuoteForm();
   // const [errorMessage, setErrorMessage] = useState("");
@@ -53,7 +53,7 @@ function QuoteSupportList() {
   //             <SearchOutlinedIcon className="insuredClientView__header__right__icon" />
   //           </div> */}
   //           <div className="insuredClientView__header__right">
-  //           <Link to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}>
+  //           <Link to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}>
   //               <Button
   //                 color="error"
   //                 variant="outlined"
@@ -74,7 +74,7 @@ function QuoteSupportList() {
   //         <header>
   //           <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
   //             <div>
-  //             <Link  to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+  //             <Link  to={`/support/view/${lang === "pl" ? "pl" : "en"}`}
 
   //               style={{ textDecoration: "none" }}>
   //                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
@@ -83,7 +83,7 @@ function QuoteSupportList() {
   //               </Link>
   //             </div>
   //             <div>
-  //             <Link to={`/ContactSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //             <Link to={`/ContactSupportList/${lang === "pl" ? "pl" : "en"}`}
 
   //                 style={{ textDecoration: "none" }}
   //               >
@@ -93,7 +93,7 @@ function QuoteSupportList() {
   //               </Link>
   //             </div>
   //             <div>
-  //             <Link to={`/QuoteSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //             <Link to={`/QuoteSupportList/${lang === "pl" ? "pl" : "en"}`}
   //                style={{ textDecoration: "none" }}>
   //                 <Button
   //                   style={{ background: "#5C8894" }}
@@ -104,7 +104,7 @@ function QuoteSupportList() {
   //               </Link>
   //             </div>
   //             <div>
-  //             <Link to={`/InsuredPersonSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //             <Link to={`/InsuredPersonSupportList/${lang === "pl" ? "pl" : "en"}`}
   //               >
   //                 <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
   //                 {t("MysupportTickets.insuredpersonsupport")}
@@ -138,12 +138,12 @@ function QuoteSupportList() {
   //                 {quoteList.length > 0 &&
   //                   quoteList.map((row, index) => (
   //                     <tr key={index}>
-  //                       <td>{row?.status == "fresh" ? "NEW" : row?.status}</td>
+  //                       <td>{row?.status === "fresh" ? "NEW" : row?.status}</td>
   //                       <td>
   //                         <a
   //                           href=""
   //                           onClick={() =>
-  //                             navigate(`/QuoteSupportTicket/${row?.id}/${lang == "pl" ? "pl" : "en"}`)
+  //                             navigate(`/QuoteSupportTicket/${row?.id}/${lang === "pl" ? "pl" : "en"}`)
   //                           }
   //                         >
   //                           #{row?.id}

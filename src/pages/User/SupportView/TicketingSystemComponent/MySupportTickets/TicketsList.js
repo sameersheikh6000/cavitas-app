@@ -34,7 +34,7 @@ function TickekList() {
   // useEffect(() => {
   //   const currentUrl = window.location.href;
   //   let lang = currentUrl.split("/").pop();
-  //   lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  //   lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   //   getTickets();
   // }, []);
 
@@ -45,7 +45,7 @@ function TickekList() {
   //       <Stack direction="row" spacing={2} style={{ marginTop: "20px" }}>
   //         <div>
   //           <Link
-  //            to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+  //            to={`/support/view/${lang === "pl" ? "pl" : "en"}`}
   //           style={{textDecoration: "none"}}>
   //             <Button
   //               style={{ background: "#5C8894" }}
@@ -57,7 +57,7 @@ function TickekList() {
   //           </Link>
   //         </div>
   //         <div>
-  //           <Link to={`/ContactSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //           <Link to={`/ContactSupportList/${lang === "pl" ? "pl" : "en"}`}
   //           style={{textDecoration: "none"}}>
   //           <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
   //           {t("MysupportTickets.contactsupport")}
@@ -66,7 +66,7 @@ function TickekList() {
   //           </Link>
   //         </div>
   //         <div>
-  //           <Link to={`/QuoteSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //           <Link to={`/QuoteSupportList/${lang === "pl" ? "pl" : "en"}`}
   //           style={{textDecoration: "none"}}>
   //           <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
   //           {t("MysupportTickets.quotesupport")}
@@ -75,7 +75,7 @@ function TickekList() {
   //           </Link>
   //         </div>
   //         <div>
-  //           <Link to={`/InsuredPersonSupportList/${lang == "pl" ? "pl" : "en"}`}
+  //           <Link to={`/InsuredPersonSupportList/${lang === "pl" ? "pl" : "en"}`}
   //           style={{textDecoration: "none"}}>
   //             <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
   //             {t("MysupportTickets.insuredpersonsupport")}
@@ -106,8 +106,8 @@ function TickekList() {
   //           {ticketList.length > 0 &&
   //             ticketList.map((row, index) => (
   //             <tr>
-  //               <td>{row?.status == "fresh" ? "NEW" : row?.status}</td>
-  //               <td><a href="" onClick={() => navigate( `/Tickets/${row?.id}/${lang == "pl" ? "pl" : "en"}`)}>{row?.id} </a> </td>
+  //               <td>{row?.status === "fresh" ? "NEW" : row?.status}</td>
+  //               <td><a href="" onClick={() => navigate( `/Tickets/${row?.id}/${lang === "pl" ? "pl" : "en"}`)}>{row?.id} </a> </td>
   //               <td>{row?.request}</td>
   //               <td>{row?.description}</td>
   //               <td>{row?.creator?.email}</td>

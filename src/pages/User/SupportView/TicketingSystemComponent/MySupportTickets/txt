@@ -93,7 +93,7 @@ const Tickets = () => {
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell style={{ fontWeight: "bold" }}>Status :</TableCell>
-                  <TableCell>{supportFormDetail?.status == "fresh" ? "NEW" : supportFormDetail?.status.toUpperCase()}</TableCell>
+                  <TableCell>{supportFormDetail?.status === "fresh" ? "NEW" : supportFormDetail?.status.toUpperCase()}</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -227,14 +227,14 @@ const Tickets = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  {supportFormDetail?.file_name ? 
+                  {supportFormDetail?.file_name ?
                   <a
                       href={`${API_KEY}/api/v1/tickets/${id}/download`}
                       target="_blank"
                     >
                       {supportFormDetail?.file_name}
                     </a>
-                    : 
+                    :
                     <small><em>No Attachments</em></small>
                   }
                 </tbody>
@@ -274,7 +274,7 @@ const Tickets = () => {
 
 
                 {supportFormDetail?.replies && supportFormDetail?.replies.map((row) => (
-                 
+
                  <div>
 
                   <div>reply</div>
@@ -286,8 +286,8 @@ const Tickets = () => {
 
                   { row?.reply_text}
 
-                  {row?.answer ? 
-                      <p>{row?.answer.answer_text}</p> : 
+                  {row?.answer ?
+                      <p>{row?.answer.answer_text}</p> :
                       <TicketReplyAnswerForm ticket_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getSupportTicketDetail={getSupportTicketDetail} />
                     }
                     </div>
@@ -297,7 +297,7 @@ const Tickets = () => {
 
 
 
-                
+
                 <table
                   className="dashboard__container__content__cavitasDocs__Ticketsdetails__table"
                   style={{ height: "auto" }}

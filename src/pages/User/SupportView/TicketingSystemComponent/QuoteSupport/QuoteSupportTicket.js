@@ -25,7 +25,7 @@ const QuoteSupportTicket = () => {
   // useEffect(() => {
   //   const currentUrl = window.location.href;
   //   let lang = currentUrl.split("/").pop();
-  //   lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+  //   lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   // }, []);
   // const { id } = useParams();
   // const [quoteFormDetail, setQuoteFormDetail] = useState();
@@ -57,7 +57,7 @@ const QuoteSupportTicket = () => {
   //         </div>
   //         <div className="insuredClientView__header__right">
   //           <Link
-  //           to={`/support/view/${lang == "pl" ? "pl" : "en"}`}
+  //           to={`/support/view/${lang === "pl" ? "pl" : "en"}`}
   //           style={{ textDecoration: "none" }}>
   //             <Button
   //               color="error"
@@ -80,14 +80,14 @@ const QuoteSupportTicket = () => {
   //       <header className="insuredClientView__header">
   //         <div className="insuredClientView__header__left">
   //           <Link
-  //           to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+  //           to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
   //             <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
   //               {t("Replypannel.myquoteticket")} #{quoteFormDetail?.id}
   //             </Button>
   //           </Link>
   //         </div>
   //         <div className="insuredClientView__header__right">
-  //           <Link    to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
+  //           <Link    to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
   //            style={{ textDecoration: "none" }}>
   //             <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
   //               {t("MysupportTickets.Submitnewticket")}
@@ -117,7 +117,7 @@ const QuoteSupportTicket = () => {
   //                   {t("Replypannel.Status")} :
   //                 </TableCell>
   //                 <TableCell>
-  //                   {quoteFormDetail?.status == "fresh"
+  //                   {quoteFormDetail?.status === "fresh"
   //                     ? "NEW"
   //                     : quoteFormDetail?.status.toUpperCase()}
   //                 </TableCell>
@@ -128,7 +128,7 @@ const QuoteSupportTicket = () => {
   //                 sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
   //               >
   //                 <TableCell style={{ fontWeight: "bold" }}>
-  //                   {t("Replypannel.Subject")} :
+  //                   {t("Replypannel.Topic")} :
   //                 </TableCell>
   //                 <TableCell>{quoteFormDetail?.identity}</TableCell>
   //               </TableRow>

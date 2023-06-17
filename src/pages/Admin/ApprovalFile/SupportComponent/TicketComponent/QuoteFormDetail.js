@@ -259,7 +259,7 @@ function QuoteFormDetail() {
                   onChange={(e) => setQuoteStatus(e.target.value)}
                 >
                   <option value={0}>
-                    {quoteFormDetail?.status == "fresh"
+                    {quoteFormDetail?.status === "fresh"
                       ? "NEW"
                       : quoteFormDetail?.status.toUpperCase()}
                   </option>

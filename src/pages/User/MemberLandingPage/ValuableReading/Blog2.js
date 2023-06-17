@@ -12,7 +12,7 @@ const Blog2 = () => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const location = useLocation();
   let splittedLoc = location.pathname.split("/");
@@ -80,17 +80,17 @@ export default Blog2;
 // </header>
 // <div className='valuableReadingView__container'>
 //   <div className='valuableReadingView__container__imageBox'>
-//     {id == 1 ?
+//     {id === 1 ?
 //       <img src={require("../../../../assets/ValuableReading-image.png")} alt='' />
 //       :
 //       <></>
 //     }
-//     {id == 2 ?
+//     {id === 2 ?
 //       <img src={require("../../../../assets/ValuableReading-image-1.png")} alt='' />
 //       :
 //       <></>
 //     }
-//     {id == 3 ?
+//     {id === 3 ?
 //       <img src={require("../../../../assets/ValuableReading-image-2.png")} alt='' />
 //       :
 //       <></>

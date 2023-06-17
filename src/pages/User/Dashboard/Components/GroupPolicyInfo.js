@@ -21,7 +21,7 @@ const GroupPolicyInfo = ({ user }) => {
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang == "pl" ? lang : "en");
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const navigate = useNavigate();
 
@@ -51,7 +51,7 @@ const GroupPolicyInfo = ({ user }) => {
           <GppGoodOutlinedIcon lassName="dashboard__container__content__groupPolicyInfo__header__iconBox__icon" />
           <p>{t("Policyinformation.pi_heading")}</p>
         </div>
-        <Button size="small" onClick={() => navigate(`/insuredclient/group/${lang == "pl" ? lang : "en"}`)}>
+        <Button size="small" onClick={() => navigate(`/insuredclient/group/${lang === "pl" ? lang : "en"}`)}>
           {t("Pannel_Dashboard_insuredperson.View")}
         </Button>
       </header>
