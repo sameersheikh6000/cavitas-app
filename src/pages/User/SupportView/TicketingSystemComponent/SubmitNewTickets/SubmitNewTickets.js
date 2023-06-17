@@ -119,7 +119,7 @@ function SubmitNewTickets() {
                       <option>{t("contactform.iwant")}</option>
                       <option value="contact for corporation">{t("contactform.Contactcooperation")}</option>
                       <option value="ask a question">{t("contactform.Askquestion")}</option>
-                      <option value="submit a complaint">{t("contactform.Submitcomplain")}</option>
+                      <option value="submit a complaint">{t("contactform.Submitcomplaint")}</option>
                       <option value="give feedback">{t("contactform.feedback")}</option>
                     </select>
                   </div>

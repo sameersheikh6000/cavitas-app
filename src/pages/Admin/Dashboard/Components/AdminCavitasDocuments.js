@@ -11,6 +11,12 @@ const AdminCavitasDocuments = () => {
   const [errorMessage, setErrorMessage] = useState();
   const {getAllUsers, deleteUserByAdmin} = useUsers();
 
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  const today = `${year}-${month}-${day}`;
+
   const getUsersList = async () => {
     const response = await getAllUsers()
     if (response?.status < 300){
@@ -20,6 +26,7 @@ const AdminCavitasDocuments = () => {
       setErrorMessage(response?.message);
     }
   }
+
 
   useEffect(() => {
     getUsersList();
@@ -45,9 +52,15 @@ const AdminCavitasDocuments = () => {
             </tr>
           </thead>
           <tbody>
+      
           {users.length > 0 ? users.map((row, index) => (
-              <tr>
-                <td>{row?.company_name}</td>
+              <tr
+                    key={index}
+                    style={{
+                      fontWeight: row?.created_at == today ? "bold" : "normal"
+                    }}
+                  >
+                <td>{row?.created_at == today && <span style={{color: "red"}}>NEW</span>}{row?.company_name}</td>
                 <td>{row?.email}</td>
                 <td>{row?.first_name}</td>
                 <td>{row?.last_name}</td>

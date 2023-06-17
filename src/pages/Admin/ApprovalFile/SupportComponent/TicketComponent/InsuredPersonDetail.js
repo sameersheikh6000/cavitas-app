@@ -68,7 +68,7 @@ const InsuredPersonDetail = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>Insured Person Tickets</p>
+            <p>SUPPORT TICKETS</p>
           </div>
           <div className="insuredClientView__header__right">
             <Link
@@ -255,7 +255,7 @@ const InsuredPersonDetail = () => {
               <h3>TICKET DETAILS</h3>
               <div style={{ marginTop: 20 }}>
                 <label>
-                  <strong>Ticket Creator:</strong>
+                  <strong style={{textTransform: "uppercase"}}>Ticket Creator:</strong>
                 </label>
                 <p id="outlined-size-normal">{clientInfo?.user?.email}</p>
               { clientInfo?.form_type === 'insured client file' &&

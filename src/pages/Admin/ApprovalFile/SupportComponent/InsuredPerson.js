@@ -34,12 +34,13 @@ const InsuredPerson = () => {
 
   return (
     <>
+    <Page>
       <AlertMessage errorMessage={errorMessage} />
       <section className="insuredClientView">
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>Support Tickets</p>
+            <p>SUPPORT TICKETS</p>
           </div>
           <div className="insuredClientView__header__right">
             <input type="text" placeholder="Search" />
@@ -53,7 +54,7 @@ const InsuredPerson = () => {
         <table >
           <thead>
             <tr>
-              <th>id#</th>
+              <th>Ticket ID</th>
               <th>Type</th>
               <th>Status</th>
               <th>Topic</th>
@@ -99,6 +100,7 @@ const InsuredPerson = () => {
       </div>}
       </div>
       </section>
+      </Page>
     </>
   );
 };

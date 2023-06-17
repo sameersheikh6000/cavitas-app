@@ -159,7 +159,7 @@
     "Member_landingPage_btn2": "Submit Claim",
     "Member_landingPage_notmember_title": "You are not member yet?",
     "Member_landingPage_notmember_desc": "If you don't already have Cavitas dental insurance help your employer to know about this employee benefit.",
-    "Member_landingPage_notmember_btn": "Suggest To Your Employer"
+    "Member_landingPage_notmember_btn": "Suggest to your employer"
   },
   "Blog": {
     "Blog_title": "Valuable Reading",
@@ -430,7 +430,7 @@
 },
 
 "contactsupport":{
- "ticketnumber":"Ticket Number",
+ "ticketnumber":"Ticket ID",
  "createdby":"Created by",
  "detail":"Detail",
  "date":"Date"
@@ -479,7 +479,7 @@
 "Returnticket":"Return to ticket list",
 "Number":"Number",
 "Status":"Status",
-"Subject":"Subject",
+"Subject":"Topic",
 "Createdon":"Created on",
 "Attachement":"Attachement(s):",
 "Noattachemnt":"No Attachments available",
@@ -490,7 +490,7 @@
 "Cancel":"Cancel",
 "Writeanswer":"Write Your Answer Here!",
 "insuredticket":"Insured Tickets",
-"myinsuredticket":"My Insured Ticket",
+"myinsuredticket":"MY TICKET ",
 "nosubject":"No subject"
 
 },

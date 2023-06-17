@@ -49,28 +49,10 @@ const InsuredPersonSupportTicket = () => {
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
-            <p>{t("Replypannel.insuredticket")}</p>
+            <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
           <div className="insuredClientView__header__right">
-            <Link
-            to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
-
-            style={{ textDecoration: "none" }}>
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-              {t("MysupportTickets.Submitnewticket")}
-              </Button>
-            </Link>
-          </div>
-        </header>
-        <br />
-        <header className="insuredClientView__header">
-          <div className="insuredClientView__header__left">
-            <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
-            </Link>
-          </div>
-          <div className="insuredClientView__header__right">
-            <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+          <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
               <Button
                 color="error"
                 variant="outlined"
@@ -84,6 +66,28 @@ const InsuredPersonSupportTicket = () => {
                 }}
               >
                {t("Replypannel.Returnticket")}
+              </Button>
+            </Link>
+          </div>
+        </header>
+        <br />
+        <header className="insuredClientView__header">
+          <div className="insuredClientView__header__left">
+            <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
+            </Link>
+          </div>
+          <div className="insuredClientView__header__right">
+           
+            <Link
+            to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
+
+            style={{ textDecoration: "none" }}>
+              <Button
+                          style={{ width: "auto" }}
+
+              className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">
+              {t("MysupportTickets.Submitnewticket")}
               </Button>
             </Link>
           </div>

@@ -70,7 +70,7 @@ const Support = () => {
                       <td style={{ textAlign:"center", border:"none"}}>
                         <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang == 'pl' ? lang : 'en'}`}>{row?.id}</Link>
                       </td>
-                      <td style={{ textAlign:"center", border:"none"}}>{row?.details}</td>
+                      <td style={{ textAlign:"center", border:"none"}}>{row?.request}</td>
                       <td style={{ textAlign:"center", border:"none"}}>{row?.status}</td>
                       <td style={{ textAlign:"center", border:"none"}}>{row?.updated_at}</td>
                     </tr>

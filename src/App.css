@@ -2193,7 +2193,7 @@ font-size: 1rem !important;
   border: none !important;
   padding: 0.9rem 2.5rem;
   width: unset !important;
-  text-transform: capitalize !important;
+  text-transform: none;
 }
 .landingPage__becomeMember__container__details Button:hover {
   background: white !important;
@@ -3014,7 +3014,8 @@ font-size: 1rem !important;
   border: 1px solid gray;
   font-weight: bold;
   text-align: center;
-  height: 50px;
+  /* height: 50px; */
+  font-size: 13px;
   padding: 7px;
 }
 .insuredClientView__container__mysupport__tickets table tbody tr:nth-child(1) {

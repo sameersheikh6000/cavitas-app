@@ -82,7 +82,7 @@ function InsuredPersonSupportList() {
                       <td>
                         <Link to={`/InsuredPersonSupportTicket/${row?.id}/${lang == 'pl' ? lang : 'en'}`}>{row?.id}</Link>
                       </td>
-                      <td>{row?.details}</td>
+                      <td>{row?.request}</td>
                       <td>{(row?.status && row?.status === 'fresh') ? 'NEW' : row?.status.toUpperCase()}</td>
                       <td>{row?.updated_at}</td>
                     </tr>

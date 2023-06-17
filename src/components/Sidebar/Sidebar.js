@@ -56,7 +56,7 @@ const Sidebar = () => {
     <section className='sidebar'>
       <header className='sidebar__header'>
         <img className='sidebar__header__logo' src={require('../../assets/CavitasLogo-img.png')} alt="" />
-        <img className='sidebar__header__flag' src={require('../../assets/EnglandFLag-img.jpg')} alt="" />
+        {/* <img className='sidebar__header__flag' src={require('../../assets/EnglandFLag-img.jpg')} alt="" /> */}
         <LogoutOutlinedIcon className='sidebar__header__icon' onClick={handleLogout} />
       </header>
       {user?.data?.role ?

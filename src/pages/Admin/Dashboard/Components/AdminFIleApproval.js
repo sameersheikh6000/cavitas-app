@@ -9,6 +9,8 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 
 const AdminFileApproval = () => {
   const navigate = useNavigate();
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [clientInfoList, setClientInfoList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -45,8 +47,11 @@ const AdminFileApproval = () => {
           <table className='dashboard__container__content__insuredClient__details__table'>
             <thead>
             <tr>
-                <th>Ticket#</th>
-                <th>Name</th>
+                <th>Ticket ID</th>
+                <th>Type</th>
+                <th>Topic</th>
+                <th>Created At</th>
+                {/* <th>Name</th>
                 <th>Description</th>
                 <th>Total Employees in Company</th>
                 <th>Participation</th>
@@ -56,16 +61,23 @@ const AdminFileApproval = () => {
                 <th>Payment Type</th>
                 <th>Broker Reference</th>
                 <th>Broker Name</th>
-                <th>File</th>
+                <th>File</th> */}
                 <th>Status</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody
+            
+            >
 
             {clientInfoList.map((row, index) => (
-                <tr>
-                  <td>{row?.id}</td>
-                  <td>{row?.corporate_client_name}</td>
+                <tr 
+                style={{minWidth: 0}}
+                >
+            <td><Button onClick={() => navigate(`/admin/InsuredPersonDetail/${row?.id}/${lang == 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
+                  <td>{row?.form_type.toUpperCase()}</td>
+                  <td>{row?.request}</td>
+                  <td>{row?.created_at}</td>
+                  {/* <td>{row?.corporate_client_name}</td>
                   <td>{row?.details}</td>
                   <td>{row?.number_of_employees_in_company}</td>
                   <td>{row?.participation_mode}</td>
@@ -75,11 +87,9 @@ const AdminFileApproval = () => {
                   <td>{row?.insurance_payment_type}</td>
                   <td>{row?.broker_reference}</td>
                   <td>{row?.referenced_broker_name}</td>
-                  <td>{row?.file?.filename}</td>
+                  <td>{row?.file?.filename}</td> */}
                   <td>{row?.status}</td>
-                  <td>
-                  <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
-                </td>
+                  <td></td>
                 </tr>
               ))}
                 
