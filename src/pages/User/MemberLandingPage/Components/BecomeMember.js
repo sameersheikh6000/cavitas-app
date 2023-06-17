@@ -17,12 +17,12 @@ const BecomeMember = () => {
   const handleComposeEmail = () => {
     const subject = "Cavitas dental insurance for employees";
     const body = `Hello there,
-  
+
   I stumbled upon an incredible website!
   www.cavitas.pl offers an exceptional dental insurance cover called Cavitas that not only covers employees but also their beloved family members.
-  
+
   Imagine the peace of mind you'll have knowing that you and your loved ones are safeguarded by a top-of-the-line dental insurance policy. This employee benefit is truly remarkable, and I would highly recommend considering it.
-  
+
   Best regards,
   Your humble employee`;
 
@@ -51,15 +51,9 @@ const BecomeMember = () => {
             {t("Member.Member_landingPage_notmember_desc")}
           </p>
           <div>
-<<<<<<< Updated upstream
           <Button onClick={() => handleComposeEmail()}>
-            {t("Broker.suggest")}
-                        </Button>
-=======
-            <Button variant="outlined" onClick={() => navigate(`/employ/${lang === "pl" ? "pl" : "en"}`)}>
-              {t("Member.Member_landingPage_notmember_btn")}
-            </Button>
->>>>>>> Stashed changes
+            {t("Member.Member_landingPage_notmember_btn")}
+          </Button>
           </div>
         </div>
       </div>

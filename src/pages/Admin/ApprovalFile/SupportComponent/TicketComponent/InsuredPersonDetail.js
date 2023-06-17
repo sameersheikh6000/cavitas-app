@@ -255,11 +255,7 @@ const InsuredPersonDetail = () => {
               <h3>TICKET DETAILS</h3>
               <div style={{ marginTop: 20 }}>
                 <label>
-<<<<<<< Updated upstream
                   <strong style={{textTransform: "uppercase"}}>Ticket Creator:</strong>
-=======
-                  <strong>Ticket Creator Email:</strong>
->>>>>>> Stashed changes
                 </label>
                 <p id="outlined-size-normal">{clientInfo?.user?.email}</p>
                 <label>
