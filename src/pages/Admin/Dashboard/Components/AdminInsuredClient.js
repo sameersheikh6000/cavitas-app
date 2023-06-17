@@ -16,7 +16,7 @@ const AdminInsuredClient = () => {
 
 
   const getInsuredClientList = async () => {
-    
+
     const response = await getInsuredClientsByAdmin();
     if (response.status < 300) {
       console.log(response)
@@ -43,40 +43,40 @@ const AdminInsuredClient = () => {
         <table className='dashboard__container__content__insuredClient__details__table'>
         <thead>
         <tr>
-                <th>Risk country</th>   
-                <th>Type of insurance</th>    
-                <th>Insurance plan</th>   
-                <th>Sum Insured per insured person per policy year</th>   
-                <th>Policy number</th>   
-                <th>Risk inception date</th>  
-                <th>Risk expiry date</th>  
-                <th>Risk renewal date</th>  
-                <th>Policyholder/Company name</th>  
-                <th>Company KRS number</th>  
-                <th>Company URL address</th>  
-                <th>Member gender</th>  
-                <th>Member first name</th>  
-                <th>Member last name</th>  
-                <th>Member PESEL</th>  
-                <th>Member DOB</th>  
-                <th>Member age</th>  
-                <th>Member relation</th>  
-                <th>Member phone number</th>  
-                <th>Member e-mail</th>  
-                <th>Member address</th>  
-                <th>Group Type</th>  
-                <th>PARTICIPATION</th>  
-                <th>Currency</th>  
-                <th>Payment Frequency</th>  
-                <th>Annual GWP</th>  
-                <th>Annual BC</th>  
-                <th>Annual NP</th>  
-                <th>Monthly NP</th>  
-                <th>Monthly BC</th>  
-                <th>Insurer</th>  
-                <th>Mandated broker</th> 
-                
-                {/* <th>File</th>  
+                <th>Risk country</th>
+                <th>Type of insurance</th>
+                <th>Insurance plan</th>
+                <th>Sum Insured per insured person per policy year</th>
+                <th>Policy number</th>
+                <th>Risk inception date</th>
+                <th>Risk expiry date</th>
+                <th>Risk renewal date</th>
+                <th>Policyholder/Company name</th>
+                <th>Company KRS number</th>
+                <th>Company URL address</th>
+                <th>Member gender</th>
+                <th>Member first name</th>
+                <th>Member last name</th>
+                <th>Member PESEL</th>
+                <th>Member DOB</th>
+                <th>Member age</th>
+                <th>Member relation</th>
+                <th>Member phone number</th>
+                <th>Member e-mail</th>
+                <th>Member address</th>
+                <th>Group Type</th>
+                <th>PARTICIPATION</th>
+                <th>Currency</th>
+                <th>Payment Frequency</th>
+                <th>Annual GWP</th>
+                <th>Annual BC</th>
+                <th>Annual NP</th>
+                <th>Monthly NP</th>
+                <th>Monthly BC</th>
+                <th>Insurer</th>
+                <th>Mandated broker</th>
+
+                {/* <th>File</th>
                 <th>Status</th>   */}
               </tr>
             </thead>
@@ -115,9 +115,7 @@ const AdminInsuredClient = () => {
                   <td>{row?.monthly_bc}</td>
                   <td>{row?.insurer}</td>
                   <td>{row?.mandated_broker}</td>
-                  {/* <td>
-                    <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
-                  </td> */}
+                  
                 </tr>
               ))
                 }

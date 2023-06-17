@@ -165,9 +165,7 @@ const AdminFileApproval = () => {
                   <td>{row?.monthly_bc}</td>
                   <td>{row?.insurer}</td>
                   <td>{row?.mandated_broker}</td>
-                  {/* <td>
-                    <Button size='small' onClick={() => navigate("/admin/insuredclient/group")}>Open Group</Button>
-                  </td> */}
+                  
                 </tr>
               ))
                 :

@@ -3,34 +3,35 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
 import usePolicyInformation from "../.../../../../../hooks/usePolicyInoformation";
 
-const PolicyInfo = ({ user }) => {
+const PolicyInfo = ({ user, insuredClient }) => {
 
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
+  const {getPolicyInformation} = usePolicyInformation();
+  const [policyInfo, setPolicyInfo] = useState(insuredClient);
+  const [errorMessage, setErrorMessage] = useState();
+
+  // const fetchPoicy = async () => {
+
+  //   const response = await getPolicyInformation();
+  //   if (response?.status < 300) {
+  //     setPolicyInfo(response?.policy_information)
+  //   } else if (response.status > 300) {
+  //     setErrorMessage(response.message);
+  //   }
+  // }
+
+  // useEffect(() => {
+  //   fetchPoicy();
+  // }, [])
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
-  const {getPolicyInformation} = usePolicyInformation();
-  const [policyInfo, setPolicyInfo] = useState();
-  const [errorMessage, setErrorMessage] = useState();
 
-  const fetchPoicy = async () => {
-
-    const response = await getPolicyInformation();
-    if (response?.status < 300) {
-      setPolicyInfo(response?.policy_information)
-    } else if (response.status > 300) {
-      setErrorMessage(response.message);
-    }
-  }
-
-  useEffect(() => {
-    fetchPoicy();
-  }, [])
     return (
     <div className='insuredClientGroup__container__cardsBox__card'>
       <div className='insuredClientGroup__container__cardsBox__card__top'>
@@ -57,7 +58,7 @@ const PolicyInfo = ({ user }) => {
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
           {t("Policyinformation.Riskinceptiondate")}
 :</p>
-          <p>{policyInfo?.risk_inseption_date}</p>
+          <p>{policyInfo?.risk_inception_date}</p>
         </div>
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
@@ -72,7 +73,7 @@ const PolicyInfo = ({ user }) => {
             </p>
           <p>{policyInfo?.risk_renewal_date}</p>
         </div>
-        {user?.data?.role === "member" ?
+        {/* {user?.data?.role === "member" ?
           <></>
           :
           <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
@@ -80,7 +81,7 @@ const PolicyInfo = ({ user }) => {
             {t("Policyinformation.noperson")}:</p>
             <p>{policyInfo?.no_of_insured_persons}</p>
           </div>
-        }
+        } */}
         <div className='insuredClientGroup__container__cardsBox__card__detailsBox__data'>
           <p className='insuredClientGroup__container__cardsBox__card__detailsBox__data__name'>
           {t("Policyinformation.Mandatedbroker")}

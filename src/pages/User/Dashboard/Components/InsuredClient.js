@@ -75,7 +75,7 @@ const InsuredClient = () => {
                       <Button
                       style={{ textAlign:"center"}}
                         size="small"
-                        onClick={() => navigate("/insuredclient/group")}
+                        onClick={() => navigate("/insuredclient/group", { state: { row }})}
                       >
                         {t("Pannel_Dashboard_insuredperson.Opengroup")}
                       </Button>

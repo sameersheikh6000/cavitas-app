@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Page from '../../../../components/Page/Page';
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
@@ -16,17 +16,20 @@ import { USER_STORAGE_KEY } from '../../../../config/helpers/variables';
 
 const InsuredClientGroup = () => {
 
-   const currentUrl = window.location.href;
+  const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+  const { row } = location.state;
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
-  const navigate = useNavigate();
-  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
+
   return (
     <Page>
       <section className='insuredClientGroup'>
@@ -51,7 +54,7 @@ const InsuredClientGroup = () => {
         <div className='insuredClientGroup__container'>
           <div className='insuredClientGroup__container__cardsBox'>
             <div className='insuredClientGroup__container__cardsBox__left'>
-              <PolicyInfo user={user} />
+              <PolicyInfo user={user} insuredClient={row} />
               <PolicyDocuments user={user} />
             </div>
             <div className='insuredClientGroup__container__cardsBox__right'>

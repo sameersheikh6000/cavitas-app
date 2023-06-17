@@ -187,7 +187,7 @@ const InsuredClientView = () => {
                     <td>
                       <Button
                         size="small"
-                        onClick={() => navigate("/insuredclient/group")}
+                        onClick={() => navigate("/insuredclient/group", { state: { row } })}
                       >
                         {t("Insured_clients.Opengroup")}
                       </Button>
