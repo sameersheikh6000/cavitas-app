@@ -4,8 +4,8 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { useNavigate } from 'react-router-dom';
 import useAuthenticate from '../../../hooks/useAuthenticate';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
-const AdminSignIn = () => {
 
+const AdminSignIn = () => {
   const { adminLogin } = useAuthenticate();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -38,8 +38,17 @@ const AdminSignIn = () => {
       navigate("/admin");
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
+
     } else if (response?.data?.status?.message === undefined) {
       setErrorMessage("Something went wrong!");
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

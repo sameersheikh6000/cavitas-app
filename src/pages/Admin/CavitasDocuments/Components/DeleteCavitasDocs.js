@@ -28,10 +28,18 @@ function DeleteCavitasDocs({cavitasDocs_id, setSuccessMessage, setErrorMessage, 
     const response = await deleteCavitasDocs(cavitasDocs_id);
     if(response?.status < 300) {
         setSuccessMessage("Docs Deleted Successfully!");
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 5000);
+
         fetchCavitasDocs();
         handleClose();
     } else if(response?.status > 300){
         setErrorMessage(response?.message);
+
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
     }
   }
 

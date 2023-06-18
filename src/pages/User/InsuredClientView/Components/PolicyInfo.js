@@ -12,20 +12,6 @@ const PolicyInfo = ({ user, insuredClient }) => {
   const [policyInfo, setPolicyInfo] = useState(insuredClient);
   const [errorMessage, setErrorMessage] = useState();
 
-  // const fetchPoicy = async () => {
-
-  //   const response = await getPolicyInformation();
-  //   if (response?.status < 300) {
-  //     setPolicyInfo(response?.policy_information)
-  //   } else if (response.status > 300) {
-  //     setErrorMessage(response.message);
-  //   }
-  // }
-
-  // useEffect(() => {
-  //   fetchPoicy();
-  // }, [])
-
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();

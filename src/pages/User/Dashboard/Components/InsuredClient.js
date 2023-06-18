@@ -12,13 +12,6 @@ const InsuredClient = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, []);
-
   const navigate = useNavigate();
   const { getInsuredClients } = useClientInsurance();
   const [insuredClientsList, setInsuredClientsList] = useState([]);
@@ -32,11 +25,19 @@ const InsuredClient = () => {
       console.log(insuredClientsList);
     } else {
       setErrorMessage("Something went wrong!");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
+
   useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
     getInsuredClientList();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
+
   return (
     <>
       <AlertMessage errorMessage={errorMessage} />

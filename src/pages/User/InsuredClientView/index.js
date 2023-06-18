@@ -36,6 +36,9 @@ const InsuredClientView = () => {
       console.log("this is right page....");
     } else {
       setErrorMessage("Something went wrong!");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

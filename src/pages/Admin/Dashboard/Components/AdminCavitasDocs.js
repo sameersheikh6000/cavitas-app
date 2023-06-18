@@ -13,8 +13,8 @@ import { API_KEY } from '../../../../config/helpers/variables';
 import DeleteCavitasDocs from '../../CavitasDocuments/Components/DeleteCavitasDocs';
 import UpdateCavitasDocs from '../../CavitasDocuments/Components/UpdateCavitasDocs';
 const AdminCavitasDocs = () => {
-  
-  
+
+
   const navigate = useNavigate();
   const { getCavitasDocsByAdmin } = useCavitasDocs();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -22,13 +22,17 @@ const AdminCavitasDocs = () => {
   const [successMessage, setSuccessMessage] = useState();
 
   const fetchCavitasDocs = async () => {
-    
+
     const response = await getCavitasDocsByAdmin();
-    
+
     if (response?.status < 300) {
       setCavitasDocs(response?.cavitas_documents)
     } else if (response?.status > 300) {
       setErrorMessage(response.message);
+
+      setTimeout(() => {
+            setErrorMessage("");
+      }, 5000);
     }
   }
 
@@ -38,6 +42,8 @@ const AdminCavitasDocs = () => {
 
   return (
     <section className='dashboard__container__content__cavitasDocs'>
+      <SuccessMessage successMessage={successMessage}/>
+      <AlertMessage errorMessage={errorMessage}/>
       <header className='dashboard__container__content__cavitasDocs__header'>
         <div className='dashboard__container__content__cavitasDocs__header__iconBox'>
           < TextSnippetOutlinedIcon className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
@@ -54,14 +60,14 @@ const AdminCavitasDocs = () => {
             </tr>
           </thead>
           <tbody>
- {cavitasDocs?.map((row, index) => (
-                     <tr>               
-                         <td>{row?.title}</td>
-                         <td>{row?.valid_date}</td>
-                        
-                     </tr>
-                 ))}
-              </tbody>
+            {cavitasDocs?.map((row, index) => (
+              <tr>
+                  <td>{row?.title}</td>
+                  <td>{row?.valid_date}</td>
+
+              </tr>
+            ))}
+          </tbody>
              </table>
           </div>
     </section>

@@ -4,6 +4,8 @@ import i18n from '../config/helpers/i18n';
 import { Button } from "@mui/material";
 import useForgotPassword from "../hooks/useForgotPassword";
 import { useNavigate } from "react-router-dom";
+import SuccessMessage from "../components/SnackbarMessages/SuccessMessage";
+import AlertMessage from "../components/SnackbarMessages/AlertMessage";
 
 const ResetPassword = () => {
   const currentUrl = window.location.href;
@@ -21,7 +23,6 @@ const ResetPassword = () => {
   });
 
   const handleSubmit = async (event) => {
-    debugger
     event.preventDefault();
     if (credential?.password === credential?.passwordConfirmation) {
       const response = await resetPassword(credential);
@@ -30,9 +31,22 @@ const ResetPassword = () => {
         setTimeout(() => {
           navigate("/");
         }, 3000);
+
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 5000);
+      }
+      else if (response?.status > 300){
+        setErrorMessage(response?.message)
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
       }
     } else if (credential?.password !== credential?.passwordConfirmation) {
-      setErrorMessage("Please Check If Both Passwords Are Correct");
+      setErrorMessage("Please Check If Both Passwords Are Correct!");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 
@@ -44,6 +58,8 @@ const ResetPassword = () => {
 
   return (
     <section className="authentication">
+      <SuccessMessage successMessage={successMessage}/>
+      <AlertMessage errorMessage={errorMessage} />
       <div className="authentication__container">
         <div className="authentication__container__imageBox">
           <div className="authentication__container__imageBox__top">

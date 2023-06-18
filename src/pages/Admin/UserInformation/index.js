@@ -26,6 +26,9 @@ const UserInformation = () => {
       setUsers(response?.users)
     } else if (response?.status > 300) {
       setErrorMessage(response?.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 

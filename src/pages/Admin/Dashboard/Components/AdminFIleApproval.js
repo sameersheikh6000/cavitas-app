@@ -17,7 +17,7 @@ const AdminFileApproval = () => {
 
 
   const getClientInsurance = async () => {
-    
+
     const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
       console.log(response)
@@ -25,6 +25,10 @@ const AdminFileApproval = () => {
       console.log(clientInfoList)
     } else {
       setErrorMessage('Something went wrong!')
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
   useEffect(() => {
@@ -66,11 +70,11 @@ const AdminFileApproval = () => {
               </tr>
             </thead>
             <tbody
-            
+
             >
 
             {clientInfoList.map((row, index) => (
-                <tr 
+                <tr
                 style={{minWidth: 0}}
                 >
             <td><Button onClick={() => navigate(`/admin/InsuredPersonDetail/${row?.id}/${lang == 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
@@ -92,7 +96,7 @@ const AdminFileApproval = () => {
                   <td></td>
                 </tr>
               ))}
-                
+
             </tbody>
           </table>
           :
