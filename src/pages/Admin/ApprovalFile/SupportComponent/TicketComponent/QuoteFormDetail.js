@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import InputLabel from "@mui/material/InputLabel";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import { Button } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import Page from "../../../../../components/Page/Page";
-import FileUploadOutlinedIcon from "@mui/icons-material/FileUploadOutlined";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -17,9 +15,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
-import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
 import useQuoteForm from "../../../../../hooks/useQuoteForm";
 import QuoteReplyForm from "./Component/QuoteReplyForm";
 import { API_KEY } from "../../../../../config/helpers/variables";
@@ -244,12 +240,6 @@ function QuoteFormDetail() {
                 <p id="outlined-size-normal">{quoteFormDetail?.email}</p>
               </div>
               <br />
-              {/* <div>
-                <label>
-                  <strong>Topic:</strong>
-                </label>
-                <p id="outlined-size-normal">{quoteFormDetail?.identity}</p>
-              </div> */}
               <br />
               <InputLabel htmlFor="grouped-native-select">
                 <b style={{ color: "black" }}>Status:</b>
