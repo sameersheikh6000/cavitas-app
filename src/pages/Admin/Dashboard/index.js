@@ -5,16 +5,12 @@ import useClientInsurance from '../../../hooks/useClientInsurance'
 import AdminWelcome from './Components/AdminWelcome'
 import AdminrProfile from './Components/AdminProfile'
 import AdminInsuredClient from './Components/AdminInsuredClient'
-// import AdminSupport from './Components/AdminSupport'
 import AdminCavitasDocs from './Components/AdminCavitasDocs'
 import AdminFIleApproval from './Components/AdminFIleApproval'
-import { USER_STORAGE_KEY } from '../../../config/helpers/variables'
-import AdminPolicyInformation from '../PolicyInformation'
 import AdminPolicyInfor from './Components/AdminPolicyInfor'
 import AdminCavitasDocuments from './Components/AdminCavitasDocuments'
 
 const AdminDashboard = () => {
-  const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [insuranceList, setInsuranceList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -26,6 +22,9 @@ const AdminDashboard = () => {
       setInsuranceList(response.insured_clients);
     } else {
       setErrorMessage('Something went wrong!')
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
   useEffect(() => {
@@ -49,7 +48,7 @@ const AdminDashboard = () => {
             <AdminCavitasDocs />
             <AdminCavitasDocuments />
             {/* <AdminSupport /> */}
-         
+
           </div>
         </div>
       </section>

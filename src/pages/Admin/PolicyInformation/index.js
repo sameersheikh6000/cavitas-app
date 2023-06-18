@@ -20,12 +20,16 @@ const AdminPolicyInformation = () => {
   const [successMessage, setSuccessMessage] = useState();
 
   const getPolicyInfo = async () => {
-    
+
     const response = await getPolicyInformationByAdmin();
     if (response?.status < 300) {
       setPolicyInformation(response?.policy_information)
     } else if (response.status > 300) {
       setErrorMessage(response.message);
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 
@@ -42,9 +46,9 @@ const AdminPolicyInformation = () => {
         <header style={{display: "flex", justifyContent: "space-between"}}>
         <div className='insuredClientView__header__left'>
             <  PolicyIcon  className='insuredClientView__header__left__icon' />
-            &nbsp;&nbsp; <h1>Policy Information</h1>   
+            &nbsp;&nbsp; <h1>Policy Information</h1>
                    </div>
-          {policyInformation ? "" : 
+          {policyInformation ? "" :
           <PolicyInoformationCreate setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} getPolicyInfo={getPolicyInfo}/>
           }
         </header>
@@ -65,9 +69,9 @@ const AdminPolicyInformation = () => {
               </tr>
             </thead>
             <tbody>
-             
+
                 <tr>
-                  
+
                   <td>{policyInformation?.company_name}</td>
                   <td>{policyInformation?.company_krs_number}</td>
                   <td>{policyInformation?.company_url_address}</td>

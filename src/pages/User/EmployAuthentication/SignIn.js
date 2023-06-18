@@ -10,12 +10,6 @@ const EmploySignIn = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, [])
   const { userLogin } = useAuthenticate();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
@@ -49,10 +43,22 @@ const EmploySignIn = () => {
       navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)
         } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     } else if (response?.data?.status?.message === undefined) {
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, [])
 
   return (
     <section className='authentication'>

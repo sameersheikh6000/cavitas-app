@@ -24,6 +24,9 @@ const Support = () => {
       setClientInfo(response?.client_infos);
     } else if (response?.status > 300) {
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

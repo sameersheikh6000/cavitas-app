@@ -17,14 +17,18 @@ const InsuredPerson = () => {
   const lang = currentUrl.split("/").pop();
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [clientInfoList, setClientInfoList] = useState([]);
- console.log(clientInfoList)
   const [errorMessage, setErrorMessage] = useState(null)
+
   const getClientInsurance = async () => {
     const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
       setClientInfoList(response.client_infos);
     } else {
       setErrorMessage('Something went wrong!')
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 

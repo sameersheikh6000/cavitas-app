@@ -28,6 +28,10 @@ function UpdateCavitasDocs({cavitasDocs_id, setSuccessMessage, setErrorMessage, 
         setCavitasDocsUpdate(response?.cavitas_document)
       }else if (response?.status > 300){
           setErrorMessage(response?.message);
+
+          setTimeout(() => {
+            setErrorMessage("");
+          }, 5000);
       }
 
     }
@@ -47,10 +51,19 @@ function UpdateCavitasDocs({cavitasDocs_id, setSuccessMessage, setErrorMessage, 
     const response = await updateCavitasDocs(cavitasDocsUpdate);
     if(response?.status < 300) {
         setSuccessMessage("Docs Updated Successfully!");
+
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 5000);
+
         fetchCavitasDocs();
         handleClose();
     } else if(response?.status > 300){
         setErrorMessage(response?.message);
+
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
     }
   }
 

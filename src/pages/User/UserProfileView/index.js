@@ -33,6 +33,9 @@ const UserProfileView = () => {
       }, 3000);
     } else if (response.status > 300) {
       setErrorMessage(response.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 
@@ -43,6 +46,9 @@ const UserProfileView = () => {
       setProfile(response?.user)
     } else if (response?.status > 300 ) {
       setErrorMessage(response?.message)
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 

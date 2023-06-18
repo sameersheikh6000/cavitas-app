@@ -27,7 +27,6 @@ function InsuredClientReplyForm({
     width: 600,
     borderRadius: 5,
     bgcolor: "#edf4f4",
-    // border: '2px solid #000',
     boxShadow: 14,
     p: 4,
   };
@@ -36,7 +35,6 @@ function InsuredClientReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    ;
     const response = await createClientReply(clientInfoReply);
     if (response?.status < 300) {
       setSuccessMessage("Successfully Replied!");
@@ -44,6 +42,10 @@ function InsuredClientReplyForm({
       handleClose();
     } else if (response?.status > 300) {
       setErrorMessage(response?.message);
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

@@ -37,6 +37,9 @@ const CavitasDocs = () => {
       setCavitasDocs(response?.cavitas_documents);
     } else if (response?.status > 300) {
       setErrorMessage(response.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

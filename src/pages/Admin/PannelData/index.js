@@ -30,6 +30,9 @@ const AdminFileApproval = () => {
       setFilter(response?.insured_clients)
     } else {
       setErrorMessage('Something went wrong!')
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
   useEffect(() => {
@@ -165,7 +168,7 @@ const AdminFileApproval = () => {
                   <td>{row?.monthly_bc}</td>
                   <td>{row?.insurer}</td>
                   <td>{row?.mandated_broker}</td>
-                  
+
                 </tr>
               ))
                 :
