@@ -20,7 +20,6 @@ const AdminInsuredClientView = () => {
       setClientInfoList(response.client_infos);
     } else {
       setErrorMessage('Something went wrong!')
-
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);

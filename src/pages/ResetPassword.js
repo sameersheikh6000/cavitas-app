@@ -8,7 +8,6 @@ import SuccessMessage from "../components/SnackbarMessages/SuccessMessage";
 import AlertMessage from "../components/SnackbarMessages/AlertMessage";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 
-
 const ResetPassword = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
