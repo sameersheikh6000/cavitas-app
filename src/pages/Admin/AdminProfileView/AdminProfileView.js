@@ -19,15 +19,19 @@ function AdminProfileView() {
   const handleSubmit = async e => {
     e.preventDefault();
     const response = await updateAdminUser(profile);
-    
+
     if (response.status < 300) {
       navigate("/admin/signin")
     } else if (response.status > 300) {
       setErrorMessage(response.message);
+      
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
   return (
- 
+
     <Page>
       <AlertMessage errorMessage={errorMessage} />
       <section className='userProfileView'>
@@ -64,7 +68,7 @@ function AdminProfileView() {
               />
               </div>
             </div>
-           
+
               <div className='userProfileView__container__details__detailsBox'>
                 <div><input
                   type="text"
@@ -81,7 +85,7 @@ function AdminProfileView() {
                   />
                   </div>
               </div>
-                
+
                 <div className='userProfileView__container__details__detailsBox'>
                   <div><input
                     type="text"
@@ -91,8 +95,8 @@ function AdminProfileView() {
                   />
                   </div>
                 </div>
-              
-        
+
+
             <div className='userProfileView__container__details__detailsBox'>
               <div><input
                 type="text"
@@ -127,7 +131,7 @@ function AdminProfileView() {
         </div>
       </section>
     </Page>
- 
+
   )
 }
 

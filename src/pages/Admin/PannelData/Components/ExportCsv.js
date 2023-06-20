@@ -44,6 +44,9 @@ const ExportCsv = ({setErrorMessage, setSuccessMessage}) => {
     } else if(response?.data === ""){
         handleClose();
         setErrorMessage("Please Select the Correct date");
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
     }
   }
 

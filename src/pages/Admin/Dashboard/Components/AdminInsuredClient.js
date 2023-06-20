@@ -5,6 +5,7 @@ import useClientInsurance from '../../../../hooks/useClientInsurance';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import { useNavigate } from 'react-router-dom';
 import moment from 'moment';
+import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 
 const AdminInsuredClient = () => {
 
@@ -24,6 +25,10 @@ const AdminInsuredClient = () => {
       console.log(insuredClientsList)
     } else {
       setErrorMessage('Something went wrong!')
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
   useEffect(() => {
@@ -31,6 +36,7 @@ const AdminInsuredClient = () => {
   }, []);
   return (
     <section className='dashboard__container__content__insuredClient'>
+      <AlertMessage errorMessage={errorMessage} />
       <header className='dashboard__container__content__insuredClient__header'>
         <div className='dashboard__container__content__insuredClient__header__iconBox'>
           < VerifiedUserIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
@@ -115,7 +121,7 @@ const AdminInsuredClient = () => {
                   <td>{row?.monthly_bc}</td>
                   <td>{row?.insurer}</td>
                   <td>{row?.mandated_broker}</td>
-                  
+
                 </tr>
               ))
                 }

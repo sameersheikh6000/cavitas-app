@@ -32,6 +32,9 @@ function PolicyInoformationDestroy({policyInformation_id, setSuccessMessage, set
         handleClose();
     } else if(response?.status > 300){
         setErrorMessage(response?.message);
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
     }
   }
 

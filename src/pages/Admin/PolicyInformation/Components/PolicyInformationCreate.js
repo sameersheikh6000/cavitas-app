@@ -33,6 +33,9 @@ function PolicyInoformationCreate({setSuccessMessage, setErrorMessage, getPolicy
         handleClose();
     } else if(response?.status > 300){
         setErrorMessage(response?.message);
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
     }
   }
 
@@ -70,21 +73,21 @@ function PolicyInoformationCreate({setSuccessMessage, setErrorMessage, getPolicy
                   type="text"
                   placeholder='Company URL Address'
                   value={policyInformation?.company_url_address}
-                  onChange={(e) => setPolicyInformation({ ...policyInformation, company_url_address: e.target.value })}                
+                  onChange={(e) => setPolicyInformation({ ...policyInformation, company_url_address: e.target.value })}
                   />
                 </div>
                 <div style={{display: "flex", flexDirection: "column", textAlign: "end"}}><input
                   type="date"
                   placeholder='Risk Inception Date'
                   value={policyInformation?.risk_inseption_date}
-                  onChange={(e) => setPolicyInformation({ ...policyInformation, risk_inseption_date: e.target.value })}                
+                  onChange={(e) => setPolicyInformation({ ...policyInformation, risk_inseption_date: e.target.value })}
                 />
                 <label>Risk Inception Date</label>
                 </div>
                 <div style={{marginTop: "5px", display: "flex", flexDirection: "column", textAlign: "end"}}><input
                     type="date"
                     placeholder='Risk Expiry Date'
-                    onChange={(e) => setPolicyInformation({ ...policyInformation, risk_expiry_date: e.target.value })}                
+                    onChange={(e) => setPolicyInformation({ ...policyInformation, risk_expiry_date: e.target.value })}
                     value={policyInformation?.risk_expiry_date}
                   />
                   <label>Risk Expiry Date</label>
@@ -92,27 +95,27 @@ function PolicyInoformationCreate({setSuccessMessage, setErrorMessage, getPolicy
                   <div style={{marginTop: "5px", display: "flex", flexDirection: "column", textAlign: "end"}}><input
                         type="date"
                         value={policyInformation?.risk_renewal_date}
-                        onChange={(e) => setPolicyInformation({ ...policyInformation, risk_renewal_date: e.target.value })}                
+                        onChange={(e) => setPolicyInformation({ ...policyInformation, risk_renewal_date: e.target.value })}
                         placeholder='Risk Renewal Date' />
                         <label>Risk Renewal Date</label>
                     </div>
                   </div>
             </div>
-                
+
             <div className='userProfileView__container__details__detailsBox'>
             <div className='userProfileView__container__details__detailsBox__feilds__container'>
               <div><input
                 type="text"
                 placeholder='No. of Insured Persons'
                 value={policyInformation?.no_of_insured_persons}
-                onChange={(e) => setPolicyInformation({ ...policyInformation, no_of_insured_persons: e.target.value })}                
+                onChange={(e) => setPolicyInformation({ ...policyInformation, no_of_insured_persons: e.target.value })}
                 />
               </div>
               <div><input
                 type="text"
                 placeholder='Mandated Broker'
                 value={policyInformation?.mandated_broker}
-                onChange={(e) => setPolicyInformation({ ...policyInformation, mandated_broker: e.target.value })}                
+                onChange={(e) => setPolicyInformation({ ...policyInformation, mandated_broker: e.target.value })}
               />
               </div>
               </div>

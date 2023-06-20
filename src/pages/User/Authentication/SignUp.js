@@ -47,8 +47,14 @@ const SignUp = () => {
       navigate(`/dashboard/${lang === 'pl' ? lang : 'en'}`);
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     } else if (response?.data?.status?.message === undefined) {
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

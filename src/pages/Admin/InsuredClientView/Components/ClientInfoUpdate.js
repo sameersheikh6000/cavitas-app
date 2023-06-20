@@ -30,12 +30,15 @@ function ClientInfoUpdate({client_id, getClientInsurance}) {
     const handleChange = (e) => {
         setFile( e.target.files[0] )
     }
-    
+
     const handleUpdate = async (infoID) => {
-        
+
         const response = await updateClientInsuranceAdmin(infoID, file)
         if (response?.status > 300 ){
           setErrorMessage(response?.message)
+          setTimeout(() => {
+            setErrorMessage("");
+          }, 5000);
         } else if (response?.status < 300){
           setOpen(false);
           getClientInsurance();

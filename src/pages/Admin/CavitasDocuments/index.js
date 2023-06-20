@@ -12,28 +12,31 @@ import UpdateCavitasDocs from './Components/UpdateCavitasDocs';
 
 
 const CavitasDocument = () =>  {
-    const navigate = useNavigate();
     const { getCavitasDocsByAdmin } = useCavitasDocs();
     const [errorMessage, setErrorMessage] = useState(null);
     const [cavitasDocs, setCavitasDocs] = useState([]);
     const [successMessage, setSuccessMessage] = useState();
-  
+
     const fetchCavitasDocs = async () => {
-      
+
       const response = await getCavitasDocsByAdmin();
-      
+
       if (response?.status < 300) {
         setCavitasDocs(response?.cavitas_documents)
       } else if (response?.status > 300) {
         setErrorMessage(response.message);
+
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
       }
     }
-  
+
     useEffect(() => {
         fetchCavitasDocs();
     }, [])
-  
-  
+
+
     return (
       <Page>
         <SuccessMessage successMessage={successMessage}/>
@@ -42,9 +45,9 @@ const CavitasDocument = () =>  {
           <header style={{display: "flex", justifyContent: "space-between"}}>
           <div className='insuredClientView__header__left'>
             <  TextSnippetIcon   className='insuredClientView__header__left__icon' />
-            <h1>Cavitas Documents</h1>   
+            <h1>Cavitas Documents</h1>
                    </div>
-            
+
 
             <CreateCavitasDocs setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} fetchCavitasDocs={fetchCavitasDocs}/>
           </header>
@@ -61,7 +64,7 @@ const CavitasDocument = () =>  {
               </thead>
               <tbody>
                 {cavitasDocs?.map((row, index) => (
-                    <tr>               
+                    <tr>
                         <td>{row?.title}</td>
                         <td>{row?.valid_date}</td>
                         <td><a href={`${API_KEY}/${row?.document?.url}`} target="_blank">{row?.document?.filename}</a></td>

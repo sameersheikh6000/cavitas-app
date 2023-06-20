@@ -37,6 +37,10 @@ const InsuredPersonDetail = () => {
         setClientInfo(response?.client_info);
     } else if (response.status > 300) {
       setErrorMessage(response?.message);
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

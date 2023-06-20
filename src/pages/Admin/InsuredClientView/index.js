@@ -13,7 +13,6 @@ import ClientInfoUpdate from './Components/ClientInfoUpdate';
 
 
 const AdminInsuredClientView = () => {
-  const navigate = useNavigate();
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [clientInfoList, setClientInfoList] = useState([]);
   const [errorMessage, setErrorMessage] = useState(null)
@@ -25,6 +24,10 @@ const AdminInsuredClientView = () => {
       setClientInfoList(response.client_infos);
     } else {
       setErrorMessage('Something went wrong!')
+      
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 
@@ -91,7 +94,7 @@ const AdminInsuredClientView = () => {
                   <InsuredClientRejectModal />
                 </td> */}
               </tr>
-              )) 
+              ))
               :
                 <div>
                   <p>No records.</p>

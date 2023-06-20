@@ -30,6 +30,9 @@ const InsuredPerson = () => {
       setFilter(response?.insured_clients)
     } else {
       setErrorMessage('Something went wrong!')
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 

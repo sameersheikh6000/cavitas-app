@@ -28,6 +28,9 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
         console.log(response?.user)
     }else if (response?.status > 300){
         setErrorMessage(response?.message);
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
     }
 
   }
@@ -45,6 +48,9 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
         getUsersList();
     } else if(response?.status > 300){
         setErrorMessage(response?.message);
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
     }
   }
 
@@ -110,7 +116,7 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
                         onChange={(e) => setProfile({ ...profile, phone_number: e.target.value })}
                         placeholder='Phone number' />
                     </div>
-                    
+
                     <div style={{marginTop: "5px"}}><input
                         type="text"
                         value={profile?.company_pesel_number}
@@ -125,7 +131,7 @@ function UpdateUserModal({user_id, setErrorMessage, setSuccessMessage, getUsersL
                     </div>
                   </div>
             </div>
-                
+
             <div className='userProfileView__container__details__detailsBox'>
             <div className='userProfileView__container__details__detailsBox__feilds__container'>
               <div><input

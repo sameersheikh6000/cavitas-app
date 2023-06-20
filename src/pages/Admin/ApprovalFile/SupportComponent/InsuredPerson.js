@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import TicketDetail from "./TicketComponent/ContactFormDetail";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import Page from "../../../../components/Page/Page";
-import Stack from "@mui/material/Stack";
 import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 import AcceptFile from "../Components/AcceptFile";
 import useClientInsurance from "../../../../hooks/useClientInsurance";
@@ -17,14 +15,18 @@ const InsuredPerson = () => {
   const lang = currentUrl.split("/").pop();
   const { getAllClientInsuranceAdmin } = useClientInsurance();
   const [clientInfoList, setClientInfoList] = useState([]);
- console.log(clientInfoList)
   const [errorMessage, setErrorMessage] = useState(null)
+
   const getClientInsurance = async () => {
     const response = await getAllClientInsuranceAdmin();
     if (response.status < 300) {
       setClientInfoList(response.client_infos);
     } else {
       setErrorMessage('Something went wrong!')
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 

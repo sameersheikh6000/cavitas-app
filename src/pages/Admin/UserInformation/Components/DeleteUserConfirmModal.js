@@ -25,10 +25,16 @@ function DeleteUserConfirmModal({user_id, getUsersList, setErrorMessage, deleteU
     const response = await deleteUserByAdmin(id)
     if(response?.status < 300){
       setErrorMessage("User Deleted Successfully!")
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
       getUsersList();
       handleClose();
     }else if (response?.status > 300){
       setErrorMessage(response?.message)
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
 
   }

@@ -54,6 +54,9 @@ function ClientInfoReplyAnswerForm({
       handleClose();
     } else if (response?.status > 300) {
       setErrorMessage(response?.message);
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

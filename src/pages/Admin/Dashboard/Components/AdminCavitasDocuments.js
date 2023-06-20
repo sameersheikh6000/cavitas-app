@@ -1,10 +1,11 @@
 import { Button } from '@mui/material'
 import GroupsIcon from '@mui/icons-material/Groups';
 import React, {useState, useEffect} from 'react'
-import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 import { useNavigate } from 'react-router-dom';
 import useUsers from '../../../../hooks/useUsers';
 import DeleteUserConfirmModal from '../../UserInformation/Components/DeleteUserConfirmModal';
+import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
+
 const AdminCavitasDocuments = () => {
   const navigate = useNavigate();
   const [users, setUsers] = useState([])
@@ -24,6 +25,10 @@ const AdminCavitasDocuments = () => {
       console.log(users)
     } else if (response?.status > 300) {
       setErrorMessage(response?.message);
+
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 
@@ -33,6 +38,7 @@ const AdminCavitasDocuments = () => {
   }, [])
   return (
     <section className='dashboard__container__content__cavitasDocs'>
+      <AlertMessage errorMessage={errorMessage} />
       <header className='dashboard__container__content__cavitasDocs__header'>
         <div className='dashboard__container__content__cavitasDocs__header__iconBox'>
           <GroupsIcon  className='dashboard__container__content__cavitasDocs__header__iconBox__icon' />
@@ -52,7 +58,7 @@ const AdminCavitasDocuments = () => {
             </tr>
           </thead>
           <tbody>
-      
+
           {users.length > 0 ? users.map((row, index) => (
               <tr
                     key={index}
@@ -69,7 +75,7 @@ const AdminCavitasDocuments = () => {
                 <DeleteUserConfirmModal user_id={row?.id} getUsersList={getUsersList} setErrorMessage={setErrorMessage} deleteUserByAdmin={deleteUserByAdmin}/>
                 </td>
               </tr>
-            )) : 
+            )) :
             <div>
               <p>No records.</p>
             </div>
