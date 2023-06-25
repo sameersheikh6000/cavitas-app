@@ -151,7 +151,7 @@ const InsuredPersonSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                   {t("Replypannel.Attachement")}
                   </TableCell>
-                  <TableCell>{clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</TableCell>
+                  <TableCell>{clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -225,7 +225,7 @@ const InsuredPersonSupportTicket = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</p>
+                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</p>
                 </tbody>
               </div>
             </section>
