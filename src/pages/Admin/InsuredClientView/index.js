@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
-import { useNavigate } from 'react-router-dom';
 import useClientInsurance from '../../../hooks/useClientInsurance';
-import { Button } from '@mui/material'
-import moment from 'moment';
 import Page from "../../../components/Page/Page";
 import { API_KEY } from '../../../config/helpers/variables';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
-import InsuredClientRejectModal from './Components/InsuredClientReajectModal';
 import ClientInfoUpdate from './Components/ClientInfoUpdate';
 
 
