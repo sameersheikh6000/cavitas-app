@@ -1938,6 +1938,28 @@ font-size: 1rem !important;
 .landingPage__coverWorks__container {
   margin-top: 2rem;
 }
+.Shop__mainpage{
+  font-weight: 500;
+  color: black;
+  margin-bottom: 100px;
+  font-size: 20px;
+}
+.Shop__Button{
+  background-color: #abcbcb;
+  margin-left: 30px;
+  border-radius: 25px;
+  padding: 15px;
+}
+.Shop__Price{
+  background-color: red;
+  border-radius: 25px;
+  padding: 15px;
+}
+.Shop__price h1{
+  font-size: 30px;
+  margin-top: 10px;
+  font-weight: 400;
+}
 .landingPage__coverWorks__container__cards {
   display: flex;
   align-items: flex-start;

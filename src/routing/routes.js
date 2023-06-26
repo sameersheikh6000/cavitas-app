@@ -62,6 +62,7 @@ import ResetPassword from "../pages/ResetPassword";
 import { USER_STORAGE_KEY } from "../config/helpers/variables";
 import InsuredPersonDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/InsuredPersonDetail";
 import PrivacyPolicy from "../pages/User/Privacypolicy/index";
+import Shop from "../pages/User/Shop/Shop";
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
 
@@ -790,6 +791,12 @@ export const routes = [
   {
     path: "/reset_password",
     component: ResetPassword,
+    isPrivate: false
+  }
+  ,
+  {
+    path: "/Shop",
+    component: Shop,
     isPrivate: false
   },
 ]
