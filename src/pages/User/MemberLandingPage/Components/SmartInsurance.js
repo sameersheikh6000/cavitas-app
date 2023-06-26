@@ -17,6 +17,7 @@ const SmartInsurance = () => {
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
   return (
+   
     <section className='landingPage__smartInsurance'>
       <div className='landingPage__smartInsurance__container'>
         <div className='landingPage__smartInsurance__container__details'>
@@ -38,6 +39,7 @@ const SmartInsurance = () => {
         </div>
       </div>
     </section>
+   
   )
 }
 

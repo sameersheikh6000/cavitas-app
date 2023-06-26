@@ -9,6 +9,7 @@ import Sidebar from '../Sidebar/Sidebar'
 import SidebarDrawer from '../Sidebar/SidebarDrawer'
 import SidebarMenu from '../Sidebar/SidebarMenu';
 import { IconButton } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { ADMIN_STORAGE_KEY, USER_STORAGE_KEY } from '../../config/helpers/variables';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../config/helpers/i18n';
@@ -83,6 +84,9 @@ function Navbar() {
                   </Link>
                   <Link className="appbar__linksBox__links__link" to={`/member/${lang === "pl" ? "pl" : "en"}`}>
                   {t("nav.memberLogin")}
+                  </Link>
+                  <Link className="appbar__linksBox__links__link" to={"/Shop"}>
+                 <ShoppingCartIcon />
                   </Link>
                   <select onChange={(e) => handleLanguageChange(e.target.value)}>
                   <option value="">{t("nav.selectLang")}</option>
