@@ -120,7 +120,7 @@ const InsuredPersonDetail = () => {
                             <em>
                               Attached files:{" "}
                               <a
-                                href={`${API_KEY}/api/v1/client_infos/${clientInfo?.id}/download_file`}
+                                href={`${API_KEY}/api/v1/client_infos/${clientInfo?.id}/download`}
                               >
                                 {clientInfo?.file.filename}
                               </a>

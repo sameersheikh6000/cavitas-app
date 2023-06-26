@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
-import { useNavigate } from 'react-router-dom';
 import useClientInsurance from '../../../hooks/useClientInsurance';
-import { Button } from '@mui/material'
-import moment from 'moment';
 import Page from "../../../components/Page/Page";
 import { API_KEY } from '../../../config/helpers/variables';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
-import InsuredClientRejectModal from './Components/InsuredClientReajectModal';
 import ClientInfoUpdate from './Components/ClientInfoUpdate';
 
 
@@ -24,7 +20,7 @@ const AdminInsuredClientView = () => {
       setClientInfoList(response.client_infos);
     } else {
       setErrorMessage('Something went wrong!')
-      
+
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
@@ -84,7 +80,7 @@ const AdminInsuredClientView = () => {
                   <td>{row?.broker_reference}</td>
                   <td>{row?.referenced_broker_name}</td>
                   <td>{
-                    <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download_file`}>{row?.file?.filename}</a>
+                    <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download`}>{row?.file?.filename}</a>
                     }</td>
                   <td>{row?.status}</td>
                   <td><ClientInfoUpdate client_id={row?.id} getClientInsurance={getClientInsurance}/>

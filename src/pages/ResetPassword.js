@@ -6,6 +6,8 @@ import useForgotPassword from "../hooks/useForgotPassword";
 import { useNavigate } from "react-router-dom";
 import SuccessMessage from "../components/SnackbarMessages/SuccessMessage";
 import AlertMessage from "../components/SnackbarMessages/AlertMessage";
+import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+
 
 const ResetPassword = () => {
   const currentUrl = window.location.href;
@@ -13,6 +15,8 @@ const ResetPassword = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { resetPassword } = useForgotPassword();
+  const [viewPassword, setViewPassword] = useState(false);
+  const [viewConfirmPassword, setViewConfirmPassword] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [credential, setCredential] = useState({
@@ -49,6 +53,22 @@ const ResetPassword = () => {
       }, 5000);
     }
   };
+
+  const handleShowNewPassword = () => {
+    if (viewPassword === false) {
+      setViewPassword(true);
+    } else {
+      setViewPassword(false);
+    }
+  }
+
+  const handleShowConfirmPassword = () => {
+    if (viewConfirmPassword === false) {
+      setViewConfirmPassword(true);
+    } else {
+      setViewConfirmPassword(false);
+    }
+  }
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -121,7 +141,7 @@ const ResetPassword = () => {
                   }
                   name="token"
                   placeholder="token"
-                  type="token"
+                  type="password"
                   value={credential?.token}
                 />
               </div>
@@ -190,9 +210,10 @@ const ResetPassword = () => {
                   }
                   name="password"
                   placeholder="password"
-                  type="password"
+                  type={viewPassword ? 'text' : 'password'}
                   value={credential?.password}
                 />
+                <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowNewPassword} />
               </div>
 
               <div
@@ -222,9 +243,10 @@ const ResetPassword = () => {
                   }
                   name="password_confirmation"
                   placeholder="password confirmation"
-                  type="password"
+                  type={viewConfirmPassword ? 'text' : 'password'}
                   value={credential?.passwordConfirmation}
                 />
+                <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowConfirmPassword} />
               </div>
               <Button
                 style={{ borderRadius: "50px", margin: "1rem 10rem" }}

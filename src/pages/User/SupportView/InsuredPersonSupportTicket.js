@@ -14,6 +14,8 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import useClientInsurance from "../../../hooks/useClientInsurance";
 import ClientInfoReplyAnswerForm from "./TicketingSystemComponent/InsuredSupport/component/ClientInfoReplyAnswerForm";
 import { API_KEY } from "../../../config/helpers/variables";
+import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
+import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 
 const InsuredPersonSupportTicket = () => {
   const { id } = useParams();
@@ -48,6 +50,8 @@ const InsuredPersonSupportTicket = () => {
   }, [])
   return (
     <Page>
+      <AlertMessage errorMessage={errorMessage}/>
+      <SuccessMessage successMessage={successMessage} />
       <section className="insuredClientView">
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
@@ -94,14 +98,14 @@ const InsuredPersonSupportTicket = () => {
         <br />
         <header className="insuredClientView__header">
           <div className="insuredClientView__header__left">
-            <Link to={`/support/view/${lang == "pl" ? "pl" : "en"}`}>
+            <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
             </Link>
           </div>
           <div className="insuredClientView__header__right">
 
             <Link
-            to={`/SubmitNewTickets/${lang == "pl" ? "pl" : "en"}`}
+            to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
 
             style={{ textDecoration: "none" }}>
               <Button
@@ -151,7 +155,7 @@ const InsuredPersonSupportTicket = () => {
                   <TableCell style={{ fontWeight: "bold" }}>
                   {t("Replypannel.Attachement")}
                   </TableCell>
-                  <TableCell>{clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</TableCell>
+                  <TableCell>{clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</TableCell>
                 </TableRow>
               </TableHead>
               <TableHead>
@@ -225,7 +229,7 @@ const InsuredPersonSupportTicket = () => {
                     paddingBottom: "1rem",
                   }}
                 >
-                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download_file`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</p>
+                  <p>  {t("Replypannel.Attachement")} {clientInfo?.file?.url ? <a href={`${API_KEY}/api/v1/client_infos/${id}/download`}>{clientInfo?.file?.filename}</a> : `${t("Replypannel.Noattachemnt")}` }</p>
                 </tbody>
               </div>
             </section>

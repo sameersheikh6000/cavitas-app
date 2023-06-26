@@ -577,7 +577,7 @@
   "Token":"Token",
   "Email":"E-mail",
   "Resetpassword":"Reset Password",
-  "Sensitive":"The code that was emailed to you. This is case-sensitive.",
+  "Sensitive":"Enter code that you recieved. This is case-sensitive.",
   "Newpassword":"New password:  ",
   "confirmpassword":"Confirm new password:",
   "continue":"Continue",
