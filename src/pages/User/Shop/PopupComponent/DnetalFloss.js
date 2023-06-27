@@ -65,20 +65,20 @@ function DentalFloss() {
           />
           <div className="uploadClient__container__body__participation">
             <h3>DESCRIPTION:</h3>
-            <br />
+            <div  style={{fontSize:"14px"}}>
             <p>
               1 box contains 30 meters of interdental floss.
               <br />
-              <br />
+            
               DentaCure is an effective and natural floss against bleeding gums
               and gingivitis.
               <br />
-              <br />
+            
               Designed to easily slide between the teeth and at the same time
               release fenugreek extract and fluoride to prevent gum problems and
               caries.
               <br />
-              <br />
+        
               DentaCure dental floss contains a naturally active extract of
               fenugreek seeds that have been known for millennia for their
               healing effect. The fenugreek seeds have been documented as
@@ -86,25 +86,27 @@ function DentalFloss() {
               gum problems.
             </p>
             <br />
-            <br />
+         </div>
             <h3>USAGE:</h3>
-            <br />
+            <div  style={{fontSize:"14px"}}>
             <p>
               Wrap the floss around one to two fingers on each hand to hold it,
               and pass the floss down between the teeth, thus cleaning the space
               between the teeth. The length of the floss between each finger
               must be as short as possible to guide the floss in the mouth.
             </p>
-            <br />
+           
             Be careful not to harm the gums with the floss.
             <br />
             <br />
+          </div>
             <h3>INGREDIENTS:</h3>
-            <br />
+            <div  style={{fontSize:"14px"}}>
             <p>
               Sodium fluoride, fenugreek seed extract.
               <br />
             </p>
+            </div>
           </div>
         </Box>
       </Modal>

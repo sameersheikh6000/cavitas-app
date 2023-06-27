@@ -65,11 +65,11 @@ function DentaCuretoothpaste() {
           />
           <div className="uploadClient__container__body__participation">
             <h3>DESCRIPTION:</h3>
-            <br />
+            <div  style={{fontSize:"14px"}}>
             <p>
               1 tube contains 75 ml of toothpaste
               <br />
-              <br />
+         
               DentaCure is an effective and natural toothpaste to help fight
               bleeding gums and gum inflammation.
               <br />
@@ -79,11 +79,13 @@ function DentaCuretoothpaste() {
               Fenugreek seeds are documented anti-inflammatory and combat the
               harmful bacteria that can cause gum problems.
             </p>
+            </div>
             <br />
-            <br />
+        
 
             <h3>INGREDIENTS:</h3>
-            <br />
+            <div  style={{fontSize:"14px"}}>
+
             <p>
               Water, hydrated silica, Sorbitol, Propylen Glycol, Sodium C 14-16,
               Olefin Sulfonat.Aroma, Trigonella Foenum Graecum (Fenugreek)
@@ -91,6 +93,7 @@ function DentaCuretoothpaste() {
               Natriumfluoride (1450 ppm F)
               <br />
             </p>
+            </div>
           </div>
         </Box>
       </Modal>
