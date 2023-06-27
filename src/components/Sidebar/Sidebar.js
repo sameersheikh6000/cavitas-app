@@ -55,7 +55,7 @@ const Sidebar = () => {
     {(window.location.pathname !== '/' && user || admin ) &&
     <section className='sidebar'>
       <header className='sidebar__header'>
-        <img className='sidebar__header__logo' src={require('../../assets/CavitasLogo-img.png')} alt="Cavitas Logo" title='Click To Logout'
+        <img className='sidebar__header__logo' src={require('../../assets/CavitasLogo-img.png')} alt="Cavitas Logo" title='Click To Logout' style={{cursor: 'pointer'}}
         onClick={handleLogout}
         />
         {/* <img className='sidebar__header__flag' src={require('../../assets/EnglandFLag-img.jpg')} alt="" /> */}
