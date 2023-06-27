@@ -92,7 +92,7 @@ const AdminFileApproval = () => {
                   <td>{row?.broker_reference}</td>
                   <td>{row?.referenced_broker_name}</td>
                   <td>{row?.file?.filename}</td> */}
-                  <td>{row?.status}</td>
+                  <td>{row?.status === 'fresh' ? 'NEW' : row?.status?.toUpperCase()}</td>
                   <td></td>
                 </tr>
               ))}
