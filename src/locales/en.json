@@ -477,7 +477,7 @@
 
 "Replypannel":{
 "Returnticket":"Return to ticket list",
-"Number":"Number",
+"Number":"Ticket ID",
 "Status":"Status",
 "Topic":"Topic",
 "Createdon":"Created on",
@@ -491,6 +491,7 @@
 "Writeanswer":"Write Your Answer Here!",
 "insuredticket":"Insured Tickets",
 "myinsuredticket":"MY TICKET ",
+"myinsuredticket1":"MY TICKET List ",
 "notopic":"No Topic"
 
 },

@@ -45,26 +45,41 @@ function InsuredPersonSupportList() {
               <EmailOutlinedIcon className="supportView__header__iconBox__icon" />
               <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
             </div>
-            <div className="insuredClientView__header__right">
-              <Link to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}>
+            </header>
+            <br />
+        <header className="insuredClientView__header">
+           <div className="insuredClientView__header__left">
+            {/* <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}> */}
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket1")}           </Button>
+            {/* </Link> */}
+          </div>
+          
+          <div className="insuredClientView__header__right">
+                          <Link
+                          to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
 
-                <Button
-                  color="error"
-                  variant="outlined"
-                  size="small"
-                  style={{
-                    color: "white !important",
-                    marginLeft: "15px",
-                    fontWeight: "bold",
-                    borderRadius: "25px",
-                    textTransform: "none",
-                  }}
-                >
-                  {t("MysupportTickets.Submitnewticket")}
-                </Button>
-              </Link>
-            </div>
-          </header>
+                          style={{ textDecoration: "none" }}>
+                             <Button
+                color="error"
+                variant="outlined"
+                size="small"
+                style={{
+                  color: "white !important",
+                  marginLeft: "15px",
+                  fontWeight: "bold",
+                  borderRadius: "25px",
+                  textTransform: "none",
+                }}
+             
+                            // className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn"
+                            >
+                            {t("MysupportTickets.Submitnewticket")}
+                            </Button>
+                          </Link>
+                        </div>
+        </header>
+            
+        
           <div>
             <div className="insuredClientView__container__mysupport__tickets">
               <table>

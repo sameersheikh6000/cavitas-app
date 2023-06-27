@@ -58,27 +58,43 @@ const InsuredPersonSupportTicket = () => {
             <MailOutlineIcon className="insuredClientView__header__left__icon" />
             <p>{t("Pannel_Dashboard_Supporttickets.Supporttitle")}</p>
           </div>
-          <div className="insuredClientView__header__right">
-            <Link
-            to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
-
-            style={{ textDecoration: "none" }}>
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn">
-              {t("MysupportTickets.Submitnewticket")}
-              </Button>
-            </Link>
-          </div>
         </header>
         <br />
         <header className="insuredClientView__header">
-          <div className="insuredClientView__header__left">
+          {/* <div className="insuredClientView__header__left">
             <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
               <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
             </Link>
+          </div> */}
+           <div className="insuredClientView__header__left">
+            {/* <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}> */}
+              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
+            {/* </Link> */}
           </div>
           <div className="insuredClientView__header__right">
             <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
               <Button
+                color="error"
+                variant="outlined"
+                size="small"
+                style={{
+                  color: "white !important",
+                  marginLeft: "675px",
+                  fontWeight: "bold",
+                  borderRadius: "25px",
+                  textTransform: "none",
+                }}
+              >
+               {t("Replypannel.Returnticket")}
+              </Button>
+            </Link>
+          </div>
+          <div className="insuredClientView__header__right">
+                          <Link
+                          to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
+
+                          style={{ textDecoration: "none" }}>
+                             <Button
                 color="error"
                 variant="outlined"
                 size="small"
@@ -89,20 +105,18 @@ const InsuredPersonSupportTicket = () => {
                   borderRadius: "25px",
                   textTransform: "none",
                 }}
-              >
-               {t("Replypannel.Returnticket")}
-              </Button>
-            </Link>
-          </div>
+             
+                            // className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__btn"
+                            >
+                            {t("MysupportTickets.Submitnewticket")}
+                            </Button>
+                          </Link>
+                        </div>
         </header>
         <br />
         <header className="insuredClientView__header">
-          <div className="insuredClientView__header__left">
-            <Link to={`/support/view/${lang === "pl" ? "pl" : "en"}`}>
-              <Button className="authentication__container__formContainer__form__loginButton_Form__Support__Ticket__ID_btn__Submit">{t("Replypannel.myinsuredticket")} #{id}              </Button>
-            </Link>
-          </div>
-          <div className="insuredClientView__header__right">
+         
+          {/* <div className="insuredClientView__header__right">
 
             <Link
             to={`/SubmitNewTickets/${lang === "pl" ? "pl" : "en"}`}
@@ -115,7 +129,7 @@ const InsuredPersonSupportTicket = () => {
               {t("MysupportTickets.Submitnewticket")}
               </Button>
             </Link>
-          </div>
+          </div> */}
 
         </header>
         <br /> <br />

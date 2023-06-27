@@ -73,7 +73,7 @@ const InsuredPerson = () => {
               <tr key={index}>
             <td><Button onClick={() => navigate(`/admin/InsuredPersonDetail/${row?.id}/${lang === 'pl' ? lang : 'en'}`)}>{row?.id}</Button></td>
                 <td>{row?.form_type.toUpperCase()}</td>
-                <td>{row?.status === 'fresh' ? 'NEW' : row?.status?.toUpperCase() }</td>
+                <td>{row?.status === 'NEW' ? 'NEW' : row?.status?.toUpperCase() }</td>
                 <td>{row?.request ? row?.request : <small style={{color: 'gray'}}><em><u>No Topic</u></em></small>}</td>
                 <td>{row?.created_at}</td>
                 <td>{row?.full_name}</td>

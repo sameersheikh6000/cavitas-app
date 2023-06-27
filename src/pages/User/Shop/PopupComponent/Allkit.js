@@ -65,7 +65,7 @@ function Allkit() {
           />
           <div className="uploadClient__container__body__participation">
             <h3>DESCRIPTION:</h3>
-            <br />
+            <div  style={{fontSize:"14px"}}>
             <p>
               Kit of all DentaCure products contains:
               <br />
@@ -77,17 +77,21 @@ function Allkit() {
               1 tube contains 25 ml of gel.
               <br />1 box contains 30 meters of interdental floss.
             </p>
+            </div>
+         
             <br />
-            <br />
-            <h3>USAGE:</h3><br />
-            <p>Find usage described under each product separately.</p>
+            <h3>USAGE:</h3>            <div  style={{fontSize:"14px"}}>
+
+            <p>Find usage described under each product separately.</p></div>
             <br />
             <h3>INGREDIENTS:</h3>
-            <br />
+            <div  style={{fontSize:"14px"}}>
+
             <p>
               Find ingredients described under each product separately.
               <br />
             </p>
+            </div>
           </div>
         </Box>
       </Modal>

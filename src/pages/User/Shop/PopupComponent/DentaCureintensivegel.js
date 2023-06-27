@@ -65,21 +65,21 @@ function DentaCureintensivegel() {
           />
           <div className="uploadClient__container__body__participation">
             <h3>DESCRIPTION:</h3>
-            <br />
+         <div  style={{fontSize:"14px"}}>
             <p>
               1 tube contains 25 ml of gel.
               <br />
-              <br />
+             
               DentaCure gel is an effective and natural gel against bleeding
               gums, gum inflammation and blisters in mouth.
-              <br />
+         
               <br />
               DentCure gel contains a natural active extract from fenugreek
               seeds, which for centuries has been known for their healing
               effect. Fenugreek seeds are documented as anti-inflammatory and
               effective against gum problems and irritated mucous membranes,
               which can lead to blisters in the mouth.
-              <br />
+      
               <br />
               The gel also contains hyaluronic acid, which is a substance
               already found in the human body e.g. in the oral area, eyes and
@@ -88,8 +88,9 @@ function DentaCureintensivegel() {
               wounds.
             </p>
             <br />
+            </div>
             <h3>USAGE:</h3>
-            <br />
+  <div  style={{fontSize:"14px"}}>
             <p>
               The product is ready for use. Apply 1 cm of gel on the effected
               inflamed area and/or blisters in the mouth. Can be applied by
@@ -103,8 +104,9 @@ function DentaCureintensivegel() {
             adult.<br />
             <strong>Warning:</strong> Do not use if you are allergic to some of
             the ingredients. Do not use if the product is visibly damaged.
-            <br /><br />
-            <h3>INGREDIENTS:</h3><br />
+            <br /><br /></div>
+            <h3>INGREDIENTS:</h3>
+            <div  style={{fontSize:"14px"}}>
             <p>
               Water, Glycerin, Xylitol, Hydroxyethylcellulose, propylene Glycol,
               PEG-40 Hydrogenated Castor oil, Xylitol, Trigonella Foenum Graecum
@@ -113,6 +115,7 @@ function DentaCureintensivegel() {
               Potassium Acesulfame, Eucalyptus Globulus Leaf Oil, CI 42051.
               <br />
             </p>
+            </div>
           </div>
         </Box>
       </Modal>
