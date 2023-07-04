@@ -62,7 +62,7 @@ const Footer = () => {
                   {t("nav.claims")}
                   </Link>
             <Link to={`/Privacypolicy/${lang === "pl" ? "pl" : "en"}`}>{t("nav.PrivacyPolicy")}</Link>
-            <Link to="#">{t("nav.Shop")}</Link>
+            <Link to={"/Shop"}>{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">
             <Link>   {t("footer.findus")}</Link>

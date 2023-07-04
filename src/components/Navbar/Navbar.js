@@ -85,9 +85,9 @@ function Navbar() {
                   <Link className="appbar__linksBox__links__link" to={`/member/${lang === "pl" ? "pl" : "en"}`}>
                   {t("nav.memberLogin")}
                   </Link>
-                  <Link className="appbar__linksBox__links__link" to={"/Shop"}>
+                  {/* <Link className="appbar__linksBox__links__link" to={"/Shop"}>
                  <ShoppingCartIcon />
-                  </Link>
+                  </Link> */}
                   <select onChange={(e) => handleLanguageChange(e.target.value)}>
                   <option value="">{t("nav.selectLang")}</option>
                   <option value="en">{t("nav.english")}</option>

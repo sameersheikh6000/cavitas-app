@@ -20,7 +20,8 @@ const Shop = () => {
             <h1
               style={{
                 color: "#5c8894",
-                padding:"30px"
+                padding:"30px",
+                textTransform:"none"
               }}
             >
               Shop for natural oral care products that <br />
@@ -66,7 +67,7 @@ const Shop = () => {
             style={{ width: "50%", marginTop: "-100px" }}
           >
             <img
-              style={{ height: "50%", width: "50%" }}
+              style={{ height: "60%", width: "60%" }}
               src={require("../../../assets/no 1.png")}
               alt=""
             />
@@ -88,7 +89,9 @@ const Shop = () => {
               DentaCure toothpaste, 75 ml  <DentaCuretoothpaste/>
              
             </h3>
-            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+            <p className="Shop__mainpage"
+            //  style={{ fontWeight: "normal" }}
+             >
               <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>Mild mint taste</li>
                 <li>Effective against bleeding gums</li>
@@ -131,7 +134,7 @@ const Shop = () => {
             style={{ width: "50%", marginTop: "-100px" }}
           >
             <img
-              style={{ height: "50%", width: "50%" }}
+              style={{ height: "45%", width: "43%" }}
               src={require("../../../assets/Mouth wash.png")}
               alt=""
             />
@@ -160,7 +163,10 @@ const Shop = () => {
               /> */}
               <DentaCureMouthWash />
             </h3>
-            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+            <p className="Shop__mainpage" 
+            
+            // style={{ fontWeight: "normal" }}
+            >
               <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>Mild mint taste and fresh breath</li>
                 <li>Anti inflammatory</li>
@@ -232,7 +238,10 @@ const Shop = () => {
               /> */}
               <DentaCureintensivegel />
             </h3>
-            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+            <p className="Shop__mainpage" 
+            
+            // style={{ fontWeight: "normal" }}
+            >
               <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>Mild mint taste</li>
                 <li>Anti inflmmatory</li>
@@ -303,8 +312,10 @@ const Shop = () => {
               /> */}
               <DentalFloss />
             </h3>
-            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
-              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+            <p className="Shop__mainpage" 
+            
+            // style={{ fontWeight: "normal" }}
+            >              <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>Effective against bleeding gums and gingivitis</li>
                 <li>For daily cleaning between teeth</li>
                 <li>Anti inflammatory</li>
@@ -342,7 +353,7 @@ const Shop = () => {
             style={{ width: "50%", marginTop: "-100px" }}
           >
             <img
-              style={{ height: "50%", width: "50%" }}
+              style={{ height: "60%", width: "60%" }}
               src={require("../../../assets/DentaCure all products.png")}
               alt=""
             />
@@ -372,8 +383,10 @@ const Shop = () => {
               /> */}
               <Allkit />
             </h3>
-            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
-              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+            <p className="Shop__mainpage" 
+            
+            // style={{ fontWeight: "normal" }}
+            >              <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>
                   All DentaCure products for effective and natural floss against
                   bleeding gums and gingivitis.
