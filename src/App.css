@@ -2592,7 +2592,13 @@ font-size: 1rem !important;
   font-weight: bolder !important;
   font-family: "poppins" !important;
   text-transform: capitalize !important;
-  color: gray;
+  color: gray !important;
+}
+.faq__tabs__tabsLabel:active {
+  font-weight: bolder !important;
+  font-family: "poppins" !important;
+  text-transform: capitalize !important;
+  color: red !important;
 }
 
 .css-heg063-MuiTabs-flexContainer {

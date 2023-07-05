@@ -58,9 +58,9 @@ export default function Alldocuments() {
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
-  return (
+  return ( 
     <Box sx={{ width: "100%", minWidth: "30rem" }}>
-      <Box sx={{ borderBottom: 0.5 }}>
+      <Box sx={{ borderBottom: 0.5, color:"rgba(0, 0, 0, 0.12)" }}>
 
         <Tabs
           value={value}
@@ -71,28 +71,30 @@ export default function Alldocuments() {
         >
             <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
+            // style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
+            style={{ fontSize:"15px", fontWeight:"bold" }}
+
             label="Privacy Policy"
             {...a11yProps(0)}
           />
 
            <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold",color:"black" }}
+            style={{ fontSize:"15px", fontWeight:"bold" }}
             label="Cookie policy"
 
             {...a11yProps(1)}
           />
             <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold" , color:"black" }}
+            style={{ fontSize:"15px", fontWeight:"bold" }}
             label="Complaint resolution"
             {...a11yProps(2)}
           />
 
           <Tab
             className="faq__tabs__tabsLabel"
-            style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
+            style={{ fontSize:"15px", fontWeight:"bold" }}
             label="Broker agreement"
             {...a11yProps(3)}
           />
