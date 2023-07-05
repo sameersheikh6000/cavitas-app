@@ -91,6 +91,7 @@ const Shop = () => {
             </h3>
             <p className="Shop__mainpage"
              style={{ fontWeight: "normal" }}
+
              >
               <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>Mild mint taste</li>
@@ -315,7 +316,7 @@ const Shop = () => {
             <p className="Shop__mainpage" 
             
             style={{ fontWeight: "normal" }}
-            >              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+          >              <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>Effective against bleeding gums and gingivitis</li>
                 <li>For daily cleaning between teeth</li>
                 <li>Anti inflammatory</li>
@@ -384,7 +385,7 @@ const Shop = () => {
               <Allkit />
             </h3>
             <p className="Shop__mainpage" 
-            
+
             style={{ fontWeight: "normal" }}
             >              <ul style={{ margin: "10px", marginLeft: "30px" }}>
                 <li>
