@@ -72,29 +72,29 @@ export default function Alldocuments() {
             <Tab
             className="faq__tabs__tabsLabel"
             // style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
-            style={{ fontSize:"15px", fontWeight:"bold" }}
+            style={{ fontSize:"15px", fontWeight:"bold", textTransform:"none" }}
 
-            label="Privacy Policy"
+            label="Privacy policy"
             {...a11yProps(0)}
           />
 
            <Tab
             className="faq__tabs__tabsLabel"
-            style={{ fontSize:"15px", fontWeight:"bold" }}
+            style={{ fontSize:"15px", fontWeight:"bold" ,textTransform:"none" }}
             label="Cookie policy"
 
             {...a11yProps(1)}
           />
             <Tab
             className="faq__tabs__tabsLabel"
-            style={{ fontSize:"15px", fontWeight:"bold" }}
+            style={{ fontSize:"15px", fontWeight:"bold", textTransform:"none"}}
             label="Complaint resolution"
             {...a11yProps(2)}
           />
 
           <Tab
             className="faq__tabs__tabsLabel"
-            style={{ fontSize:"15px", fontWeight:"bold" }}
+            style={{ fontSize:"15px", fontWeight:"bold" ,textTransform:"none" }}
             label="Broker agreement"
             {...a11yProps(3)}
           />
