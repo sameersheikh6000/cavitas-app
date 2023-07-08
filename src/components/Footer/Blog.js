@@ -18,9 +18,14 @@ const Blog = () => {
   }, [])
   return (
 <Page>
-    <section className="landingPage__valuableReadings">
+<section className='faq'>
+        <header>
+        <h1>{t("Blog.Blog_title")}</h1>        </header>
+       </section>
+       <br />
+    <div className="landingPage__valuableReadings ">
     <header className="landingPage__valuableReadings__header">
-        <h1>{t("Blog.Blog_title")}</h1>
+        
         {/* <p>Recent blog posts</p> */}
         {/* <p>Recent blog posts</p> */}
         <Link to="/Blog" style={{ color: "red", textDecoration: "none" }}>
@@ -106,7 +111,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
     </Page>
   );
 };
