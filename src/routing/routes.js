@@ -63,25 +63,28 @@ import { USER_STORAGE_KEY } from "../config/helpers/variables";
 import InsuredPersonDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/InsuredPersonDetail";
 import PrivacyPolicy from "../pages/User/Privacypolicy/index";
 import Shop from "../pages/User/Shop/Shop";
+import HomeRedirect from "./HomeRedirect";
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
-
 
 export const routes = [
 
   // user routes
-
 
    {
      path: "/:lang",
      component: user ? Dashboard : LandingPage,
      isPrivate: false,
    },
+   {
+    path: "/pl",
+    component: user ? Dashboard : LandingPage,
+    isPrivate: false,
+   },
 
    {
-     path: "/",
-     component: user ? Dashboard : LandingPage,
-     isPrivate: false,
-   },
+    path: '/',
+    component: HomeRedirect
+  },
 
   {
     path: "/broker/:lang",
