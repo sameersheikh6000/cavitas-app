@@ -9,13 +9,13 @@
     "language": "Language",
     "english": "English",
     "polish": "Polish",
-    "Blog":"Blog",
-    "PrivacyPolicy":  "Privacy Policy",
-    "Shop":"Shop",
+    "Blog": "Blog",
+    "PrivacyPolicy": "Privacy Policy",
+    "Shop": "Shop",
     "selectLang": "Select Language",
-    "Contactforsupport":"Contact for support",
-    "Sentcomplaint":"Sent us a complaint",
-    "givefeedback":"Give us feedback"
+    "Contactforsupport": "Contact for support",
+    "Sentcomplaint": "Sent us a complaint",
+    "givefeedback": "Give us feedback"
   },
 
   "home": {
@@ -54,7 +54,7 @@
     "Easyformember_desc2": "Daily brushing tips & hints",
     "Easyformember_desc3": "Easy claim reporting & monitoring",
     "Easyformember_desc4": "Shop for effective teeth care products ",
-    "readmore":"Read More"
+    "readmore": "Read More"
   },
 
   "about": {
@@ -138,7 +138,7 @@
     "CoverWork_no16": "Periodontal treatment",
     "CoverWork__year__button": "Get a quote in 24 hrs",
     "Broker__contactUs__button": "Contact Us",
-    "suggest":"Suggest to your employer",
+    "suggest": "Suggest to your employer",
     "Broker__conversion": "Let's discuss how we can help you to serve your corporate clients best"
   },
   "Employer": {
@@ -219,500 +219,467 @@
     "Blog2_part21": "In conclusion, taking care of your teeth is crucial for maintaining good oral hygiene, overall health, and self-esteem. By following a simple oral hygiene routine and visiting your dentist regularly, you can prevent dental problems, save money in the long run, and enjoy a healthier, happier life."
   },
 
-  "get24contactform":{
-    "contactcavitas":"Contact Cavitas",
-    "quotein24form":"Get a quote in 24 hours",
-    "firstandlastname":"First and last name",
-    "email":"",
-    "iam":"",
-    "companyname":"Company name",
-    "nameofgroup":"Name of the group you want to insure",
-    "totalnumber":"Total number of employees",
-    "aboutyourgroup":"Are there any other details you'd like us about your group?",
+  "get24contactform": {
+    "contactcavitas": "Contact Cavitas",
+    "quotein24form": "Get a quote in 24 hours",
+    "firstandlastname": "First and last name",
+    "email": "",
+    "iam": "",
+    "companyname": "Company name",
+    "nameofgroup": "Name of the group you want to insure",
+    "totalnumber": "Total number of employees",
+    "aboutyourgroup": "Are there any other details you'd like us about your group?",
     "send": "Send",
-    "date":"Desired inception date of the cover",
-    "setmessage":"Form Submitted Successfully! We will get back to you soon."
+    "date": "Desired inception date of the cover",
+    "setmessage": "Form Submitted Successfully! We will get back to you soon."
   },
-  "contactform":{
-    "contactfrom_title":"Contact Cavitas",
-    "contactfrom_heading":"Start conversation with us",
-    "iam":"I am...*",
-    "Broker":"Broker",
-    "Employer":"Employer",
-    "Member":"Member",
-    "Other":"Other",
-    "iwant":"I want to…*",
-    "Contactcooperation":"Contact for cooperation",
-    "Submitcomplaint":"Submit a complaint",
-    "Askquestion":"Ask a question",
-    "feedback":"Give feedback",
-    "texthere":"Your text here"
+  "contactform": {
+    "contactfrom_title": "Contact Cavitas",
+    "contactfrom_heading": "Start conversation with us",
+    "iam": "I am...*",
+    "Broker": "Broker",
+    "Employer": "Employer",
+    "Member": "Member",
+    "Other": "Other",
+    "iwant": "I want to…*",
+    "Contactcooperation": "Contact for cooperation",
+    "Submitcomplaint": "Submit a complaint",
+    "Askquestion": "Ask a question",
+    "feedback": "Give feedback",
+    "texthere": "Your text here"
+  },
+  "Pannel_Login": {
+    "welcomecavitas": "Welcome to Cavitas!",
+    "password": "password",
+    "login": "Log In",
+    "forgetpassword": "Forgot your password?",
+    "don'thaveaccount": "Don't have account yet?",
+    "registernow": "Register now"
+  },
+  "Pannel_registration": {
+    "letsregister": "LET'S GET YOU REGISTERED",
+    "Firstname": "First name*",
+    "Lastname": "Last name*",
+    "Phonenumber": "Phone number*",
+    "Brokercompanyname": "Broker company name",
+    "Brokercompanykrsname": "Broker company KRS number",
+    "BrokercompanyURLaddress": "Broker company URL address",
+    "Rolecompany": "Role in company",
+    "setpassword": "Set your password*",
+    "repeatpassword": "Repeat your password*"
+  },
+  "Registration": {
+    "Firstname": "First name",
+    "Lastname": "Last name",
+    "Phonenumber": "Phone number",
+    "setpassword": "Set your password",
+    "repeatpassword": "Repeat your password"
+  },
+  "Employer_Pannel_registration": {
+    "companyname": "Company name",
+    "companykrsname": "Company KRS number",
+    "companyURLaddress": "Company URL address",
+    "Mandatebroker": "Mandated broker (if exist)"
+  },
+  "Pannel_Dashboard": {
+    "Dasboard": "Dasboard",
+    "Insuredclients": "Insured clients",
+    "Cavitasdocuments": "Cavitas documents",
+    "Supporttickets": "Support tickets",
+    "Userprofile": "User profile",
+    "Uploadclient": "UPLOAD NEW CLIENTS",
+    "Uploadnewperson": "UPLOAD NEW INSURED PERSONS",
+    "submitaclaim": "SUBMIT A CLAIM"
+  },
+  "Pannel_Dashboard_Dashboard": {
+    "Heading": "Welcome to Cavitas dental insurance!",
+    "Heading_Part1": "  This protected area is a platform for communication between us. Here you can:   ",
+    "Heading_Part2": "a) access policy information; ",
+    "Heading_Part3": "b) contact us through support tickets and   ",
+    "Heading_Part4": "c) submit your claim. ",
+    "Heading_Part5": "Best regards",
+    "Heading_Part6": "Cavitas"
+  },
+  "Pannel_Dashboard_Dashboard_Broker": {
+    "Heading": "Welcome to Cavitas dental insurance!",
+    "Heading_Part1": "  This protected area is a platform for communication between us. Here you can:   ",
+    "Heading_Part2": "a) To inform us who you want to include to the insurance cover",
+    "Heading_Part3": "b) To see a summary of your insured clients ",
+    "Heading_Part4": "c) To access and download valid contract documents",
+    "Heading_Part7": "d) To contact us through support tickets",
+    "Heading_Part5": "Best regards",
+    "Heading_Part6": "Cavitas"
+  },
+  "Pannel_Dashboard_Dashboard_Employ": {
+    "Heading": "Welcome to Cavitas dental insurance!",
+    "Heading_Part1": "  This protected area is a platform for communication between us. Here you can:   ",
+    "Heading_Part2": "a)  Inform us who you want to include to insurance cover;",
+    "Heading_Part3": "b) see a summary of the members covered;",
+    "Heading_Part4": "c) access valid contract documents and",
+    "Heading_Part7": "d) contact us through support tickets.",
+    "Heading_Part5": "Best regards",
+    "Heading_Part6": "Cavitas"
+  },
+  "Pannel_Dashboard_Userprofile": {
+    "Update": "UPDATE",
+    "Companylocation": "Company location",
+    "Peselnumber": "PESEL number",
+    "Address": "Address"
+  },
+  "Pannel_Dashboard_insuredperson": {
+    "Insuredclient": "Insured clients",
+    "View": "View all",
+    "Krsnumber": "KRS number",
+    "Riskrenewaldate": "Risk renewal date",
+    "Opengroup": "Open group",
+    "nodata": "No Clients Data"
+  },
+  "Pannel_Dashboard_Alldocuments": {
+    "Alldocuments": "All Documents",
+    "Documenttype": "Document type:",
+    "Validfrom": "Valid from:"
+  },
+  "Pannel_Dashboard_Supporttickets": {
+    "Supporttitle": "SUPPORT TICKETS",
+    "Ticketnumber": "Support ticket number",
+    "Status": "Status",
+    "Lastupdate": "Last update",
+    "Openmessage": "Open Message",
+    "Password": "Password",
+    "Confirmpassword": "Confirm password",
+    "Save": "Save changes",
+    "Noticket": "No Ticket History",
+    "message": "Submited Successfully!",
+    "done": "Updated Successfully!",
+    "wrong": "Something went wrong!",
+    "fill": "Please fill the form correctly"
+  },
+  "Uploadinsuredperson": {
+    "Uploadinsuredperson_title": "UPLOAD NEW MEMBERS FOR THE GROUP COVER",
+    "Uploadinsuredperson_heading": "Please describe the group of your corporate client and upload the group census as spreadsheet (.xls or .csv) here via the form below and follow our communication with via 'Support tickets' on the left side menu.",
+
+    "Question_no1": "General info",
+    "Question_no1_part1": "Name of your corporate client*",
+    "Question_no1_part2": " Total number of employees in the company*",
+
+    "Question_no2": "Mode of participation in Cavitas dental insurance cover",
+    "Question_no2_part1": "Mandatory group of employees",
+    "Question_no2_part1_part1": "How many employees?",
+    "Question_no2_part2": "Voluntry group of employees",
+    "Question_no2_part2_part1": "How many employees?",
+    "Question_no2_part2_part2": "100 - 200 (min 70% participation)",
+    "Question_no2_part2_part3": "201 - 500 (min 60% participation)",
+    "Question_no2_part2_part4": "501 - 1000 (min 50% participation)",
+
+    "Question_no3": "Do you want to add employees' family members to the group cover?",
+    "Question_no3_part1": "NO",
+    "Question_no3_part2": "YES - Family members are included in the list",
+    "Question_no3_part3": "YES - Please collect family members data from our employees included in the list",
+
+    "Question_no4": "How insurance premium of family members is paid?",
+    "Question_no4_part1": "By employer via employee's monthly salary",
+    "Question_no4_part2": "By the family members themselves",
+
+    "Question_no5": "Do you have a mandated insurance broker through whom you found out about Cavitas dental insurance?",
+    "Question_no5_part1": "YES",
+    "Question_no5_part2": " Name of insurance broker company",
+    "Question_no5_part3": "NO",
+
+    "Question_no6": "Desired Cavitas dental insurance group cover inception date?",
+
+    "Question_no7": "Please upload the group census as spreadsheet (.xls or .csv)",
+
+    "Question_no8": "Are there any other details you'd like to tell us about your group?",
+    "Question_no8_part1": " Start here...",
+
+    "Submitform": "Submit"
+  },
+
+  "MysupportTickets": {
+    "Submitnewticket": "Submit New Ticket",
+    "Mysupportticket": "My SUPPORT TICKETS",
+    "contactsupport": "CONTACT SUPPORT",
+    "quotesupport": "QUOTE SUPPORT",
+    "insuredpersonsupport": "INSURED PERSON SUPPORT",
+    "Status": "Status",
+    "#id": "#id",
+    "topic": "Topic",
+    "description": "Description",
+    "creator": "Creator",
+    "createddate": "Created Date",
+    "attachement": "Attachement",
+    "Submitticket": "Submit Ticket"
+  },
+
+  "contactsupport": {
+    "ticketnumber": "Ticket ID",
+    "createdby": "Created by",
+    "detail": "Detail",
+    "date": "Date"
+  },
+  "quotesupport": {
+    "groupname": "Group Name",
+    "numberemployer": "No. of Employ",
+    "name": "Name"
+  },
+
+  "Insuredsupport": {
+    "Lastupdateon": "Last update on"
+  },
+  "footer": {
+    "findus": "Find us",
+    "heading_1": "The insurance service provider is",
+    "heading_2": "Northern1 international insurance brokers OÜ  ",
+    "heading_3": "License no 12806139",
+    "heading_4": "Tallinn Estonia"
+  },
+  "claim": {
+    "claim_title": "Welcome to the dental claims portal",
+    "claim_heading_part1": "If you already registered on this portal, simply login with your",
+    "claim_heading_part2": "Email address",
+    "claim_heading_part3": "and your",
+    "claim_heading_part4": "   password. Please note that you must belong to an existing dental insurance Plan in order to login.",
+    "claim_logindetail": "Login Details",
+    "claim_login": "Log In",
+    "claim_clickhere": "Click Here",
+    "claim_clickhere_forget": "Forgot your password?",
+    "claim_newaccount": "Not Yet Registered?",
+    "claim_newaccount_create": "Create an account",
+    "claim_troubbling": "Trouble Logging In?",
+    "claim_trobbling_support": "Contact support"
+  },
+  "Replypannel": {
+    "Returnticket": "Return to ticket list",
+    "Number": "Ticket ID",
+    "Status": "Status",
+    "Topic": "Topic",
+    "Createdon": "Created on",
+    "Attachement": "Attachement(s):",
+    "Noattachemnt": "No Files",
+    "Answer": "Answer",
+    "contactticket": "My contact ticket",
+    "myquoteticket": "My Quote Ticket",
+    "Send": "Send",
+    "Cancel": "Cancel",
+    "Writeanswer": "Write Your Answer Here!",
+    "insuredticket": "Insured Tickets",
+    "myinsuredticket": "MY TICKET ",
+    "myinsuredticket1": "MY TICKET List ",
+    "notopic": "No Topic"
+  },
+
+  "Insured_clients": {
+    "Companyname": "Company name",
+    "Companykrsnumber": "Company KRS number",
+    "Companyaddress": "Company URL address",
+    "Membergender": "Member gender",
+    "Memberfirstname": "Member first name",
+    "MemberLastname": "Member Last name",
+    "MemberPESEL": "Member PESEL",
+    "MemberDOB": "Member DOB",
+    "Memberage": "Member age",
+    "Memberrelation": "Member relation",
+    "Memberphonenumber": "Member phone number",
+    "Membermail": "Member e-mail",
+    "Memberaddress": "Member address",
+    "Opengroup": "Open Group",
+    "noclient": "No Clients To show",
+    "search": "Search"
+  },
+
+  "Policyinformation": {
+    "noinsured": "Insured Person",
+    "noperson": " No of insured persons",
+    "pi_brokertitle": "Policy info",
+    "pi_maintitle": "INSURED CLIENTS - GROUP INFO",
+    "Pi_title": "POLICY INFORMATION",
+    "pi_heading": "Group policy info",
+    "Riskinceptiondate": "Risk inception date",
+    "Riskexpirydate": "Risk expiry date",
+    "Riskrenewaldate": "Risk renewal date",
+    "Mandatedbroker": "Mandated broker",
+    "PolicyDocuments": "  Policy Documents",
+    "Policyschedule": " Policy schedule",
+    "ptac": " Policy terms and conditions",
+    "IPID": "  IPID",
+    "claimform": " Claim form",
+    "Coverage": " Coverage",
+    "Typeofinsurance": "Type of insurance",
+    "Insuranceplan": " Insurance plan",
+    "Insurer": "Insurer",
+    "plan": "Sum insured per insured person per policy year",
+    "Payment": "Payment",
+    "Annualpremium": "Annual premium per insured person",
+    "Paymentfrequency": " Payment frequency",
+    "Monthly": " Monthly",
+    "BRONZE": "  BRONZE",
+    "Cavitasdentalinsurance": "Cavitas dental insurance",
+    "LTD": "Very good LTD",
+    "Bpip": "Benefits per insured person",
+    "Treatmnenttype": "Treatmnent type:",
+    "Annualsum": "Annual sum insured",
+    "Poland": "Poland and EU/EEA",
+    "plan2": "REGULAR DENTAL TREATMENT 4500 PLN",
+    "Group1": "Group1",
+    "Group11": "Prevention and scling",
+    "Group2": "Group2",
+    "Group22": "X-rays",
+    "Group3": "Group3",
+    "Group33": "Basic treatments",
+    "Group4": "Group4",
+    "Group44": " Major treatments",
+    "plan3": "ACCIDENT DENTAL TREATMENT 4500 PLN",
+    "result3": "Worlwide",
+    "plan4": "ORAL CANCER TREATMENT 25000 PLN",
+    "plan5": "*Once per lifetime, Poland",
+    "plan6": "NB! For detailed information about your benefits see Policy terms and conditions"
+  },
+  "Cavitasdocuments": {
+    "date": "Valid from 01.03.2023",
+    "card1": "Cavitas dental insurance terms and conditions HAM-1/2023",
+    "card2": "Cavitas dental insurance IPID",
+    "card3": "Cavitas dental insurance master insurance contract",
+    "card4": "Cavitas dental insurance policy schedule template",
+    "card5": "Cavitas dental insurance brochure"
+  },
+  "forgetpassword": {
+    "Token": "Token",
+    "Email": "E-mail",
+    "Resetpassword": "Reset Password",
+    "Sensitive": "Enter code that you recieved. This is case-sensitive.",
+    "Newpassword": "New password:  ",
+    "confirmpassword": "Confirm new password:",
+    "continue": "Continue",
+    "password": "Password",
+    "confirmationpassword": "password confirmation",
+    "setnewpassword": "Set your new password here."
+  },
+  "PrivacyPolicy": {
+    "Main_heading": "PRIVACY POLICY",
+    "Sub_heading_01": "Introduction",
+    "Para_No_1": "Your privacy is important to us. It is Northern1 international insurance broker OÜ's (“we”, “us” and “our”) privacy policy (“policy”) to respect your (“you”, “your”) privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including via our dental insurance dedicated Cavitas mobile application (“app”), website www.Cavitas.pl, and its associated services.  ",
+    "Para_No_2": "Personal information is any information about you which can be used to identify you. This information may include you as a person (such as name, address, identity number, date of birth, email address, contact number, username and password), your devices, payment details, and even information about how you use an app or online service.",
+    "Para_No_3": "In the event our app contains links to third-party sites and services, please be aware that those sites and services have their own privacy policies. After following a link to any third-party content, you should read their posted privacy policy information about how they collect and use personal information. This policy does not apply to any of your activities after you leave our app.",
+    "Sub_heading_02": "Information We Collect  ",
+    "Para_No_4": "Information we collect falls into one of two categories: 'voluntarily provided' information and 'automatically collected' information.  ",
+    "Para_No_5": "'Voluntarily provided' information refers to any information you knowingly and actively provide us when using our app and its associated services.  ",
+    "Para_No_6": "'Automatically collected' information refers to any information automatically sent by your device in the course of accessing our app and its associated services.",
+    "Sub_heading_03": "Information We Collect  ",
+    "Para_No_7": "We may collect personal information from you when you do any of the following on our website:",
+    "Para_No_8": "● Use a mobile device or web browser to access our content  ",
+    "Para_No_9": "● Contact us via ticketing system, email, social media, or on any similar technologies  ",
+    "Para_No_10": "● When you mention us on social media",
+    "Para_No_11": "We may combine voluntarily provided and automatically collected personal information with general information or research data we receive from other trusted sources. For example, If you consent to us accessing your social media profiles, we may combine information sourced from those profiles with information received from you directly to provide you with an enhanced experience of our app and services.  ",
+    "Sub_heading_04": "Security of Your Personal Information",
+    "Para_No_12": "When we collect and process personal information, and while we retain this information, we will protect it within commercially acceptable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification",
+    "Para_No_13": "Although we will do our best to protect the personal information you provide to us, we advise that no method of electronic transmission or storage is 100% secure and no one can guarantee absolute data security.",
+    "Para_No_14": "You are responsible for selecting any password and its overall security strength, ensuring the security of your own information within the bounds of our services. For example, ensuring you do not make your personal information publicly available via our platform.",
+    "Sub_heading_05": "How long we keep your personal information",
+    "Para_No_15": "We keep your personal information only for as long as we need to. This time period may depend on what we are using your information for, in accordance with this policy. For example, if you have provided us with personal information such as an email address when contacting us about a specific enquiry, we may retain this information for the duration of your enquiry remaining open as well as for our own records so we may effectively address similar enquiries in future. If your personal information is no longer required for this purpose, we will delete it or make it anonymous by removing all details that identify you.",
+    "Para_No_16": "However, if necessary, we may retain your personal information for our compliance with a legal, accounting, or reporting obligation or for archiving purposes in the public interest, scientific, or historical research purposes or statistical purposes.  ",
+    "Sub_heading_06": "Your Rights and Controlling Your Personal Information  ",
+    "s1": "Your choice:",
+    "s2": "Information from third parties:",
+    "s3": "Marketing permission:",
+    "s4": "Access:",
+    "s5": "Correction:",
+    "s6": "Non-discrimination:",
+    "s7": "Downloading of personal Information:",
+    "s8": "Notification of data breaches: ",
+    "s9": "Complaints:",
+    "s10": "Unsubscribe:",
+    "Para_No_17": "By providing personal information to us, you understand we will collect, hold, use, and disclose your personal information in accordance with this privacy policy. You do not have to provide personal information to us, however, if you do not, it may affect your use of our app or the products and/or services offered on or through it.",
+    "Para_No_18": "If we receive personal information about you from a third party, we will protect it as set out in this privacy policy. If you are a third party providing personal information about somebody else, you represent and warrant that you have such person’s consent to provide the personal information to us.",
+    "Para_No_19": "If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by contacting us using the details below.",
+    "Para_No_20": "You may request details of the personal information that we hold about you.  ",
+    "Para_No_21": "If you believe that any information we hold about you is inaccurate, out of date, incomplete, irrelevant, or misleading, please contact us using the details provided in this privacy policy. We will take reasonable steps to correct any information found to be inaccurate, incomplete, misleading, or out of date.",
+    "Para_No_22": "We will not discriminate against you for exercising any of your rights over your personal information. Unless your personal information is required to provide you with a particular service or offer (for example serving particular content to your device), we will not deny you goods or services and/or charge you different prices or rates for goods or services, including through granting discounts or other benefits, or imposing penalties, or provide you with a different level or quality of goods or services.",
+    "Para_No_23": "We provide a means for you to download the personal information you have shared through our app. Please contact us for more information.",
+    "Para_No_24": "We will comply with laws applicable to us in respect of any data breach.",
+    "Para_No_25": "If you believe that we have breached a relevant data protection law and wish to make a complaint, please contact us using the details below and provide us with full details of the alleged breach. We will promptly investigate your complaint and respond to you, in writing, setting out the outcome of our investigation and the steps we will take to deal with your complaint. You also have the right to contact a regulatory body or data protection authority in relation to your complaint.",
+    "Para_No_26": "To unsubscribe from our email database or opt-out of communications (including marketing communications), please contact us using the details provided in this privacy policy, or opt-out using the opt-out facilities provided in the communication. We may need to request specific information from you to help us confirm your identity.",
+    "Sub_heading_07": "Use of Cookies",
+    "Para_No_27": "Our privacy policy covers the use of cookies between your device and our servers. A cookie is a small piece of data that an app may store on your device, typically containing a unique identifier that allows the app servers to recognise your device when you use the app; information about your account, session and/or device; additional data that serves the purpose of the cookie; and any self-maintenance information about the cookie itself.",
+    "Para_No_28": "We use cookies to give your device access to core features of our app, to track app usage and performance on your device, to tailor your experience of our app based on your preferences, and to serve advertising to your device. Any communication of cookie data between your device and our servers occurs within a secure environment. Please refer to our Cookie Policy for more information.",
+    "Sub_heading_08": "Business Transfers",
+    "Para_No_29": "If we or our assets are acquired, or in the unlikely event that we go out of business or enter bankruptcy, we would include data, including your personal information, among the assets transferred to any parties who acquire us. You acknowledge that such transfers may occur, and that any parties who acquire us may, to the extent permitted by applicable law, continue to use your personal information according to this policy, which they will be required to assume as it is the basis for any ownership or use rights we have over such information.",
+    "Sub_heading_09": "Limits of Our Policy  ",
+    "Para_No_30": "Our app may link to external sites that are not operated by us. Please be aware that we have no control over the content and policies of those sites, and cannot accept responsibility or liability for their respective privacy practices.",
+
+    "Sub_heading_10": "Changes to This Policy  ",
+    "Para_No_31": "At our discretion, we may change our privacy policy to reflect updates to our business processes, current acceptable practices, or legislative or regulatory changes. If we decide to change this privacy policy, we will post the changes here and on our website.  ",
+    "Para_No_32": "If required by law, we will get your permission or give you the opportunity to opt in to or opt out of, as applicable, any new uses of your personal information.",
+
+    "Sub_heading_12": "Additional Disclosures for General Data Protection Regulation (GDPR) Compliance (EU)  ",
+    "Sub_heading_13": "Data Controller / Data Processor  ",
+    "Para_No_34": "The GDPR distinguishes between organisations that process personal information for their own purposes (known as “data controllers”) and organizations that process personal information on behalf of other organizations (known as “data processors”). We, Northern1 international insurance broker OÜ, are a data controller with respect to the personal information you provide to us.",
+
+    "Sub_heading_14": "Legal Bases for Processing Your Personal Information  ",
+    "Para_No_35": "We will only collect and use your personal information when we have a legal right to do so. In which case, we will collect and use your personal information lawfully, fairly and in a transparent manner. If we seek your consent to process your personal information, and you are under 16 years of age, we will seek your parent or legal guardian’s consent to process your personal information for that specific purpose.  ",
+    "Para_No_35_b": "Our lawful bases depend on the services you use and how you use them. This means we only collect and use your information on the following grounds:",
+
+    "Sub_heading_15": "Consent From You  ",
+    "Para_No_36": "Where you give us consent to collect and use your personal information for a specific purpose. You may withdraw your consent at any time using the facilities we provide; however this will not affect any use of your information that has already taken place. When you contact us, you may consent to your name and email address being used so we can respond to your enquiry. While you may request that we delete your contact details at any time, we cannot recall any email we have already sent. If you have any further enquiries about how to withdraw your consent, please feel free to enquire using the details provided in the Contact Us section of this privacy policy.",
+
+    "Sub_heading_16": "Performance of a Contract or Transaction  ",
+    "Para_No_37": "Where you have entered into a contract or transaction with us, or in order to take preparatory steps prior to our entering into a contract or transaction with you. For example, we need technical information about your device in order to provide the essential features of our app.",
+
+    "Sub_heading_17": "Our Legitimate Interests  ",
+    "Para_No_38": "Where we assess it is necessary for our legitimate interests, such as for us to provide, operate, improve and communicate our services. For example, we collect technical information about your device in order to improve and personalise your experience of our app. We consider our legitimate interests to include research and development, understanding our audience, marketing and promoting our services, measures taken to operate our services efficiently, marketing analysis, and measures taken to protect our legal rights and interests.  ",
+
+    "Sub_heading_18": "Compliance with Law",
+    "Para_No_39": "In some cases, we may have a legal obligation to use or keep your personal information. Such cases may include (but are not limited to) court orders, criminal investigations, government requests, and regulatory obligations. If you have any further enquiries about how we retain personal information in order to comply with the law, please feel free to enquire using the details provided in the Contact Us section of this policy.  ",
+
+    "Sub_heading_19": "International Transfers Outside of the European Economic Area (EEA)  ",
+    "Para_No_40": "We will ensure that any transfer of personal information from countries in the European Economic Area (EEA) to countries outside the EEA will be protected by appropriate safeguards, for example by using standard data protection clauses approved by the European Commission, or the use of binding corporate rules or other legally accepted means.",
+    "s11": "Restrict:",
+    "s12": "Data portability:",
+    "s13": "Deletion:",
+    "Sub_heading_20": "Your Rights and Controlling Your Personal Information",
+    "Sub_heading_21": "Contact Us",
+    "Para_No_41": " You have the right to request that we restrict the processing of your personal information if (i) you are concerned about the accuracy of your personal information; (ii) you believe your personal information has been unlawfully processed; (iii) you need us to maintain the personal information solely for the purpose of a legal claim; or (iv) we are in the process of considering your objection in relation to processing on the basis of legitimate interests.",
+    "Para_No_42": "You may have the right to request a copy of the personal information we hold about you. Where possible, we will provide this information in CSV format or other easily readable machine format. You may also have the right to request that we transfer this personal information to a third party.",
+    "Para_No_43": "You may have a right to request that we delete the personal information we hold about you at any time, and we will take reasonable steps to delete your personal information from our current records. If you ask us to delete your personal information, we will let you know how the deletion affects your use of our app, website or products and services. There may be exceptions to this right for specific legal reasons which, if applicable, we will set out for you in response to your request. If you terminate or delete your account, we will delete your personal information within 5 working days of the deletion of your account. Please be aware that search engines and similar third parties may still retain copies of your personal information that has been made public at least once, like certain profile information and public comments, even after you have deleted the information from our services or deactivated your account.",
+    "Para_No_44": "For any questions or concerns regarding your privacy, you may contact us using the following details:",
+    "Para_No_45": "Cavitas dental insurance"
+  },
+  "CookiePolicy": {
+    "Cookie_heading_No1": "COOKIE POLICY",
+    "Cookie_Para_No1": "We use cookies to help improve your experience of our website a",
+    "Cookie_Para_No1_b": "This cookie policy is part of Northern1 international insurance broker OÜ's privacy policy. It covers the use of cookies between your device and our app and site.",
+    "Cookie_Para_No2": "We also provide basic information on third-party services we may use, who may also use cookies as part of their service. This policy does not cover their cookies.",
+    "Cookie_Para_No3": "If you don’t wish to accept cookies from us, you should instruct your browser to refuse cookies from",
+    "Cookie_Para_No3_b": "In such a case, we may be unable to provide you with some of your desired content and services.",
+    "Cookie_heading_No2": "What is a cookie?",
+    "Cookie_Para_No4": "A cookie is a small piece of data that a website stores on your device when you visit. It typically contains information about the website itself, a unique identifier that allows the site to recognise your web browser when you return, additional data that serves the cookie’s purpose, and the lifespan of the cookie itself.",
+    "Cookie_Para_No5": "Cookies are used to enable certain features (eg logging in), track site usage (eg analytics), store your user settings (eg time zone, notification preferences), and to personalise your content (eg advertising, language).",
+    "Cookie_Para_No6": "Cookies set by the website you are visiting are usually referred to as first-party cookies. They typically only track your activity on that particular site.",
+    "Cookie_Para_No7": "Cookies set by other sites and companies (i.e. third parties) are called third-party cookies They can be used to track you on other websites that use the same third-party service.",
+    "Cookie_heading_No3": "Types of cookies and how we use them",
+    "Cookie_heading_No4": "Essential cookies",
+    "Cookie_Para_No8": "Essential cookies are crucial to your experience of a website, enabling core features like user logins, account management, shopping carts, and payment processing.",
+    "Cookie_Para_No8_b": "We use essential cookies to enable certain functions on our website.",
+    "Cookie_heading_No5": "Performance cookies",
+    "Cookie_Para_No9": "Performance cookies track how you use a website during your visit. Typically, this information is anonymous and aggregated, with information tracked across all site users. They help companies understand visitor usage patterns, identify and diagnose problems or errors their users may encounter, and make better strategic decisions in improving their audience’s overall website experience. These cookies may be set by the website you’re visiting (first-party) or by third-party services. They do not collect personal information about you.",
+    "Cookie_Para_No9_b": "We use performance cookies on our site",
+    "Cookie_heading_No6": "Functionality cookies",
+    "Cookie_Para_No10": "Functionality cookies are used to collect information about your device and any settings you may configure on the website you’re visiting (like language and time zone settings). With this information, websites can provide you with customised, enhanced, or optimised content and services. These cookies may be set by the website you’re visiting (first-party) or by third-party services.",
+    "Cookie_Para_No10_b": "We use functionality cookies for selected features on our site.",
+    "Cookie_heading_No7": "Targeting/advertising cookies",
+    "Cookie_Para_No11": "Targeting/advertising cookies help determine what promotional content is most relevant and appropriate to you and your interests. Websites may use them to deliver targeted advertising or limit the number of times you see an advertisement. This helps companies improve the effectiveness of their campaigns and the quality of content presented to you. These cookies may be set by the website you’re visiting (first-party) or by third-party services. Targeting/advertising cookies set by third-parties may be used to track you on other websites that use the same third-party service.",
+    "Cookie_Para_No11_b": "We do not use this type of cookie on our site."
+  },
+
+  "Delete_account": {
+    "Deleteaccount": "Delete my account",
+    "cavitasuser": "Dear Cavitas app user",
+    "para_no_1": "We understand that you're considering deleting your account on our mobile app. Before you proceed, we would like to provide you with some information about the account deletion process.",
+    "para_no_2": "If you ask us to delete your personal information, we will respond to your request within 1 business day and let you know how the deletion affects the use of our app, website, and insurance services. There may be exceptions to the right to request deletion of your personal data for specific legal reasons which, if applicable, we will set out for you in response to your request.",
+    "para_no_3": "Best regards,",
+    "para_no_4": "Cavitas dental insurance team",
+    "Proceedtodelete":"PROCEED TO DELETE MY ACCOUNT",
+    "Message_1":"Your request to delete your account has been received.",
+    "Message_2":"Our goal is to respond to your inquiry within 1 business day. Please note that it may take longer depending on current volume of requests.",
+    "Message_3":"Please find our response under Support tickets in your Member log in area."
   }
-  ,
-  "Pannel_Login":
-  {
-    "welcomecavitas":"Welcome to Cavitas!",
-    "password":"password",
-   "login":"Log In",
-   "forgetpassword":"Forgot your password?",
-   "don'thaveaccount":"Don't have account yet?",
-   "registernow":"Register now"
-},
-"Pannel_registration":
-{
-  "letsregister":"LET'S GET YOU REGISTERED",
-  "Firstname":"First name*",
-  "Lastname":"Last name*",
-  "Phonenumber":"Phone number*",
-  "Brokercompanyname":"Broker company name",
-  "Brokercompanykrsname":"Broker company KRS number",
-  "BrokercompanyURLaddress":"Broker company URL address",
-  "Rolecompany":"Role in company",
-  "setpassword":"Set your password*",
-  "repeatpassword":"Repeat your password*"
-},
-"Registration":{
-  "Firstname":"First name",
-  "Lastname":"Last name",
-  "Phonenumber":"Phone number",
-  "setpassword":"Set your password",
-  "repeatpassword":"Repeat your password"
-}
-,
-"Employer_Pannel_registration":
-{
-  "companyname":"Company name",
-  "companykrsname":"Company KRS number",
-  "companyURLaddress":"Company URL address",
-  "Mandatebroker":"Mandated broker (if exist)"
-}
-,
-"Pannel_Dashboard":{
-  "Dasboard":"Dasboard",
-  "Insuredclients":"Insured clients",
-  "Cavitasdocuments":"Cavitas documents",
-  "Supporttickets":"Support tickets",
-  "Userprofile":"User profile",
-  "Uploadclient":"UPLOAD NEW CLIENTS",
-  "Uploadnewperson":"UPLOAD NEW INSURED PERSONS",
-  "submitaclaim":"SUBMIT A CLAIM"
-}
-,
-"Pannel_Dashboard_Dashboard":{
-  "Heading":"Welcome to Cavitas dental insurance!",
-  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
-  "Heading_Part2":"a) access policy information; ",
-  "Heading_Part3":"b) contact us through support tickets and   ",
-  "Heading_Part4":"c) submit your claim. ",
-  "Heading_Part5":"Best regards",
-  "Heading_Part6":"Cavitas"
-}
-,
-"Pannel_Dashboard_Dashboard_Broker":{
-  "Heading":"Welcome to Cavitas dental insurance!",
-  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
-  "Heading_Part2":"a) To inform us who you want to include to the insurance cover",
-  "Heading_Part3":"b) To see a summary of your insured clients ",
-  "Heading_Part4":"c) To access and download valid contract documents",
-  "Heading_Part7":"d) To contact us through support tickets",
-  "Heading_Part5":"Best regards",
-  "Heading_Part6":"Cavitas"
-},
-"Pannel_Dashboard_Dashboard_Employ":{
-  "Heading":"Welcome to Cavitas dental insurance!",
-  "Heading_Part1":"  This protected area is a platform for communication between us. Here you can:   ",
-  "Heading_Part2":"a)  Inform us who you want to include to insurance cover;",
-  "Heading_Part3":"b) see a summary of the members covered;",
-  "Heading_Part4":"c) access valid contract documents and",
-  "Heading_Part7":"d) contact us through support tickets.",
-  "Heading_Part5":"Best regards",
-  "Heading_Part6":"Cavitas"
-}
-,
-"Pannel_Dashboard_Userprofile":{
-
-  "Update":"UPDATE",
-  "Companylocation":"Company location",
-  "Peselnumber":"PESEL number",
-  "Address":"Address"
-
-}
-,
-"Pannel_Dashboard_insuredperson":{
-  "Insuredclient":"Insured clients",
-  "View":"View all",
-  "Krsnumber":"KRS number",
-  "Riskrenewaldate":"Risk renewal date",
-  "Opengroup":"Open group",
-  "nodata":"No Clients Data"
-},
-"Pannel_Dashboard_Alldocuments":{
-  "Alldocuments":"All Documents",
-  "Documenttype":"Document type:",
-  "Validfrom":"Valid from:"
-}
-,
-"Pannel_Dashboard_Supporttickets":{
-  "Supporttitle": "SUPPORT TICKETS",
-  "Ticketnumber":"Support ticket number",
-  "Status":"Status",
-  "Lastupdate":"Last update",
-  "Openmessage":"Open Message",
-  "Password":"Password",
-  "Confirmpassword":"Confirm password",
-  "Save":"Save changes",
-  "Noticket":"No Ticket History",
-  "message":"Submited Successfully!",
-  "done":"Updated Successfully!",
-  "wrong":"Something went wrong!",
-  "fill":"Please fill the form correctly"
-}
-,
-"Uploadinsuredperson":{
-  "Uploadinsuredperson_title":"UPLOAD NEW MEMBERS FOR THE GROUP COVER",
-  "Uploadinsuredperson_heading":"Please describe the group of your corporate client and upload the group census as spreadsheet (.xls or .csv) here via the form below and follow our communication with via 'Support tickets' on the left side menu.",
-
-  "Question_no1":"General info",
-  "Question_no1_part1":"Name of your corporate client*",
-  "Question_no1_part2":" Total number of employees in the company*",
-
-  "Question_no2":"Mode of participation in Cavitas dental insurance cover",
-  "Question_no2_part1":"Mandatory group of employees",
-  "Question_no2_part1_part1":"How many employees?",
-  "Question_no2_part2":"Voluntry group of employees",
-  "Question_no2_part2_part1":"How many employees?",
-  "Question_no2_part2_part2":"100 - 200 (min 70% participation)",
-  "Question_no2_part2_part3":"201 - 500 (min 60% participation)",
-  "Question_no2_part2_part4":"501 - 1000 (min 50% participation)",
-
-  "Question_no3":"Do you want to add employees' family members to the group cover?",
-  "Question_no3_part1":"NO",
-  "Question_no3_part2":"YES - Family members are included in the list",
-  "Question_no3_part3":"YES - Please collect family members data from our employees included in the list",
-
-  "Question_no4":"How insurance premium of family members is paid?",
-  "Question_no4_part1":"By employer via employee's monthly salary",
-  "Question_no4_part2":"By the family members themselves",
-
-  "Question_no5":"Do you have a mandated insurance broker through whom you found out about Cavitas dental insurance?",
-  "Question_no5_part1":"YES",
-  "Question_no5_part2":" Name of insurance broker company",
-  "Question_no5_part3":"NO",
-
-  "Question_no6":"Desired Cavitas dental insurance group cover inception date?",
-
-  "Question_no7":"Please upload the group census as spreadsheet (.xls or .csv)",
-
-  "Question_no8":"Are there any other details you'd like to tell us about your group?",
-  "Question_no8_part1":" Start here...",
-
-  "Submitform": "Submit"
-
-}
-
-,
-
-"MysupportTickets":{
-  "Submitnewticket":"Submit New Ticket",
-  "Mysupportticket":"My SUPPORT TICKETS",
-  "contactsupport":"CONTACT SUPPORT",
-  "quotesupport":"QUOTE SUPPORT",
-  "insuredpersonsupport":"INSURED PERSON SUPPORT",
-  "Status":"Status",
-  "#id":"#id",
-  "topic":"Topic",
-  "description":"Description",
-  "creator":"Creator",
-  "createddate":"Created Date",
-  "attachement":"Attachement",
-  "Submitticket":"Submit Ticket"
-
-},
-
-"contactsupport":{
- "ticketnumber":"Ticket ID",
- "createdby":"Created by",
- "detail":"Detail",
- "date":"Date"
-
-
-},
-"quotesupport":{
-  "groupname":"Group Name",
-  "numberemployer":"No. of Employ",
-  "name":"Name"
-
- },
-
- "Insuredsupport":{
-  "Lastupdateon":"Last update on"
-
- }
- ,
- "footer":{
-  "findus":"Find us",
-  "heading_1":"The insurance service provider is",
-  "heading_2":"Northern1 international insurance brokers OÜ  ",
-  "heading_3":"License no 12806139",
-  "heading_4":"Tallinn Estonia"
-
- }
- ,
- "claim":{
-  "claim_title":"Welcome to the dental claims portal",
-  "claim_heading_part1":"If you already registered on this portal, simply login with your",
-  "claim_heading_part2":"Email address",
-  "claim_heading_part3":"and your",
-  "claim_heading_part4":"   password. Please note that you must belong to an existing dental insurance Plan in order to login.",
-  "claim_logindetail":"Login Details",
-  "claim_login":"Log In",
-  "claim_clickhere":"Click Here",
-  "claim_clickhere_forget":"Forgot your password?",
-  "claim_newaccount":"Not Yet Registered?",
-  "claim_newaccount_create":"Create an account",
-  "claim_troubbling":"Trouble Logging In?",
-  "claim_trobbling_support":"Contact support"
- }
-,
-
-"Replypannel":{
-"Returnticket":"Return to ticket list",
-"Number":"Ticket ID",
-"Status":"Status",
-"Topic":"Topic",
-"Createdon":"Created on",
-"Attachement":"Attachement(s):",
-"Noattachemnt":"No Files",
-"Answer":"Answer",
-"contactticket":"My contact ticket",
-"myquoteticket":"My Quote Ticket",
-"Send":"Send",
-"Cancel":"Cancel",
-"Writeanswer":"Write Your Answer Here!",
-"insuredticket":"Insured Tickets",
-"myinsuredticket":"MY TICKET ",
-"myinsuredticket1":"MY TICKET List ",
-"notopic":"No Topic"
-
-},
-
-"Insured_clients":{
-
-  "Companyname":"Company name",
-  "Companykrsnumber": "Company KRS number",
-  "Companyaddress":"Company URL address",
-  "Membergender":"Member gender",
-  "Memberfirstname":"Member first name",
-  "MemberLastname":"Member Last name",
-  "MemberPESEL":"Member PESEL",
-  "MemberDOB":"Member DOB",
-  "Memberage":"Member age",
-  "Memberrelation":"Member relation",
-  "Memberphonenumber":"Member phone number",
-  "Membermail":"Member e-mail",
-  "Memberaddress":"Member address",
-  "Opengroup": "Open Group",
-  "noclient":"No Clients To show",
-  "search":"Search"
-
-},
-
-"Policyinformation":{
-  "noinsured": "Insured Person",
-  "noperson":" No of insured persons",
-  "pi_brokertitle":"Policy info",
-  "pi_maintitle":"INSURED CLIENTS - GROUP INFO",
-  "Pi_title":"POLICY INFORMATION",
-  "pi_heading":"Group policy info",
-  "Riskinceptiondate":"Risk inception date",
-  "Riskexpirydate":"Risk expiry date",
-  "Riskrenewaldate":"Risk renewal date",
-  "Mandatedbroker":"Mandated broker",
-  "PolicyDocuments":"  Policy Documents",
-  "Policyschedule":" Policy schedule",
-  "ptac":" Policy terms and conditions",
-  "IPID":"  IPID",
-  "claimform":" Claim form",
-  "Coverage":" Coverage",
-  "Typeofinsurance":"Type of insurance",
-  "Insuranceplan":" Insurance plan",
-  "Insurer":"Insurer",
-  "plan":"Sum insured per insured person per policy year",
-  "Payment":"Payment",
-  "Annualpremium":"Annual premium per insured person",
-  "Paymentfrequency":" Payment frequency",
-  "Monthly":" Monthly",
-  "BRONZE":"  BRONZE",
-  "Cavitasdentalinsurance":"Cavitas dental insurance",
-  "LTD":"Very good LTD",
-  "Bpip":"Benefits per insured person",
-  "Treatmnenttype":"Treatmnent type:",
-  "Annualsum":"Annual sum insured",
-  "Poland":"Poland and EU/EEA",
-  "plan2":"REGULAR DENTAL TREATMENT 4500 PLN",
-  "Group1":"Group1",
-  "Group11":"Prevention and scling",
-  "Group2":"Group2",
-  "Group22":"X-rays",
-  "Group3":"Group3",
-  "Group33":"Basic treatments",
-  "Group4":"Group4",
-  "Group44":" Major treatments",
-  "plan3":"ACCIDENT DENTAL TREATMENT 4500 PLN",
-  "result3":"Worlwide",
-  "plan4":"ORAL CANCER TREATMENT 25000 PLN",
-  "plan5":"*Once per lifetime, Poland",
-  "plan6":"NB! For detailed information about your benefits see Policy terms and conditions"
-}
-,
-"Cavitasdocuments":{
-  "date":"Valid from 01.03.2023",
-  "card1":"Cavitas dental insurance terms and conditions HAM-1/2023",
-  "card2":"Cavitas dental insurance IPID",
-  "card3":"Cavitas dental insurance master insurance contract",
-  "card4":"Cavitas dental insurance policy schedule template",
-  "card5":"Cavitas dental insurance brochure"
-}
-,
-"forgetpassword":{
-  "Token":"Token",
-  "Email":"E-mail",
-  "Resetpassword":"Reset Password",
-  "Sensitive":"Enter code that you recieved. This is case-sensitive.",
-  "Newpassword":"New password:  ",
-  "confirmpassword":"Confirm new password:",
-  "continue":"Continue",
-  "password":"Password",
-  "confirmationpassword":"password confirmation",
-  "setnewpassword":"Set your new password here."
-}
-,
-
-
-"PrivacyPolicy":{
-  "Main_heading":"PRIVACY POLICY",
-  "Sub_heading_01":"Introduction",
-  "Para_No_1":"Your privacy is important to us. It is Northern1 international insurance broker OÜ's (“we”, “us” and “our”) privacy policy (“policy”) to respect your (“you”, “your”) privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including via our dental insurance dedicated Cavitas mobile application (“app”), website www.Cavitas.pl, and its associated services.  ",
-  "Para_No_2":"Personal information is any information about you which can be used to identify you. This information may include you as a person (such as name, address, identity number, date of birth, email address, contact number, username and password), your devices, payment details, and even information about how you use an app or online service.",
-  "Para_No_3":"In the event our app contains links to third-party sites and services, please be aware that those sites and services have their own privacy policies. After following a link to any third-party content, you should read their posted privacy policy information about how they collect and use personal information. This policy does not apply to any of your activities after you leave our app.",
-  "Sub_heading_02":"Information We Collect  ",
-  "Para_No_4":"Information we collect falls into one of two categories: 'voluntarily provided' information and 'automatically collected' information.  ",
-  "Para_No_5":"'Voluntarily provided' information refers to any information you knowingly and actively provide us when using our app and its associated services.  ",
-  "Para_No_6":"'Automatically collected' information refers to any information automatically sent by your device in the course of accessing our app and its associated services.",
-  "Sub_heading_03":"Information We Collect  ",
-  "Para_No_7":"We may collect personal information from you when you do any of the following on our website:",
-  "Para_No_8":"● Use a mobile device or web browser to access our content  ",
-  "Para_No_9":"● Contact us via ticketing system, email, social media, or on any similar technologies  ",
-  "Para_No_10":"● When you mention us on social media",
-  "Para_No_11":"We may combine voluntarily provided and automatically collected personal information with general information or research data we receive from other trusted sources. For example, If you consent to us accessing your social media profiles, we may combine information sourced from those profiles with information received from you directly to provide you with an enhanced experience of our app and services.  ",
-  "Sub_heading_04":"Security of Your Personal Information",
-  "Para_No_12":"When we collect and process personal information, and while we retain this information, we will protect it within commercially acceptable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification",
-  "Para_No_13":"Although we will do our best to protect the personal information you provide to us, we advise that no method of electronic transmission or storage is 100% secure and no one can guarantee absolute data security.",
-  "Para_No_14":"You are responsible for selecting any password and its overall security strength, ensuring the security of your own information within the bounds of our services. For example, ensuring you do not make your personal information publicly available via our platform.",
-  "Sub_heading_05":"How long we keep your personal information",
-  "Para_No_15":"We keep your personal information only for as long as we need to. This time period may depend on what we are using your information for, in accordance with this policy. For example, if you have provided us with personal information such as an email address when contacting us about a specific enquiry, we may retain this information for the duration of your enquiry remaining open as well as for our own records so we may effectively address similar enquiries in future. If your personal information is no longer required for this purpose, we will delete it or make it anonymous by removing all details that identify you.",
-  "Para_No_16":"However, if necessary, we may retain your personal information for our compliance with a legal, accounting, or reporting obligation or for archiving purposes in the public interest, scientific, or historical research purposes or statistical purposes.  ",
-  "Sub_heading_06":"Your Rights and Controlling Your Personal Information  ",
-  "s1":"Your choice:",
-  "s2":"Information from third parties:",
-  "s3":"Marketing permission:",
-  "s4":"Access:",
-  "s5":"Correction:",
-  "s6":"Non-discrimination:",
-  "s7":"Downloading of personal Information:",
-  "s8":"Notification of data breaches: ",
-  "s9":"Complaints:",
-  "s10":"Unsubscribe:",
-  "Para_No_17":"By providing personal information to us, you understand we will collect, hold, use, and disclose your personal information in accordance with this privacy policy. You do not have to provide personal information to us, however, if you do not, it may affect your use of our app or the products and/or services offered on or through it.",
-  "Para_No_18":"If we receive personal information about you from a third party, we will protect it as set out in this privacy policy. If you are a third party providing personal information about somebody else, you represent and warrant that you have such person’s consent to provide the personal information to us.",
-  "Para_No_19":"If you have previously agreed to us using your personal information for direct marketing purposes, you may change your mind at any time by contacting us using the details below.",
-  "Para_No_20":"You may request details of the personal information that we hold about you.  ",
-  "Para_No_21":"If you believe that any information we hold about you is inaccurate, out of date, incomplete, irrelevant, or misleading, please contact us using the details provided in this privacy policy. We will take reasonable steps to correct any information found to be inaccurate, incomplete, misleading, or out of date.",
-  "Para_No_22":"We will not discriminate against you for exercising any of your rights over your personal information. Unless your personal information is required to provide you with a particular service or offer (for example serving particular content to your device), we will not deny you goods or services and/or charge you different prices or rates for goods or services, including through granting discounts or other benefits, or imposing penalties, or provide you with a different level or quality of goods or services.",
-  "Para_No_23":"We provide a means for you to download the personal information you have shared through our app. Please contact us for more information.",
-  "Para_No_24":"We will comply with laws applicable to us in respect of any data breach.",
-  "Para_No_25":"If you believe that we have breached a relevant data protection law and wish to make a complaint, please contact us using the details below and provide us with full details of the alleged breach. We will promptly investigate your complaint and respond to you, in writing, setting out the outcome of our investigation and the steps we will take to deal with your complaint. You also have the right to contact a regulatory body or data protection authority in relation to your complaint.",
-  "Para_No_26":"To unsubscribe from our email database or opt-out of communications (including marketing communications), please contact us using the details provided in this privacy policy, or opt-out using the opt-out facilities provided in the communication. We may need to request specific information from you to help us confirm your identity.",
-  "Sub_heading_07":"Use of Cookies",
-  "Para_No_27":"Our privacy policy covers the use of cookies between your device and our servers. A cookie is a small piece of data that an app may store on your device, typically containing a unique identifier that allows the app servers to recognise your device when you use the app; information about your account, session and/or device; additional data that serves the purpose of the cookie; and any self-maintenance information about the cookie itself.",
-  "Para_No_28":"We use cookies to give your device access to core features of our app, to track app usage and performance on your device, to tailor your experience of our app based on your preferences, and to serve advertising to your device. Any communication of cookie data between your device and our servers occurs within a secure environment. Please refer to our Cookie Policy for more information.",
-  "Sub_heading_08":"Business Transfers",
-  "Para_No_29":"If we or our assets are acquired, or in the unlikely event that we go out of business or enter bankruptcy, we would include data, including your personal information, among the assets transferred to any parties who acquire us. You acknowledge that such transfers may occur, and that any parties who acquire us may, to the extent permitted by applicable law, continue to use your personal information according to this policy, which they will be required to assume as it is the basis for any ownership or use rights we have over such information.",
-  "Sub_heading_09":"Limits of Our Policy  ",
-  "Para_No_30":"Our app may link to external sites that are not operated by us. Please be aware that we have no control over the content and policies of those sites, and cannot accept responsibility or liability for their respective privacy practices.",
- 
-  "Sub_heading_10":"Changes to This Policy  ",
-  "Para_No_31":"At our discretion, we may change our privacy policy to reflect updates to our business processes, current acceptable practices, or legislative or regulatory changes. If we decide to change this privacy policy, we will post the changes here and on our website.  ",
-  "Para_No_32":"If required by law, we will get your permission or give you the opportunity to opt in to or opt out of, as applicable, any new uses of your personal information.",    
-  
-  
-  "Sub_heading_12":"Additional Disclosures for General Data Protection Regulation (GDPR) Compliance (EU)  ",
-  "Sub_heading_13":"Data Controller / Data Processor  ",
-  "Para_No_34":"The GDPR distinguishes between organisations that process personal information for their own purposes (known as “data controllers”) and organizations that process personal information on behalf of other organizations (known as “data processors”). We, Northern1 international insurance broker OÜ, are a data controller with respect to the personal information you provide to us.",
-
-  "Sub_heading_14":"Legal Bases for Processing Your Personal Information  ",
-  "Para_No_35":"We will only collect and use your personal information when we have a legal right to do so. In which case, we will collect and use your personal information lawfully, fairly and in a transparent manner. If we seek your consent to process your personal information, and you are under 16 years of age, we will seek your parent or legal guardian’s consent to process your personal information for that specific purpose.  ",
-  "Para_No_35_b":"Our lawful bases depend on the services you use and how you use them. This means we only collect and use your information on the following grounds:",
-
-  "Sub_heading_15":"Consent From You  ",
-  "Para_No_36":"Where you give us consent to collect and use your personal information for a specific purpose. You may withdraw your consent at any time using the facilities we provide; however this will not affect any use of your information that has already taken place. When you contact us, you may consent to your name and email address being used so we can respond to your enquiry. While you may request that we delete your contact details at any time, we cannot recall any email we have already sent. If you have any further enquiries about how to withdraw your consent, please feel free to enquire using the details provided in the Contact Us section of this privacy policy.",
-
-  "Sub_heading_16":"Performance of a Contract or Transaction  ",
-"Para_No_37":"Where you have entered into a contract or transaction with us, or in order to take preparatory steps prior to our entering into a contract or transaction with you. For example, we need technical information about your device in order to provide the essential features of our app.",
-
-  "Sub_heading_17":"Our Legitimate Interests  ",
-  "Para_No_38":"Where we assess it is necessary for our legitimate interests, such as for us to provide, operate, improve and communicate our services. For example, we collect technical information about your device in order to improve and personalise your experience of our app. We consider our legitimate interests to include research and development, understanding our audience, marketing and promoting our services, measures taken to operate our services efficiently, marketing analysis, and measures taken to protect our legal rights and interests.  ",
-
-  "Sub_heading_18":"Compliance with Law",
-  "Para_No_39":"In some cases, we may have a legal obligation to use or keep your personal information. Such cases may include (but are not limited to) court orders, criminal investigations, government requests, and regulatory obligations. If you have any further enquiries about how we retain personal information in order to comply with the law, please feel free to enquire using the details provided in the Contact Us section of this policy.  ",
-
-  "Sub_heading_19":"International Transfers Outside of the European Economic Area (EEA)  ",
-  "Para_No_40":"We will ensure that any transfer of personal information from countries in the European Economic Area (EEA) to countries outside the EEA will be protected by appropriate safeguards, for example by using standard data protection clauses approved by the European Commission, or the use of binding corporate rules or other legally accepted means.",
-"s11":"Restrict:",
-"s12":"Data portability:",
-"s13":"Deletion:",
-"Sub_heading_20":"Your Rights and Controlling Your Personal Information",
-"Sub_heading_21":"Contact Us",
-"Para_No_41":" You have the right to request that we restrict the processing of your personal information if (i) you are concerned about the accuracy of your personal information; (ii) you believe your personal information has been unlawfully processed; (iii) you need us to maintain the personal information solely for the purpose of a legal claim; or (iv) we are in the process of considering your objection in relation to processing on the basis of legitimate interests.",
-"Para_No_42":"You may have the right to request a copy of the personal information we hold about you. Where possible, we will provide this information in CSV format or other easily readable machine format. You may also have the right to request that we transfer this personal information to a third party.",
-"Para_No_43":"You may have a right to request that we delete the personal information we hold about you at any time, and we will take reasonable steps to delete your personal information from our current records. If you ask us to delete your personal information, we will let you know how the deletion affects your use of our app, website or products and services. There may be exceptions to this right for specific legal reasons which, if applicable, we will set out for you in response to your request. If you terminate or delete your account, we will delete your personal information within 5 working days of the deletion of your account. Please be aware that search engines and similar third parties may still retain copies of your personal information that has been made public at least once, like certain profile information and public comments, even after you have deleted the information from our services or deactivated your account.",
-"Para_No_44":"For any questions or concerns regarding your privacy, you may contact us using the following details:",
-"Para_No_45":"Cavitas dental insurance"
-},
-"CookiePolicy":{
-  "Cookie_heading_No1":"COOKIE POLICY",
-  "Cookie_Para_No1":"We use cookies to help improve your experience of our website a",
-  "Cookie_Para_No1_b":"This cookie policy is part of Northern1 international insurance broker OÜ's privacy policy. It covers the use of cookies between your device and our app and site.",
-  "Cookie_Para_No2":"We also provide basic information on third-party services we may use, who may also use cookies as part of their service. This policy does not cover their cookies.",
-  "Cookie_Para_No3":"If you don’t wish to accept cookies from us, you should instruct your browser to refuse cookies from",
-  "Cookie_Para_No3_b":"In such a case, we may be unable to provide you with some of your desired content and services.",
-  "Cookie_heading_No2":"What is a cookie?",
-  "Cookie_Para_No4":"A cookie is a small piece of data that a website stores on your device when you visit. It typically contains information about the website itself, a unique identifier that allows the site to recognise your web browser when you return, additional data that serves the cookie’s purpose, and the lifespan of the cookie itself.",
-  "Cookie_Para_No5":"Cookies are used to enable certain features (eg logging in), track site usage (eg analytics), store your user settings (eg time zone, notification preferences), and to personalise your content (eg advertising, language).",
-  "Cookie_Para_No6":"Cookies set by the website you are visiting are usually referred to as first-party cookies. They typically only track your activity on that particular site.",
-  "Cookie_Para_No7":"Cookies set by other sites and companies (i.e. third parties) are called third-party cookies They can be used to track you on other websites that use the same third-party service.",
-  "Cookie_heading_No3":"Types of cookies and how we use them",
-  "Cookie_heading_No4":"Essential cookies",
-  "Cookie_Para_No8":"Essential cookies are crucial to your experience of a website, enabling core features like user logins, account management, shopping carts, and payment processing.",
-  "Cookie_Para_No8_b":"We use essential cookies to enable certain functions on our website.",
-  "Cookie_heading_No5":"Performance cookies",
-  "Cookie_Para_No9":"Performance cookies track how you use a website during your visit. Typically, this information is anonymous and aggregated, with information tracked across all site users. They help companies understand visitor usage patterns, identify and diagnose problems or errors their users may encounter, and make better strategic decisions in improving their audience’s overall website experience. These cookies may be set by the website you’re visiting (first-party) or by third-party services. They do not collect personal information about you.",
-  "Cookie_Para_No9_b":"We use performance cookies on our site",
-  "Cookie_heading_No6":"Functionality cookies",
-  "Cookie_Para_No10":"Functionality cookies are used to collect information about your device and any settings you may configure on the website you’re visiting (like language and time zone settings). With this information, websites can provide you with customised, enhanced, or optimised content and services. These cookies may be set by the website you’re visiting (first-party) or by third-party services.",
-  "Cookie_Para_No10_b":"We use functionality cookies for selected features on our site.",
-  "Cookie_heading_No7":"Targeting/advertising cookies",
-  "Cookie_Para_No11":"Targeting/advertising cookies help determine what promotional content is most relevant and appropriate to you and your interests. Websites may use them to deliver targeted advertising or limit the number of times you see an advertisement. This helps companies improve the effectiveness of their campaigns and the quality of content presented to you. These cookies may be set by the website you’re visiting (first-party) or by third-party services. Targeting/advertising cookies set by third-parties may be used to track you on other websites that use the same third-party service.",
-  "Cookie_Para_No11_b":"We do not use this type of cookie on our site.",
-  "Cookie_heading_No8":"",
-  "Cookie_Para_No12":"",
-  "Cookie_Para_No13":"",
-  "Cookie_Para_No14":"",
-  "Cookie_Para_No15":"",
-  "Cookie_Para_No16":"",
-  "Cookie_Para_No17":"",
-  "Cookie_Para_No18":""
-
-
-}
 }

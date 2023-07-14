@@ -102,7 +102,7 @@ const MemberSignUp = () => {
 
               <input
                 type="text"
-                placeholder='PESEL Number'
+                placeholder={`${t("Pannel_Dashboard_Userprofile.Peselnumber")}`}
                 name='company_pasel_number'
                 value={user.company_pesel_number}
                 onChange={(e) => setUser({ ...user, company_pesel_number: e.target.value})}

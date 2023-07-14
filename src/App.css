@@ -495,7 +495,7 @@ font-size: 1rem !important;
   width: 200px !important;
   margin-left: 250px;
   margin-top: 100px;
-  border-radius: 5rem !important;
+  border-radius: 5rem ;
   font-weight: bold !important;
   font-family: "poppins" !important;
 }
@@ -551,7 +551,13 @@ font-size: 1rem !important;
   background-color: #5c8894 !important;
   color: white !important;
 }
-
+/* .deleteaccount__btn{
+        margin-top: 0px;
+        margin-left: 250px;
+        border-radius: 1rem;
+        padding-top: 10px;
+        padding-bottom: 10px;     
+} */
 .authentication__container__formContainer__forgotPassword {
   font-size: 14px;
   font-weight: 500;
@@ -2268,7 +2274,7 @@ font-size: 1rem !important;
 }
 .landingPage__healthyTeeth__container Button {
   background-color: #dd3333 !important;
-  border-radius: 3rem !important;
+  border-radius: 3rem;
   color: white !important;
   padding: 0.9rem 3rem;
   margin-top: 2rem;
