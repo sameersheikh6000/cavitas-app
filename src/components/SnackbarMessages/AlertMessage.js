@@ -7,7 +7,6 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 });
 
 const AlertMessage = ({ errorMessage }) => {
-  debugger
   const [open, setOpen] = useState(false);
   const [message, setMessage] = useState('')
 

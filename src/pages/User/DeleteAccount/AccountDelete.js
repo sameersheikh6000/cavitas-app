@@ -1,23 +1,18 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../config/helpers/i18n";
-import { Link } from "react-router-dom";
-import { Button } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import Page from "../../../components/Page/Page";
 import DeleteAccountForm from "./DeleteaccountFormComponent/DeleteAccountForm";
 
 const AccountDelete = () => {
-  const currentUrl = window.location.href;
-  const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
+
   return (
     <Page>
       <section className="faq">

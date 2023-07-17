@@ -810,6 +810,11 @@ export const routes = [
     component: AccountDelete,
     isPrivate: false
   },
+  {
+    path: "/deleteaccount",
+    component: AccountDelete,
+    isPrivate: false
+  },
 ]
 
 

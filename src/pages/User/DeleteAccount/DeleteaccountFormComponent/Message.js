@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
-import { Padding } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 
-function Message() {
+const Message = ({openMessageModal, closeAfterDeleteMessageModal}) => {
+  const currentUrl = window.location.href;
+  let lang = currentUrl.split("/").pop();
+  const navigate = useNavigate();
   const { t } = useTranslation();
-  const [open, setOpen] = useState(false);
-
   const style = {
     position: "absolute",
     top: "50%",
@@ -22,8 +23,6 @@ function Message() {
     p: 4,
   };
 
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -32,22 +31,9 @@ function Message() {
   }, []);
   return (
     <div>
-      <Button
-        style={{
-          marginLeft: "250px",
-          borderRadius: "1rem",
-          marginTop: "0px",
-          paddingTop: "10px",
-          paddingBottom: "10px",
-          marginTop: "0px",
-        }}
-        onClick={() => handleOpen()}
-      >
-        {t("Uploadinsuredperson.Submitform")}
-      </Button>
       <Modal
-        open={open}
-        onClose={handleClose}
+        open={openMessageModal}
+        onClose={closeAfterDeleteMessageModal}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
@@ -77,13 +63,27 @@ function Message() {
               <br />
               <p>{t("Delete_account.Message_3")}</p>
             </div>
-            {/* <Button
-              style={{  borderRadius: "1rem", marginRight:"406", marginTop:"1.5rem" }}
-              className="authentication__container__formContainer__form__loginButton_Form"
-              type="submit"
+            <div
+              style={{
+                display: "flex",
+                alignItems: "start",
+                width: "100%",
+              }}
             >
-              Submit
-            </Button> */}
+              <Button
+                style={{
+                  borderRadius: "1rem",
+                  marginTop: "10px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                }}
+                className="authentication__container__formContainer__form__loginButton_Form"
+                type="submit"
+                onClick={() => navigate(`/member-signin/${lang === 'pl' ? 'pl' : 'en'}`)}
+              >
+                {t("Member.Member_landingPage_btn1")}
+              </Button>
+            </div>
           </div>
         </Box>
       </Modal>

@@ -5,20 +5,25 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import Message from "./Message";
+import { useNavigate } from "react-router-dom";
+import useClientInsurance from "../../../../hooks/useClientInsurance";
+import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 
 function DeleteAccountForm() {
+  const navigate = useNavigate();
+  const { deleteAccountRequest } = useClientInsurance();
   const { t } = useTranslation();
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [open, setOpen] = useState(false);
-  const [contactForm, setContactForm] = useState({
+  const [openMessageModal, setOpenMessageModal] =  useState(false);
+  const [deleteAccountForm, setDeleteAccountForm] = useState({
     full_name: "",
     email: "",
     details: "",
-    identity: "",
-    request: "",
     status: 3,
-    form_type: 0,
+    form_type: 4,
+    pesel_number: 0,
   });
   const style = {
     position: "absolute",
@@ -35,6 +40,26 @@ function DeleteAccountForm() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
+  const openAfterDeleteMessageModal = () => setOpenMessageModal(true);
+  const closeAfterDeleteMessageModal = () => setOpenMessageModal(false);
+
+  const handleSubmit = async () => {
+    const response = await deleteAccountRequest(deleteAccountForm)
+    if(response?.status < 300) {
+      openAfterDeleteMessageModal()
+      setTimeout(() => {
+        closeAfterDeleteMessageModal();
+        handleClose()
+      }, 5000);
+    }
+    else if(response?.status > 300) {
+      setErrorMessage(response?.message)
+      setTimeout(() => {
+        setErrorMessage('');
+      }, 3000);
+    }
+  }
+
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
@@ -42,6 +67,7 @@ function DeleteAccountForm() {
   }, []);
   return (
     <div>
+      <AlertMessage errorMessage={errorMessage}/>
       <Button style={{ borderRadius: "1rem" }} onClick={() => handleOpen()}>
       {t("Delete_account.Proceedtodelete")}
             </Button>
@@ -67,8 +93,8 @@ function DeleteAccountForm() {
                       type="text"
                       placeholder={`${t("get24contactform.firstandlastname")}*`}
                       onChange={(e) =>
-                        setContactForm({
-                          ...contactForm,
+                        setDeleteAccountForm({
+                          ...deleteAccountForm,
                           full_name: e.target.value,
                         })
                       }
@@ -79,8 +105,8 @@ function DeleteAccountForm() {
                       type="text"
                       placeholder="E-mail*"
                       onChange={(e) =>
-                        setContactForm({
-                          ...contactForm,
+                        setDeleteAccountForm({
+                          ...deleteAccountForm,
                           email: e.target.value,
                         })
                       }
@@ -93,6 +119,12 @@ function DeleteAccountForm() {
                       placeholder={`${t("Pannel_Dashboard_Userprofile.Peselnumber")}*`}
                       name="company_pasel_number"
                       required={true}
+                      onChange={(e) =>
+                        setDeleteAccountForm({
+                          ...deleteAccountForm,
+                          pesel_number: e.target.value,
+                        })
+                      }
                     />
                   </div>
                 </div>
@@ -106,6 +138,12 @@ function DeleteAccountForm() {
                       className="textarea"
                       placeholder={`${t("contactform.texthere")}`}
                       rows={5}
+                      onChange={(e) =>
+                        setDeleteAccountForm({
+                          ...deleteAccountForm,
+                          details: e.target.value,
+                        })
+                      }
                     ></textarea>
                   </div>
                 </div>
@@ -113,7 +151,20 @@ function DeleteAccountForm() {
             </div>
             <div className='landingPage__healthyTeeth__container'
          >
-       <Message  />
+       <Button
+        style={{
+          marginLeft: "250px",
+          borderRadius: "1rem",
+          marginTop: "0px",
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          marginTop: "0px",
+        }}
+        onClick={() => handleSubmit()}
+       >
+        {t("Uploadinsuredperson.Submitform")}
+       </Button>
+       <Message  openMessageModal={openMessageModal} closeAfterDeleteMessageModal={closeAfterDeleteMessageModal}/>
      </div>
           </div>
         </Box>

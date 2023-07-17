@@ -266,8 +266,26 @@ const useClientInsurance = () => {
     return response;
   }
 
+  const deleteAccountRequest = async (deleteAccount) => {
+    const formData = new FormData()
+    for (const property in deleteAccount) {
+      formData.append(
+        property, deleteAccount[property]
+      )
+    }
+    const response = await axios.post(
+      `${API_KEY}/api/v1/client_infos/support_forms`, formData
+    ).then((res) => {
+      if (res.data.status > 300) {
+        handleErrors(res);
+      }
+      return res.data
+    })
+    return response;
+  }
+
   return {
-    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket, getAllSupportForms, updateClientInfoTicketStatusAdmin
+    createClientInsurance, getAllClientInsurance, createClientInsuranceAdmin, getAllClientInsuranceAdmin, updateClientInsuranceAdmin, getInsuredClients, getInsuredClientsByAdmin, getClientInfoById, exportCsv, forSupportForms, createNewTicket, getAllSupportForms, updateClientInfoTicketStatusAdmin, deleteAccountRequest
 
   };
 };
