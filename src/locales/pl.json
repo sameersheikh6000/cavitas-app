@@ -75,6 +75,7 @@
     "ourpolicy_policy2": "Polityka plików cookie",
     "ourpolicy_policy3": "Umowa brokerska"
   },
+
   "FAQ": {
     "FAQ_title": "Często zadawane pytania (FAQ)",
     "FAQ_genral_title": "Ogólne",
@@ -106,6 +107,7 @@
     "FAQ_broker_Q2": "P2: Czy do zawarcia umowy ubezpieczenia stomatologicznego Cavitas między ubezpieczycielem a klientem korporacyjnym wymagana jest minimalna liczba pracowników?",
     "FAQ_broker_A2": "O2: Tak. Skontaktuj się z nami, a my przedstawimy Ci wszystkie wymagania."
   },
+
   "Broker": {
     "Broker_landing_Page_title1": "Twoi klienci zasługują na",
     "Broker_landing_Page_title2": "Dobre ubezpieczenie stomatologiczne",
@@ -142,6 +144,7 @@
     "suggest": "Zaproponuj swojemu pracodawcy",
     "Broker__conversion": "Porozmawiajmy o tym, jak możemy Ci w tym pomóc najlepiej obsłuż swoich klientów korporacyjnych"
   },
+
   "Employer": {
     "Employer_conversion": "Zadbajmy o Twoich pracowników!",
     "Employer_landingpage_title": "Zdrowe zęby – zdrowi pracownicy",
@@ -152,6 +155,7 @@
     "Employer_benefits3": "Zwiększasz produktywność i zmniejszasz absencję spowodowaną bólami zęba lub chorobami dziąseł",
     "Employer_benefits4": "Pomagasz pracownikom obniżyć koszty leczenia stomatologicznego"
   },
+
   "Member": {
     "Member_landingPage_title1": "Inteligentniejsze",
     "Member_landingPage_title2": "ubezpieczenie stomatologiczne",
@@ -162,6 +166,7 @@
     "Member_landingPage_notmember_desc": "Jeśli nie masz jeszcze ubezpieczenia stomatologicznego Cavitas, poinformuj o nim swojego pracodawcę.",
     "Member_landingPage_notmember_btn": "Zaproponuj swojemu pracodawcy"
   },
+
   "Blog": {
     "Blog_title": "Przydatna lektura",
     "Blog_heading": "Najnowsze posty na blogu",
@@ -222,6 +227,7 @@
     "Blog2_part20": "Regularne wizyty kontrolne u stomatologa są niezbędne do utrzymania dobrego stanu zdrowia jamy ustnej. W ich trakcie lekarz może wcześnie wykryć problemy z zębami i zacząć leczenie, zanim sytuacja stanie się poważna.",
     "Blog2_part21": "Podsumowując, dbanie o zęby ma kluczowe znaczenie dla utrzymania dobrej higieny jamy ustnej, ogólnego stanu zdrowia i poczucia własnej wartości. Przestrzegając prostych zasad w zakresie higieny jamy ustnej i regularnie odwiedzając stomatologa, możesz zapobiegać problemom z zębami, oszczędzać pieniądze na dłuższą metę i cieszyć się zdrowszym, szczęśliwszym życiem."
   },
+
   "get24contactform": {
     "contactcavitas": "Skontaktuj się z Cavitas",
     "quotein24form": "Uzyskaj wycenę w ciągu 24 godzin",
@@ -234,6 +240,7 @@
     "date": "Preferowana data rozpoczęcia ochrony ubezpieczeniowej",
     "setmessage": "Z przesłanego pomyślnie! Wkrótce do Ciebie wrócimy."
   },
+
   "contactform": {
     "contactfrom_title": "Skontaktuj się z Cavitas",
     "contactfrom_heading": "Porozmawiaj z nami",
@@ -544,7 +551,7 @@
   },
 
   "forgetpassword": {
-    "Token": "znak",
+    "Token": "Wpisz kod, który otrzymałeś e-mailem. W tym kodzie rozróżniana jest wielkość liter",
     "Email": "E-mail",
     "Resetpassword": "Zresetuj hasło",
     "Sensitive": "Kod, który został wysłany do Ciebie e-mailem. Wielkość liter jest rozróżniana.",
@@ -683,5 +690,14 @@
     "Message_1":"Otrzymaliśmy Twoje żądanie dotyczące usunięcia konta.",
     "Message_2":"Postaramy się odpowiedzieć na Twoje zapytanie w ciągu jednego dnia roboczego.Może to potrwać dłużej ze względu na aktualną liczbę żądań",
     "Message_3":"Naszą odpowiedź znajdziesz w sekcji „Zgłoszenia” w obszarze logowania"
+  },
+  
+  "Documents":{
+    "Documents":"Dokumenty",
+    "Privacypolicy":"Polityka prywatności",
+    "Cookies":"Polityka plików cookie",
+    "Complaint":"Rozpatrywanie skarg",
+    "agreement":"Umowa pośrednictwa"
+
   }
 }

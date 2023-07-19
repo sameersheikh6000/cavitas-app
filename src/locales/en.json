@@ -543,7 +543,7 @@
     "card5": "Cavitas dental insurance brochure"
   },
   "forgetpassword": {
-    "Token": "Token",
+    "Token": "Enter the code that you received via email. This code is case-sensitive",
     "Email": "E-mail",
     "Resetpassword": "Reset Password",
     "Sensitive": "Enter code that you recieved. This is case-sensitive.",
@@ -681,5 +681,13 @@
     "Message_1":"Your request to delete your account has been received.",
     "Message_2":"Our goal is to respond to your inquiry within 1 business day. Please note that it may take longer depending on current volume of requests.",
     "Message_3":"Please find our response under Support tickets in your Member log in area."
+  },
+  "Documents":{
+    "Documents":"Documents",
+    "Privacypolicy":"Privacy policy",
+    "Cookies":"Cookie policy",
+    "Complaint":"Complaint resolution",
+    "agreement":"Broker agreement"
+
   }
 }

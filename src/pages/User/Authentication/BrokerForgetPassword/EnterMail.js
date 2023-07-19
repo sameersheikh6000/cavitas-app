@@ -38,14 +38,15 @@ const EnterMail = () => {
           <div className="authentication__container__imageBox__top">
             <img
               className="authentication__container__imageBox__top__logo"
+              onClick={() => navigate("/signin/")}
               src={require("../../../../assets/Signin-logo.png")}
               alt=""
             />
-            <img
+            {/* <img
               className="authentication__container__imageBox__top__flag"
               src={require("../../../../assets/Signin-flag.png")}
               alt=""
-            />
+            /> */}
           </div>
 
           <div
@@ -68,7 +69,7 @@ const EnterMail = () => {
               marginBottom: "5px",
             }}
           >
-            Forgot Password?{" "}
+            Forgot password?{" "}
           </h2>
           <p
             style={{
@@ -78,10 +79,10 @@ const EnterMail = () => {
           >
             Please enter the email address associated with your account.
           </p>
-          <div className="supportView__header__iconBox__forget">
+          {/* <div className="supportView__header__iconBox__forget">
             <MailOutlinedIcon className="supportView__header__iconBox__icon__forget" />
             <p>Email Address</p>
-          </div>
+          </div> */}
           <form
             onSubmit={handleSubmit}
             className="authentication__container__formContainer__form__forget"
@@ -94,7 +95,7 @@ const EnterMail = () => {
                 marginTop: "15px",
               }}
               type="email"
-              placeholder="email address"
+              placeholder="Email address"
               name="email"
               onChange={(e) => setEmail(e.target.value)}
             />

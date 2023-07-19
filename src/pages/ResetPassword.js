@@ -87,11 +87,11 @@ const ResetPassword = () => {
               src={require("../assets/Signin-logo.png")}
               alt=""
             />
-            <img
+            {/* <img
               className="authentication__container__imageBox__top__flag"
               src={require("../assets/Signin-flag.png")}
               alt=""
-            />
+            /> */}
           </div>
 
           <div
@@ -118,6 +118,7 @@ const ResetPassword = () => {
             >
                  {t("forgetpassword.Resetpassword")}{" "}
             </h2>
+            <div className="authentication__container__formContainer__form">
             <form onSubmit={handleSubmit}>
               <div
                 className="supportView__header__iconBox__forget"
@@ -144,13 +145,13 @@ const ResetPassword = () => {
                   value={credential?.token}
                 />
               </div>
-              <div
+              {/* <div
                 className="supportView__header__iconBox__forget"
                 style={{ marginRight: "150px", fontWeight: "normal" }}
               >
                 <p style={{ fontWeight: "normal", fontSize: "16px" }}>
                 {t("forgetpassword.Sensitive")}                </p>
-              </div>
+              </div> */}
               <div
                 className="supportView__header__iconBox__forget"
                 style={{ marginRight: "150px", fontWeight: "normal" }}
@@ -177,14 +178,14 @@ const ResetPassword = () => {
                   value={credential?.email}
                 />
               </div>
-              <div
+              {/* <div
                 className="supportView__header__iconBox__forget"
                 style={{ marginRight: "150px", fontWeight: "normal" }}
               >
                 <h4>
                   Set your new password here.
                 </h4>
-              </div>
+              </div> */}
               <div
                 className="supportView__header__iconBox__forget"
                 style={{ marginRight: "150px", fontWeight: "normal" }}
@@ -247,15 +248,18 @@ const ResetPassword = () => {
                 />
                 <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowConfirmPassword} />
               </div>
+              <br />
+              <div className="authentication__container__formContainer__form">
               <Button
-                style={{ borderRadius: "50px", margin: "1rem 10rem" }}
                 type="submit"
                 onClick={(e) => handleSubmit(e)}
-                className="authentication__container__formContainer__form__forget__loginButton__update"
+                className="authentication__container__formContainer__form__forget__loginButton"
               >
                 Update password
               </Button>
+              </div>
             </form>
+            </div>
           </form>
         </div>
       </div>

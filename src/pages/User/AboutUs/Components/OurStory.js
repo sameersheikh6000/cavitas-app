@@ -35,7 +35,7 @@ const OurStory = () => {
               className="aboutUs__ourStory__container__profilesBox__left__linkedInIcon"
               style={{ cursor: "pointer" }}
             >
-              <Link to="https://www.linkedin.com/in/ssoonberg/">
+              <Link to="https://www.linkedin.com/in/ssoonberg/" target="_blank">
                 <img
                   src={require("../../../../assets/LinkedIn-icon.png")}
                   alt=""
@@ -59,7 +59,7 @@ const OurStory = () => {
               className="aboutUs__ourStory__container__profilesBox__right__linkedInIcon"
               style={{ cursor: "pointer" }}
             >
-              <Link to="https://www.linkedin.com/in/lejpvb/">
+              <Link to="https://www.linkedin.com/in/lejpvb/" target="_blank">
                 <img
                   src={require("../../../../assets/LinkedIn-icon.png")}
                   alt=""

@@ -104,7 +104,7 @@ function GetQuoteCavitas() {
                   <div>
                     <input
                       type="text"
-                      placeholder={`${t("get24contactform.firstandlastname")}`}
+                      placeholder={`${t("get24contactform.firstandlastname")}*`}
                       onChange={(e) => setFormData({...formData, full_name: e.target.value})}
                       />
                   </div>
@@ -131,7 +131,7 @@ function GetQuoteCavitas() {
                   <div>
                     <input
                       type="text"
-                      placeholder={`${t("get24contactform.companyname")}`}
+                      placeholder={`${t("get24contactform.companyname")}*`}
                       onChange={(e) => setFormData({...formData, company_name: e.target.value})}
                       />
                   </div>
@@ -140,14 +140,14 @@ function GetQuoteCavitas() {
                   <div>
                     <input
                       type="text"
-                      placeholder={`${t("get24contactform.nameofgroup")}`}
+                      placeholder={`${t("get24contactform.nameofgroup")}*`}
                       onChange={(e) => setFormData({...formData, group_name: e.target.value})}
                     />
                   </div>
                   <div>
                     <input
                       type="number"
-                      placeholder={`${t("get24contactform.totalnumber")}`}
+                      placeholder={`${t("get24contactform.totalnumber")}*`}
                       onChange={(e) => setFormData({ ...formData, number_of_employees_in_company: e.target.value})}
                     />
                   </div>
@@ -155,7 +155,7 @@ function GetQuoteCavitas() {
                     <input
                       className="placeholder_class"
                       type={dateType === 'date' ? dateType : 'text'}
-                      placeholder={`${t("get24contactform.date")}`}
+                      placeholder={`${t("get24contactform.date")}*`}
                       onBlur={() => setDateType('text')}
                       onFocus={() => setDateType('date')}
                       onChange={(e) => setFormData({ ...formData, inception_date: e.target.value})}
