@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Page from '../../../../components/Page/Page';
-import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
 import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
 import PolicyInfo from '../Components/PolicyInfo';
 import Coverage from '../Components/Coverage';
@@ -15,11 +14,7 @@ import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 import { USER_STORAGE_KEY } from '../../../../config/helpers/variables';
 
 const InsuredClientGroup = () => {
-
-  const currentUrl = window.location.href;
-  const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const location = useLocation();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const { row } = location.state;
