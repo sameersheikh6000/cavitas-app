@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
           </Link>
         </div>
         <div className="aboutUs__privacyPolicy__container__card">
-        <Link  to={`/Privacypolicy/#privacy-policy${lang === "pl" ? lang : "en"}`}  onClick={handleLinkClick}>
+        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={handleLinkClick}>
 
           <img
             src={require("../../../../assets/PrivacyPolicy-image.png")}

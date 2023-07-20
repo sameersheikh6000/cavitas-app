@@ -14,6 +14,10 @@ const Footer = () => {
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
 
+  const handleLinkClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
@@ -42,6 +46,7 @@ const Footer = () => {
               <ContactCavitas />
             </Link>
             <Link>
+
               <ComplaintForm />
             </Link>
             <Link>
@@ -61,7 +66,9 @@ const Footer = () => {
                   <Link className="appbar__linksBox__links__link" to={`/claims/${lang === "pl" ? lang : "en"}`}>
                   {t("nav.claims")}
                   </Link>
-            <Link to={`/Privacypolicy/${lang === "pl" ? "pl" : "en"}`}>{t("nav.PrivacyPolicy")}</Link>
+            <Link to={`/Privacypolicy/${lang === "pl" ? "pl" : "en"}`}
+             onClick={handleLinkClick}>
+            {t("nav.PrivacyPolicy")}</Link>
             <Link to={"/Shop"}>{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">
