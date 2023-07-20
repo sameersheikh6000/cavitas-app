@@ -10,6 +10,7 @@ import BAT from "./BAT";
 import PPT from "./PPT";
 import CP from "./CP";
 import CR from "./CR";
+import { Link } from "react-router-dom";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -69,6 +70,7 @@ export default function Alldocuments() {
           aria-label="basic tabs example"
           // textColor='black'
         >
+
             <Tab
             className="faq__tabs__tabsLabel"
             // style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
@@ -76,7 +78,6 @@ export default function Alldocuments() {
             label={t('Documents.Privacypolicy')}
             {...a11yProps(0)}
           />
-
            <Tab
             className="faq__tabs__tabsLabel"
             style={{ fontSize:"15px", fontWeight:"bold" ,textTransform:"none" }}

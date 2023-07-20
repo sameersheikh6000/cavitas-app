@@ -71,7 +71,7 @@ function ContactCavitas() {
           textTransform: "math-auto",
           textDecoration: "none",
         }}
-        onClick={() => handleOpen()}
+        onClick={() => handleOpen()} 
       >
         {t("Broker.Broker__contactUs__button")}
       </Button>
