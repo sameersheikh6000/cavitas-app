@@ -806,12 +806,13 @@ export const routes = [
 
   // deleteaccount
   {
-    path: "/deleteaccount/:lang",
+    path: "/deletemyaccount/:lang",
     component: AccountDelete,
     isPrivate: false
-  },
+  }
+  ,
   {
-    path: "/deleteaccount",
+    path: "/deletemyaccount",
     component: AccountDelete,
     isPrivate: false
   },
