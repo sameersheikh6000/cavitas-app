@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
-import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
-import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 
 const CP = () => {
   const currentUrl = window.location.href;
@@ -15,14 +13,6 @@ const CP = () => {
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
-
-  const [faqData, setFaqData] = useState([false, false, false]);
-
-  const handleFaqData = (index) => {
-    const newData = [...faqData];
-    newData[index] = !newData[index];
-    setFaqData(newData);
-  };
 
   return (
     <section className="faqTab">

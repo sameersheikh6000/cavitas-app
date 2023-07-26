@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
-import ArrowDownwardOutlinedIcon from "@mui/icons-material/ArrowDownwardOutlined";
-import ArrowUpwardOutlinedIcon from "@mui/icons-material/ArrowUpwardOutlined";
 import { Link } from "@mui/material";
 
 const CR = () => {
@@ -15,13 +13,6 @@ const CR = () => {
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
-  const [faqData, setFaqData] = useState([false, false, false]);
-
-  const handleFaqData = (index) => {
-    const newData = [...faqData];
-    newData[index] = !newData[index];
-    setFaqData(newData);
-  };
 
   return (
     <section className="faqTab">
@@ -36,17 +27,19 @@ const CR = () => {
         <p>
           <br />
           {t("CookiePolicy.Cookie_Para_No1")}{" "}
-          <Link style={{cursor:"pointer"}} to="https://cavitas.pl">https://cavitas.pl</Link>{" "}
+          <Link style={{ cursor: "pointer" }} to="https://cavitas.pl">
+            https://cavitas.pl
+          </Link>{" "}
           {t("CookiePolicy.Cookie_Para_No1_b")}
           <br />
           <br />
           {t("CookiePolicy.Cookie_Para_No2")}
-
           <br />
           <br />
-          {t("CookiePolicy.Cookie_Para_No3")}
-          {" "}
-          <Link  style={{cursor:"pointer"}}  to="https://cavitas.pl">https://cavitas.pl</Link> 
+          {t("CookiePolicy.Cookie_Para_No3")}{" "}
+          <Link style={{ cursor: "pointer" }} to="https://cavitas.pl">
+            https://cavitas.pl
+          </Link>
           {t("CookiePolicy.Cookie_Para_No3_b")}
           <br />
           <br />
@@ -54,36 +47,29 @@ const CR = () => {
           {t("CookiePolicy.Cookie_Para_No4")}
           <br /> <br />
           {t("CookiePolicy.Cookie_Para_No5")}
-
           <br /> <br />
           {t("CookiePolicy.Cookie_Para_No6")}
-
           <br /> <br />
           {t("CookiePolicy.Cookie_Para_No7")}
-
           <br /> <br />
           <h3> {t("CookiePolicy.Cookie_heading_No3")} </h3>
           <h3> {t("CookiePolicy.Cookie_heading_No4")} </h3>
           {t("CookiePolicy.Cookie_Para_No8")}
-
           <br />
           {t("CookiePolicy.Cookie_Para_No8_b")}
           <br /> <br />
           <h3> {t("CookiePolicy.Cookie_heading_No5")} </h3>
           {t("CookiePolicy.Cookie_Para_No9")}
-
           <br />
           {t("CookiePolicy.Cookie_Para_No9_b")}
           <br /> <br />
           <h3> {t("CookiePolicy.Cookie_heading_No6")} </h3>
           {t("CookiePolicy.Cookie_Para_No10")}
-
           <br />
           {t("CookiePolicy.Cookie_Para_No10_b")}
           <br /> <br />
           <h3> {t("CookiePolicy.Cookie_heading_No7")} </h3>
           {t("CookiePolicy.Cookie_Para_No11")}
-
           <br />
           {t("CookiePolicy.Cookie_Para_No11_b")}
           {/* <br />

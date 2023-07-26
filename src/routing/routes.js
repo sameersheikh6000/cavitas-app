@@ -9,9 +9,9 @@ import EmploySignUp from "../pages/User/EmployAuthentication/SignUp";
 import AdminDashboard from "../pages/Admin/Dashboard";
 import Dashboard from "../pages/User/Dashboard";
 import InsuredClientView from "../pages/User/InsuredClientView";
-import AdminPolicyInformation from "../pages/Admin/PolicyInformation"
-import  ApprovalFile from "../pages/Admin/ApprovalFile";
-import  AdminFileApproval from "../pages/Admin/PannelData";
+import AdminPolicyInformation from "../pages/Admin/PolicyInformation";
+import ApprovalFile from "../pages/Admin/ApprovalFile";
+import AdminFileApproval from "../pages/Admin/PannelData";
 import UploadClient from "../pages/User/UploadClient";
 import BrokerLandingPage from "../pages/User/BrokerLandingPage";
 import EmployLandingPage from "../pages/User/EmployLandingPage";
@@ -31,7 +31,6 @@ import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
 import ContactFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/ContactFormDetail";
 import SubmitNewTickets from "../pages/User/SupportView/TicketingSystemComponent/SubmitNewTickets/SubmitNewTickets";
-import Contactus from "../pages/Admin/ApprovalFile/SupportComponent/Contactus";
 import InsuredPerson from "../pages/Admin/ApprovalFile/SupportComponent/InsuredPerson";
 import GetQuote from "../pages/Admin/ApprovalFile/SupportComponent/GetQuote";
 import InsuredPersonSupportTicket from "../pages/User/SupportView/InsuredPersonSupportTicket";
@@ -41,15 +40,15 @@ import Blog2 from "../pages/User/MemberLandingPage/ValuableReading/Blog2";
 import Blog3 from "../pages/User/MemberLandingPage/ValuableReading/Blog3";
 import Blog1 from "../pages/User/MemberLandingPage/ValuableReading/Blog1";
 import Blog from "../components/Footer/Blog";
-import EnterMail from "../pages/User/Authentication/BrokerForgetPassword/EnterMail"
-import AddCode from "../pages/User/Authentication/BrokerForgetPassword/AddCode"
-import SetPassword from "../pages/User/Authentication/BrokerForgetPassword/SetPassword"
-import UpdatePassword from "../pages/User/Authentication/BrokerForgetPassword/UpdatePassword"
+import EnterMail from "../pages/User/Authentication/BrokerForgetPassword/EnterMail";
+import AddCode from "../pages/User/Authentication/BrokerForgetPassword/AddCode";
+import SetPassword from "../pages/User/Authentication/BrokerForgetPassword/SetPassword";
+import UpdatePassword from "../pages/User/Authentication/BrokerForgetPassword/UpdatePassword";
 import EmployerAddCode from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerAddCode";
 import EmployerSetPassword from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerSetPassword";
 import EmployerUpdatePassword from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerUpdatePassword";
 import EmployerEnterMail from "../pages/User/EmployAuthentication/EmployerForgetPassword/EmployerEnterMail";
-import MemberEnterMail from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberEnterMail"
+import MemberEnterMail from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberEnterMail";
 import MemberSetPassword from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberSetPassword";
 import MemberUpdatePassword from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberUpdatePassword";
 import MemberAddCode from "../pages/User/MemberAuthentication/MemberForgetPassword/MemberAddCode";
@@ -63,23 +62,22 @@ import AccountDelete from "../pages/User/DeleteAccount/AccountDelete";
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
 export const routes = [
-
   // user routes
 
-   {
-     path: "/:lang",
-     component: user ? Dashboard : LandingPage,
-     isPrivate: false,
-   },
-   {
+  {
+    path: "/:lang",
+    component: user ? Dashboard : LandingPage,
+    isPrivate: false,
+  },
+  {
     path: "/pl",
     component: user ? Dashboard : LandingPage,
     isPrivate: false,
-   },
+  },
 
-   {
-    path: '/',
-    component: HomeRedirect
+  {
+    path: "/",
+    component: HomeRedirect,
   },
 
   {
@@ -301,12 +299,6 @@ export const routes = [
     component: Cart,
     isPrivate: false,
   },
-  // {
-  //   path: "/valuablereading/view/:id",
-  //   component: ValuableReadingView,
-  //   isPrivate: false,
-  // },
-
 
   // admin routes
 
@@ -337,27 +329,27 @@ export const routes = [
   },
   {
     path: "/admin/PannelData/:lang",
-    component:  AdminFileApproval,
+    component: AdminFileApproval,
     isPrivate: false,
   },
   {
     path: "/admin/support-tickets/:lang",
-    component:   ApprovalFile,
+    component: ApprovalFile,
     isPrivate: false,
   },
   {
     path: "/admin/UserInformation/:lang",
-    component:   UserInformation,
+    component: UserInformation,
     isPrivate: false,
   },
   {
     path: "/admin/CavitasDocuments/:lang",
-    component:   AdminUploadCavitasDocuments,
+    component: AdminUploadCavitasDocuments,
     isPrivate: false,
   },
   {
     path: "/admin/profile/view/:lang",
-    component:   AdminProfileView,
+    component: AdminProfileView,
     isPrivate: false,
   },
   {
@@ -374,21 +366,12 @@ export const routes = [
     isPrivate: false,
   },
 
-  
   {
-
     path: "/SubmitNewTickets/:lang",
-         component: SubmitNewTickets,
+    component: SubmitNewTickets,
     isPrivate: false,
   },
 
-  
-
-  {
-    path: "/admin/Contactus/:lang",
-    component: Contactus,
-    isPrivate: false,
-  },
   {
     path: "/InsuredPerson/:lang",
     component: InsuredPerson,
@@ -405,8 +388,6 @@ export const routes = [
     isPrivate: false,
   },
 
-
-  
   {
     path: "/InsuredPersonSupportTicket/:id/:lang",
     component: InsuredPersonSupportTicket,
@@ -420,28 +401,28 @@ export const routes = [
   {
     path: "admin/quotes/:id/QuoteDetail/:lang",
     component: QuoteFormDetail,
-    isPrivate: false
+    isPrivate: false,
   },
   // blog
   {
     path: "/Blog1/:lang",
     component: Blog1,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Blog2/:lang",
     component: Blog2,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Blog3/:lang",
     component: Blog3,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Blog/:lang",
     component: Blog,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/admin/signin",
@@ -470,27 +451,27 @@ export const routes = [
   },
   {
     path: "/admin/PannelData",
-    component:  AdminFileApproval,
+    component: AdminFileApproval,
     isPrivate: false,
   },
   {
     path: "/admin/support-tickets",
-    component:   ApprovalFile,
+    component: ApprovalFile,
     isPrivate: false,
   },
   {
     path: "/admin/UserInformation",
-    component:   UserInformation,
+    component: UserInformation,
     isPrivate: false,
   },
   {
     path: "/admin/CavitasDocuments",
-    component:   AdminUploadCavitasDocuments,
+    component: AdminUploadCavitasDocuments,
     isPrivate: false,
   },
   {
     path: "/admin/profile/view",
-    component:   AdminProfileView,
+    component: AdminProfileView,
     isPrivate: false,
   },
   {
@@ -502,7 +483,7 @@ export const routes = [
   {
     path: "/admin/InsuredPersonDetail/:id/:lang",
     component: InsuredPersonDetail,
-    isPrivate: false
+    isPrivate: false,
   },
 
   // Forms
@@ -514,19 +495,11 @@ export const routes = [
   },
 
   {
-
     path: "/SubmitNewTickets",
-         component: SubmitNewTickets,
+    component: SubmitNewTickets,
     isPrivate: false,
   },
 
-  
-
-  {
-    path: "/admin/Contactus",
-    component: Contactus,
-    isPrivate: false,
-  },
   {
     path: "/InsuredPerson",
     component: InsuredPerson,
@@ -538,10 +511,9 @@ export const routes = [
     isPrivate: false,
   },
 
-
   {
     path: "/InsuredPersonSupportList",
-    component:  InsuredPersonSupportList  ,
+    component: InsuredPersonSupportList,
     isPrivate: false,
   },
   {
@@ -557,28 +529,28 @@ export const routes = [
   {
     path: "admin/quotes/:id/QuoteDetail",
     component: QuoteFormDetail,
-    isPrivate: false
+    isPrivate: false,
   },
   // blog
   {
     path: "/Blog1",
     component: Blog1,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Blog2",
     component: Blog2,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Blog3",
     component: Blog3,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Blog",
     component: Blog,
-    isPrivate: false
+    isPrivate: false,
   },
 
   // ForgetPassword
@@ -586,164 +558,160 @@ export const routes = [
   {
     path: "/Add-Mail",
     component: EnterMail,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/AddCode",
     component: AddCode,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/SetPassword",
     component: SetPassword,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/UpdatePassword",
     component: UpdatePassword,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerUpdatePassword",
     component: EmployerUpdatePassword,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerSetPassword",
     component: EmployerSetPassword,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerAddCode",
     component: EmployerAddCode,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerEnterMail",
     component: EmployerEnterMail,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/MemberEnterMail",
     component: MemberEnterMail,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/MemberAddCode",
     component: MemberAddCode,
-    isPrivate: false
+    isPrivate: false,
   },
-   {
+  {
     path: "/MemberSetPassword",
     component: MemberSetPassword,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/MemberUpdatePassword",
     component: MemberUpdatePassword,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Add-Mail/:lang",
     component: EnterMail,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/AddCode/:lang",
     component: AddCode,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/SetPassword/:lang",
     component: SetPassword,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/UpdatePassword/:lang",
     component: UpdatePassword,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerUpdatePassword/:lang",
     component: EmployerUpdatePassword,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerSetPassword/:lang",
     component: EmployerSetPassword,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerAddCode/:lang",
     component: EmployerAddCode,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/EmployerEnterMail/:lang",
     component: EmployerEnterMail,
-    isPrivate: false
+    isPrivate: false,
   },
 
   {
     path: "/MemberEnterMail/:lang",
     component: MemberEnterMail,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/MemberAddCode/:lang",
     component: MemberAddCode,
-    isPrivate: false
+    isPrivate: false,
   },
-   {
+  {
     path: "/MemberSetPassword/:lang",
     component: MemberSetPassword,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/MemberUpdatePassword/:lang",
     component: MemberUpdatePassword,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/Privacypolicy/:lang",
     component: PrivacyPolicy,
-    isPrivate: false
+    isPrivate: false,
   },
   {
     path: "/reset_password",
     component: ResetPassword,
-    isPrivate: false
-  }
-  ,
+    isPrivate: false,
+  },
   {
     path: "/Shop",
     component: Shop,
-    isPrivate: false
+    isPrivate: false,
   },
 
   // deleteaccount
   {
     path: "/deletemyaccount/:lang",
     component: AccountDelete,
-    isPrivate: false
-  }
-  ,
+    isPrivate: false,
+  },
   {
     path: "/deletemyaccount",
     component: AccountDelete,
-    isPrivate: false
+    isPrivate: false,
   },
-]
-
-
+];

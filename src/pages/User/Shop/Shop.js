@@ -1,8 +1,4 @@
-import { Button } from "@mui/material";
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { useTranslation } from "react-i18next";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Page from "../../../components/Page/Page";
 import DentaCuretoothpaste from "./PopupComponent/DentaCuretoothpaste";

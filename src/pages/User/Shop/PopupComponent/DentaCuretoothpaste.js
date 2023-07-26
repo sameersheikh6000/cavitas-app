@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from "../../../../config/helpers/i18n";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Button } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import useClientInsurance from "../../../../hooks/useClientInsurance";
 
 function DentaCuretoothpaste() {
   const [open, setOpen] = useState(false);
@@ -28,12 +23,6 @@ function DentaCuretoothpaste() {
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
-
-  //   useEffect(() => {
-  //     const currentUrl = window.location.href;
-  //     let lang = currentUrl.split("/").pop();
-  //     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  //   }, [])
 
   return (
     <div>
