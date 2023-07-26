@@ -10,6 +10,7 @@ import useClientInsurance from "../../../../hooks/useClientInsurance";
 import { API_KEY } from "../../../../config/helpers/variables";
 
 const InsuredPerson = () => {
+
   const navigate = useNavigate();
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
@@ -80,6 +81,7 @@ const InsuredPerson = () => {
                 <td>{row?.email}</td>
                 <td>{row?.details}</td>
                 <td>{
+
                   row?.file?.filename ?
                   <a href={`${API_KEY}/api/v1/client_infos/${row?.id}/download`}>{row?.file?.filename}</a>
                   :
@@ -88,6 +90,7 @@ const InsuredPerson = () => {
 
                 <td style={{textAlign: "left"}}>
                   {  (row?.status !== 'accepted' && (row?.file?.filename.split('.')[1] === 'csv' || row?.file?.filename.split('.')[1] === 'xlsx' ) ) ?
+
 
 
                     <AcceptFile client_id={row?.id} getClientInsurance={getClientInsurance}/>
