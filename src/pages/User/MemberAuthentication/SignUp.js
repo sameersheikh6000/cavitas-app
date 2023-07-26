@@ -62,7 +62,7 @@ const MemberSignUp = () => {
 
         <div className='authentication__container__imageBox'>
           <div className='authentication__container__imageBox__top' >
-            <img className='authentication__container__imageBox__top__logo' onClick={() =>navigate`/member-signup/${lang === "pl" ? "pl" : "en"}`}
+            <img className='authentication__container__imageBox__top__logo' onClick={() =>navigate(`/${lang === "pl" ? "pl" : "en"}`)} 
              src={require("../../../assets/Signin-logo.png")} alt='' />
             {/* <img className='authentication__container__imageBox__top__flag' src={require("../../../assets/Signin-flag.png")} alt='' /> */}
           </div>
