@@ -30,15 +30,10 @@ import UserInformation from "../pages/Admin/UserInformation";
 import AdminProfileView from "../pages/Admin/AdminProfileView/AdminProfileView";
 import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
 import ContactFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/ContactFormDetail";
-import Tickets from "../pages/User/SupportView/TicketingSystemComponent/MySupportTickets/Tickets";
 import SubmitNewTickets from "../pages/User/SupportView/TicketingSystemComponent/SubmitNewTickets/SubmitNewTickets";
 import Contactus from "../pages/Admin/ApprovalFile/SupportComponent/Contactus";
 import InsuredPerson from "../pages/Admin/ApprovalFile/SupportComponent/InsuredPerson";
 import GetQuote from "../pages/Admin/ApprovalFile/SupportComponent/GetQuote";
-import ContactSupportList from "../pages/User/SupportView/TicketingSystemComponent/ContactSupport/ContactSupportList";
-import ContactSupportTicket from "../pages/User/SupportView/TicketingSystemComponent/ContactSupport/ContactSupportTicket";
-import QuoteSupportList from "../pages/User/SupportView/TicketingSystemComponent/QuoteSupport/QuoteSupportList";
-import QuoteSupportTicket from "../pages/User/SupportView/TicketingSystemComponent/QuoteSupport/QuoteSupportTicket";
 import InsuredPersonSupportTicket from "../pages/User/SupportView/InsuredPersonSupportTicket";
 import SupportFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/SupportFormDetail";
 import QuoteFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/QuoteFormDetail";
@@ -379,12 +374,7 @@ export const routes = [
     isPrivate: false,
   },
 
-  // {
-  //   path: "/user/Support/TicketsList/:lang",
-  //   component: SupportView,
-  //   isPrivate: false,
-  // }
-  ,
+  
   {
 
     path: "/SubmitNewTickets/:lang",
@@ -392,11 +382,7 @@ export const routes = [
     isPrivate: false,
   },
 
-  {
-    path: "/Tickets/:id/:lang",
-    component: Tickets,
-    isPrivate: false,
-  },
+  
 
   {
     path: "/admin/Contactus/:lang",
@@ -419,34 +405,8 @@ export const routes = [
     isPrivate: false,
   },
 
-  {
-    path: "/ContactSupportList/:lang",
-    component: ContactSupportList,
-    isPrivate: false,
-  },
 
-  {
-    path: "/ContactSupportTicket/:id/:lang",
-    component: ContactSupportTicket,
-    isPrivate: false,
-  },
-
-  {
-    path: "/QuoteSupportList/:lang",
-    component: QuoteSupportList,
-    isPrivate: false,
-  },
-  {
-    path: "/QuoteSupportTicket/:id/:lang",
-    component: QuoteSupportTicket,
-    isPrivate: false,
-  },
-
-  // {
-  //   path: "/InsuredPersonSupportList/:lang",
-  //   component:  InsuredPersonSupportList  ,
-  //   isPrivate: false,
-  // },
+  
   {
     path: "/InsuredPersonSupportTicket/:id/:lang",
     component: InsuredPersonSupportTicket,
@@ -553,12 +513,6 @@ export const routes = [
     isPrivate: false,
   },
 
-  // {
-  //   path: "/user/Support/TicketsList",
-  //   component: SupportView,
-  //   isPrivate: false,
-  // }
-  ,
   {
 
     path: "/SubmitNewTickets",
@@ -566,11 +520,7 @@ export const routes = [
     isPrivate: false,
   },
 
-  {
-    path: "/Tickets/:id",
-    component: Tickets,
-    isPrivate: false,
-  },
+  
 
   {
     path: "/admin/Contactus",
@@ -588,28 +538,6 @@ export const routes = [
     isPrivate: false,
   },
 
-  {
-    path: "/ContactSupportList",
-    component: ContactSupportList,
-    isPrivate: false,
-  },
-
-  {
-    path: "/ContactSupportTicket/:id",
-    component: ContactSupportTicket,
-    isPrivate: false,
-  },
-
-  {
-    path: "/QuoteSupportList",
-    component: QuoteSupportList,
-    isPrivate: false,
-  },
-  {
-    path: "/QuoteSupportTicket/:id",
-    component: QuoteSupportTicket,
-    isPrivate: false,
-  },
 
   {
     path: "/InsuredPersonSupportList",

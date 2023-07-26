@@ -1,6 +1,0 @@
- <div>
-                            {row?.answer ? 
-                               <p>{row?.answer.answer_text}</p> : 
-                               <QuoteReplyAnswerForm quote_reply_id={row?.id} setErrorMessage={setErrorMessage} setSuccessMessage={setSuccessMessage} getQuoteFormDetail={getQuoteFormDetail}/>
-                            }
-                            </div>
