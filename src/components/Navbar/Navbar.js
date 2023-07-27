@@ -85,7 +85,7 @@ function Navbar() {
                   </Link>
                   <Link
                     className="appbar__linksBox__links__link"
-                    to={`/claims/${lang === "pl" ? "pl" : "en"}`}
+                    to={`/t("nav.claims")/${lang === "pl" ? "pl" : "en"}`}
                   >
                     {t("nav.claims")}
                   </Link>

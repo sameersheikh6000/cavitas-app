@@ -245,7 +245,7 @@ export const routes = [
   },
 
   {
-    path: "/claims/:lang",
+    path: "/claims/:lang", 
     component: Claims,
     isPrivate: false,
   },
