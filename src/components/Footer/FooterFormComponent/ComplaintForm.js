@@ -5,7 +5,6 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import useClientInsurance from "../../../hooks/useClientInsurance";
-
 function ComplaintForm() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();

@@ -32,7 +32,6 @@ import AdminUploadCavitasDocuments from "../pages/Admin/CavitasDocuments";
 import ContactFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/ContactFormDetail";
 import SubmitNewTickets from "../pages/User/SupportView/TicketingSystemComponent/SubmitNewTickets/SubmitNewTickets";
 import InsuredPerson from "../pages/Admin/ApprovalFile/SupportComponent/InsuredPerson";
-import GetQuote from "../pages/Admin/ApprovalFile/SupportComponent/GetQuote";
 import InsuredPersonSupportTicket from "../pages/User/SupportView/InsuredPersonSupportTicket";
 import SupportFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/SupportFormDetail";
 import QuoteFormDetail from "../pages/Admin/ApprovalFile/SupportComponent/TicketComponent/QuoteFormDetail";
@@ -383,12 +382,6 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/GetQuote/:lang",
-    component: GetQuote,
-    isPrivate: false,
-  },
-
-  {
     path: "/InsuredPersonSupportTicket/:id/:lang",
     component: InsuredPersonSupportTicket,
     isPrivate: false,
@@ -505,12 +498,6 @@ export const routes = [
     component: InsuredPerson,
     isPrivate: false,
   },
-  {
-    path: "/GetQuote",
-    component: GetQuote,
-    isPrivate: false,
-  },
-
   {
     path: "/InsuredPersonSupportList",
     component: InsuredPersonSupportList,

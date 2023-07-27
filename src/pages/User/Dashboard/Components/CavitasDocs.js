@@ -4,14 +4,7 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
 import TextSnippetOutlinedIcon from "@mui/icons-material/TextSnippetOutlined";
 import { useNavigate } from "react-router-dom";
-import useUsers from "../../../../hooks/useUsers";
-import DeleteUserConfirmModal from "../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs";
-import SuccessMessage from "../../../../components/SnackbarMessages/SuccessMessage";
-import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 import useCavitasDocs from "../../../../hooks/useCavitasDocs";
-import { API_KEY } from "../../../../config/helpers/variables";
-import DeleteCavitasDocs from "../../../Admin/CavitasDocuments/Components/DeleteCavitasDocs";
-import UpdateCavitasDocs from "../../../Admin/CavitasDocuments/Components/UpdateCavitasDocs";
 const CavitasDocs = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();

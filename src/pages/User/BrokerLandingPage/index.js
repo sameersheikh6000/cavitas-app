@@ -5,10 +5,6 @@ import BenefitPlan from './Components/BenefitPlan';
 import ClientDeserve from './Components/ClientDeserve';
 import Conversation from './Components/Conversation';
 import CoverWorks from './Components/CoverWorks';
-// import HowItWork from './Components/HowItWork';
-// import OurOffer from './Components/OurOffer';
-// import SmartInsurance from './Components/SmartInsurance';
-// import ValuableReadings from './Components/ValuableReadings';
 const BrokerLandingPage = () => {
   return (
     <Page>

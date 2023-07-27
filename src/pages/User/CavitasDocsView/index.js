@@ -7,7 +7,6 @@ import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
 import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import useCavitasDocs from '../../../hooks/useCavitasDocs';
-import { API_KEY } from '../../../config/helpers/variables';
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 
 const CavitasDocsView = () => {

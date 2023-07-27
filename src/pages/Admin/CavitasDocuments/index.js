@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 import useCavitasDocs from '../../../hooks/useCavitasDocs';
-import { useNavigate } from 'react-router-dom';
 import TextSnippetIcon from '@mui/icons-material/TextSnippet';
 import CreateCavitasDocs from './Components/CreateCavitasDocs';
 import Page from '../../../components/Page/Page';

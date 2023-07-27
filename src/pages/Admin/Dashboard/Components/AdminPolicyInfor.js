@@ -1,13 +1,7 @@
 import { Button } from '@mui/material'
 import React, { useState, useEffect } from 'react'
-import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import { useNavigate } from 'react-router-dom';
-import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 import usePolicyInformation from '../../../../hooks/usePolicyInoformation';
-import PolicyInoformationCreate from '../../PolicyInformation/Components/PolicyInformationCreate';
-import SuccessMessage from '../../../../components/SnackbarMessages/SuccessMessage';
-import PolicyInoformationUpdate from '../../PolicyInformation/Components/PolicyInoformationUpdate';
-import PolicyInoformationDestroy from '../../PolicyInformation/Components/PolicyInformationDestroy';
 import PolicyIcon from '@mui/icons-material/Policy';
 
 const AdminPolicyInfor = () => {

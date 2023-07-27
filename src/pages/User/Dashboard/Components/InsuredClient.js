@@ -5,7 +5,6 @@ import i18n from "../../../../config/helpers/i18n";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import { useNavigate } from "react-router-dom";
 import useClientInsurance from "../../../../hooks/useClientInsurance";
-import moment from "moment";
 import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 
 const InsuredClient = () => {

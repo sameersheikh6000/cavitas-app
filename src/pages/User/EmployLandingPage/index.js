@@ -5,10 +5,6 @@ import BenefitPlan from './Components/BenefitPlan';
 import Conversation from './Components/Conversation';
 import HealthyTeeth from './Components/HealthyTeeth';
 import EmployerCoverWorks from './Components/CoverWork';
-// import HowItWork from './Components/HowItWork';
-// import OurOffer from './Components/OurOffer';
-// import SmartInsurance from './Components/SmartInsurance';
-// import ValuableReadings from './Components/ValuableReadings';
 const EmployLandingPage = () => {
   return (
     <Page>

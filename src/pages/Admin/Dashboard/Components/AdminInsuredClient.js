@@ -1,54 +1,50 @@
-import React, { useState, useEffect } from 'react'
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
-import { Button } from '@mui/material'
-import useClientInsurance from '../../../../hooks/useClientInsurance';
-import BusinessCenterOutlinedIcon from '@mui/icons-material/BusinessCenterOutlined';
-import { useNavigate } from 'react-router-dom';
-import moment from 'moment';
-import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
+import React, { useState, useEffect } from "react";
+import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+import { Button } from "@mui/material";
+import useClientInsurance from "../../../../hooks/useClientInsurance";
+import { useNavigate } from "react-router-dom";
+import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
 
 const AdminInsuredClient = () => {
-
-
   const navigate = useNavigate();
   const { getInsuredClientsByAdmin } = useClientInsurance();
   const [insuredClientsList, setInsuredClientsList] = useState([]);
-  const [errorMessage, setErrorMessage] = useState(null)
-
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const getInsuredClientList = async () => {
-
     const response = await getInsuredClientsByAdmin();
     if (response.status < 300) {
-      console.log(response)
+      console.log(response);
       setInsuredClientsList(response.insured_clients);
-      console.log(insuredClientsList)
+      console.log(insuredClientsList);
     } else {
-      setErrorMessage('Something went wrong!')
+      setErrorMessage("Something went wrong!");
 
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
     }
-  }
+  };
   useEffect(() => {
     getInsuredClientList();
   }, []);
   return (
-    <section className='dashboard__container__content__insuredClient'>
+    <section className="dashboard__container__content__insuredClient">
       <AlertMessage errorMessage={errorMessage} />
-      <header className='dashboard__container__content__insuredClient__header'>
-        <div className='dashboard__container__content__insuredClient__header__iconBox'>
-          < VerifiedUserIcon lassName='dashboard__container__content__insuredClient__header__iconBox__icon' />
+      <header className="dashboard__container__content__insuredClient__header">
+        <div className="dashboard__container__content__insuredClient__header__iconBox">
+          <VerifiedUserIcon lassName="dashboard__container__content__insuredClient__header__iconBox__icon" />
           <p>Insured Persons</p>
         </div>
-        <Button size='small' onClick={() => navigate("/admin/PannelData")}>View all</Button>
+        <Button size="small" onClick={() => navigate("/admin/PannelData")}>
+          View all
+        </Button>
       </header>
-      {insuredClientsList.length > 0 ?
-      <div className='dashboard__container__content__insuredClient__details'>
-        <table className='dashboard__container__content__insuredClient__details__table'>
-        <thead>
-        <tr>
+      {insuredClientsList.length > 0 ? (
+        <div className="dashboard__container__content__insuredClient__details">
+          <table className="dashboard__container__content__insuredClient__details__table">
+            <thead>
+              <tr>
                 <th>Risk country</th>
                 <th>Type of insurance</th>
                 <th>Insurance plan</th>
@@ -87,7 +83,7 @@ const AdminInsuredClient = () => {
               </tr>
             </thead>
             <tbody>
-            { insuredClientsList.map((row, index) => (
+              {insuredClientsList.map((row, index) => (
                 <tr key={index}>
                   <td>{row?.risk_country}</td>
                   <td>{row?.type_of_insurance}</td>
@@ -121,15 +117,11 @@ const AdminInsuredClient = () => {
                   <td>{row?.monthly_bc}</td>
                   <td>{row?.insurer}</td>
                   <td>{row?.mandated_broker}</td>
-
                 </tr>
-              ))
-                }
+              ))}
             </tbody>
 
-
-
-          {/* <thead>
+            {/* <thead>
             <tr>
               <th>Company Name</th>
               <th>Reg. No</th>
@@ -151,14 +143,15 @@ const AdminInsuredClient = () => {
               </tr>
             ))}
           </tbody> */}
-        </table>
-      </div>
-      :
-      <div style={{textAlign: "center", marginTop: "10%"}}>
-        <p style={{fontSize: "1.2rem", fontWeight: "bold"}}>No records.</p>
-      </div>}
+          </table>
+        </div>
+      ) : (
+        <div style={{ textAlign: "center", marginTop: "10%" }}>
+          <p style={{ fontSize: "1.2rem", fontWeight: "bold" }}>No records.</p>
+        </div>
+      )}
     </section>
-  )
-}
+  );
+};
 
-export default AdminInsuredClient
+export default AdminInsuredClient;

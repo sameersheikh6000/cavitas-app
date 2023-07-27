@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
-import { useTranslation } from 'react-i18next';
-import i18n from '../../config/helpers/i18n';
+import React, { useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../config/helpers/i18n";
 import { Link } from "react-router-dom";
 import ContactCavitas from "./FooterFormComponent/ContactCavitas";
 import ComplaintForm from "./FooterFormComponent/ComplaintForm";
@@ -22,7 +22,7 @@ const Footer = () => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, [])
+  }, []);
   return (
     <section className="footer">
       <div className="footer__container">
@@ -34,10 +34,11 @@ const Footer = () => {
         <div className="footer__container__top">
           <div className="footer__container__top__box">
             <p className="footer__container__top__box__details">
-            {t("footer.heading_1")}
-            <br />   {t("footer.heading_2")}
-             <br />    {t("footer.heading_3")}<br />
-             {t("footer.heading_4")}
+              {t("footer.heading_1")}
+              <br /> {t("footer.heading_2")}
+              <br /> {t("footer.heading_3")}
+              <br />
+              {t("footer.heading_4")}
             </p>
           </div>
           <div className="footer__container__top__box">
@@ -46,7 +47,6 @@ const Footer = () => {
               <ContactCavitas />
             </Link>
             <Link>
-
               <ComplaintForm />
             </Link>
             <Link>
@@ -54,25 +54,40 @@ const Footer = () => {
             </Link>
           </div>
           <div className="footer__container__top__box">
-          <Link to={`/about/${lang === "pl" ? "pl" : "en"}`} className="appbar__linksBox__links__link">
-                    {t("nav.aboutUs")}
-                  </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/Blog/${lang === "pl" ? lang : "en"}`}>
-                  {t("nav.Blog")}
-                  </Link>
-            <Link className="appbar__linksBox__links__link" to={`/faq/${lang === "pl" ? lang : "en"}`}>
-                  {t("nav.faq")}
-                  </Link>
-                  <Link className="appbar__linksBox__links__link" to={`/claims/${lang === "pl" ? lang : "en"}`}>
-                  {t("nav.claims")}
-                  </Link>
-            <Link to={`/Privacypolicy/${lang === "pl" ? "pl" : "en"}`}
-             onClick={handleLinkClick}>
-            {t("nav.PrivacyPolicy")}</Link>
+            <Link
+              to={`/about/${lang === "pl" ? "pl" : "en"}`}
+              className="appbar__linksBox__links__link"
+            >
+              {t("nav.aboutUs")}
+            </Link>
+            <Link
+              className="appbar__linksBox__links__link"
+              to={`/Blog/${lang === "pl" ? lang : "en"}`}
+            >
+              {t("nav.Blog")}
+            </Link>
+            <Link
+              className="appbar__linksBox__links__link"
+              to={`/faq/${lang === "pl" ? lang : "en"}`}
+            >
+              {t("nav.faq")}
+            </Link>
+            <Link
+              className="appbar__linksBox__links__link"
+              to={`/claims/${lang === "pl" ? lang : "en"}`}
+            >
+              {t("nav.claims")}
+            </Link>
+            <Link
+              to={`/Privacypolicy/${lang === "pl" ? "pl" : "en"}`}
+              onClick={handleLinkClick}
+            >
+              {t("nav.PrivacyPolicy")}
+            </Link>
             <Link to={"/Shop"}>{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">
-            <Link>   {t("footer.findus")}</Link>
+            <Link> {t("footer.findus")}</Link>
             <Link>
               <FacebookOutlinedIcon />
               {/* Facebook */}
@@ -81,7 +96,7 @@ const Footer = () => {
               <LinkedInIcon />
               {/* Linkedin */}
             </Link>
-            <Link >
+            <Link>
               <InstagramIcon />
             </Link>
           </div>

@@ -2,16 +2,9 @@ import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
-import EmailOutlined from "@mui/icons-material/EmailOutlined";
 import { useNavigate } from "react-router-dom";
 import GppGoodOutlinedIcon from "@mui/icons-material/GppGoodOutlined";
-import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
-import moment from "moment";
 import usePolicyInformation from "../../../../hooks/usePolicyInoformation";
-import PolicyInoformationCreate from "../../../Admin/PolicyInformation/Components/PolicyInformationCreate";
-import SuccessMessage from "../../../../components/SnackbarMessages/SuccessMessage";
-import PolicyInoformationUpdate from "../../../Admin/PolicyInformation/Components/PolicyInoformationUpdate";
-import PolicyInoformationDestroy from "../../../Admin/PolicyInformation/Components/PolicyInoformationUpdate";
 
 const GroupPolicyInfo = ({ user }) => {
   const currentUrl = window.location.href;

@@ -1,9 +1,9 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import SwipeableDrawer from '@mui/material/SwipeableDrawer';
-import IconButton from '@mui/material/IconButton';
-import Sidebar from './Sidebar';
-import MenuIcon from '@mui/icons-material/Menu';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import IconButton from "@mui/material/IconButton";
+import Sidebar from "./Sidebar";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function SidebarDrawer() {
   const [state, setState] = React.useState({
@@ -16,8 +16,8 @@ export default function SidebarDrawer() {
   const toggleDrawer = (anchor, open) => (event) => {
     if (
       event &&
-      event.type === 'keydown' &&
-      (event.key === 'Tab' || event.key === 'Shift')
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
     ) {
       return;
     }
@@ -27,7 +27,7 @@ export default function SidebarDrawer() {
 
   const list = (anchor) => (
     <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 300 }}
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 300 }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
@@ -38,9 +38,14 @@ export default function SidebarDrawer() {
 
   return (
     <div>
-      {['left',].map((anchor) => (
+      {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <IconButton onClick={toggleDrawer(anchor, true)} style={{ color: "white" }}><MenuIcon /></IconButton>
+          <IconButton
+            onClick={toggleDrawer(anchor, true)}
+            style={{ color: "white" }}
+          >
+            <MenuIcon />
+          </IconButton>
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}

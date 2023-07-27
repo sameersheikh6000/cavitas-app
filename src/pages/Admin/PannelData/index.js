@@ -1,14 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import moment from 'moment';
-import TextSnippetIcon from '@mui/icons-material/TextSnippet';
-import { Button } from '@mui/material'
 import Page from '../../../components/Page/Page';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 import useClientInsurance from '../../../hooks/useClientInsurance';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import { API_KEY } from '../../../config/helpers/variables';
 import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import ExportCsv from './Components/ExportCsv';
 
