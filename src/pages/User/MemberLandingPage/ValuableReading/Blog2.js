@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useEffect} from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
 import { useLocation } from "react-router-dom";
@@ -71,31 +71,3 @@ const Blog2 = () => {
 };
 
 export default Blog2;
-
-// Extra code add due to some time we need to add this!
-// <section className='valuableReadingView'>
-// <header>
-//   <h1>Sed do eiusmod tempor elit magna aliqua.</h1>
-//   <p>by cavitas | Dec 5, 2022 | All topics, For Brokers, For Employers, For Members</p>
-// </header>
-// <div className='valuableReadingView__container'>
-//   <div className='valuableReadingView__container__imageBox'>
-//     {id === 1 ?
-//       <img src={require("../../../../assets/ValuableReading-image.png")} alt='' />
-//       :
-//       <></>
-//     }
-//     {id === 2 ?
-//       <img src={require("../../../../assets/ValuableReading-image-1.png")} alt='' />
-//       :
-//       <></>
-//     }
-//     {id === 3 ?
-//       <img src={require("../../../../assets/ValuableReading-image-2.png")} alt='' />
-//       :
-//       <></>
-//     }
-//   </div>
-//   <p>Lorem ipsum dolor sit amet, consectetur neadipiscing elit, sed do eiusmod tempor dirincididunt magna liqua.</p>
-// </div>
-// </section>
