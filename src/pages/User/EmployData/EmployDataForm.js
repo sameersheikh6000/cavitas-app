@@ -30,17 +30,7 @@ const EmployDataForm = () => {
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
-
-  const [forms, setForms] = useState([]);
-
-  const handleAddMore = () => {
-    setForms((prevForms) => [...prevForms, {}]);
-  };
-
-  const handleDelete = (index) => {
-    setForms((prevForms) => prevForms.filter((form, i) => i !== index));
-  };
-
+  
   return (
     <Page>
       <div className="faq">
