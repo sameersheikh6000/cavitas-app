@@ -1,10 +1,9 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
-import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../../config/helpers/i18n';
 import { useNavigate } from "react-router-dom";
 import useForgotPassword from "../../../../hooks/useForgotPassword";
-import SuccessMessage from '../../../../components/SnackbarMessages/SuccessMessage';
-import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 
 const EnterMail = () => {
   const [successMessage, setSuccessMessage] = useState('');
@@ -12,6 +11,15 @@ const EnterMail = () => {
   const navigate = useNavigate();
   const { forgotPassword } = useForgotPassword();
   const [email, setEmail ] = useState('');
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -19,7 +27,7 @@ const EnterMail = () => {
     if(response?.status < 300){
       setSuccessMessage(response?.message)
       setTimeout(() => {
-        navigate('/')
+        navigate(`/${lang === "pl" ? lang : "en"}`)
       }, 3000);
       setEmail("");
     }else if(response?.status > 300){

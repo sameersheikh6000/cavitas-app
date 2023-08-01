@@ -197,6 +197,13 @@ function ContactCavitas() {
               {t("get24contactform.send")}
             </Button>
           </div>
+          <br />
+          <div className="landingPage__valuableReadings__header">
+            <p style={{ color: "black", fontSize:"16px" }}>
+              {" "}
+              www.cavitas.pl | +48 22 208 3430 | kontakt@cavitas.pl
+            </p>
+          </div>
         </Box>
       </Modal>
     </div>

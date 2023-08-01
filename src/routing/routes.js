@@ -58,6 +58,7 @@ import PrivacyPolicy from "../pages/User/Privacypolicy/index";
 import Shop from "../pages/User/Shop/Shop";
 import HomeRedirect from "./HomeRedirect";
 import AccountDelete from "../pages/User/DeleteAccount/AccountDelete";
+import EmployDataForm from "../pages/User/EmployData/EmployDataForm";
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
 export const routes = [
@@ -701,4 +702,10 @@ export const routes = [
     component: AccountDelete,
     isPrivate: false,
   },
+   // EmployerDataForm / Family form
+   {
+    path: "/Employdata/:lang",
+    component: EmployDataForm,
+    isPrivate: false,
+  }
 ];

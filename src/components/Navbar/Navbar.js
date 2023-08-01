@@ -9,7 +9,6 @@ import Sidebar from "../Sidebar/Sidebar";
 import SidebarDrawer from "../Sidebar/SidebarDrawer";
 import SidebarMenu from "../Sidebar/SidebarMenu";
 import { IconButton } from "@mui/material";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import {
   ADMIN_STORAGE_KEY,
   USER_STORAGE_KEY,
@@ -85,7 +84,7 @@ function Navbar() {
                   </Link>
                   <Link
                     className="appbar__linksBox__links__link"
-                    to={`/t("nav.claims")/${lang === "pl" ? "pl" : "en"}`}
+                    to={`/claims/${lang === "pl" ? "pl" : "en"}`}
                   >
                     {t("nav.claims")}
                   </Link>
