@@ -14,6 +14,7 @@ const EmployDataForm = () => {
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
+  
   return (
     <Page>
       <div className="faq">
