@@ -3,10 +3,12 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../../../../config/helpers/i18n';
 import { Link } from "react-router-dom";
 const PrivacyPolicy = () => {
-    const currentUrl = window.location.href;
+  const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-  const handleLinkClick = () => {
+
+  const handleLinkClick = (tabIndex) => {
+    localStorage.setItem("selectedTabIndex", tabIndex);
     window.scrollTo(0, 0);
   };
 
@@ -15,6 +17,7 @@ const PrivacyPolicy = () => {
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, [])
+
   return (
     <section className="aboutUs__privacyPolicy">
       <header>
@@ -22,7 +25,7 @@ const PrivacyPolicy = () => {
       </header>
       <div className="aboutUs__privacyPolicy__container">
         <div className="aboutUs__privacyPolicy__container__card">
-        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={handleLinkClick}>
+        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(0)}>
 
           <img
             src={require("../../../../assets/PrivacyPolicy-image.png")}
@@ -32,7 +35,7 @@ const PrivacyPolicy = () => {
           </Link>
         </div>
         <div className="aboutUs__privacyPolicy__container__card">
-        <Link to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`} onClick={handleLinkClick}>
+        <Link to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`} onClick={() => handleLinkClick(1)}>
 
           <img
             src={require("../../../../assets/PrivacyPolicy-image.png")}
@@ -42,7 +45,7 @@ const PrivacyPolicy = () => {
           </Link>
         </div>
         <div className="aboutUs__privacyPolicy__container__card">
-        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={handleLinkClick}>
+        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(3)}>
 
           <img
             src={require("../../../../assets/PrivacyPolicy-image.png")}

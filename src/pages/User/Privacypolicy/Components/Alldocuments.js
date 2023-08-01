@@ -47,6 +47,10 @@ function a11yProps(index) {
 export default function Alldocuments() {
   const [value, setValue] = React.useState(0);
   const { t } = useTranslation();
+  const selectedTabStyles = {
+    fontWeight: "bold",
+    color: "white",
+  };
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -56,9 +60,13 @@ export default function Alldocuments() {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+    const selectedTabIndex = localStorage.getItem("selectedTabIndex");
+    if (selectedTabIndex !== null) {
+      setValue(parseInt(selectedTabIndex));
+    }
   }, []);
 
-  return ( 
+  return (
     <Box sx={{ width: "100%", minWidth: "30rem" }}>
       <Box sx={{ borderBottom: 0.5, color:"rgba(0, 0, 0, 0.12)" }}>
 
@@ -71,30 +79,30 @@ export default function Alldocuments() {
         >
 
             <Tab
-            className="faq__tabs__tabsLabel"
+            className={value === 0 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
             // style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
-            style={{ fontSize:"15px", fontWeight:"bold", textTransform:"none" }}
+            style={value === 0 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
             label={t('Documents.Privacypolicy')}
             {...a11yProps(0)}
           />
            <Tab
-            className="faq__tabs__tabsLabel"
-            style={{ fontSize:"15px", fontWeight:"bold" ,textTransform:"none" }}
+            className={value === 1 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
+            style={value === 1 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
             label={t('Documents.Cookies')}
 
             {...a11yProps(1)}
           />
             <Tab
-            className="faq__tabs__tabsLabel"
-            style={{ fontSize:"15px", fontWeight:"bold", textTransform:"none"}}
+            className={value === 2 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
+            style={value === 2 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
             label={t('Documents.Complaint')}
 
             {...a11yProps(2)}
           />
 
           <Tab
-            className="faq__tabs__tabsLabel"
-            style={{ fontSize:"15px", fontWeight:"bold" ,textTransform:"none" }}
+            className={value === 3 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
+            style={value === 3 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
             label={t('Documents.agreement')}
             {...a11yProps(3)}
           />

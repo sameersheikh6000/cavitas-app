@@ -27,7 +27,7 @@ body Button {
   body h1 {
     font-size: 1.8rem !important;
   }
- 
+
 }
 
 .sidebar {
@@ -223,7 +223,7 @@ body Button {
   text-decoration: unset;
   font-size: 13px;
   white-space: nowrap;
-  
+
 }
 .appbar__linksBox__links a:hover,
 .appbar__linksBox__links a:focus,
@@ -556,7 +556,7 @@ font-size: 1rem !important;
         margin-left: 250px;
         border-radius: 1rem;
         padding-top: 10px;
-        padding-bottom: 10px;     
+        padding-bottom: 10px;
 } */
 .authentication__container__formContainer__forgotPassword {
   font-size: 14px;
@@ -1147,7 +1147,7 @@ font-size: 1rem !important;
 /* .dashboard__container__content__cavitasDocs__mysupporttickets__table {
                 min-width: 30rem;
               }
-                
+
                 .dashboard__container__content__cavitasDocs__mysupporttickets__table thead tr th {
                   font-weight: normal;
                   line-height: 40px;
@@ -1473,7 +1473,7 @@ font-size: 1rem !important;
 .landingPage__ourOffer__container__boxes__detailsContainer {
   border: 1px solid lightgray;
   border-radius: 1rem;
-  
+
   width: 500px;
   padding-bottom: 1rem;
 }
@@ -1651,7 +1651,7 @@ font-size: 1rem !important;
 .landingPage__howItwork__container__details__detailsContainer__box {
   display: flex;
   /* align-items: center; */
-  
+
 }
 .landingPage__howItwork__container__details__detailsContainer__box__icon {
   color: #dd3333;
@@ -2461,7 +2461,7 @@ font-size: 1rem !important;
 .aboutUs__ourStory__container__detailsBox__desc {
   color: #dd3333;
   font-weight: 500;
- 
+
   margin-top: 0.5rem;
 }
 .aboutUs__ourStory__container__detailsBox__desc1 {
@@ -3729,13 +3729,13 @@ body.active-modal {
 }
 
 
- 
+
  .confirmation-code {
   display: flex;
   width: 200px;
   letter-spacing: 20px;
   margin: 0;
-} 
+}
 
 .confirmation-code input {
   width: 50px;
@@ -3748,4 +3748,8 @@ body.active-modal {
   cursor: pointer;
   box-shadow: 0 0.5rem 1.5rem #fff;
   background-color: #fff;
-} 
+}
+
+.selectedTab {
+  color: white !important;
+}
