@@ -689,5 +689,53 @@
     "Complaint":"Complaint resolution",
     "agreement":"Broker agreement"
 
+  },
+  "Employdata":{
+    "Employdata_title":"Employee Data",
+    "Employdata_heading":"Accession declaration to the group Cavitas dental insurance contract",
+    "Cavitas_dentalinsurance":"CAVITAS DENTAL INSURANCE GROUP CONTRACT INFORMATION",
+    "Employer":"Employer",
+    "Insurance plan":"Insurance plan",
+    "same_insurance_plan":"The same insurance plan applies to employee and to all family members    ",
+    "Data_employ":"DATA OF EMPLOYEE",
+    "general":"Gerenal data",
+    "Mobile_number":"Mobile phone number",
+    "gender":"Gender",
+    "man":"Male",
+    "woman":"Female",
+    "address_residence":"Address of residence",
+    "number_house":"Number of house/appartment",
+    "city":"City",
+    "street":"Street name",
+    "postal_code":"Postal code",
+    "dental_insurance_plan":"CAVITAS DENTAL INSURANCE PLAN AND PREMIUM",
+    "IP":"Insurance plan",
+    "bronze/silver":"BRONZE / SILVER / GOLD",
+    "cover_type":"Cover type",
+    "selection":"Make a selection below",
+    "employ_only":"EMPLOYEE (Me) ONLY",
+    "couple":"COUPLE",
+    "family_couple":"FAMILY (Couple+child/ren)",
+    "single_parent":"SINGLE PARENT FAMILY (Employee + child/ren)",
+    "monthly_premium":"Monthly premium",
+    "xxxx":"",
+    "Data_coinsured":"DATA OF CO-INSURED MEMBERS OF THE EMPLOYEE",
+    "Data_coinsured_heading":"To be completed only in the case of cover type COUPLE, FAMILY or SINGLE PARENT FAMILY.",
+    "coinsured_member":"CO-INSURED MEMBER",
+    "supose":"SPOUSE/PARTNER",
+    "child":"CHILD (up to 23 years old)",
+    "general_data":"General data of co-insured",
+    "first_name":"First name",
+    "last_name":"Last name",
+    "pesel":"PESEL of the co-insured",
+    "email":"E-mail of the co-insured",
+    "mobile":"Mobile number of the co-insured",
+    "declaration":"DECLARATION",
+    "declaration_para1":"I, the undersigned, declare that I want to take advantage of the reservation of insurance cover for myself and my family members under the group Cavitas dental insurance contract concluded between my employer and insurer Hamilton DAC. I acknowledge and fully understand the scope of insurance coverage, including any exclusions, the specified sums insured, and the applicable premium. Prior to giving my consent to be covered by the Cavitas dental insurance policy and committing to bear the cost of the insurance premium I have received and read the terms and conditions of the Cavitas dental insurance contract, including the insurance product short information.",
+    "declaration_para2":"By submitting this declaration, I willingly agree to all the terms and conditions set forth in the Cavitas dental insurance contract and accept the responsibilities associated with my and my family members' insurance coverage under this contract.",
+    "submit":"SUBMIT"
+
+
+
   }
 }
