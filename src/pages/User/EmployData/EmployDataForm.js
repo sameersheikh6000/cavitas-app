@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "@mui/material";
 import i18n from "../../../config/helpers/i18n";
@@ -8,6 +8,21 @@ const EmployDataForm = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
+  const [gender, setGender] = useState("");
+  const [familyType, setFamilyType] = useState("");
+  const [familyMember, setFamilyMember] = useState("");
+
+  const handleGenderChange = (event) => {
+    setGender(event.target.value);
+  };
+
+  const handleFamilyMemberChange = (event) => {
+    setFamilyMember(event.target.value);
+  };
+
+  const handleFamilyTypeChange = (event) => {
+    setFamilyType(event.target.value);
+  };
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -19,49 +34,58 @@ const EmployDataForm = () => {
     <Page>
       <div className="faq">
         <header>
-          <h1 style={{ color: "#dd3333" }}>Employee Data</h1>
+          <h1 style={{ color: "#dd3333" }}>
+            {t("Employdata.Employdata_title")}
+          </h1>
         </header>
       </div>
       <br />
       <section className="landingPage__valuableReadings">
         <header className="landingPage__valuableReadings__header">
-          <h2>
-            Accession declaration to the group Cavitas dental insurance contract
-          </h2>
+          <h2>{t("Employdata.Employdata_heading")}</h2>
         </header>
 
         {/*Part 1  */}
-        <div className="uploadClient__container">
+        <div className="uploadClient__container" style={{ marginTop: "2rem" }}>
           <div
             style={{ padding: "0px 60px" }}
             className="uploadClient__container__body"
           >
             <div className="uploadClient__container__body__generalInfo">
               <p style={{ color: "#dd3333" }}>
-                CAVITAS DENTAL INSURANCE GROUP CONTRACT INFORMATION
+                {t("Employdata.Cavitas_dentalinsurance")}{" "}
               </p>
-              <p style={{ color: "rgb(151 183 183)" }}>Employer</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.Employer")}{" "}
+              </p>
               <input
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
+                style={{ marginTop: "0px" }}
                 name="name_company"
               />
-              <p style={{ color: "rgb(151 183 183)" }}>Insurance plan</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.Insurance plan")}{" "}
+              </p>
               <input
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
+                style={{ marginTop: "0px" }}
                 name="insurance_plan"
               />
               <p style={{ fontWeight: "normal" }}>
-                *The same insurance plan applies to employee and to all family
-                members
+                * {t("Employdata.same_insurance_plan")}
               </p>
             </div>
             {/*Part 2  */}
             <br />
             <div className="uploadClient__container__body__generalInfo">
-              <p style={{ color: "#dd3333" }}>DATA OF EMPLOYEE </p>
-              <p style={{ color: "rgb(151 183 183)" }}>Gerenal data</p>
+              <p style={{ color: "#dd3333" }}>{t("Employdata.Data_employ")} </p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {t("Employdata.general")}
+              </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
@@ -88,81 +112,137 @@ const EmployDataForm = () => {
                   <input type="email" name="email filled automatically" />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Mobile phone number*" />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.Mobile_number")}`}
+                  />
                 </div>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Gender</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.gender")}
+              </p>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>MAN</label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="male"
+                  checked={gender === "male"}
+                  onChange={handleGenderChange}
+                />
+                <label> {t("Employdata.man")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>WOMAN</label>
+                <input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                  checked={gender === "female"}
+                  onChange={handleGenderChange}
+                />
+                <label> {t("Employdata.woman")}</label>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Address of residence</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.address_residence")}
+              </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder={`Number of house/appartment*`}
+                    placeholder={`${t("Employdata.number_house")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Street name" />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.street")}`}
+                  />
                 </div>
               </div>
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`Postal code`} />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.postal_code")}`}
+                  />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="City" />
+                  <input type="text" placeholder={`${t("Employdata.city")}`} />
                 </div>
               </div>
             </div>
+            {/* part 3 */}
             <br />
             <div className="uploadClient__container__body__generalInfo">
               <p style={{ color: "#dd3333" }}>
-                CAVITAS DENTAL INSURANCE PLAN AND PREMIUM{" "}
+                {t("Employdata.dental_insurance_plan")}{" "}
               </p>
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "20%" }}>
                   <p style={{ color: "rgb(151 183 183)", paddingTop: "15px" }}>
-                    Insurance plan
+                    {t("Employdata.IP")}
                   </p>
                 </div>
                 <div style={{ width: "50%", marginRight: "320px" }}>
                   <input
                     type="text"
                     name="Last name of the employ filled automatically"
-                    placeholder="BRONZE / SILVER / GOLD"
+                    placeholder={`${t("Employdata.bronze/silver")}`}
                   />
                 </div>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Cover type</p>
-              <p>Make a selection below</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.cover_type")}
+              </p>
+              <p> {t("Employdata.selection")}</p>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>EMPLOYEE ONLY</label>
+                <input
+                  type="radio"
+                  name="familyType"
+                  value="employee"
+                  checked={familyType === "employee"}
+                  onChange={handleFamilyTypeChange}
+                />
+
+                <label> {t("Employdata.employ_only")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>COUPLE</label>
+                <input
+                  type="radio"
+                  name="familyType"
+                  value="couple"
+                  checked={familyType === "couple"}
+                  onChange={handleFamilyTypeChange}
+                />
+                <label> {t("Employdata.couple")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>FAMILY (Couple + child/ren)</label>
+                <input
+                  type="radio"
+                  name="familyType"
+                  value="family"
+                  checked={familyType === "family"}
+                  onChange={handleFamilyTypeChange}
+                />
+                <label> {t("Employdata.family_couple")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>SINGLE PARENT FAMILY (Employee + child/ren)</label>
+                <input
+                  type="radio"
+                  name="familyType"
+                  value="singleParentFamily"
+                  checked={familyType === "singleParentFamily"}
+                  onChange={handleFamilyTypeChange}
+                />
+                <label> {t("Employdata.single_parent")}</label>
               </div>
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "20%" }}>
                   <p style={{ paddingTop: "15px", color: "rgb(151 183 183)" }}>
-                    Monthly premium
+                    {t("Employdata.monthly_premium")}
                   </p>
                 </div>
                 <div style={{ width: "50%", marginRight: "320px" }}>
@@ -174,26 +254,38 @@ const EmployDataForm = () => {
                 </div>
               </div>
             </div>
+            <br />
+            {/* Part 4 */}
             <div className="uploadClient__container__body__generalInfo">
               <p style={{ color: "#dd3333" }}>
-                DATA OF Co-insured MEMBERS OF THE EMPLOYEE
+                {t("Employdata.Data_coinsured")}
               </p>
               <p style={{ fontWeight: "bold" }}>
-                To be completed only in the case of joining the insurance in the
-                form of a spouse/Partner Package, Family package or a single
-                parent package.
+                {t("Employdata.Data_coinsured_heading")}
               </p>
-              <p>1. Co-insured MEMBER</p>
+              <p> 1. {t("Employdata.coinsured_member")}</p>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>SPOUSE/PARTNER</label>
+                <input
+                  type="radio"
+                  name="familyMember"
+                  value="spousePartner"
+                  checked={familyMember === "spousePartner"}
+                  onChange={handleFamilyMemberChange}
+                />
+                <label> {t("Employdata.supose")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>CHILD(up to 23 years old)</label>
+                <input
+                  type="radio"
+                  name="familyMember"
+                  value="childUpTo23"
+                  checked={familyMember === "childUpTo23"}
+                  onChange={handleFamilyMemberChange}
+                />
+                <label> {t("Employdata.child")}</label>
               </div>
               <p style={{ color: "rgb(151 183 183)" }}>
-                General data of co-insured
+                {t("Employdata.general_data")}
               </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
@@ -201,11 +293,15 @@ const EmployDataForm = () => {
                   <input
                     type="text"
                     name="first_name"
-                    placeholder="First name"
+                    placeholder={`${t("Employdata.first_name")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Last name" name="Last_name" />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.last_name")}`}
+                    name="Last_name"
+                  />
                 </div>
               </div>
 
@@ -213,65 +309,172 @@ const EmployDataForm = () => {
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
                 name="Pesel number of the co-insured"
-                placeholder="PESEL of the co-insured"
+                placeholder={`${t("Employdata.pesel")}`}
               />
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="email"
                     name="email filled automatically"
-                    placeholder="E-mail of the co-insured"
+                    placeholder={`${t("Employdata.email")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder="Mobile phone number of the co-insured"
+                    placeholder={`${t("Employdata.mobile")}`}
                   />
                 </div>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Gender</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.gender")}
+              </p>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>MAN</label>
+                <input type="radio" name="man" />
+                <label>{t("Employdata.man")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>WOMAN</label>
+                <input type="radio" name="woman" />
+                <label>{t("Employdata.woman")}</label>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Address of residence</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.address_residence")}
+              </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder={`Number of house/appartment*`}
+                    placeholder={`${t("Employdata.number_house")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Street name" />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.street")}`}
+                  />
                 </div>
               </div>
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`Postal code`} />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.postal_code")}`}
+                  />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="City" />
+                  <input type="text" placeholder={`${t("Employdata.city")}`} />
+                </div>
+              </div>
+
+              <br />
+              <p> 2. {t("Employdata.coinsured_member")}</p>
+              <div className="uploadClient__container__body__participation__head">
+                <input type="radio" name="man" value={1} />
+                <label> {t("Employdata.supose")}</label>
+              </div>
+              <div className="uploadClient__container__body__participation__head">
+                <input type="radio" name="woman" value={1} />
+                <label> {t("Employdata.child")}</label>
+              </div>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {t("Employdata.general_data")}
+              </p>
+
+              <div className="userProfileView__container__details__detailsBox__feilds__container">
+                <div style={{ width: "49%" }}>
+                  <input
+                    type="text"
+                    name="first_name"
+                    placeholder={`${t("Employdata.first_name")}`}
+                  />
+                </div>
+                <div style={{ width: "49%" }}>
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.last_name")}`}
+                    name="Last_name"
+                  />
+                </div>
+              </div>
+
+              <input
+                className="uploadClient__container__body__generalInfo__input"
+                type="text"
+                name="Pesel number of the co-insured"
+                placeholder={`${t("Employdata.pesel")}`}
+              />
+              <div className="userProfileView__container__details__detailsBox__feilds__container">
+                <div style={{ width: "49%" }}>
+                  <input
+                    type="email"
+                    name="email filled automatically"
+                    placeholder={`${t("Employdata.email")}`}
+                  />
+                </div>
+                <div style={{ width: "49%" }}>
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.mobile")}`}
+                  />
+                </div>
+              </div>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.gender")}
+              </p>
+              <div className="uploadClient__container__body__participation__head">
+                <input type="radio" name="man" value={1} />
+                <label>{t("Employdata.man")}</label>
+              </div>
+              <div className="uploadClient__container__body__participation__head">
+                <input type="radio" name="woman" value={1} />
+                <label>{t("Employdata.woman")}</label>
+              </div>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.address_residence")}
+              </p>
+
+              <div className="userProfileView__container__details__detailsBox__feilds__container">
+                <div style={{ width: "49%" }}>
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.number_house")}`}
+                  />
+                </div>
+                <div style={{ width: "49%" }}>
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.street")}`}
+                  />
+                </div>
+              </div>
+              <div className="userProfileView__container__details__detailsBox__feilds__container">
+                <div style={{ width: "49%" }}>
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.postal_code")}`}
+                  />
+                </div>
+                <div style={{ width: "49%" }}>
+                  <input type="text" placeholder={`${t("Employdata.city")}`} />
                 </div>
               </div>
               <br />
-              <p>2. Co-insured MEMBER</p>
+              <p> 3. {t("Employdata.coinsured_member")}</p>
               <div className="uploadClient__container__body__participation__head">
                 <input type="radio" name="man" value={1} />
-                <label>SPOUSE/PARTNER</label>
+                <label> {t("Employdata.supose")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
                 <input type="radio" name="woman" value={1} />
-                <label>CHILD(up to 23 years old)</label>
+                <label> {t("Employdata.child")}</label>
               </div>
               <p style={{ color: "rgb(151 183 183)" }}>
-                General data of co-insured
+                {t("Employdata.general_data")}
               </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
@@ -279,11 +482,15 @@ const EmployDataForm = () => {
                   <input
                     type="text"
                     name="first_name"
-                    placeholder="First name"
+                    placeholder={`${t("Employdata.first_name")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Last name" name="Last_name" />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.last_name")}`}
+                    name="Last_name"
+                  />
                 </div>
               </div>
 
@@ -291,65 +498,77 @@ const EmployDataForm = () => {
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
                 name="Pesel number of the co-insured"
-                placeholder="PESEL of the co-insured"
+                placeholder={`${t("Employdata.pesel")}`}
               />
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="email"
                     name="email filled automatically"
-                    placeholder="E-mail of the co-insured"
+                    placeholder={`${t("Employdata.email")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder="Mobile phone number of the co-insured"
+                    placeholder={`${t("Employdata.mobile")}`}
                   />
                 </div>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Gender</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.gender")}
+              </p>
               <div className="uploadClient__container__body__participation__head">
                 <input type="radio" name="man" value={1} />
-                <label>MAN</label>
+                <label>{t("Employdata.man")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
                 <input type="radio" name="woman" value={1} />
-                <label>WOMAN</label>
+                <label>{t("Employdata.woman")}</label>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Address of residence</p>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.address_residence")}
+              </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder={`Number of house/appartment*`}
+                    placeholder={`${t("Employdata.number_house")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Street name" />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.street")}`}
+                  />
                 </div>
               </div>
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`Postal code`} />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.postal_code")}`}
+                  />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="City" />
+                  <input type="text" placeholder={`${t("Employdata.city")}`} />
                 </div>
               </div>
               <br />
-              <p>3. Co-insured MEMBER</p>
+              <p> 4. {t("Employdata.coinsured_member")}</p>
               <div className="uploadClient__container__body__participation__head">
                 <input type="radio" name="man" value={1} />
-                <label>SPOUSE/PARTNER</label>
+                <label> {t("Employdata.supose")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
                 <input type="radio" name="woman" value={1} />
-                <label>CHILD(up to 23 years old)</label>
+                <label> {t("Employdata.child")}</label>
               </div>
               <p style={{ color: "rgb(151 183 183)" }}>
-                General data of co-insured
+                {t("Employdata.general_data")}
               </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
@@ -357,11 +576,15 @@ const EmployDataForm = () => {
                   <input
                     type="text"
                     name="first_name"
-                    placeholder="First name"
+                    placeholder={`${t("Employdata.first_name")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Last name" name="Last_name" />
+                  <input
+                    type="text"
+                    placeholder={`${t("Employdata.last_name")}`}
+                    name="Last_name"
+                  />
                 </div>
               </div>
 
@@ -369,163 +592,81 @@ const EmployDataForm = () => {
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
                 name="Pesel number of the co-insured"
-                placeholder="PESEL of the co-insured"
+                placeholder={`${t("Employdata.pesel")}`}
               />
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="email"
                     name="email filled automatically"
-                    placeholder="E-mail of the co-insured"
+                    placeholder={`${t("Employdata.email")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder="Mobile phone number of the co-insured"
+                    placeholder={`${t("Employdata.mobile")}`}
                   />
                 </div>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Gender</p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>MAN</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>WOMAN</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Address of residence</p>
-
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`Number of house/appartment*`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Street name" />
-                </div>
-              </div>
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`Postal code`} />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="City" />
-                </div>
-              </div>
-              <br />
-              <p>4. Co-insured MEMBER</p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>SPOUSE/PARTNER</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>CHILD(up to 23 years old)</label>
               </div>
               <p style={{ color: "rgb(151 183 183)" }}>
-                General data of co-insured
+                {" "}
+                {t("Employdata.gender")}
+              </p>
+              <div className="uploadClient__container__body__participation__head">
+                <input type="radio" name="man" value={1} />
+                <label>{t("Employdata.man")}</label>
+              </div>
+              <div className="uploadClient__container__body__participation__head">
+                <input type="radio" name="woman" value={1} />
+                <label>{t("Employdata.woman")}</label>
+              </div>
+              <p style={{ color: "rgb(151 183 183)" }}>
+                {" "}
+                {t("Employdata.address_residence")}
               </p>
 
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    name="first_name"
-                    placeholder="First name"
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Last name" name="Last_name" />
-                </div>
-              </div>
-
-              <input
-                className="uploadClient__container__body__generalInfo__input"
-                type="text"
-                name="Pesel number of the co-insured"
-                placeholder="PESEL of the co-insured"
-              />
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="email"
-                    name="email filled automatically"
-                    placeholder="E-mail of the co-insured"
+                    placeholder={`${t("Employdata.number_house")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder="Mobile phone number of the co-insured"
+                    placeholder={`${t("Employdata.street")}`}
                   />
                 </div>
               </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Gender</p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>MAN</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>WOMAN</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>Address of residence</p>
-
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
-                    placeholder={`Number of house/appartment*`}
+                    placeholder={`${t("Employdata.postal_code")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="Street name" />
-                </div>
-              </div>
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`Postal code`} />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder="City" />
+                  <input type="text" placeholder={`${t("Employdata.city")}`} />
                 </div>
               </div>
             </div>
             <br />
             <div className="uploadClient__container__body__generalInfo">
-              <p style={{ color: "#dd3333" }}>DECLARATION </p>
+              <p style={{ color: "#dd3333" }}> {t("Employdata.declaration")}</p>
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <p style={{ textAlign: "justify" }}>
-                  I, the undersigned, declare that I want to take advantage of
-                  the reservation of insurance cover for myself and my family
-                  members under the group Cavitas dental insurance contract
-                  concluded between my employer and insurer Hamilton DAC. I
-                  acknowledge and fully understand the scope of insurance
-                  coverage, including any exclusions, the specified sums
-                  insured, and the applicable premium. Prior to giving my
-                  consent to be cove#dd3333 by the Cavitas dental insurance
-                  policy and committing to bear the cost of the insurance
-                  premium I have received and read the terms and conditions of
-                  the Cavitas dental insurance contract, including the insurance
-                  product short information.
+                  {t("Employdata.declaration_para1")}
                 </p>
-                <p>
-                  By submitting this declaration, I willingly agree to all the
-                  terms and conditions set forth in the Cavitas dental insurance
-                  contract and accept the responsibilities associated with my
-                  and my family members' insurance coverage under this contract.
-                </p>
+                <p>{t("Employdata.declaration_para2")}</p>
               </div>
             </div>
             <div
               className="landingPage__clientDeserve__container"
               style={{ width: "auto" }}
             >
-              <Button>Submit</Button>
+              <Button> {t("Employdata.submit")}</Button>
             </div>{" "}
           </div>
         </div>
