@@ -624,6 +624,10 @@ const EmployDataForm = () => {
                     : "Add Co-Insured Member.."}
                 </button>
               </div>
+              {/* <button onClick={() => handleDelete(forms.length - 1)}>Delete</button> */}
+              {forms.map((form, index) => (
+                <Form key={index} onDelete={() => handleDelete(index)} />
+              ))}
             </div>
             <br />
             <div className="uploadClient__container__body__generalInfo">
