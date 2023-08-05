@@ -315,7 +315,9 @@ body Button {
 .footer__container__copyRight {
   font-size: 0.8rem;
   color: white;
-  margin-top: 3rem;
+  display: flex;
+  /* justify-content: center; */
+  margin-top: 2rem;
 }
 
 .authentication {
@@ -606,7 +608,7 @@ font-size: 1rem !important;
   max-width: 500px;
   width: 100%;
 }
-@media (max-width: 475px) {
+@media (max-width: 480px) {
   .authentication__container__formContainer__registerForm div {
     justify-content: center;
     margin-top: 0rem;
@@ -622,7 +624,7 @@ font-size: 1rem !important;
   margin: 0.5rem;
   transition: width 0.5s;
 }
-@media (max-width: 475px) {
+@media (max-width: 480px) {
   .authentication__container__formContainer__registerForm div input {
     width: 100%;
   }
@@ -637,7 +639,7 @@ font-size: 1rem !important;
   font-weight: 400 !important;
   font-family: "poppins" !important;
 }
-@media (max-width: 475px) {
+@media (max-width: 480px) {
   .authentication__container__formContainer__registerForm__registerButton {
     margin-top: 1rem !important;
     width: 95% !important;
@@ -3503,7 +3505,7 @@ font-size: 1rem !important;
 
 }
 .Blog3_header{
-  background-image: url("./assets/NavbarBG-image.png");
+  /* background-image: url("./assets/NavbarBG-image.png"); */
   width: 105%;
 }
 @media (max-width: 1250px) {
@@ -3752,4 +3754,72 @@ body.active-modal {
 
 .selectedTab {
   color: white !important;
+}
+
+/* Mobile responsive setup */
+
+@media (max-width: 480px) {
+  /* landing page */
+  .landingPage__smartInsurance__container__details__heading2 {
+    padding: 2px;
+  }
+  .landingPage__smartInsurance__container__picture{
+    margin-left: -2rem;
+  }
+  .landingPage__ourOffer__container__boxes__detailsContainer{
+    padding: 30px;
+  }
+  .landingPage__ourOffer__header p{
+    margin-left: 20px;
+  }
+  .landingPage__allCare__container__details__imageContainer{
+    display: flex;
+    justify-content: space-around;
+  }
+  .landingPage__valuableReadings__container{
+    margin-right: 40px;
+  }
+  .MuiPaper-root .MuiMenu-paper .MuiPaper-elevation .MuiPaper-rounded .MuiPaper-elevation8 .MuiPopover-paper .css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{
+  left: 180px;
+  }
+  .footer__container__copyRight{
+    justify-content: center;
+  }
+  /* About page */
+  .aboutUs__cavitasMeaning__detailsBox{
+    width: 130%;
+  }
+  .aboutUs__ourStory{
+    padding: 0 2rem;
+  }
+  /* FAQ */
+  .faq__tabs{
+    padding: 1rem 0rem;
+  }
+  .faq header h1{
+    padding-top: 30px;
+  }
+  /* member login */
+  .landingPage__dentaltInsurance__container__details__buttons{
+    justify-content: space-around;
+  }
+  .landingPage__dentaltInsurance__container__picture{
+    width: 140%;
+  }
+  /* Blog */
+  .landingPage__valuableReadings {
+    margin: 60px;
+  }
+  /* Blog 1 2 3 */
+  .valuableReadingView__container p{
+    padding: 0px 50px;
+  }
+  .valuableReadingView h1 {
+    margin-top: 50px;
+  }
+  .Blog3_header h1{
+    padding: 20px;
+    background-image: url("./assets/NavbarBG-image.png");
+width: 100%;
+  }
 }
