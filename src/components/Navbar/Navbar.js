@@ -116,12 +116,12 @@ function Navbar() {
                 </div>
               </Box>
               <Box className="appbar__sidebar1">
-                <IconButton>
+                {/* <IconButton>
                   <ShoppingCartOutlinedIcon
                     className="appbar__sidebar1__icon"
                     onClick={() => navigate("/cart")}
                   />
-                </IconButton>
+                </IconButton> */}
                 <div>
                   <SidebarMenu />
                 </div>

@@ -49,12 +49,6 @@ const AllCare = () => {
                 {t("home.Easyformember_desc4")}{" "}
               </p>
             </div>
-            {/* <div className='landingPage__allCare__container__details__detailsContainer__box'>
-              <DoneIcon className='landingPage__allCare__container__details__detailsContainer__box__icon' />
-              <p className='landingPage__allCare__container__details__detailsContainer__box__text'>
-                Shop for teeth care products.
-              </p>
-            </div> */}
           </div>
           <div className="landingPage__allCare__container__details__imageContainer">
             <img

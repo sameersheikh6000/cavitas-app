@@ -12,13 +12,13 @@ export default function SidebarMenu() {
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
   return (
-    <PopupState variant="popover" popupId="demo-popup-menu">
+    <PopupState variant="popover" popupId="demo-popup-menu" >
       {(popupState) => (
-        <React.Fragment>
+        <React.Fragment >
           <IconButton {...bindTrigger(popupState)}>
             <MenuIcon style={{ color: "#DD3333" }} />
           </IconButton>
-            <Menu {...bindMenu(popupState)}>
+            <Menu {...bindMenu(popupState)} >
               <MenuItem onClick={popupState.close}>
                 <Link className='appbar__menuLink' to="/about">About us</Link>
               </MenuItem>
@@ -29,14 +29,15 @@ export default function SidebarMenu() {
                 <Link className='appbar__menuLink' to="/claims">Claims</Link>
               </MenuItem>
               <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/member">Member login</Link>
+                <Link className='appbar__menuLink' to="/broker">Broker login</Link>
               </MenuItem>
               <MenuItem onClick={popupState.close}>
                 <Link className='appbar__menuLink' to="/employ">Employer login</Link>
               </MenuItem>
               <MenuItem onClick={popupState.close}>
-                <Link className='appbar__menuLink' to="/broker">Broker login</Link>
+                <Link className='appbar__menuLink' to="/member">Member login</Link>
               </MenuItem>
+              
             </Menu>
         </React.Fragment>
       )}
