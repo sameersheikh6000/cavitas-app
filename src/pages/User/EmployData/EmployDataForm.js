@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@mui/material";
 import i18n from "../../../config/helpers/i18n";
 import Page from "../../../components/Page/Page";
+import Form from "./Form";
 
 const EmployDataForm = () => {
   const currentUrl = window.location.href;
@@ -29,7 +30,17 @@ const EmployDataForm = () => {
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
-  
+
+  const [forms, setForms] = useState([]);
+
+  const handleAddMore = () => {
+    setForms((prevForms) => [...prevForms, {}]);
+  };
+
+  const handleDelete = (index) => {
+    setForms((prevForms) => prevForms.filter((form, i) => i !== index));
+  };
+
   return (
     <Page>
       <div className="faq">
@@ -368,289 +379,24 @@ const EmployDataForm = () => {
                   <input type="text" placeholder={`${t("Employdata.city")}`} />
                 </div>
               </div>
-
               <br />
-              <p> 2. {t("Employdata.coinsured_member")}</p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label> {t("Employdata.supose")}</label>
+            </div>
+            <div>
+              <div
+                className="landingPage__clientDeserve__container"
+                style={{ alignItems: "start" }}
+              >
+                <button
+                  style={{ width: "auto", border: "none" }}
+                  onClick={handleAddMore}
+                >
+                  Add more
+                </button>
               </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label> {t("Employdata.child")}</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {t("Employdata.general_data")}
-              </p>
-
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    name="first_name"
-                    placeholder={`${t("Employdata.first_name")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.last_name")}`}
-                    name="Last_name"
-                  />
-                </div>
-              </div>
-
-              <input
-                className="uploadClient__container__body__generalInfo__input"
-                type="text"
-                name="Pesel number of the co-insured"
-                placeholder={`${t("Employdata.pesel")}`}
-              />
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="email"
-                    name="email filled automatically"
-                    placeholder={`${t("Employdata.email")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.mobile")}`}
-                  />
-                </div>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {" "}
-                {t("Employdata.gender")}
-              </p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>{t("Employdata.man")}</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>{t("Employdata.woman")}</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {" "}
-                {t("Employdata.address_residence")}
-              </p>
-
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.number_house")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.street")}`}
-                  />
-                </div>
-              </div>
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.postal_code")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`${t("Employdata.city")}`} />
-                </div>
-              </div>
-              <br />
-              <p> 3. {t("Employdata.coinsured_member")}</p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label> {t("Employdata.supose")}</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label> {t("Employdata.child")}</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {t("Employdata.general_data")}
-              </p>
-
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    name="first_name"
-                    placeholder={`${t("Employdata.first_name")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.last_name")}`}
-                    name="Last_name"
-                  />
-                </div>
-              </div>
-
-              <input
-                className="uploadClient__container__body__generalInfo__input"
-                type="text"
-                name="Pesel number of the co-insured"
-                placeholder={`${t("Employdata.pesel")}`}
-              />
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="email"
-                    name="email filled automatically"
-                    placeholder={`${t("Employdata.email")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.mobile")}`}
-                  />
-                </div>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {" "}
-                {t("Employdata.gender")}
-              </p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>{t("Employdata.man")}</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>{t("Employdata.woman")}</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {" "}
-                {t("Employdata.address_residence")}
-              </p>
-
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.number_house")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.street")}`}
-                  />
-                </div>
-              </div>
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.postal_code")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`${t("Employdata.city")}`} />
-                </div>
-              </div>
-              <br />
-              <p> 4. {t("Employdata.coinsured_member")}</p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label> {t("Employdata.supose")}</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label> {t("Employdata.child")}</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {t("Employdata.general_data")}
-              </p>
-
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    name="first_name"
-                    placeholder={`${t("Employdata.first_name")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.last_name")}`}
-                    name="Last_name"
-                  />
-                </div>
-              </div>
-
-              <input
-                className="uploadClient__container__body__generalInfo__input"
-                type="text"
-                name="Pesel number of the co-insured"
-                placeholder={`${t("Employdata.pesel")}`}
-              />
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="email"
-                    name="email filled automatically"
-                    placeholder={`${t("Employdata.email")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.mobile")}`}
-                  />
-                </div>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {" "}
-                {t("Employdata.gender")}
-              </p>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="man" value={1} />
-                <label>{t("Employdata.man")}</label>
-              </div>
-              <div className="uploadClient__container__body__participation__head">
-                <input type="radio" name="woman" value={1} />
-                <label>{t("Employdata.woman")}</label>
-              </div>
-              <p style={{ color: "rgb(151 183 183)" }}>
-                {" "}
-                {t("Employdata.address_residence")}
-              </p>
-
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.number_house")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.street")}`}
-                  />
-                </div>
-              </div>
-              <div className="userProfileView__container__details__detailsBox__feilds__container">
-                <div style={{ width: "49%" }}>
-                  <input
-                    type="text"
-                    placeholder={`${t("Employdata.postal_code")}`}
-                  />
-                </div>
-                <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`${t("Employdata.city")}`} />
-                </div>
-              </div>
+              {/* <button onClick={() => handleDelete(forms.length - 1)}>Delete</button> */}
+              {forms.map((form, index) => (
+                <Form key={index} onDelete={() => handleDelete(index)} />
+              ))}
             </div>
             <br />
             <div className="uploadClient__container__body__generalInfo">
