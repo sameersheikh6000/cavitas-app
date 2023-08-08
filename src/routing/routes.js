@@ -686,6 +686,11 @@ export const routes = [
     isPrivate: false,
   },
   {
+    path: "/reset_password/:lang",
+    component: ResetPassword,
+    isPrivate: false,
+  },
+  {
     path: "/Shop",
     component: Shop,
     isPrivate: false,
