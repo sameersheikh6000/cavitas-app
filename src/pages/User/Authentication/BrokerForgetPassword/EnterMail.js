@@ -4,12 +4,15 @@ import { useTranslation } from 'react-i18next';
 import i18n from '../../../../config/helpers/i18n';
 import { useNavigate } from "react-router-dom";
 import useForgotPassword from "../../../../hooks/useForgotPassword";
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 const EnterMail = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
   const navigate = useNavigate();
   const { forgotPassword } = useForgotPassword();
+  const [isLoading, setIsLoading] = useState(false)
   const [email, setEmail ] = useState('');
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
@@ -23,15 +26,21 @@ const EnterMail = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true)
     const response = await forgotPassword(email);
     if(response?.status < 300){
       setSuccessMessage(response?.message)
+      setIsLoading(false)
       setTimeout(() => {
-        navigate(`/${lang === "pl" ? lang : "en"}`)
+        navigate(`/signin/${lang === "pl" ? lang : "en"}`)
       }, 3000);
       setEmail("");
     }else if(response?.status > 300){
+      setIsLoading(false)
       setAlertMessage(response?.message)
+      setTimeout(() => {
+        setAlertMessage('')
+      }, 3000);
     }
     
    
@@ -112,10 +121,14 @@ const EnterMail = () => {
             {alertMessage && <p style={{color: "red"}}><small>{alertMessage}</small></p>}
               <Button
                 style={{ borderRadius: "50px" }}
+                disabled={isLoading}
                 className="authentication__container__formContainer__form__forget__loginButton"
                 type="submit"
               >
-                Continue
+               { !isLoading ?
+                 'Continue' :
+                 <CircularProgress style={{width: '20px', height: '20px', color: 'white'}} />
+                }
               </Button>
           </form>
         </div>

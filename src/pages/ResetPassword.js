@@ -31,10 +31,27 @@ const ResetPassword = () => {
       const response = await resetPassword(credential);
       if (response?.status < 300) {
         setSuccessMessage(response?.message);
-        setTimeout(() => {
-          navigate("/");
-        }, 3000);
-
+        debugger
+        if( response?.role === 'broker') {
+          setTimeout(() => {
+            navigate(`/signin/${lang === 'pl' ? 'pl' : 'en'}`);            
+          }, 3000)
+        }
+        else if(response?.role === 'employ') {
+          setTimeout(() => {
+            navigate(`/employ-signin/${lang === 'pl' ? 'pl' : 'en'}`);            
+          }, 3000)
+        }
+        else if ( response?.role === 'member') {
+          setTimeout(() => {
+            navigate(`/member-signin/${lang === 'pl' ? 'pl' : 'en'}`);            
+          }, 3000)
+        }
+        else {
+          setTimeout(() => {
+            navigate(`/${lang === 'pl' ? 'pl' : 'en'}`);
+          }, 3000);
+        }
         setTimeout(() => {
           setSuccessMessage("");
         }, 5000);
