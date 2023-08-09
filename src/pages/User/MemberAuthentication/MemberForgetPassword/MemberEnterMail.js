@@ -1,28 +1,42 @@
 import { Button } from "@mui/material";
 import React, { useState } from "react";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { useNavigate } from "react-router-dom";
 import useForgotPassword from "../../../../hooks/useForgotPassword";
+import CircularProgress from '@mui/material/CircularProgress';
+
 const MemberEnterMail = () => {
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
   const [successMessage, setSuccessMessage] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
   const navigate = useNavigate();
   const { forgotPassword } = useForgotPassword();
   const [email, setEmail ] = useState('');
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true)
     const response = await forgotPassword(email);
     if(response?.status < 300){
+      setIsLoading(false)
       setSuccessMessage(response?.message)
       setTimeout(() => {
-        navigate('/')
+        navigate(`/member-signin/${lang === 'pl' ? 'pl' : 'en'}`)
       }, 3000);
       setEmail("");
     }else if(response?.status > 300){
+      setIsLoading(false)
       setAlertMessage(response?.message)
+      setTimeout(() => {
+        setAlertMessage('')
+      }, 3000);
     }
+  }
+  
+  const handleChange = (event) => {
+    setEmail(event.target.value)
   }
 
   return (
@@ -91,17 +105,21 @@ const MemberEnterMail = () => {
               placeholder="email address"
               name="email"
               value={email}
-              onChange={(e) => setEmail(e.target.email)}
+              onChange={(e) => handleChange(e)}
             />
             <br />
             {successMessage && <p style={{color: "green"}}><small>{successMessage}</small></p>}
             {alertMessage && <p style={{color: "red"}}><small>{alertMessage}</small></p>}
               <Button
                 style={{ borderRadius: "50px" }}
+                disabled={isLoading}
                 className="authentication__container__formContainer__form__forget__loginButton"
                 type="submit"
               >
-                Continue
+                { !isLoading ?
+                 'Continue' :
+                 <CircularProgress style={{width: '20px', height: '20px', color: 'white'}} />
+                }
               </Button>
           </form>
         </div>
