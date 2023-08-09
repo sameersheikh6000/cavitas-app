@@ -31,15 +31,20 @@ const EmployDataForm = () => {
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
 
+  const [showAddButton, setShowAddButton] = useState(true);
   const [forms, setForms] = useState([]);
 
   const handleAddMore = () => {
-    setForms((prevForms) => [...prevForms, {}]);
+    setForms([...forms, {}]);
+    setShowAddButton(false);
   };
 
   const handleDelete = (index) => {
-    setForms((prevForms) => prevForms.filter((form, i) => i !== index));
+    const updatedForms = forms.filter((_, i) => i !== index);
+    setForms(updatedForms);
+    setShowAddButton(true);
   };
+
   return (
     <Page>
       <div className="faq">
@@ -392,16 +397,18 @@ const EmployDataForm = () => {
             <div>
               <div
                 className="landingPage__clientDeserve__container"
-                style={{ alignItems: "start" }}
+                style={{ alignItems: "start", display: "inline" }}
               >
-                <button
-                  style={{ width: "auto", border: "none" }}
-                  onClick={handleAddMore}
-                >
-                  Add more
-                </button>
+                {showAddButton && (
+                  <button
+                    style={{ width: "auto", border: "none" }}
+                    onClick={handleAddMore}
+                  >
+                    Add more
+                  </button>
+                )}
               </div>
-              {/* <button onClick={() => handleDelete(forms.length - 1)}>Delete</button> */}
+
               {forms.map((form, index) => (
                 <Form key={index} onDelete={() => handleDelete(index)} />
               ))}
