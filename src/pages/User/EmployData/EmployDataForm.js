@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@mui/material";
 import i18n from "../../../config/helpers/i18n";
 import Page from "../../../components/Page/Page";
+import CancelIcon from '@mui/icons-material/Cancel';
 import Form from "./Form";
 
 const EmployDataForm = () => {
@@ -12,7 +13,36 @@ const EmployDataForm = () => {
   const [gender, setGender] = useState("");
   const [familyType, setFamilyType] = useState("");
   const [familyMember, setFamilyMember] = useState("");
+  
+  // changes
+  const [coInsuredMember, setCoInsuredMember] = useState([{name: '', age: ''}])
+  
+  const handleFormChange = (index, e) => {
+    let data = [...coInsuredMember];
+    data[index][e.target.name] = e.target.value;
+    setCoInsuredMember(data)
+  }
+  
+  const addFields = () => {
+    let newfield = { name: '', age: '' }
+    setCoInsuredMember([...coInsuredMember, newfield])
+  }
+  
+  const submit = (e) => {
+    e.preventDefault();
+    console.log(coInsuredMember)
+}
 
+const removeFields = (index) => {
+  let data = [...coInsuredMember];
+  data.splice(index, 1)
+    setCoInsuredMember(data)
+}
+  
+//changes
+  
+  
+  
   const handleGenderChange = (event) => {
     setGender(event.target.value);
   };
@@ -30,20 +60,6 @@ const EmployDataForm = () => {
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
-
-  const [showAddButton, setShowAddButton] = useState(true);
-  const [forms, setForms] = useState([]);
-
-  const handleAddMore = () => {
-    setForms([...forms, {}]);
-    setShowAddButton(false);
-  };
-
-  const handleDelete = (index) => {
-    const updatedForms = forms.filter((_, i) => i !== index);
-    setForms(updatedForms);
-    setShowAddButton(true);
-  };
 
   return (
     <Page>
@@ -280,7 +296,7 @@ const EmployDataForm = () => {
             </div>
             <br />
             {/* Part 4 */}
-            <div className="uploadClient__container__body__generalInfo">
+            {/* <div className="uploadClient__container__body__generalInfo">
               <p style={{ color: "#dd3333" }}>
                 {t("Employdata.Data_coinsured")}
               </p>
@@ -393,15 +409,140 @@ const EmployDataForm = () => {
                 </div>
               </div>
               <br />
-            </div>
+            </div> */}
             <div>
+              {coInsuredMember.map((input, index) => {
+                return (
+                  <div key={index}>
+                    <div className="uploadClient__container__body__generalInfo">
+                      <p style={{ color: "#dd3333" }}>
+                        {t("Employdata.Data_coinsured")}
+                      </p>
+                      <p style={{ fontWeight: "bold" }}>
+                        {t("Employdata.Data_coinsured_heading")}
+                      </p>
+                      <p> {index + 1}. {t("Employdata.coinsured_member")}</p>
+                      <div className="uploadClient__container__body__participation__head">
+                        <input
+                          type="radio"
+                          name="familyMember"
+                          value="spousePartner"
+                          checked={familyMember === "spousePartner"}
+                          onChange={handleFamilyMemberChange}
+                        />
+                        <label> {t("Employdata.supose")}</label>
+                      </div>
+                      <div className="uploadClient__container__body__participation__head">
+                        <input
+                          type="radio"
+                          name="familyMember"
+                          value="childUpTo23"
+                          checked={familyMember === "childUpTo23"}
+                          onChange={handleFamilyMemberChange}
+                        />
+                        <label> {t("Employdata.child")}</label>
+                      </div>
+                      <p style={{ color: "rgb(151 183 183)" }}>
+                        {t("Employdata.general_data")}
+                      </p>
+
+                      <div className="userProfileView__container__details__detailsBox__feilds__container">
+                        <div style={{ width: "49%" }}>
+                          <input
+                            type="text"
+                            name="first_name"
+                            placeholder={`${t("Employdata.first_name")}`}
+                          />
+                        </div>
+                        <div style={{ width: "49%" }}>
+                          <input
+                            type="text"
+                            placeholder={`${t("Employdata.last_name")}`}
+                            name="Last_name"
+                          />
+                        </div>
+                      </div>
+
+                      <input
+                        className="uploadClient__container__body__generalInfo__input"
+                        type="text"
+                        name="Pesel number of the co-insured"
+                        placeholder={`${t("Employdata.pesel")}`}
+                      />
+                      <div className="userProfileView__container__details__detailsBox__feilds__container">
+                        <div style={{ width: "49%" }}>
+                          <input
+                            type="email"
+                            name="email filled automatically"
+                            placeholder={`${t("Employdata.email")}`}
+                          />
+                        </div>
+                        <div style={{ width: "49%" }}>
+                          <input
+                            type="text"
+                            placeholder={`${t("Employdata.mobile")}`}
+                          />
+                        </div>
+                      </div>
+                      <p style={{ color: "rgb(151 183 183)" }}>
+                        {" "}
+                        {t("Employdata.gender")}
+                      </p>
+                      <div className="uploadClient__container__body__participation__head">
+                        <input type="radio" name="man" />
+                        <label>{t("Employdata.man")}</label>
+                      </div>
+                      <div className="uploadClient__container__body__participation__head">
+                        <input type="radio" name="woman" />
+                        <label>{t("Employdata.woman")}</label>
+                      </div>
+                      <p style={{ color: "rgb(151 183 183)" }}>
+                        {" "}
+                        {t("Employdata.address_residence")}
+                      </p>
+
+                      <div className="userProfileView__container__details__detailsBox__feilds__container">
+                        <div style={{ width: "49%" }}>
+                          <input
+                            type="text"
+                            placeholder={`${t("Employdata.number_house")}`}
+                          />
+                        </div>
+                        <div style={{ width: "49%" }}>
+                          <input
+                            type="text"
+                            placeholder={`${t("Employdata.street")}`}
+                          />
+                        </div>
+                      </div>
+                      <div className="userProfileView__container__details__detailsBox__feilds__container">
+                        <div style={{ width: "49%" }}>
+                          <input
+                            type="text"
+                            placeholder={`${t("Employdata.postal_code")}`}
+                          />
+                        </div>
+                        <div style={{ width: "49%" }}>
+                          <input type="text" placeholder={`${t("Employdata.city")}`} />
+                        </div>
+                      </div>
+                      <br />
+                      {!(index === 0) && <button onClick={() => removeFields(index)}>Remove</button> }
+                    </div>
+                  </div>
+                )
+              })}
+                  <button onClick={submit}>Submit</button>
+                <button onClick={addFields}>{coInsuredMember.length > 0 ? 'Add More..' : 'Add Co-Insured Member..' }</button>
+              </div>
+            {/* <div>
               <div
                 className="landingPage__clientDeserve__container"
                 style={{ alignItems: "start", display: "inline" }}
               >
                 {showAddButton && (
                   <button
-                    style={{ width: "auto", border: "none" }}
+                    
                     onClick={handleAddMore}
                   >
                     Add more
@@ -410,9 +551,9 @@ const EmployDataForm = () => {
               </div>
 
               {forms.map((form, index) => (
-                <Form key={index} onDelete={() => handleDelete(index)} />
+                <Form key={index} index={index} onDelete={() => handleDelete(index)} />
               ))}
-            </div>
+            </div> */}
             <br />
             <div className="uploadClient__container__body__generalInfo">
               <p style={{ color: "#dd3333" }}> {t("Employdata.declaration")}</p>
@@ -437,3 +578,4 @@ const EmployDataForm = () => {
 };
 
 export default EmployDataForm;
+
