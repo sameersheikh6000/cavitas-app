@@ -10,17 +10,16 @@ const OurOffer = () => {
   const { t } = useTranslation();
 
   const handleComposeEmail = () => {
-    const subject =  t("home.value_member");
-    const body = `Hello there,  
+    const subject =   t("Suggest_mail.Suggest_mail_title");
+    const body = `${t("Suggest_mail.Suggest_mail_p1")}
 
-  I stumbled upon an incredible website!
-  www.cavitas.pl offers an exceptional dental insurance cover called Cavitas that not only covers employees but also their beloved family members.
-  
-  Imagine the peace of mind you'll have knowing that you and your loved ones are safeguarded by a top-of-the-line dental insurance policy. This employee benefit is truly remarkable, and I would highly 
-  recommend considering it.
+${t("Suggest_mail.Suggest_mail_p2")}
+${t("Suggest_mail.Suggest_mail_p3")}
 
-  Best regards,
-  Your loyal employee`;
+${t("Suggest_mail.Suggest_mail_p4")}
+${t("Suggest_mail.Suggest_mail_p5")}
+    
+${t("Suggest_mail.Suggest_mail_p6")}`;
 
     const encodedBody = encodeURIComponent(body);
     const composeUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&su=${encodeURIComponent(
