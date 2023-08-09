@@ -74,6 +74,7 @@ const EmployDataForm = () => {
                 type="text"
                 style={{ marginTop: "0px" }}
                 name="name_company"
+                placeholder={`${t("Employdata.company_name")}`}
               />
               <p style={{ color: "rgb(151 183 183)" }}>
                 {" "}
@@ -84,6 +85,7 @@ const EmployDataForm = () => {
                 type="text"
                 style={{ marginTop: "0px" }}
                 name="insurance_plan"
+                placeholder={`${t("Employdata.Insurance plan")}`}
               />
               <p style={{ fontWeight: "normal" }}>
                 * {t("Employdata.same_insurance_plan")}
@@ -102,12 +104,14 @@ const EmployDataForm = () => {
                   <input
                     type="text"
                     name="first name of the employ filled automatically"
+                    placeholder={`${t("Employdata.firstnameemploy")}`}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
                     name="Last name of the employ filled automatically"
+                    placeholder={`${t("Employdata.lastnameemploy")}`}
                   />
                 </div>
               </div>
@@ -116,10 +120,15 @@ const EmployDataForm = () => {
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
                 name="Pesel number of the employ filled automatically"
+                placeholder={`${t("Employdata.peselno")}`}
               />
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
-                  <input type="email" name="email filled automatically" />
+                  <input
+                    type="email"
+                    name="email filled automatically"
+                    placeholder="E-mail"
+                  />
                 </div>
                 <div style={{ width: "49%" }}>
                   <input
