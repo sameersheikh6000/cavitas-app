@@ -7,12 +7,14 @@ import { useNavigate } from "react-router-dom";
 import SuccessMessage from "../components/SnackbarMessages/SuccessMessage";
 import AlertMessage from "../components/SnackbarMessages/AlertMessage";
 import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const ResetPassword = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false)
   const { resetPassword } = useForgotPassword();
   const [viewPassword, setViewPassword] = useState(false);
   const [viewConfirmPassword, setViewConfirmPassword] = useState(false);
@@ -27,10 +29,12 @@ const ResetPassword = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setIsLoading(true)
     if (credential?.password === credential?.passwordConfirmation) {
       const response = await resetPassword(credential);
       if (response?.status < 300) {
         setSuccessMessage(response?.message);
+        setIsLoading(false)
         if( response?.role === 'broker') {
           setTimeout(() => {
             navigate(`/signin/${lang === 'pl' ? 'pl' : 'en'}`);            
@@ -57,6 +61,7 @@ const ResetPassword = () => {
       }
       else if (response?.status > 300){
         setErrorMessage(response?.message)
+        setIsLoading(false)
         setTimeout(() => {
           setErrorMessage("");
         }, 5000);
@@ -268,10 +273,14 @@ const ResetPassword = () => {
               <div className="authentication__container__formContainer__form">
               <Button
                 type="submit"
+                disabled={isLoading}
                 onClick={(e) => handleSubmit(e)}
                 className="authentication__container__formContainer__form__forget__loginButton"
               >
-                Update password
+                {
+                  !isLoading ? 'Update password' : <CircularProgress style={{width: '20px', height: '20px', color: 'white'}} />
+                }
+                
               </Button>
               </div>
             </form>
