@@ -2605,8 +2605,8 @@ font-size: 1rem !important;
 .faq__tabs__tabsLabel:active {
   font-weight: bolder !important;
   font-family: "poppins" !important;
-  text-transform: none !important;
-  color: red !important;
+  text-transform: "underline" !important;
+  color: black !important;
 }
 
 .css-heg063-MuiTabs-flexContainer {
@@ -2618,7 +2618,7 @@ font-size: 1rem !important;
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  background-color: #dd3333;
+  background-color: #fff;
 }
 
 .faqTab {
@@ -2641,8 +2641,8 @@ font-size: 1rem !important;
   border-radius: 3px;
 }
 .faqTab__container__box:hover {
-  background-color: #f8efef;
-  color: #dd3333;
+  background-color: #f8efef !important;
+  color: #dd3333 !important;
 }
 .faqTab__container__box p {
   font-size: 0.9rem;
@@ -3753,7 +3753,7 @@ body.active-modal {
 }
 
 .selectedTab {
-  color: white !important;
+  color: black !important;
 }
 
 /* Mobile responsive setup */

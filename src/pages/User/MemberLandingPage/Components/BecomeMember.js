@@ -15,16 +15,16 @@ const BecomeMember = () => {
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
   const handleComposeEmail = () => {
-    const subject = "Cavitas dental insurance for employees";
-    const body = `Hello there,
+    const subject =  t("Suggest_mail.Suggest_mail_title");
+    const body = `${t("Suggest_mail.Suggest_mail_p1")}
 
-  I stumbled upon an incredible website!
-  www.cavitas.pl offers an exceptional dental insurance cover called Cavitas that not only covers employees but also their beloved family members.
+${t("Suggest_mail.Suggest_mail_p2")}
+${t("Suggest_mail.Suggest_mail_p3")}
 
-  Imagine the peace of mind you'll have knowing that you and your loved ones are safeguarded by a top-of-the-line dental insurance policy. This employee benefit is truly remarkable, and I would highly recommend considering it.
-
-  Best regards,
-  Your humble employee`;
+${t("Suggest_mail.Suggest_mail_p4")}
+${t("Suggest_mail.Suggest_mail_p5")}
+    
+${t("Suggest_mail.Suggest_mail_p6")}`;
 
     const encodedBody = encodeURIComponent(body);
     const composeUrl = `https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&su=${encodeURIComponent(

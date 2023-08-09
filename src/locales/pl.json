@@ -795,14 +795,12 @@
     "Goldenplan":"*ZŁOTY plan"
   },
   "Suggest_mail":{
-    "Suggest_mail_title":"",
-    "Suggest_mail_p1":"",
-    "Suggest_mail_p2":"",
-    "Suggest_mail_p3":"",
-    "Suggest_mail_p4":"",
-    "Suggest_mail_p5":"",
-    "Suggest_mail_p6":"",
-    "Suggest_mail_p7":"",
-    "Suggest_mail_p8":""
+    "Suggest_mail_title":"Ubezpieczenia stomatologiczne Cavitas dla pracowników",
+    "Suggest_mail_p1":"Cześć,",
+    "Suggest_mail_p2":"polecam świetną stronę internetową!",
+    "Suggest_mail_p3":"Serwis www.cavitas.pl oferuje wyjątkową ochronę stomatologiczną o nazwie Cavitas, która obejmuje nie tylko pracowników, ale także ich bliskich.",
+    "Suggest_mail_p4":"Wyobraź sobie spokój, jaki będziesz mieć, wiedząc, że ty i twoi bliscy jesteście chronieni przez najwyższej klasy polisę ubezpieczeniową dentystyczną. Ta korzyść pracownicza jest naprawdę niezwykła i bardzo bym to zrobił polecam to rozważyć",
+    "Suggest_mail_p5":"Pozdrawiam",
+    "Suggest_mail_p6":"Twój lojalny pracownik"
   }
 }

@@ -49,7 +49,7 @@ export default function Alldocuments() {
   const { t } = useTranslation();
   const selectedTabStyles = {
     fontWeight: "bold",
-    color: "white",
+    color: "black",
   };
 
   const handleChange = (event, newValue) => {
@@ -70,12 +70,12 @@ export default function Alldocuments() {
     <Box sx={{ width: "100%", minWidth: "30rem" }}>
       <Box sx={{ borderBottom: 0.5, color:"rgba(0, 0, 0, 0.12)" }}>
 
-        <Tabs
+      <Tabs
           value={value}
           onChange={handleChange}
-          TabIndicatorProps={{ style: { background: "#DD3333" } }}
+          TabIndicatorProps={{ style: { background: '#DD3333' } }}
           aria-label="basic tabs example"
-          // textColor='black'
+        // textColor='black'
         >
 
             <Tab
