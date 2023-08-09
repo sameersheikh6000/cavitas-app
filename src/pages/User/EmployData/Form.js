@@ -20,7 +20,6 @@ const Form = ({ onDelete }) => {
   const handleFamilyMemberChange = (event) => {
     setFamilyMember(event.target.value);
   };
-
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
@@ -30,9 +29,7 @@ const Form = ({ onDelete }) => {
   return (
     <div className="uploadClient__container__body__generalInfo">
       <br />
-      <p style={{ fontWeight: "bold" }}>
-        1. {t("Employdata.coinsured_member")}
-      </p>
+      <p style={{ fontWeight: "bold" }}>{t("Employdata.coinsured_member")}</p>
       <div className="uploadClient__container__body__participation__head">
         <input
           type="radio"
