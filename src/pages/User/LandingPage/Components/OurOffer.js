@@ -10,8 +10,8 @@ const OurOffer = () => {
   const { t } = useTranslation();
 
   const handleComposeEmail = () => {
-    const subject = "Cavitas dental insurance for employees";
-    const body = `Hello there,
+    const subject =  t("home.value_member");
+    const body = `Hello there,  
 
   I stumbled upon an incredible website!
   www.cavitas.pl offers an exceptional dental insurance cover called Cavitas that not only covers employees but also their beloved family members.
