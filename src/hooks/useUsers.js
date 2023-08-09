@@ -261,7 +261,6 @@ const useUsers = () => {
   }
 
   const getUserByAdmin = async (id) => {
-    debugger
     if(id !== undefined){
         const response = await axios.get(`${API_KEY}/api/v1/manage_users/${id}`,
         admin ? getAdminHeaders() : getHeaders()

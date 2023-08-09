@@ -16,7 +16,6 @@ const MemberEnterMail = () => {
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (event) => {
-    debugger
     event.preventDefault();
     setIsLoading(true)
     const response = await forgotPassword(email);
@@ -37,7 +36,6 @@ const MemberEnterMail = () => {
   }
   
   const handleChange = (event) => {
-    debugger
     setEmail(event.target.value)
   }
 

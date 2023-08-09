@@ -31,7 +31,6 @@ const ResetPassword = () => {
       const response = await resetPassword(credential);
       if (response?.status < 300) {
         setSuccessMessage(response?.message);
-        debugger
         if( response?.role === 'broker') {
           setTimeout(() => {
             navigate(`/signin/${lang === 'pl' ? 'pl' : 'en'}`);            
