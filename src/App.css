@@ -1417,7 +1417,7 @@ font-size: 1rem !important;
   font-weight: bold;
 }
 .landingPage__smartInsurance__container__picture {
-  width: 45%;
+  width: 42%;
 }
 @media (max-width: 1000px) {
   .landingPage__smartInsurance__container__picture {
@@ -3769,9 +3769,7 @@ body.active-modal {
   .landingPage__ourOffer__container__boxes__detailsContainer{
     padding: 30px;
   }
-  .landingPage__ourOffer__header p{
-    margin-left: 20px;
-  }
+ 
   .landingPage__allCare__container__details__imageContainer{
     display: flex;
     justify-content: space-around;
@@ -3821,5 +3819,82 @@ body.active-modal {
     padding: 20px;
     background-image: url("./assets/NavbarBG-image.png");
 width: 100%;
+  }}
+
+  /* mobile devices */
+  @media (max-width: 360px) {
+    .landingPage__smartInsurance__container {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      width: 100%;
+      margin: 0;
+    }
+    
+    .landingPage__smartInsurance__container__details {
+      text-align: start;
+      margin-bottom: 20px;
+    }
+  
+    .landingPage__smartInsurance__container__picture {
+      text-align: center;
+      margin-left:2px;
+    }
+  .landingPage__ourOffer__container__boxes__detailsContainer__tickBox {
+    font-size: 12px;
+    width: 102%;
+    margin-left: 0px;
   }
+  .landingPage__ourOffer__container__boxes__detailsContainer{
+    width: 100%;
+  }
+  .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc{
+    font-size: 12px;
+  }
+  .landingPage__valuableReadings {
+    margin: 15px;
+  }
+ 
+    .Suggest__boxes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .Suggest__boxes_button {
+      margin: -26px 0;
+    }
+    .Suggest__boxes_button button {
+      width: 102%;
+    }
+ 
+  
+  /* about page */
+  .aboutUs__cavitasMeaning__detailsBox {
+    width: 200%;
+  }
+  .aboutUs__ourStory__container__profilesBox__right__profileImage {
+width: 150px;
+  }
+  .aboutUs__ourStory__container__profilesBox__left__profileImage{
+    width: 150px;
+  }
+  .aboutUs__ourStory__container{
+    margin-top: 30px;
+  } 
+  /* broker login page */
+  .landingPage__clientDeserve__container{
+    width: 104%;
+    padding-right: 1px;
+  }
+  /* member login page */
+  .landingPage__dentaltInsurance__container__details{
+    align-items: start;
+    width: 151%;
+    margin: 10px 0px;
+  }
+  .landingPage__dentaltInsurance__container__picture{
+    width: 180%;
+  }
+  
 }

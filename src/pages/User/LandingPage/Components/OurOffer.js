@@ -115,7 +115,6 @@ ${t("Suggest_mail.Suggest_mail_p6")}`;
               />
               <span
                 className="landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc"
-                style={{ fontSize: "14px" }}
               >
                 {t("home.value_employer1")}
               </span>
@@ -163,9 +162,9 @@ ${t("Suggest_mail.Suggest_mail_p6")}`;
           </div>
         </div>
 
-        <div className="landingPage__ourOffer__container__boxes">
+        <div className="landingPage__ourOffer__container__boxes Suggest__boxes">
           <div
-            className="landingPage__ourOffer__container__boxes__detailsContainer"
+            className="landingPage__ourOffer__container__boxes__detailsContainer Suggest__boxes_button"
             style={{ border: "none" }}
           >
             <Button onClick={() => handleComposeEmail()}>
@@ -174,7 +173,7 @@ ${t("Suggest_mail.Suggest_mail_p6")}`;
           </div>
 
           <div
-            className="landingPage__ourOffer__container__boxes__detailsContainer"
+            className="landingPage__ourOffer__container__boxes__detailsContainer Suggest__boxes_button"
             style={{ border: "none" }}
           >
             <GetQuoteCavitas />

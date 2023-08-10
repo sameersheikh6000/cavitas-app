@@ -7,6 +7,8 @@ import TableContainer from "@mui/material/TableContainer";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { Table, TableHead, TableRow, TableCell } from "@material-ui/core";
+import Paper from "@mui/material/Paper";
+
 const BronzePlan = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
@@ -23,12 +25,16 @@ const BronzePlan = () => {
     margintop: "10px",
   };
   const tableContainerStyle = {
-    borderRadius: "25px", // Adjust the radius value as needed
+    borderRadius: "25px",
     border: "2px solid #dd3333",
-    overflow: "hidden", // To clip the border radius
     minWidth: "100%",
-    margintop: "10px",
+    overflowX: "scroll",
+    overflowY: "hidden",
+    marginTop: "10px",
+    marginBottom: "20px",
     backgroundColor: "#abcbcb",
+    scrollbarWidth: "20%", // Adjust the value as needed
+    scrollbarColor: "red", // Set the desired scrollbar color
   };
   const tableContainerheaderStyle = {
     borderTop: "2px solid #dd3333",
@@ -53,7 +59,7 @@ const BronzePlan = () => {
               size="small"
               aria-label="a dense table"
             >
-              <TableHead>
+              <TableHead component={Paper}>
                 <TableRow style={{ border: "none" }}>
                   <TableCell style={{ border: "none", width: "52%" }}>
                     <h2 style={titleStyle}>{t("3_Plan.3_Plan_Bronze_plan")}</h2>
@@ -80,11 +86,8 @@ const BronzePlan = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-            </Table>
-          </TableContainer>
-          <div style={tableContainerStyle}>
-            <Table size="small" aria-label="a dense table">
-              <TableHead>
+              <br />
+              <TableHead style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.3_Plan_Regular")}</h4>
@@ -93,22 +96,14 @@ const BronzePlan = () => {
                     <h4>2543 PLN</h4>
                   </TableCell>
                   <TableCell style={{ border: "none" }} align="center">
-                    <h4>2340 PLN</h4>
+                    <h4>3128 PLN</h4>
                   </TableCell>
                   <TableCell style={{ border: "none" }} align="center">
                     <h4>5558 PLN</h4>
                   </TableCell>
                 </TableRow>
               </TableHead>
-            </Table>
-          </div>
-          <br /> <br />
-          <TableContainer style={{ marginBottom: "20px" }}>
-            <Table
-              sx={{ minWidth: 650 }}
-              size="small"
-              aria-label="a dense table"
-            >
+              <br />
               <TableHead>
                 <TableRow style={tableContainerheaderStyle}>
                   <TableCell style={{ fontSize: "15px", fontWeight: "bold" }}>
@@ -131,7 +126,7 @@ const BronzePlan = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody component={Paper}>
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   style={tableContainerparaStyle}
@@ -970,9 +965,43 @@ const BronzePlan = () => {
                   </TableCell>
                 </TableRow>
               </TableBody>
+              <br />
+              <TableHead style={tableContainerStyle}>
+                <TableRow>
+                  <TableCell style={{ border: "none" }}>
+                    <h4>{t("3_Plan.B1")}</h4>
+                  </TableCell>
+                  <TableCell style={{ border: "none" }} align="center">
+                    <h4>4275 PLN</h4>
+                  </TableCell>
+                  <TableCell style={{ border: "none" }} align="center">
+                    <h4>5625 PLN</h4>
+                  </TableCell>
+                  <TableCell style={{ border: "none" }} align="center">
+                    <h4>9000 PLN</h4>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <br />
+              <TableHead style={tableContainerStyle}>
+                <TableRow>
+                  <TableCell style={{ border: "none" }}>
+                    <h4>{t("3_Plan.B2")}</h4>
+                  </TableCell>
+                  <TableCell style={{ border: "none" }} align="center">
+                    <h4>22 500 PLN </h4>
+                  </TableCell>
+                  <TableCell style={{ border: "none" }} align="center">
+                    <h4>45 000 PLN </h4>
+                  </TableCell>
+                  <TableCell style={{ border: "none" }} align="center">
+                    <h4>67 500 PLN</h4>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
             </Table>
           </TableContainer>
-          <div style={tableContainerStyle}>
+          {/* <div style={tableContainerStyle}>
             <Table size="small" aria-label="a dense table">
               <TableHead>
                 <TableRow>
@@ -1012,7 +1041,7 @@ const BronzePlan = () => {
                 </TableRow>
               </TableHead>
             </Table>
-          </div>
+          </div> */}
           <div>
             <p
               className="landingPage__valuableReadings__container__cardsBox__card__desc"

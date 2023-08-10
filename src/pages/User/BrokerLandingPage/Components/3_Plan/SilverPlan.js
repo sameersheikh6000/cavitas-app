@@ -6,6 +6,7 @@ import TableBody from "@mui/material/TableBody";
 import TableContainer from "@mui/material/TableContainer";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Paper from "@mui/material/Paper";
 import { Table, TableHead, TableRow, TableCell } from "@material-ui/core";
 const SilverPlan = () => {
   const currentUrl = window.location.href;
@@ -23,12 +24,16 @@ const SilverPlan = () => {
     margintop: "10px",
   };
   const tableContainerStyle = {
-    borderRadius: "25px", // Adjust the radius value as needed
+    borderRadius: "25px",
     border: "2px solid #dd3333",
-    overflow: "hidden", // To clip the border radius
     minWidth: "100%",
-    margintop: "10px",
+    overflowX: "scroll",
+    overflowY: "hidden",
+    marginTop: "10px",
+    marginBottom: "20px",
     backgroundColor: "#abcbcb",
+    scrollbarWidth: "20%", // Adjust the value as needed
+    scrollbarColor: "red", // Set the desired scrollbar color
   };
   const tableContainerheaderStyle = {
     borderTop: "2px solid #dd3333",
@@ -53,7 +58,7 @@ const SilverPlan = () => {
               size="small"
               aria-label="a dense table"
             >
-              <TableHead>
+              <TableHead component={Paper}>
                 <TableRow style={{ border: "none" }}>
                   <TableCell style={{ border: "none", width: "52%" }}>
                     <h2 style={titleStyle}>{t("3_Plan.Silverplan")}</h2>
@@ -80,11 +85,8 @@ const SilverPlan = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-            </Table>
-          </TableContainer>
-          <div style={tableContainerStyle}>
-            <Table size="small" aria-label="a dense table">
-              <TableHead>
+              <br />
+              <TableHead component={Paper} style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.3_Plan_Regular")}</h4>
@@ -100,16 +102,8 @@ const SilverPlan = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-            </Table>
-          </div>
-          <br /> <br />
-          <TableContainer style={{ marginBottom: "20px" }}>
-            <Table
-              sx={{ minWidth: 650 }}
-              size="small"
-              aria-label="a dense table"
-            >
-              <TableHead>
+              <br />
+              <TableHead component={Paper}>
                 <TableRow style={tableContainerheaderStyle}>
                   <TableCell style={{ fontSize: "15px", fontWeight: "bold" }}>
                     <p>{t("3_Plan.3_Plan_G1_title")}</p>
@@ -1006,11 +1000,8 @@ const SilverPlan = () => {
                   </TableCell>
                 </TableRow>
               </TableBody>
-            </Table>
-          </TableContainer>
-          <div style={tableContainerStyle}>
-            <Table size="small" aria-label="a dense table">
-              <TableHead>
+              <br />
+              <TableHead component={Paper} style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.B1")}</h4>
@@ -1026,12 +1017,8 @@ const SilverPlan = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-            </Table>
-          </div>
-          <br /> <br />
-          <div style={tableContainerStyle}>
-            <Table size="small" aria-label="a dense table">
-              <TableHead>
+              <br />
+              <TableHead component={Paper} style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.B2")}</h4>
@@ -1048,7 +1035,7 @@ const SilverPlan = () => {
                 </TableRow>
               </TableHead>
             </Table>
-          </div>
+          </TableContainer>
         </div>
         <div>
           <p
