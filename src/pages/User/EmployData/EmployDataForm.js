@@ -11,19 +11,55 @@ const EmployDataForm = () => {
   const [gender, setGender] = useState("");
   const [familyType, setFamilyType] = useState("");
   const [familyMember, setFamilyMember] = useState("");
-
-  // changes
+  const [employData, setEmployData] = useState({
+    company_name: "",
+    insurance_plan: "",
+    first_name: "",
+    last_name: "",
+    pesel_number: "",
+    email: "",
+    phone_number: "",
+    gender: "",
+    house_number: "",
+    street_name: "",
+    postal_code: "",
+    city: ""
+  })
+  
   const [coInsuredMember, setCoInsuredMember] = useState([
-    { name: "", age: "" },
+    { 
+      relation: "", 
+      first_name: "" ,
+      last_name: "",
+      pesel_number: "",
+      email: "",
+      phone_number: "",
+      gender: 0,
+      house_number: "",
+      street_name: "",
+      postal_code: "",
+      city: ""
+    },
   ]);
   const addFields = () => {
-    let newfield = { name: "", age: "" };
-    setCoInsuredMember([...coInsuredMember, newfield]);
+    let newCoInsuredMember = { 
+      relation: "", 
+      first_name: "" ,
+      last_name: "",
+      pesel_number: "",
+      email: "",
+      phone_number: "",
+      gender: 0,
+      house_number: "",
+      street_name: "",
+      postal_code: "",
+      city: "" 
+    };
+    setCoInsuredMember([...coInsuredMember, newCoInsuredMember]);
   };
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(coInsuredMember);
   };
 
   const removeFields = (index) => {
@@ -31,14 +67,18 @@ const EmployDataForm = () => {
     data.splice(index, 1);
     setCoInsuredMember(data);
   };
+  
+  const handleCoInsuredMemberChange = (index, e) => {
+    let data = [...coInsuredMember];
+    data[index][e.target.name] = e.target.value;
+}
 
-  //changes
+  const handleEmployDataChange = (e) => {
+    const { name, value } = e.target;
+    setEmployData((prevEmployData) => ({ ...prevEmployData, [name]: value }))
+  }
   const handleGenderChange = (event) => {
     setGender(event.target.value);
-  };
-
-  const handleFamilyMemberChange = (event) => {
-    setFamilyMember(event.target.value);
   };
 
   const handleFamilyTypeChange = (event) => {
@@ -84,8 +124,9 @@ const EmployDataForm = () => {
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
                 style={{ marginTop: "0px" }}
-                name="name_company"
+                name="company_name"
                 placeholder={`${t("Employdata.company_name")}`}
+                onChange={(e) => handleEmployDataChange(e)}
               />
               <p style={{ color: "rgb(151 183 183)" }}>
                 {" "}
@@ -181,7 +222,9 @@ const EmployDataForm = () => {
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
+                    name='house_number'
                     placeholder={`${t("Employdata.number_house")}`}
+                    onChange={(e) => handleEmployDataChange(e)}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
@@ -303,20 +346,18 @@ const EmployDataForm = () => {
                       <div className="uploadClient__container__body__participation__head">
                         <input
                           type="radio"
-                          name="familyMember"
+                          name="relation"
                           value="spousePartner"
-                          checked={familyMember === "spousePartner"}
-                          onChange={handleFamilyMemberChange}
+                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
                         />
                         <label> {t("Employdata.supose")}</label>
                       </div>
                       <div className="uploadClient__container__body__participation__head">
                         <input
                           type="radio"
-                          name="familyMember"
+                          name="relation"
                           value="childUpTo23"
-                          checked={familyMember === "childUpTo23"}
-                          onChange={handleFamilyMemberChange}
+                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
                         />
                         <label> {t("Employdata.child")}</label>
                       </div>
@@ -330,13 +371,15 @@ const EmployDataForm = () => {
                             type="text"
                             name="first_name"
                             placeholder={`${t("Employdata.first_name")}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
                             placeholder={`${t("Employdata.last_name")}`}
-                            name="Last_name"
+                            name="last_name"
+                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
                           />
                         </div>
                       </div>
@@ -344,20 +387,23 @@ const EmployDataForm = () => {
                       <input
                         className="uploadClient__container__body__generalInfo__input"
                         type="text"
-                        name="Pesel number of the co-insured"
+                        name="pesel_number"
                         placeholder={`${t("Employdata.pesel")}`}
+                        onChange={(e) => handleCoInsuredMemberChange(index, e)}
                       />
                       <div className="userProfileView__container__details__detailsBox__feilds__container">
                         <div style={{ width: "49%" }}>
                           <input
                             type="email"
-                            name="email filled automatically"
+                            name="email"
                             placeholder={`${t("Employdata.email")}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
+                            name='phone_number'
                             placeholder={`${t("Employdata.mobile")}`}
                           />
                         </div>
@@ -367,11 +413,21 @@ const EmployDataForm = () => {
                         {t("Employdata.gender")}
                       </p>
                       <div className="uploadClient__container__body__participation__head">
-                        <input type="radio" name="man" />
+                        <input 
+                          type="radio" 
+                          name="gender" 
+                          value={0} 
+                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                          />
                         <label>{t("Employdata.man")}</label>
                       </div>
                       <div className="uploadClient__container__body__participation__head">
-                        <input type="radio" name="woman" />
+                        <input 
+                          type="radio" 
+                          name="gender" 
+                          value={1} 
+                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                          />
                         <label>{t("Employdata.woman")}</label>
                       </div>
                       <p style={{ color: "rgb(151 183 183)" }}>
@@ -383,13 +439,20 @@ const EmployDataForm = () => {
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
+                            name='house_number'
+                            disabled={true}
+                            value={employData?.house_number}
                             placeholder={`${t("Employdata.number_house")}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
+                            name="street_name"
+                            disabled={true}
                             placeholder={`${t("Employdata.street")}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
                           />
                         </div>
                       </div>
@@ -397,13 +460,19 @@ const EmployDataForm = () => {
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
+                            name="postal_code"
+                            disabled={true}
                             placeholder={`${t("Employdata.postal_code")}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
+                            name="city"
+                            disabled={true}
                             placeholder={`${t("Employdata.city")}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
                           />
                         </div>
                       </div>
