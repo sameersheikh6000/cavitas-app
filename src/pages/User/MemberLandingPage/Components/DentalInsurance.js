@@ -33,7 +33,7 @@ const DentalInsurance = () => {
             </Link>
           </div>
         </div>
-        <div className='landingPage__dentaltInsurance__container__picture' style={{width:"42%"}}>
+        <div className='landingPage__dentaltInsurance__container__picture' >
           <img src={require("../../../../assets/DentalInsurance-image.png")} alt="" />
         </div>
       </div>
