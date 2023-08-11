@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from "react";
-import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
+import * as React from "react";
+import { styled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import Typography from "@mui/material/Typography";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import Box from "@mui/material/Box";
 
-function DentaCuretoothpaste() {
-  const [open, setOpen] = useState(false);
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+    borderRadius: "25px", // Apply the border radius style
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    borderRadius: 10,
-    borderColor: "none",
-    transform: "translate(-50%, -50%)",
-    width: 750,
-    bgcolor: "#edf4f4",
-    boxShadow: 14,
-    p: 4,
-  };
+export default function DentaCuretoothpaste() {
+  const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
+  const handleClickOpen = () => {
     setOpen(true);
   };
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <div>
@@ -30,64 +32,75 @@ function DentaCuretoothpaste() {
         style={{
           color: "#dd3333",
           fontSize: "55px",
-          marginTop: "-15px",
           cursor: "pointer",
         }}
-        onClick={() => handleOpen()}
+        onClick={handleClickOpen}
       />
-
-      <Modal
-        open={open}
+      <BootstrapDialog
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-        disableBackdropClick
+        open={open}
+        PaperProps={{
+          sx: { background: "none", boxShadow: "none", maxWidth: "none" },
+        }}
       >
-        <Box sx={style}>
-          <AddCircleIcon
-            style={{
-              color: "#dd3333",
-              fontSize: "55px",
-              marginTop: "-40px",
-              marginLeft: "-40px",
-            }}
-          />
-          <div className="uploadClient__container__body__participation">
-            <h3>DESCRIPTION:</h3>
-            <div  style={{fontSize:"14px"}}>
-            <p>
-              1 tube contains 75 ml of toothpaste
+        <DialogContent
+          dividers
+          sx={{
+            backgroundColor: "#edf4f4",
+            boxShadow: 4,
+            padding: "4px",
+            position: "relative",
+            width: 750, // Default width for larger screens
+            "@media (max-width: 360px)": {
+              width: "100%", // Adjust width for mobile responsive
+            },
+          }}
+          id="popup_manu"
+        >
+          <Box>
+            <AddCircleIcon
+              style={{
+                color: "#dd3333",
+                fontSize: "55px",
+                marginTop: "-28px",
+                marginLeft: "-30px",
+                position: "fixed",
+              }}
+              onClick={handleClose}
+            />
+            <Typography gutterBottom style={{ padding: "20px" }}>
+              <h3>DESCRIPTION:</h3>
+              <div style={{ fontSize: "14px" }}>
+                <p>
+                  1 tube contains 75 ml of toothpaste
+                  <br />
+                  DentaCure is an effective and natural toothpaste to help fight
+                  bleeding gums and gum inflammation.
+                  <br />
+                  DentaCure contains a naturally active extract of fenugreek
+                  seeds, which through millennia has been known for its healing
+                  effect.
+                  <br />
+                  Fenugreek seeds are documented anti-inflammatory and combat
+                  the harmful bacteria that can cause gum problems.
+                </p>
+              </div>
               <br />
-         
-              DentaCure is an effective and natural toothpaste to help fight
-              bleeding gums and gum inflammation.
-              <br />
-              DentaCure contains a naturally active extract of fenugreek seeds,
-              which through millennia has been known for its healing effect.
-              <br />
-              Fenugreek seeds are documented anti-inflammatory and combat the
-              harmful bacteria that can cause gum problems.
-            </p>
-            </div>
-            <br />
-        
 
-            <h3>INGREDIENTS:</h3>
-            <div  style={{fontSize:"14px"}}>
-
-            <p>
-              Water, hydrated silica, Sorbitol, Propylen Glycol, Sodium C 14-16,
-              Olefin Sulfonat.Aroma, Trigonella Foenum Graecum (Fenugreek)
-              extract, Cellulose gum, Sodium flour, Sodium saccharin, CI 77891.
-              Natriumfluoride (1450 ppm F)
-              <br />
-            </p>
-            </div>
-          </div>
-        </Box>
-      </Modal>
+              <h3>INGREDIENTS:</h3>
+              <div style={{ fontSize: "14px" }}>
+                <p>
+                  Water, hydrated silica, Sorbitol, Propylen Glycol, Sodium C
+                  14-16, Olefin Sulfonat.Aroma, Trigonella Foenum Graecum
+                  (Fenugreek) extract, Cellulose gum, Sodium flour, Sodium
+                  saccharin, CI 77891. Natriumfluoride (1450 ppm F)
+                  <br />
+                </p>
+              </div>
+            </Typography>
+          </Box>
+        </DialogContent>
+      </BootstrapDialog>
     </div>
   );
 }
-
-export default DentaCuretoothpaste;

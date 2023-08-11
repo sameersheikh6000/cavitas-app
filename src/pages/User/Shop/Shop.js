@@ -60,7 +60,8 @@ const Shop = () => {
         <div className="landingPage__howItwork__container">
           <div
             className="landingPage__howItwork__container__picture"
-            style={{ width: "50%", marginTop: "-100px" }}
+            id="Product_Pics"
+            style={{ minWidth: "50%"}}
           >
             <img
               style={{ height: "60%", width: "60%" }}
@@ -71,7 +72,8 @@ const Shop = () => {
 
           <div
             className="landingPage__howItwork__container__details"
-            style={{ width: "50%" }}
+            style={{ minWidth: "50%" }}
+            id="Product_detail"
           >
             <h3
               className="landingPage__howItwork__container__details__heading"
@@ -82,7 +84,7 @@ const Shop = () => {
                 display:"inline-flex"
               }}
             >
-              DentaCure toothpaste, 75 ml  <DentaCuretoothpaste/>
+              DentaCure toothpaste, 75 ml  <DentaCuretoothpaste />
              
             </h3>
             <p className="Shop__mainpage"
@@ -128,7 +130,9 @@ const Shop = () => {
         <div className="landingPage__howItwork__container">
           <div
             className="landingPage__howItwork__container__picture"
-            style={{ width: "50%", marginTop: "-100px" }}
+            style={{ minWidth: "50%" }}
+            id="Product_Pics"
+
           >
             <img
               style={{ height: "35%", width: "33%" }}
@@ -139,7 +143,8 @@ const Shop = () => {
 
           <div
             className="landingPage__howItwork__container__details"
-            style={{ width: "50%" }}
+            style={{ minWidth: "50%" }}
+            id="Product_detail"
           >
             <h3
               className="landingPage__howItwork__container__details__heading"
@@ -202,7 +207,8 @@ const Shop = () => {
         <div className="landingPage__howItwork__container">
           <div
             className="landingPage__howItwork__container__picture"
-            style={{ width: "50%", marginTop: "-100px" }}
+            id="Product_Pics"
+            style={{ minWidth: "50%"}}
           >
             <img
               style={{ height: "50%", width: "50%" }}
@@ -213,7 +219,8 @@ const Shop = () => {
 
           <div
             className="landingPage__howItwork__container__details"
-            style={{ width: "50%" }}
+            style={{ minWidth: "50%" }}
+            id="Product_detail"
           >
             <h3
               className="landingPage__howItwork__container__details__heading"
@@ -277,7 +284,8 @@ const Shop = () => {
         <div className="landingPage__howItwork__container">
           <div
             className="landingPage__howItwork__container__picture"
-            style={{ width: "50%", marginTop: "-100px" }}
+             id="Product_Pics"
+            style={{ minWidth: "50%"}}
           >
             <img
               style={{ height: "50%", width: "50%" }}
@@ -288,7 +296,8 @@ const Shop = () => {
 
           <div
             className="landingPage__howItwork__container__details"
-            style={{ width: "50%" }}
+            style={{ minWidth: "50%" }}
+            id="Product_detail"
           >
             <h3
               className="landingPage__howItwork__container__details__heading"
@@ -347,7 +356,8 @@ const Shop = () => {
         <div className="landingPage__howItwork__container">
           <div
             className="landingPage__howItwork__container__picture"
-            style={{ width: "50%", marginTop: "-100px" }}
+            id="Product_Pics"
+            style={{ minWidth: "50%"}}
           >
             <img
               style={{ height: "60%", width: "60%" }}
@@ -358,7 +368,8 @@ const Shop = () => {
 
           <div
             className="landingPage__howItwork__container__details"
-            style={{ width: "50%" }}
+            style={{ minWidth: "50%" }}
+            id="Product_detail"
           >
             <h3
               className="landingPage__howItwork__container__details__heading"

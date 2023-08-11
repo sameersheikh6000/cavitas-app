@@ -11,6 +11,7 @@ const PrivacyPolicy = () => {
     localStorage.setItem("selectedTabIndex", tabIndex);
     window.scrollTo(0, 0);
   };
+  
 
   useEffect(() => {
     const currentUrl = window.location.href;

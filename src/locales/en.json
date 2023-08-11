@@ -429,8 +429,8 @@
   "footer": {
     "findus": "Find us",
     "heading_1": "The insurance service provider is",
-    "heading_2": "Northern1 international insurance brokers OÜ  ",
-    "heading_3": "License no 12806139",
+    "heading_2": " Cavitas dental insurance OU",
+    "heading_3": "License nr 16501780",
     "heading_4": "Tallinn Estonia"
   },
   "claim": {
@@ -557,14 +557,14 @@
   "PrivacyPolicy": {
     "Main_heading": "PRIVACY POLICY",
     "Sub_heading_01": "Introduction",
-    "Para_No_1": "Your privacy is important to us. It is Northern1 international insurance broker OÜ's (“we”, “us” and “our”) privacy policy (“policy”) to respect your (“you”, “your”) privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including via our dental insurance dedicated Cavitas mobile application (“app”), website www.Cavitas.pl, and its associated services.  ",
+    "Para_No_1": "Your privacy is important to us. It is Cavitas dental insurance broker OÜ's (“we”, “us” and “our”) privacy policy (“policy”) to respect your (“you”, “your”) privacy and comply with any applicable law and regulation regarding any personal information we may collect about you, including via our dental insurance dedicated Cavitas mobile application (“app”), website www.Cavitas.pl, and its associated services. ",
     "Para_No_2": "Personal information is any information about you which can be used to identify you. This information may include you as a person (such as name, address, identity number, date of birth, email address, contact number, username and password), your devices, payment details, and even information about how you use an app or online service.",
     "Para_No_3": "In the event our app contains links to third-party sites and services, please be aware that those sites and services have their own privacy policies. After following a link to any third-party content, you should read their posted privacy policy information about how they collect and use personal information. This policy does not apply to any of your activities after you leave our app.",
     "Sub_heading_02": "Information We Collect  ",
     "Para_No_4": "Information we collect falls into one of two categories: 'voluntarily provided' information and 'automatically collected' information.  ",
     "Para_No_5": "'Voluntarily provided' information refers to any information you knowingly and actively provide us when using our app and its associated services.  ",
     "Para_No_6": "'Automatically collected' information refers to any information automatically sent by your device in the course of accessing our app and its associated services.",
-    "Sub_heading_03": "Information We Collect  ",
+    "Sub_heading_03": "Collect and use of information",
     "Para_No_7": "We may collect personal information from you when you do any of the following on our website:",
     "Para_No_8": "● Use a mobile device or web browser to access our content  ",
     "Para_No_9": "● Contact us via ticketing system, email, social media, or on any similar technologies  ",
@@ -612,9 +612,8 @@
 
     "Sub_heading_12": "Additional Disclosures for General Data Protection Regulation (GDPR) Compliance (EU)  ",
     "Sub_heading_13": "Data Controller / Data Processor  ",
-    "Para_No_34": "The GDPR distinguishes between organisations that process personal information for their own purposes (known as “data controllers”) and organizations that process personal information on behalf of other organizations (known as “data processors”). We, Northern1 international insurance broker OÜ, are a data controller with respect to the personal information you provide to us.",
-
-    "Sub_heading_14": "Legal Bases for Processing Your Personal Information  ",
+    "Para_No_34": "The GDPR distinguishes between organisations that process personal information for their own purposes (known as “data controllers”) and organizations that process personal information on behalf of other organizations (known as “data processors”). We,Cavitas dentral insurance broker  OÜ, are a data controller with respect to the personal information you provide to us.",
+    "Sub_heading_14": "Legal Bases for Processing Your Personal Information",
     "Para_No_35": "We will only collect and use your personal information when we have a legal right to do so. In which case, we will collect and use your personal information lawfully, fairly and in a transparent manner. If we seek your consent to process your personal information, and you are under 16 years of age, we will seek your parent or legal guardian’s consent to process your personal information for that specific purpose.  ",
     "Para_No_35_b": "Our lawful bases depend on the services you use and how you use them. This means we only collect and use your information on the following grounds:",
 
@@ -645,11 +644,10 @@
   },
   "CookiePolicy": {
     "Cookie_heading_No1": "COOKIE POLICY",
-    "Cookie_Para_No1": "We use cookies to help improve your experience of our website a",
+    "Cookie_Para_No1": "We use cookies to help improve your experience of our website at",
     "Cookie_Para_No1_b": "This cookie policy is part of Northern1 international insurance broker OÜ's privacy policy. It covers the use of cookies between your device and our app and site.",
     "Cookie_Para_No2": "We also provide basic information on third-party services we may use, who may also use cookies as part of their service. This policy does not cover their cookies.",
-    "Cookie_Para_No3": "If you don’t wish to accept cookies from us, you should instruct your browser to refuse cookies from",
-    "Cookie_Para_No3_b": "In such a case, we may be unable to provide you with some of your desired content and services.",
+    "Cookie_Para_No3": "If you don’t wish to accept cookies from us, you should instruct your browser to refuse cookies from https://cavitas.pl In such a case, we may be unable to provide you with some of your desired content and services.", 
     "Cookie_heading_No2": "What is a cookie?",
     "Cookie_Para_No4": "A cookie is a small piece of data that a website stores on your device when you visit. It typically contains information about the website itself, a unique identifier that allows the site to recognise your web browser when you return, additional data that serves the cookie’s purpose, and the lifespan of the cookie itself.",
     "Cookie_Para_No5": "Cookies are used to enable certain features (eg logging in), track site usage (eg analytics), store your user settings (eg time zone, notification preferences), and to personalise your content (eg advertising, language).",

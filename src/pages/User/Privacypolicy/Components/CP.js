@@ -45,11 +45,7 @@ const CP = () => {
           issued by the policyholder, submits a Complaint on behalf of the
           Client.
           <br />
-          1.3. Broker - is Northern1 International Insurance Brokers OÜ
-          (registry code 12806139), which is entered into the list of insurance
-          brokers of the Estonian Financial Supervision and Resolution Authority
-          (www.fi.ee) and who engages, for a remuneration and based on a
-          brokerage contract, in insurance distribution.
+          1.3. Broker - is  Cavitas dental insurance  OÜ (registry code 16501780), which is entered into the list of insurance brokers of the Estonian Financial Supervision and Resolution Authority (www.fi.ee) and who engages, for a remuneration and based on a brokerage contract, in insurance distribution.
           <br />
           1.4. Complaint – a written or in a format which can be reproduced in
           writing complaint submitted by the Client or his/her Representative
