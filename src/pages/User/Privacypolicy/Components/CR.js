@@ -37,10 +37,6 @@ const CR = () => {
           <br />
           <br />
           {t("CookiePolicy.Cookie_Para_No3")}{" "}
-          <Link style={{ cursor: "pointer" }} to="https://cavitas.pl">
-            https://cavitas.pl
-          </Link>
-          {t("CookiePolicy.Cookie_Para_No3_b")}
           <br />
           <br />
           <h3> {t("CookiePolicy.Cookie_heading_No2")} </h3>

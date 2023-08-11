@@ -58,12 +58,12 @@ const PPT = () => {
           <br /> <br />
           {t("PrivacyPolicy.Para_No_14")}
           <br /> <br />
-          <h3> {t("PrivacyPolicy.Sub_heading_04")} </h3>
+          <h3> {t("PrivacyPolicy.Sub_heading_05")} </h3>
           {t("PrivacyPolicy.Para_No_15")}
           <br /> <br />
           {t("PrivacyPolicy.Para_No_16")}
           <br /> <br />
-          <h3> {t("PrivacyPolicy.Sub_heading_05")} </h3>
+          <h3> {t("PrivacyPolicy.Sub_heading_06")} </h3>
           <span style={{ fontWeight: "bold" }}>
             {t("PrivacyPolicy.s1")}
           </span>{" "}
@@ -136,7 +136,7 @@ const PPT = () => {
           <h3> {t("PrivacyPolicy.Sub_heading_18")} </h3>
           {t("PrivacyPolicy.Para_No_39")}
           <br /> <br />
-          <h3> {t("PrivacyPolicy.Sub_heading_18")} </h3>
+          <h3> {t("PrivacyPolicy.Sub_heading_19")} </h3>
           {t("PrivacyPolicy.Para_No_40")}
           <br /> <br />
           <h3> {t("PrivacyPolicy.Sub_heading_20")} </h3>

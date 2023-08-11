@@ -438,8 +438,8 @@
   "footer": {
     "findus": "Znajdź nas",
     "heading_1": "Dostawcą usług ubezpieczeniowych jest",
-    "heading_2": "firma Northern1 International Insurance Brokers OÜ",
-    "heading_3": "Nr licencji: 12806139",
+    "heading_2": "firma Cavitas dental insurance broke OÜ",
+    "heading_3": "Nr licencji: 16501780",
     "heading_4": "Tallin, Estonia"
   },
   "claim": {
@@ -565,7 +565,7 @@
   "PrivacyPolicy": {
     "Main_heading": "POLITYKA PRYWATNOŚCI",
     "Sub_heading_01": "Wprowadzenie",
-    "Para_No_1": "Prywatność użytkowników jest dla nas ważna. Polityka prywatności („polityka”) firmy Northern1 international insurance brokers OÜ („my”, „nas” i „naszej”) zapewnia poszanowanie prywatności użytkownika („użytkownik”) oraz zgodność z wszelkimi obowiązującymi przepisami prawa i regulacjami dotyczącymi danych osobowych użytkownika zbieranych przez nas, w tym za pośrednictwem naszej aplikacji mobilnej Cavitas dedykowanej ubezpieczeniom stomatologicznym („aplikacja”), strony internetowej www.Cavitas.pl oraz powiązanych z nimi usług.",
+    "Para_No_1": "Prywatność użytkowników jest dla nas ważna. Polityka prywatności („polityka”) firmy Cavitas dental insurance broker OÜ („my”, „nas” i „naszej”) zapewnia poszanowanie prywatności użytkownika („użytkownik”) oraz zgodność z wszelkimi obowiązującymi przepisami prawa i regulacjami dotyczącymi danych osobowych użytkownika zbieranych przez nas, w tym za pośrednictwem naszej aplikacji mobilnej Cavitas dedykowanej ubezpieczeniom stomatologicznym („aplikacja”), strony internetowej www.Cavitas.pl oraz powiązanych z nimi usług.",
     "Para_No_2": "Dane osobowe to wszelkie informacje, które mogą służyć do identyfikacji użytkownika. Informacje te mogą dotyczyć bezpośrednio osoby użytkownika (np. nazwisko, adres, numer identyfikacyjny, data urodzenia, adres e-mail, numer kontaktowy, nazwa użytkownika i hasło), a także jego urządzeń, szczegółów płatności, a nawet sposobu korzystania z aplikacji lub serwisu online.",
     "Para_No_3": "Jeśli nasza aplikacja zawiera linki do stron i serwisów zewnętrznych, należy pamiętać, że takie strony i serwisy mają własne polityki prywatności. Po kliknięciu linku do jakichkolwiek treści podmiotów zewnętrznych należy zapoznać się z opublikowanymi przez nie informacjami dotyczącymi polityki prywatności na temat zbierania i wykorzystywania danych osobowych. Ta polityka nie dotyczy działań użytkownika po opuszczeniu naszej aplikacji.",
     "Sub_heading_02": "Dane, które zbieramy",
@@ -621,8 +621,7 @@
 
     "Sub_heading_12": "Dodatkowe informacje dotyczące zgodności z ogólnym rozporządzeniem o ochronie danych (RODO) (UE)",
     "Sub_heading_13": "Administrator danych / podmiot przetwarzający",
-    "Para_No_34": "RODO rozróżnia organizacje, które przetwarzają dane osobowe do własnych celów („administratorzy danych”), i organizacje, które przetwarzają dane osobowe w imieniu innych organizacji („podmioty przetwarzające”). Firma Northern1 international insurance broker OÜ jest administratorem danych w odniesieniu do przekazywanych jej danych osobowych.",
-
+    "Para_No_34": "RODO rozróżnia organizacje, które przetwarzają dane osobowe do własnych celów („administratorzy danych”), i organizacje, które przetwarzają dane osobowe w imieniu innych organizacji („podmioty przetwarzające”). Firma Cavitas dental insurance broker  OÜ jest administratorem danych w odniesieniu do przekazywanych jej danych osobowych.",
     "Sub_heading_14": "Podstawy prawne przetwarzania danych osobowych użytkownika",
     "Para_No_35": "Będziemy zbierać i wykorzystywać dane osobowe użytkownika tylko wtedy, gdy mamy do tego prawo. W takim przypadku będziemy zbierać i wykorzystywać dane osobowe zgodnie z prawem, uczciwie i w przejrzysty sposób. Jeśli będziemy potrzebować zgody na przetwarzanie danych osobowych użytkownika w wieku poniżej 16 lat, zwrócimy się o zgodę na przetwarzanie jego danych osobowych w danym celu do jego rodzica lub opiekuna prawnego.",
     "Para_No_35_b": "Nasze podstawy prawne zależą od rodzaju usług i sposobu korzystania z nich przez użytkownika. Oznacza to, że zbieramy i wykorzystujemy dane użytkownika wyłącznie na następujących podstawach:",
@@ -656,10 +655,9 @@
   "CookiePolicy": {
     "Cookie_heading_No1": "POLITYKA PLIKÓW COOKIE",
     "Cookie_Para_No1": "Używamy plików cookie, aby poprawić komfort korzystania z naszej strony internetowej pod adresem",
-    "Cookie_Para_No1_b": "Ta polityka plików cookie jest częścią polityki prywatności firmy Northern1 international insurance broker OÜ. Obejmuje ona wykorzystywanie plików cookie między urządzeniem użytkownika a naszą aplikacją i stroną.",
+    "Cookie_Para_No1_b": "Ta polityka plików cookie jest częścią polityki prywatności firmy Cavitas dental isnurance broker  OÜ. Obejmuje ona wykorzystywanie plików cookie między urządzeniem użytkownika a naszą aplikacją i stroną.",
     "Cookie_Para_No2": "Podajemy również podstawowe informacje na temat zewnętrznych serwisów, z których możemy korzystać, a które również mogą stosować pliki cookie we własnym zakresie. Niniejsza polityka nie obejmuje ich plików cookie",
-    "Cookie_Para_No3": "Jeżeli użytkownik nie chce akceptować pochodzących od nas plików cookie, powinien polecić swojej przeglądarce, aby odrzucała pliki cookie ze strony",
-    "Cookie_Para_No3_b": "W takim przypadku możemy nie być w stanie dostarczyć niektórych żądanych treści i usług.",
+    "Cookie_Para_No3": "Jeżeli użytkownik nie chce akceptować pochodzących od nas plików cookie, powinien polecić swojej przeglądarce, aby odrzucała pliki cookie ze strony https://cavitas.pl W takim przypadku możemy nie być w stanie dostarczyć niektórych żądanych treści i usług.",
     "Cookie_heading_No2": "Co to są pliki cookie?",
     "Cookie_Para_No4": "Plik cookie to mały pakiet danych zapisywany przez odwiedzaną stronę internetową na urządzeniu użytkownika. Zazwyczaj zawiera informacje o samej stronie internetowej, unikalny identyfikator umożliwiający stronie rozpoznanie przeglądarki internetowej przy ponownej wizycie, dodatkowe dane dla celów pliku cookie, a także czas trwania danego pliku cookie.",
     "Cookie_Para_No5": "Pliki cookie służą do obsługi określonych funkcji (np. logowanie), monitorowania sposobu korzystania ze strony internetowej (np. analityka), zapisywania ustawień użytkownika (np. strefa czasowa, preferencje dotyczące powiadomień), a także do personalizacji treści (np. reklamy, język).",

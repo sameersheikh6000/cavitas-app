@@ -14,7 +14,8 @@ const Footer = () => {
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
 
-  const handleLinkClick = () => {
+  const handleLinkClick = (tabIndex) => {
+    localStorage.setItem("selectedTabIndex", tabIndex);
     window.scrollTo(0, 0);
   };
 
@@ -78,10 +79,8 @@ const Footer = () => {
             >
               {t("nav.claims")}
             </Link>
-            <Link
-              to={`/Privacypolicy/${lang === "pl" ? "pl" : "en"}`}
-              onClick={handleLinkClick}
-            >
+            <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(0)}>
+
               {t("nav.PrivacyPolicy")}
             </Link>
             <Link to={"/Shop"}>{t("nav.Shop")}</Link>

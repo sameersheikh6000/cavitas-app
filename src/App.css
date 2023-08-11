@@ -3568,6 +3568,9 @@ body.active-modal {
   bottom: 0;
   position: fixed;
 }
+.MuiPaper-root .MuiPaper-elevation .MuiPaper-rounded .MuiPaper-elevation24 .MuiDialog-paper .MuiDialog-paperScrollPaper .MuiDialog-paperWidthSm .css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  background-color: none;
+}
 
 .overlay {
   background: rgba(49, 49, 49, 0.8);
@@ -3703,6 +3706,7 @@ body.active-modal {
 .css-dpjnhs-MuiInputBase-root-MuiOutlinedInput-root {
   border-radius: 25px;
 }
+
 
 /* Amdin ticketing syste, */
 .Admin___TicketDetails {
@@ -3896,5 +3900,34 @@ width: 150px;
   .landingPage__dentaltInsurance__container__picture{
     width: 180%;
   }
-  
+  /* footer */
+  .Contactforsupport{
+    text-align: start;
+    align-items: self-start;
+  }
+  /* shop */
+  #popup_manu{
+    width: 30;
+  }
+#Product_Pics{
+  width: 100%;
+  text-align: center;
+  margin-top: -10px;
+}
+#Product_Pics img{
+  width: 30px;
+  height: 40px;
+}
+#Product_detail{
+  width: 100%;
+  justify-content: center;
+  justify-items: center;
+  text-align: start;
+  align-items: center;
+  margin-bottom: 0;
+} 
+.Shop__Button{
+  margin-left: 10px;
+  margin-bottom: -60px;
+}
 }
