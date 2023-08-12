@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Page from "../../../components/Page/Page";
 import DentaCuretoothpaste from "./PopupComponent/DentaCuretoothpaste";
