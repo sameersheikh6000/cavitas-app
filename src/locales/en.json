@@ -792,5 +792,11 @@
     "Suggest_mail_p4": "Imagine the peace of mind you'll have knowing that you and your loved ones are safeguarded by a top-of-the-line dental insurance policy. This employee benefit is truly remarkable, and I would highly recommend considering it.",
     "Suggest_mail_p5": "Best regards",
     "Suggest_mail_p6": "Your loyal employee"
-  }
+  },
+  "Forget_password":{
+    "forget_password":"",
+    "enter_email":"",
+     "continue":"",
+     "Message":""
+}
 }
