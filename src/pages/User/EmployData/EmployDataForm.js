@@ -15,27 +15,28 @@ const EmployDataForm = () => {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const email = queryParams.get('email');
-  const { getEmployDataByEmail } = useEmployData();
+  const { getEmployDataByEmail, submitEmployData } = useEmployData();
   
   //States
   const [errorMessage, setErrorMessage] = useState('');
-  const [gender, setGender] = useState("");
   const [familyType, setFamilyType] = useState("");
-  const [familyMember, setFamilyMember] = useState("");
-  const [insuredClientData, setInsuredClientData] = useState({})
   const [employData, setEmployData] = useState({
     company_name: "",
     insurance_plan: "",
     first_name: "",
     last_name: "",
-    pesel_number: "",
+    member_pesel: "",
     email: "",
     phone_number: "",
-    gender: "",
+    gender: '',
     house_number: "",
     street_name: "",
     postal_code: "",
-    city: ""
+    city_name: "",
+    monthly_premium: 0,
+    number_of_employ: "",
+    relational_status: "",
+    insured_client_id: null,
   })
   
   const [coInsuredMember, setCoInsuredMember] = useState([
@@ -63,17 +64,13 @@ const EmployDataForm = () => {
       pesel_number: "",
       email: "",
       phone_number: "",
-      gender: 0,
+      gender: '',
       house_number: "",
       street_name: "",
       postal_code: "",
       city: "" 
     };
     setCoInsuredMember([...coInsuredMember, newCoInsuredMember]);
-  };
-
-  const submit = (e) => {
-    e.preventDefault();
   };
 
   const removeFields = (index) => {
@@ -83,38 +80,51 @@ const EmployDataForm = () => {
   };
   
   const handleCoInsuredMemberChange = (index, e) => {
+    debugger
     let data = [...coInsuredMember];
     data[index][e.target.name] = e.target.value;
 }
 
   const handleEmployDataChange = (e) => {
+    debugger
     const { name, value } = e.target;
     setEmployData((prevEmployData) => ({ ...prevEmployData, [name]: value }))
   }
-  const handleGenderChange = (event) => {
-    setGender(event.target.value);
-  };
-
+  
   const handleFamilyTypeChange = (event) => {
     setFamilyType(event.target.value);
   };
 
-  const fetchEmployData =  async (email) => {
-    const response = await getEmployDataByEmail(email)
-    console.log(response)
-    if(response?.status < 300){
-      setInsuredClientData(response?.employ_data)
-      console.log(insuredClientData)
-    }
-    else if(response?.status > 300){
-      setErrorMessage(response?.message)
+  const fetchEmployData = async (email) => {
+    const response = await getEmployDataByEmail(email);
+    debugger
+    if (response && response?.status < 300) {
+      setEmployData((prevEmployData) => ({
+        ...prevEmployData,
+        insured_client_id: response?.employ_data?.id,
+        company_name: response?.employ_data?.company_name,
+        first_name: response?.employ_data?.member_first_name,
+        last_name: response?.employ_data?.member_last_name,
+        member_pesel: response?.employ_data?.member_pesel,
+        email: response?.employ_data?.member_email,
+        gender: response?.employ_data?.member_gender,
+        phone_number: response?.employ_data?.member_phone_number,
+        relational_status: response?.employ_data?.family_scope,
+        insurance_plan: response?.employ_data?.insurance_plan,
+      }));
+      console.log({...employData}) 
+    } else if (response?.status > 300) {
+      setErrorMessage(response?.message);
       setTimeout(() => {
         setErrorMessage('');
-      }, 3000)
+      }, 3000);
     }
   }
   
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await submitEmployData(employData, coInsuredMember)
+  };
   
   
   
@@ -189,7 +199,7 @@ const EmployDataForm = () => {
                 type="text"
                 style={{ marginTop: "0px" }}
                 name="company_name"
-                value={insuredClientData?.company_name}
+                value={employData?.company_name}
                 placeholder={`${t("Employdata.company_name")}`}
                 onChange={(e) => handleEmployDataChange(e)}
               />
@@ -202,8 +212,10 @@ const EmployDataForm = () => {
                 type="text"
                 style={{ marginTop: "0px" }}
                 name="insurance_plan"
-                value={insuredClientData?.insurance_plan}
+                disabled={true}
+                value={employData?.insurance_plan}
                 placeholder={`${t("Employdata.Insurance plan")}`}
+                onChange={(e) => handleEmployDataChange(e)}
               />
               <p style={{ fontWeight: "normal" }}>
                 * {t("Employdata.same_insurance_plan")}
@@ -222,16 +234,18 @@ const EmployDataForm = () => {
                   <input
                     type="text"
                     name="first_name"
-                    value={insuredClientData?.member_first_name}
+                    value={employData?.first_name}
                     placeholder={`${t("Employdata.firstnameemploy")}`}
+                    onChange={(e) => handleEmployDataChange(e)}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
                     name="last_name"
-                    value={insuredClientData?.member_last_name}
+                    value={employData?.last_name}
                     placeholder={`${t("Employdata.lastnameemploy")}`}
+                    onChange={(e) => handleEmployDataChange(e)}
                   />
                 </div>
               </div>
@@ -239,16 +253,17 @@ const EmployDataForm = () => {
               <input
                 className="uploadClient__container__body__generalInfo__input"
                 type="text"
-                name="pesel_number"
-                value={insuredClientData?.member_pesel}
+                name="member_pesel"
+                value={employData?.member_pesel}
                 placeholder={`${t("Employdata.peselno")}`}
+                onChange={(e) => handleEmployDataChange(e)}
               />
               <div className="userProfileView__container__details__detailsBox__feilds__container">
                 <div style={{ width: "49%" }}>
                   <input
                     type="email"
                     name="email"
-                    value={insuredClientData?.member_email}
+                    value={employData?.email}
                     placeholder="E-mail"
                     onChange={(e) => handleEmployDataChange(e)}
                   />
@@ -257,8 +272,9 @@ const EmployDataForm = () => {
                   <input
                     type="text"
                     name='phone_number'
-                    value={insuredClientData?.member_phone_number}
+                    value={employData?.phone_number}
                     placeholder={`${t("Employdata.Mobile_number")}`}
+                    onChange={(e) => handleEmployDataChange(e)}
                   />
                 </div>
               </div>
@@ -270,9 +286,9 @@ const EmployDataForm = () => {
                 <input
                   type="radio"
                   name="gender"
-                  value={(insuredClientData?.member_gender && insuredClientData?.member_gender === 'M') ? 0 : 0 }
-                  checked={(insuredClientData?.member_gender && insuredClientData?.member_gender === 'M')}
-                  onChange={(e) => handleEmployDataChange(e)}
+                  value='M'
+                  checked={employData?.gender === 'M'}
+                  onClick={(e) => handleEmployDataChange(e)}
                 />
                 <label> {t("Employdata.man")}</label>
               </div>
@@ -280,9 +296,9 @@ const EmployDataForm = () => {
                 <input
                   type="radio"
                   name="gender"
-                  value={(insuredClientData?.member_gender && insuredClientData?.member_gender === 'F') ? 1 : 1 }
-                  checked={(insuredClientData?.member_gender && insuredClientData?.member_gender === 'F')}
-                  onChange={(e) => handleEmployDataChange(e)}
+                  value='F'
+                  checked={employData?.gender === 'F'}
+                  onClick={(e) => handleEmployDataChange(e)}
                 />
                 <label> {t("Employdata.woman")}</label>
               </div>
@@ -303,7 +319,9 @@ const EmployDataForm = () => {
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
+                    name='street_name'
                     placeholder={`${t("Employdata.street")}`}
+                    onChange={(e) => handleEmployDataChange(e)}
                   />
                 </div>
               </div>
@@ -311,11 +329,18 @@ const EmployDataForm = () => {
                 <div style={{ width: "49%" }}>
                   <input
                     type="text"
+                    name="postal_code"
                     placeholder={`${t("Employdata.postal_code")}`}
+                    onChange={(e) => handleEmployDataChange(e)}
                   />
                 </div>
                 <div style={{ width: "49%" }}>
-                  <input type="text" placeholder={`${t("Employdata.city")}`} />
+                  <input 
+                    type="text" 
+                    placeholder={`${t("Employdata.city")}`} 
+                    name="city_name"
+                    onChange={(e) => handleEmployDataChange(e)}
+                  />
                 </div>
               </div>
             </div>
@@ -347,10 +372,10 @@ const EmployDataForm = () => {
               <div className="uploadClient__container__body__participation__head">
                 <input
                   type="radio"
-                  name="familyType"
-                  value="employee"
-                  checked={familyType === "employee"}
-                  onChange={handleFamilyTypeChange}
+                  name="relational_status"
+                  value='EMP'
+                  checked={employData?.relational_status === 'EMP'}
+                  onClick={(e) => handleEmployDataChange(e)}
                 />
 
                 <label> {t("Employdata.employ_only")}</label>
@@ -358,30 +383,30 @@ const EmployDataForm = () => {
               <div className="uploadClient__container__body__participation__head">
                 <input
                   type="radio"
-                  name="familyType"
-                  value="couple"
-                  checked={familyType === "couple"}
-                  onChange={handleFamilyTypeChange}
+                  name="relational_status"
+                  value='COU'
+                  checked={employData?.relational_status === 'COU'}
+                  onClick={(e) => handleEmployDataChange(e)}
                 />
                 <label> {t("Employdata.couple")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
                 <input
                   type="radio"
-                  name="familyType"
-                  value="family"
-                  checked={familyType === "family"}
-                  onChange={handleFamilyTypeChange}
+                  name="relational_status"
+                  value='FAM'
+                  checked={employData?.relational_status === 'FAM'}
+                  onClick={(e) => handleEmployDataChange(e)}
                 />
                 <label> {t("Employdata.family_couple")}</label>
               </div>
               <div className="uploadClient__container__body__participation__head">
                 <input
                   type="radio"
-                  name="familyType"
-                  value="singleParentFamily"
-                  checked={familyType === "singleParentFamily"}
-                  onChange={handleFamilyTypeChange}
+                  name="relational_status"
+                  value='OPF'
+                  checked={employData?.relational_status === 'OPF'}
+                  onClick={(e) => handleEmployDataChange(e)}
                 />
                 <label> {t("Employdata.single_parent")}</label>
               </div>
@@ -597,7 +622,9 @@ const EmployDataForm = () => {
               className="landingPage__clientDeserve__container"
               style={{ width: "auto", textAlign: "center" }}
             >
-              <Button> {t("Employdata.submit")}</Button>
+              <Button 
+                onClick={(e) => handleSubmit(e)}
+              > {t("Employdata.submit")}</Button>
             </div>{" "}
           </div>
         </div>
