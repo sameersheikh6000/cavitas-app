@@ -108,10 +108,11 @@ function Navbar() {
                   </Link>
                   <select
                     onChange={(e) => handleLanguageChange(e.target.value)}
+                    className="language_selector"
                   >
-                    <option value="">{t("nav.selectLang")}</option>
-                    <option value="en">{t("nav.english")}</option>
-                    <option value="pl">{t("nav.polish")}</option>
+                    <option className="language_selector" value="">{t("nav.selectLang")}</option>
+                    <option className="language_selector" value="en">{t("nav.english")}</option>
+                    <option className="language_selector" value="pl">{t("nav.polish")}</option>
                   </select>
                 </div>
               </Box>

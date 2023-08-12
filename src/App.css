@@ -210,7 +210,13 @@ body Button {
   flex: 1 1;
   overflow: hidden;
   margin-top: 15px;
+      font-size: 16px;
+font-weight: 500;
   margin-left: 6rem;
+}
+.language_selector{
+  font-size: 14px;
+  font-weight: 400;
 }
 .appbar__linksBox__links__link {
   color: black;
@@ -233,7 +239,7 @@ body Button {
 @media (max-width: 1050px) {
   .appbar__linksBox__links {
     margin-right: 0.5rem;
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 .appbar__linksBox__translate {
@@ -296,7 +302,7 @@ body Button {
 }
 .footer__container__top__box {
   /* width: 300px; */
-  font-size: 0.9rem;
+  font-size: 14px;
   font-weight: 500;
   display: flex;
   flex-direction: column;
@@ -1370,8 +1376,8 @@ font-size: 1rem !important;
   }
 }
 .landingPage__smartInsurance__container__details__heading {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 48px;
+  font-weight: 700;
 }
 @media (max-width: 768px) {
   .landingPage__smartInsurance__container__details__heading {
@@ -1379,8 +1385,8 @@ font-size: 1rem !important;
   }
 }
 .landingPage__smartInsurance__container__details__heading2 {
-  font-size: 3rem;
-  font-weight: bolder;
+  font-size: 48px;
+  font-weight: 700;
   color: #dd3333;
   width: 130%;
 }
@@ -1391,7 +1397,8 @@ font-size: 1rem !important;
 }
 .landingPage__smartInsurance__container__details__desc {
   margin-top: 0.5rem;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 16px;
 }
 .landingPage__smartInsurance__container__details__buttons {
   margin-top: 2rem;
@@ -1448,11 +1455,12 @@ font-size: 1rem !important;
 }
 .landingPage__ourOffer__header h1 {
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 40px;
   text-transform:none;
 }
 .landingPage__ourOffer__header p {
-  font-size: 0.9rem;
+  font-size: 16px;
+  font-weight: 400;
 }
 .landingPage__ourOffer__container {
   margin-top: 3rem;
@@ -1489,7 +1497,8 @@ font-size: 1rem !important;
   border-radius: 1rem 1rem 0 0;
   color: white;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 16px;
   padding: 0.3rem;
   margin-bottom: 1rem;
 }
@@ -1510,6 +1519,8 @@ font-size: 1rem !important;
 }
 .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc {
   /* font-size: 0.8rem; */
+  font-size: 16px;
+  font-weight: 400;
 }
 .landingPage__ourOffer__container__boxes__detailsContainer BUtton {
   text-transform: none;
@@ -1546,11 +1557,11 @@ font-size: 1rem !important;
 }
 .landingPage__valuableReadings__header h1 {
   font-weight: 600;
-  font-size: 2.5rem;
+  font-size: 40px;
   text-transform: capitalize;
 }
 .landingPage__valuableReadings__header p {
-  font-size: 1.2rem;
+  font-size: 16px;
   font-weight: 500;
   color: #dd3333;
 }
@@ -1583,23 +1594,23 @@ font-size: 1rem !important;
 .landingPage__valuableReadings__container__cardsBox__card__name {
   margin-top: 1rem;
   margin-left: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: #dd3333;
-  font-size: 1rem;
+  font-size: 16px;
   margin-bottom: 0.5rem;
 }
 .landingPage__valuableReadings__container__cardsBox__card__date {
   margin-left: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: gray;
-  font-size: 0.9rem;
+  font-size: 16px;
 }
 .landingPage__valuableReadings__container__cardsBox__card__desc {
   margin-top: 0.5rem;
   margin-left: 1rem;
-  /* font-weight: 600; */
+  font-weight: 400;
   text-align: justify;
-  font-size: 0.9rem;
+  font-size: 16px;
 }
 .landingPage__howItwork {
   padding: 4rem 1rem;
@@ -1633,7 +1644,7 @@ font-size: 1rem !important;
   }
 }
 .landingPage__howItwork__container__details__heading {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 600;
 }
 @media (max-width: 768px) {
@@ -1662,10 +1673,10 @@ font-size: 1rem !important;
 }
 .landingPage__howItwork__container__details__detailsContainer__box__text {
   margin-left: 0.3rem;
-  /* font-weight: 500; */
+  font-weight: 400;
   line-height: 1.8rem;
   justify-content: center;
-  /* font-size: 0.8rem; */
+  font-size: 16px;
   /* color: gray; */
 }
 .landingPage__howItwork__container__picture {
@@ -1714,7 +1725,7 @@ font-size: 1rem !important;
   }
 }
 .landingPage__allCare__container__details__heading {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 600;
   color: white;
 }
@@ -1727,7 +1738,7 @@ font-size: 1rem !important;
   margin-top: 0.5rem;
   font-weight: 500;
   color: white;
-  font-weight: 500;
+  font-size: 16px;
 }
 .landingPage__allCare__container__details__detailsContainer {
   margin: 1rem 0 0 0.5rem;
@@ -1743,7 +1754,8 @@ font-size: 1rem !important;
 }
 .landingPage__allCare__container__details__detailsContainer__box__text {
   margin-left: 0.3rem;
-  font-size: 0.9rem;
+  font-size: 16px;
+  font-weight: 400;
   color: white;
 }
 .landingPage__allCare__container__details__imageContainer {
@@ -1791,8 +1803,8 @@ font-size: 1rem !important;
   text-align: center;
 }
 .landingPage__clientDeserve__container p {
-  font-size: 3rem;
-  font-weight: 500;
+  font-size: 48px;
+  font-weight: 700;
   text-transform: capitalize;
 }
 @media (max-width: 1000px) {
@@ -1801,8 +1813,8 @@ font-size: 1rem !important;
   }
 }
 .landingPage__clientDeserve__container h1 {
-  font-size: 3rem;
-  font-weight: bolder;
+  font-size: 48px;
+  font-weight: 700;
   /* text-transform: capitalize; */
   color: #dd3333;
 }
@@ -1836,9 +1848,8 @@ font-size: 1rem !important;
   }
 }
 .landingPage__conversation__container h1 {
-  font-size: 2rem;
-  font-weight: 600;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 700;
   color: black;
   margin-top: 0;
 }
@@ -1888,7 +1899,7 @@ font-size: 1rem !important;
   }
 }
 .landingPage__benefitPlan__container__details__head {
-  font-size: 1.2rem;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
@@ -1896,10 +1907,14 @@ font-size: 1rem !important;
   margin-top: 1rem;
   display: flex;
   align-items: flex-start;
+  font-size: 16px;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 .landingPage__benefitPlan__container__details div p {
   margin-left: 0.5rem;
+  font-size: 16px;
+  font-weight: 400;
   margin-top: -0.1rem;
 }
 .landingPage__benefitPlan__container__picture {
@@ -1929,7 +1944,7 @@ font-size: 1rem !important;
   text-align: center;
 }
 .landingPage__coverWorks header h1 {
-  font-size: 2rem;
+  font-size: 40px;
   font-weight: 600;
 }
 @media (max-width: 1000px) {
@@ -1940,8 +1955,8 @@ font-size: 1rem !important;
 .landingPage__coverWorks header p {
   margin-top: 1rem;
   color: #dd3333;
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 16px;
 }
 .landingPage__coverWorks__container {
   margin-top: 2rem;
@@ -2082,8 +2097,8 @@ font-size: 1rem !important;
 }
 .landingPage__dentaltInsurance__container__details__desc {
   margin-top: 0.5rem;
-  font-weight: 500;
-  font-size: 1.2rem;
+  font-weight: 400;
+  font-size: 16px;
 }
 .landingPage__dentaltInsurance__container__details__buttons {
   margin-top: 2rem;
@@ -2200,7 +2215,7 @@ font-size: 1rem !important;
   }
 }
 .landingPage__becomeMember__container__details__heading {
-  font-size: 3rem;
+  font-size: 40px;
   font-weight: 600;
 }
 @media (max-width: 768px) {
@@ -2209,9 +2224,9 @@ font-size: 1rem !important;
   }
 }
 .landingPage__becomeMember__container__details__desc {
-  margin-top: 2rem;
-  font-weight: 500;
-  font-size: 1.2rem;
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 16px;
 }
 .landingPage__becomeMember__container__details Button {
   margin-top: 2rem;
@@ -2264,10 +2279,9 @@ font-size: 1rem !important;
   text-align: center;
 }
 .landingPage__healthyTeeth__container h1 {
-  font-size: 3rem;
-  font-weight: bolder;
+  font-size: 48px;
   text-transform: capitalize;
-  font-weight: 600;
+  font-weight: 700;
 }
 @media (max-width: 1000px) {
   .landingPage__healthyTeeth__container h1 {
@@ -2322,8 +2336,8 @@ font-size: 1rem !important;
   }
 }
 .aboutUs__cavitasMeaning__detailsBox h1 {
-  font-size: 2.5rem;
-  font-weight: bolder;
+  font-size: 48px;
+  font-weight: 700;
   color: #dd3333;
 }
 @media (max-width: 1000px) {
@@ -2452,7 +2466,7 @@ font-size: 1rem !important;
   }
 }
 .aboutUs__ourStory__container__detailsBox h1 {
-  font-size: 2rem;
+  font-size: 40px;
   font-weight: 600;
 }
 @media (max-width: 768px) {
@@ -2468,7 +2482,8 @@ font-size: 1rem !important;
 }
 .aboutUs__ourStory__container__detailsBox__desc1 {
   margin-top: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 16px;
+  font-weight: 400;
    text-align: justify;
 }
 .aboutUs__ourStory__container__detailsBox__desc2 {
@@ -2482,7 +2497,7 @@ font-size: 1rem !important;
   text-align: center;
 }
 .aboutUs__privacyPolicy header h1 {
-  font-size: 2rem;
+  font-size: 40px;
   font-weight: 600;
 }
 @media (max-width: 1000px) {
@@ -2506,8 +2521,8 @@ font-size: 1rem !important;
 }
 .aboutUs__privacyPolicy__container__card p {
   position: absolute;
-  font-weight: 600;
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 16px;
   color: #dd3333;
   margin-top: -8rem;
   margin-left: 1.2rem;
@@ -2526,7 +2541,7 @@ font-size: 1rem !important;
   text-align: center;
 }
 .aboutUs__smarterDentalInsurance header h1 {
-  font-size: 2rem;
+  font-size: 40px;
   color: #dd3333;
   font-weight: 600;
 }
@@ -2538,7 +2553,8 @@ font-size: 1rem !important;
 .aboutUs__smarterDentalInsurance header p {
   margin-top: 0.5rem;
   /* width: 60%; */
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 16px;
   transition: width 0.5s;
 }
 @media (max-width: 750px) {
@@ -2581,8 +2597,8 @@ font-size: 1rem !important;
   padding-bottom: 20px;
 }
 .faq header h1 {
-  font-size: 3rem;
-  font-weight: bolder;
+  font-size: 48px;
+  font-weight: 600;
   color: #dd3333;
   text-transform: capitalize;
 }
@@ -3517,7 +3533,7 @@ font-size: 1rem !important;
   padding-top: 3rem;
 }
 .valuableReadingView header h1 {
-  font-size: 2rem;
+  font-size: 16px;
   font-weight: 500;
 }
 @media (max-width: 1000px) {
@@ -3526,7 +3542,8 @@ font-size: 1rem !important;
   }
 }
 .valuableReadingView header p {
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: 500;
 }
 .valuableReadingView__container {
   margin: 6rem 0;
@@ -3540,7 +3557,8 @@ font-size: 1rem !important;
   width: 100%;
 }
 .valuableReadingView__container p {
-  font-size: 1rem;
+  font-size: 16px;
+  font-weight: 400;
   margin: 4rem 0;
 }
 

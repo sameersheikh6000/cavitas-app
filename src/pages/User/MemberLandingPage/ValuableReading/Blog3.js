@@ -25,6 +25,7 @@ const Blog3 = () => {
           <h1>{t("Blog.Blog3_title")}</h1>
           <p>by Cavitas | May 20, 2023</p>
         </header>
+        <br />
         <div
           className="valuableReadingView__container"
           style={{ textAlign: "justify" }}

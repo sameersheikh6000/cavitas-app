@@ -19,7 +19,6 @@ const ClientDeserve = () => {
     <section className='landingPage__clientDeserve'>
       <div className='landingPage__clientDeserve__container'>
         <p
-        style={{fontWeight:"bold"}}
         >{t("Broker.Broker_landing_Page_title1")}</p>
         <h1>{t("Broker.Broker_landing_Page_title2")}</h1>
         <Button onClick={() => navigate(`/signin/${lang === "pl" ? "pl" : "en"}`)}

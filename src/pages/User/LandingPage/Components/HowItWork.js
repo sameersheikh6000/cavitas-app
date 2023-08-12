@@ -23,9 +23,9 @@ const HowItWork = () => {
           <h1 className="landingPage__howItwork__container__details__heading">
             {t("home.Howdoeswork_title")}
           </h1>
-          <p className="landingPage__howItwork__container__details__desc">
+          {/* <p className="landingPage__howItwork__container__details__desc">
             {t("home.Howdoeswork_heading")}{" "}
-          </p>
+          </p> */}
           <div className="landingPage__howItwork__container__details__detailsContainer">
             <div className="landingPage__howItwork__container__details__detailsContainer__box">
               <DoneIcon className="landingPage__howItwork__container__details__detailsContainer__box__icon" />
