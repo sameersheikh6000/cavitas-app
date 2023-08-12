@@ -48,8 +48,9 @@ export default function Alldocuments() {
   const [value, setValue] = React.useState(0);
   const { t } = useTranslation();
   const selectedTabStyles = {
-    fontWeight: "bold",
+    fontWeight: "500",
     color: "black",
+    fontSize:"16px"
   };
 
   const handleChange = (event, newValue) => {
@@ -80,21 +81,21 @@ export default function Alldocuments() {
 
             <Tab
             className={value === 0 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
-            // style={{ backgroundColor: "#fff", fontSize:"15px", fontWeight:"bold", color:"black" }}
-            style={value === 0 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
+            // style={{ backgroundColor: "#fff", fontSize:"16px", fontWeight:"bold", color:"black" }}
+            style={value === 0 ? { ...selectedTabStyles, fontSize: "16px", fontWeight:500 } : { fontSize: "16px",fontWeight:500 }}
             label={t('Documents.Privacypolicy')}
             {...a11yProps(0)}
           />
            <Tab
             className={value === 1 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
-            style={value === 1 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
+            style={value === 1 ? { ...selectedTabStyles, fontSize: "16px",fontWeight:500 } : { fontSize: "16px",fontWeight:500 }}
             label={t('Documents.Cookies')}
 
             {...a11yProps(1)}
           />
             <Tab
             className={value === 2 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
-            style={value === 2 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
+            style={value === 2 ? { ...selectedTabStyles, fontSize: "16px",fontWeight:500 } : { fontSize: "16px",fontWeight:500 }}
             label={t('Documents.Complaint')}
 
             {...a11yProps(2)}
@@ -102,7 +103,7 @@ export default function Alldocuments() {
 
           <Tab
             className={value === 3 ? "selectedTab faq__tabs__tabsLabel" : "faq__tabs__tabsLabel"}
-            style={value === 3 ? { ...selectedTabStyles, fontSize: "15px" } : { fontSize: "15px" }}
+            style={value === 3 ? { ...selectedTabStyles, fontSize: "16px",fontWeight:500 } : { fontSize: "16px",fontWeight:500 }}
             label={t('Documents.agreement')}
             {...a11yProps(3)}
           />

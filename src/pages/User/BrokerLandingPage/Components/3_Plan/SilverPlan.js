@@ -60,25 +60,47 @@ const SilverPlan = () => {
             >
               <TableHead component={Paper}>
                 <TableRow style={{ border: "none" }}>
-                  <TableCell style={{ border: "none", width: "52%" }}>
+                  <TableCell
+                    style={{
+                      border: "none",
+                      width: "52%",
+                      fontSize: "20px",
+                      fontWeight: 600,
+                    }}
+                  >
                     <h2 style={titleStyle}>{t("3_Plan.Silverplan")}</h2>
                   </TableCell>
 
                   <TableCell
-                    style={{ border: "none", width: "16%" }}
+                    style={{
+                      border: "none",
+                      width: "16%",
+                      fontSize: "20px",
+                      fontWeight: 600,
+                    }}
                     align="center"
                   >
                     <h2 style={titleStyle}>{t("3_Plan.3_Plan_Year1")}</h2>
                   </TableCell>
                   <TableCell
-                    style={{ border: "none", width: "16%" }}
+                    style={{
+                      border: "none",
+                      width: "16%",
+                      fontSize: "20px",
+                      fontWeight: 600,
+                    }}
                     align="center"
                   >
                     <h2 style={titleStyle}>{t("3_Plan.3_Plan_Year2")}</h2>
                   </TableCell>
 
                   <TableCell
-                    style={{ border: "none", width: "16%" }}
+                    style={{
+                      border: "none",
+                      width: "16%",
+                      fontSize: "20px",
+                      fontWeight: 600,
+                    }}
                     align="center"
                   >
                     <h2 style={titleStyle}>{t("3_Plan.3_Plan_Year3")}</h2>
@@ -1040,7 +1062,7 @@ const SilverPlan = () => {
         <div>
           <p
             className="landingPage__valuableReadings__container__cardsBox__card__desc"
-            style={{ fontSize: "15px" }}
+            style={{ fontSize: "14px", fontWeight: 400 }}
           >
             {t("3_Plan.B_p1")}
           </p>

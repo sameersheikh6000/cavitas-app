@@ -23,9 +23,12 @@ const CR = () => {
           {t("CookiePolicy.Cookie_heading_No1")}{" "}
         </h1>
       </div>
-      <div style={{ textAlign: "justify", width: "100%" }}>
+      <div style={{ textAlign: "justify", width: "100%", fontSize:"16px", fontWeight:400 }}>
+      <br />
+      <h2 >
+          {t("PrivacyPolicy.Sub_heading_01")}{" "}
+        </h2>
         <p>
-          <br />
           {t("CookiePolicy.Cookie_Para_No1")}{" "}
           <Link style={{ cursor: "pointer" }} to="https://cavitas.pl">
             https://cavitas.pl

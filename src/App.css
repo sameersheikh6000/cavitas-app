@@ -27,7 +27,6 @@ body Button {
   body h1 {
     font-size: 1.8rem !important;
   }
-
 }
 
 .sidebar {
@@ -87,14 +86,14 @@ body Button {
   cursor: pointer;
   font-size: 1.8rem !important;
 }
-.sidebar__linkButtons__link:hover p ,
+.sidebar__linkButtons__link:hover p,
 .sidebar__linkButtons__link:active p,
 .sidebar__linkButtons__link:focus p {
   color: #dd3333 !important;
 }
-.sidebar__linkButtons__link__icon:hover __link ,
-.sidebar__linkButtons__link__icon:focus  __link ,
-.sidebar__linkButtons__link__icon:active  __link {
+.sidebar__linkButtons__link__icon:hover __link,
+.sidebar__linkButtons__link__icon:focus __link,
+.sidebar__linkButtons__link__icon:active __link {
   color: #dd3333 !important;
 }
 .sidebar__linkButtons__buttons {
@@ -210,11 +209,11 @@ body Button {
   flex: 1 1;
   overflow: hidden;
   margin-top: 15px;
-      font-size: 16px;
-font-weight: 500;
+  font-size: 16px;
+  font-weight: 500;
   margin-left: 6rem;
 }
-.language_selector{
+.language_selector {
   font-size: 14px;
   font-weight: 400;
 }
@@ -224,12 +223,12 @@ font-weight: 500;
   font-weight: 500;
   white-space: nowrap;
   margin-right: 1rem;
-}.appbar__linksBox__links__verification {
+}
+.appbar__linksBox__links__verification {
   color: red;
   text-decoration: unset;
   font-size: 13px;
   white-space: nowrap;
-
 }
 .appbar__linksBox__links a:hover,
 .appbar__linksBox__links a:focus,
@@ -451,11 +450,11 @@ font-weight: 500;
   margin-top: 0.3rem;
   cursor: pointer;
 }
-.supportView__header__iconBox__forget__update{
-margin-left: 0.5rem;
-/* font-weight: 600; */
-color: gray !important;
-font-size: 1rem !important;
+.supportView__header__iconBox__forget__update {
+  margin-left: 0.5rem;
+  /* font-weight: 600; */
+  color: gray !important;
+  font-size: 1rem !important;
 }
 .authentication__container__formContainer__form__loginButton_tickets {
   background-color: #dd3333 !important;
@@ -707,7 +706,6 @@ font-size: 1rem !important;
   /* margin-top: 1rem; */
   font-size: 13px;
   line-height: 21px;
-
 }
 .dashboard__container__content__welcomePage__support {
   margin-top: 2rem;
@@ -1456,7 +1454,7 @@ font-size: 1rem !important;
 .landingPage__ourOffer__header h1 {
   font-weight: 600;
   font-size: 40px;
-  text-transform:none;
+  text-transform: none;
 }
 .landingPage__ourOffer__header p {
   font-size: 16px;
@@ -1664,7 +1662,6 @@ font-size: 1rem !important;
 .landingPage__howItwork__container__details__detailsContainer__box {
   display: flex;
   /* align-items: center; */
-
 }
 .landingPage__howItwork__container__details__detailsContainer__box__icon {
   color: #dd3333;
@@ -1961,24 +1958,24 @@ font-size: 1rem !important;
 .landingPage__coverWorks__container {
   margin-top: 2rem;
 }
-.Shop__mainpage{
+.Shop__mainpage {
   font-weight: 500;
   color: black;
   margin-bottom: 100px;
   font-size: 20px;
 }
-.Shop__Button{
+.Shop__Button {
   background-color: #abcbcb;
   margin-left: 30px;
   border-radius: 25px;
   padding: 15px;
 }
-.Shop__Price{
+.Shop__Price {
   background-color: red;
   border-radius: 25px;
   padding: 15px;
 }
-.Shop__price h1{
+.Shop__price h1 {
   font-size: 30px;
   margin-top: 10px;
   font-weight: 400;
@@ -2484,7 +2481,7 @@ font-size: 1rem !important;
   margin-top: 0.5rem;
   font-size: 16px;
   font-weight: 400;
-   text-align: justify;
+  text-align: justify;
 }
 .aboutUs__ourStory__container__detailsBox__desc2 {
   margin-top: 0.5rem;
@@ -2626,7 +2623,7 @@ font-size: 1rem !important;
 }
 
 .css-heg063-MuiTabs-flexContainer {
-  background-color: #fff ;
+  background-color: #fff;
 }
 
 .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
@@ -3351,7 +3348,7 @@ font-size: 1rem !important;
 }
 .supportView__header__iconBox__forget p {
   margin-left: 0.5rem;
-  font-weight:600;
+  font-weight: 600;
   color: gray !important;
   font-size: 1.2rem;
 }
@@ -3518,9 +3515,8 @@ font-size: 1rem !important;
   padding: 0 10%;
   margin-left: 1rem;
   margin-right: 1rem;
-
 }
-.Blog3_header{
+.Blog3_header {
   /* background-image: url("./assets/NavbarBG-image.png"); */
   width: 105%;
 }
@@ -3586,7 +3582,14 @@ body.active-modal {
   bottom: 0;
   position: fixed;
 }
-.MuiPaper-root .MuiPaper-elevation .MuiPaper-rounded .MuiPaper-elevation24 .MuiDialog-paper .MuiDialog-paperScrollPaper .MuiDialog-paperWidthSm .css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+.MuiPaper-root
+  .MuiPaper-elevation
+  .MuiPaper-rounded
+  .MuiPaper-elevation24
+  .MuiDialog-paper
+  .MuiDialog-paperScrollPaper
+  .MuiDialog-paperWidthSm
+  .css-1t1j96h-MuiPaper-root-MuiDialog-paper {
   background-color: none;
 }
 
@@ -3725,7 +3728,6 @@ body.active-modal {
   border-radius: 25px;
 }
 
-
 /* Amdin ticketing syste, */
 .Admin___TicketDetails {
   width: 90%;
@@ -3752,9 +3754,7 @@ body.active-modal {
   background-color: #2ea3f2;
 }
 
-
-
- .confirmation-code {
+.confirmation-code {
   display: flex;
   width: 200px;
   letter-spacing: 20px;
@@ -3785,45 +3785,51 @@ body.active-modal {
   .landingPage__smartInsurance__container__details__heading2 {
     padding: 2px;
   }
-  .landingPage__smartInsurance__container__picture{
+  .landingPage__smartInsurance__container__picture {
     margin-left: -2rem;
   }
-  .landingPage__ourOffer__container__boxes__detailsContainer{
+  .landingPage__ourOffer__container__boxes__detailsContainer {
     padding: 30px;
   }
- 
-  .landingPage__allCare__container__details__imageContainer{
+
+  .landingPage__allCare__container__details__imageContainer {
     display: flex;
     justify-content: space-around;
   }
-  .landingPage__valuableReadings__container{
+  .landingPage__valuableReadings__container {
     margin-right: 40px;
   }
-  .MuiPaper-root .MuiMenu-paper .MuiPaper-elevation .MuiPaper-rounded .MuiPaper-elevation8 .MuiPopover-paper .css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{
-  left: 180px;
+  .MuiPaper-root
+    .MuiMenu-paper
+    .MuiPaper-elevation
+    .MuiPaper-rounded
+    .MuiPaper-elevation8
+    .MuiPopover-paper
+    .css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+    left: 180px;
   }
-  .footer__container__copyRight{
+  .footer__container__copyRight {
     justify-content: center;
   }
   /* About page */
-  .aboutUs__cavitasMeaning__detailsBox{
+  .aboutUs__cavitasMeaning__detailsBox {
     width: 130%;
   }
-  .aboutUs__ourStory{
+  .aboutUs__ourStory {
     padding: 0 2rem;
   }
   /* FAQ */
-  .faq__tabs{
+  .faq__tabs {
     padding: 1rem 0rem;
   }
-  .faq header h1{
+  .faq header h1 {
     padding-top: 30px;
   }
   /* member login */
-  .landingPage__dentaltInsurance__container__details__buttons{
+  .landingPage__dentaltInsurance__container__details__buttons {
     justify-content: space-around;
   }
-  .landingPage__dentaltInsurance__container__picture{
+  .landingPage__dentaltInsurance__container__picture {
     width: 140%;
   }
   /* Blog */
@@ -3831,121 +3837,121 @@ body.active-modal {
     margin: 60px;
   }
   /* Blog 1 2 3 */
-  .valuableReadingView__container p{
+  .valuableReadingView__container p {
     padding: 0px 50px;
   }
   .valuableReadingView h1 {
     margin-top: 50px;
   }
-  .Blog3_header h1{
+  .Blog3_header h1 {
     padding: 20px;
     background-image: url("./assets/NavbarBG-image.png");
-width: 100%;
-  }}
+    width: 100%;
+  }
+}
 
-  /* mobile devices */
-  @media (max-width: 360px) {
-    .landingPage__smartInsurance__container {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      width: 100%;
-      margin: 0;
-    }
-    
-    .landingPage__smartInsurance__container__details {
-      text-align: start;
-      margin-bottom: 20px;
-    }
-  
-    .landingPage__smartInsurance__container__picture {
-      text-align: center;
-      margin-left:2px;
-    }
+/* mobile devices */
+@media (max-width: 360px) {
+  .landingPage__smartInsurance__container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    margin: 0;
+  }
+
+  .landingPage__smartInsurance__container__details {
+    text-align: start;
+    margin-bottom: 20px;
+  }
+
+  .landingPage__smartInsurance__container__picture {
+    text-align: center;
+    margin-left: 2px;
+  }
   .landingPage__ourOffer__container__boxes__detailsContainer__tickBox {
     font-size: 12px;
     width: 102%;
     margin-left: 0px;
   }
-  .landingPage__ourOffer__container__boxes__detailsContainer{
+  .landingPage__ourOffer__container__boxes__detailsContainer {
     width: 100%;
   }
-  .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc{
+  .landingPage__ourOffer__container__boxes__detailsContainer__tickBox__desc {
     font-size: 12px;
   }
   .landingPage__valuableReadings {
     margin: 15px;
   }
- 
-    .Suggest__boxes {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .Suggest__boxes_button {
-      margin: -26px 0;
-    }
-    .Suggest__boxes_button button {
-      width: 102%;
-    }
- 
-  
+
+  .Suggest__boxes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Suggest__boxes_button {
+    margin: -26px 0;
+  }
+  .Suggest__boxes_button button {
+    width: 102%;
+  }
+
   /* about page */
   .aboutUs__cavitasMeaning__detailsBox {
     width: 200%;
   }
   .aboutUs__ourStory__container__profilesBox__right__profileImage {
-width: 150px;
-  }
-  .aboutUs__ourStory__container__profilesBox__left__profileImage{
     width: 150px;
   }
-  .aboutUs__ourStory__container{
+  .aboutUs__ourStory__container__profilesBox__left__profileImage {
+    width: 150px;
+  }
+  .aboutUs__ourStory__container {
     margin-top: 30px;
-  } 
+  }
   /* broker login page */
-  .landingPage__clientDeserve__container{
+  .landingPage__clientDeserve__container {
     width: 104%;
     padding-right: 1px;
   }
   /* member login page */
-  .landingPage__dentaltInsurance__container__details{
+  .landingPage__dentaltInsurance__container__details {
     align-items: start;
     width: 151%;
     margin: 10px 0px;
   }
-  .landingPage__dentaltInsurance__container__picture{
+  .landingPage__dentaltInsurance__container__picture {
     width: 180%;
   }
   /* footer */
-  .Contactforsupport{
+  .Contactforsupport {
     text-align: start;
     align-items: self-start;
   }
   /* shop */
-  #popup_manu{
+  #popup_manu {
     width: 30;
   }
-#Product_Pics{
-  width: 100%;
-  text-align: center;
-  margin-top: -10px;
-}
-#Product_Pics img{
-  width: 30px;
-  height: 40px;
-}
-#Product_detail{
-  width: 100%;
-  justify-content: center;
-  justify-items: center;
-  text-align: start;
-  align-items: center;
-  margin-bottom: 0;
-} 
-.Shop__Button{
-  margin-left: 10px;
-  margin-bottom: -60px;
-}
+  #Product_Pics {
+    width: 100%;
+    text-align: center;
+    margin-top: -10px;
+  }
+  #Product_Pics img {
+    width: 30px;
+    height: 40px;
+  }
+  #Product_detail {
+    width: 100%;
+    justify-content: center;
+    justify-items: center;
+    text-align: start;
+    align-items: center;
+    margin-bottom: 0;
+  }
+  .Shop__Button {
+    margin-left: 10px;
+    margin-bottom: -60px;
+  }
 }

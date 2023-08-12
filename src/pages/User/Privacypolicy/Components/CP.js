@@ -22,7 +22,7 @@ const CP = () => {
           COMPLAINTS PROCEDURE
         </h1>
       </div>
-      <div style={{ textAlign: "justify", width: "100%" }}>
+      <div style={{ textAlign: "justify", width: "100%" ,fontSize:"16px", fontWeight:400 }}>
         <p>
           <br />
           <h3>Introduction</h3>
