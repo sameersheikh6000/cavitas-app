@@ -19,13 +19,12 @@ const PPT = () => {
           {" "}
           {t("PrivacyPolicy.Main_heading")}
         </h1>
-        <h3 className="landingPage__dentaltInsurance__container__details__desc">
-          {t("PrivacyPolicy.Sub_heading_01")}{" "}
-        </h3>
       </div>
-      <div style={{ textAlign: "justify", width: "100%" }}>
+      <div style={{ textAlign: "justify", width: "100%", fontSize:"16px",fontWeight:"400" }}>
+      <h2 >
+          {t("PrivacyPolicy.Sub_heading_01")}{" "}
+        </h2>
         <p>
-          <br />
           {t("PrivacyPolicy.Para_No_1")}
           <br />
           <br />

@@ -58,24 +58,31 @@ const Footer = () => {
             <Link
               to={`/about/${lang === "pl" ? "pl" : "en"}`}
               className="appbar__linksBox__links__link"
+              onClick={() => handleLinkClick()}
+
             >
               {t("nav.aboutUs")}
             </Link>
             <Link
               className="appbar__linksBox__links__link"
               to={`/Blog/${lang === "pl" ? lang : "en"}`}
+              onClick={() => handleLinkClick()}
+
             >
               {t("nav.Blog")}
             </Link>
             <Link
               className="appbar__linksBox__links__link"
               to={`/faq/${lang === "pl" ? lang : "en"}`}
+              onClick={() => handleLinkClick()}
+
             >
               {t("nav.faq")}
             </Link>
             <Link
               className="appbar__linksBox__links__link"
               to={`/claims/${lang === "pl" ? lang : "en"}`}
+              onClick={() => handleLinkClick()}
             >
               {t("nav.claims")}
             </Link>
@@ -83,7 +90,9 @@ const Footer = () => {
 
               {t("nav.PrivacyPolicy")}
             </Link>
-            <Link to={"/Shop"}>{t("nav.Shop")}</Link>
+            <Link to={"/Shop"}
+                          onClick={() => handleLinkClick()}
+            >{t("nav.Shop")}</Link>
           </div>
           <div className="footer__container__top__box">
             <Link> {t("footer.findus")}</Link>
