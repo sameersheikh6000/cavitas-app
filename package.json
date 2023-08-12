@@ -1,7 +1,4 @@
-{
-  "engines": {
-    "node": "14.x"
-  },  
+{ 
   "name": "cavitas-app",
   "version": "0.1.0",
   "private": true,
