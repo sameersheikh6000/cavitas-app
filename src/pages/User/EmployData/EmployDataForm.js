@@ -136,6 +136,7 @@ const EmployDataForm = () => {
         phone_number: response?.employ_data?.member_phone_number,
         relational_status: response?.employ_data?.family_scope,
         insurance_plan: response?.employ_data?.insurance_plan,
+        monthly_premium: response?.employ_data.annual_gwp
       }));
       console.log({...employData}) 
     } else if (response?.status > 300) {
@@ -368,7 +369,9 @@ const EmployDataForm = () => {
                 <div style={{ width: "50%", marginRight: "320px" }}>
                   <input
                     type="text"
-                    name="type_of_insurance"
+                    name="insurance_plan"
+                    value={employData?.insurance_plan}
+                    disabled={true}
                     placeholder={`${t("Employdata.bronze/silver")}`}
                   />
                 </div>
@@ -428,8 +431,9 @@ const EmployDataForm = () => {
                 <div style={{ width: "50%", marginRight: "320px" }}>
                   <input
                     type="text"
-                    name="Last name of the employ filled automatically"
+                    name="monthly_premium"
                     placeholder="XXXX"
+                    value={employData?.monthly_premium}
                   />
                 </div>
               </div>
