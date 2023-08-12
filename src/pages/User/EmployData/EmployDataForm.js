@@ -3,9 +3,10 @@ import { useTranslation } from "react-i18next";
 import { Button } from "@mui/material";
 import i18n from "../../../config/helpers/i18n";
 import Page from "../../../components/Page/Page";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useEmployData from "../../../hooks/useEmployData";
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
+import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
 
 const EmployDataForm = () => {
   const currentUrl = window.location.href;
@@ -13,13 +14,14 @@ const EmployDataForm = () => {
   const { t } = useTranslation();
   
   const location = useLocation();
+  const navigate = useNavigate();
   const queryParams = new URLSearchParams(location.search);
   const email = queryParams.get('email');
   const { getEmployDataByEmail, submitEmployData } = useEmployData();
   
   //States
   const [errorMessage, setErrorMessage] = useState('');
-  const [familyType, setFamilyType] = useState("");
+  const [successMessage, setSuccessMessage] = useState('');
   const [employData, setEmployData] = useState({
     company_name: "",
     insurance_plan: "",
@@ -39,21 +41,19 @@ const EmployDataForm = () => {
     insured_client_id: null,
   })
   
-  const [coInsuredMember, setCoInsuredMember] = useState([
-    { 
-      relation: "", 
+  const [coInsuredMember, setCoInsuredMember] = useState([{
+    relation: "", 
       first_name: "" ,
       last_name: "",
       pesel_number: "",
       email: "",
       phone_number: "",
-      gender: 0,
+      gender: '',
       house_number: "",
       street_name: "",
       postal_code: "",
       city: ""
-    },
-  ]);
+  }]);
   
   //Methods
   const addFields = () => {
@@ -79,25 +79,50 @@ const EmployDataForm = () => {
     setCoInsuredMember(data);
   };
   
-  const handleCoInsuredMemberChange = (index, e) => {
-    debugger
-    let data = [...coInsuredMember];
-    data[index][e.target.name] = e.target.value;
-}
+  const handleCoInsuredMemberChange = (index, fieldname, e) => {
+    const { value } = e.target;
+    let updatedCoInsuredMembers = [...coInsuredMember]; 
+    updatedCoInsuredMembers[index][fieldname] = value; 
+    setCoInsuredMember(updatedCoInsuredMembers);
+  };
+
 
   const handleEmployDataChange = (e) => {
-    debugger
     const { name, value } = e.target;
     setEmployData((prevEmployData) => ({ ...prevEmployData, [name]: value }))
+    
+    if(name === 'house_number'){
+      const updatedCoInsuredMembers = coInsuredMember.map((member) => ({
+        ...member,
+        house_number: value,
+      }));
+      setCoInsuredMember(updatedCoInsuredMembers);
+    }
+    else if(name === 'street_name'){
+      const updatedCoInsuredMembers = coInsuredMember.map((member) => ({
+        ...member,
+        street_name: value,
+      }));
+      setCoInsuredMember(updatedCoInsuredMembers);
+    }
+    else if(name === 'postal_code'){
+      const updatedCoInsuredMembers = coInsuredMember.map((member) => ({
+        ...member,
+        postal_code: value,
+      }));
+      setCoInsuredMember(updatedCoInsuredMembers);
+    }
+    else if(name === 'city_name'){
+      const updatedCoInsuredMembers = coInsuredMember.map((member) => ({
+        ...member,
+        city: value,
+      }));
+      setCoInsuredMember(updatedCoInsuredMembers);
+    }
   }
-  
-  const handleFamilyTypeChange = (event) => {
-    setFamilyType(event.target.value);
-  };
 
   const fetchEmployData = async (email) => {
     const response = await getEmployDataByEmail(email);
-    debugger
     if (response && response?.status < 300) {
       setEmployData((prevEmployData) => ({
         ...prevEmployData,
@@ -124,37 +149,20 @@ const EmployDataForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await submitEmployData(employData, coInsuredMember)
+    if(response && response?.status < 300){
+      setSuccessMessage('Thank You For Providing Additional Information');
+      setTimeout(() => {
+        setSuccessMessage('');
+        navigate(`/${lang === 'pl' ? 'pl' : 'en'}`)
+      }, 3000)
+    }
+    else if(response && response?.status > 300){
+      setErrorMessage(response?.message)
+      setTimeout(() => {
+        setErrorMessage('')
+      }, 5000)
+    }
   };
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -166,6 +174,7 @@ const EmployDataForm = () => {
   //Body
   return (
     <Page>
+      <SuccessMessage successMessage={successMessage} />
       <AlertMessage errorMessage={errorMessage}/>
       <div className="faq">
         <header>
@@ -443,18 +452,18 @@ const EmployDataForm = () => {
                       <div className="uploadClient__container__body__participation__head">
                         <input
                           type="radio"
-                          name="relation"
-                          value="spousePartner"
-                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                          name={`relation-${index}`}
+                          value={0}
+                          onClick={(e) => handleCoInsuredMemberChange(index, 'relation', e)}
                         />
                         <label> {t("Employdata.supose")}</label>
                       </div>
                       <div className="uploadClient__container__body__participation__head">
                         <input
                           type="radio"
-                          name="relation"
-                          value="childUpTo23"
-                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                          name={`relation-${index}`}
+                          value={1}
+                          onClick={(e) => handleCoInsuredMemberChange(index, 'relation', e)}
                         />
                         <label> {t("Employdata.child")}</label>
                       </div>
@@ -466,17 +475,17 @@ const EmployDataForm = () => {
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
-                            name="first_name"
+                            name={`first_name-${index}`}
                             placeholder={`${t("Employdata.first_name")}`}
-                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'first_name', e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
                             placeholder={`${t("Employdata.last_name")}`}
-                            name="last_name"
-                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                            name={`last_name-${index}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'last_name', e)}
                           />
                         </div>
                       </div>
@@ -484,51 +493,52 @@ const EmployDataForm = () => {
                       <input
                         className="uploadClient__container__body__generalInfo__input"
                         type="text"
-                        name="pesel_number"
+                        name={`pesel_number-${index}`}
                         placeholder={`${t("Employdata.pesel")}`}
-                        onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                        onChange={(e) => handleCoInsuredMemberChange(index, 'pesel_number', e)}
                       />
                       <div className="userProfileView__container__details__detailsBox__feilds__container">
                         <div style={{ width: "49%" }}>
                           <input
                             type="email"
-                            name="email"
+                            name={`email-${index}`}
                             placeholder={`${t("Employdata.email")}`}
-                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'email', e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
-                            name='phone_number'
+                            name={`phone_number-${index}`}
                             placeholder={`${t("Employdata.mobile")}`}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'phone_number', e)}
                           />
                         </div>
                       </div>
                       <p style={{ color: "rgb(151 183 183)" }}>
-                        {" "}
                         {t("Employdata.gender")}
                       </p>
                       <div className="uploadClient__container__body__participation__head">
-                        <input 
-                          type="radio" 
-                          name="gender" 
-                          value={0} 
-                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
-                          />
+                        <input
+                          type="radio"
+                          name={`gender-${index}`}
+                          value={0}
+                          
+                          onChange={(e) => handleCoInsuredMemberChange(index, 'gender', e)}
+                        />
                         <label>{t("Employdata.man")}</label>
                       </div>
                       <div className="uploadClient__container__body__participation__head">
-                        <input 
-                          type="radio" 
-                          name="gender" 
-                          value={1} 
-                          onChange={(e) => handleCoInsuredMemberChange(index, e)}
-                          />
+                        <input
+                          type="radio"
+                          name={`gender-${index}`}
+                          value={1}
+                          
+                          onChange={(e) => handleCoInsuredMemberChange(index, 'gender', e)}
+                        />
                         <label>{t("Employdata.woman")}</label>
                       </div>
                       <p style={{ color: "rgb(151 183 183)" }}>
-                        {" "}
                         {t("Employdata.address_residence")}
                       </p>
 
@@ -536,20 +546,21 @@ const EmployDataForm = () => {
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
-                            name='house_number'
+                            name={`house_number-${index}`}
                             disabled={true}
                             value={employData?.house_number}
                             placeholder={`${t("Employdata.number_house")}`}
-                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'house_number', e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
-                            name="street_name"
+                            name={`street_name-${index}`}
                             disabled={true}
+                            value={employData?.street_name}
                             placeholder={`${t("Employdata.street")}`}
-                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'street_name', e)}
                           />
                         </div>
                       </div>
@@ -557,19 +568,21 @@ const EmployDataForm = () => {
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
-                            name="postal_code"
+                            name={`postal_code-${index}`}
                             disabled={true}
+                            value={employData?.postal_code}
                             placeholder={`${t("Employdata.postal_code")}`}
-                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'postal_code', e)}
                           />
                         </div>
                         <div style={{ width: "49%" }}>
                           <input
                             type="text"
-                            name="city"
+                            name={`city-${index}`}
                             disabled={true}
+                            value={employData?.city_name}
                             placeholder={`${t("Employdata.city")}`}
-                            onChange={(e) => handleCoInsuredMemberChange(index, e)}
+                            onChange={(e) => handleCoInsuredMemberChange(index, 'city', e)}
                           />
                         </div>
                       </div>
