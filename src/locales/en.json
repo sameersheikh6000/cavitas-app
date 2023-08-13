@@ -71,7 +71,9 @@
     "ourpolicy_title": "Our privacy policy and other documents    ",
     "ourpolicy_policy1": "Privacy policy    ",
     "ourpolicy_policy2": "Cookie policy    ",
-    "ourpolicy_policy3": "Broker agreement"
+    "ourpolicy_policy3": "Broker agreement",
+    "ourpolicy_policy4": "Complaint",
+    "ourpolicy_policy4_b": "procedure"
   },
 
   "FAQ": {
@@ -432,7 +434,7 @@
   "footer": {
     "findus": "Find us",
     "heading_1": "The insurance service provider is",
-    "heading_2": " Cavitas dental insurance OU",
+    "heading_2": " Cavitas dental insurance OÜ",
     "heading_3": "License nr 16501780",
     "heading_4": "Tallinn Estonia"
   },
@@ -742,7 +744,7 @@
   "3_Plan": {
     "3_Plan_title": "What is included in the insurance cover?",
     "3_Plan_heading": "Increasing benefits during 3 years while premium stay the same!",
-    "3_Plan_Bronze_plan": "*BRONZE plan",
+    "3_Plan_Bronze_plan": "BRONZE plan",
     "3_Plan_Year1": "Year 1",
     "3_Plan_Year2": "Year 2",
     "3_Plan_Year3": "Year 3",
@@ -781,8 +783,8 @@
     "B2": "ORAL CANCER TREATMENT IN POLAND",
     "B_p1": "*For more detailed information about the benefits download short product information here",
     "B_p2": "NB! Periodic oral annual examination is payable by the insured person and it must be carried out no more than 12 months before the first insurance claim is submitted.",
-    "Silverplan": "*SILVER PLAN",
-    "Goldenplan": "*GOLD plan"
+    "Silverplan": "SILVER PLAN",
+    "Goldenplan": "GOLD plan"
   },
   "Suggest_mail": {
     "Suggest_mail_title": "Cavitas dental insurance for employees",

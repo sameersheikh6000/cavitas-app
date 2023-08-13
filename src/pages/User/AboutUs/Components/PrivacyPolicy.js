@@ -45,6 +45,12 @@ const PrivacyPolicy = () => {
           <p>{t("about.ourpolicy_policy2")}</p>
           </Link>
         </div>
+        <div className='aboutUs__privacyPolicy__container__card' >
+        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(2)}>
+          <img src={require('../../../../assets/PrivacyPolicy-image.png')}  />
+          <p>{t("about.ourpolicy_policy4")}<br />{t("about.ourpolicy_policy4_b")}</p>
+          </Link>
+        </div>
         <div className="aboutUs__privacyPolicy__container__card">
         <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(3)}>
 
@@ -55,10 +61,7 @@ const PrivacyPolicy = () => {
           <p>{t("about.ourpolicy_policy3")}</p>
           </Link>
         </div>
-        {/* <div className='aboutUs__privacyPolicy__container__card'>
-          <img src={require('../../../../assets/PrivacyPolicy-image.png')} alt="" />
-          <p>Company <br /> documents</p>
-        </div> */}
+      
       </div>
     </section>
   );

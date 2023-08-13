@@ -2511,7 +2511,7 @@ body Button {
 }
 .aboutUs__privacyPolicy__container__card {
   margin-bottom: 2rem;
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
 }
 .aboutUs__privacyPolicy__container__card img {
   width: 200px;
@@ -2522,7 +2522,7 @@ body Button {
   font-size: 16px;
   color: #dd3333;
   margin-top: -8rem;
-  margin-left: 1.2rem;
+  margin-left: 14px;
 }
 .aboutUs__smarterDentalInsurance {
   padding: 2rem;

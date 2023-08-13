@@ -11,12 +11,15 @@ const OurOffer = () => {
 
   const handleComposeEmail = () => {
     const subject =   t("Suggest_mail.Suggest_mail_title");
+    
     const body = `${t("Suggest_mail.Suggest_mail_p1")}
 
 ${t("Suggest_mail.Suggest_mail_p2")}
+
 ${t("Suggest_mail.Suggest_mail_p3")}
 
 ${t("Suggest_mail.Suggest_mail_p4")}
+
 ${t("Suggest_mail.Suggest_mail_p5")}
     
 ${t("Suggest_mail.Suggest_mail_p6")}`;

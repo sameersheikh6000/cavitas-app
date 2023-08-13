@@ -73,7 +73,9 @@
     "ourpolicy_title": "Nasza polityka prywatności i inne dokumenty",
     "ourpolicy_policy1": "Polityka prywatności",
     "ourpolicy_policy2": "Polityka plików cookie",
-    "ourpolicy_policy3": "Umowa brokerska"
+    "ourpolicy_policy3": "Umowa brokerska",
+    "ourpolicy_policy4": "Procedura",
+    "ourpolicy_policy4_b": "reklamacyjna"
   },
 
   "FAQ": {
@@ -753,7 +755,7 @@
   "3_Plan":{
     "3_Plan_title":"Co obejmuje ubezpieczenie?",
     "3_Plan_heading":"Zwiększający się zakres świadczeń w ciągu 3 lat przy tej samej wysokości składki!",
-    "3_Plan_Bronze_plan":"*BRĄZOWY plan",
+    "3_Plan_Bronze_plan":"BRĄZOWY plan",
     "3_Plan_Year1":"Rok 1",
     "3_Plan_Year2":"Rok 2",
     "3_Plan_Year3":"Rok 3",
@@ -792,13 +794,13 @@
     "B2":"LECZENIE NOWOTWORU JAMY USTNEJ W POLSCE",
     "B_p1":"*Aby uzyskać bardziej szczegółowe informacje na temat korzyści, pobierz krótkie informacje o produkcie tutaj",
     "B_p2":"Uwaga! Okresowe coroczne badanie ustne jest płatne przez ubezpieczonego i musi być przeprowadzone nie wcześniej niż 12 miesięcy przed zgłoszeniem pierwszego roszczenia ubezpieczeniowego.",
-    "Silverplan":"*SREBRNY PLAN",
-    "Goldenplan":"*ZŁOTY plan"
+    "Silverplan":"SREBRNY PLAN",
+    "Goldenplan":"ZŁOTY plan"
   },
   "Suggest_mail":{
     "Suggest_mail_title":"Ubezpieczenia stomatologiczne Cavitas dla pracowników",
     "Suggest_mail_p1":"Cześć,",
-    "Suggest_mail_p2":"polecam świetną stronę internetową!",
+    "Suggest_mail_p2":"Polecam świetną stronę internetową!",
     "Suggest_mail_p3":"Serwis www.cavitas.pl oferuje wyjątkową ochronę stomatologiczną o nazwie Cavitas, która obejmuje nie tylko pracowników, ale także ich bliskich.",
     "Suggest_mail_p4":"Wyobraź sobie spokój, jaki będziesz mieć, wiedząc, że ty i twoi bliscy jesteście chronieni przez najwyższej klasy polisę ubezpieczeniową dentystyczną. Ta korzyść pracownicza jest naprawdę niezwykła i bardzo bym to zrobił polecam to rozważyć",
     "Suggest_mail_p5":"Pozdrawiam",

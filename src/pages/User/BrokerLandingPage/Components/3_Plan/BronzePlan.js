@@ -10,7 +10,6 @@ import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
 
 
 const BronzePlan = () => {
@@ -64,7 +63,6 @@ const BronzePlan = () => {
               aria-label="a dense table"
             >
               <TableHead
-                component={Paper}
                 style={{ fontSize: "20px", fontWeight: 600 }}
               >
                 <TableRow
@@ -78,7 +76,7 @@ const BronzePlan = () => {
                       fontWeight: 600,
                     }}
                   >
-                    <h2 style={titleStyle}>{t("3_Plan.3_Plan_Bronze_plan")}</h2>
+                    <h2 style={titleStyle}>{t("3_Plan.3_Plan_Bronze_plan")}*</h2>
                   </TableCell>
 
                   <TableCell
@@ -157,7 +155,7 @@ const BronzePlan = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody component={Paper}>
+              <TableBody >
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   style={tableContainerparaStyle}

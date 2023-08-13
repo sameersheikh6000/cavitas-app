@@ -19,7 +19,7 @@ const Privacypolicy = () => {
     <Page>
       <section className='faq'>
         <header>
-          <h1>{t("Documents.Documents")}</h1>
+          <h1 style={{fontSize:"48px", fontWeight:700}}>{t("Documents.Documents")}</h1>
         </header>
         <div className='faq__tabs'>
           <Alldocuments />

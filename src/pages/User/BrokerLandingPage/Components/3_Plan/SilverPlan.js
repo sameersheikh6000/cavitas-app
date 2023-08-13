@@ -10,7 +10,7 @@ import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+
 const SilverPlan = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
@@ -61,7 +61,7 @@ const SilverPlan = () => {
               size="small"
               aria-label="a dense table"
             >
-              <TableHead component={Paper}>
+              <TableHead>
                 <TableRow style={{ border: "none" }}>
                   <TableCell
                     style={{
@@ -71,7 +71,7 @@ const SilverPlan = () => {
                       fontWeight: 600,
                     }}
                   >
-                    <h2 style={titleStyle}>{t("3_Plan.Silverplan")}</h2>
+                    <h2 style={titleStyle}>{t("3_Plan.Silverplan")}*</h2>
                   </TableCell>
 
                   <TableCell
@@ -111,7 +111,7 @@ const SilverPlan = () => {
                 </TableRow>
               </TableHead>
               <br />
-              <TableHead component={Paper} style={tableContainerStyle}>
+              <TableHead  style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.3_Plan_Regular")}</h4>
@@ -128,7 +128,7 @@ const SilverPlan = () => {
                 </TableRow>
               </TableHead>
               <br />
-              <TableHead component={Paper}>
+              <TableHead >
                 <TableRow style={tableContainerheaderStyle}>
                   <TableCell style={{ fontSize: "15px", fontWeight: "bold" }}>
                     <p>{t("3_Plan.3_Plan_G1_title")}</p>
@@ -1026,7 +1026,7 @@ const SilverPlan = () => {
                 </TableRow>
               </TableBody>
               <br />
-              <TableHead component={Paper} style={tableContainerStyle}>
+              <TableHead  style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.B1")}</h4>
@@ -1043,7 +1043,7 @@ const SilverPlan = () => {
                 </TableRow>
               </TableHead>
               <br />
-              <TableHead component={Paper} style={tableContainerStyle}>
+              <TableHead  style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.B2")}</h4>

@@ -10,7 +10,7 @@ import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+
 const GoldPlan = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
@@ -61,7 +61,7 @@ const GoldPlan = () => {
               size="small"
               aria-label="a dense table"
             >
-              <TableHead component={Paper}>
+              <TableHead >
                 <TableRow
                   style={{ border: "none", fontSize: "20px", fontWeight: 600 }}
                 >
@@ -73,7 +73,7 @@ const GoldPlan = () => {
                       fontWeight: 600,
                     }}
                   >
-                    <h2 style={titleStyle}>{t("3_Plan.Goldenplan")}</h2>
+                    <h2 style={titleStyle}>{t("3_Plan.Goldenplan")}*</h2>
                   </TableCell>
 
                   <TableCell
@@ -113,7 +113,7 @@ const GoldPlan = () => {
                 </TableRow>
               </TableHead>
               <br />
-              <TableHead component={Paper} style={tableContainerStyle}>
+              <TableHead style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.3_Plan_Regular")}</h4>
@@ -130,7 +130,7 @@ const GoldPlan = () => {
                 </TableRow>
               </TableHead>
               <br />
-              <TableHead component={Paper}>
+              <TableHead >
                 <TableRow style={tableContainerheaderStyle}>
                   <TableCell style={{ fontSize: "15px", fontWeight: "bold" }}>
                     <p>{t("3_Plan.3_Plan_G1_title")}</p>
@@ -152,7 +152,7 @@ const GoldPlan = () => {
                   </TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody component={Paper}>
+              <TableBody >
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   style={tableContainerparaStyle}
@@ -1094,7 +1094,7 @@ const GoldPlan = () => {
                 </TableRow>
               </TableBody>
               <br />
-              <TableHead component={Paper} style={tableContainerStyle}>
+              <TableHead  style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.B1")}</h4>
@@ -1111,7 +1111,7 @@ const GoldPlan = () => {
                 </TableRow>
               </TableHead>
               <br />
-              <TableHead component={Paper} style={tableContainerStyle}>
+              <TableHead style={tableContainerStyle}>
                 <TableRow>
                   <TableCell style={{ border: "none" }}>
                     <h4>{t("3_Plan.B2")}</h4>
