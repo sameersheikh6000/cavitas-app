@@ -41,7 +41,7 @@ const UploadClient = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setClient({ ...client, [name]: name !== "file" ? value : e.target.files[0] });
-    e.target.files[0] && setFileName(e.target.files[0].name)
+    name === "file" && setFileName(e.target.files[0].name)
   }
 
   const handleMandatoryEmployees = () => {

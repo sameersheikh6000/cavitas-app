@@ -21,9 +21,9 @@ const CoverWorks = () => {
         <p>{t("3_Plan.3_Plan_heading")}</p>
       </header>
 
-      <BronzePlan />
+      {/* <BronzePlan />
       <SilverPlan />
-      <GoldPlan />
+      <GoldPlan /> */}
     </section>
   );
 };
