@@ -229,7 +229,12 @@ export const routes = [
     isPrivate: false,
   },
   {
-    path: "/about",
+    path: "/onas/:lang",
+    component: AboutUs,
+    isPrivate: false,
+  },
+  {
+    path: "/about , /ali",
     component: AboutUs,
     isPrivate: false,
   },

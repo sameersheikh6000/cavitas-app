@@ -1071,7 +1071,9 @@ const BronzePlan = () => {
               </TableHead>
             </Table>
           </div> */}
-          <div>
+        </div>
+      </div>
+      <div>
             <p
               className="landingPage__valuableReadings__container__cardsBox__card__desc"
               style={{ fontSize: "14px", fontWeight: 400 }}
@@ -1085,8 +1087,6 @@ const BronzePlan = () => {
               {t("3_Plan.B_p2")}
             </p>
           </div>
-        </div>
-      </div>
       <div className="landingPage__clientDeserve__container">
         <GetQuoteCavitas />
       </div>
