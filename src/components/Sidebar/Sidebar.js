@@ -79,13 +79,14 @@ const Sidebar = () => {
                 <></>
               ) : (
                 // <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
-                <Link
-                  to={`/insuredclient/group/${lang === "pl" ? "pl" : "en"}`}
+                <Button
+                  onClick={() => navigate(`/insuredclient/group/${lang === "pl" ? "pl" : "en"}`, {state: { user } } )}
                   className="sidebar__linkButtons__link"
+                  style={{ paddingLeft: "47px"}}
                 >
                   <GppGoodOutlinedIcon className="sidebar__linkButtons__link__icon" />
                   <p>Policy information</p>
-                </Link>
+                </Button>
               )}
               {user?.data?.role === "broker" && (
                 <>
