@@ -549,7 +549,7 @@ export const routes = [
   // ForgetPassword
 
   {
-    path: "/Add-Mail",
+    path: "/Add-Mail/:lang",
     component: EnterMail,
     isPrivate: false,
   },
@@ -589,13 +589,13 @@ export const routes = [
   },
 
   {
-    path: "/EmployerEnterMail",
+    path: "/EmployerEnterMail/:lang",
     component: EmployerEnterMail,
     isPrivate: false,
   },
 
   {
-    path: "/MemberEnterMail",
+    path: "/MemberEnterMail/:lang",
     component: MemberEnterMail,
     isPrivate: false,
   },

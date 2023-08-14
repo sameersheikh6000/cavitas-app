@@ -559,12 +559,14 @@
   "forgetpassword": {
     "Token": "Wpisz kod, który otrzymałeś e-mailem. W tym kodzie rozróżniana jest wielkość liter",
     "Email": "E-mail",
+    "token": "Znak",
     "Resetpassword": "Zresetuj hasło",
     "Sensitive": "Kod, który został wysłany do Ciebie e-mailem. Wielkość liter jest rozróżniana.",
-    "Newpassword": "Nowe hasło:  ",
-    "confirmpassword": "Potwierdź nowe hasło:",
+    "Newpassword": "Nowe hasło",
+    "confirmpassword": "Potwierdź nowe hasło",
     "continue": "Kontynuować",
     "password": "hasło",
+    "updatepassword":"ZAKTUALIZUJ HASŁO",
     "confirmationpassword": "Potwierdzenie hasła",
     "setnewpassword": "Ustaw tutaj swoje nowe hasło."
   },
@@ -806,5 +808,11 @@
     "Suggest_mail_p4":"Wyobraź sobie spokój, jaki będziesz mieć, wiedząc, że ty i twoi bliscy jesteście chronieni przez najwyższej klasy polisę ubezpieczeniową dentystyczną. Ta korzyść pracownicza jest naprawdę niezwykła i bardzo bym to zrobił polecam to rozważyć",
     "Suggest_mail_p5":"Pozdrawiam",
     "Suggest_mail_p6":"Twój lojalny pracownik"
-  }
-}
+  },
+  "Forget_psw":{
+    "forget_password":"Nie pamiętasz hasła?",
+    "enter_email":"Wprowadź adres e-mail powiązany z kontem.",
+     "continue":"KONTYNUUJ",
+     "Message":"Wysłaliśmy Ci wiadomość e-mail dotyczącą zresetowania hasła",
+     "email":"Adres e-mail"
+}}

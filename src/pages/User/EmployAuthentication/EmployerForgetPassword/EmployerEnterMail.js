@@ -1,39 +1,47 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
-import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
+import React, { useState, useEffect } from "react";
+import i18n from "../../../../config/helpers/i18n";
+import { useTranslation } from "react-i18next";
 import useForgotPassword from "../../../../hooks/useForgotPassword";
 import { useNavigate } from "react-router-dom";
-import CircularProgress from '@mui/material/CircularProgress';
+import CircularProgress from "@mui/material/CircularProgress";
 
 const EmployerEnterMail = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
-  const [successMessage, setSuccessMessage] = useState('');
-  const [alertMessage, setAlertMessage] = useState('');
-  const [isLoading, setIsLoading] = useState(false)
+  const { t } = useTranslation();
+  const [successMessage, setSuccessMessage] = useState("");
+  const [alertMessage, setAlertMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { forgotPassword } = useForgotPassword();
-  const [email, setEmail ] = useState('');
+  const [email, setEmail] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
     const response = await forgotPassword(email);
-    if(response?.status < 300){
-      setSuccessMessage(response?.message)
-      setIsLoading(false)
+    if (response?.status < 300) {
+      setSuccessMessage(response?.message);
+      setIsLoading(false);
       setTimeout(() => {
-        navigate(`/employ-signin/${lang === 'pl' ? 'pl' : 'en'}`)
+        navigate(`/employ-signin/${lang === "pl" ? "pl" : "en"}`);
       }, 3000);
       setEmail("");
-    }else if(response?.status > 300){
-      setIsLoading(false)
-      setAlertMessage(response?.message)
+    } else if (response?.status > 300) {
+      setIsLoading(false);
+      setAlertMessage(response?.message);
       setTimeout(() => {
-        setAlertMessage('')
+        setAlertMessage("");
       }, 3000);
     }
-  }
+  };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, []);
 
   return (
     <section className="authentication">
@@ -45,11 +53,11 @@ const EmployerEnterMail = () => {
               src={require("../../../../assets/Signin-logo.png")}
               alt=""
             />
-            <img
+            {/* <img
               className="authentication__container__imageBox__top__flag"
               src={require("../../../../assets/Signin-flag.png")}
               alt=""
-            />
+            /> */}
           </div>
 
           <div
@@ -72,7 +80,7 @@ const EmployerEnterMail = () => {
               marginBottom: "5px",
             }}
           >
-            Forgot Password?{" "}
+            {t("Forget_psw.forget_password")}{" "}
           </h2>
           <p
             style={{
@@ -80,12 +88,12 @@ const EmployerEnterMail = () => {
               fontSize: "17px",
             }}
           >
-            Please enter the email address associated with your account.
+            {t("Forget_psw.enter_email")}{" "}
           </p>
-          <div className="supportView__header__iconBox__forget">
+          {/* <div className="supportView__header__iconBox__forget">
             <MailOutlinedIcon className="supportView__header__iconBox__icon__forget" />
             <p>Email Address</p>
-          </div>
+          </div> */}
           <form
             className="authentication__container__formContainer__form__forget"
             style={{ width: "300" }}
@@ -98,26 +106,37 @@ const EmployerEnterMail = () => {
                 marginTop: "15px",
               }}
               type="email"
-              placeholder="email address"
+              placeholder={`${t("Forget_psw.email")}`}
               name="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <br />
-            {successMessage && <p style={{color: "green"}}><small>{successMessage}</small></p>}
-            {alertMessage && <p style={{color: "red"}}><small>{alertMessage}</small></p>}
-            
-              <Button
-                style={{ borderRadius: "50px" }}
-                disabled={isLoading}
-                className="authentication__container__formContainer__form__forget__loginButton"
-                type="submit"
-              >
-                { !isLoading ?
-                 'Continue' :
-                 <CircularProgress style={{width: '20px', height: '20px', color: 'white'}} />
-                }
-              </Button>
+            {successMessage && (
+              <p style={{ color: "green" }}>
+                <small>{successMessage}</small>
+              </p>
+            )}
+            {alertMessage && (
+              <p style={{ color: "red" }}>
+                <small>{alertMessage}</small>
+              </p>
+            )}
+
+            <Button
+              style={{ borderRadius: "50px" }}
+              disabled={isLoading}
+              className="authentication__container__formContainer__form__forget__loginButton"
+              type="submit"
+            >
+              {!isLoading ? (
+                t("Forget_psw.continue")
+              ) : (
+                <CircularProgress
+                  style={{ width: "20px", height: "20px", color: "white" }}
+                />
+              )}
+            </Button>
           </form>
         </div>
       </div>

@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from '../config/helpers/i18n';
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../config/helpers/i18n";
 import { Button } from "@mui/material";
 import useForgotPassword from "../hooks/useForgotPassword";
 import { useNavigate } from "react-router-dom";
 import SuccessMessage from "../components/SnackbarMessages/SuccessMessage";
 import AlertMessage from "../components/SnackbarMessages/AlertMessage";
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import CircularProgress from '@mui/material/CircularProgress';
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const ResetPassword = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false);
   const { resetPassword } = useForgotPassword();
   const [viewPassword, setViewPassword] = useState(false);
   const [viewConfirmPassword, setViewConfirmPassword] = useState(false);
@@ -29,39 +29,35 @@ const ResetPassword = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
     if (credential?.password === credential?.passwordConfirmation) {
       const response = await resetPassword(credential);
       if (response?.status < 300) {
         setSuccessMessage(response?.message);
-        setIsLoading(false)
-        if( response?.role === 'broker') {
+        setIsLoading(false);
+        if (response?.role === "broker") {
           setTimeout(() => {
-            navigate(`/signin/${lang === 'pl' ? 'pl' : 'en'}`);            
-          }, 3000)
-        }
-        else if(response?.role === 'employ') {
+            navigate(`/signin/${lang === "pl" ? "pl" : "en"}`);
+          }, 3000);
+        } else if (response?.role === "employ") {
           setTimeout(() => {
-            navigate(`/employ-signin/${lang === 'pl' ? 'pl' : 'en'}`);            
-          }, 3000)
-        }
-        else if ( response?.role === 'member') {
+            navigate(`/employ-signin/${lang === "pl" ? "pl" : "en"}`);
+          }, 3000);
+        } else if (response?.role === "member") {
           setTimeout(() => {
-            navigate(`/member-signin/${lang === 'pl' ? 'pl' : 'en'}`);            
-          }, 3000)
-        }
-        else {
+            navigate(`/member-signin/${lang === "pl" ? "pl" : "en"}`);
+          }, 3000);
+        } else {
           setTimeout(() => {
-            navigate(`/${lang === 'pl' ? 'pl' : 'en'}`);
+            navigate(`/${lang === "pl" ? "pl" : "en"}`);
           }, 3000);
         }
         setTimeout(() => {
           setSuccessMessage("");
         }, 5000);
-      }
-      else if (response?.status > 300){
-        setErrorMessage(response?.message)
-        setIsLoading(false)
+      } else if (response?.status > 300) {
+        setErrorMessage(response?.message);
+        setIsLoading(false);
         setTimeout(() => {
           setErrorMessage("");
         }, 5000);
@@ -80,7 +76,7 @@ const ResetPassword = () => {
     } else {
       setViewPassword(false);
     }
-  }
+  };
 
   const handleShowConfirmPassword = () => {
     if (viewConfirmPassword === false) {
@@ -88,23 +84,24 @@ const ResetPassword = () => {
     } else {
       setViewConfirmPassword(false);
     }
-  }
+  };
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, [])
+  }, []);
 
   return (
     <section className="authentication">
-      <SuccessMessage successMessage={successMessage}/>
+      <SuccessMessage successMessage={successMessage} />
       <AlertMessage errorMessage={errorMessage} />
       <div className="authentication__container">
         <div className="authentication__container__imageBox">
           <div className="authentication__container__imageBox__top">
             <img
               className="authentication__container__imageBox__top__logo"
+              onClick={() => navigate(`/${lang === "pl" ? lang : "en"}`)}
               src={require("../assets/Signin-logo.png")}
               alt=""
             />
@@ -137,69 +134,69 @@ const ResetPassword = () => {
                 marginBottom: "5px",
               }}
             >
-                 {t("forgetpassword.Resetpassword")}{" "}
+              {t("forgetpassword.Resetpassword")}{" "}
             </h2>
             <div className="authentication__container__formContainer__form">
-            <form onSubmit={handleSubmit}>
-              <div
-                className="supportView__header__iconBox__forget"
-                style={{ marginRight: "150px", fontWeight: "normal" }}
-              >
-                <h4>   {t("forgetpassword.Token")}:</h4>
-              </div>
-              <div className="authentication__container__formContainer__form__passwordBox">
-                <input
-                  style={{
-                    backgroundColor: "white",
-                    boxShadow: "0 0.5rem 1.5rem #d3d3d3",
-                    width: "300px",
-                    cursor: "pointer",
-                  }}
-                  required
-                  id="token"
-                  onChange={(e) =>
-                    setCredential({ ...credential, token: e.target.value })
-                  }
-                  name="token"
-                  placeholder="token"
-                  type="password"
-                  value={credential?.token}
-                />
-              </div>
-              {/* <div
+              <form onSubmit={handleSubmit}>
+                <div
+                  className="supportView__header__iconBox__forget"
+                  style={{ marginRight: "150px", fontWeight: "normal" }}
+                >
+                  <h4> {t("forgetpassword.Token")}:</h4>
+                </div>
+                <div className="authentication__container__formContainer__form__passwordBox">
+                  <input
+                    style={{
+                      backgroundColor: "white",
+                      boxShadow: "0 0.5rem 1.5rem #d3d3d3",
+                      width: "300px",
+                      cursor: "pointer",
+                    }}
+                    required
+                    id="token"
+                    onChange={(e) =>
+                      setCredential({ ...credential, token: e.target.value })
+                    }
+                    name="token"
+                    placeholder="token"
+                    type="password"
+                    value={credential?.token}
+                  />
+                </div>
+                {/* <div
                 className="supportView__header__iconBox__forget"
                 style={{ marginRight: "150px", fontWeight: "normal" }}
               >
                 <p style={{ fontWeight: "normal", fontSize: "16px" }}>
                 {t("forgetpassword.Sensitive")}                </p>
               </div> */}
-              <div
-                className="supportView__header__iconBox__forget"
-                style={{ marginRight: "150px", fontWeight: "normal" }}
-              >
-                <h4>Email:</h4>
-              </div>
+                <div
+                  className="supportView__header__iconBox__forget"
+                  style={{ marginRight: "150px", fontWeight: "normal" }}
+                >
+                  <h4> {t("forgetpassword.Email")}:</h4>
+                </div>
 
-              <div className="authentication__container__formContainer__form__passwordBox">
-                <input
-                  style={{
-                    backgroundColor: "white",
-                    boxShadow: "0 0.5rem 1.5rem #d3d3d3",
-                    width: "300px",
-                    cursor: "pointer",
-                  }}
-                  required
-                  id="email"
-                  onChange={(e) =>
-                    setCredential({ ...credential, email: e.target.value })
-                  }
-                  name="email"
-                  placeholder="email"
-                  type="email"
-                  value={credential?.email}
-                />
-              </div>
-              {/* <div
+                <div className="authentication__container__formContainer__form__passwordBox">
+                  <input
+                    style={{
+                      backgroundColor: "white",
+                      boxShadow: "0 0.5rem 1.5rem #d3d3d3",
+                      width: "300px",
+                      cursor: "pointer",
+                    }}
+                    required
+                    id="email"
+                    onChange={(e) =>
+                      setCredential({ ...credential, email: e.target.value })
+                    }
+                    name="email"
+                    placeholder="email"
+                    type="email"
+                    value={credential?.email}
+                  />
+                </div>
+                {/* <div
                 className="supportView__header__iconBox__forget"
                 style={{ marginRight: "150px", fontWeight: "normal" }}
               >
@@ -207,83 +204,92 @@ const ResetPassword = () => {
                   Set your new password here.
                 </h4>
               </div> */}
-              <div
-                className="supportView__header__iconBox__forget"
-                style={{ marginRight: "150px", fontWeight: "normal" }}
-              >
-                <h4>
-                  New password:
-                </h4>
-              </div>
+                <div
+                  className="supportView__header__iconBox__forget"
+                  style={{ marginRight: "150px", fontWeight: "normal" }}
+                >
+                  <h4>{t("forgetpassword.Newpassword")}:</h4>
+                </div>
 
-              <div className="authentication__container__formContainer__form__passwordBox">
-                <input
-                  style={{
-                    backgroundColor: "white",
-                    boxShadow: "0 0.5rem 1.5rem #d3d3d3",
-                    width: "300px",
-                    cursor: "pointer",
-                  }}
-                  required
-                  id="password"
-                  onChange={(e) =>
-                    setCredential({ ...credential, password: e.target.value })
-                  }
-                  name="password"
-                  placeholder="password"
-                  type={viewPassword ? 'text' : 'password'}
-                  value={credential?.password}
-                />
-                <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowNewPassword} />
-              </div>
+                <div className="authentication__container__formContainer__form__passwordBox">
+                  <input
+                    style={{
+                      backgroundColor: "white",
+                      boxShadow: "0 0.5rem 1.5rem #d3d3d3",
+                      width: "300px",
+                      cursor: "pointer",
+                    }}
+                    required
+                    id="password"
+                    onChange={(e) =>
+                      setCredential({ ...credential, password: e.target.value })
+                    }
+                    name="password"
+                    placeholder={`${t("forgetpassword.password")}`}
+                    type={viewPassword ? "text" : "password"}
+                    value={credential?.password}
+                  />
+                  <RemoveRedEyeOutlinedIcon
+                    className="authentication__container__formContainer__form__passwordBox__passwordIcon"
+                    onClick={handleShowNewPassword}
+                  />
+                </div>
 
-              <div
-                className="supportView__header__iconBox__forget"
-                style={{ marginRight: "150px", fontWeight: "normal" }}
-              >
-                <h4>
-                  Confirm new password:
-                </h4>
-              </div>
+                <div
+                  className="supportView__header__iconBox__forget"
+                  style={{ marginRight: "150px", fontWeight: "normal" }}
+                >
+                  <h4>{t("forgetpassword.confirmpassword")}:</h4>
+                </div>
 
-              <div className="authentication__container__formContainer__form__passwordBox">
-                <input
-                  style={{
-                    backgroundColor: "white",
-                    boxShadow: "0 0.5rem 1.5rem #d3d3d3",
-                    width: "300px",
-                    cursor: "pointer",
-                  }}
-                  required
-                  id="password_confirmation"
-                  onChange={(e) =>
-                    setCredential({
-                      ...credential,
-                      passwordConfirmation: e.target.value,
-                    })
-                  }
-                  name="password_confirmation"
-                  placeholder="password confirmation"
-                  type={viewConfirmPassword ? 'text' : 'password'}
-                  value={credential?.passwordConfirmation}
-                />
-                <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowConfirmPassword} />
-              </div>
-              <br />
-              <div className="authentication__container__formContainer__form">
-              <Button
-                type="submit"
-                disabled={isLoading}
-                onClick={(e) => handleSubmit(e)}
-                className="authentication__container__formContainer__form__forget__loginButton"
-              >
-                {
-                  !isLoading ? 'Update password' : <CircularProgress style={{width: '20px', height: '20px', color: 'white'}} />
-                }
-                
-              </Button>
-              </div>
-            </form>
+                <div className="authentication__container__formContainer__form__passwordBox">
+                  <input
+                    style={{
+                      backgroundColor: "white",
+                      boxShadow: "0 0.5rem 1.5rem #d3d3d3",
+                      width: "300px",
+                      cursor: "pointer",
+                    }}
+                    required
+                    id="password_confirmation"
+                    onChange={(e) =>
+                      setCredential({
+                        ...credential,
+                        passwordConfirmation: e.target.value,
+                      })
+                    }
+                    name="password_confirmation"
+                    placeholder={`${t("forgetpassword.confirmpassword")}`}
+                    type={viewConfirmPassword ? "text" : "password"}
+                    value={credential?.passwordConfirmation}
+                  />
+                  <RemoveRedEyeOutlinedIcon
+                    className="authentication__container__formContainer__form__passwordBox__passwordIcon"
+                    onClick={handleShowConfirmPassword}
+                  />
+                </div>
+                <br />
+                <div className="authentication__container__formContainer__form">
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    onClick={(e) => handleSubmit(e)}
+                    className="authentication__container__formContainer__form__forget__loginButton"
+                  >
+                    {!isLoading ? (
+                      t("forgetpassword.updatepassword")
+                    ) : (
+                      <CircularProgress
+                        style={{
+                          width: "20px",
+                          height: "20px",
+                          color: "white",
+                        }}
+                      />
+                    )}
+                  </Button>
+                </div>
+              </form>
             </div>
           </form>
         </div>

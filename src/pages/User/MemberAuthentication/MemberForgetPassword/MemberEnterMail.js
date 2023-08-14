@@ -1,19 +1,28 @@
 import { Button } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import { useNavigate } from "react-router-dom";
+import i18n from "../../../../config/helpers/i18n";
+import { useTranslation } from "react-i18next";
 import useForgotPassword from "../../../../hooks/useForgotPassword";
 import CircularProgress from '@mui/material/CircularProgress';
 
 const MemberEnterMail = () => {
-  const currentUrl = window.location.href;
-  const lang = currentUrl.split("/").pop();
   const [successMessage, setSuccessMessage] = useState('');
   const [alertMessage, setAlertMessage] = useState('');
   const navigate = useNavigate();
   const { forgotPassword } = useForgotPassword();
   const [email, setEmail ] = useState('');
   const [isLoading, setIsLoading] = useState(false)
+  const currentUrl = window.location.href;
+  const lang = currentUrl.split("/").pop();
+  const { t } = useTranslation();
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -49,11 +58,11 @@ const MemberEnterMail = () => {
               src={require("../../../../assets/Signin-logo.png")}
               alt=""
             />
-            <img
+            {/* <img
               className="authentication__container__imageBox__top__flag"
               src={require("../../../../assets/Signin-flag.png")}
               alt=""
-            />
+            /> */}
           </div>
 
           <div
@@ -76,7 +85,7 @@ const MemberEnterMail = () => {
               marginBottom: "5px",
             }}
           >
-            Forgot Password?{" "}
+             {t("Forget_psw.forget_password")}{" "}
           </h2>
           <p
             style={{
@@ -84,12 +93,12 @@ const MemberEnterMail = () => {
               fontSize: "17px",
             }}
           >
-            Please enter the email address associated with your account.
+            {t("Forget_psw.enter_email")}{" "}
           </p>
-          <div className="supportView__header__iconBox__forget">
+          {/* <div className="supportView__header__iconBox__forget">
             <MailOutlinedIcon className="supportView__header__iconBox__icon__forget" />
             <p>Email Address</p>
-          </div>
+          </div> */}
           <form
             className="authentication__container__formContainer__form__forget"
             style={{ width: "300" }}
@@ -102,7 +111,7 @@ const MemberEnterMail = () => {
                 marginTop: "15px",
               }}
               type="email"
-              placeholder="email address"
+              placeholder={`${t("Forget_psw.email")}`}
               name="email"
               value={email}
               onChange={(e) => handleChange(e)}
@@ -117,7 +126,7 @@ const MemberEnterMail = () => {
                 type="submit"
               >
                 { !isLoading ?
-                 'Continue' :
+                 t("Forget_psw.continue"):
                  <CircularProgress style={{width: '20px', height: '20px', color: 'white'}} />
                 }
               </Button>

@@ -1,10 +1,10 @@
-import { Button } from '@mui/material'
-import React, { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import i18n from '../../../config/helpers/i18n';
-import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
-import { Link, useNavigate } from 'react-router-dom';
-import useAuthenticate from '../../../hooks/useAuthenticate';
+import { Button } from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../config/helpers/i18n";
+import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import { Link, useNavigate } from "react-router-dom";
+import useAuthenticate from "../../../hooks/useAuthenticate";
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 const EmploySignIn = () => {
   const currentUrl = window.location.href;
@@ -25,23 +25,22 @@ const EmploySignIn = () => {
     } else {
       setViewPassword(false);
     }
-  }
+  };
 
-  const changeHandler = event => {
+  const changeHandler = (event) => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
   };
 
-  const submitHandler = async e => {
-
+  const submitHandler = async (e) => {
     e.preventDefault();
     for (let prop in user) {
-      if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"))
+      if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"));
     }
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
-      navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)
-        } else if (response?.data?.message !== undefined) {
+      navigate(`/dashboard/${lang === "pl" ? lang : "en"}`);
+    } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
       setTimeout(() => {
         setErrorMessage("");
@@ -58,77 +57,103 @@ const EmploySignIn = () => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, [])
+  }, []);
 
   return (
-    <section className='authentication'>
+    <section className="authentication">
       <AlertMessage errorMessage={errorMessage} />
-      <div className='authentication__container'>
-
-        <div className='authentication__container__imageBox'>
-          <div className='authentication__container__imageBox__top' >
-            <img className='authentication__container__imageBox__top__logo' onClick={() => navigate(`/${lang === "pl" ? lang : "en"}`)} src={require("../../../assets/Signin-logo.png")} alt='' />
+      <div className="authentication__container">
+        <div className="authentication__container__imageBox">
+          <div className="authentication__container__imageBox__top">
+            <img
+              className="authentication__container__imageBox__top__logo"
+              onClick={() => navigate(`/${lang === "pl" ? lang : "en"}`)}
+              src={require("../../../assets/Signin-logo.png")}
+              alt=""
+            />
             {/* <img className='authentication__container__imageBox__top__flag' src={require("../../../assets/Signin-flag.png")} alt='' /> */}
           </div>
 
-          <div className='authentication__container__imageBox__bottom'>
-            <img className='authentication__container__imageBox__bottom' src={require("../../../assets/EmployeeLogin-image.png")} alt='' />
+          <div className="authentication__container__imageBox__bottom">
+            <img
+              className="authentication__container__imageBox__bottom"
+              src={require("../../../assets/EmployeeLogin-image.png")}
+              alt=""
+            />
           </div>
         </div>
 
-        <div className='authentication__container__formContainer'>
-          <p className='authentication__container__formContainer__heading'>{t("Pannel_Login.welcomecavitas")} </p>
-          <br />       {/* <p className='authentication__container__formContainer__login'>Log In To</p> */}
-          <form className='authentication__container__formContainer__form' onSubmit={submitHandler}>
+        <div className="authentication__container__formContainer">
+          <p className="authentication__container__formContainer__heading">
+            {t("Pannel_Login.welcomecavitas")}{" "}
+          </p>
+          <br />{" "}
+          {/* <p className='authentication__container__formContainer__login'>Log In To</p> */}
+          <form
+            className="authentication__container__formContainer__form"
+            onSubmit={submitHandler}
+          >
             <input
-              className='authentication__container__formContainer__form__email'
-              type='email'
-              placeholder='Email'
-              name='email'
+              className="authentication__container__formContainer__form__email"
+              type="email"
+              placeholder="Email"
+              name="email"
               value={user.email}
               onChange={changeHandler}
               required={true}
             />
-            <div className='authentication__container__formContainer__form__passwordBox'>
-              {viewPassword === true ?
+            <div className="authentication__container__formContainer__form__passwordBox">
+              {viewPassword === true ? (
                 <input
-                  className='authentication__container__formContainer__form__passwordBox__password'
-                  type='text'
-                  name='password'
+                  className="authentication__container__formContainer__form__passwordBox__password"
+                  type="text"
+                  name="password"
                   placeholder={`${t("Pannel_Login.password")}`}
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
-                  autoComplete='off'
+                  autoComplete="off"
                 />
-                :
+              ) : (
                 <input
-                  className='authentication__container__formContainer__form__passwordBox__password'
-                  type='password'
-                  name='password'
+                  className="authentication__container__formContainer__form__passwordBox__password"
+                  type="password"
+                  name="password"
                   placeholder={`${t("Pannel_Login.password")}`}
                   value={user.password}
                   onChange={changeHandler}
                   required={true}
-                  autoComplete='off'
+                  autoComplete="off"
                 />
-              }
-              <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowPassword} />
+              )}
+              <RemoveRedEyeOutlinedIcon
+                className="authentication__container__formContainer__form__passwordBox__passwordIcon"
+                onClick={handleShowPassword}
+              />
             </div>
-            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>{t("Pannel_Login.login")}</Button>
+            <Button
+              className="authentication__container__formContainer__form__loginButton"
+              type="submit"
+            >
+              {t("Pannel_Login.login")}
+            </Button>
           </form>
-          <Link to="/EmployerEnterMail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
-          <div className='authentication__container__formContainer__registerNow'>
-          <p>{t("Pannel_Login.don'thaveaccount")}</p>
-                        <Link to={`/employ-signup/${lang === "pl" ? "pl" : "en"}`}>
-
-            <Button>{t("Pannel_Login.registernow")}</Button>
+          <Link
+            to={`/EmployerEnterMail/${lang === "pl" ? "pl" : "en"}`}
+            className="authentication__container__formContainer__forgotPassword"
+          >
+            {t("Pannel_Login.forgetpassword")}
+          </Link>
+          <div className="authentication__container__formContainer__registerNow">
+            <p>{t("Pannel_Login.don'thaveaccount")}</p>
+            <Link to={`/employ-signup/${lang === "pl" ? "pl" : "en"}`}>
+              <Button>{t("Pannel_Login.registernow")}</Button>
             </Link>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default EmploySignIn
+export default EmploySignIn;

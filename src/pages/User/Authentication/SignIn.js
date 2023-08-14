@@ -123,7 +123,7 @@ const SignIn = () => {
             </div>
             <Button className='authentication__container__formContainer__form__loginButton' type='submit'>{t("Pannel_Login.login")}</Button>
           </form>
-          <Link to="/Add-Mail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
+          <Link to={`/Add-Mail/${lang === "pl" ? "pl" : "en"}`} className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
             <p>{t("Pannel_Login.don'thaveaccount")}</p>
             <Link to={`/signup/${lang === "pl" ? "pl" : "en"}`}>

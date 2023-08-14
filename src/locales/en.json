@@ -553,10 +553,12 @@
     "Email": "E-mail",
     "Resetpassword": "Reset Password",
     "Sensitive": "Enter code that you recieved. This is case-sensitive.",
-    "Newpassword": "New password:  ",
-    "confirmpassword": "Confirm new password:",
+    "Newpassword": "New password",
+    "confirmpassword": "Confirm new password",
     "continue": "Continue",
     "password": "Password",
+    "token": "token",
+    "updatepassword":"UPDATE PASSWORD",
     "confirmationpassword": "password confirmation",
     "setnewpassword": "Set your new password here."
   },
@@ -797,10 +799,11 @@
     "Suggest_mail_p6": "Your loyal employee"
 
   },
-  "Forget_password":{
-    "forget_password":"",
-    "enter_email":"",
-     "continue":"",
-     "Message":""
+  "Forget_psw":{
+    "forget_password":"Forgot password?",
+    "enter_email":"Please enter the email address associated with your account.",
+     "continue":"CONTINUE",
+     "Message":"We have sent you a password reset email",
+     "email":"Email address"
   }
 }

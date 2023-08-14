@@ -86,7 +86,7 @@ const MemberSignIn = () => {
             <input
               className='authentication__container__formContainer__form__email'
               type='email'
-              placeholder='Email'
+              placeholder='E-mail'
               name='email'
               value={user.email}
               onChange={changeHandler}
@@ -120,7 +120,7 @@ const MemberSignIn = () => {
             </div>
             <Button className='authentication__container__formContainer__form__loginButton' type='submit'>{t("Pannel_Login.login")}</Button>
           </form>
-          <Link to="/MemberEnterMail" className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
+          <Link to={`/MemberEnterMail/${lang === "pl" ? "pl" : "en"}`} className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
           <p>{t("Pannel_Login.don'thaveaccount")}</p>
             <Link to={`/member-signup/${lang === "pl" ? "pl" : "en"}`}>
