@@ -1,6 +1,5 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
 import { useNavigate } from "react-router-dom";
 import i18n from "../../../../config/helpers/i18n";
 import { useTranslation } from "react-i18next";
@@ -58,11 +57,6 @@ const MemberEnterMail = () => {
               src={require("../../../../assets/Signin-logo.png")}
               alt=""
             />
-            {/* <img
-              className="authentication__container__imageBox__top__flag"
-              src={require("../../../../assets/Signin-flag.png")}
-              alt=""
-            /> */}
           </div>
 
           <div
@@ -95,10 +89,6 @@ const MemberEnterMail = () => {
           >
             {t("Forget_psw.enter_email")}{" "}
           </p>
-          {/* <div className="supportView__header__iconBox__forget">
-            <MailOutlinedIcon className="supportView__header__iconBox__icon__forget" />
-            <p>Email Address</p>
-          </div> */}
           <form
             className="authentication__container__formContainer__form__forget"
             style={{ width: "300" }}
