@@ -23,7 +23,7 @@ const Blog3 = () => {
       <section className="valuableReadingView">
         <header className="Blog3_header">
           <h1>{t("Blog.Blog3_title")}</h1>
-          <p>by Cavitas | May 20, 2023</p>
+          <p>  {t("Blog.Blog_date")}</p>
         </header>
         <br />
         <div

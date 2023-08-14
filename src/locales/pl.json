@@ -26,7 +26,7 @@
     "smarter_insurance_button2_employer": "Jestem pracodawcą",
     "smarter_insurance_button3_member": "Jestem członkiem",
     "landingPage__ourOffer__header_h1": "Co oferujemy?",
-    "landingPage__ourOffer__header_p": "Aby przyciągnąć i zatrzymać najlepszych pracowników, firmy często muszą oferować nie tylko podstawowe wynagrodzenie, ale także dodatkowe świadczenia. Ubezpieczenie stomatologiczne jest bardzo cenione przez pracowników, ponieważ wydatki na leczenie dentystyczne mogą stanowić znaczne obciążenie. Firma Cavitas oferuje atrakcyjne ubezpieczenie stomatologiczne, które wspiera profilaktykę, a jednocześnie pokrywa różne koszty leczenia.",    
+    "landingPage__ourOffer__header_p": "Ubezpieczenie stomatologiczne jest bardzo cenione przez pracowników, ponieważ wydatki na leczenie dentystyczne mogą stanowić znaczne obciążenie. Firma Cavitas oferuje atrakcyjne ubezpieczenie stomatologiczne, które wspiera profilaktykę, a jednocześnie pokrywa różne koszty leczenia.",
     "value_member": "Korzyści dla członka",
     "value_member1": "Niższe koszty leczenia stomatologicznego",
     "value_member2": "Wsparcie regularnej profilaktyki",
@@ -51,7 +51,7 @@
     "Howdoeswork_des6": "Leczenie nowotworu jamy ustnej w Polsce (jednorazowo)",
     "Howdoeswork_des7": "Łatwy proces zgłaszania roszczeń i wniosków o zwrot pieniędzy za pośrednictwem aplikacji mobilnej lub strony internetowej Cavitas",
     "Easyformember_title": "Łatwe korzystanie!",
-    "Easyformember_heading": "Członkowie mogą pobrać aplikację Cavitas, aby mieć wszystkie informacje w zasięgu ręki",
+    "Easyformember_heading": "Członkowie mogą pobrać aplikację Cavitas, aby mieć wszystkie informacje w kieszeni:",
     "Easyformember_desc1": "Szybki dostęp do informacji o polisie",
     "Easyformember_desc2": "Wskazówki dotyczące codziennego szczotkowania",
     "Easyformember_desc3": "Łatwe zgłaszanie i monitorowanie roszczeń",
@@ -102,7 +102,7 @@
     "FAQ_member_Q2": "P2: Czy jako pracownik mogę dodać do ubezpieczenia członków swojej rodziny?",
     "FAQ_member_A2": "O2: Tak. Za zgodą pracodawcy do ubezpieczenia można dodać współmałżonka/partnera oraz dzieci do 23. roku życia.",
     "FAQ_member_Q3": "P3: Które kliniki stomatologiczne honorują ubezpieczenie stomatologiczne Cavitas?",
-    "FAQ_member_A3": "O3: Ubezpieczenie stomatologiczne Cavitas jest ważne w każdej klinice stomatologicznej w Polsce lub innym kraju na terenie Unii Europejskiej/Europejskiego Obszaru Gospodarczego (z wyjątkiem leczenia raka jamy ustnej, w przypadku którego ubezpieczenie obowiązuje tylko w Polsce). W nagłych wypadkach ubezpieczenie jest ważne we wszystkich licencjonowanych klinikach stomatologicznych na całym świecie. ",
+    "FAQ_member_A3": "O3: Ubezpieczenie stomatologiczne Cavitas jest ważne w każdej klinice stomatologicznej w Polsce lub innym kraju na terenie Unii Europejskiej/Europejskiego Obszaru Gospodarczego (z wyjątkiem leczenia raka jamy ustnej, w przypadku którego ubezpieczenie obowiązuje tylko w Polsce). W nagłych wypadkach ubezpieczenie jest ważne we wszystkich licencjonowanych klinikach stomatologicznych na całym świecie.",
     "FAQ_broker_title": "Dla brokerów",
     "FAQ_broker_Q1": "P1: W jaki sposób jako broker mogę zaoferować ubezpieczenie stomatologiczne Cavitas swoim klientom korporacyjnym?",
     "FAQ_broker_A1": "O1: Aby sfinalizować umowę ubezpieczenia grupowego pomiędzy ubezpieczycielem a klientem korporacyjnym, należy skontaktować się bezpośrednio z nami. Przekażemy wówczas wszystkie niezbędne informacje. ",
@@ -174,6 +174,7 @@
 
   "Blog": {
     "Blog_title": "Przydatna lektura",
+    "Blog_date":"przez Cavitas | 1 sierpnia 2023 r",
     "Blog_heading": "Najnowsze posty na blogu",
     "Blog1_title": "Znaczenie ubezpieczenia stomatologicznego",
     "Blog1_desc": "Utrzymanie zębów w dobrym stanie jest ważnym elementem ogólnego stanu zdrowia i dobrego samopoczucia. Opieka stomatologiczna może być jednak kosztowna, w związku z czym wiele osób jej unika. I tu pojawia się ubezpieczenie stomatologiczne. Jest to rodzaj ubezpieczenia,",
@@ -754,7 +755,7 @@
   },
   "3_Plan":{
     "3_Plan_title":"Co obejmuje ubezpieczenie?",
-    "3_Plan_heading":"Zwiększający się zakres świadczeń w ciągu 3 lat przy tej samej wysokości składki!",
+    "3_Plan_heading":"Co obejmuje ochrona w 3 planach ubezpieczeniowych?",
     "3_Plan_Bronze_plan":"BRĄZOWY plan",
     "3_Plan_Year1":"Rok 1",
     "3_Plan_Year2":"Rok 2",

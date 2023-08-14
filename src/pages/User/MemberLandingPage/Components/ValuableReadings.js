@@ -37,7 +37,7 @@ const ValuableReadings = () => {
                 {t("Blog.Blog1_title")}
               </p>
               <span className="landingPage__valuableReadings__container__cardsBox__card__date">
-                by Cavitas | May 20, 2023
+              {t("Blog.Blog_date")}
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog1_desc")}
@@ -62,7 +62,7 @@ const ValuableReadings = () => {
                 {t("Blog.Blog2_title")}
               </p>
               <span className="landingPage__valuableReadings__container__cardsBox__card__date">
-                by Cavitas | May 20, 2023
+             {t("Blog.Blog_date")}
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog2_desc")}&nbsp;{" "}
@@ -85,7 +85,7 @@ const ValuableReadings = () => {
                 {t("Blog.Blog3_title")}
               </p>
               <span className="landingPage__valuableReadings__container__cardsBox__card__date">
-                by Cavitas | May 20, 2023
+              {t("Blog.Blog_date")}
               </span>
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog3_desc")} &nbsp;{" "}
