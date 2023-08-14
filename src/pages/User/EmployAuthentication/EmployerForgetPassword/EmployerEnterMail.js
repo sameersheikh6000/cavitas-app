@@ -50,6 +50,7 @@ const EmployerEnterMail = () => {
           <div className="authentication__container__imageBox__top">
             <img
               className="authentication__container__imageBox__top__logo"
+              onClick={() => navigate(`/employ-signin/${lang === "pl" ? lang : "en"}`)}
               src={require("../../../../assets/Signin-logo.png")}
               alt=""
             />
