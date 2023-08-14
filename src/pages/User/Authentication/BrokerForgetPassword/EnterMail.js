@@ -52,7 +52,7 @@ const EnterMail = () => {
             <div className="authentication__container__imageBox__top">
               <img
                 className="authentication__container__imageBox__top__logo"
-                onClick={() => navigate("/signin/")}
+                onClick={() => navigate(`/signin/${lang === "pl" ? lang : "en"}`)}
                 src={require("../../../../assets/Signin-logo.png")}
                 alt=""
               />
