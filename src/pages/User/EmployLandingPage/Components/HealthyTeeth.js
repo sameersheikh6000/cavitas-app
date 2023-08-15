@@ -18,7 +18,7 @@ const HealthyTeeth = () => {
   return (
     <section className='landingPage__healthyTeeth'>
       <div className='landingPage__healthyTeeth__container'>
-        <h1>{t("Employer.Employer_landingpage_title")}</h1>
+        <h1  style={{textTransform:"none"}}>{t("Employer.Employer_landingpage_title")}</h1>
         <Button onClick={() => navigate(`/employ-signin/${lang === "pl" ? "pl" : "en"}`)}
         > {t("Employer.Employer_landingpage_button")}</Button>
       </div>

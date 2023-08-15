@@ -112,7 +112,7 @@
 
   "Broker": {
     "Broker_landing_Page_title1": "Twoi klienci zasługują na",
-    "Broker_landing_Page_title2": "Najlepsze Ubezpieczenie Dentystyczne",
+    "Broker_landing_Page_title2": "najlepsze Ubezpieczenie Dentystyczne",
     "Broker_login_button": "Logowanie broker",
     "Broker__Benefits__title": "Zapewnij pracownikom swoich klientów potrzebną opiekę stomatologiczną",
     "Broker__Benefits__1": "Aby mogli przyciągnąć i zatrzymywać utalentowanych pracowników",
@@ -557,7 +557,7 @@
   },
 
   "forgetpassword": {
-    "Token": "Wpisz kod, który otrzymałeś e-mailem. W tym kodzie rozróżniana jest wielkość liter",
+    "Token": "Wpisz kod, który otrzymałeś e-mailem",
     "Email": "E-mail",
     "token": "Znak",
     "Resetpassword": "Zresetuj hasło",

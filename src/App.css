@@ -2610,13 +2610,13 @@ body Button {
   overflow-x: auto;
 }
 .faq__tabs__tabsLabel {
-  font-weight: bolder !important;
+  font-weight: 500;
   font-family: "poppins" !important;
   text-transform: none !important;
   color: black !important;
 }
 .faq__tabs__tabsLabel:active {
-  font-weight: bolder !important;
+  font-weight: 500;
   font-family: "poppins" !important;
   text-transform: "underline" !important;
   color: black !important;

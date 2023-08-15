@@ -140,7 +140,7 @@ const ResetPassword = () => {
               <form onSubmit={handleSubmit}>
                 <div
                   className="supportView__header__iconBox__forget"
-                  style={{ marginRight: "150px", fontWeight: "normal" }}
+                  style={{ fontWeight: "normal" }}
                 >
                   <h4> {t("forgetpassword.Token")}:</h4>
                 </div>

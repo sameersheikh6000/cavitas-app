@@ -1001,7 +1001,7 @@ const SilverPlan = () => {
                     </p>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow style={{ borderBottom: "2px solid #abcbcb"}}> 
                   <TableCell component="th" scope="row">
                     <p style={{ fontSize: "15px" }}>
                       {" "}
@@ -1060,9 +1060,7 @@ const SilverPlan = () => {
                 </TableRow>
               </TableHead>
             </Table>
-          </TableContainer>
-        </div>
-        <div>
+            <div>
           <p
             className="landingPage__valuableReadings__container__cardsBox__card__desc"
             style={{ fontSize: "14px", fontWeight: 400 }}
@@ -1076,6 +1074,9 @@ const SilverPlan = () => {
               {t("3_Plan.B_p2")}
             </p> */}
         </div>
+          </TableContainer>
+        </div>
+        
       </div>
       <div className="landingPage__clientDeserve__container">
         <GetQuoteCavitas />

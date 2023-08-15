@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react';
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
@@ -18,14 +18,24 @@ const CP = () => {
     <section className="faqTab">
       <div className="landingPage__dentaltInsurance__container__details">
         {/* <h1 className='landingPage__smartInsurance__container__details__heading'> Privacy Policy </h1> */}
-        <h1 className="landingPage__smartInsurance__container__details__heading2">
+        <h1
+          className="landingPage__smartInsurance__container__details__heading2"
+          style={{ fontSize: "40px", fontWeight: 600 }}
+        >
           COMPLAINTS PROCEDURE
         </h1>
       </div>
-      <div style={{ textAlign: "justify", width: "100%" ,fontSize:"16px", fontWeight:400 }}>
+      <div
+        style={{
+          textAlign: "justify",
+          width: "100%",
+          fontSize: "16px",
+          fontWeight: 400,
+        }}
+      >
         <p>
           <br />
-          <h3>Introduction</h3>
+          <h3 style={{ fontSize: "16px", fontWeight: 500 }}>Introduction</h3>
           {/* <Link style={{cursor:"pointer"}} to="https://cavitas.pl">https://cavitas.pl</Link>{" "} */}
           This Procedure for reviewing and settling complaints establishes the
           procedural mechanisms and terms for submitting and reviewing
@@ -35,7 +45,7 @@ const CP = () => {
           national authorities in case of disagreements.
           <br />
           <br />
-          <h3>1. Definitions</h3>
+          <h3 style={{ fontSize: "16px", fontWeight: 500 }}>1. Definitions</h3>
           1.1. Client – a policyholder, who has entered into an insurance
           contract through an Broker and who wants to file a complaint against
           the activities of the Broker him/herself or via his/her
@@ -45,7 +55,11 @@ const CP = () => {
           issued by the policyholder, submits a Complaint on behalf of the
           Client.
           <br />
-          1.3. Broker - is  Cavitas dental insurance  OÜ (registry code 16501780), which is entered into the list of insurance brokers of the Estonian Financial Supervision and Resolution Authority (www.fi.ee) and who engages, for a remuneration and based on a brokerage contract, in insurance distribution.
+          1.3. Broker - is Cavitas dental insurance OÜ (registry code 16501780),
+          which is entered into the list of insurance brokers of the Estonian
+          Financial Supervision and Resolution Authority (www.fi.ee) and who
+          engages, for a remuneration and based on a brokerage contract, in
+          insurance distribution.
           <br />
           1.4. Complaint – a written or in a format which can be reproduced in
           writing complaint submitted by the Client or his/her Representative
@@ -55,7 +69,9 @@ const CP = () => {
           1.5. Procedure – this procedure for reviewing and settling Complaints.
           <br />
           <br />
-          <h3>2. Submission and acceptance of complaints </h3>
+          <h3 style={{ fontSize: "16px", fontWeight: 500 }}>
+            2. Submission and acceptance of complaints{" "}
+          </h3>
           2.1. The Broker shall make the contact information available to the
           Client on the website{" "}
           <Link style={{ cursor: "pointer" }} to="https://cavitas.pl">
@@ -108,7 +124,7 @@ const CP = () => {
           communicate the reasons for not accepting (i.e. rejecting) the
           Complaint.
           <br /> <br />
-          <h3>
+          <h3 style={{ fontSize: "16px", fontWeight: 500 }}>
             3. Terms for processing a complaint and requirements for the
             Broker’s reply{" "}
           </h3>
@@ -151,7 +167,9 @@ const CP = () => {
           Client or his/her Representative in writing or in a form that can be
           reproduced in writing.
           <br /> <br />
-          <h3>4. Out of court complaint procedure </h3>
+          <h3 style={{ fontSize: "16px", fontWeight: 500 }}>
+            4. Out of court complaint procedure{" "}
+          </h3>
           4.1. In a situation where the Broker rejects the Complaint or does not
           settle the Complaint in the manner requested by the Client or his/her
           Representative, the latter has the right contact the following
@@ -167,7 +185,9 @@ const CP = () => {
           <strong>Fax:</strong> (0-22) 333 73 29, E-mail: biuro@rf.gov.pl
           <br />
           <br />
-          <h3>5. Online resolution of the complaint </h3>
+          <h3 style={{ fontSize: "16px", fontWeight: 500 }}>
+            5. Online resolution of the complaint{" "}
+          </h3>
           5.1. Complaints and disputes relating to contractual obligations
           arising from contracts for the sale of goods, the provision of
           services or other performance of services online may be settled
@@ -181,7 +201,9 @@ const CP = () => {
           Surveillance Authority (https://consumer.ee/).
           <br />
           <br />
-          <h3>6. Saving and analysing complaints </h3>
+          <h3 style={{ fontSize: "16px", fontWeight: 500 }}>
+            6. Saving and analysing complaints{" "}
+          </h3>
           6.1 The Broker shall ensure that Complaint materials are preserved in
           a written or reproducible form and in such a manner as to permit
           access to the Complaint resolution materials and compilation of

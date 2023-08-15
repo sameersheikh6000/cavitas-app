@@ -3,9 +3,9 @@
     "faq": "FAQ",
     "claims": "Claims",
     "aboutUs": "About Us",
-    "memberLogin": "Member Log In",
-    "brokerLogin": "Broker Log In",
-    "employLogin": "Employer Log In",
+    "memberLogin": "Member log in",
+    "brokerLogin": "Broker log in",
+    "employLogin": "Employer log in",
     "language": "Language",
     "english": "English",
     "polish": "Polish",
@@ -20,7 +20,7 @@
 
   "home": {
     "smarter": "Smarter",
-    "dentalInsurance": "Dental Insurance",
+    "dentalInsurance": "dental insurance",
     "upperDescription":"Healthy teeth are the foundation of healthy employees. We make it easy for companies to offer dental insurance as a highly appreciated employee benefit.",    
     "smarter_insurance_button_broker": "I'M BROKER",
     "smarter_insurance_button2_employer": "I'M EMPLOYER",
@@ -108,8 +108,8 @@
     "FAQ_broker_A2": "A2: Yes, please contact us and we'll share you the requirements."
   },
   "Broker": {
-    "Broker_landing_Page_title1": "Your Clients Deserve The",
-    "Broker_landing_Page_title2": "Best Dental Coverage",
+    "Broker_landing_Page_title1": "Your clients deserve the",
+    "Broker_landing_Page_title2": "best dental coverage",
     "Broker_login_button": "Broker Log In",
     "Broker__Benefits__title": "Provide much-needed dental care to your client's employees",
     "Broker__Benefits__1": "So that they can attract and keep talented employees",
@@ -145,7 +145,7 @@
   },
   "Employer": {
     "Employer_conversion": "Let's cover your employees",
-    "Employer_landingpage_title": "Healthy Teeth-Healthy Employees",
+    "Employer_landingpage_title": "Healthy teeth-healthy employees",
     "Employer_landingpage_button": "Employer / HR Manager Log In",
     "Employer_benefits": "Offering dental insurance to your employees helps you:",
     "Employer_benefits1": "Attract and retain talented people",
@@ -157,7 +157,7 @@
   },
   "Member": {
     "Member_landingPage_title1": "Smarter",
-    "Member_landingPage_title2": "Dental Insurance",
+    "Member_landingPage_title2": "dental insurance",
     "Member_landingPage_heading": "Cavitas dental insurance helps you keep your teeth in good health",
     "Member_landingPage_btn1": "Member Log In",
     "Member_landingPage_btn2": "Submit Claim",
@@ -549,7 +549,7 @@
     "card5": "Cavitas dental insurance brochure"
   },
   "forgetpassword": {
-    "Token": "Enter the code that you received via email. This code is case-sensitive",
+    "Token": "Enter the code that you received via email",
     "Email": "E-mail",
     "Resetpassword": "Reset Password",
     "Sensitive": "Enter code that you recieved. This is case-sensitive.",

@@ -25,6 +25,7 @@ const BronzePlan = () => {
 
   const tableContainerparaStyle = {
     borderBottom: "2px solid #abcbcb",
+    borderTop: "2px solid #abcbcb",
     margintop: "10px",
   };
   const tableContainerStyle = {
@@ -970,7 +971,7 @@ const BronzePlan = () => {
                     </p>
                   </TableCell>
                 </TableRow>
-                <TableRow>
+                <TableRow style={{ borderBottom: "2px solid #abcbcb"}}>
                   <TableCell component="th" scope="row">
                     <p style={{ fontSize: "15px" }}>
                       {" "}
@@ -987,7 +988,7 @@ const BronzePlan = () => {
                       <RemoveCircleOutlineIcon className="landingPage__howItwork__container__details__detailsContainer__box__icon" />
                     </p>
                   </TableCell>
-                  <TableCell align="center">
+                  <TableCell align="center" >
                     <p style={{ fontSize: "15px" }}>
                       <RemoveCircleOutlineIcon className="landingPage__howItwork__container__details__detailsContainer__box__icon" />
                     </p>
@@ -1029,6 +1030,20 @@ const BronzePlan = () => {
                 </TableRow>
               </TableHead>
             </Table>
+            <div>
+            <p
+              className="landingPage__valuableReadings__container__cardsBox__card__desc"
+              style={{ fontSize: "14px", fontWeight: 400 }}
+            >
+              {t("3_Plan.B_p1")}
+            </p>
+            <p
+              className="landingPage__valuableReadings__container__cardsBox__card__desc"
+              style={{ fontSize: "14px", fontWeight: 400 }}
+            >
+              {t("3_Plan.B_p2")}
+            </p>
+          </div>
           </TableContainer>
           {/* <div style={tableContainerStyle}>
             <Table size="small" aria-label="a dense table">
@@ -1073,7 +1088,7 @@ const BronzePlan = () => {
           </div> */}
         </div>
       </div>
-      <div>
+      {/* <div>
             <p
               className="landingPage__valuableReadings__container__cardsBox__card__desc"
               style={{ fontSize: "14px", fontWeight: 400 }}
@@ -1086,7 +1101,7 @@ const BronzePlan = () => {
             >
               {t("3_Plan.B_p2")}
             </p>
-          </div>
+          </div> */}
       <div className="landingPage__clientDeserve__container">
         <GetQuoteCavitas />
       </div>
