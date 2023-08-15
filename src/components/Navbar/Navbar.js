@@ -71,7 +71,7 @@ function Navbar() {
               <Box className="appbar__linksBox">
                 <div className="appbar__linksBox__links">
                   <Link
-                    to={`/about/${lang === "pl" ? "pl" : "en"}`}
+                    to={`/${lang === 'pl' ? 'o-nas/pl' : 'about/en'}`}
                     className="appbar__linksBox__links__link"
                   >
                     {t("nav.aboutUs")}
@@ -84,7 +84,7 @@ function Navbar() {
                   </Link>
                   <Link
                     className="appbar__linksBox__links__link"
-                    to={`/claims/${lang === "pl" ? "pl" : "en"}`}
+                    to={`/${lang === "pl" ? "roszczenia/pl" : "claims/en"}`}
                   >
                     {t("nav.claims")}
                   </Link>

@@ -59,6 +59,8 @@ import Shop from "../pages/User/Shop/Shop";
 import HomeRedirect from "./HomeRedirect";
 import AccountDelete from "../pages/User/DeleteAccount/AccountDelete";
 import EmployDataForm from "../pages/User/EmployData/EmployDataForm";
+import SwitchAboutRoute from "./SwitchAboutRoute";
+import SwitchClaimRoute from "./SwitchClaimRoute";
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
 export const routes = [
@@ -223,18 +225,30 @@ export const routes = [
     isPrivate: false,
   },
 
+  
+  
+  
+  
+  // translated routes //
   {
-    path: "/about/:lang",
+    path: "about/pl",
+    component: SwitchAboutRoute,
+    isPrivate: false  
+  },
+  
+  {
+    path: "o-nas/en",
+    component: SwitchAboutRoute,
+    isPrivate: false  
+  },
+  
+  {
+    path: "/about/en",
     component: AboutUs,
     isPrivate: false,
   },
   {
-    path: "/onas/:lang",
-    component: AboutUs,
-    isPrivate: false,
-  },
-  {
-    path: "/about , /ali",
+    path: "/o-nas/pl",
     component: AboutUs,
     isPrivate: false,
   },
@@ -249,14 +263,26 @@ export const routes = [
     component: FAQ,
     isPrivate: false,
   },
+  
+  {
+    path: "/roszczenia/en", 
+    component: SwitchClaimRoute,
+    isPrivate: false,
+  },
 
   {
-    path: "/claims/:lang", 
+    path: "/claims/pl", 
+    component: SwitchClaimRoute,
+    isPrivate: false,
+  },
+  
+  {
+    path: "/claims/en", 
     component: Claims,
     isPrivate: false,
   },
   {
-    path: "/claims",
+    path: "/roszczenia/pl",
     component: Claims,
     isPrivate: false,
   },

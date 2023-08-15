@@ -52,7 +52,7 @@ export default function SidebarMenu() {
             <MenuItem onClick={popupState.close}>
               <Link
                 className="appbar__menuLink"
-                to={`/about/${lang === "pl" ? "pl" : "en"}`}
+                to={`/${lang === 'pl' ? 'o-nas/pl' : 'about/en'}`}
               >
                 {" "}
                 {t("nav.aboutUs")}
