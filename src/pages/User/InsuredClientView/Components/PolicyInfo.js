@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
 import usePolicyInformation from "../.../../../../../hooks/usePolicyInoformation";
 
-const PolicyInfo = ({ user, insuredClient }) => {
+const PolicyInfo = ({ user, insuredClient = '' }) => {
 
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();

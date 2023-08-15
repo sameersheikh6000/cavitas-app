@@ -14,10 +14,13 @@ import GppGoodOutlinedIcon from '@mui/icons-material/GppGoodOutlined';
 import { USER_STORAGE_KEY } from '../../../../config/helpers/variables';
 
 const InsuredClientGroup = () => {
+  let row;
   const { t } = useTranslation();
   const location = useLocation();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
-  const { row } = location.state;
+  if (location.state != null){
+    row = location.state; 
+  }
 
   useEffect(() => {
     const currentUrl = window.location.href;
@@ -49,7 +52,7 @@ const InsuredClientGroup = () => {
         <div className='insuredClientGroup__container'>
           <div className='insuredClientGroup__container__cardsBox'>
             <div className='insuredClientGroup__container__cardsBox__left'>
-              <PolicyInfo user={user} insuredClient={row} />
+              { (row != null) && <PolicyInfo user={user} insuredClient={row} />}
               <PolicyDocuments user={user} />
             </div>
             <div className='insuredClientGroup__container__cardsBox__right'>

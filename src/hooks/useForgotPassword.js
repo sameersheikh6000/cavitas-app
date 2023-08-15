@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_KEY, USER_STORAGE_KEY, ADMIN_STORAGE_KEY } from '../config/helpers/variables';
+import { API_KEY } from '../config/helpers/variables';
 import useHandleErrors from './useHandleErrors';
 
 const useForgotPassword = () =>  {
