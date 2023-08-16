@@ -92,17 +92,24 @@ function Navbar() {
                     className="appbar__linksBox__links__link"
                     to={`/broker/${lang === "pl" ? "pl" : "en"}`}
                   >
+                    
                     {t("nav.brokerLogin")}
                   </Link>
-                  <Link
+                  {/* <Link
                     className="appbar__linksBox__links__link"
                     to={`/employ/${lang === "pl" ? "pl" : "en"}`}
+                  > */}
+                     <Link
+                    to={`/${lang === 'pl' ? 'pracodawca/pl' : 'employ/en'}`}
+                    className="appbar__linksBox__links__link"
                   >
                     {t("nav.employLogin")}
                   </Link>
-                  <Link
+
+                  
+                     <Link
+                    to={`/${lang === 'pl' ? 'członek/pl' : 'member/en'}`}
                     className="appbar__linksBox__links__link"
-                    to={`/member/${lang === "pl" ? "pl" : "en"}`}
                   >
                     {t("nav.memberLogin")}
                   </Link>

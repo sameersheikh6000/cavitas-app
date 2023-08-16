@@ -9,6 +9,13 @@ const Blog = () => {
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
   const navigate = useNavigate();
+
+  
+  const handleLinkClick = (tabIndex) => {
+    localStorage.setItem("selectedTabIndex", tabIndex);
+    window.scrollTo(0, 0);
+  };
+
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
@@ -33,7 +40,7 @@ const Blog = () => {
           <div className="landingPage__valuableReadings__container__cardsBox__card">
             <div
               className="landingPage__valuableReadings__container__cardsBox__card"
-              onClick={() => navigate(`/Blog1/${lang === "pl" ? lang : "en"}`)}
+              // onClick={() => navigate(`/Blog1/${lang === "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image.png")} alt='' /> */}
               <p className="landingPage__valuableReadings__container__cardsBox__card__name">
@@ -45,7 +52,9 @@ const Blog = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog1_desc")}
                 &nbsp;{" "}
-                <Link to={`/Blog1/${lang === "pl" ? lang : "en"}`} style={{ color: "red" }}>
+                <Link to={`/Blog1/${lang === "pl" ? lang : "en"}`} style={{ color: "red" }}
+                  onClick={() => handleLinkClick()}
+                >
                   {" "}
                   {t("home.readmore")}
                 </Link>
@@ -58,7 +67,7 @@ const Blog = () => {
           <div className="landingPage__valuableReadings__container__cardsBox__card">
             <div
               className="landingPage__valuableReadings__container__cardsBox__card"
-              onClick={() => navigate(`/Blog3/${lang === "pl" ? lang : "en"}`)}
+              // onClick={() => navigate(`/Blog2/${lang === "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image-1.png")} alt='' /> */}
               <p className="landingPage__valuableReadings__container__cardsBox__card__name">
@@ -70,9 +79,12 @@ const Blog = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog2_desc")}&nbsp;{" "}
                 <Link  to={`/Blog2/${lang === "pl" ? lang : "en"}`}
-                 style={{ color: "red" }}>
+                 style={{ color: "red" }}
+                 onClick={() => handleLinkClick()}
+                 >
                   {" "}
                   {t("home.readmore")}
+
                 </Link>
               </p>
             </div>
@@ -81,7 +93,7 @@ const Blog = () => {
           <div className="landingPage__valuableReadings__container__cardsBox__card">
             <div
               className="landingPage__valuableReadings__container__cardsBox__card"
-              onClick={() => navigate(`/Blog3/${lang === "pl" ? lang : "en"}`)}
+              // onClick={() => navigate(`/Blog3/${lang === "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image-2.png")} alt='' /> */}
               <p className="landingPage__valuableReadings__container__cardsBox__card__name">
@@ -93,7 +105,9 @@ const Blog = () => {
               <p className="landingPage__valuableReadings__container__cardsBox__card__desc">
                 {t("Blog.Blog3_desc")} &nbsp;{" "}
                 <Link  to={`/Blog3/${lang === "pl" ? lang : "en"}`}
-                style={{ color: "red" }}>
+                style={{ color: "red" }}
+                onClick={() => handleLinkClick()}
+                >
                   {" "}
                   {t("home.readmore")}
                 </Link>

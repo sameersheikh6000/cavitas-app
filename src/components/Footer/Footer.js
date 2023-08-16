@@ -56,10 +56,9 @@ const Footer = () => {
           </div>
           <div className="footer__container__top__box">
             <Link
-              to={`/about/${lang === "pl" ? "pl" : "en"}`}
+              to={`/${lang === "pl" ? "o-nas/pl" : "about/en"}`}
               className="appbar__linksBox__links__link"
               onClick={() => handleLinkClick()}
-
             >
               {t("nav.aboutUs")}
             </Link>
@@ -67,7 +66,6 @@ const Footer = () => {
               className="appbar__linksBox__links__link"
               to={`/Blog/${lang === "pl" ? lang : "en"}`}
               onClick={() => handleLinkClick()}
-
             >
               {t("nav.Blog")}
             </Link>
@@ -75,24 +73,32 @@ const Footer = () => {
               className="appbar__linksBox__links__link"
               to={`/faq/${lang === "pl" ? lang : "en"}`}
               onClick={() => handleLinkClick()}
-
             >
               {t("nav.faq")}
             </Link>
             <Link
               className="appbar__linksBox__links__link"
-              to={`/claims/${lang === "pl" ? lang : "en"}`}
+              to={`/${lang === "pl" ? "roszczenia/pl" : "claims/en"}`}
               onClick={() => handleLinkClick()}
             >
               {t("nav.claims")}
             </Link>
-            <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(0)}>
-
+            <Link
+              to={`/${
+                lang === "pl" ? "Politykaprywatnosci/pl" : "Privacypolicy/en"
+              }`}
+              onClick={() => handleLinkClick(0)}
+            >
               {t("nav.PrivacyPolicy")}
             </Link>
-            <Link to={"/Shop"}
-                          onClick={() => handleLinkClick()}
-            >{t("nav.Shop")}</Link>
+
+            <Link
+              to={`/${lang === "pl" ? "sklep/pl" : "Shop/en"}`}
+              className="appbar__linksBox__links__link"
+              onClick={() => handleLinkClick()}
+            >
+              {t("nav.Shop")}
+            </Link>
           </div>
           <div className="footer__container__top__box">
             <Link> {t("footer.findus")}</Link>

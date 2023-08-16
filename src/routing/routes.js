@@ -61,6 +61,11 @@ import AccountDelete from "../pages/User/DeleteAccount/AccountDelete";
 import EmployDataForm from "../pages/User/EmployData/EmployDataForm";
 import SwitchAboutRoute from "./SwitchAboutRoute";
 import SwitchClaimRoute from "./SwitchClaimRoute";
+import SwitchEmployRoute from "./SwitchEmployRoute";
+import SwitchMemberRoute from "./SwitchhMemberRoute";
+import SwitchShopRoute from "./SwitchShopRoute";
+import SwitchDocumentRoute from "./SwitchDocumentRoute";
+import SwitchDeleteaccountRoute from "./SwitchDeleteaccountRoute";
 const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
 
 export const routes = [
@@ -93,27 +98,6 @@ export const routes = [
     isPrivate: false,
   },
 
-  {
-    path: "/employ/:lang",
-    component: EmployLandingPage,
-    isPrivate: false,
-  },
-  {
-    path: "/employ",
-    component: EmployLandingPage,
-    isPrivate: false,
-  },
-
-  {
-    path: "/member/:lang",
-    component: MemberLandingPage,
-    isPrivate: false,
-  },
-  {
-    path: "/member",
-    component: MemberLandingPage,
-    isPrivate: false,
-  },
 
   {
     path: "/signin/:lang",
@@ -265,13 +249,13 @@ export const routes = [
   },
   
   {
-    path: "/roszczenia/en", 
+    path: "roszczenia/en", 
     component: SwitchClaimRoute,
     isPrivate: false,
   },
 
   {
-    path: "/claims/pl", 
+    path: "claims/pl", 
     component: SwitchClaimRoute,
     isPrivate: false,
   },
@@ -286,7 +270,119 @@ export const routes = [
     component: Claims,
     isPrivate: false,
   },
+  {
+    path: "/pracodawca/pl",
+    component: EmployLandingPage,
+    isPrivate: false,
+  },
+  {
+    path: "/employ/en",
+    component: EmployLandingPage,
+    isPrivate: false,
+  },
+  {
+    path: "/pracodawca/en",
+    component: SwitchEmployRoute,
+    isPrivate: false,
+  },
+  {
+    path: "employ/pl",
+    component: SwitchEmployRoute,
+    isPrivate: false,
+  },
+  
+  {
+    path: "/member/en",
+    component: MemberLandingPage,
+    isPrivate: false,
+  },
+  {
+    path: "/członek/pl",
+    component: MemberLandingPage,
+    isPrivate: false,
+  },
+  
 
+
+  {
+    path: "member/pl",
+    component: SwitchMemberRoute,
+    isPrivate: false,
+  },
+  {
+    path: "członek/en",
+    component: SwitchMemberRoute,
+    isPrivate: false,
+  },
+
+  // www.cavitas.pl/usunmojekonto - Delete my account page
+
+  {
+    path: "/sklep/pl",
+    component: Shop,
+    isPrivate: false,
+  },
+  {
+    path: "/Shop/en",
+    component: Shop,
+    isPrivate: false,
+  },
+  {
+    path: "/sklep/en",
+    component: SwitchShopRoute,
+    isPrivate: false,
+  },
+  {
+    path: "/Shop/pl",
+    component: SwitchShopRoute,
+    isPrivate: false,
+  },
+
+  {
+    path: "/Privacypolicy/en",
+    component: PrivacyPolicy,
+    isPrivate: false,
+  },
+  {
+    path: "/Politykaprywatnosci/pl",
+    component: PrivacyPolicy,
+    isPrivate: false,
+  },
+
+  {
+    path: "/Politykaprywatnosci/en",
+    component: SwitchDocumentRoute,
+    isPrivate: false,
+  },
+  {
+    path: "/Privacypolicy/pl",
+    component: SwitchDocumentRoute,
+    isPrivate: false,
+  },
+
+   // deleteaccount
+   {
+    path: "/deletemyaccount/en",
+    component: AccountDelete,
+    isPrivate: false,
+  },
+  {
+    path: "/usunmojekonto/pl",
+    component: AccountDelete,
+    isPrivate: false,
+  },
+  {
+    path: "/deletemyaccount/pl",
+    component: SwitchDeleteaccountRoute,
+    isPrivate: false,
+  },
+  {
+    path: "/usunmojekonto/en",
+    component: SwitchDeleteaccountRoute,
+    isPrivate: false,
+  },
+
+  //end
   {
     path: "/profile/user/view/:lang",
     component: UserProfileView,
@@ -706,11 +802,7 @@ export const routes = [
     component: MemberUpdatePassword,
     isPrivate: false,
   },
-  {
-    path: "/Privacypolicy/:lang",
-    component: PrivacyPolicy,
-    isPrivate: false,
-  },
+  
   {
     path: "/reset_password",
     component: ResetPassword,
@@ -721,23 +813,7 @@ export const routes = [
     component: ResetPassword,
     isPrivate: false,
   },
-  {
-    path: "/Shop",
-    component: Shop,
-    isPrivate: false,
-  },
-
-  // deleteaccount
-  {
-    path: "/deletemyaccount/:lang",
-    component: AccountDelete,
-    isPrivate: false,
-  },
-  {
-    path: "/deletemyaccount",
-    component: AccountDelete,
-    isPrivate: false,
-  },
+ 
    // EmployerDataForm / Family form
    {
     path: "/Employdata/:lang",

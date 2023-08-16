@@ -25,7 +25,7 @@ body Button {
 }
 @media (max-width: 768px) {
   body h1 {
-    font-size: 1.8rem !important;
+    font-size: 1.8rem ;
   }
 }
 
@@ -2234,7 +2234,7 @@ body Button {
   background-color: #dd3333 !important;
   border: none !important;
   padding: 0.9rem 2.5rem;
-  width: unset !important;
+  width: unset;
   text-transform: none;
 }
 .landingPage__becomeMember__container__details Button:hover {
@@ -3883,6 +3883,11 @@ body.active-modal {
   .landingPage__valuableReadings {
     margin: 15px;
   }
+  .landingPage__ourOffer__container__boxes__detailsContainer BUtton{
+    padding: 15px 5px;
+    justify-items: center;
+    width: 100%;
+  }
 
   .Suggest__boxes {
     display: flex;
@@ -3892,9 +3897,10 @@ body.active-modal {
 
   .Suggest__boxes_button {
     margin: -26px 0;
+    /* width: 107%; */
   }
   .Suggest__boxes_button button {
-    width: 102%;
+    /* width: 107%; */
   }
 
   /* about page */
@@ -3910,10 +3916,18 @@ body.active-modal {
   .aboutUs__ourStory__container {
     margin-top: 30px;
   }
+  .landingPage__dentaltInsurance__container__details__buttons Button{
+    width: 100%;
+  }
   /* broker login page */
   .landingPage__clientDeserve__container {
     width: 104%;
     padding-right: 1px;
+  }
+  /* employer page */
+  .landingPage__healthyTeeth__container Button{
+    width: 105%;
+    padding: 5px 5px;
   }
   /* member login page */
   .landingPage__dentaltInsurance__container__details {
@@ -3921,8 +3935,20 @@ body.active-modal {
     width: 151%;
     margin: 10px 0px;
   }
+  .landingPage__becomeMember__container__details Button{
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
   .landingPage__dentaltInsurance__container__picture {
     width: 180%;
+  }
+  .landingPage__clientDeserve__container Button{
+    padding: 14px 15px;
+    font-size: 14px;
   }
   /* footer */
   .Contactforsupport {
@@ -3954,4 +3980,26 @@ body.active-modal {
     margin-left: 10px;
     margin-bottom: -60px;
   }
+  /* blog */
+    /* Blog */
+    .landingPage__valuableReadings {
+      margin: 62px 15px;
+    }
+.valuableReadingView header {
+  padding: 0;
+}
+.valuableReadingView__container p{
+  margin-top: -90px;
+  padding: 0px 10px;
+}
+.Blog3_header h1 {
+  padding: 5px;
+  background-image: none;
+  background-color: none;
+  width: 100%;
+}
+/* reset password */
+.authentication__container__formContainer{
+  text-align: center;
+}
 }
