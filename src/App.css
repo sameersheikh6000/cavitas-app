@@ -4002,4 +4002,9 @@ body.active-modal {
 .authentication__container__formContainer{
   text-align: center;
 }
+/* popup form set */
+.input_setmobilesize{
+  padding: 0px 15px;
+}
+
 }
