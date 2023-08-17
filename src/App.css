@@ -3874,7 +3874,6 @@ body.active-modal {
   .landingPage__smartInsurance__container__picture {
     text-align: center;
     margin-left: 2px;
-    margin-top: -50px;
   }
   .landingPage__ourOffer__container__boxes__detailsContainer__tickBox {
     font-size: 12px;
@@ -3993,6 +3992,12 @@ body.active-modal {
     margin-left: 10px;
     margin-bottom: -60px;
   }
+.shop_image {
+  margin-top: -50px;
+}
+  
+ 
+
   /* blog */
     /* Blog */
 

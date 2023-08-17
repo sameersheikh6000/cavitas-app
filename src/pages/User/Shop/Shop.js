@@ -43,7 +43,7 @@ const Shop = () => {
                 </p>
               </div>
             </div>
-            <div className="landingPage__smartInsurance__container__picture">
+            <div className="landingPage__smartInsurance__container__picture" id="shop_image">
               <img
                 src={require("../../../assets/Shop Home 09.52.49.png")}
                 alt=""
