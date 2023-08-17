@@ -21,7 +21,7 @@ const Blog3 = () => {
   return (
     <Page>
       <section className="valuableReadingView">
-        <header className="Blog3_header">
+        <header className="Blog3_header" id="blog3_header">
           <h1>{t("Blog.Blog3_title")}</h1>
           <p>  {t("Blog.Blog_date")}</p>
         </header>

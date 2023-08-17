@@ -20,10 +20,10 @@ const Blog1 = () => {
   console.log(id);
   return (
     <Page>
-      <section className="valuableReadingView">
+      <section className="valuableReadingView" id="blog1_header">
         <header>
           <h1>{t("Blog.Blog1_title")}</h1>
-          <p>  {t("Blog.Blog_date")}</p>
+          <p> {t("Blog.Blog_date")}</p>
         </header>
         <br />
         <div

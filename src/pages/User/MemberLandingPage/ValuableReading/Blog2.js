@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../../config/helpers/i18n";
 import { useLocation } from "react-router-dom";
@@ -21,10 +21,10 @@ const Blog2 = () => {
 
   return (
     <Page>
-      <section className="valuableReadingView">
+      <section className="valuableReadingView" id="blog2_header">
         <header>
           <h1>{t("Blog.Blog2_title")}</h1>
-          <p>  {t("Blog.Blog_date")}</p>
+          <p> {t("Blog.Blog_date")}</p>
         </header>
         <br />
         <div

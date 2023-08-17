@@ -16,7 +16,6 @@ const Shop = () => {
             <h1
               style={{
                 color: "#5c8894",
-                padding:"30px",
                 textTransform:"none"
               }}
             >
