@@ -3863,7 +3863,9 @@ body.active-modal {
     width: 100%;
     margin: 0;
   }
-
+.landingPage__smartInsurance__container__details__heading2{
+  width: 100%;
+}
   .landingPage__smartInsurance__container__details {
     text-align: start;
     margin-bottom: 20px;
