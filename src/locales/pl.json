@@ -112,7 +112,7 @@
 
   "Broker": {
     "Broker_landing_Page_title1": "Twoi klienci zasługują na",
-    "Broker_landing_Page_title2": "najlepsze Ubezpieczenie Dentystyczne",
+    "Broker_landing_Page_title2": "najlepsze ubezpieczenie dentystyczne",
     "Broker_login_button": "Logowanie broker",
     "Broker__Benefits__title": "Zapewnij pracownikom swoich klientów potrzebną opiekę stomatologiczną",
     "Broker__Benefits__1": "Aby mogli przyciągnąć i zatrzymywać utalentowanych pracowników",
@@ -169,7 +169,9 @@
     "Member_landingPage_notmember_title": "Nie jesteś jeszcze członkiem?",
     "Member_landingPage_notmember_desc": "Jeśli nie masz jeszcze ubezpieczenia stomatologicznego Cavitas, poleć to świadczenie swojemu pracodawcy.",
     "Member_landingPage_notmember_btn": "Zaproponuj swojemu pracodawcy",
-    "Member_landingPage_question_btn": "Masz pytanie?"
+    "Member_landingPage_question_btn": "Masz pytanie?",
+    "benefits":"Pobierz aplikację Cavitas, aby mieć ważne informacje zawsze w zasięgu ręki. Wypróbuj teraz!"
+
   },
 
   "Blog": {

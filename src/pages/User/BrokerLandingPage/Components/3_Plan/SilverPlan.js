@@ -680,8 +680,12 @@ const SilverPlan = () => {
                 </TableRow>
                 {/* Group 4 */}
                 <TableRow style={tableContainerheaderStyle}>
-                  <TableCell style={{ fontSize: "15px", fontWeight: "bold" }}>
-                    {t("3_Plan.3_Plan_G4")}{" "}
+                <TableCell style={{ fontSize: "15px", fontWeight: "bold" }}>
+                    {" "}
+                    <p style={{ fontSize: "15px" }}>
+                      {" "}
+                      {t("3_Plan.3_Plan_G4")}{" "}
+                    </p>
                   </TableCell>
                   <TableCell align="center">
                     <p style={{ fontSize: "15px", fontWeight: "bold" }}>

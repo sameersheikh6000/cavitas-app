@@ -21,7 +21,7 @@ const AllCare = () => {
         <div className='landingPage__allCare__container__details'>
         <h1 className='landingPage__allCare__container__details__heading'>{t("home.Easyformember_title")}</h1>
 
-        <p className='landingPage__allCare__container__details__desc'>{t("home.Easyformember_heading")}</p>
+        <p className='landingPage__allCare__container__details__desc'>{t("Member.benefits")}</p>
 
 
         <div className='landingPage__allCare__container__details__detailsContainer'>

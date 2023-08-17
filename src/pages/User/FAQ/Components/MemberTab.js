@@ -74,7 +74,7 @@ const MemberTab = () => {
         </div>
         {faqData[2] === true &&
           <div className='faqTab__container__box2'>
-                  <p>{t("FAQ.FAQ_member_Q3")}</p>
+                  <p>{t("FAQ.FAQ_member_A3")}</p>
 
           </div>
         }

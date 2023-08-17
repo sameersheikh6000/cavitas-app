@@ -26,39 +26,39 @@ const PrivacyPolicy = () => {
       </header>
       <div className="aboutUs__privacyPolicy__container">
         <div className="aboutUs__privacyPolicy__container__card">
-        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(0)}>
+        <Link  to={`/document/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(0)}>
 
           <img
-            src={require("../../../../assets/PrivacyPolicy-image.png")}
+            src={require("../../../../assets/1-removebg-preview.png")}
             alt=""
           />
-          <p>{t("about.ourpolicy_policy1")}</p>
+          <p className='p1'>{t("about.ourpolicy_policy1")}</p>
           </Link>
         </div>
         <div className="aboutUs__privacyPolicy__container__card">
-        <Link to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`} onClick={() => handleLinkClick(1)}>
+        <Link to={`/document/${lang === "pl" ? lang : "en"}`} onClick={() => handleLinkClick(1)}>
 
           <img
-            src={require("../../../../assets/PrivacyPolicy-image.png")}
+            src={require("../../../../assets/2-removebg-preview.png")}
             alt=""
           />
-          <p>{t("about.ourpolicy_policy2")}</p>
+          <p className='p2'>{t("about.ourpolicy_policy2")}</p>
           </Link>
         </div>
         <div className='aboutUs__privacyPolicy__container__card' >
-        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(2)}>
-          <img src={require('../../../../assets/PrivacyPolicy-image.png')}  />
-          <p>{t("about.ourpolicy_policy4")}<br />{t("about.ourpolicy_policy4_b")}</p>
+        <Link  to={`/document/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(2)}>
+          <img src={require('../../../../assets/3-removebg-preview.png')}  />
+          <p className='p3'>{t("about.ourpolicy_policy4")}<br />{t("about.ourpolicy_policy4_b")}</p>
           </Link>
         </div>
         <div className="aboutUs__privacyPolicy__container__card">
-        <Link  to={`/Privacypolicy/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(3)}>
+        <Link  to={`/document/${lang === "pl" ? lang : "en"}`}  onClick={() => handleLinkClick(3)}>
 
           <img
-            src={require("../../../../assets/PrivacyPolicy-image.png")}
+            src={require("../../../../assets/4-removebg-preview.png")}
             alt=""
           />
-          <p>{t("about.ourpolicy_policy3")}</p>
+          <p className='p4'>{t("about.ourpolicy_policy3")}</p>
           </Link>
         </div>
       

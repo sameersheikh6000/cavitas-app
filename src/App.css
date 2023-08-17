@@ -2513,19 +2513,31 @@ body Button {
   flex-wrap: wrap;
 }
 .aboutUs__privacyPolicy__container__card {
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
   /* margin-right: 1rem; */
 }
 .aboutUs__privacyPolicy__container__card img {
-  width: 200px;
+  width: 275px;
 }
 .aboutUs__privacyPolicy__container__card p {
   position: absolute;
   font-weight: 400;
   font-size: 16px;
   color: #dd3333;
-  margin-top: -8rem;
-  margin-left: 14px;
+  margin-top: -10rem;
+  margin-left: 60px;
+}
+.aboutUs__privacyPolicy__container__card .p1 {
+  margin-left: 60px;
+}
+.aboutUs__privacyPolicy__container__card .p2 {
+  margin-left: 50px;
+}
+.aboutUs__privacyPolicy__container__card .p3 {
+  margin-left: 80px;
+}
+.aboutUs__privacyPolicy__container__card .p4 {
+  margin-left: 70px;
 }
 .aboutUs__smarterDentalInsurance {
   padding: 2rem;

@@ -8,11 +8,11 @@ const  SwitchDocumentRoute = () => {
   
   
   useEffect(() => {
-    if(lang === 'pl' && currentUrl.includes('Privacypolicy/pl')){
-      navigate('/Politykaprywatnosci/pl')
+    if(lang === 'pl' && currentUrl.includes('document/pl')){
+      navigate('/dokumenty/pl')
     }
     else{
-      navigate('/Privacypolicy/en')
+      navigate('/document/en')
     }
   })
 }

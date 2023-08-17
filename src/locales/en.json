@@ -109,7 +109,7 @@
   },
   "Broker": {
     "Broker_landing_Page_title1": "Your clients deserve the",
-    "Broker_landing_Page_title2": "best dental coverage",
+    "Broker_landing_Page_title2": " best dental insurance cover",
     "Broker_login_button": "Broker Log In",
     "Broker__Benefits__title": "Provide much-needed dental care to your client's employees",
     "Broker__Benefits__1": "So that they can attract and keep talented employees",
@@ -164,7 +164,8 @@
     "Member_landingPage_notmember_title": "Not a member yet?",
     "Member_landingPage_notmember_desc": "If you don't already have Cavitas dental insurance, recommend this benefit to your employer. ",
     "Member_landingPage_notmember_btn": "Suggest to your employer",
-    "Member_landingPage_question_btn": "Have a question?"
+    "Member_landingPage_question_btn": "Have a question?",
+    "benefits":"Download the Cavitas app to access valuable information at any time. Try it now!"
   },
   "Blog": {
     "Blog_title": "Valuable Reading",
@@ -745,7 +746,7 @@
     "peselno": "PESEL number"
   },
   "3_Plan": {
-    "3_Plan_title": "What is included in 3 insurance plan cover?",
+    "3_Plan_title": "What is included in the cover of 3 insurance plans?",
     "3_Plan_heading": "Increasing benefits during 3 years while premium stay the same!",
     "3_Plan_Bronze_plan": "BRONZE plan",
     "3_Plan_Year1": "Year 1",

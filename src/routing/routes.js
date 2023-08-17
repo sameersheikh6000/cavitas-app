@@ -339,23 +339,23 @@ export const routes = [
   },
 
   {
-    path: "/Privacypolicy/en",
+    path: "/document/en",
     component: PrivacyPolicy,
     isPrivate: false,
   },
   {
-    path: "/Politykaprywatnosci/pl",
+    path: "/dokumenty/pl",
     component: PrivacyPolicy,
     isPrivate: false,
   },
 
   {
-    path: "/Politykaprywatnosci/en",
+    path: "/dokumenty/en",
     component: SwitchDocumentRoute,
     isPrivate: false,
   },
   {
-    path: "/Privacypolicy/pl",
+    path: "/document/pl",
     component: SwitchDocumentRoute,
     isPrivate: false,
   },

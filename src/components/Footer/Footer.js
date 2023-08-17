@@ -85,7 +85,7 @@ const Footer = () => {
             </Link>
             <Link
               to={`/${
-                lang === "pl" ? "Politykaprywatnosci/pl" : "Privacypolicy/en"
+                lang === "pl" ? "dokumenty/pl" : "document/en"
               }`}
               onClick={() => handleLinkClick(0)}
             >
