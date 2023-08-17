@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from "../../../config/helpers/i18n";
-import Modal from "@mui/material/Modal";
+import { styled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import Typography from "@mui/material/Typography";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import useClientInsurance from "../../../hooks/useClientInsurance";
+import i18n from "../../../config/helpers/i18n";
 
-function FeedbackForm() {
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+    borderRadius: "25px", // Apply the border radius style
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
+
+export default function FeedbackForm() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -24,20 +38,12 @@ function FeedbackForm() {
     form_type: 0,
   });
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    borderRadius: 10,
-    transform: "translate(-50%, -50%)",
-    width: 750,
-    bgcolor: "#edf4f4",
-    boxShadow: 14,
-    p: 4,
+  const handleClickOpen = () => {
+    setOpen(true);
   };
-
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleSubmit = async () => {
     const response = await forSupportForms(contactForm);
@@ -71,17 +77,46 @@ function FeedbackForm() {
           margin: -7,
           textDecoration: "none",
         }}
-        onClick={() => handleOpen()}
+        onClick={() => handleClickOpen()}
       >
         {t("nav.givefeedback")}
       </Button>
-      <Modal
-        open={open}
+      <BootstrapDialog
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        open={open}
+        PaperProps={{
+          sx: { background: "none", boxShadow: "none", maxWidth: "none" },
+        }}
       >
-        <Box sx={style}>
+        <DialogContent
+          dividers
+          sx={{
+            backgroundColor: "#edf4f4",
+            boxShadow: 4,
+            padding: "4px",
+            position: "relative",
+            width: 750, // Default width for larger screens
+            "@media (max-width: 360px)": {
+              width: "100%", // Adjust width for mobile responsive
+            },
+          }}
+          id="popup_manu"
+        >
+        <Box >
+        <AddCircleIcon
+              style={{
+                color: "#dd3333",
+                fontSize: "55px",
+                marginTop: "-28px",
+                marginLeft: "-30px",
+                position: "fixed",
+              }}
+              onClick={handleClose}
+            />
+            <Typography
+              gutterBottom
+              style={{ padding: "5px", fontSize: "14px" }}
+            >
           <div className="uploadClient__container__body__participation">
             <h2>{t("contactform.contactfrom_title")}</h2>
             <h1 style={{ color: "red" }}>
@@ -169,7 +204,7 @@ function FeedbackForm() {
                 <div className="userProfileView__container__details__detailsBox__feilds__container">
                   <div>
                     <textarea
-                      style={{ width: "200%" }}
+                      style={{ maxWidth: "200%" }}
                       className="textarea"
                       placeholder={`${t("contactform.texthere")}`}
                       cols={10}
@@ -186,9 +221,10 @@ function FeedbackForm() {
               </div>
             </div>
             <Button
-              style={{ marginLeft: "250px", borderRadius: "1rem" }}
+              style={{ borderRadius: "1rem" }}
               className="authentication__container__formContainer__form__loginButton_Form"
               type="submit"
+              id="popup_btn"
               onClick={() => handleSubmit()}
             >
               {t("get24contactform.send")}
@@ -201,10 +237,10 @@ function FeedbackForm() {
               www.cavitas.pl | +48 22 208 3430 | kontakt@cavitas.pl
             </p>
           </div>
-        </Box>
-      </Modal>
+          </Typography>
+          </Box>
+        </DialogContent>
+      </BootstrapDialog>
     </div>
   );
 }
-
-export default FeedbackForm;

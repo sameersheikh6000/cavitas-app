@@ -10,6 +10,8 @@ function ComplaintForm() {
   const lang = currentUrl.split("/").pop();
   const { forSupportForms } = useClientInsurance();
   const { t } = useTranslation();
+
+  
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [open, setOpen] = useState(false);

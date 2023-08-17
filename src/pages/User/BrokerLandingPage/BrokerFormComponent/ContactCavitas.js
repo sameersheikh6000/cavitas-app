@@ -1,12 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from "../../../../config/helpers/i18n";
-import Modal from "@mui/material/Modal";
+import { styled } from "@mui/material/styles";
+import Dialog from "@mui/material/Dialog";
+import DialogContent from "@mui/material/DialogContent";
+import Typography from "@mui/material/Typography";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
+import { useTranslation } from "react-i18next";
 import useClientInsurance from "../../../../hooks/useClientInsurance";
+import i18n from "../../../../config/helpers/i18n";
 
-function ContactCavitas() {
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  "& .MuiDialogContent-root": {
+    padding: theme.spacing(2),
+    borderRadius: "25px", // Apply the border radius style
+  },
+  "& .MuiDialogActions-root": {
+    padding: theme.spacing(1),
+  },
+}));
+
+export default function ContactCavitas() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
@@ -25,22 +39,12 @@ function ContactCavitas() {
     form_type: 0,
   });
 
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: 750,
-    bgcolor: "#edf4f4",
-    borderRadius: 10,
-    boxShadow: 14,
-    p: 4,
-  };
-
-  const handleOpen = () => {
+  const handleClickOpen = () => {
     setOpen(true);
   };
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const handleSubmit = async () => {
     const response = await forSupportForms(contactForm);
@@ -73,141 +77,179 @@ function ContactCavitas() {
           textTransform: "math-auto",
           textDecoration: "none",
         }}
-        onClick={() => handleOpen()}
+        onClick={() => handleClickOpen()}
       >
         {t("Broker.Broker__contactUs__button")}
       </Button>
-      <Modal
-        open={open}
+      <BootstrapDialog
         onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+        open={open}
+        PaperProps={{
+          sx: { background: "none", boxShadow: "none", maxWidth: "none" },
+        }}
       >
-        <Box sx={style}>
-          <div className="uploadClient__container__body__participation">
-            <h2>{t("contactform.contactfrom_title")}</h2>
-            <h1 style={{ color: "red" }}>
-              {t("contactform.contactfrom_heading")}
-            </h1>
-            {message && <span style={{ color: "green" }}>{message}</span>}
-            {errorMessage && (
-              <span style={{ color: "red" }}>{errorMessage}</span>
-            )}
-            <div className="userProfileView__container__details">
-              <div className="userProfileView__container__details__detailsBox">
-                <div className="userProfileView__container__details__detailsBox__feilds__container">
-                  <div>
-                    <input
-                      type="text"
-                      placeholder={`${t("get24contactform.firstandlastname")}*`}
-                      onChange={(e) =>
-                        setContactForm({
-                          ...contactForm,
-                          full_name: e.target.value,
-                        })
-                      }
-                    />
-                  </div>
-                  <div>
-                    <input
-                      type="text"
-                      placeholder="E-mail address*"
-                      onChange={(e) =>
-                        setContactForm({
-                          ...contactForm,
-                          email: e.target.value,
-                        })
-                      }
-                    />
-                  </div>
-
-                  <div style={{ marginTop: "5px" }}>
-                    <select
-                      className="select"
-                      onChange={(e) =>
-                        setContactForm({
-                          ...contactForm,
-                          identity: `I am ${e.target.value} `,
-                        })
-                      }
-                    >
-                      <option>{t("contactform.iam")}</option>
-                      <option value="broker">{t("contactform.Broker")}</option>
-                      <option value="employer">
-                        {t("contactform.Employer")}
-                      </option>
-                      <option value="member">{t("contactform.Member")}</option>
-                      <option value="other">{t("contactform.Other")}</option>
-                    </select>
-                  </div>
-                  <div style={{ marginTop: "5px" }}>
-                    <select
-                      className="select"
-                      onChange={(e) =>
-                        setContactForm({
-                          ...contactForm,
-                          request: `I want to ${e.target.value} `,
-                        })
-                      }
-                    >
-                      <option>{t("contactform.iwant")}</option>
-                      <option value="contact for cooperation">
-                        {t("contactform.Contactcooperation")}
-                      </option>
-                      <option value="ask a question">
-                        {t("contactform.Askquestion")}
-                      </option>
-                      <option value="submit a complaint">
-                        {t("contactform.Submitcomplaint")}
-                      </option>
-                      <option value="give feedback">
-                        {t("contactform.feedback")}
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <div className="userProfileView__container__details__detailsBox">
-                <div className="userProfileView__container__details__detailsBox__feilds__container">
-                  <div>
-                    <textarea
-                      style={{ width: "200%" }}
-                      className="textarea"
-                      placeholder={`${t("contactform.texthere")}`}
-                      cols={10}
-                      rows={5}
-                      onChange={(e) =>
-                        setContactForm({
-                          ...contactForm,
-                          details: e.target.value,
-                        })
-                      }
-                    ></textarea>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Button
-              style={{ marginLeft: "250px", borderRadius: "1rem" }}
-              className="authentication__container__formContainer__form__loginButton_Form"
-              type="submit"
-              onClick={() => handleSubmit()}
+        <DialogContent
+          dividers
+          sx={{
+            backgroundColor: "#edf4f4",
+            boxShadow: 4,
+            padding: "4px",
+            position: "relative",
+            width: 750, // Default width for larger screens
+            "@media (max-width: 360px)": {
+              width: "100%", // Adjust width for mobile responsive
+            },
+          }}
+          id="popup_manu"
+        >
+          <Box>
+            <AddCircleIcon
+              style={{
+                color: "#dd3333",
+                fontSize: "55px",
+                marginTop: "-28px",
+                marginLeft: "-30px",
+                position: "fixed",
+              }}
+              onClick={handleClose}
+            />
+            <Typography
+              gutterBottom
+              style={{ padding: "5px", fontSize: "14px" }}
             >
-              {t("get24contactform.send")}
-            </Button>
-          </div>
-          <br />
-          <div className="landingPage__valuableReadings__header">
-            <p style={{ color: "black", fontSize:"16px" }}>
-              {" "}
-              www.cavitas.pl | +48 22 208 3430 | kontakt@cavitas.pl
-            </p>
-          </div>
-        </Box>
-      </Modal>
+              <div className="uploadClient__container__body__participation">
+                <h2>{t("contactform.contactfrom_title")}</h2>
+                <h1 style={{ color: "red" }}>
+                  {t("contactform.contactfrom_heading")}
+                </h1>
+                {message && <span style={{ color: "green" }}>{message}</span>}
+                {errorMessage && (
+                  <span style={{ color: "red" }}>{errorMessage}</span>
+                )}
+                <div className="userProfileView__container__details">
+                  <div className="userProfileView__container__details__detailsBox">
+                    <div className="userProfileView__container__details__detailsBox__feilds__container">
+                      <div>
+                        <input
+                          type="text"
+                          placeholder={`${t(
+                            "get24contactform.firstandlastname"
+                          )}*`}
+                          onChange={(e) =>
+                            setContactForm({
+                              ...contactForm,
+                              full_name: e.target.value,
+                            })
+                          }
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="text"
+                          placeholder="E-mail address*"
+                          onChange={(e) =>
+                            setContactForm({
+                              ...contactForm,
+                              email: e.target.value,
+                            })
+                          }
+                        />
+                      </div>
+
+                      <div style={{ marginTop: "5px" }}>
+                        <select
+                          className="select"
+                          onChange={(e) =>
+                            setContactForm({
+                              ...contactForm,
+                              identity: `I am ${e.target.value} `,
+                            })
+                          }
+                        >
+                          <option>{t("contactform.iam")}</option>
+                          <option value="broker">
+                            {t("contactform.Broker")}
+                          </option>
+                          <option value="employer">
+                            {t("contactform.Employer")}
+                          </option>
+                          <option value="member">
+                            {t("contactform.Member")}
+                          </option>
+                          <option value="other">
+                            {t("contactform.Other")}
+                          </option>
+                        </select>
+                      </div>
+                      <div style={{ marginTop: "5px" }}>
+                        <select
+                          className="select"
+                          onChange={(e) =>
+                            setContactForm({
+                              ...contactForm,
+                              request: `I want to ${e.target.value} `,
+                            })
+                          }
+                        >
+                          <option>{t("contactform.iwant")}</option>
+                          <option value="contact for cooperation">
+                            {t("contactform.Contactcooperation")}
+                          </option>
+                          <option value="ask a question">
+                            {t("contactform.Askquestion")}
+                          </option>
+                          <option value="submit a complaint">
+                            {t("contactform.Submitcomplaint")}
+                          </option>
+                          <option value="give feedback">
+                            {t("contactform.feedback")}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="userProfileView__container__details__detailsBox">
+                    <div className="userProfileView__container__details__detailsBox__feilds__container">
+                      <div>
+                        <textarea
+                          style={{ maxWidth: "200%" }}
+                          className="textarea"
+                          placeholder={`${t("contactform.texthere")}`}
+                          cols={10}
+                          rows={5}
+                          onChange={(e) =>
+                            setContactForm({
+                              ...contactForm,
+                              details: e.target.value,
+                            })
+                          }
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <Button
+                  style={{ borderRadius: "1rem" }}
+                  className="authentication__container__formContainer__form__loginButton_Form"
+                  type="submit"
+                  id="popup_btn"
+                  onClick={() => handleSubmit()}
+                >
+                  {t("get24contactform.send")}
+                </Button>
+              </div>
+              <br />
+              <div className="landingPage__valuableReadings__header">
+                <p style={{ color: "black", fontSize: "16px" }}>
+                  {" "}
+                  www.cavitas.pl | +48 22 208 3430 | kontakt@cavitas.pl
+                </p>
+              </div>
+            </Typography>
+          </Box>
+        </DialogContent>
+      </BootstrapDialog>
     </div>
   );
 }
-
-export default ContactCavitas;

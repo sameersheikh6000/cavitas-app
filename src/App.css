@@ -506,6 +506,9 @@ body Button {
   font-weight: bold !important;
   font-family: "poppins" !important;
 }
+#popup_btn{
+  margin-left: 250px;
+}
 .authentication__container__formContainer__form__loginButton_Form__Support__Ticket {
   background-color: #edf4f4 !important;
   color: black !important;
@@ -2944,6 +2947,7 @@ body Button {
   outline: none;
   border: 1px solid lightgray;
   padding: 1rem 1rem;
+  margin-left: 20px;
 }
 @media (max-width: 700px) {
   .userProfileView__container__details__detailsBox input {
@@ -4002,9 +4006,21 @@ body.active-modal {
 .authentication__container__formContainer{
   text-align: center;
 }
-/* popup form set */
-.input_setmobilesize{
-  padding: 0px 15px;
+.uploadClient__container__body__participation{
+  width: 100%;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
 }
-
+.userProfileView__container__details__detailsBox .select{
+  width: 255px;
+}
+.userProfileView__container__details__detailsBox .textarea{
+  width: 255px;
+  margin-left: 0;
+}
+#popup_btn{
+  margin-left: 30px;
+}
 }
