@@ -1,7 +1,5 @@
 import { Button } from "@mui/material";
 import React, { useState } from "react";
-import MailOutlinedIcon from "@mui/icons-material/MailOutlined";
-import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import { Link } from "react-router-dom";
 
 const EmployerAddCode = () => {

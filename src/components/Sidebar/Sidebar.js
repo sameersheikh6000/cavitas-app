@@ -18,6 +18,7 @@ import {
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import GppGoodOutlinedIcon from "@mui/icons-material/GppGoodOutlined";
 import VerifiedUserIcon from "@mui/icons-material/VerifiedUser";
+
 const Sidebar = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
@@ -63,9 +64,7 @@ const Sidebar = () => {
               style={{ cursor: "pointer" }}
               onClick={handleLogout}
             />
-            {/* <img className='sidebar__header__flag' src={require('../../assets/EnglandFLag-img.jpg')} alt="" /> */}
-            {/* <LogoutOutlinedIcon className='sidebar__header__icon' onClick={handleLogout} /> */}
-          </header>
+            </header>
           {user?.data?.role ? (
             <div className="sidebar__linkButtons">
               <Link
@@ -78,7 +77,6 @@ const Sidebar = () => {
               {user?.data?.role === "broker" ? (
                 <></>
               ) : (
-                // <Link to="/admin/PolicyInformation" className='sidebar__linkButtons__link'>
                 <Button
                   onClick={() => navigate(`/insuredclient/group/${lang === "pl" ? "pl" : "en"}`, {state: { user } } )}
                   className="sidebar__linkButtons__link"
@@ -149,7 +147,6 @@ const Sidebar = () => {
                     {t("Pannel_Dashboard.submitaclaim")}
                   </Button>
                 )}
-                {/* <Button>Get a Quote</Button> */}
               </div>
             </div>
           ) : (
@@ -163,7 +160,6 @@ const Sidebar = () => {
                 className="sidebar__linkButtons__link"
               >
                 <VerifiedUserIcon className="sidebar__linkButtons__link__icon" />
-                {/* <p>Insured clients</p> */}
                 <p>Insured Persons</p>
               </Link>
               <Link
@@ -171,7 +167,6 @@ const Sidebar = () => {
                 className="sidebar__linkButtons__link"
               >
                 <MailOutlineIcon className="sidebar__linkButtons__link__icon" />
-                {/* <p>Cavitas Documents</p> */}
                 <p>Support Tickets</p>
               </Link>
 
@@ -180,7 +175,6 @@ const Sidebar = () => {
                 className="sidebar__linkButtons__link"
               >
                 <PolicyIcon className="sidebar__linkButtons__link__icon" />
-                {/* <p>Cavitas Documents</p> */}
                 <p>Policy information</p>
               </Link>
 
@@ -205,13 +199,8 @@ const Sidebar = () => {
                 className="sidebar__linkButtons__link"
               >
                 <PersonOutlineOutlinedIcon className="sidebar__linkButtons__link__icon" />
-                {/* <p>User profile</p> */}
                 <p>Admin Profile</p>
               </Link>
-              {/* <div className='sidebar__linkButtons__buttons'>
-            <Button onClick={() => navigate("/admin/uploadclient")}>Upload new clients</Button>
-            <Button>Get a Quote</Button>
-          </div> */}
             </div>
           )}
         </section>

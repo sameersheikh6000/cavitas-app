@@ -10,6 +10,7 @@ import useUsers from "../../../hooks/useUsers";
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const UserProfileView = () => {
   const currentUrl = window.location.href;
@@ -17,21 +18,24 @@ const UserProfileView = () => {
   const { t } = useTranslation();
   const current_user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const [profile, setProfile] = useState({})
-
+  const [isLoading, setIsLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState();
   const [successMessage, setSuccessMessage] = useState("");
   const { getUserByAdmin, updateUser } = useUsers();
   const navigate = useNavigate();
 
   const handleSubmit = async e => {
+    setIsLoading(true)
     e.preventDefault();
     const response = await updateUser(profile);
     if (response.status < 300) {
+      setIsLoading(false)
       setSuccessMessage(`${t("Pannel_Dashboard_Supporttickets.done")}`)
       setTimeout(() => {
         navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)
       }, 3000);
     } else if (response.status > 300) {
+      setIsLoading(false)
       setErrorMessage(response.message);
       setTimeout(() => {
         setErrorMessage("");
@@ -71,9 +75,25 @@ const UserProfileView = () => {
             <p>{t("Pannel_Dashboard.Userprofile")}</p>
           </div>
           <div className='userProfileView__top__right'>
-            <Button onClick={(e) => handleSubmit(e)}><SaveOutlinedIcon className='userProfileView__top__right__icon' />
-            {t("Pannel_Dashboard_Supporttickets.Save")}
-</Button>
+            <Button 
+              onClick={(e) => handleSubmit(e)}
+              disabled={isLoading}
+            >
+              {!isLoading ?
+                  <>
+                    <SaveOutlinedIcon className='userProfileView__top__right__icon' />
+                    {t("Pannel_Dashboard_Supporttickets.Save")}
+                  </>
+                :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+              }
+            </Button>
 
           </div>
         </div>

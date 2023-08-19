@@ -6,6 +6,8 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuthenticate from '../../../hooks/useAuthenticate';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
+import CircularProgress from '@mui/material/CircularProgress';
+
 const MemberSignIn = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
@@ -15,6 +17,7 @@ const MemberSignIn = () => {
   const { userLogin } = useAuthenticate();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
   const [viewPassword, setViewPassword] = useState(false);
   const [user, setUser] = useState({
     email: "",
@@ -40,15 +43,18 @@ const MemberSignIn = () => {
     for (let prop in user) {
       if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"))
     }
+    setIsLoading(true)
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
       navigate(`/dashboard/${lang === 'pl' ? lang : 'en'}`);
     } else if (response?.data?.message !== undefined) {
+      setIsLoading(false)
       setErrorMessage(response?.data?.message);
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
     } else if (response?.data?.status?.message === undefined) {
+      setIsLoading(false)
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
       setTimeout(() => {
         setErrorMessage("");
@@ -118,7 +124,23 @@ const MemberSignIn = () => {
               }
               <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowPassword} />
             </div>
-            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>{t("Pannel_Login.login")}</Button>
+            <Button 
+              className='authentication__container__formContainer__form__loginButton' 
+              type='submit'
+              disabled={isLoading}
+            >
+              {!isLoading ? 
+                  t("Pannel_Login.login")
+                :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+              }
+            </Button>
           </form>
           <Link to={`/MemberEnterMail/${lang === "pl" ? "pl" : "en"}`} className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>

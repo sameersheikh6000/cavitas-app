@@ -7,24 +7,28 @@ import SaveOutlinedIcon from "@mui/icons-material/SaveOutlined";
 import useUsers from "../../../hooks/useUsers";
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
 import { useNavigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function AdminProfileView() {
   const admin = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
   const [profile, setProfile] = useState(admin?.data);
   const [errorMessage, setErrorMessage] = useState();
+  const [isLoading, setIsLoading] = useState(false)
   const { updateAdminUser } = useUsers();
   const navigate = useNavigate();
   console.warn(profile);
 
   const handleSubmit = async (e) => {
+    setIsLoading(true)
     e.preventDefault();
     const response = await updateAdminUser(profile);
 
     if (response.status < 300) {
+      setIsLoading(false)
       navigate("/admin/signin");
     } else if (response.status > 300) {
       setErrorMessage(response.message);
-
+      setIsLoading(false)
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
@@ -40,9 +44,21 @@ function AdminProfileView() {
             <p>Admin Profile</p>
           </div>
           <div className="userProfileView__top__right">
-            <Button onClick={(e) => handleSubmit(e)}>
-              <SaveOutlinedIcon className="userProfileView__top__right__icon" />
-              Save changes
+            <Button onClick={(e) => handleSubmit(e)} disabled={isLoading}>
+              {!isLoading ? 
+                  <>
+                    <SaveOutlinedIcon className="userProfileView__top__right__icon" />
+                    Save changes
+                  </>
+                : 
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+              }
             </Button>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import useReplyForm from "../../../../../../hooks/useReplyForm";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function ReplyForm({
   contactFormId,
@@ -13,6 +14,7 @@ function ReplyForm({
 }) {
   const [open, setOpen] = useState(false);
   const { createReply } = useReplyForm();
+  const [isLoading, setIsLoading] = useState(false)
   const [contactReply, setContactReply] = useState({
     reply_text: "",
     contact_form_id: contactFormId,
@@ -36,13 +38,15 @@ function ReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    ;
+    setIsLoading(true)
     const response = await createReply(contactReply);
     if (response?.status < 300) {
+      setIsLoading(false)
       setSuccessMessage("Successfully Replied!");
       getContactDetail();
       handleClose();
     } else if (response?.status > 300) {
+      setIsLoading(false)
       setErrorMessage(response?.message);
 
       setTimeout(() => {
@@ -105,10 +109,21 @@ function ReplyForm({
                 color="error"
                 variant="contained"
                 size="small"
+                disabled={isLoading}
                 style={{ color: "white" }}
                 onClick={() => handleSubmit()}
               >
-                Reply
+                {!isLoading ? 
+                    'Reply'
+                  :
+                    <CircularProgress 
+                      style={{
+                        width: "20px",
+                        height: "20px",
+                        color: "white",
+                      }}
+                    />
+                }
               </Button>
               <Button
                 color="success"

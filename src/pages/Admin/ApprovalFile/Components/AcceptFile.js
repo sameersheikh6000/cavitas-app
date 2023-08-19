@@ -6,10 +6,12 @@ import useClientInsurance from '../../../../hooks/useClientInsurance';
 import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 import SuccessMessage from '../../../../components/SnackbarMessages/SuccessMessage';
 import { Button } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress';
 
 function AcceptFile({client_id, getClientInsurance}) {
     const infoID = client_id;
     const [open, setOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState(null);
     const [successMessage, setSuccessMessage] = useState(null);
     const { updateClientInsuranceAdmin } = useClientInsurance();
@@ -29,9 +31,10 @@ function AcceptFile({client_id, getClientInsurance}) {
     const handleClose = () => setOpen(false);
 
     const handleUpdate = async (infoID) => {
-
+        setIsLoading(true)
         const response = await updateClientInsuranceAdmin(infoID)
         if (response?.status > 300 ){
+          setIsLoading(false)
           setErrorMessage(response?.message)
 
           setTimeout(() => {
@@ -39,9 +42,13 @@ function AcceptFile({client_id, getClientInsurance}) {
           }, 5000);
           
         } else if (response?.status < 300){
+          setIsLoading(false)
           setSuccessMessage("File Approved!");
           setOpen(false);
           getClientInsurance();
+          setTimeout(() => {
+            setSuccessMessage("");
+          }, 5000);
         }
       }
 
@@ -62,7 +69,26 @@ function AcceptFile({client_id, getClientInsurance}) {
             </Typography>
             <div className='uploadClient__container__body__participation'>
               <div className="uploadClient__container__body__participation_submit_button" style={{display: "flex", justifyContent: "end"}}>
-                <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={() => handleUpdate(infoID)}>Approve</Button>
+                <Button 
+                  color='success' 
+                  variant='contained' 
+                  size='small' 
+                  disabled={isLoading}
+                  style={{ color: "white" }} 
+                  onClick={() => handleUpdate(infoID)}
+                >
+                  {!isLoading ? 
+                    'Approve'
+                  :
+                    <CircularProgress 
+                      style={{
+                        width: "20px",
+                        height: "20px",
+                        color: "white",
+                      }}
+                    />
+                  }
+                </Button>
                 <Button color='primary' variant='outlined' size='small' style={{ color: "blue" }} onClick={() => handleClose()}>Cancel</Button>
               </div>
             </div>

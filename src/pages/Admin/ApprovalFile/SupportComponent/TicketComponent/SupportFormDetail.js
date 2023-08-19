@@ -20,12 +20,14 @@ import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMe
 import useTickets from "../../../../../hooks/useTickets";
 import SupportReplyForm from "./Component/SupportReplyForm";
 import { API_KEY } from "../../../../../config/helpers/variables";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function SupportFormDetail() {
   const [supportFormDetail, setSupportFormDetail] = useState();
   const { id } = useParams();
   const { getTicketDetail, updateSupportFormStatus } = useTickets();
   const [supportTicketStatus, setSupportTicketStatus] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [statusSuccessMessage, setStatusSuccessMessage] = useState("");
@@ -45,14 +47,17 @@ function SupportFormDetail() {
   };
 
   const handleContactStatusUpdate = async () => {
+    setIsLoading(true);
     const response = await updateSupportFormStatus(id, supportTicketStatus);
     if (response?.status < 300) {
+      setIsLoading(false)
       setStatusSuccessMessage("Status Updated Successfully!");
       setTimeout(() => {
         setStatusSuccessMessage("");
       }, 3000);
       setSupportTicketStatus("");
     } else if (response?.status > 300) {
+      setIsLoading(false)
       setStatusErrorMessage(response?.message);
       setTimeout(() => {
         setStatusErrorMessage("");
@@ -309,9 +314,20 @@ function SupportFormDetail() {
             <Button
               className="authentication__container__formContainer__form__loginButton_tickets"
               type="submit"
+              disabled={isLoading}
               onClick={() => handleContactStatusUpdate()}
             >
-              Update Ticket
+              {!isLoading ?
+                  'Update Ticket'
+                :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+              }
             </Button>
           </div>
         </Stack>

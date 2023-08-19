@@ -20,9 +20,11 @@ import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMe
 import { API_KEY } from "../../../../../config/helpers/variables";
 import useClientInsurance from "../../../../../hooks/useClientInsurance";
 import InsuredClientReplyForm from "./Component/InsuredClientReplyForm";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const InsuredPersonDetail = () => {
   const [clientInfo, setClientInfo] = useState();
+  const [isLoading, setIsLoading] = useState(false)
   const { id } = useParams();
   const [clientInfoStatus, setClientInfoStatus] = useState('')
   const { getClientInfoById, updateClientInfoTicketStatusAdmin } = useClientInsurance();
@@ -45,14 +47,17 @@ const InsuredPersonDetail = () => {
   };
 
   const handleClientInfoStatusUpdate = async () => {
+    setIsLoading(true)
     const response = await updateClientInfoTicketStatusAdmin(id, clientInfoStatus);
     if (response?.status < 300) {
+      setIsLoading(false)
       setStatusSuccessMessage("Status Updated Successfully!");
       setTimeout(() => {
         setStatusSuccessMessage("");
       }, 3000);
       setClientInfoStatus("");
     } else if (response?.status > 300) {
+      setIsLoading(false)
       setStatusErrorMessage(response?.message);
       setTimeout(() => {
         setStatusErrorMessage("");
@@ -354,9 +359,20 @@ const InsuredPersonDetail = () => {
             <Button
               className="authentication__container__formContainer__form__loginButton_tickets"
               type="submit"
+              disabled={isLoading}
               onClick={() => handleClientInfoStatusUpdate()}
             >
-              Update Ticket
+              {!isLoading ? 
+                'Update Ticket'
+                :
+                <CircularProgress 
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    color: "white",
+                  }}
+                />
+              }
             </Button>
           </div>
         </Stack>

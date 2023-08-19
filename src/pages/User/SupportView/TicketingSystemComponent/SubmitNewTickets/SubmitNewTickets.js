@@ -10,6 +10,7 @@ import MailOutlineIcon from "@mui/icons-material/MailOutline";
 import useClientInsurance from "../../../../../hooks/useClientInsurance";
 import SuccessMessage from "../../../../../components/SnackbarMessages/SuccessMessage";
 import AlertMessage from "../../../../../components/SnackbarMessages/AlertMessage";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function SubmitNewTickets() {
   const currentUrl = window.location.href;
@@ -19,6 +20,7 @@ function SubmitNewTickets() {
   const navigate = useNavigate();
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
   const [ticket, setTicket] = useState({
     request: "",
     details: "",
@@ -40,8 +42,10 @@ function SubmitNewTickets() {
   };
 
   const handleSubmit = async () => {
+    setIsLoading(true)
     const response = await createNewTicket(ticket)
     if(response?.status < 300){
+      setIsLoading(false)
       // setSuccessMessage("Submited Successfully!")
       setSuccessMessage(t("Pannel_Dashboard_Supporttickets.message"))
       setTicket({
@@ -53,6 +57,7 @@ function SubmitNewTickets() {
       }, 3000);
     }
     else if (response?.status > 300){
+      setIsLoading(false)
       setErrorMessage(response?.message)
       setTimeout(() => {
         setErrorMessage('');
@@ -154,8 +159,19 @@ function SubmitNewTickets() {
               className="authentication__container__formContainer__form__loginButton_Form"
               type="submit"
               onClick={() => handleSubmit()}
+              disabled={isLoading}
             >
-                            {t("MysupportTickets.Submitticket")}
+              {!isLoading ?
+                  t("MysupportTickets.Submitticket")
+                :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+              }
 
             </Button>
           </div>

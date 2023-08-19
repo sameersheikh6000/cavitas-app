@@ -4,11 +4,13 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { useNavigate } from 'react-router-dom';
 import useAuthenticate from '../../../hooks/useAuthenticate';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
+import CircularProgress from '@mui/material/CircularProgress';
 
 const AdminSignIn = () => {
   const { adminLogin } = useAuthenticate();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
   const [admin, setAdmin] = useState({
     email: "",
@@ -33,19 +35,21 @@ const AdminSignIn = () => {
     for (let prop in admin) {
       if (!admin[prop]) return alert('Please fill the form correctly')
     }
+    setIsLoading(true)
     const response = await adminLogin(admin);
     if (response?.data?.status?.code < 300) {
+      setIsLoading(false)
       navigate("/admin");
     } else if (response?.data?.message !== undefined) {
       setErrorMessage(response?.data?.message);
-
+      setIsLoading(false)
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
 
     } else if (response?.data?.status?.message === undefined) {
       setErrorMessage("Something went wrong!");
-
+      setIsLoading(false)
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
@@ -100,7 +104,23 @@ const AdminSignIn = () => {
               }
               <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowPassword} />
             </div>
-            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>Log In</Button>
+            <Button 
+              className='authentication__container__formContainer__form__loginButton' 
+              type='submit'
+              disabled={isLoading}
+            >
+                {!isLoading ? 
+                  'Log In'
+                  :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+                }
+            </Button>
           </form>
         </div>
       </div>
