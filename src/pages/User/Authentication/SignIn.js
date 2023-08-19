@@ -6,20 +6,16 @@ import RemoveRedEyeOutlinedIcon from '@mui/icons-material/RemoveRedEyeOutlined';
 import { Link, useNavigate } from 'react-router-dom';
 import useAuthenticate from '../../../hooks/useAuthenticate';
 import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
+import CircularProgress from '@mui/material/CircularProgress';
+
 const SignIn = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, [])
-
   const { userLogin } = useAuthenticate();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
   const [viewPassword, setViewPassword] = useState(false);
   const [user, setUser] = useState({
     email: "",
@@ -45,15 +41,19 @@ const SignIn = () => {
     for (let prop in user) {
       if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"))
     }
+    setIsLoading(true)
     const response = await userLogin(user);
     if (response?.data?.status?.code < 300) {
+      setIsLoading(false)
       navigate(`/dashboard/${lang === "pl" ? lang : "en"}`)
     } else if (response?.data?.message !== undefined) {
+      setIsLoading(false)
       setErrorMessage(response?.data?.message);
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
     } else if (response?.data?.status?.message === undefined) {
+      setIsLoading(false)
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
       setTimeout(() => {
         setErrorMessage("");
@@ -62,6 +62,12 @@ const SignIn = () => {
     }
   };
 
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, [])
+  
   return (
     <section className='authentication'>
       <AlertMessage errorMessage={errorMessage} />
@@ -121,7 +127,17 @@ const SignIn = () => {
               }
               <RemoveRedEyeOutlinedIcon className='authentication__container__formContainer__form__passwordBox__passwordIcon' onClick={handleShowPassword} />
             </div>
-            <Button className='authentication__container__formContainer__form__loginButton' type='submit'>{t("Pannel_Login.login")}</Button>
+            <Button 
+              className='authentication__container__formContainer__form__loginButton'  
+              type='submit'
+              disabled={isLoading}
+              >
+              {!isLoading ? 
+                t("Pannel_Login.login")
+              : 
+                <CircularProgress style={{ color: "white", width: '20px', height: '20px' }} />
+              }
+            </Button>
           </form>
           <Link to={`/Add-Mail/${lang === "pl" ? "pl" : "en"}`} className='authentication__container__formContainer__forgotPassword'>{t("Pannel_Login.forgetpassword")}</Link>
           <div className='authentication__container__formContainer__registerNow'>
