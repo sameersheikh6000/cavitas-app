@@ -15,18 +15,13 @@ const MemberEnterMail = () => {
   const [isLoading, setIsLoading] = useState(false)
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
+  const language = lang === 'pl' ? 'pl' : 'en';
   const { t } = useTranslation();
-
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, []);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true)
-    const response = await forgotPassword(email);
+    const response = await forgotPassword(email, language);
     if(response?.status < 300){
       setIsLoading(false)
       setSuccessMessage(response?.message)
@@ -47,6 +42,12 @@ const MemberEnterMail = () => {
     setEmail(event.target.value)
   }
 
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, []);
+  
   return (
     <section className="authentication">
       <div className="authentication__container">
