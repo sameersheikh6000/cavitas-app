@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home":"Dom",
     "faq": "FAQ",
     "claims": "Roszczenia",
     "aboutUs": "O nas",
@@ -74,8 +75,8 @@
     "ourpolicy_policy1": "Polityka prywatności",
     "ourpolicy_policy2": "Polityka plików cookie",
     "ourpolicy_policy3": "Umowa brokerska",
-    "ourpolicy_policy4": "Procedura",
-    "ourpolicy_policy4_b": "reklamacyjna"
+    "ourpolicy_policy4": "Rozpatrywanie",
+    "ourpolicy_policy4_b": "skarg"
   },
 
   "FAQ": {
@@ -357,6 +358,7 @@
     "Validfrom": "Obowiązuje od:"
   },
   "Pannel_Dashboard_Supporttickets": {
+    "wordspassword":"Twoje hasło minimum sześć cyfr lub liter",
     "Supporttitle": "ZGŁOSZENIA",
     "Ticketnumber": "Numer zgłoszenia",
     "Status": "Status",

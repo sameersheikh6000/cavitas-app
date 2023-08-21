@@ -13,6 +13,7 @@ const EmploySignUp = () => {
   const { createUser } = useUsers();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+  const [password, setPassword] = useState("");
   const [user, setUser] = useState({
     first_name: "",
     last_name: "",
@@ -29,6 +30,16 @@ const EmploySignUp = () => {
   const changeHandler = event => {
     const { name, value } = event.target;
     setUser({ ...user, [name]: value });
+       //condition of password digits
+       const newPassword = event.target.value;
+
+       if (newPassword.length === 4) {
+         setErrorMessage(t("Pannel_Dashboard_Supporttickets.wordspassword"));
+       } else {
+         setErrorMessage("");
+       }
+   
+       setPassword(newPassword);
   };
 
   const submitHandler = async e => {
@@ -158,7 +169,7 @@ const EmploySignUp = () => {
             </div>
             <div>
               <input
-                type="password"
+                type="text"
                 placeholder={`${t("Registration.setpassword")}`}
                 name='password'
                 value={user.password}
@@ -166,7 +177,7 @@ const EmploySignUp = () => {
                 required={true}
               />
               <input
-                type="password"
+                type="text"
                 placeholder={`${t("Registration.repeatpassword")}`}
                 name='password_confirmation'
                 value={user.password_confirmation}

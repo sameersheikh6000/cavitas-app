@@ -1,5 +1,6 @@
 {
   "nav": {
+    "home":"Home",
     "faq": "FAQ",
     "claims": "Claims",
     "aboutUs": "About Us",
@@ -12,7 +13,7 @@
     "Blog": "Blog",
     "PrivacyPolicy": "Privacy Policy",
     "Shop": "Shop",
-    "selectLang": "Select Language",
+    "selectLang": "Select language",
     "Contactforsupport": "Contact for support",
     "Sentcomplaint": "Sent us a complaint",
     "givefeedback": "Give us feedback"
@@ -347,6 +348,7 @@
     "Validfrom": "Valid from:"
   },
   "Pannel_Dashboard_Supporttickets": {
+    "wordspassword":"Your password minimum six digits or letters",
     "Supporttitle": "SUPPORT TICKETS",
     "Ticketnumber": "Support ticket number",
     "Status": "Status",

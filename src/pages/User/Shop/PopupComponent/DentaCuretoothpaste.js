@@ -69,8 +69,8 @@ export default function DentaCuretoothpaste() {
               onClick={handleClose}
             />
             <Typography gutterBottom style={{ padding: "20px" }}>
-              <h3>DESCRIPTION:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>DESCRIPTION:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   1 tube contains 75 ml of toothpaste
                   <br />
@@ -87,8 +87,8 @@ export default function DentaCuretoothpaste() {
               </div>
               <br />
 
-              <h3>INGREDIENTS:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>INGREDIENTS:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   Water, hydrated silica, Sorbitol, Propylen Glycol, Sodium C
                   14-16, Olefin Sulfonat.Aroma, Trigonella Foenum Graecum

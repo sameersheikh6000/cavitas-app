@@ -117,7 +117,7 @@ const EmploySignIn = () => {
               ) : (
                 <input
                   className="authentication__container__formContainer__form__passwordBox__password"
-                  type="password"
+                  type="text"
                   name="password"
                   placeholder={`${t("Pannel_Login.password")}`}
                   value={user.password}

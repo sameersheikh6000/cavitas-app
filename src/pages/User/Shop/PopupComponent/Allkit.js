@@ -69,8 +69,8 @@ export default function Allkit() {
               onClick={handleClose}
             />
             <Typography gutterBottom style={{ padding: "20px" }}>
-              <h3>DESCRIPTION:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>DESCRIPTION:</h3>
+              <div style={{ fontSize: "14px", fontWeight:400 }}>
                 <p>
                   Kit of all DentaCure products contains:
                   <br />
@@ -84,13 +84,13 @@ export default function Allkit() {
                 </p>
               </div>
               <br />
-              <h3>USAGE:</h3>{" "}
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>USAGE:</h3>{" "}
+              <div style={{ fontSize: "14px", fontWeight:400 }}>
                 <p>Find usage described under each product separately.</p>
               </div>
               <br />
-              <h3>INGREDIENTS:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>INGREDIENTS:</h3>
+              <div style={{ fontSize: "14px", fontWeight:400 }}>
                 <p>
                   Find ingredients described under each product separately.
                   <br />

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import i18n from "../../config/helpers/i18n";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import ContactCavitas from "./FooterFormComponent/ContactCavitas";
 import ComplaintForm from "./FooterFormComponent/ComplaintForm";
 import FeedbackForm from "./FooterFormComponent/Feedbackform";
@@ -18,12 +18,14 @@ const Footer = () => {
     localStorage.setItem("selectedTabIndex", tabIndex);
     window.scrollTo(0, 0);
   };
+  const navigate = useNavigate();
 
   useEffect(() => {
     const currentUrl = window.location.href;
     let lang = currentUrl.split("/").pop();
     lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
   }, []);
+  
   return (
     <section className="footer">
       <div className="footer__container">
@@ -102,13 +104,13 @@ const Footer = () => {
           </div>
           <div className="footer__container__top__box">
             <Link> {t("footer.findus")}</Link>
+            <Link to="https://www.linkedin.com/company/cavitas-dental-insurance-broker-o%C3%BC/about/?viewAsMember=true" target="_blank">
+              <LinkedInIcon  />
+              {/* Linkedin */}
+            </Link>
             <Link>
               <FacebookOutlinedIcon />
               {/* Facebook */}
-            </Link>
-            <Link>
-              <LinkedInIcon />
-              {/* Linkedin */}
             </Link>
             <Link>
               <InstagramIcon />

@@ -69,8 +69,8 @@ export default function DentaCureMouthWash() {
               onClick={handleClose}
             />
             <Typography gutterBottom style={{ padding: "20px" }}>
-              <h3>DESCRIPTION:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>DESCRIPTION:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   1 bottle contains 480 ml of mouthwash.
                   <br />
@@ -89,8 +89,8 @@ export default function DentaCureMouthWash() {
                 </p>
               </div>
               <br />
-              <h3>USAGE:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>USAGE:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   The product is ready for use. To be used morning and evening
                   after toothbrushing. Shake before use to distribute the active
@@ -105,8 +105,8 @@ export default function DentaCureMouthWash() {
                 <br />
                 <br />
               </div>
-              <h3>INGREDIENTS:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>INGREDIENTS:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   Water, Glycerin, PEG-40 Hydrogenated Castor oil, Xylitol,
                   Sodium Benzoate, Aroma, Trigonella Foenum Graecum Extract,

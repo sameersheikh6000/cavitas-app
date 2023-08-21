@@ -69,8 +69,8 @@ export default function DentaCureintensivegel() {
               onClick={handleClose}
             />
             <Typography gutterBottom style={{ padding: "20px" }}>
-              <h3>DESCRIPTION:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>DESCRIPTION:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   1 tube contains 25 ml of gel.
                   <br />
@@ -91,8 +91,8 @@ export default function DentaCureintensivegel() {
                 </p>
                 <br />
               </div>
-              <h3>USAGE:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>USAGE:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   The product is ready for use. Apply 1 cm of gel on the
                   effected inflamed area and/or blisters in the mouth. Can be
@@ -109,8 +109,8 @@ export default function DentaCureintensivegel() {
                 <br />
                 <br />
               </div>
-              <h3>INGREDIENTS:</h3>
-              <div style={{ fontSize: "14px" }}>
+              <h3 style={{ fontSize: "19px" , fontWeight:700}}>INGREDIENTS:</h3>
+              <div style={{ fontSize: "14px" , fontWeight:400}}>
                 <p>
                   Water, Glycerin, Xylitol, Hydroxyethylcellulose, propylene
                   Glycol, PEG-40 Hydrogenated Castor oil, Xylitol, Trigonella

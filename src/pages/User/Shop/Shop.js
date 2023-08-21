@@ -5,7 +5,7 @@ import DentaCuretoothpaste from "./PopupComponent/DentaCuretoothpaste";
 import DentaCureMouthWash from "./PopupComponent/DentaCureMouthWash";
 import DentaCureintensivegel from "./PopupComponent/DentaCureintensivegel";
 import DentalFloss from "./PopupComponent/DnetalFloss";
-import Allkit from "./PopupComponent/Allkit"
+import Allkit from "./PopupComponent/Allkit";
 
 const Shop = () => {
   return (
@@ -16,7 +16,7 @@ const Shop = () => {
             <h1
               style={{
                 color: "#5c8894",
-                textTransform:"none"
+                textTransform: "none",
               }}
             >
               Shop for natural oral care products that <br />
@@ -30,12 +30,28 @@ const Shop = () => {
                   We bring you a range of DentaCure products that are proven to
                   be effective in cases like:
                 </p>
-                <ul style={{ margin: "10px", marginLeft: "30px", fontWeight:"normal" }}>
-                  <li>Bleeding gums</li>
-                  <li>Gingivitis</li>
-                  <li>Tartar</li>
-                  <li>Blisters in the mouth</li>
-                  <li>Gum pain</li>
+                <ul
+                  style={{
+                    margin: "0px 10px 10px 10px",
+                    marginLeft: "30px",
+                    fontWeight: "normal",
+                    fontSize: "16px",
+                    fontWeight: 400,
+                  }}
+                >
+                  <li style={{ fontSize: "16px", fontWeight: 400 }}>
+                    Bleeding gums
+                  </li>
+                  <li style={{ fontSize: "16px", fontWeight: 400 }}>
+                    Gingivitis
+                  </li>
+                  <li style={{ fontSize: "16px", fontWeight: 400 }}>Tartar</li>
+                  <li style={{ fontSize: "16px", fontWeight: 400 }}>
+                    Blisters in the mouth
+                  </li>
+                  <li style={{ fontSize: "16px", fontWeight: 400 }}>
+                    Gum pain
+                  </li>
                 </ul>
                 <p>
                   DentaCure products help to prevent and treat gingivitis which
@@ -43,7 +59,10 @@ const Shop = () => {
                 </p>
               </div>
             </div>
-            <div className="landingPage__smartInsurance__container__picture" id="shop_image">
+            <div
+              className="landingPage__smartInsurance__container__picture"
+              id="shop_image"
+            >
               <img
                 src={require("../../../assets/Shop Home 09.52.49.png")}
                 alt=""
@@ -60,7 +79,7 @@ const Shop = () => {
           <div
             className="landingPage__howItwork__container__picture"
             id="Product_Pics"
-            style={{ minWidth: "50%"}}
+            style={{ minWidth: "50%" }}
           >
             <img
               style={{ height: "60%", width: "60%" }}
@@ -77,20 +96,23 @@ const Shop = () => {
             <h3
               className="landingPage__howItwork__container__details__heading"
               style={{
-                fontSize: "2.2rem",
+                fontSize: "35px",
                 marginBottom: "10px",
-                fontWeight: "500",
-                display:"inline-flex"
+                fontWeight: 500,
+                display: "inline-flex",
               }}
             >
-              DentaCure toothpaste, 75 ml  <DentaCuretoothpaste />
-             
+              DentaCure toothpaste, 75 ml <DentaCuretoothpaste />
             </h3>
-            <p className="Shop__mainpage"
-             style={{ fontWeight: "normal" }}
-
-             >
-              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+              <ul
+                style={{
+                  margin: "0px 10px 10px 10px",
+                  marginLeft: "30px",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                }}
+              >
                 <li>Mild mint taste</li>
                 <li>Effective against bleeding gums</li>
                 <li>Reduces gum inflammation</li>
@@ -131,7 +153,6 @@ const Shop = () => {
             className="landingPage__howItwork__container__picture"
             style={{ minWidth: "50%" }}
             id="Product_Pics"
-
           >
             <img
               style={{ height: "35%", width: "33%" }}
@@ -148,10 +169,10 @@ const Shop = () => {
             <h3
               className="landingPage__howItwork__container__details__heading"
               style={{
-                fontSize: "2.2rem",
+                fontSize: "35px",
                 marginBottom: "10px",
-                fontWeight: "500",
-                display:"inline-flex"
+                fontWeight: 500,
+                display: "inline-flex",
               }}
             >
               DentaCure mouthwash, 480 ml
@@ -164,11 +185,15 @@ const Shop = () => {
               /> */}
               <DentaCureMouthWash />
             </h3>
-            <p className="Shop__mainpage" 
-            
-            style={{ fontWeight: "normal" }}
-            >
-              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+              <ul
+                style={{
+                  margin: "0px 10px 10px 10px",
+                  marginLeft: "30px",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                }}
+              >
                 <li>Mild mint taste and fresh breath</li>
                 <li>Anti inflammatory</li>
                 <li>With an extract from fenugreek seeds</li>
@@ -207,7 +232,7 @@ const Shop = () => {
           <div
             className="landingPage__howItwork__container__picture"
             id="Product_Pics"
-            style={{ minWidth: "50%"}}
+            style={{ minWidth: "50%" }}
           >
             <img
               style={{ height: "50%", width: "50%" }}
@@ -224,11 +249,10 @@ const Shop = () => {
             <h3
               className="landingPage__howItwork__container__details__heading"
               style={{
-                fontSize: "2.2rem",
+                fontSize: "35px",
                 marginBottom: "10px",
-                fontWeight: "500",
-                display:"inline-flex"
-
+                fontWeight: 500,
+                display: "inline-flex",
               }}
             >
               DentaCure intensive gel, 25 ml
@@ -241,11 +265,15 @@ const Shop = () => {
               /> */}
               <DentaCureintensivegel />
             </h3>
-            <p className="Shop__mainpage" 
-            
-            style={{ fontWeight: "normal" }}
-            >
-              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+              <ul
+                style={{
+                  margin: "0px 10px 10px 10px",
+                  marginLeft: "30px",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                }}
+              >
                 <li>Mild mint taste</li>
                 <li>Anti inflmmatory</li>
                 <li>With an extract from fenugreek seeds</li>
@@ -283,8 +311,8 @@ const Shop = () => {
         <div className="landingPage__howItwork__container">
           <div
             className="landingPage__howItwork__container__picture"
-             id="Product_Pics"
-            style={{ minWidth: "50%"}}
+            id="Product_Pics"
+            style={{ minWidth: "50%" }}
           >
             <img
               style={{ height: "50%", width: "50%" }}
@@ -301,10 +329,10 @@ const Shop = () => {
             <h3
               className="landingPage__howItwork__container__details__heading"
               style={{
-                fontSize: "2.2rem",
+                fontSize: "35px",
                 marginBottom: "10px",
-                fontWeight: "500",
-                display:"inline-flex"
+                fontWeight: 500,
+                display: "inline-flex",
               }}
             >
               DentaCure dental floss, 30 m
@@ -317,10 +345,16 @@ const Shop = () => {
               /> */}
               <DentalFloss />
             </h3>
-            <p className="Shop__mainpage" 
-            
-            style={{ fontWeight: "normal" }}
-          >              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+              {" "}
+              <ul
+                style={{
+                  margin: "0px 10px 10px 10px",
+                  marginLeft: "30px",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                }}
+              >
                 <li>Effective against bleeding gums and gingivitis</li>
                 <li>For daily cleaning between teeth</li>
                 <li>Anti inflammatory</li>
@@ -356,7 +390,7 @@ const Shop = () => {
           <div
             className="landingPage__howItwork__container__picture"
             id="Product_Pics"
-            style={{ minWidth: "50%"}}
+            style={{ minWidth: "50%" }}
           >
             <img
               style={{ height: "60%", width: "60%" }}
@@ -373,11 +407,10 @@ const Shop = () => {
             <h3
               className="landingPage__howItwork__container__details__heading"
               style={{
-                fontSize: "2.2rem",
+                fontSize: "35px",
                 marginBottom: "10px",
-                fontWeight: "500",
-                display:"inline-flex"
-
+                fontWeight: 500,
+                display: "inline-flex",
               }}
             >
               Kit "Together is better"
@@ -390,10 +423,16 @@ const Shop = () => {
               /> */}
               <Allkit />
             </h3>
-            <p className="Shop__mainpage" 
-
-            style={{ fontWeight: "normal" }}
-            >              <ul style={{ margin: "10px", marginLeft: "30px" }}>
+            <p className="Shop__mainpage" style={{ fontWeight: "normal" }}>
+              {" "}
+              <ul
+                style={{
+                  margin: "0px 10px 10px 10px",
+                  marginLeft: "30px",
+                  fontSize: "16px",
+                  fontWeight: 400,
+                }}
+              >
                 <li>
                   All DentaCure products for effective and natural floss against
                   bleeding gums and gingivitis.

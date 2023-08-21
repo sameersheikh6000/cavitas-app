@@ -17,7 +17,7 @@ const FAQ = () => {
   return (
     <Page>
       <section className='faq'>
-        <header>
+        <header id='faq_header'>
           <h1>{t("FAQ.FAQ_title")}</h1>
         </header>
         <div className='faq__tabs'>

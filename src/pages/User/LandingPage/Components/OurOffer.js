@@ -45,6 +45,7 @@ ${t("Suggest_mail.Suggest_mail_p6")}`;
       </header>
       <div className="landingPage__ourOffer__container">
         <div className="landingPage__ourOffer__container__boxes">
+          <div>
           <div className="landingPage__ourOffer__container__boxes__detailsContainer">
             <h4 className="landingPage__ourOffer__container__boxes__detailsContainer__heading">
               {t("home.value_member")}
@@ -105,7 +106,17 @@ ${t("Suggest_mail.Suggest_mail_p6")}`;
             </div> */}
             {/* <Button>Suggest to your employer</Button> */}
           </div>
+          <div
+            className="landingPage__ourOffer__container__boxes__detailsContainer Suggest__boxes_button"
+            style={{ border: "none" }}
+          >
+            <Button onClick={() => handleComposeEmail()}>
+              {t("Broker.suggest")}
+            </Button>
+          </div>
+          </div>
 
+<div>
           <div className="landingPage__ourOffer__container__boxes__detailsContainer">
             <h4 className="landingPage__ourOffer__container__boxes__detailsContainer__heading">
               {t("home.value_employer")}
@@ -163,9 +174,17 @@ ${t("Suggest_mail.Suggest_mail_p6")}`;
               </span>
             </div>
           </div>
+          <div
+            className="landingPage__ourOffer__container__boxes__detailsContainer Suggest__boxes_button"
+            style={{ border: "none" }}
+          >
+            <GetQuoteCavitas />
+          </div>
+          </div>
         </div>
+        
 
-        <div className="landingPage__ourOffer__container__boxes Suggest__boxes">
+        {/* <div className="landingPage__ourOffer__container__boxes Suggest__boxes">
           <div
             className="landingPage__ourOffer__container__boxes__detailsContainer Suggest__boxes_button"
             style={{ border: "none" }}
@@ -181,7 +200,7 @@ ${t("Suggest_mail.Suggest_mail_p6")}`;
           >
             <GetQuoteCavitas />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

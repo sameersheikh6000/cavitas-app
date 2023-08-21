@@ -24,13 +24,13 @@ const Blog = () => {
   return (
     <Page>
       <section className="faq">
-        <header>
+        <header id="blog_header">
           <h1>{t("Blog.Blog_title")}</h1>{" "}
         </header>
       </section>
       <br />
       <div className="landingPage__valuableReadings ">
-        <header className="landingPage__valuableReadings__header">
+        <header className="landingPage__valuableReadings__header" >
           <Link to="/Blog" style={{ color: "red", textDecoration: "none" }}>
             <p>{t("Blog.Blog_heading")}</p>
           </Link>
@@ -43,7 +43,9 @@ const Blog = () => {
               // onClick={() => navigate(`/Blog1/${lang === "pl" ? lang : "en"}`)}
             >
               {/* <img src={require("../../../../assets/ValuableReading-image.png")} alt='' /> */}
-              <p className="landingPage__valuableReadings__container__cardsBox__card__name">
+              <p className="landingPage__valuableReadings__container__cardsBox__card__name"
+              style={{textTransform:"none"}}
+              >
                 {t("Blog.Blog1_title")}
               </p>
               <span className="landingPage__valuableReadings__container__cardsBox__card__date">
@@ -84,7 +86,6 @@ const Blog = () => {
                  >
                   {" "}
                   {t("home.readmore")}
-
                 </Link>
               </p>
             </div>

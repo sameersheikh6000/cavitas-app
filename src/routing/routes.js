@@ -815,9 +815,9 @@ export const routes = [
   },
  
    // EmployerDataForm / Family form
-   {
-    path: "/Employdata/:lang",
-    component: EmployDataForm,
-    isPrivate: false,
-  }
+  //  {
+  //   path: "/Employdata/:lang",
+  //   component: EmployDataForm,
+  //   isPrivate: false,
+  // }
 ];
