@@ -8,6 +8,7 @@ import Message from "./Message";
 import { useNavigate } from "react-router-dom";
 import useClientInsurance from "../../../../hooks/useClientInsurance";
 import AlertMessage from "../../../../components/SnackbarMessages/AlertMessage";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function DeleteAccountForm() {
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ function DeleteAccountForm() {
   const { t } = useTranslation();
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false)
   const [open, setOpen] = useState(false);
   const [openMessageModal, setOpenMessageModal] =  useState(false);
   const [deleteAccountForm, setDeleteAccountForm] = useState({
@@ -44,8 +46,10 @@ function DeleteAccountForm() {
   const closeAfterDeleteMessageModal = () => setOpenMessageModal(false);
 
   const handleSubmit = async () => {
+    setIsLoading(true)
     const response = await deleteAccountRequest(deleteAccountForm)
     if(response?.status < 300) {
+      setIsLoading(false)
       openAfterDeleteMessageModal()
       setTimeout(() => {
         closeAfterDeleteMessageModal();
@@ -53,6 +57,7 @@ function DeleteAccountForm() {
       }, 5000);
     }
     else if(response?.status > 300) {
+      setIsLoading(false)
       setErrorMessage(response?.message)
       setTimeout(() => {
         setErrorMessage('');
@@ -161,8 +166,19 @@ function DeleteAccountForm() {
           marginTop: "0px",
         }}
         onClick={() => handleSubmit()}
+        disabled={isLoading}
        >
-        {t("Uploadinsuredperson.Submitform")}
+        {!isLoading ?
+          t("Uploadinsuredperson.Submitform")
+          :
+          <CircularProgress 
+            style={{
+              width: "20px",
+              height: "20px",
+              color: "white",
+            }}
+          />
+        }
        </Button>
        <Message  openMessageModal={openMessageModal} closeAfterDeleteMessageModal={closeAfterDeleteMessageModal}/>
      </div>

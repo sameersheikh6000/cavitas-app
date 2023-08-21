@@ -5,12 +5,14 @@ import i18n from '../../../config/helpers/i18n';
 import useUsers from '../../../hooks/useUsers';
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 import { useNavigate } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const MemberSignUp = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
   const { createUser } = useUsers();
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
   const [password, setPassword] = useState("");
@@ -44,15 +46,19 @@ const MemberSignUp = () => {
     for (let prop in user) {
       if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"));
     }
+    setIsLoading(true)
     const response = await createUser(user, "member");
     if (response?.status?.code < 300) {
+      setIsLoading(false)
       navigate(`/dashboard/${lang === 'pl' ? lang : "en" }`);
     } else if (response?.data?.message !== undefined) {
+      setIsLoading(false)
       setErrorMessage(response?.data?.message);
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
     } else if (response?.data?.status?.message === undefined) {
+      setIsLoading(false)
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
       setTimeout(() => {
         setErrorMessage("");
@@ -140,8 +146,22 @@ const MemberSignUp = () => {
                 required={true}
               />
             </div>
-            <Button className='authentication__container__formContainer__registerForm__registerButton' type="submit">
-            {t("Pannel_Login.registernow")}
+            <Button 
+              className='authentication__container__formContainer__registerForm__registerButton' 
+              type="submit"
+              disabled={isLoading}
+            >
+            {!isLoading ?
+              t("Pannel_Login.registernow")
+            :
+              <CircularProgress 
+                style={{
+                  width: "20px",
+                  height: "20px",
+                  color: "white",
+                }}
+              />
+            }
 
             </Button>
           </form>

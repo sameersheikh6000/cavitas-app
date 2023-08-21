@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import useClientInfoReply from "../../../../../../hooks/useClientInfoReply";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function InsuredClientReplyForm({
   clientInfoId,
@@ -12,6 +13,7 @@ function InsuredClientReplyForm({
   setSuccessMessage,
 }) {
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
   const { createClientReply } = useClientInfoReply();
   const [clientInfoReply, setClientInfoReply] = useState({
     reply_text: "",
@@ -35,14 +37,19 @@ function InsuredClientReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
+    setIsLoading(true);
     const response = await createClientReply(clientInfoReply);
     if (response?.status < 300) {
+      setIsLoading(false)
       setSuccessMessage("Successfully Replied!");
       getClientInsuranceDetail();
       handleClose();
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 4000);
     } else if (response?.status > 300) {
+      setIsLoading(false)
       setErrorMessage(response?.message);
-
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
@@ -103,10 +110,14 @@ function InsuredClientReplyForm({
                 color="error"
                 variant="contained"
                 size="small"
+                disabled={isLoading}
                 style={{ color: "white" }}
                 onClick={() => handleSubmit()}
               >
-                Reply
+                {!isLoading ? 
+                  'Reply' : 
+                  <CircularProgress style={{ width: "20px", height: "20px", color: "white" }}/>
+                }
               </Button>
               <Button
                 color="success"

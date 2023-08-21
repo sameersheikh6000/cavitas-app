@@ -6,11 +6,13 @@ import FileUploadOutlinedIcon from '@mui/icons-material/FileUploadOutlined';
 import useClientInsurance from '../../../../hooks/useClientInsurance';
 import AlertMessage from '../../../../components/SnackbarMessages/AlertMessage';
 import { Button } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress';
 
 function ClientInfoUpdate({client_id, getClientInsurance}) {
     const infoID = client_id;
     const [open, setOpen] = useState(false);
     const [file, setFile] = useState();
+    const [isLoading, setIsLoading] = useState(false)
     const [errorMessage, setErrorMessage] = useState(null);
     const { updateClientInsuranceAdmin } = useClientInsurance();
     const style = {
@@ -32,14 +34,16 @@ function ClientInfoUpdate({client_id, getClientInsurance}) {
     }
 
     const handleUpdate = async (infoID) => {
-
+        setIsLoading(true)
         const response = await updateClientInsuranceAdmin(infoID, file)
         if (response?.status > 300 ){
+          setIsLoading(false)
           setErrorMessage(response?.message)
           setTimeout(() => {
             setErrorMessage("");
           }, 5000);
         } else if (response?.status < 300){
+          setIsLoading(false)
           setOpen(false);
           getClientInsurance();
         }
@@ -73,7 +77,19 @@ function ClientInfoUpdate({client_id, getClientInsurance}) {
                 />
               </div>
               <div className="uploadClient__container__body__participation_submit_button">
-                <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={() => handleUpdate(infoID)}>submit</Button>
+                <Button 
+                  color='success' 
+                  variant='contained' 
+                  size='small' 
+                  style={{ color: "white" }} 
+                  onClick={() => handleUpdate(infoID)}
+                >
+                  {!isLoading ?
+                    'submit'
+                    :
+                    <CircularProgress style={{ color: "white", width: '20px', height: '20px' }} />
+                  }
+                  </Button>
               </div>
             </div>
           </Box>

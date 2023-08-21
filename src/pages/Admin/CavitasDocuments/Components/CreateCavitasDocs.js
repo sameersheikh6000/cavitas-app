@@ -6,10 +6,12 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import useCavitasDocs from '../../../../hooks/useCavitasDocs';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const CreateCavitasDocs = ({setSuccessMessage, setErrorMessage, fetchCavitasDocs}) => {
     const { createCavitasDocs } = useCavitasDocs();
     const [open, setOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false)
     const [cavitasDocs, setCavitasDocs] = useState({
         title: "",
         valid_date: "",
@@ -43,8 +45,10 @@ const CreateCavitasDocs = ({setSuccessMessage, setErrorMessage, fetchCavitasDocs
         let data = {
             ...cavitasDocs,
         };
+        setIsLoading(true)
         const response = await createCavitasDocs(data);
         if (response.status < 300) {
+            setIsLoading(false)
             setSuccessMessage("Created Successfully!")
             
             setTimeout(() => {
@@ -54,6 +58,7 @@ const CreateCavitasDocs = ({setSuccessMessage, setErrorMessage, fetchCavitasDocs
             fetchCavitasDocs();
 
         } else if (response.status > 300) {
+            setIsLoading(false)
             setErrorMessage(response.message);
 
             setTimeout(() => {
@@ -116,7 +121,18 @@ const CreateCavitasDocs = ({setSuccessMessage, setErrorMessage, fetchCavitasDocs
                     </div>
                 </div>
               <div className="uploadClient__container__body__participation_submit_button" >
-                <Button color='success' variant='contained' size='small' style={{ color: "white" }} onClick={(e) => handleSubmit(e)}>submit</Button>
+                <Button 
+                    color='success' 
+                    variant='contained' 
+                    size='small' 
+                    style={{ color: "white" }} 
+                    onClick={(e) => handleSubmit(e)}
+                >{!isLoading ? 
+                    'submit'
+                    :
+                    <CircularProgress style={{ color: "white", width: '20px', height: '20px' }} />
+                }
+                </Button>
                 <Button color='primary' variant='outlined' size='small'  onClick={() => handleClose()}><span style={{color: "blue"}}>Cancel</span></Button>
               </div>
             </div>

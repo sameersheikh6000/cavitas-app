@@ -342,9 +342,10 @@ const InsuredPersonSupportTicket = () => {
                 </div>
               </section>
               :
-              (index === (clientInfo?.replies?.length - 1) && !row?.answer) &&
-                <ClientInfoReplyAnswerForm client_info_reply={row} setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} getClientInfoData={getClient}/>
-
+              (index === (clientInfo?.replies?.length - 1) && !row?.answer && clientInfo?.status != 'closed') ?
+                row && <ClientInfoReplyAnswerForm client_info_reply={row && row} setSuccessMessage={setSuccessMessage} setErrorMessage={setErrorMessage} getClientInfoData={getClient}/>
+                :
+                index === (clientInfo?.replies?.length - 1) && <p style={{textAlign: 'center', color: 'red'}}>Ticket has been closed!</p>
               }
               </>
 

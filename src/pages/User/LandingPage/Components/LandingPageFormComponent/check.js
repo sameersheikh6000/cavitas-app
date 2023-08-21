@@ -5,12 +5,14 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import useClientInsurance from "../../../../../hooks/useClientInsurance";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function GetQuoteCavitas() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const [dateType, setDateType] = useState();
   const { t } = useTranslation();
+  const [isLoading, setIsLoading] = useState(false)
   const { forSupportForms } = useClientInsurance();
   const [message, setMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -46,14 +48,17 @@ function GetQuoteCavitas() {
   const handleClose = () => setOpen(false);
 
   const submitQuoteForm = async () => {
+    setIsLoading(true)
     const response = await forSupportForms(formData);
     if (response.status < 300) {
+      setIsLoading(false)
       setMessage(t("get24contactform.setmessage"))
       setTimeout(() => {
         handleClose();
         setMessage("");
       }, 3000);
     } else if (response.status > 300) {
+      setIsLoading(false)
       setErrorMessage(response.message);
       setTimeout(() => {
         setErrorMessage("");
@@ -214,9 +219,20 @@ function GetQuoteCavitas() {
               style={{ marginLeft: "250px" }}
               className="authentication__container__formContainer__form__loginButton_Form"
               type="submit"
+              disabled={isLoading}
               onClick={() => submitQuoteForm()}
             >
-              {t("get24contactform.send")}
+              {!isLoading ?
+                t("get24contactform.send")
+                :
+                <CircularProgress 
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    color: "white",
+                  }}
+                />
+              }
             </Button>
           </div>
           <br />

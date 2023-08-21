@@ -1,24 +1,22 @@
-import { Button } from "@mui/material";
-import React, { useState, useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import i18n from "../../../config/helpers/i18n";
-import useUsers from "../../../hooks/useUsers";
-import AlertMessage from "../../../components/SnackbarMessages/AlertMessage";
-import { useNavigate } from "react-router-dom";
+
+import { Button } from '@mui/material'
+import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next';
+import i18n from '../../../config/helpers/i18n';
+import useUsers from '../../../hooks/useUsers';
+import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
+import { useNavigate } from 'react-router-dom';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const SignUp = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const { t } = useTranslation();
 
-  useEffect(() => {
-    const currentUrl = window.location.href;
-    let lang = currentUrl.split("/").pop();
-    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
-  }, []);
   const { createUser } = useUsers();
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false)
   const [password, setPassword] = useState("");
   const [user, setUser] = useState({
     first_name: "",
@@ -52,22 +50,33 @@ const SignUp = () => {
     for (let prop in user) {
       if (!user[prop]) return alert(t("Pannel_Dashboard_Supporttickets.fill"));
     }
+    setIsLoading(true)
     const response = await createUser(user, "broker");
 
     if (response?.status?.code < 300) {
-      navigate(`/dashboard/${lang === "pl" ? lang : "en"}`);
+
+      setIsLoading(false)
+      navigate(`/dashboard/${lang === 'pl' ? lang : 'en'}`);
     } else if (response?.data?.message !== undefined) {
+      setIsLoading(false)
       setErrorMessage(response?.data?.message);
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
     } else if (response?.data?.status?.message === undefined) {
+      setIsLoading(false)
       setErrorMessage(t("Pannel_Dashboard_Supporttickets.wrong"));
       setTimeout(() => {
         setErrorMessage("");
       }, 5000);
     }
   };
+
+  useEffect(() => {
+    const currentUrl = window.location.href;
+    let lang = currentUrl.split("/").pop();
+    lang && i18n.changeLanguage(lang === "pl" ? lang : "en");
+  }, [])
 
   return (
     <section className="authentication">
@@ -196,12 +205,18 @@ const SignUp = () => {
                 required={true}
               />
             </div>
-            <Button
-              className="authentication__container__formContainer__registerForm__registerButton"
+
+            <Button 
+              className='authentication__container__formContainer__registerForm__registerButton' 
               type="submit"
-              style={{ width: "auto" }}
+              disabled={isLoading}
+              style={{width: "auto"}}
             >
-              {t("Pannel_Login.registernow")}
+            {!isLoading ?
+              t("Pannel_Login.registernow")
+              :
+              <CircularProgress style={{ color: "white", width: '20px', height: '20px' }} />
+            }
             </Button>
           </form>
         </div>

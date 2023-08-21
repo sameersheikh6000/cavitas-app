@@ -8,6 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { USER_STORAGE_KEY } from "../../../config/helpers/variables";
 import useClientInsurance from "../../../hooks/useClientInsurance";
 import SuccessMessage from "../../../components/SnackbarMessages/SuccessMessage";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const UploadClient = () => {
   const currentUrl = window.location.href;
@@ -16,7 +17,7 @@ const UploadClient = () => {
   const { createClientInsurance } = useClientInsurance();
   const navigate = useNavigate();
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
-
+  const [isLoading, setIsLoading] = useState(false);
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
   const [successMessage, setSuccessMessage] = useState();
@@ -82,6 +83,7 @@ const UploadClient = () => {
   };
 
   const handleSubmit = async (e) => {
+    setIsLoading(true)
     e.preventDefault();
     let data = {
       ...client,
@@ -89,9 +91,11 @@ const UploadClient = () => {
     if(data?.broker_reference !== '0' || ""){
       const response = await createClientInsurance(data);
       if (response?.status < 300) {
+        setIsLoading(false)
         setSuccessMessage(t("get24contactform.setmessage"));
         navigate(`/dashboard/${lang === "pl" ? lang : "en"}`);
       } else if (response.status > 300) {
+        setIsLoading(false)
         // setErrorMessage(response.message);
       }
     }
@@ -404,8 +408,21 @@ const UploadClient = () => {
                 />
               </div>
             </div>
-            <Button onClick={(e) => handleSubmit(e)}>
-              {t("Uploadinsuredperson.Submitform")}
+            <Button 
+              onClick={(e) => handleSubmit(e)}
+              disabled={isLoading}
+            >
+              {!isLoading ?
+                  t("Uploadinsuredperson.Submitform")
+                :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+              }
             </Button>
           </div>
         </div>

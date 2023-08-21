@@ -7,6 +7,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import useEmployData from "../../../hooks/useEmployData";
 import AlertMessage from '../../../components/SnackbarMessages/AlertMessage';
 import SuccessMessage from '../../../components/SnackbarMessages/SuccessMessage';
+import CircularProgress from "@mui/material/CircularProgress";
 
 const EmployDataForm = () => {
   const currentUrl = window.location.href;
@@ -21,6 +22,7 @@ const EmployDataForm = () => {
   
   //States
   const [errorMessage, setErrorMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false)
   const [successMessage, setSuccessMessage] = useState('');
   const [employData, setEmployData] = useState({
     company_name: "",
@@ -148,9 +150,11 @@ const EmployDataForm = () => {
   }
   
   const handleSubmit = async (e) => {
+    setIsLoading(true)
     e.preventDefault();
     const response = await submitEmployData(employData, coInsuredMember)
     if(response && response?.status < 300){
+      setIsLoading(false)
       setSuccessMessage('Thank You For Providing Additional Information');
       setTimeout(() => {
         setSuccessMessage('');
@@ -158,6 +162,7 @@ const EmployDataForm = () => {
       }, 3000)
     }
     else if(response && response?.status > 300){
+      setIsLoading(false)
       setErrorMessage(response?.message)
       setTimeout(() => {
         setErrorMessage('')
@@ -641,7 +646,20 @@ const EmployDataForm = () => {
             >
               <Button 
                 onClick={(e) => handleSubmit(e)}
-              > {t("Employdata.submit")}</Button>
+                disabled={isLoading}
+              > 
+              {!isLoading ? 
+                  t("Employdata.submit")
+                  :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+                }
+              </Button>
             </div>{" "}
           </div>
         </div>

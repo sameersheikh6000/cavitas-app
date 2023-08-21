@@ -5,6 +5,7 @@ import { Button } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { ADMIN_STORAGE_KEY } from '../../../config/helpers/variables';
 import useClientInsurance from '../../../hooks/useClientInsurance';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const UploadClient = () => {
   const {createClientInsuranceAdmin} = useClientInsurance();
@@ -12,6 +13,7 @@ const UploadClient = () => {
   const user = JSON.parse(sessionStorage.getItem(ADMIN_STORAGE_KEY));
   const [mandatoryEmployees, setMandatoryEmployees] = useState(false);
   const [voluntaryEmployees, setVoluntaryEmployees] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const [client, setClient] = useState({
     corporate_client_name: "",
@@ -60,10 +62,13 @@ const UploadClient = () => {
     let data = {
       ...client,
     };
+    setIsLoading(true)
     const response = await createClientInsuranceAdmin(data);
     if (response.status < 300) {
+      setIsLoading(false)
       navigate("/admin");
     } else if (response.status > 300) {
+      setIsLoading(false)
       // setErrorMessage(response.message);
     }
   }
@@ -344,7 +349,16 @@ const UploadClient = () => {
                 />
               </div>
             </div>
-            <Button onClick={(e) => handleSubmit(e)}>Submit</Button>
+            <Button 
+              onClick={(e) => handleSubmit(e)}
+              disabled={isLoading}
+            >
+              {!isLoading ? 
+                'Submit' 
+              :
+                <CircularProgress style={{ color: "white", width: '20px', height: '20px' }} />
+              }
+            </Button>
           </div>
         </div>
       </section>

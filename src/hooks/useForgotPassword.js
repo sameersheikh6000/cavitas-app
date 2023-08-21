@@ -5,9 +5,10 @@ import useHandleErrors from './useHandleErrors';
 const useForgotPassword = () =>  {
   const { handleErrors } = useHandleErrors();
 
-  const forgotPassword = async (email) => {
+  const forgotPassword = async (email, lang) => {
     const params = {
-      email: email
+      email: email,
+      lang: lang
     }
     const response = await axios.post(
       `${API_KEY}/api/v1/forgot_password`,

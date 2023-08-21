@@ -3,6 +3,7 @@ import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import useSupportTicketReply from "../../../../../../hooks/useSupportTicketReply";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function SupportReplyForm({
   supportFormId,
@@ -12,6 +13,7 @@ function SupportReplyForm({
   setSuccessMessage,
 }) {
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false)
   const { createReply } = useSupportTicketReply();
   const [ticketReply, setTicketReply] = useState({
     reply_text: "",
@@ -36,13 +38,15 @@ function SupportReplyForm({
   const handleClose = () => setOpen(false);
 
   const handleSubmit = async () => {
-    ;
+    setIsLoading(true)
     const response = await createReply(ticketReply);
     if (response?.status < 300) {
+      setIsLoading(false)
       setSuccessMessage("Successfully Replied!");
       getSupportTicketDetail();
       handleClose();
     } else if (response?.status > 300) {
+      setIsLoading(false)
       setErrorMessage(response?.message);
 
       setTimeout(() => {
@@ -102,10 +106,21 @@ function SupportReplyForm({
                 color="error"
                 variant="contained"
                 size="small"
+                disabled={isLoading}
                 style={{ color: "white" }}
                 onClick={() => handleSubmit()}
               >
-                Reply
+                {!isLoading ? 
+                  'Reply'
+                  :
+                  <CircularProgress 
+                    style={{
+                      width: "20px",
+                      height: "20px",
+                      color: "white",
+                    }}
+                  />
+                }
               </Button>
               <Button
                 color="success"

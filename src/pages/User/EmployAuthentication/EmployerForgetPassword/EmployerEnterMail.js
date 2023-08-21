@@ -9,6 +9,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 const EmployerEnterMail = () => {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
+  const language = lang === 'pl' ? 'pl' : 'en';
   const { t } = useTranslation();
   const [successMessage, setSuccessMessage] = useState("");
   const [alertMessage, setAlertMessage] = useState("");
@@ -20,7 +21,7 @@ const EmployerEnterMail = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
-    const response = await forgotPassword(email);
+    const response = await forgotPassword(email, language);
     if (response?.status < 300) {
       setSuccessMessage(response?.message);
       setIsLoading(false);

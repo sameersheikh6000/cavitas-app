@@ -11,7 +11,6 @@ const SupportTickets = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
   const [ticketList, setTicketList] = useState([]);
-  const [successMessage, setSuccessMessage] = useState("");
 
   const getTickets = async () => {
     const response = await getTicketsByAdmin();

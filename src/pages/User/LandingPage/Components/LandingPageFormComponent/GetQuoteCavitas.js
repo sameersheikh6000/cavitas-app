@@ -9,6 +9,7 @@ import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import useClientInsurance from "../../../../../hooks/useClientInsurance";
 import i18n from "../../../../../config/helpers/i18n";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   "& .MuiDialogContent-root": {
@@ -24,6 +25,7 @@ export default function GetQuoteCavitas() {
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
   const [dateType, setDateType] = useState();
+  const [isLoading, setIsLoading] = useState(false)
   const { t } = useTranslation();
   const { forSupportForms } = useClientInsurance();
   const [message, setMessage] = useState("");
@@ -51,14 +53,17 @@ export default function GetQuoteCavitas() {
   };
 
   const submitQuoteForm = async () => {
+    setIsLoading(true)
     const response = await forSupportForms(formData);
     if (response.status < 300) {
+      setIsLoading(false)
       setMessage(t("get24contactform.setmessage"));
       setTimeout(() => {
         handleClose();
         setMessage("");
       }, 3000);
     } else if (response.status > 300) {
+      setIsLoading(false)
       setErrorMessage(response.message);
       setTimeout(() => {
         setErrorMessage("");
@@ -262,10 +267,21 @@ export default function GetQuoteCavitas() {
                   style={{ marginTop: "-15px" }}
                   className="authentication__container__formContainer__form__loginButton_Form"
                   type="submit"
+                  disabled={isLoading}
                   id="popup_btn"
                   onClick={() => submitQuoteForm()}
                 >
-                  {t("get24contactform.send")}
+                  {!isLoading ?
+                    t("get24contactform.send")
+                    : 
+                    <CircularProgress 
+                      style={{
+                        width: "20px",
+                        height: "20px",
+                        color: "white",
+                      }}
+                    />
+                  }
                 </Button>
               </div>
               <br />

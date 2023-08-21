@@ -6,6 +6,8 @@ import Box from "@mui/material/Box";
 import { Button } from "@mui/material";
 import { USER_STORAGE_KEY } from '../../../../../../config/helpers/variables';
 import useClientInfoReply from '../../../../../../hooks/useClientInfoReply';
+import CircularProgress from '@mui/material/CircularProgress';
+
 function ClientInfoReplyAnswerForm({
 
   client_info_reply,
@@ -13,7 +15,6 @@ function ClientInfoReplyAnswerForm({
   setSuccessMessage,
   getClientInfoData
 }) {
-  console.log(client_info_reply)
   const user = JSON.parse(sessionStorage.getItem(USER_STORAGE_KEY));
   const { createClientInfoReplyAnswer } = useClientInfoReply();
   const [clientInfoReplyAnswer, setClientInfoReplyAnswer] = useState({
@@ -35,28 +36,35 @@ function ClientInfoReplyAnswerForm({
     width: 600,
     borderRadius: 5,
     bgcolor: "#edf4f4",
-    // border: '2px solid #000',
     boxShadow: 14,
     p: 4,
   };
 
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async () => {
+    setIsLoading(true)
+    if(client_info_reply?.id){
+      setClientInfoReplyAnswer({ ...clientInfoReplyAnswer, client_info_reply_id: client_info_reply?.id})
+      const response = await createClientInfoReplyAnswer(clientInfoReplyAnswer);
 
-    setClientInfoReplyAnswer({ ...clientInfoReplyAnswer, client_info_reply_id: client_info_reply?.id})
-    const response = await createClientInfoReplyAnswer(clientInfoReplyAnswer);
-    ;
-    if (response?.status < 300) {
-      setSuccessMessage("Answer Submitted!");
-      getClientInfoData()
-      handleClose();
-    } else if (response?.status > 300) {
-      setErrorMessage(response?.message);
-      setTimeout(() => {
-        setErrorMessage("");
-      }, 5000);
+      if (response?.status < 300) {
+        setIsLoading(false)
+        setSuccessMessage("Answer Submitted!");
+        getClientInfoData()
+        handleClose();
+        setTimeout(() => {
+          setSuccessMessage("");
+        }, 5000);
+      } else if (response?.status > 300) {
+        setIsLoading(false)
+        setErrorMessage(response?.message);
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
+      }
     }
   };
 
@@ -119,10 +127,14 @@ function ClientInfoReplyAnswerForm({
                 color="error"
                 variant="contained"
                 size="small"
+                disabled={isLoading}
                 style={{ color: "white" }}
                 onClick={() => handleSubmit()}
               >
-               {t("Replypannel.Send")}
+                {!isLoading ? 
+                  t("Replypannel.Send") : 
+                  <CircularProgress style={{ width: "20px", height: "20px", color: "white" }}/>
+                }
               </Button>
               <Button
                 color="success"

@@ -15,21 +15,22 @@ const EnterMail = () => {
   const [email, setEmail] = useState("");
   const currentUrl = window.location.href;
   const lang = currentUrl.split("/").pop();
+  const language = lang === 'pl' ? 'pl' : 'en';
   const { t } = useTranslation();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // setIsLoading(true);
-    const response = await forgotPassword(email);
+    setIsLoading(true);
+    const response = await forgotPassword(email, language);
     if (response?.status < 300) {
       setSuccessMessage(response?.message);
-      // setIsLoading(false);
+      setIsLoading(false);
       setTimeout(() => {
         navigate(`/signin/${lang === "pl" ? lang : "en"}`);
       }, 3000);
-      // setEmail("");
+      setEmail("");
     } else if (response?.status > 300) {
-      // setIsLoading(false);
+      setIsLoading(false);
       setAlertMessage(response?.message);
       setTimeout(() => {
         setAlertMessage("");
